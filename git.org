@@ -312,6 +312,12 @@ To fetch and merge:
 git pull <REMOTE> <BRANCH>
 #+END_SRC
 
+The error "fatal: refusing to merge unrelated histories" may occur when we try to merge/pull unrelated repositories together. For example, we might try to resume old project from scratch while wanting to keep the same GitHub repository. To resolve this:
+#+BEGIN_SRC shell
+git pull <REMOTE> <BRANCH> --allow-unrelated-histories
+#+END_SRC
+
+
 * push: local repository -> remote repository
 
 #+BEGIN_SRC shell

@@ -383,7 +383,7 @@ To fetch and merge:
 
 .. code:: shell
 
-    git pull <REMOTE_NAME> <LOCAL_BRANCH_NAME>
+    git pull <REMOTE> <BRANCH>
 
 27 push: local repository -> remote repository
 ----------------------------------------------
