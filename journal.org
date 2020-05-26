@@ -1,0 +1,5 @@
+* LaTeX
+- installed cjk
+
+* Emacs
+- <2019-10-25 Fri> Emacs AUXTeX: AUCTeX group>LaTeX>LaTeX Macro>Latex Font List

@@ -1,0 +1,117 @@
+#+TITLE: My Coq Note
+
+* Gallina
+ - ~match~ t ~with~ c_1 \Rightarrow e_1 ~|~ c_2 \Rightarrow e_2 ~|...|~ c_{1} \Rightarrow e_l ~end~
+ - ~if~ t ~then~ e_1 ~else~ e_2 is equivalent to ~match~ t ~with true~ \Rightarrow e_1 ~| false~ \Rightarrow e_2 ~end~
+ - ~fun n:nat => (n*n*n)%nat~ is a function of type ~nat -> nat~ and has the same meaning as
+  - ~λ n:nat. n*n*n~ in typed λ-calculus
+  - ~fun (n:nat) -> n*n*n~ in ocaml
+ - the followings are all equivalent
+  - ~fun n:nat => fun p:nat => fun z:Z => (Z_of_nat(n+p)+z)%Z~
+  - ~fun n p:nat => fun z:Z => (Z_of_nat(n+p)+z)%Z~
+  - ~fun (n p:nat) (z:Z) => (Z_of_nat(n+p)+z)%Z~
+ - ~let v:= t1 in t2~ where ~v~ is an identifier and ~t1~ and ~t2~ are expression is the local binding ~(λv.t2)~ that will evaluated as ~((λv.t2) t1)~ then ~t2[v/t1]~ after the β-reduction.
+
+* Command
+ - ~Require Import~ /~Coq.Unicode.Utf8.~/
+ - ~Require Import~ /~Arith.~/
+ - ~Require Import~ /~ZArith.~/
+ - ~Require Import~ /~Bool.~/
+ - ~Open Scope~ /~Z_scope.~/
+ - ~Close Scope~ /~Z_scope.~/
+ - ~Open Scope~ /~nat_scope.~/
+
+ - ~Set~ /~Printing Notations.~/
+ - ~Unset~ /~Printing Notations.~/
+
+ - ~Reset Initial~
+ - ~Reset~ /~id~/
+
+ - The followings all have the same meaning
+  - ~Definition cube := fun z:Z => z*z*z~
+  - ~Definition cube (z:Z):Z := z*z*z~
+  - ~Definition cube z := z*z*z~
+
+ - ~Eval compute in (h 56 78)~ when ~h:nat->nat->nat~ evaluate ~h(56,78)~. ~Eval compute~ is synomym for ~Eval cbv iota beta zeta delta~.
+
+ - ~Locate "_ * _"~
+
+ - ~Hypothesis~ /~h:P~/
+ - ~Variables~ /~h:P~/
+
+ - ~Axiom~ /~h:P~/
+ - ~Parameter~ /~x:P~/
+
+ - ~Theorem~ ~Lemma~
+ - ~Proof~
+ - ~Qed~ build the proof term corresponding to the sequence of tactics, check the term's type is the initial statement, save this new theorem as a definition liking to the theorem name, its statement (i.e., type), and the proof term.
+
+ - ~Print~ /~something~/
+
+ - ~Reset~ /~something~/
+
+ - ~Section~ /~proof_of_something~/ ~End~ /~proof_of_something~/
+
+ - ~SearchPattern~ /~(_ + _ <= _)%Z.~/
+
+ - ~Show 7~ show 7th subgoal.
+
+ - ~Restart~ restart the proof.
+ - ~Abort~ abort the proof.
+
+ - ~Fixpoint f (a:T) := expr~ defines a function on a variable ~a~ recursively.
+  #+BEGIN_SRC coq
+Fixpoint mult2 (n:nat):nat :=
+  match n with
+  | 0 => 0
+  | S p => S (S (mult2 p))
+  end.
+  #+End_SRC
+ - ~Fixpoint f (a1:T1) ... (ap:Tp) {struct ai}: T := expr~ defines a function with variables ~a1~,..., ~ap~ that is recursively defined on the variable ~ai~
+  #+BEGIN_SRC coq
+Fixpoint plus (n m:nat) {struct n}:nat :=
+  match n with
+  | 0 => m
+  | S p => S (plus p m)
+  end.
+  #+End_SRC
+  #+BEGIN_SRC coq
+Fixpoint iterate (A:Set)(f:A -> A)(n:nat)(x:A){struct n}:A :=
+  match n with
+  | 0 => x
+  | S p => f (iterate A f p x)
+  end.
+  #+END_SRC
+* Tactic
+- ~tac1; tac2; ...; tacn~ combination of tactics
+- ~tac; [tac1|tac2|...|tacn]~ exactly ~n~ goals are generated so apply tactic ~taci~ to the ~i~th subgoal
+- ~tac || tac'~ apply ~tac~ and if it fails, apply ~tac'~
+- ~idtac~ leaves the goal as it is and always succeeds
+- ~fail~ alwas fail. ~tac; fail~ fails only when ~tac~ generates new goals
+- ~try tac~ behaves like ~tac || idtac~
+- ~intros~ add hypotheses
+- ~apply H~ apply hypothesis ~H~ to the current goal
+- ~assumption~ the statement to prove is exactly the statement of the hypothesis
+- ~exact~ similar to ~assumption~ but global
+- ~auto~
+- ~cut~ suppose we have hypotheses ~(H:P->Q) (H0:Q->R) (H1:(P->R)->T->Q) (H2:(P->R)->T)~ To prove ~Q~, we can see that ~P->R~ is easy to prove by ~H~ and ~H0~, and from ~P->R~ it is easy to finish the proof by ~H1~ and ~H2~. So once the goal ~Q~ is generated, we first make an assumption that ~P->R~ that is to be proved later by ~cut P->R~ that generates ~(P->Q)->R~ so that we can ~intro~ the term for ~P->Q~
+- ~assert~ opposite of ~cut~. In the example for ~cut~, we can first ~assert P->R~ and prove it, then use it to prove ~Q~ later.
+- ~unfold lt~
+- ~reflexivity~ when a goal is ~a=a~. this is synonym to ~apply refl_equal~
+- ~left~ when a goal is ~a \/ (b)~, prove it by proving ~a~
+- ~right~ when a goal is ~a \/ (b)~, prove it by priving ~b~
+- ~elim t~ when ~t:T~ where ~T~ is inductive type, then ~elim t~ as the same as ~pattern t; apply T_ind~ or ~T_rec~, or etc depending the goal sort. If ~t= b|c~ and if the goal is ~t -> d~ this eliminate ~a~ to produce subgoals ~b->d~ and ~c->d~
+- ~elim t using T_ind2~ same as ~elim t~ but ~t~ does need to be an inductive type as long as ~T_ind~ is of the form of an induction principle which has the form ~∀P:T→S, P t1→P t2→...→(∀t:T, P t)~.
+- ~pattern m~ when we want to prove ~m:month ⊢ m=Jan ∨ ... ∨ m=Dec~, we can use ~pattern m~ to convert the goal into ~(λm0:month, m0=Jan ∨ ... ∨ m0=Dec) m~ to use ~month_ind~ that is of the form ~∀P:month→Prop, P Jan → ... → P Dec → ∀m:month, P m~.
+- ~induction~ /~v~/ is similar to ~intros until~ /~v~/ ~; elim~ /~v~/ follwed by a collection of ~intros~ in each branch
+- ~case t~ where ~t:T~ and ~T~ is an inductive type. This replaces all instances of ~t~ in the goal statement with all possible cases, as defined by the inductive type.
+- ~discriminate H~ where ~H:t1 = t2 ⊢ e~ while ~t1 ≠ t2~.
+- ~discriminate~ when the goal is ~t1 ≠ t2~ while ~t1 ≠ t2~.\\
+  First, ~t1 ≠ t2~ is equivalent to ~t1 = t2 → False~. Then the goal is to prove  ~H:t1 = t2 ⊢ False~. Since ~t1 ≠ t2~, we can define a function ~F:=(λ t:T. if t=t1 True and if t=t2 False)~ so that the goal becomes ~H:t1=t2 ⊢ (F t2)~. Rewriting by the assumption ~H~ we obtain ~H:t1=t2 ⊢ (F t1)~ that is ~H:t1=t2 ⊢ True~. Then ~trivial~ finishes the proof. This is the situation where ~False ⊢ True~ and ~False ⊢ False~.
+- ~rewrite H~ if there is a hypothesis ~H:x=y~ then ~e ↦ e[x/y]~
+- ~rewrite ← H~ if there is a hypothesis ~H:x=y~ then ~e ↦ e[y/x]~
+
+* Module
+- ~my_module.v~ can be loaded in the current context with command ~Load my_module~.
+- compiling the module ~my_module.v~ by ~coqc~ creates a file ~my_module.vo~ that can be reloaded with ~Require Import my_module~
+- when a new module ~N~ requires an old module ~M~ we can use ~Require Export M~ in module ~N~ so that ~M~ is automatically visible when ~N~ is required.

@@ -1,0 +1,85 @@
+#+TITLE: My Org mode Note
+#+AUTHOR: Hyungbo Shim
+#+DATE: Tue May 26 12:09:43 2020
+#+EMAIL: hbshim@gmail.com
+#+LANGUAGE: en
+
+* Org
+** Font
+  - ~*bold*~, ~/italic/~, ~_underlined_~, ~=verbatim=~, ~~code~~, ~+strike-through+~, ~/~italic code~/~
+
+** Visibility cycling
+  - ~<TAB>~ (~org-cycle~) Subtree cycling
+
+** Insert entries
+ - ~M-<RET>~ (~org-meta-return~) Insert a new heading, item or row.
+ - ~C-<RET>~ (~org-insert-heading-respect-content~) Insert a new heading at the end of the current subtree.
+ - ~<TAB>~ (~org-cycle~) The first ~<TAB>~ demotes the entry to become a child of the previous one.  The next ~<TAB>~ makes it a parent, and so on, all the way to top level.  Yet another ~<TAB>~, and you are back to the initial level.
+
+** Promoting/Demoting headings
+ - ~M-<LEFT>~ (~org-do-promote~) Promote current heading by one level.
+ - ~M-<RIGHT>~ (~org-do-demote~) Demote current heading by one level.
+ - ~M-S-<LEFT>~ (~org-promote-subtree~) Promote the current subtree by one level.
+ - ~M-S-<RIGHT>~ (~org-demote-subtree~) Demote the current subtree by one level.
+
+** Moving subtrees up/down
+ - ~M-<UP>~ (~org-move-subtree-up~) Move subtree up.
+ - ~M-<DOWN>~ (~org-move-subtree-down~) Move subtree down.
+
+** Exporting
+*** HTML export command
+ - ~C-c C-e h h~ (~org-html-export-to-html~) Export as HTML file with a ‘.html’ extension.
+
+** time stamp
+ - ~C-c .~ (~org-time-stamp~) Prompt for a date and insert a corresponding timestamp. When the cursor is at an existing timestamp in the buffer, the command is used to modify this timestamp instead of inserting a new one. When this command is used twice in succession, a time range is inserted.
+ - ~C-c !~ (~org-time-stamp-inactive~) Like ~C-c .~, but insert an inactive timestamp that will not cause an agenda entry.
+ - ~C-u C-c .~ / ~C-u C-c !~ Like ~C-c .~ and ~C-c !~, but use the alternative format which contains date and time. The default time can be rounded to multiples of 5 minutes, see the option ~org-time-stamp-rounding-minutes~.
+
+*** variables
+
+ - ~org-hide-emphasis-markers~
+
+** Export options
+  - ~#+TITLE:       the title to be shown~\\
+  - ~#+AUTHOR:      the author (default taken from user-full-name)~\\
+  - ~#+DATE:        a date, fixed, or an Org timestamp~\\
+  - ~#+EMAIL:       his/her email address (default from user-mail-address)~\\
+  - ~#+LANGUAGE:    language, e.g. ‘en’ (org-export-default-language)~\\
+  - ~#+OPTIONS:     H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t ...~
+
+** Paragraphs
+  - ~#+BEGIN_VERSE~ / ~#+END_VERSE~
+  - ~#+BEGIN_QUOTE~ / ~#+END_QUOTE~
+  - ~#+BEGIN_CENTER~ / ~#+END_CENTER~
+
+** Examples and codes
+  - ~#+BEGIN_EXAMPLE~ / ~#+END_EXAMPLE~
+  - ~:~ /~Some example from a text file.~/
+  - ~#+BEGIN_SRC emacs-lisp~ / ~#+END_SRC~
+
+** Images
+  - ~./img/cat.jpg~
+  - ~#+CAPTION: the caption for the next figure link (or table)~ / ~#+NAME: fig:SED-HR4049~ ~[[./img/a.jpg]]~
+
+** Footnote
+  - ~[fn:1]~ footnote definition when at column 0
+  - ~C-c C-x f~ switch footnote definition / (first) reference or create a new footnote
+  - ~C-c C-c~ Jump between definition and reference.
+
+** Superscript and subscript
+  - ~^~ and ~_~ are used to indicate super- and subscripts. We may surround multi-character sub- and superscripts with curly braces.
+  - ~org-use-sub-superscripts~ a variable that determines whether to interprete ~_~ as a subscript or not. Eg. setting this variable to ~{}~, '~a_b~' is not interpreted as a subscript, but '~a_{b}~ is.
+  - ~C-c C-x \~ (~org-toggle-pretty-entities~) formats sub- and superscripts in a WYSIWYM way.
+
+** Special symbols
+  - ~\~ and maybe a few letters, then ~M-TAB~ to see possible completions of special symbols. If you need such a symbol inside a word, terminate it with a pair of curly brackets for eg. ~\pi{}d~.
+  - ~command org-entities-help~ a command to browse the complete list from a dedicated buffer
+  - ~org-entities-user~ define own symbols
+  - ~C-c C-x \~ (~org-toggle-pretty-entities~) Toggle display of entities as UTF-8 characters. This does not change the buffer content which remains plain ASCII, but it overlays the UTF-8 character for display purposes only.
+
+** Latex preview
+ - ~org-compile-file: File "/tmp/orgtex5473MjV.dvi" wasn’t produced. Please adjust ’dvipng’ part of ‘org-preview-latex-process-alist’.~\\
+   a log is generated, ~/tmp/orgtex9997XKu.log~. Something interesting is in this log: ~LaTeX Error: File `wrapfig.sty' not found.~ Then a quick search tells me texlive-latex-extra package is missing.
+ - ~C-c C-x C-l~ toggle latex preview
+** Sort
+  - ~C-c ^~ Sort the plain list. Prompt for the sorting method: numerically, alphabetically, by time, or by custom function.

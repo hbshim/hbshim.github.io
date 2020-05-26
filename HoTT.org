@@ -1,0 +1,116 @@
+#+STARTUP: latexpreview
+#+STARTUP: indent
+
+* Type theory
+
+** 1.1 Type Theory versus Set Theory
+
++ *Equality is a type:* $a=_{A} b$ for $a,b : A$. When $a =_{A} b$ is inhabited, we say $a$ and $b$ are *(propositionally) equal*.
++ The introduction of *definitional equality*: $a :\equiv b$ means $a$ is defined to be $b$.
++ *Type judgment* $a:A$:
+  + _When $A:\mathtt{Type}$_, $a:A$ is pronounced as "the term $a$ has type $A$", "$a$ is an element of $A$", "$a$ is a point of $A$" and "$a$ is an object of type $A$".
+    + $a:A$ may be regarded as analogous to the set theoretic $a\in A$ but there is an essential difference that $a:A$ is a judgment while $a\in A$ is a proposition so that statements like "$(a:A)\Rightarrow (b:B)$" is meaningless.
+  + _When $A:\mathtt{Prop}$_, $a$, in $a:A$, may be called a *witness to the provability* of $A$, or *evidence of the truth* of $A$, or even a *proof* of $A$.
+    + $a:A$ is *derivable in type theory*, for some $a$, precisely when the analogous judgement "$A$ has a proof" is derivable in first-order logic modulo differences in the axioms assumed and in the encoding of mathematics.
++ *Judgmental equality*: $\boldsymbol{a\equiv b:A}$ means $a$ and $b$ are definitionally equal objects of type $A$.
++ Judgments may depend on *assumptions* of the form $a:A$ where $x$ is a variable and $A:\mathtt{Type}$. The collection of assumptions is called the *context*.
+  + An assumption of the form $x:A:\mathtt{Prop}$ is a *hypothesis* that we assume $A:\mathtt{Prop}$ holds.
+  + _Example_:
+    + $m,n:\mathbb{N}\vdash m+n:\mathbb{N}$.
+    + $x,y:A:\mathtt{Type}, p:x=_{A} y\vdash p^{-1}:y=_{A} x$. We may instead say that assuming $x=_{A} y$, we can prove $y=_{A} X$.
+  + We CANNOT assume or prove a judgmental equality $x\equiv y$ since it is not a type.
+  + We may say "$\exists f:A\rightarrow B, f(x)\equiv y$" that is two separate judgments: first, the judgment $f:A\rightarrow B$, then the additional judment $f(x)\equiv y$.
+
+** 1.2 Function types
+
++ The *function type*: $(A \rightarrow B) : \mathcal{U}$
++ The function type of /several variables/ is defined by the following equivalent (so that \(f(a,b)\equiv f(a)(b)\)) methods:
+  + by using a cartesian product: \(f : (a, b) \mapsto f(a, b) : A \times B \rightarrow C\).
+  + by *Currying*: \(f: a \mapsto f(a) \mapsto f(a)(b) : A \rightarrow B \rightarrow C\).
++ We define $f:a\rightarrow b$ by giving an equation $f(x) :\equiv \Phi$ where $x:a$ is a variable and $\Phi:B$ is an expression which may use $x$.
+  + +Note that \(f \not\equiv \Phi\). Instead, \(f(x):\equiv\Phi : B\) for \(x:A\) so that \(x\) is no longer a variable in either \(f(x)\) or \(\Phi\) and I should not be writing \(\Phi(x)\). In this way, I can write \(f(x)[a/x]\) or \(\Phi[a/x]\) for replacing \(x\) by \(a\), that is an \(\alpha\)-conversion, but it does not make sense to write \(f[a/x]\)- but if it happens, it should be read as the same as \(f(x)[a/x]\).+
++ *\(\boldsymbol{\alpha}\)-conversion*: \(\lambda x.\, \Phi \rightsquigarrow \lambda y.\, \Phi[y/x]\) by the judgmental equality \(\lambda x.\, f(x) \equiv \lambda y.\, f(y)\).
++ *\(\boldsymbol{\lambda}\)-abstraction*: for an expression $\Phi$, we can write $(\lambda(x:A).\Phi):A\rightarrow B$. Equivalently, we write
+  + $(x\mapsto \Phi):A\rightarrow B$, or
+  + $g(x,\_)$ for $\lambda y.\, g(x,y)$ (*implicit \(\boldsymbol{\lambda}\)-abstraction*).
+  + $\lambda$ scope over the rest of the expression unless delimited with parentheses.
+    + _Example_: $\lambda x.\, x+x$ is $\lambda x.\, (x+x)$ not $(\lambda x.\, x)+x$.
++ *\(\boldsymbol{\beta}\)-reduction* (*computation rule*): \((\lambda x.\,\Phi)(a) \rightsquigarrow \Phi[a/x]\) by the definitional equality \( (\lambda x.\Phi)(a)\) +\(:\equiv\)+ \(\equiv \Phi[a/x]\).
++ *\(\boldsymbol{\eta}\)-expansion*: \( f \rightsquigarrow \lambda x.\, f(x)\) by the definitional equality $f\equiv (\lambda x.\, f(x))$. This is called the *uniqueness principle for function types* by having $f$ uniquely determined by its values.
++ A *polymorphic function* is a function that takes a type as one of its arguments and then acts on elements of that type or of other types constructed from it.
+  + _Example_:
+    + $\mathtt{id}:\equiv \lambda (A:\mathcal{U}).\, \lambda(x:A).\, x : \prod_{(A:\mathcal{U})} A\rightarrow A$.
+      + We can also define $\mathtt{id}$ by specifying the argument type $A$: $\mathtt{id}_{A}:\equiv \lambda (x:A).\, x:A\rightarrow A$.
+    + $\displaystyle{\mathtt{swap} :\prod_{(A,B,C:\mathcal{U})}  (A\rightarrow B\rightarrow C)\rightarrow (B\rightarrow A\rightarrow C)}$ with either
+      + $\mathtt{swap}(A,B,C,g):\equiv \lambda b.\, \lambda a.\, g(a)(b)$, or equivalently,
+      + $\mathtt{swap}_{A,B,C}(g)(b,a):\equiv g(a,b)$.
+
+** 1.3 Universes and families
+
++ a hierarchy of *universes*: $\mathcal{U}_{0} : \mathcal{U}_{1} : \mathcal{U}_{2} : \cdots$
++ the universes are *cumulative* that $A : \mathcal{U}_{i} \Rightarrow A : \mathcal{U}_{i+1}$.
+  * We do not identify indices $i$ with 'natural numbers $\mathbb{N}$ of type theory'. (p.25)
++ $A$ is a *type* $:= \exists i, A : \mathcal{U}_{i}$. When some universe $\mathcal{U}$ is assumed, then types beloning to it is referred as *small types*.
++ *Typical ambiguity*: Usually, we omit $i$ and write $A : \mathcal{U}$. In this way, we simply write $\mathcal{U} : \mathcal{U}$ for $\mathcal{U}_{i} : \mathcal{U}_{i+1}$ for any $i$.
++ *Family of types* (*type family*): models a collections of types varying over a given type by a function $B : A \rightarrow \mathcal{U}$.
++ *constant family type*: given by a constant function $(\lambda (x:A) \, .\, B) : A \rightarrow \mathcal{U}$.
++ _Non-example_: there is no universe large enough to be the codomain of "$\lambda (i:\mathbb{N})\, .\, \mathcal{U}_{i}$".
+
+** 1.4 Dependent function types (\(\Pi\)-types)
+
++ Given $A : \mathcal{U}$ and a family $B : A \rightarrow \mathcal{U}$, the *dependent function type* \(\prod_{(x:A)} B(x) : \mathcal{U}\) can be constructed.
+  + We may write \(\prod_{(x:A)} B(x)\), \(\displaystyle{\prod_{(x:A)} B(x)}\), \( \prod(x:A),\, B(x)\).
+  + If $B$ is a constant family, then we fall back to a function type \(\prod_{(x:A)} B \equiv (A \rightarrow B)\).
++ To define \(f:\prod_{(x:A)} B(x)\), we need an expression $\Phi : B(x)$, possibly involving \(x:A\), and
+  + then write $f(x) :\equiv \Phi$ for $x:A$.
+  + or use /\(\lambda\)-abstraction/ $\lambda x. \, \Phi  : \prod_{x:A} B(x)$.
++ We can *apply* a dependent function $f:\prod_{(x:A)} B(x)$ to an argument $a:A$ to obtain an element $f(a) : B(a)$.
++ $\prod$ scope over the rest of the expression unless delimited with parentheses.
+  + _Example_: $\mathtt{id}:\prod_{(a:\mathcal{U})} A\rightarrow A$ is $\mathtt{id}: \prod_{(a:\mathcal{U})}(A\rightarrow A)$ not $\mathtt{id}:\Big(\prod_{(a:\mathcal{U})}\Big)\rightarrow A$.
++ In general, for +repeated+ dependent function type, each domain may depends on the previous one and the codomain may depend on all.
+  + _Example_: $\prod_{(x:A)} \prod_{(y:B(x))} C(x,y)$.
+  + But when each argument type are independent from each other, as in $\prod_{(A:\mathcal{U})}\prod_{(B:\mathcal{U})} (A\rightarrow B)\rightarrow (B\rightarrow A)$, we can abbreviate it as $\prod_{(A,B:\mathcal{U})}(A\rightarrow B)\rightarrow (B\rightarrow A)$.
+  + _Example_: The domain of $\mathtt{swap}$ is $\prod_{(A:\mathcal{U})} \prod_{(B:\mathcal{U})} \prod_{(C:\mathcal{U})}(A\rightarrow B\rightarrow C)$ and we write it simply as $\prod_{(A,B,C:\mathcal{U})}(A\rightarrow B\rightarrow C)$.
+
+** 1.5 Product types
+
++ General pattern for introduction of types:
+  1) *formation rules*: how to form new types from old types by the type former.
+     + _Example_: \(\cfrac{A:\mathcal{U} \quad B:\mathcal{U}}{A\rightarrow B:\mathcal{U}}\), \( \cfrac{A:\mathcal{U} \quad x:A \vdash B(x):\mathcal{U}}{ \big(\prod_{(x:A)}B(x)\big):\mathcal{U}}\).
+  2) *introduction rules* (*constructors*): how to inhabit the type
+     + _Example_: \(\cfrac{x:A\,\vdash 2x:B}{\vdash \lambda x.\, 2x:A \rightarrow B}\).
+  3) *elimination rules* (*eliminators*): how to use elements of the new type.
+  4) *computation rule* (*\(\boldsymbol{\beta}\)-reduction*): how an eliminator acts on a constructor.
+  5) *uniqueness principle* (*\(\boldsymbol{\eta}\)-expansion*): expresses uniqueness of maps into/out of the new type.
+     + *propositional uniqueness principle* is when a propositional equality is provable from other rules for the type while the uniqueness principle was not provided as a rule.
+
+* Formal Type Theory
+
++ *contextual judgment*
+  + \(\Gamma\, \mathtt{ctx}\) ; \(\Gamma\) is well-formed context, that is defined to be a list of judgments \(x_{1}:A_{1}, x_{2}:A_{2},\ldots,x_{n}:A_{n}\).
+  + Rules:
+    + \(\cfrac{ }{\cdot \, \mathtt{ctx}}\, \mathtt{ctx}\mathrm{-EMP}\)
+    + \(\cfrac{x_{1}:A_{1},\ldots,x_{n-1}:A_{n-1}\, \vdash A_{n}:\mathcal{U}_{i}}{(x_{1}:A_{1},\ldots,x_{n}:A_{n})\, \mathtt{ctx}}\, \mathtt{ctx}\mathrm{-EXT}\).
++ *typing judgment*
+  + \(\Gamma \, \vdash a:A\)
+  + Rules:
+    + \(\cfrac{\Gamma \, \vdash a:A \quad \Gamma, x:A, \Delta \, \vdash b:B}{\Gamma,\Delta[a/x] \, \vdash b[a/x]: B[a/x]}\, \mathtt{Subst}_{\mathtt{1}}\).
+    + \(\cfrac{\Gamma\, \vdash A:\mathcal{U}_{\mathtt{i}}\quad \Gamma,\Delta\, \vdash b:B}{\Gamma,x:A,\Delta\, \vdash b:B} \, \mathtt{Wkg}_{\mathtt{1}}\).
++ *judgmental equality*
+  + \(\Gamma\,\vdash a\equiv a' : A\).
+  + Rules:
+    + \(\cfrac{\Gamma\, \vdash a:A\quad \Gamma,x:A,\Delta\,\vdash b\equiv c:B}{\Gamma,\Delta[a/x]\, \vdash b[a/x]\equiv c[a/x]:B[a/x]}\, \mathtt{Subst}_{\mathtt{2}}\).
+    + \(\cfrac{\Gamma\, \vdash A:\mathcal{U}_{i}\quad \Gamma,\Delta\, \vdash b\equiv c:B}{\Gamma,x:A,\Delta\, \vdash b\equiv c:B}\, \mathtt{Wkg}_{\mathtt{2}}\).
+  + judgmental equality is an equivalence relation respected by typing:
+    + \(\cfrac{\Gamma\, a:A}{\Gamma\, a\equiv a:A}\) ; (element) reflexivity.
+    + \(\cfrac{\Gamma\,\vdash a\equiv b:A}{\Gamma\, \vdash b\equiv a:A}\) ; (element) symmetricity.
+    + \(\cfrac{\Gamma\, \vdash a\equiv b:A \quad \Gamma\, \vdash b\equiv c:A}{\Gamma\, \vdash a\equiv c:A}\) ; (element) transitivity.
+    + \(\cfrac{\Gamma\,\vdash a:A\quad \Gamma\,\vdash A\equiv B:\mathcal{U}_{i}}{\Gamma\,\vdash a:B}\) ;
+    + \(\cfrac{\Gamma\,\vdash a\equiv b:A\quad \Gamma\,\vdash A\equiv B:\mathcal{U}_{i}}{\Gamma\,\vdash a\equiv b:B}\) ;
++ *inference rule*
+  + \(\cfrac{\mathcal{J}_{1}\quad \cdots \quad \mathcal{J}_k}{\mathcal{J}}\, \mathtt{NAME}\) where \(\mathcal{J}_{1},\ldots,\mathcal{J}_{n},\mathcal{J}\) are judgments not types ; given the *hypotheses* \(\mathcal{J}_{1},\ldots,\mathcal{J}_{k}\), the *conclusion* \(\mathcal{J}\) is derived by \(\mathtt{NAME}\).
++ *contextual judgment => typing judgment*
+  + \(\cfrac{ (x_{1}:A_{1},\ldots,x_{n}:A_{n})\, \mathtt{ctx} }{ x_{1}:A_{1},\ldots,x_{n}:A_{n}\, \vdash x_{i}:A_{i}}\, \mathtt{Vble}\).
++ *Type universes*: _We postulate_ the exisence of type universes \(\mathcal{U}_{0},\mathcal{U}_{1},\mathcal{U}_{2},\ldots\) with the following rules:
+  + \(\cfrac{\Gamma\,\mathtt{ctx}}{\Gamma\, \vdash \mathcal{U}_{i}:\mathcal{U}_{i+1}} \mathcal{U}\mathtt{-INTRO} \)
+  + \(\cfrac{\Gamma\, \vdash A:\mathcal{U}_{i}}{\Gamma\, \vdash A:\mathcal{U}_{i+1}}\) \(\mathcal{U}\)-CUMUL.

@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-26 Tue 14:53 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Git Note</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Hyungbo Shim" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My Git Note</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgef80503">1. init</a></li>
+<li><a href="#org6b0cc03">2. config</a></li>
+<li><a href="#org1e3c723">3. status</a></li>
+<li><a href="#org6de7fbc">4. log</a></li>
+<li><a href="#orgea1e5b3">5. add: working tree -&gt; staging area</a></li>
+<li><a href="#orgbb3770a">6. rm: remove from both working tree and the staging area</a></li>
+<li><a href="#orgbafb8fa">7. commit: staging area -&gt; history</a></li>
+<li><a href="#orgab1d961">8. add+commit: working tree -&gt; staging area and history</a></li>
+<li><a href="#orge80c012">9. diff: working tree &lt;-&gt; staging area</a></li>
+<li><a href="#org08f2216">10. diff: staging area &lt;-&gt; history</a></li>
+<li><a href="#org1c4dd99">11. checkout: working tree &lt;- staging area</a></li>
+<li><a href="#org33ca427">12. checkout: working tree and staging area &lt;- history</a></li>
+<li><a href="#org99c7102">13. checkout branch</a></li>
+<li><a href="#orgf7ef527">14. reset: staging area &lt;- history</a></li>
+<li><a href="#orge619642">15. .gitignore</a></li>
+<li><a href="#org426daa4">16. branch: list</a></li>
+<li><a href="#org8f598d5">17. branch: create new</a></li>
+<li><a href="#org12f957b">18. branch: remove</a></li>
+<li><a href="#org79887d4">19. merge: HEAD -&gt; master</a></li>
+<li><a href="#org3d56885">20. stash: save</a></li>
+<li><a href="#org3c8c68b">21. stash: list</a></li>
+<li><a href="#org0992fa9">22. stash: apply</a></li>
+<li><a href="#org2e99697">23. clone</a></li>
+<li><a href="#org046c684">24. remote: add/remove</a></li>
+<li><a href="#org5bc82a1">25. remote: list</a></li>
+<li><a href="#orgb5613b9">26. fetch: local repository &lt;- remote repository</a></li>
+<li><a href="#org5e9cffc">27. push: local repository -&gt; remote repository</a></li>
+<li><a href="#org690adba">28. rebase</a></li>
+<li><a href="#orgb41cd58">29. cherry-pick</a></li>
+<li><a href="#orgd9606a5">30. template</a></li>
+</ul>
+</div>
+</div>
+<p>
+Basics:
+</p>
+
+<ul class="org-ul">
+<li><code>HEAD</code> is the pointer to the <span class="underline">working tree</span></li>
+<li><code>master</code> is the pointer to the <span class="underline">local master branch</span></li>
+<li><code>detached HEAD</code> is the situation where <code>HEAD</code> (current env) is not <code>master</code></li>
+<li><code>WIP</code> means <span class="underline">Work In Progress</span> (stashing)</li>
+<li><code>origin</code> short name for the location of the remote</li>
+<li><code>origin/master</code> is called the <span class="underline">remote tracking branch</span> (what the master branch looks like at <code>origin</code>)</li>
+<li><code>upstream</code>: let A be a repository, B a fork of A, C a local clone of B. Then A is called the <span class="underline">upstream</span></li>
+<li><code>fetch</code> download remote to the local history</li>
+<li><code>push</code> upload the local history to remote</li>
+</ul>
+
+<div id="outline-container-orgef80503" class="outline-2">
+<h2 id="orgef80503"><span class="section-number-2">1</span> init</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-shell">git init
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6b0cc03" class="outline-2">
+<h2 id="org6b0cc03"><span class="section-number-2">2</span> config</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-shell">git config --global user.name <span style="color: #8b2252;">"&lt;NAME&gt;"</span>
+git config -- global user.email <span style="color: #8b2252;">"<a href="mailto:NAME%40EMAIL.ADDRESS">&lt;NAME@EMAIL.ADDRESS&gt;</a>"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">git config --local user.name <span style="color: #8b2252;">"&lt;NAME&gt;"</span>
+git config -- local user.email <span style="color: #8b2252;">"<a href="mailto:NAME%40EMAIL.ADDRESS">&lt;NAME@EMAIL.ADDRESS&gt;</a>"</span>
+</pre>
+</div>
+
+<p>
+To list config:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git config --list
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1e3c723" class="outline-2">
+<h2 id="org1e3c723"><span class="section-number-2">3</span> status</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-shell">git status
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6de7fbc" class="outline-2">
+<h2 id="org6de7fbc"><span class="section-number-2">4</span> log</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-shell">git log
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">git log -p
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">git log -- &lt;FILE&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">git log --all --decorate --oneline --graph
+</pre>
+</div>
+<p>
+It's convenient to alias this command
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea1e5b3" class="outline-2">
+<h2 id="orgea1e5b3"><span class="section-number-2">5</span> add: working tree -&gt; staging area</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+<pre class="src src-shell">git add FILE
+</pre>
+</div>
+
+<p>
+<code>FILE</code> can be a list of files, <code>FILE1 FILE2 FILE3 ...</code>
+<code>.</code> for <code>FILE</code> adds all modified files
+we can use regexp, for eg, <code>S*</code> for all files starting with <code>S</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbb3770a" class="outline-2">
+<h2 id="orgbb3770a"><span class="section-number-2">6</span> rm: remove from both working tree and the staging area</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+<pre class="src src-shell">git rm &lt;FILE&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbafb8fa" class="outline-2">
+<h2 id="orgbafb8fa"><span class="section-number-2">7</span> commit: staging area -&gt; history</h2>
+<div class="outline-text-2" id="text-7">
+<div class="org-src-container">
+<pre class="src src-shell">git commit
+</pre>
+</div>
+
+<p>
+To commit with a short commit message:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git commit -m <span style="color: #8b2252;">"&lt;SHORT COMMIT MESSAGE&gt;"</span>
+</pre>
+</div>
+
+<p>
+To commit without any commit message:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git commit --no-edit
+</pre>
+</div>
+
+<p>
+To amend the last commit:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git commit --amend
+</pre>
+</div>
+<p>
+(This does changes the ID of the last commit. Amending works only for the latest  commit.)
+</p>
+
+<p>
+To commit without
+</p>
+</div>
+</div>
+<div id="outline-container-orgab1d961" class="outline-2">
+<h2 id="orgab1d961"><span class="section-number-2">8</span> add+commit: working tree -&gt; staging area and history</h2>
+<div class="outline-text-2" id="text-8">
+<div class="org-src-container">
+<pre class="src src-shell">git commit -a
+</pre>
+</div>
+
+<p>
+nothing to specify after <code>git rm</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge80c012" class="outline-2">
+<h2 id="orge80c012"><span class="section-number-2">9</span> diff: working tree &lt;-&gt; staging area</h2>
+<div class="outline-text-2" id="text-9">
+<div class="org-src-container">
+<pre class="src src-shell">git diff
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org08f2216" class="outline-2">
+<h2 id="org08f2216"><span class="section-number-2">10</span> diff: staging area &lt;-&gt; history</h2>
+<div class="outline-text-2" id="text-10">
+<div class="org-src-container">
+<pre class="src src-shell">git diff --staged
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c4dd99" class="outline-2">
+<h2 id="org1c4dd99"><span class="section-number-2">11</span> checkout: working tree &lt;- staging area</h2>
+<div class="outline-text-2" id="text-11">
+<div class="org-src-container">
+<pre class="src src-shell">git checkout -- &lt;FILE&gt;
+</pre>
+</div>
+
+<p>
+To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git checkout &lt;HASH&gt;
+</pre>
+</div>
+
+<p>
+<code>&lt;HASH&gt;</code> can be the first five characters
+</p>
+</div>
+</div>
+
+<div id="outline-container-org33ca427" class="outline-2">
+<h2 id="org33ca427"><span class="section-number-2">12</span> checkout: working tree and staging area &lt;- history</h2>
+<div class="outline-text-2" id="text-12">
+<div class="org-src-container">
+<pre class="src src-shell">git checkout &lt;HASH&gt; -- &lt;FILE&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org99c7102" class="outline-2">
+<h2 id="org99c7102"><span class="section-number-2">13</span> checkout branch</h2>
+<div class="outline-text-2" id="text-13">
+<div class="org-src-container">
+<pre class="src src-shell">git chekout &lt;BRANCH NAME&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf7ef527" class="outline-2">
+<h2 id="orgf7ef527"><span class="section-number-2">14</span> reset: staging area &lt;- history</h2>
+<div class="outline-text-2" id="text-14">
+<div class="org-src-container">
+<pre class="src src-shell">git reset HEAD &lt;FILE&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge619642" class="outline-2">
+<h2 id="orge619642"><span class="section-number-2">15</span> .gitignore</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+<code>.gitignore</code> lists of files that should be ignored. we can use regexp. a whole folder is indicated by <code>&lt;FOLDER&gt;/</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org426daa4" class="outline-2">
+<h2 id="org426daa4"><span class="section-number-2">16</span> branch: list</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+To list all branches:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git branch
+</pre>
+</div>
+
+<p>
+To list merged branches:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git branch --merged
+</pre>
+</div>
+
+<p>
+To list local and remote branches:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git branch -a
+</pre>
+</div>
+
+<p>
+To list remote tracking branches only:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git branch -r
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f598d5" class="outline-2">
+<h2 id="org8f598d5"><span class="section-number-2">17</span> branch: create new</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+To create a new branch from HEAD:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git branch &lt;BRANCH NAME&gt;
+</pre>
+</div>
+
+<p>
+To create + checkout -&gt; new branch:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git branch -b &lt;BRANCH NAME&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org12f957b" class="outline-2">
+<h2 id="org12f957b"><span class="section-number-2">18</span> branch: remove</h2>
+<div class="outline-text-2" id="text-18">
+<div class="org-src-container">
+<pre class="src src-shell">git branch -d &lt;BRANCH&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79887d4" class="outline-2">
+<h2 id="org79887d4"><span class="section-number-2">19</span> merge: HEAD -&gt; master</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+To merge &lt;BRANCH&gt; into master:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git merge &lt;BRANCH&gt;
+</pre>
+</div>
+<p>
+The response can be different depending on the strategy:
+</p>
+<ul class="org-ul">
+<li>fast-forward</li>
+<li><p>
+three-way (recursive)
+</p>
+<ul class="org-ul">
+<li>In case of conflict, files with conflict get modified with diff contents. We can check and resolve these conflict by opening those files. When doing this, we also need to delete git markers.</li>
+<li>After conflicts are resolved, do <code>git status</code>.</li>
+<li>Aborting the merge process will restore the original file contents:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-shell">git merge --abort
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3d56885" class="outline-2">
+<h2 id="org3d56885"><span class="section-number-2">20</span> stash: save</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+To save working directory without staging:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git stash
+</pre>
+</div>
+
+<p>
+To stash with comment:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git stash save <span style="color: #8b2252;">"&lt;comment&gt;"</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c8c68b" class="outline-2">
+<h2 id="org3c8c68b"><span class="section-number-2">21</span> stash: list</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+To list all stashes:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git stash list
+</pre>
+</div>
+
+<p>
+To list all stashes with changes:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git stash list -p
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0992fa9" class="outline-2">
+<h2 id="org0992fa9"><span class="section-number-2">22</span> stash: apply</h2>
+<div class="outline-text-2" id="text-22">
+<div class="org-src-container">
+<pre class="src src-shell">git stash apply
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">git stash apply &lt;LABEL&gt;
+</pre>
+</div>
+<p>
+Here, <code>&lt;LABEL&gt;</code> is the one given by <code>stash list</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e99697" class="outline-2">
+<h2 id="org2e99697"><span class="section-number-2">23</span> clone</h2>
+<div class="outline-text-2" id="text-23">
+<div class="org-src-container">
+<pre class="src src-shell">git clone git@github.com:name/git.git
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org046c684" class="outline-2">
+<h2 id="org046c684"><span class="section-number-2">24</span> remote: add/remove</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+To add a new remote:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git remote add origin &lt;REMOTE REPOSITORY URL&gt;
+</pre>
+</div>
+
+
+<p>
+To add upstream:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git remote add upstream &lt;UPSTREAM REPOSITORY URL&gt;
+</pre>
+</div>
+
+<p>
+To remove:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git remote remove &lt;REMOTE NAME&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5bc82a1" class="outline-2">
+<h2 id="org5bc82a1"><span class="section-number-2">25</span> remote: list</h2>
+<div class="outline-text-2" id="text-25">
+<p>
+To list remotes (short names only):
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git remote
+</pre>
+</div>
+
+<p>
+To list remotes (short and full names only):
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git remote
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5613b9" class="outline-2">
+<h2 id="orgb5613b9"><span class="section-number-2">26</span> fetch: local repository &lt;- remote repository</h2>
+<div class="outline-text-2" id="text-26">
+<div class="org-src-container">
+<pre class="src src-shell">git fetch origin
+</pre>
+</div>
+<p>
+Note that this does not affect local/HEAD. We need to merge, eg. <code>git merge origin/master</code> later.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">git fetch upstream
+</pre>
+</div>
+
+<p>
+To fetch and merge:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git pull
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5e9cffc" class="outline-2">
+<h2 id="org5e9cffc"><span class="section-number-2">27</span> push: local repository -&gt; remote repository</h2>
+<div class="outline-text-2" id="text-27">
+<div class="org-src-container">
+<pre class="src src-shell">git push &lt;REMOTE REPOSITORY&gt; &lt;LOCAL BRANCH&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org690adba" class="outline-2">
+<h2 id="org690adba"><span class="section-number-2">28</span> rebase</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+To "operate on" the last &lt;n&gt; commits back from HEAD:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git rebase -i HEAD~&lt;n&gt;
+</pre>
+</div>
+<p>
+(<code>-i</code> indicates "interactive".)
+</p>
+
+<p>
+Interactive commands:
+</p>
+<ul class="org-ul">
+<li><code>reword</code>: edit commit message</li>
+<li><code>drop</code>: remove commit</li>
+</ul>
+<p>
+We can also reorder commits by changing the order of the lines.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb41cd58" class="outline-2">
+<h2 id="orgb41cd58"><span class="section-number-2">29</span> cherry-pick</h2>
+</div>
+
+<div id="outline-container-orgd9606a5" class="outline-2">
+<h2 id="orgd9606a5"><span class="section-number-2">30</span> template</h2>
+<div class="outline-text-2" id="text-30">
+<div class="org-src-container">
+<pre class="src src-shell">
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: Tue May 26 12:21:12 2020</p>
+<p class="author">Author: Hyungbo Shim</p>
+<p class="date">Created: 2020-05-26 Tue 14:53</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+===========
+My Git Note
+===========
+
+    :Author: Hyungbo Shim
+    :Date: Tue May 26 12:21:12 2020
+
+.. contents::
+
+Basics:
+
+- ``HEAD`` is the pointer to the working tree
+
+- ``master`` is the pointer to the local master branch
+
+- ``detached HEAD`` is the situation where ``HEAD`` (current env) is not ``master``
+
+- ``WIP`` means Work In Progress (stashing)
+
+- ``origin`` short name for the location of the remote
+
+- ``origin/master`` is called the remote tracking branch (what the master branch looks like at ``origin``)
+
+- ``upstream``: let A be a repository, B a fork of A, C a local clone of B. Then A is called the upstream
+
+- ``fetch`` download remote to the local history
+
+- ``push`` upload the local history to remote
+
+1 init
+------
+
+.. code:: shell
+
+    git init
+
+2 config
+--------
+
+.. code:: shell
+
+    git config --global user.name "<NAME>"
+    git config -- global user.email "<NAME@EMAIL.ADDRESS>"
+
+.. code:: shell
+
+    git config --local user.name "<NAME>"
+    git config -- local user.email "<NAME@EMAIL.ADDRESS>"
+
+To list config:
+
+.. code:: shell
+
+    git config --list
+
+3 status
+--------
+
+.. code:: shell
+
+    git status
+
+4 log
+-----
+
+.. code:: shell
+
+    git log
+
+.. code:: shell
+
+    git log -p
+
+.. code:: shell
+
+    git log -- <FILE>
+
+.. code:: shell
+
+    git log --all --decorate --oneline --graph
+
+It's convenient to alias this command
+
+5 add: working tree -> staging area
+-----------------------------------
+
+.. code:: shell
+
+    git add FILE
+
+``FILE`` can be a list of files, ``FILE1 FILE2 FILE3 ...``
+we can use regexp, for eg, ``S*`` for all files starting with ``S``
+
+To add all modified files
+
+.. code:: shell
+
+    git add .
+
+6 rm: remove from both working tree and the staging area
+--------------------------------------------------------
+
+.. code:: shell
+
+    git rm <FILE>
+
+7 commit: staging area -> history
+---------------------------------
+
+.. code:: shell
+
+    git commit
+
+To commit with a short commit message:
+
+.. code:: shell
+
+    git commit -m "<SHORT COMMIT MESSAGE>"
+
+To commit without any commit message:
+
+.. code:: shell
+
+    git commit --no-edit
+
+To amend the last commit:
+
+.. code:: shell
+
+    git commit --amend
+
+(This does changes the ID of the last commit. Amending works only for the latest  commit.)
+
+To commit without
+
+8 add+commit: working tree -> staging area and history
+------------------------------------------------------
+
+.. code:: shell
+
+    git commit -a
+
+nothing to specify after ``git rm``
+
+9 diff: working tree <-> staging area
+-------------------------------------
+
+.. code:: shell
+
+    git diff
+
+10 diff: staging area <-> history
+---------------------------------
+
+.. code:: shell
+
+    git diff --staged
+
+11 checkout: working tree <- staging area
+-----------------------------------------
+
+.. code:: shell
+
+    git checkout -- <FILE>
+
+To place HEAD (i.e., to retrieve) to the state <HASH>:
+
+.. code:: shell
+
+    git checkout <HASH>
+
+``<HASH>`` can be the first five characters
+
+12 checkout: working tree and staging area <- history
+-----------------------------------------------------
+
+.. code:: shell
+
+    git checkout <HASH> -- <FILE>
+
+13 checkout branch
+------------------
+
+.. code:: shell
+
+    git chekout <BRANCH NAME>
+
+14 reset: staging area <- history
+---------------------------------
+
+.. code:: shell
+
+    git reset HEAD <FILE>
+
+15 .gitignore
+-------------
+
+``.gitignore`` lists of files that should be ignored. we can use regexp. a whole folder is indicated by ``<FOLDER>/``
+
+16 branch: list
+---------------
+
+To list all branches:
+
+.. code:: shell
+
+    git branch
+
+To list merged branches:
+
+.. code:: shell
+
+    git branch --merged
+
+To list local and remote branches:
+
+.. code:: shell
+
+    git branch -a
+
+To list remote tracking branches only:
+
+.. code:: shell
+
+    git branch -r
+
+17 branch: create new
+---------------------
+
+To create a new branch from HEAD:
+
+.. code:: shell
+
+    git branch <BRANCH NAME>
+
+To create + checkout -> new branch:
+
+.. code:: shell
+
+    git branch -b <BRANCH NAME>
+
+18 branch: remove
+-----------------
+
+.. code:: shell
+
+    git branch -d <BRANCH>
+
+19 merge: HEAD -> master
+------------------------
+
+To merge <BRANCH> into master:
+
+.. code:: shell
+
+    git merge <BRANCH>
+
+The response can be different depending on the strategy:
+
+- fast-forward
+
+- three-way (recursive)
+
+  - In case of conflict, files with conflict get modified with diff contents. We can check and resolve these conflict by opening those files. When doing this, we also need to delete git markers.
+
+  - After conflicts are resolved, do ``git status``.
+
+  - Aborting the merge process will restore the original file contents:
+
+  .. code:: shell
+
+      git merge --abort
+
+20 stash: save
+--------------
+
+To save working directory without staging:
+
+.. code:: shell
+
+    git stash
+
+To stash with comment:
+
+.. code:: shell
+
+    git stash save "<comment>"
+
+21 stash: list
+--------------
+
+To list all stashes:
+
+.. code:: shell
+
+    git stash list
+
+To list all stashes with changes:
+
+.. code:: shell
+
+    git stash list -p
+
+22 stash: apply
+---------------
+
+.. code:: shell
+
+    git stash apply
+
+.. code:: shell
+
+    git stash apply <LABEL>
+
+Here, ``<LABEL>`` is the one given by ``stash list``
+
+23 clone
+--------
+
+.. code:: shell
+
+    git clone git@github.com:name/git.git
+
+24 remote: add/remove
+---------------------
+
+To add a new remote:
+
+.. code:: shell
+
+    git remote add origin <REMOTE REPOSITORY URL>
+
+
+To add upstream:
+
+.. code:: shell
+
+    git remote add upstream <UPSTREAM REPOSITORY URL>
+
+To remove:
+
+.. code:: shell
+
+    git remote remove <REMOTE NAME>
+
+After modifying remote/upstream, run ``git remote -v`` to verify.
+
+25 remote: list
+---------------
+
+To list remotes (short names only):
+
+.. code:: shell
+
+    git remote
+
+To list remotes (short and full names only):
+
+.. code:: shell
+
+    git remote
+
+To list remotes verbosely:
+
+.. code:: shell
+
+    git remote -v
+
+26 fetch: local repository <- remote repository
+-----------------------------------------------
+
+.. code:: shell
+
+    git fetch origin
+
+Note that this does not affect local/HEAD. We need to merge, eg. ``git merge origin/master`` later.
+
+.. code:: shell
+
+    git fetch upstream
+
+To fetch and merge:
+
+.. code:: shell
+
+    git pull
+
+27 push: local repository -> remote repository
+----------------------------------------------
+
+.. code:: shell
+
+    git push <REMOTE REPOSITORY: eg. origin> <LOCAL BRANCH: eg. master>
+
+28 rebase
+---------
+
+To "operate on" the last <n> commits back from HEAD:
+
+.. code:: shell
+
+    git rebase -i HEAD~<n>
+
+(``-i`` indicates "interactive".)
+
+Interactive commands:
+
+- ``reword``: edit commit message
+
+- ``drop``: remove commit
+
+We can also reorder commits by changing the order of the lines.
+
+29 cherry-pick
+--------------
+
+30 template
+-----------

@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-16 Sat 03:01 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="HYUNGBO SHIM" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgad67e95">1. MacOS window programming</a>
+<ul>
+<li><a href="#org3cc9b44">1.1. <code>AppDelegate</code></a></li>
+<li><a href="#org3f7f380">1.2. <code>NSManagedObjectContext</code></a></li>
+<li><a href="#orgca0e1ee">1.3. <code>ViewController</code></a></li>
+<li><a href="#org9d4d129">1.4. <code>NSEvent.EventTypeMask</code></a></li>
+</ul>
+</li>
+<li><a href="#org8c19563">2. Swift</a>
+<ul>
+<li><a href="#org791eb55">2.1. Class</a></li>
+<li><a href="#org92006ef">2.2. Computed property</a></li>
+<li><a href="#orgaf91c92">2.3. Constant</a></li>
+<li><a href="#orgd378a4b">2.4. Constant stored property</a></li>
+<li><a href="#orgc283757">2.5. Default property value</a></li>
+<li><a href="#org19c9ac3">2.6. Enumeration</a></li>
+<li><a href="#orgdedb9c4">2.7. <code>EnvironmentObject</code></a></li>
+<li><a href="#org2186f61">2.8. Getter</a></li>
+<li><a href="#orga18e307">2.9. Initialization</a></li>
+<li><a href="#org2dff4cb">2.10. Instance</a></li>
+<li><a href="#org3ed1346">2.11. Instance variables</a></li>
+<li><a href="#orgaac31e1">2.12. Lazy stored property</a></li>
+<li><a href="#orgdca8e41">2.13. Methods</a></li>
+<li><a href="#orgd23e32b">2.14. Properties</a></li>
+<li><a href="#orgb2783d2">2.15. Property observer</a></li>
+<li><a href="#org2e76aef">2.16. Property wrapper</a></li>
+<li><a href="#org06e97e8">2.17. Setter</a></li>
+<li><a href="#orgfeabe92">2.18. Stored property</a></li>
+<li><a href="#org4abd512">2.19. Structure</a></li>
+<li><a href="#org81dfdc2">2.20. Type property</a></li>
+<li><a href="#orgcac9405">2.21. Value Type</a></li>
+<li><a href="#org2701c31">2.22. Variable property</a></li>
+<li><a href="#orgfd79a01">2.23. Variable stored property</a></li>
+</ul>
+</li>
+<li><a href="#org5b69838">3. Classes</a>
+<ul>
+<li><a href="#org4bc4859">3.1. <code>class QLPreviewPanel : NSPanel</code></a></li>
+<li><a href="#org774eb1b">3.2. <code>class NSPanel : NSWindow</code></a></li>
+<li><a href="#org3461163">3.3. <code>class NSWindow : NSResponder</code></a></li>
+<li><a href="#org8f61875">3.4. <code>class NSWindow</code></a></li>
+<li><a href="#orga22461f">3.5. <code>class NSView : NSResponder</code></a></li>
+<li><a href="#orgb728a29">3.6. <code>setFloatingPanel:</code></a></li>
+<li><a href="#orgb6f2f71">3.7. method <code>hidesOnDeactivate</code></a></li>
+<li><a href="#org30f84da">3.8. method <code>setBecomesKeyOnlyIfNeeded:</code></a></li>
+<li><a href="#orga815270">3.9. method <code>setworkswhenmodal:</code></a></li>
+<li><a href="#org4fce13a">3.10. method <code>setContentView:</code></a></li>
+<li><a href="#orgbb86f97">3.11. method <code>applicationDidFinishLaunching(_:)</code> (don't use)</a></li>
+<li><a href="#org06193f3">3.12. method <code>application(_:didFinishLaunchingWithOptions:)</code></a></li>
+<li><a href="#orgf2bba18">3.13. method <code>addGlobalMonitorForEvents(matching:handler:)</code></a></li>
+</ul>
+</li>
+<li><a href="#org804e6a3">4. Concepts</a>
+<ul>
+<li><a href="#org59e9e37">4.1. delegate</a></li>
+<li><a href="#org406ebdb">4.2. event mask</a></li>
+<li><a href="#org978386a">4.3. floating</a></li>
+<li><a href="#orgdf3f52e">4.4. function</a></li>
+<li><a href="#orgd404465">4.5. key window</a></li>
+<li><a href="#org6c43bd8">4.6. modal window</a></li>
+<li><a href="#org6b8310f">4.7. palette</a></li>
+<li><a href="#orgb204182">4.8. panel</a></li>
+<li><a href="#org25ebffa">4.9. parameter (of a function)</a></li>
+<li><a href="#org54c699e">4.10. parameter label (or an argument label)</a></li>
+<li><a href="#org9fe6207">4.11. window</a></li>
+<li><a href="#orgdb2dcdf">4.12. window initializer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgad67e95" class="outline-2">
+<h2 id="orgad67e95"><span class="section-number-2">1</span> MacOS window programming</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org3cc9b44" class="outline-3">
+<h3 id="org3cc9b44"><span class="section-number-3">1.1</span> <code>AppDelegate</code></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>handles app initialization, state transitions, and many high-level app events.</li>
+<li>used for the whole app, you can use it to manage the app life cycle, on the other hand, <code>ViewController</code> is used for a single view. you can use it to manage life cycle of a view. One app can have multiple views. but only one <code>AppDelegate</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f7f380" class="outline-3">
+<h3 id="org3f7f380"><span class="section-number-3">1.2</span> <code>NSManagedObjectContext</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>this is a fundamental concept of Core Data. It is like transaction in a relational data. You can fetch objects, you can create objects, update and delete them, save them back to the persistent store, etc. Basically for all the core data operations, you will need to interact with <code>NSManagedObjectContext</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgca0e1ee" class="outline-3">
+<h3 id="orgca0e1ee"><span class="section-number-3">1.3</span> <code>ViewController</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>While <code>AppDelegate</code> is used for the whole app and can be used to manage the app life cycle,  <code>ViewController</code> is used for a single view. you can use it to manage life cycle of a view. One app can have multiple views. but only one <code>AppDelegate</code>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9d4d129" class="outline-3">
+<h3 id="org9d4d129"><span class="section-number-3">1.4</span> <code>NSEvent.EventTypeMask</code></h3>
+</div>
+</div>
+
+<div id="outline-container-org8c19563" class="outline-2">
+<h2 id="org8c19563"><span class="section-number-2">2</span> Swift</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The reference: <a href="https://docs.swift.org/swift-book/LanguageGuide/Properties.html">https://docs.swift.org/swift-book/LanguageGuide/Properties.html</a>
+</p>
+</div>
+<div id="outline-container-org791eb55" class="outline-3">
+<h3 id="org791eb55"><span class="section-number-3">2.1</span> Class</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Data structures: class, structure, enumeration</li>
+<li>Properties associate values with a particular class, structure, or enumeration.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org92006ef" class="outline-3">
+<h3 id="org92006ef"><span class="section-number-3">2.2</span> Computed property</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>See <a href="#orgd23e32b">Properties</a></li>
+<li>Computed properties provide a <b>getter</b> and an optional <b>setter</b> to retrieve and set other properties and values indirectly.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaf91c92" class="outline-3">
+<h3 id="orgaf91c92"><span class="section-number-3">2.3</span> Constant</h3>
+</div>
+<div id="outline-container-orgd378a4b" class="outline-3">
+<h3 id="orgd378a4b"><span class="section-number-3">2.4</span> Constant stored property</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>See <a href="#orgfeabe92">Stored property</a></li>
+<li>Like <a href="#orgc283757">default property values</a> we can set and modify the default property value during initialization.</li>
+<li>Constant properties must always have a value before initialization completes, and therefore cannot be declared as lazy.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc283757" class="outline-3">
+<h3 id="orgc283757"><span class="section-number-3">2.5</span> Default property value</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>See <a href="#orgfeabe92">Stored property</a></li>
+<li>We can set and modify the default property value during initialization.</li>
+<li>A <b><a href="#orgaac31e1">lazy stored property</a></b> is a property whose initial value is not calculated until the first time it is used.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org19c9ac3" class="outline-3">
+<h3 id="org19c9ac3"><span class="section-number-3">2.6</span> Enumeration</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>Data structures: class, structure, enumeration</li>
+<li>Properties associate values with a particular class, structure, or enumeration.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdedb9c4" class="outline-3">
+<h3 id="orgdedb9c4"><span class="section-number-3">2.7</span> <code>EnvironmentObject</code></h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>A property wrapper type for an observable object supplied by a parent or ancestor view.</li>
+<li><p>
+Declaration:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">@frozen @propertyWrapper struct EnvironmentObject&lt;ObjectType&gt; where ObjectType : ObservableObject
+</pre>
+</div></li>
+<li>Overview: An environment object invalidates the current view whenever the observable object changes. If you declare a property as an environment object, be sure to set a corresponding model object on an ancestor view by calling its <code>environmentObject(_:)</code> method.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2186f61" class="outline-3">
+<h3 id="org2186f61"><span class="section-number-3">2.8</span> Getter</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>See <a href="#org92006ef">Computed property</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga18e307" class="outline-3">
+<h3 id="orga18e307"><span class="section-number-3">2.9</span> Initialization</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li>We can set and modify the <a href="#orgc283757">default property value</a> and <a href="#orgd378a4b">constant stored property</a> during initialization.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2dff4cb" class="outline-3">
+<h3 id="org2dff4cb"><span class="section-number-3">2.10</span> Instance</h3>
+<div class="outline-text-3" id="text-2-10">
+<ul class="org-ul">
+<li><a href="#orgd23e32b">Properties</a> are usually associated with instances of a particular type.</li>
+<li>An instance may be associated <code>to</code> a constant. See <a href="#org2701c31">Variable property</a>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3ed1346" class="outline-3">
+<h3 id="org3ed1346"><span class="section-number-3">2.11</span> Instance variables</h3>
+<div class="outline-text-3" id="text-2-11">
+<ul class="org-ul">
+<li>In addition to properties, you can use <b>instance variables</b> as a backing store for the values stored in a property.</li>
+<li>Swift unifies these concepts (properties and instance variables) into a single property declaration.</li>
+<li>A Swift property does not have a corresponding instance variable, and the backing store for a property is not accessed directly.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaac31e1" class="outline-3">
+<h3 id="orgaac31e1"><span class="section-number-3">2.12</span> Lazy stored property</h3>
+<div class="outline-text-3" id="text-2-12">
+<ul class="org-ul">
+<li>A <b>lazy stored property</b> is a property whose initial value is not calculated until the first time it is used. You indicate a lazy stored property by writing the <code>lazy</code> modifier before its declaration.</li>
+<li>Lazy properties are useful when the initial value for a property is dependent on outside factors whose values are not known until after an instance’s initialization is complete.</li>
+<li>Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that should not be performed unless or until it is needed.</li>
+<li>You must always declare a lazy property as a variable (with the <code>var</code> keyword), because its initial value might not be retrieved until after instance initialization completes.</li>
+<li>Constant properties must always have a value before initialization completes, and therefore cannot be declared as lazy.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdca8e41" class="outline-3">
+<h3 id="orgdca8e41"><span class="section-number-3">2.13</span> Methods</h3>
+<div class="outline-text-3" id="text-2-13">
+<ul class="org-ul">
+<li><a href="file:///Users/hbshim/org/~environmentObject(_:)~"><code>environmentObject(_:)</code></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd23e32b" class="outline-3">
+<h3 id="orgd23e32b"><span class="section-number-3">2.14</span> Properties</h3>
+<div class="outline-text-3" id="text-2-14">
+<ul class="org-ul">
+<li><b>Properties</b> associate values with a particular class, structure, or enumeration. Properties are usually associated with instances of a particular type. Moreover they can also be associated with the type itself. Such properties are known as <b>type properties</b>.</li>
+<li>Properties can be modified but there is some situation where it can't be. See <a href="#org2701c31">Variable property</a>.</li>
+<li><b>Stored properties</b> store constant and variable values as part of an instance, whereas <b>computed properties</b> calculate (rather than store) a value.</li>
+<li>(Stored?) properties of a subclass can be <b>inherited from</b> its superclass</li>
+<li><b>Computed properties</b> are provided by classes, structures, and enumerations. <b>Stored properties</b> are provided only by classes and structures.</li>
+<li><b>Property observers</b> monitor changes in a property’s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2783d2" class="outline-3">
+<h3 id="orgb2783d2"><span class="section-number-3">2.15</span> Property observer</h3>
+<div class="outline-text-3" id="text-2-15">
+<ul class="org-ul">
+<li><b>Property observers</b> monitor changes in a property’s value, which you can respond to with custom actions.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2e76aef" class="outline-3">
+<h3 id="org2e76aef"><span class="section-number-3">2.16</span> Property wrapper</h3>
+<div class="outline-text-3" id="text-2-16">
+<ul class="org-ul">
+<li>You can also use a <b>property wrapper</b> to reuse code in the getter and setter of multiple properties.</li>
+<li><a href="#orgdedb9c4"><code>EnvironmentObject</code></a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org06e97e8" class="outline-3">
+<h3 id="org06e97e8"><span class="section-number-3">2.17</span> Setter</h3>
+<div class="outline-text-3" id="text-2-17">
+<ul class="org-ul">
+<li>See <a href="#org92006ef">Computed property</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfeabe92" class="outline-3">
+<h3 id="orgfeabe92"><span class="section-number-3">2.18</span> Stored property</h3>
+<div class="outline-text-3" id="text-2-18">
+<ul class="org-ul">
+<li>See <a href="#orgd23e32b">Properties</a></li>
+<li>A stored property is a constant or variable that is stored as part of an instance of a particular class or structure.</li>
+<li>Stored properties can be either <b>variable stored properties</b> (introduced by the <code>var</code> keyword) or <b>constant stored properties</b> (introduced by the <code>let</code> keyword).</li>
+<li>You can provide a default value for a stored property, called <b><a href="#orgc283757">default property values</a></b>, as part of its definition.</li>
+<li>A <b><a href="#orgaac31e1">lazy stored property</a></b> is a property whose initial value is not calculated until the first time it is used.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4abd512" class="outline-3">
+<h3 id="org4abd512"><span class="section-number-3">2.19</span> Structure</h3>
+<div class="outline-text-3" id="text-2-19">
+<ul class="org-ul">
+<li>Data structures: class, structure, enumeration</li>
+<li>Properties associate values with a particular class, structure, or enumeration.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81dfdc2" class="outline-3">
+<h3 id="org81dfdc2"><span class="section-number-3">2.20</span> Type property</h3>
+<div class="outline-text-3" id="text-2-20">
+<ul class="org-ul">
+<li>See <a href="#orgd23e32b">Properties</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcac9405" class="outline-3">
+<h3 id="orgcac9405"><span class="section-number-3">2.21</span> Value Type</h3>
+<div class="outline-text-3" id="text-2-21">
+<ul class="org-ul">
+<li>When an instance of a value type is marked as a constant, so are all of its properties.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2701c31" class="outline-3">
+<h3 id="org2701c31"><span class="section-number-3">2.22</span> Variable property</h3>
+<div class="outline-text-3" id="text-2-22">
+<ul class="org-ul">
+<li>(non-variable) If you create an instance of a structure and assign that instance to a <a href="#orgaf91c92">constant</a>, you cannot modify the instance’s properties, even if they were declared as variable properties.</li>
+<li>(non-variable) When an instance of a <a href="#orgcac9405">value type</a> is marked as a constant, so are all of its properties.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd79a01" class="outline-3">
+<h3 id="orgfd79a01"><span class="section-number-3">2.23</span> Variable stored property</h3>
+<div class="outline-text-3" id="text-2-23">
+<ul class="org-ul">
+<li>See <a href="#orgfeabe92">Stored property</a></li>
+<li>You must always declare a lazy property as a variable (with the <code>var</code> keyword), because its initial value might not be retrieved until after instance initialization completes.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5b69838" class="outline-2">
+<h2 id="org5b69838"><span class="section-number-2">3</span> Classes</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org4bc4859" class="outline-3">
+<h3 id="org4bc4859"><span class="section-number-3">3.1</span> <code>class QLPreviewPanel : NSPanel</code></h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>The QLPreviewPanel class implements the Quick Look preview panel—a user interface object that displays the preview of a list of items.</li>
+<li><a href="https://developer.apple.com/documentation/quartz/qlpreviewpanel">https://developer.apple.com/documentation/quartz/qlpreviewpanel</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org774eb1b" class="outline-3">
+<h3 id="org774eb1b"><span class="section-number-3">3.2</span> <code>class NSPanel : NSWindow</code></h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>A special kind of window that typically performs a function that is auxiliary to the main window.</li>
+<li>For details about how panels work (especially to find out how their behavior differs from window behavior), see <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/WinPanel/Concepts/UsingPanels.html#//apple_ref/doc/uid/20000224">How Panels Work</a>.</li>
+<li><a href="https://developer.apple.com/documentation/appkit/nspanel">https://developer.apple.com/documentation/appkit/nspanel</a></li>
+<li>By default panels are not released when they’re closed, because they’re usually lightweight and often reused.</li>
+<li>Onscreen panels, except for alert dialogs, are removed from the screen when the application isn’t active and are restored when the application again becomes active. Specifically, the <code>NSWindow</code> implementation of the <code>hidesOnDeactivate</code> method returns NO, but the <code>NSPanel</code> implementation of the same method returns YES.</li>
+<li>Panels can become the key window, but they cannot become the main window.</li>
+<li>If a panel is the key window and has a close button, it closes itself when the user presses the Escape key.</li>
+<li>You can prevent a panel from becoming the key window unless the user clicks in a view that responds to typing. This prevents the key window from shifting to the panel unnecessarily. The <code>setBecomesKeyOnlyIfNeeded:</code> method controls this behavior.</li>
+<li>Palettes and similar panels can be made to float above standard windows and other panels. This prevents them from being covered and keeps them readily available to the user. The <code>setFloatingPanel:</code> method controls this behavior.</li>
+<li>A panel can be made to receive mouse and keyboard events even when another window or panel is being run modally or in a modal session. This permits actions in the panel to affect the modal window or panel. The <code>setWorksWhenModal:</code> method controls this behavior. See <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/WinPanel/Concepts/UsingModalWindows.html#//apple_ref/doc/uid/20000223-CJBEADBA">How Modal Windows Work</a> for more information on modal windows and panels.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3461163" class="outline-3">
+<h3 id="org3461163"><span class="section-number-3">3.3</span> <code>class NSWindow : NSResponder</code></h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>The <code>NSWindow</code> class defines objects that manage and coordinate the windows an application displays on the screen.</li>
+<li>An <code>NSWindow</code> object is defined by a frame rectangle that encloses the entire window, including its title bar, border, and other peripheral elements (such as the resize control), and by a content rectangle that encloses just its content area.</li>
+<li>Overview: A single <code>NSWindow</code> object corresponds to at most one onscreen window. The two principal functions of a window are to provide an area in which views can be placed and to accept and distribute, to the appropriate views, events the user instigates through actions with the mouse and keyboard.</li>
+<li><a href="https://developer.apple.com/documentation/appkit/nswindow">https://developer.apple.com/documentation/appkit/nswindow</a></li>
+<li>The two principal functions of an <code>NSWindow</code> object are to provide an area in which <code>NSView</code> objects can be placed and to accept and distribute, to the appropriate views, events the user instigates through actions with the mouse and keyboard.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f61875" class="outline-3">
+<h3 id="org8f61875"><span class="section-number-3">3.4</span> <code>class NSWindow</code></h3>
+</div>
+<div id="outline-container-orga22461f" class="outline-3">
+<h3 id="orga22461f"><span class="section-number-3">3.5</span> <code>class NSView : NSResponder</code></h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li><a href="https://developer.apple.com/documentation/appkit/nsview">https://developer.apple.com/documentation/appkit/nsview</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb728a29" class="outline-3">
+<h3 id="orgb728a29"><span class="section-number-3">3.6</span> <a href="file:///Users/hbshim/org/~setFloatingPanel:~"><code>setFloatingPanel:</code></a></h3>
+</div>
+<div id="outline-container-orgb6f2f71" class="outline-3">
+<h3 id="orgb6f2f71"><span class="section-number-3">3.7</span> method <code>hidesOnDeactivate</code></h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li>the <code>NSWindow</code> implementation of the <code>hidesOnDeactivate</code> method returns NO, but the <code>NSPanel</code> implementation of the same method returns YES.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org30f84da" class="outline-3">
+<h3 id="org30f84da"><span class="section-number-3">3.8</span> method <code>setBecomesKeyOnlyIfNeeded:</code></h3>
+</div>
+<div id="outline-container-orga815270" class="outline-3">
+<h3 id="orga815270"><span class="section-number-3">3.9</span> method <a href="file:///Users/hbshim/org/~setWorksWhenModal:~"><code>setworkswhenmodal:</code></a></h3>
+</div>
+<div id="outline-container-org4fce13a" class="outline-3">
+<h3 id="org4fce13a"><span class="section-number-3">3.10</span> method <a href="file:///Users/hbshim/org/~setContentView:~"><code>setContentView:</code></a></h3>
+</div>
+<div id="outline-container-orgbb86f97" class="outline-3">
+<h3 id="orgbb86f97"><span class="section-number-3">3.11</span> method <code>applicationDidFinishLaunching(_:)</code> (don't use)</h3>
+<div class="outline-text-3" id="text-3-11">
+<ul class="org-ul">
+<li>Tells the delegate when the app has finished launching. Don’t use. Instead, use <code>application(_:didFinishLaunchingWithOptions:)</code>.</li>
+<li><a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623053-applicationdidfinishlaunching">https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623053-applicationdidfinishlaunching</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org06193f3" class="outline-3">
+<h3 id="org06193f3"><span class="section-number-3">3.12</span> method <code>application(_:didFinishLaunchingWithOptions:)</code></h3>
+<div class="outline-text-3" id="text-3-12">
+<ul class="org-ul">
+<li><a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application">https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf2bba18" class="outline-3">
+<h3 id="orgf2bba18"><span class="section-number-3">3.13</span> method <code>addGlobalMonitorForEvents(matching:handler:)</code></h3>
+<div class="outline-text-3" id="text-3-13">
+<ul class="org-ul">
+<li>Installs an event monitor that receives copies of events posted to other applications.</li>
+<li><a href="https://developer.apple.com/documentation/appkit/nsevent/1535472-addglobalmonitorforevents">https://developer.apple.com/documentation/appkit/nsevent/1535472-addglobalmonitorforevents</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org804e6a3" class="outline-2">
+<h2 id="org804e6a3"><span class="section-number-2">4</span> Concepts</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org59e9e37" class="outline-3">
+<h3 id="org59e9e37"><span class="section-number-3">4.1</span> delegate</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>a <b>delegate</b> can monitor certain of the window’s actions, such as closing, zooming, and resizing.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org406ebdb" class="outline-3">
+<h3 id="org406ebdb"><span class="section-number-3">4.2</span> event mask</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Each event mask symbol indicates that a certain type of event or group of event types should be queued when they occur. [<a href="http://csweb.cs.wfu.edu/~torgerse/Kokua/Irix_6.5.21_doc_cd/usr/share/Insight/library/SGI_bookshelves/SGI_Developer/books/XLib_PG/sgi_html/ch08.html">source</a>]</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org978386a" class="outline-3">
+<h3 id="org978386a"><span class="section-number-3">4.3</span> floating</h3>
+</div>
+<div id="outline-container-orgdf3f52e" class="outline-3">
+<h3 id="orgdf3f52e"><span class="section-number-3">4.4</span> function</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li><a href="https://docs.swift.org/swift-book/LanguageGuide/Functions.html">https://docs.swift.org/swift-book/LanguageGuide/Functions.html</a></li>
+<li><p>
+Every function has a <b>function name</b>, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (called as <b>arguments</b>) that <b>match</b> the types of the function’s <b>parameters</b>. A function’s arguments must always be provided in the same order as the function’s parameter list. The following defines and calls a function <code>f:(B1 ... Bn) |-&gt; (S1 ... Sm): (C1 ... Cn) -&gt; (T1 ... Tm)</code> where <code>(A1:B1:C1 ... An:Bn:Cn)</code> and <code>(R1:S1:T1 ... Rm:Sm:Tm)</code>. In the following, <code>(R1:T1, ..., Rm:Tm)</code> can be simply written as <code>(T1, ..., Tm)</code> and <code>(T1)</code> can be simply written as <code>T1</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">func f(A1:C1, ..., An:Cn) -&gt; (R1:T1, ..., Rm:Tm) {
+    ...
+    return (S1, ..., Sm)
+}
+f(A1:B1 ... An:Bn)
+</pre>
+</div>
+<p>
+When there is not return, we can write:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">func f(A1:C1, ..., An:Cn) {
+    ...
+}
+f(A1:B1, ..., An:Bn)
+</pre>
+</div></li>
+<li>MyNote: <code>At:Ct</code> are <b>parameters</b> of <code>f</code> and <code>As:Bs</code> are <b>arguments</b>. In <code>Ar:Br:Cr</code>, <span class="underline"><code>Br</code></span> is the actual input of the type <code>Cr</code> and <span class="underline"><code>Ar</code></span> is an "inhabitant" of the <i>type</i> <code>Br</code> that acts as the variable name: <code>(var_name):(input_value):(input_type)</code>.</li>
+<li>When calling the function <code>f</code>, it may look pointless to specify "variable names" <code>At</code> because <code>Bt</code> are actual input values. By using <span class="underline">empty parameter label</span>, we can just write <code>f(B1, ..., Bn)</code>.</li>
+<li><p>
+Functions are not required to define input parameters. In this case, the function definition still needs <span class="underline">parentheses</span> after the function’s name, even though it does not take any parameters. The function name is also followed by an empty pair of parentheses when the function is called:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">func f() -&gt; (R1:T1, ..., Rm:Tm) {
+    ...
+    return (S1, ..., Sm)
+}
+f()
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd404465" class="outline-3">
+<h3 id="orgd404465"><span class="section-number-3">4.5</span> key window</h3>
+</div>
+<div id="outline-container-org6c43bd8" class="outline-3">
+<h3 id="org6c43bd8"><span class="section-number-3">4.6</span> modal window</h3>
+</div>
+<div id="outline-container-org6b8310f" class="outline-3">
+<h3 id="org6b8310f"><span class="section-number-3">4.7</span> palette</h3>
+</div>
+<div id="outline-container-orgb204182" class="outline-3">
+<h3 id="orgb204182"><span class="section-number-3">4.8</span> panel</h3>
+</div>
+<div id="outline-container-org25ebffa" class="outline-3">
+<h3 id="org25ebffa"><span class="section-number-3">4.9</span> parameter (of a function)</h3>
+<div class="outline-text-3" id="text-4-9">
+<ul class="org-ul">
+<li>See <a href="#orgdf3f52e">function</a>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org54c699e" class="outline-3">
+<h3 id="org54c699e"><span class="section-number-3">4.10</span> parameter label (or an argument label)</h3>
+<div class="outline-text-3" id="text-4-10">
+<ul class="org-ul">
+<li>The use of <b>argument labels</b> can allow a function to be called in an expressive, sentence-like manner, while still providing a function body that is readable and clear in intent.</li>
+<li><p>
+You write an argument label before the parameter name, separated by a space:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">func f(A1:C1, rel A2:C2) -&gt; T {
+    ...
+    return (S1, ..., Sm)
+}
+f(A1:B1, rel:C2)
+</pre>
+</div>
+<p>
+This means that arguments <code>A1</code> and <code>A2</code> are <i>"semantically"</i> related by <code>rel</code> (that is called the label of the second input of type <code>C2</code>) and <code>(A1:C1, rel A2:C2)</code> is <i>"syntactically"</i> identical to <code>(A1:C1, A2:C2)</code>. For example, we can do
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">  func greet(person: String, from hometown: String) -&gt; String {
+    return "Hello \(person)!  Glad you could visit from \(hometown)."
+  }
+   print(greet(person: "Bill", from: "Cupertino"))
+// Prints "Hello Bill!  Glad you could visit from Cupertino."
+</pre>
+</div>
+<p>
+A label can be put anywhere. For example, we can do <code>func greet(adj person: String) -&gt; ...</code>. MyNote: In the previous example, <code>hometown</code> acts as a variable name and the label <code>from</code> acts as "alias".
+</p></li>
+<li><p>
+We may have an empty label:
+</p>
+<div class="org-src-container">
+<pre class="src src-swift">  func greet(firstName: String, _ lastName: String) -&gt; String {
+    return "Hello \(firstName) \(lastName)!"
+  }
+   print(greet(firstName: "Bill", "Cupertino"))
+// Prints "Hello Bill Cupertino!"
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9fe6207" class="outline-3">
+<h3 id="org9fe6207"><span class="section-number-3">4.11</span> window</h3>
+<div class="outline-text-3" id="text-4-11">
+<ul class="org-ul">
+<li>the term <b>window</b> sometimes refers to the <span class="underline">Application Kit object</span> (<code>AppKit</code>) and sometimes to the window server’s display device; which meaning is intended is made clear in context.</li>
+<li>The <a href="#org3461163"><code>NSWindow</code></a> class defines objects that manage and coordinate the windows an application displays on the screen.</li>
+<li>Typically, you <span class="underline">create windows</span> using Interface Builder, which allows you to position them, set many of their attributes, and lay out their views. You can also <span class="underline">create a window programmatically</span> with one of its <b>initializers</b> by specifying, among other attributes, the size and location of its content rectangle.</li>
+<li>The <span class="underline">programmatic work you do with windows more often</span> involves bringing them on and off the screen; changing dynamic attributes such as the window’s title; running modal windows to restrict user input; and assigning a delegate that can monitor certain of the window’s actions, such as closing, zooming, and resizing.</li>
+<li><span class="underline">When it’s created</span>, a window automatically creates two views: an <b>opaque frame view</b> that fills the frame rectangle and draws the border, title bar, other peripheral elements, and background, and a <b>transparent content view</b> that fills the content rectangle.</li>
+<li>The frame view and its peripheral elements <del>(opaque frame views)</del> are <span class="underline">private objects</span> that your application can’t access directly.</li>
+<li>The content view is the “highest” accessible view in the window; you can replace the default content view with a view of your own creation using the <code>setContentView:</code> method.</li>
+<li>The window determines the placement of the content view; you <span class="underline">can’t</span> position it using the <code>NSView</code> methods that begin with <code>setFrame</code>; you <span class="underline">must use</span> the <code>NSWindow</code> class’s placement methods, as described in <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/WinPanel/Tasks/OpeningClosingWindows.html#//apple_ref/doc/uid/20000226-CJBCCCEF">Opening and Closing Windows</a>.</li>
+<li>You add other views to the window as subviews of the content view or as subviews of any of the content view’s subviews, and so on, via the <code>addSubview:</code> method of <code>NSView</code>. This tree of views is called the window’s view hierarchy. When a window is told to display itself, it does so by sending <code>display...</code> messages to the top-level view in its view hierarchy. Because displaying is carried out in a determined order, the content view (which is drawn first) may be wholly or partially obscured by its subviews, and these subviews may be obscured by their subviews (and so on).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb2dcdf" class="outline-3">
+<h3 id="orgdb2dcdf"><span class="section-number-3">4.12</span> window initializer</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: HYUNGBO SHIM</p>
+<p class="date">Created: 2020-05-16 Sat 03:01</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

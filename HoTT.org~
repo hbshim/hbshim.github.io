@@ -1,0 +1,8 @@
+#+STARTUP: latexpreview
+
+* Type theory
+** 1.2 Function types
+*** function type: $(A \rightarrow B) : \mathcal{U}$
++ we define $f:A\rightarrow B$ by giving an equation $f(x) :\equiv \Phi$.
++ $\lambda$-abstraction: for an expression $\Phi$ that may use $x$, we can write $(\lambda(x:A).\Phi):A\rightarrow B$, or equivalently, $(x\mapsto \Phi):A\rightarrow B$.
++ computation rule: $(\lambda x.\Phi)(a) \equiv \Phi'$

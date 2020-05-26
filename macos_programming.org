@@ -1,0 +1,281 @@
+* MacOS window programming
+** ~NSManagedObjectContext~
+ - this is a fundamental concept of Core Data. It is like transaction in a relational data. You can fetch objects, you can create objects, update and delete them, save them back to the persistent store, etc. Basically for all the core data operations, you will need to interact with ~NSManagedObjectContext~.
+** class ~NSViewController~
+ - https://developer.apple.com/documentation/appkit/nsviewcontroller
+ - Framework: Appkit
+ - A controller that manages a view, typically loaded from a ~nib~ file.
+ - While ~AppDelegate~ is used for the whole app and can be used to manage the app life cycle,  ~ViewController~ is used for a single view. you can use it to manage life cycle of a view. One app can have multiple views. but only one ~AppDelegate~.
+** ~NSEvent.EventTypeMask~
+** class ~NSObject~
+ - https://developer.apple.com/documentation/objectivec/nsobject
+ - _The root class_ of most Objective-C class hierarchies, from which subclasses inherit a basic interface to the runtime system and the ability to behave as Objective-C objects.
+** protocol ~NSApplicationDelegate~
+ - https://developer.apple.com/documentation/appkit/nsapplicationdelegate
+ - Framework: Appkit
+ - A _set of methods_ that delegates of ~NSApplication~ objects can implement.
+ - handles app initialization, state transitions, and many high-level app events.
+ - used for the whole app, you can use it to manage the app life cycle, on the other hand, ~ViewController~ is used for a single view. you can use it to manage life cycle of a view. One app can have multiple views. but only one ~AppDelegate~.
+** class ~NSApplication~
+ - https://developer.apple.com/documentation/appkit/nsapplication
+ - Framework: Appkit
+ - An _object_ that manages an app’s main event loop and resources used by all of that app’s objects.
+* Swift
+  The reference: https://docs.swift.org/swift-book/LanguageGuide/Properties.html
+** Class
+ - Data structures: class, structure, enumeration
+ - Properties associate values with a particular class, structure, or enumeration.
+** Computed property
+ - See [[*Properties][Properties]]
+ - Computed properties provide a *getter* and an optional *setter* to retrieve and set other properties and values indirectly.
+** Constant
+** Constant stored property
+ - See [[*Stored property][Stored property]]
+ - Like [[*Default property value][default property values]] we can set and modify the default property value during initialization.
+ - Constant properties must always have a value before initialization completes, and therefore cannot be declared as lazy.
+** Default property value
+ - See [[*Stored property][Stored property]]
+ - We can set and modify the default property value during initialization.
+ - A *[[*Lazy stored property][lazy stored property]]* is a property whose initial value is not calculated until the first time it is used.
+** Enumeration
+ - Data structures: class, structure, enumeration
+ - Properties associate values with a particular class, structure, or enumeration.
+** ~EnvironmentObject~
+ - A property wrapper type for an observable object supplied by a parent or ancestor view.
+ - Declaration:
+   #+BEGIN_SRC swift
+   @frozen @propertyWrapper struct EnvironmentObject<ObjectType> where ObjectType : ObservableObject
+   #+END_SRC
+ - Overview: An environment object invalidates the current view whenever the observable object changes. If you declare a property as an environment object, be sure to set a corresponding model object on an ancestor view by calling its ~environmentObject(_:)~ method.
+** Getter
+ - See [[*Computed property][Computed property]]
+** Initialization
+ - We can set and modify the [[*Default property value][default property value]] and [[*Constant stored property][constant stored property]] during initialization.
+** Instance
+ - [[*Properties][Properties]] are usually associated with instances of a particular type.
+ - An instance may be associated ~to~ a constant. See [[*Variable property][Variable property]].
+** Instance variables
+ - In addition to properties, you can use *instance variables* as a backing store for the values stored in a property.
+ - Swift unifies these concepts (properties and instance variables) into a single property declaration.
+ - A Swift property does not have a corresponding instance variable, and the backing store for a property is not accessed directly.
+
+** Lazy stored property
+ - A *lazy stored property* is a property whose initial value is not calculated until the first time it is used. You indicate a lazy stored property by writing the ~lazy~ modifier before its declaration.
+ - Lazy properties are useful when the initial value for a property is dependent on outside factors whose values are not known until after an instance’s initialization is complete.
+ - Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that should not be performed unless or until it is needed.
+ - You must always declare a lazy property as a variable (with the ~var~ keyword), because its initial value might not be retrieved until after instance initialization completes.
+ - Constant properties must always have a value before initialization completes, and therefore cannot be declared as lazy.
+** Methods
+  - [[~environmentObject(_:)~][~environmentObject(_:)~]]
+
+** Properties
+ - *Properties* associate values with a particular class, structure, or enumeration. Properties are usually associated with instances of a particular type. Moreover they can also be associated with the type itself. Such properties are known as *type properties*.
+ - Properties can be modified but there is some situation where it can't be. See [[*Variable property][Variable property]].
+ -  *Stored properties* store constant and variable values as part of an instance, whereas *computed properties* calculate (rather than store) a value.
+ - (Stored?) properties of a subclass can be *inherited from* its superclass
+ - *Computed properties* are provided by classes, structures, and enumerations. *Stored properties* are provided only by classes and structures.
+ - *Property observers* monitor changes in a property’s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.
+** Property observer
+ - *Property observers* monitor changes in a property’s value, which you can respond to with custom actions.
+** Property wrapper
+ - You can also use a *property wrapper* to reuse code in the getter and setter of multiple properties.
+ - [[*~EnvironmentObject~][~EnvironmentObject~]]
+** Setter
+ - See [[*Computed property][Computed property]]
+** Stored property
+ - See [[*Properties][Properties]]
+ - A stored property is a constant or variable that is stored as part of an instance of a particular class or structure.
+ - Stored properties can be either *variable stored properties* (introduced by the ~var~ keyword) or *constant stored properties* (introduced by the ~let~ keyword).
+ - You can provide a default value for a stored property, called *[[*Default property value][default property values]]*, as part of its definition.
+ - A *[[*Lazy stored property][lazy stored property]]* is a property whose initial value is not calculated until the first time it is used.
+** Structure
+ - Data structures: class, structure, enumeration
+ - Properties associate values with a particular class, structure, or enumeration.
+** Type property
+ - See [[*Properties][Properties]]
+** Value Type
+ - When an instance of a value type is marked as a constant, so are all of its properties.
+** Variable property
+ - (non-variable) If you create an instance of a structure and assign that instance to a [[*Constant][constant]], you cannot modify the instance’s properties, even if they were declared as variable properties.
+ - (non-variable) When an instance of a [[*Value Type][value type]] is marked as a constant, so are all of its properties.
+** Variable stored property
+ - See [[*Stored property][Stored property]]
+ - You must always declare a lazy property as a variable (with the ~var~ keyword), because its initial value might not be retrieved until after instance initialization completes.
+
+
+* Classes
+** ~class QLPreviewPanel : NSPanel~
+ - The QLPreviewPanel class implements the Quick Look preview panel—a user interface object that displays the preview of a list of items.
+ - https://developer.apple.com/documentation/quartz/qlpreviewpanel
+** ~class NSPanel : NSWindow~
+ - A special kind of window that typically performs a function that is auxiliary to the main window.
+ - For details about how panels work (especially to find out how their behavior differs from window behavior), see [[https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/WinPanel/Concepts/UsingPanels.html#//apple_ref/doc/uid/20000224][How Panels Work]].
+ - https://developer.apple.com/documentation/appkit/nspanel
+ - By default panels are not released when they’re closed, because they’re usually lightweight and often reused.
+ - Onscreen panels, except for alert dialogs, are removed from the screen when the application isn’t active and are restored when the application again becomes active. Specifically, the ~NSWindow~ implementation of the ~hidesOnDeactivate~ method returns NO, but the ~NSPanel~ implementation of the same method returns YES.
+ - Panels can become the key window, but they cannot become the main window.
+ - If a panel is the key window and has a close button, it closes itself when the user presses the Escape key.
+ - You can prevent a panel from becoming the key window unless the user clicks in a view that responds to typing. This prevents the key window from shifting to the panel unnecessarily. The ~setBecomesKeyOnlyIfNeeded:~ method controls this behavior.
+ - Palettes and similar panels can be made to float above standard windows and other panels. This prevents them from being covered and keeps them readily available to the user. The ~setFloatingPanel:~ method controls this behavior.
+ - A panel can be made to receive mouse and keyboard events even when another window or panel is being run modally or in a modal session. This permits actions in the panel to affect the modal window or panel. The ~setWorksWhenModal:~ method controls this behavior. See [[https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/WinPanel/Concepts/UsingModalWindows.html#//apple_ref/doc/uid/20000223-CJBEADBA][How Modal Windows Work]] for more information on modal windows and panels.
+** ~class NSWindow : NSResponder~
+ - The ~NSWindow~ class defines objects that manage and coordinate the windows an application displays on the screen.
+ - An ~NSWindow~ object is defined by a frame rectangle that encloses the entire window, including its title bar, border, and other peripheral elements (such as the resize control), and by a content rectangle that encloses just its content area.
+ - Overview: A single ~NSWindow~ object corresponds to at most one onscreen window. The two principal functions of a window are to provide an area in which views can be placed and to accept and distribute, to the appropriate views, events the user instigates through actions with the mouse and keyboard.
+ - https://developer.apple.com/documentation/appkit/nswindow
+ - The two principal functions of an ~NSWindow~ object are to provide an area in which ~NSView~ objects can be placed and to accept and distribute, to the appropriate views, events the user instigates through actions with the mouse and keyboard.
+** ~class NSWindow~
+** ~class NSView : NSResponder~
+ - https://developer.apple.com/documentation/appkit/nsview
+** [[~setFloatingPanel:~][~setFloatingPanel:~]]
+** method ~hidesOnDeactivate~
+ - the ~NSWindow~ implementation of the ~hidesOnDeactivate~ method returns NO, but the ~NSPanel~ implementation of the same method returns YES.
+** method ~setBecomesKeyOnlyIfNeeded:~
+** method [[~setWorksWhenModal:~][~setworkswhenmodal:~]]
+** method [[~setContentView:~][~setContentView:~]]
+** method ~applicationDidFinishLaunching(_:)~ (don't use)
+ - Tells the delegate when the app has finished launching. Don’t use. Instead, use ~application(_:didFinishLaunchingWithOptions:)~.
+ - https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623053-applicationdidfinishlaunching
+** method ~application(_:didFinishLaunchingWithOptions:)~
+ - https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application
+
+
+** method ~addGlobalMonitorForEvents(matching:handler:)~
+ - Installs an event monitor that receives copies of events posted to other applications.
+ - https://developer.apple.com/documentation/appkit/nsevent/1535472-addglobalmonitorforevents
+
+* Concepts
+** delegate
+ - a *delegate* can monitor certain of the window’s actions, such as closing, zooming, and resizing.
+** Delegation
+ - https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
+ - *Delegation* is a _design pattern_ that enables a class or structure to hand off (or delegate) some of its responsibilities to an instance of another type.
+ - This design pattern is implemented by defining a protocol that *encapsulates* the delegated responsibilities, such that a conforming type (known as a *delegate*) is guaranteed to provide the functionality that has been delegated.
+ - Delegation can be used to respond to a particular action, or to retrieve data from an external source without needing to know the underlying type of that source.
+** event mask
+ - Each event mask symbol indicates that a certain type of event or group of event types should be queued when they occur. [[[http://csweb.cs.wfu.edu/~torgerse/Kokua/Irix_6.5.21_doc_cd/usr/share/Insight/library/SGI_bookshelves/SGI_Developer/books/XLib_PG/sgi_html/ch08.html][source]]]
+** floating
+** function
+ - https://docs.swift.org/swift-book/LanguageGuide/Functions.html
+ - Every function has a *function name*, which describes the task that the function performs. To use a function, you “call” that function with its name and pass it input values (called as *arguments*) that *match* the types of the function’s *parameters*. A function’s arguments must always be provided in the same order as the function’s parameter list. The following defines and calls a function ~f:(B1 ... Bn) |-> (S1 ... Sm): (C1 ... Cn) -> (T1 ... Tm)~ where ~(A1:B1:C1 ... An:Bn:Cn)~ and ~(R1:S1:T1 ... Rm:Sm:Tm)~. In the following, ~(R1:T1, ..., Rm:Tm)~ can be simply written as ~(T1, ..., Tm)~ and ~(T1)~ can be simply written as ~T1~.
+  #+BEGIN_SRC swift
+    func f(A1:C1, ..., An:Cn) -> (R1:T1, ..., Rm:Tm) {
+        ...
+        return (S1, ..., Sm)
+    }
+    f(A1:B1 ... An:Bn)
+  #+END_SRC
+   When there is not return, we can write:
+  #+BEGIN_SRC swift
+    func f(A1:C1, ..., An:Cn) {
+        ...
+    }
+    f(A1:B1, ..., An:Bn)
+  #+END_SRC
+ - MyNote: ~At:Ct~ are *parameters* of ~f~ and ~As:Bs~ are *arguments*. In ~Ar:Br:Cr~, _~Br~_ is the actual input of the type ~Cr~ and _~Ar~_ is an "inhabitant" of the /type/ ~Br~ that acts as the variable name: ~(var_name):(input_value):(input_type)~.
+ - When calling the function ~f~, it may look pointless to specify "variable names" ~At~ because ~Bt~ are actual input values. By using _empty parameter label_, we can just write ~f(B1, ..., Bn)~.
+ - Functions are not required to define input parameters. In this case, the function definition still needs _parentheses_ after the function’s name, even though it does not take any parameters. The function name is also followed by an empty pair of parentheses when the function is called:
+  #+BEGIN_SRC swift
+    func f() -> (R1:T1, ..., Rm:Tm) {
+        ...
+        return (S1, ..., Sm)
+    }
+    f()
+  #+END_SRC
+** Implicit property
+ - Every instance of a type has an _implicit property_ called ~self~.
+ - If you don’t explicitly write ~self~ (by writing ~method~ instead of ~self.method~ or even ~.method~), Swift assumes that you are referring to a property or method of the current +instance+ (type?) whenever you use a known property or method name within a method.
+ - The main exception to this rule occurs when a parameter name for an instance method has the same name as a property of that instance. In this situation, the parameter name takes precedence, and it becomes necessary to refer to the property in a more qualified way. You use the self property to distinguish between the parameter name and the property name.
+** Instance method
+ - *Instance methods* are functions that belong to instances of a particular class, structure, or enumeration.
+ - They support the functionality of those instances, either by providing ways to _access and modify instance properties_, or by providing _functionality_ related to the instance’s purpose.
+ - Instance methods have exactly the same syntax as functions. You write an instance method within the opening and closing braces of the type it belongs to.
+ - An instance method has implicit access to all other instance methods and properties of that type.
+ - An instance method can be called only on a specific instance of the type it belongs to as ~instance.method(arg)~. It cannot be called in isolation without an existing instance.
+** key window
+** method
+ - https://docs.swift.org/swift-book/LanguageGuide/Methods.html
+ - *Methods* are functions that are associated with a particular type. _Classes, structures, and enumerations can all define *instance methods*,_ which encapsulate specific tasks and functionality for working with an instance of a given type.
+ - _Classes, structures, and enumerations can also define *type methods*,_ which are associated with the type itself.
+** modal window
+** palette
+** panel
+** parameter (of a function)
+ - See [[*function][function]].
+** parameter label (or an argument label)
+ - The use of *argument labels* can allow a function to be called in an expressive, sentence-like manner, while still providing a function body that is readable and clear in intent.
+ - You write an argument label before the parameter name, separated by a space:
+  #+BEGIN_SRC swift
+    func f(A1:C1, rel A2:C2) -> T {
+        ...
+        return (S1, ..., Sm)
+    }
+    f(A1:B1, rel:C2)
+  #+END_SRC
+    This means that arguments ~A1~ and ~A2~ are /"semantically"/ related by ~rel~ (that is called the label of the second input of type ~C2~) and ~(A1:C1, rel A2:C2)~ is /"syntactically"/ identical to ~(A1:C1, A2:C2)~. For example, we can do
+    #+BEGIN_SRC swift
+      func greet(person: String, from hometown: String) -> String {
+        return "Hello \(person)!  Glad you could visit from \(hometown)."
+      }
+       print(greet(person: "Bill", from: "Cupertino"))
+    // Prints "Hello Bill!  Glad you could visit from Cupertino."
+    #+END_SRC
+    A label can be put anywhere. For example, we can do ~func greet(adj person: String) -> ...~. MyNote: In the previous example, ~hometown~ acts as a variable name and the label ~from~ acts as "alias".
+ - We may have an empty label:
+    #+BEGIN_SRC swift
+      func greet(firstName: String, _ lastName: String) -> String {
+        return "Hello \(firstName) \(lastName)!"
+      }
+       print(greet(firstName: "Bill", "Cupertino"))
+    // Prints "Hello Bill Cupertino!"
+    #+END_SRC
+** Protocol
+ - https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
+ - A *protocol* defines a blueprint (/abstraction/) of methods, properties, and other requirements that suit a particular task or piece of functionality.
+ - The _protocol_ can then be *adopted* by a class, structure, or enumeration to provide an actual implementation of those requirements.
+ - Any _type_ that satisfies the requirements of a protocol is said to *conform* to that protocol.
+ - MyNote: "Adopting a protocol makes the type conform to the protocol."
+** ~self~ property
+ - Every instance of a type has an _implicit property_ called ~self~, which is exactly equivalent to the instance itself. You use the self property to refer to the current instance within its own instance methods.
+** window
+ - the term *window* sometimes refers to the _Application Kit object_ (~AppKit~) and sometimes to the window server’s display device; which meaning is intended is made clear in context.
+ - The [[*~class NSWindow : NSResponder~][~NSWindow~]] class defines objects that manage and coordinate the windows an application displays on the screen.
+ - Typically, you _create windows_ using Interface Builder, which allows you to position them, set many of their attributes, and lay out their views. You can also _create a window programmatically_ with one of its *initializers* by specifying, among other attributes, the size and location of its content rectangle.
+ - The _programmatic work you do with windows more often_ involves bringing them on and off the screen; changing dynamic attributes such as the window’s title; running modal windows to restrict user input; and assigning a delegate that can monitor certain of the window’s actions, such as closing, zooming, and resizing.
+ - _When it’s created_, a window automatically creates two views: an *opaque frame view* that fills the frame rectangle and draws the border, title bar, other peripheral elements, and background, and a *transparent content view* that fills the content rectangle.
+ - The frame view and its peripheral elements +(opaque frame views)+ are _private objects_ that your application can’t access directly.
+ - The content view is the “highest” accessible view in the window; you can replace the default content view with a view of your own creation using the ~setContentView:~ method.
+ - The window determines the placement of the content view; you _can’t_ position it using the ~NSView~ methods that begin with ~setFrame~; you _must use_ the ~NSWindow~ class’s placement methods, as described in [[https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/WinPanel/Tasks/OpeningClosingWindows.html#//apple_ref/doc/uid/20000226-CJBCCCEF][Opening and Closing Windows]].
+ - You add other views to the window as subviews of the content view or as subviews of any of the content view’s subviews, and so on, via the ~addSubview:~ method of ~NSView~. This tree of views is called the window’s view hierarchy. When a window is told to display itself, it does so by sending ~display...~ messages to the top-level view in its view hierarchy. Because displaying is carried out in a determined order, the content view (which is drawn first) may be wholly or partially obscured by its subviews, and these subviews may be obscured by their subviews (and so on).
+** window initializer
+* XCode
+** interface builder
+ - you create your app’s user interface in *interface builder*.
+ - select a user interface file in the project navigator, and the file’s contents open in interface builder in the editor area of the workspace window.
+ - a *user interface file* has the filename extension ~*.storyboard~ or ~*.xib~.
+ -  a *~xib~ file* usually specifies one view controller or menu bar.
+ - a *storyboard* specifies a set of view controllers and segues between those controllers. unlike a xib, a storyboard can contain many view controllers and the transitions between them.
+ - *default user interface files* are supplied by xcode when you create new projects from its built-in templates.
+ - The contents of ~*.xib~ and ~*.storyboard~ files are stored by Xcode in XML format. At build time, Xcode compiles your .xib and .storyboard files into _binary files_ known as *nibs*. At runtime, nibs are loaded and instantiated to create new views.
+ - To add user interface elements, drag objects from the *utilities area* onto the *Interface Builder canvas*, where you
+   - arrange the elements,
+   - set their attributes, and
+   - establish connections between them and
+   - the code in your source files.
+ - As you lay out your app’s user interface elements in Interface Builder, you can write the code that implements their behavior in the *assistant editor*.
+ - Interface Builder has _two major areas_: the *dock* (on the left) and the *canvas* (on the right).
+*** Dock
+ - The *dock* _lists the objects_ contained in the user interface file.
+ - The *outline view* in the dock shows all the objects nested inside higher-level objects.
+ - For _xib files_, you can display the high-level objects in an icon view instead of the outline view by clicking the Hide and Show Document Outline control on the lower left of the Interface Builder canvas.
+ - In _storyboard files_, the top level items in the outline view correspond to top level view controllers, or scenes, on the canvas. Storyboard files do not show an icon view when the outline view is hidden. Each *scene* on the storyboard has a dock that shows a high-level object view as shown below. Starting from the left, the items in the icon view correspond to the scene, the first responder in the scene, and the exit segue for that scene. You can add your own views to the scene dock in addition to those you add to the body of the view controller.
+*** Canvas
+ - The *canvas* is where you _lay out these objects_ in your app’s user interface.
+*** Utility area
+ - _To add an object_ to your app’s user interface, open the *utilities area* for the workspace window. (one of the workspace configuration buttons in the toolbar).
+ - Select the *Object library* from the *library pane* by clicking the Object button image in the *library bar*. Click the icon representing the object, and then drag it from the library to the outline view in the dock, onto the canvas, or into the view controller’s dock. Views dragged into the dock are only opened by segues or by API calls when the app is running.
+ -  As you add objects to Interface Builder, you _resize_ them by their handles and reposition them by dragging. As you move items, dashed blue lines help you _align and position_ the item within the view.
+ - Above the *library bar* in the *utilities area* are the *Interface Builder inspectors*. You use these *inspectors* to specify some of the interface objects’ _appearance and behavior_.
+ - You can _find and replace strings_ in *storyboards* and *xib* files using the built-in find commands. This includes finding symbols and strings in user interface elements. Project wide searches include xib and storyboard files.
+** user interface file
+ - See [[*interface builder][interface builder]]

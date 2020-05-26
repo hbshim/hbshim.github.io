@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-09 Sun 11:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Coq Note</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="HYUNGBO SHIM" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My Coq Note</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org111f448">1. Gallina</a></li>
+<li><a href="#orgcc9e9ad">2. Command</a></li>
+<li><a href="#org05ff2a0">3. Tactic</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org111f448" class="outline-2">
+<h2 id="org111f448"><span class="section-number-2">1</span> Gallina</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><code>match</code> t <code>with</code> c<sub>1</sub> &rArr; e<sub>1</sub> <code>|</code> c<sub>2</sub> &rArr; e<sub>2</sub> <code>|...|</code> c<sub>1</sub> &rArr; e<sub>l</sub> <code>end</code></li>
+<li><code>if</code> t <code>then</code> e<sub>1</sub> <code>else</code> e<sub>2</sub> is equivalent to <code>match</code> t <code>with true</code> &rArr; e<sub>1</sub> <code>| false</code> &rArr; e<sub>2</sub> <code>end</code></li>
+<li><code>fun n:nat =&gt; (n*n*n)%nat</code> is a function of type <code>nat -&gt; nat</code> and has the same meaning as
+<ul class="org-ul">
+<li><code>λ n:nat. n*n*n</code> in typed λ-calculus</li>
+<li><code>fun (n:nat) -&gt; n*n*n</code> in ocaml</li>
+</ul></li>
+<li>the followings are all equivalent
+<ul class="org-ul">
+<li><code>fun n:nat =&gt; fun p:nat =&gt; fun z:Z =&gt; (Z_of_nat(n+p)+z)%Z</code></li>
+<li><code>fun n p:nat =&gt; fun z:Z =&gt; (Z_of_nat(n+p)+z)%Z</code></li>
+<li><code>fun (n p:nat) (z:Z) =&gt; (Z_of_nat(n+p)+z)%Z</code></li>
+</ul></li>
+<li><code>let v:= t1 in t2</code> where <code>v</code> is an identifier and <code>t1</code> and <code>t2</code> are expression is the local binding <code>(λv.t2)</code> that will evaluated as <code>((λv.t2) t1)</code> then <code>t2[v/t1]</code> after the β-reduction.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcc9e9ad" class="outline-2">
+<h2 id="orgcc9e9ad"><span class="section-number-2">2</span> Command</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><code>Require Import</code> <i><code>Coq.Unicode.Utf8.</code></i></li>
+<li><code>Require Import</code> <i><code>Arith.</code></i></li>
+<li><code>Require Import</code> <i><code>ZArith.</code></i></li>
+<li><code>Require Import</code> <i><code>Bool.</code></i></li>
+<li><code>Open Scope</code> <i><code>Z_scope.</code></i></li>
+<li><code>Close Scope</code> <i><code>Z_scope.</code></i></li>
+<li><code>Open Scope</code> <i><code>nat_scope.</code></i></li>
+
+<li><code>Set</code> <i><code>Printing Notations.</code></i></li>
+<li><code>Unset</code> <i><code>Printing Notations.</code></i></li>
+
+<li><code>Reset Initial</code></li>
+<li><code>Reset</code> <i><code>id</code></i></li>
+
+<li>The followings all have the same meaning
+<ul class="org-ul">
+<li><code>Definition cube := fun z:Z =&gt; z*z*z</code></li>
+<li><code>Definition cube (z:Z):Z := z*z*z</code></li>
+<li><code>Definition cube z := z*z*z</code></li>
+</ul></li>
+
+<li><code>Eval compute in (h 56 78)</code> when <code>h:nat-&gt;nat-&gt;nat</code> evaluate <code>h(56,78)</code>. <code>Eval compute</code> is synomym for <code>Eval cbv iota beta zeta delta</code>.</li>
+
+<li><code>Locate "_ * _"</code></li>
+
+<li><code>Hypothesis</code> <i><code>h:P</code></i></li>
+<li><code>Variables</code> <i><code>h:P</code></i></li>
+
+<li><code>Axiom</code> <i><code>h:P</code></i></li>
+<li><code>Parameter</code> <i><code>x:P</code></i></li>
+
+<li><code>Theorem</code> <code>Lemma</code></li>
+<li><code>Proof</code></li>
+<li><code>Qed</code> build the proof term corresponding to the sequence of tactics, check the term's type is the initial statement, save this new theorem as a definition liking to the theorem name, its statement (i.e., type), and the proof term.</li>
+
+<li><code>Print</code> <i><code>something</code></i></li>
+
+<li><code>Reset</code> <i><code>something</code></i></li>
+
+<li><code>Section</code> <i><code>proof_of_something</code></i> <code>End</code> <i><code>proof_of_something</code></i></li>
+
+<li><code>SearchPattern</code> <i><code>(_ + _ &lt;= _)%Z.</code></i></li>
+
+<li><code>Show 7</code> show 7th subgoal.</li>
+
+<li><code>Restart</code> restart the proof.</li>
+<li><code>Abort</code> abort the proof.</li>
+
+<li><p>
+<code>Fixpoint f (a:T) := expr</code> defines a function on a variable <code>a</code> recursively.
+</p>
+<div class="org-src-container">
+<pre class="src src-coq"><span style="color: #a020f0;">Fixpoint</span> <span style="color: #0000ff;">mult2</span> (<span style="color: #a0522d;">n</span>:<span style="color: #228b22;">nat</span>):<span style="color: #228b22;">nat</span> :=
+  <span style="color: #228b22;">match</span> n <span style="color: #228b22;">with</span>
+  | 0 =&gt; 0
+  | S p =&gt; S (S (mult2 p))
+  <span style="color: #228b22;">end</span>.
+</pre>
+</div></li>
+<li><p>
+<code>Fixpoint f (a1:T1) ... (ap:Tp) {struct ai}: T := expr</code> defines a function with variables <code>a1</code>,&#x2026;, <code>ap</code> that is recursively defined on the variable <code>ai</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-coq"><span style="color: #a020f0;">Fixpoint</span> <span style="color: #0000ff;">plus</span> (<span style="color: #a0522d;">n m</span>:<span style="color: #228b22;">nat</span>) {<span style="color: #228b22;">struct</span> n}:<span style="color: #228b22;">nat</span> :=
+  <span style="color: #228b22;">match</span> n <span style="color: #228b22;">with</span>
+  | 0 =&gt; m
+  | S p =&gt; S (plus p m)
+  <span style="color: #228b22;">end</span>.
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-coq"><span style="color: #a020f0;">Fixpoint</span> <span style="color: #0000ff;">iterate</span> (<span style="color: #a0522d;">A</span>:<span style="color: #228b22;">Set</span>)(<span style="color: #a0522d;">f</span>:A -&gt; A)(<span style="color: #a0522d;">n</span>:<span style="color: #228b22;">nat</span>)(<span style="color: #a0522d;">x</span>:A){<span style="color: #228b22;">struct</span> n}:A :=
+  <span style="color: #228b22;">match</span> n <span style="color: #228b22;">with</span>
+  | 0 =&gt; x
+  | S p =&gt; f (iterate A f p x)
+  <span style="color: #228b22;">end</span>.
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org05ff2a0" class="outline-2">
+<h2 id="org05ff2a0"><span class="section-number-2">3</span> Tactic</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><code>tac1; tac2; ...; tacn</code> combination of tactics</li>
+<li><code>tac; [tac1|tac2|...|tacn]</code> exactly <code>n</code> goals are generated so apply tactic <code>taci</code> to the ~i~th subgoal</li>
+<li><code>tac || tac'</code> apply <code>tac</code> and if it fails, apply <code>tac'</code></li>
+<li><code>idtac</code> leaves the goal as it is and always succeeds</li>
+<li><code>fail</code> alwas fail. <code>tac; fail</code> fails only when <code>tac</code> generates new goals</li>
+<li><code>try tac</code> behaves like <code>tac || idtac</code></li>
+<li><code>intros</code> add hypotheses</li>
+<li><code>apply H</code> apply hypothesis <code>H</code> to the current goal</li>
+<li><code>assumption</code> the statement to prove is exactly the statement of the hypothesis</li>
+<li><code>exact</code> similar to <code>assumption</code> but global</li>
+<li><code>auto</code></li>
+<li><code>cut</code> suppose we have hypotheses <code>(H:P-&gt;Q) (H0:Q-&gt;R) (H1:(P-&gt;R)-&gt;T-&gt;Q) (H2:(P-&gt;R)-&gt;T)</code> To prove <code>Q</code>, we can see that <code>P-&gt;R</code> is easy to prove by <code>H</code> and <code>H0</code>, and from <code>P-&gt;R</code> it is easy to finish the proof by <code>H1</code> and <code>H2</code>. So once the goal <code>Q</code> is generated, we first make an assumption that <code>P-&gt;R</code> that is to be proved later by <code>cut P-&gt;R</code> that generates <code>(P-&gt;Q)-&gt;R</code> so that we can <code>intro</code> the term for <code>P-&gt;Q</code></li>
+<li><code>assert</code> opposite of <code>cut</code>. In the example for <code>cut</code>, we can first <code>assert P-&gt;R</code> and prove it, then use it to prove <code>Q</code> later.</li>
+<li><code>unfold lt</code></li>
+<li><code>reflexivity</code> when a goal is <code>a=a</code>. this is synonym to <code>apply refl_equal</code></li>
+<li><code>left</code> when a goal is <code>a \/ (b)</code>, prove it by proving <code>a</code></li>
+<li><code>right</code> when a goal is <code>a \/ (b)</code>, prove it by priving <code>b</code></li>
+<li><code>elim t</code> when <code>t:T</code> where <code>T</code> is inductive type, then <code>elim t</code> as the same as <code>pattern t; apply T_ind</code> or <code>T_rec</code>, or etc depending the goal sort. If <code>t= b|c</code> and if the goal is <code>t -&gt; d</code> this eliminate <code>a</code> to produce subgoals <code>b-&gt;d</code> and <code>c-&gt;d</code></li>
+<li><code>elim t using T_ind2</code> same as <code>elim t</code> but <code>t</code> does need to be an inductive type as long as <code>T_ind</code> is of the form of an induction principle which has the form <code>∀P:T→S, P t1→P t2→...→(∀t:T, P t)</code>.</li>
+<li><code>pattern m</code> when we want to prove <code>m:month ⊢ m=Jan ∨ ... ∨ m=Dec</code>, we can use <code>pattern m</code> to convert the goal into <code>(λm0:month, m0=Jan ∨ ... ∨ m0=Dec) m</code> to use <code>month_ind</code> that is of the form <code>∀P:month→Prop, P Jan → ... → P Dec → ∀m:month, P m</code>.</li>
+<li><code>induction</code> <i><code>v</code></i> is similar to <code>intros until</code> <i><code>v</code></i> <code>; elim</code> <i><code>v</code></i> follwed by a collection of <code>intros</code> in each branch</li>
+<li><code>case t</code> where <code>t:T</code> and <code>T</code> is an inductive type. This replaces all instances of <code>t</code> in the goal statement with all possible cases, as defined by the inductive type.</li>
+<li><code>discriminate H</code> where <code>H:t1 = t2 ⊢ e</code> while <code>t1 ≠ t2</code>.</li>
+<li><code>discriminate</code> when the goal is <code>t1 ≠ t2</code> while <code>t1 ≠ t2</code>.<br />
+First, <code>t1 ≠ t2</code> is equivalent to <code>t1 = t2 → False</code>. Then the goal is to prove  <code>H:t1 = t2 ⊢ False</code>. Since <code>t1 ≠ t2</code>, we can define a function <code>F:=(λ t:T. if t=t1 True and if t=t2 False)</code> so that the goal becomes <code>H:t1=t2 ⊢ (F t2)</code>. Rewriting by the assumption <code>H</code> we obtain <code>H:t1=t2 ⊢ (F t1)</code> that is <code>H:t1=t2 ⊢ True</code>. Then <code>trivial</code> finishes the proof. This is the situation where <code>False ⊢ True</code> and <code>False ⊢ False</code>.</li>
+<li><code>rewrite H</code> if there is a hypothesis <code>H:x=y</code> then <code>e ↦ e[x/y]</code></li>
+<li><code>rewrite ← H</code> if there is a hypothesis <code>H:x=y</code> then <code>e ↦ e[y/x]</code></li>
+</ul>
+
+<p>
+\begin{equation}                        % arbitrary environments,
+x=\sqrt{b}                              % even tables, figures
+\end{equation}                          % etc
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: HYUNGBO SHIM</p>
+<p class="date">Created: 2020-02-09 Sun 11:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+* Query samples
+
+From https://neo4j.com/docs/cypher-manual/current/clauses/match/
+
+ + ~MATCH (n) DETACH DELETE n~
+
+ + ~MATCH (n) RETURN n~
+
+ + ~CREATE (n:type {name:'NAME', tag:'TAG'})~
+
+ + The following examples of ~MATCH~ are the same
+  - ~MATCH (n { name: 'Andy' }) SET n.surname = 'Taylor' RETURN n.name, n.surname~
+  - ~MATCH (n) WHERE n.name='Andy' SET n.surname = 'Taylor' RETURN n.name, n.surname~
+ + ~MATCH p=(a {name:'primitive ideal'})-[*..3]-(b {name:'maximal ideal'}) RETURN p~
+
+ + ~MATCH (n) WHERE id(n)= 0 RETURN n~
+
+ + ~MATCH ()-[r]->() WHERE id(r)= 0 RETURN r~
+
+ + ~MATCH (n) WHERE id(n) IN [0, 3, 5] RETURN n~
+
+ + ~MATCH (wallstreet:Movie { title: 'Wall Street' })-[*0..1]-(x) RETURN x~
+Returns the movie itself as well as actors and directors one relationship away
+
+ + ~MATCH p =(michael { name: 'Michael Douglas' })-->() RETURN p~
+Returns the two paths starting from 'Michael Douglas'
+
+ + ~MATCH (charlie:Person { name: 'Charlie Sheen' }),(rob:Person { name: 'Rob Reiner' }) CREATE (rob)-[:`TYPE INCLUDING A SPACE`]->(charlie)~
+
+ + ~MATCH (n { name: 'Rob Reiner' })-[r:`TYPE INCLUDING A SPACE`]->() RETURN type(r)~
+Returns a relationship type with spaces in it.
+
+ + ~MATCH (charlie { name: 'Charlie Sheen' })-[:ACTED_IN]->(movie)<-[:DIRECTED]-(director) RETURN movie.title, director.name~
+Returns the movie 'Charlie Sheen' acted in and its director.
+
+ + ~MATCH (martin { name: 'Charlie Sheen' })-[:ACTED_IN*1..3]-(movie:Movie) RETURN movie.title~
+Returns all movies related to 'Charlie Sheen' by 1 to 3 hops.
+
+ + ~match p=()-[:definition|`synonym to`*0..1]-(a {name:'semiprimitive ring'})-[:definition|`synonym to`*0..1]-(b)-[:is|definition*1..2]->(c)-[:definition|`synonym to`*0..1]-(d {name:'semiprime ring'})-[:definition|`synonym to`*0..1]-() return p~
+
+* Neo4j Browser User Interface Guide
+From https://neo4j.com/developer/neo4j-browser/
+ - ~:help~ Help System
+ - ~:help commands~ Useful Commands
+ - ~:clear~ Clear Frames
+ - ~:style [reset]~ Styling Popup & Reset
+ - ~:help keys~ Keyboard Help
+ - ~Ctrl+Enter~ or ~Cmd+Enter~ Execute Statement
+ - ~Ctrl+Up~ or ~Cmd+Up~ Previous Statement
+ - ~Shift+Enter~ Enter Multiline Mode
+ - ~/~ Move Focus to Editor
+ - ~ESC~ Toggle Editor to Full Screen
+ - ~Cmd+Up~ ~Cmd+Down~ (Mac users, use the ~Cmd~ key) navigate command history
+ - ~:history~ access all command history

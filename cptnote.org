@@ -1,0 +1,555 @@
+* AUCTeX
+** Related variables
+
+- ~TeX-auto-save~, ~TeX-parse-self~, ~TeX-master~, ~reftex-plug-into-AUCTeX~, ~TeX-PDF-mode~, ~TeX-master~
+- ~TeX-macro-global~ specifies directories containing the site's TeX style files. (from (auctex)Top>Inftroduction>Installation>Customizing)
+
+- ~LaTeX-fill-excluded-macros~
+
+- ~preview-scale-function~ for font size scaling
+** Insert sectioning/environment/macro
+
+- ~C-c C-s~ entering sectioning commands
+- ~C-c C-e~ inserting environment
+- ~C-c C-m~ or ~C-c RET~ inserting macros with ~M-p~ and ~M-n~ to browse command history
+** Fonts short cuts
+
+The following font specification also work in math mode with appropriate macros like '~\mathbf~'
+- ~C-c C-f~ runs the command ~TeX-font~. Customize via the variable ~LaTeX-font-list~. ~^A~ means ~C-a~ after ~C-c C-f~ and numbered ~1~. ~^B~ is numbered ~2~ and continues similarly. (~A:1~, ~B:2~, ~C:3~, ~D:4~, ~E:5~, ~F:6~, ~G:7~, ~H:8~, ~I:9~, ~J:10~, ~K:11~, ~L:12~, ~M:13~, ~N:14~, ~O:15~, ~P:16~, ~Q:17~, ~R:18~, ~S:19~, ~T:20~, ~U:21~, ~V:22~, ~W:23~, ~X:24~, ~Y:25~, ~Z:26~
+- ~C-c C-f C-a~ (Key:1) Insert                                   '\mathcal{-!-}'      text
+- ~C-c C-f C-b~ (Key:2) Insert bold face    '\textbf{-!-}'       '\mathbf{-!-}'       text.
+- ~C-c C-f C-c~ (Key:3) Insert SMALL CAPS   '\textsc{-!-}'       '\mathscr{-!-}'
+  text.
+- ~C-c C-f C-d~ (Key:4) Delete the innermost font specification containing point.
+- ~C-c C-f C-e~ (Key:5) Insert emphasized   '\emph{-!-}'                              text.
+- ~C-c C-f C-f~ (Key:6) Insert sans serif   '\textsf{-!-}'       '\mathsf{-!-}'       text.
+- ~C-c C-f C-i~ (Key:9) Insert italics      '\textit{-!-}'       '\mathit{-!-}'       text.
+- ~C-c C-f C-m~ (Key:13) Insert             '\textmd{-!-}'                            text.
+- ~C-c C-f C-n~ (Key:14) Insert normal      '\textnormal{-!-}'   '\mathnormal{-!-}'   text.
+- ~C-c C-f C-r~ (Key:18) Insert roman       '\textrm{-!-}'       '\mathrm{-!-}'       text.
+- ~C-c C-f C-s~ (Key:19) Insert slanted     '\textsl{-!-}'       '\mathbb{-!-}'       text.
+- ~C-c C-f C-t~ (Key:20) Insert typewriter  '\texttt{-!-}'       '\mathtt{-!-}'       text.
+- ~C-c C-f C-u~ (Key:21) Insert             '\textup{-!-}'                            text.
+- ~C-c ;~ commenting out the current region
+- ~C-c %~ commenting out the paragraph you are in
+** Folding
+
+- ~TeX-fold-mode~ hide certain parts (like footnotes, references etc.)
+** Compiling
+
+- ~C-c C-c~ run LaTeX
+- ~C-c C-a~ (~TeX-command-run-all~) compile the document until it is ready and then run the viewer. Same as repeatedly '~C-c C-c~' and letting AUCTeX guess the next command to run
+- ~C-c C-r~ only compile the marked region using the document preamble.
+- ~C-c C-b~ when using ~\include~ or ~\input~, compile only the current buffer, instead of whole document with subfiles, using the preable from the master file
+** Debugging
+
+- ~C-c `~ get to the place where the first error occured
+- ~M-x TeX-error-overview RET~ get a list of all errors and warnings
+- ~C-c C-k~ stop compiling
+
+- ~C-c C-l~ centers the output buffer so that the last lines added at the bottom become visible.
+** Automatic matching and templates (electric)
+
+- ~TeX-electric-math~ match ~$~
+
+- ~LaTeX-electric-left-right-brace~ If this option is on, just typing '(', '{' or '[' immediately adds the corresponding right brace ')', '}' or ']'.  The point is left after the opening brace.  If there is an active region, braces are put around it. They recognize the preceeding backslash or size adjusting macros such as '\left', '\bigl' etc. To supress this behaviour, use ~C-u 1~ (~1~ means just once, ~2~ for twice,...) or ~C-q~ before typing '~(~', '~{~' or '~[~'.
+
+- ~TeX-electric-sub-and-superscript~ If non-nil, insert braces after typing <^> and <_> in math mode
+** Sync with Zathura
+
+- *forward-search*: compiling the document highlights the part of tex source file that has the current pointer
+- *backward-search*: pointing the part of PDF file and then ~C-<mouse-1> C-<mouse-1>~ will move the pointer in emacs to the corresponding section/environment
+  - For this `backward sync', the emacsclient should be installed and running. You can run it from emacs with the command ~M-x server-start~ (https://www.emacswiki.org/emacs/AUCTeX). Inserting ~(sesrver-start)~ in ~\~/.emacs~ will make this automatic whenever emacs starts.
+* RefTeX
+- ~reftex-label-regexps~ added "mylabel"
+* Gnus
+- quit: ~q~ (~gnus-group-exit~)
+- pop up a new message buffer: ~message-mail~
+  https://www.gnu.org/software/emacs/manual/html_node/message/New-Mail-Message.html#New-Mail-Message
+- finish composing and send the article: ~C-c C-c~
+  https://www.gnu.org/software/emacs/manual/html_node/gnus/Composing-Messages.html#Composing-Messages
+- reply to the author of the current article: ~r~ (~gnus-summary-reply~)
+- reply with the original messagy: ~R~ (~gnus-summary-reply-with-original~)
+- wide reply (to all To From cc): ~S w~ (~gnus-summary-wide-reply~)
+- wide reply with original message: ~S W~ (~gnus-summary-wide-reply-with-original~)
+- forward current article to some other person: ~C-c C-f~ (~gnus-summary-mail-forward~)
+- prepare a mail: ~m~ (~gnus-summary-mail-other-window~)
+- digitally sign current message using PGP/MIME: ~C-c C-m s p~
+- digitally sign current message using PGP: ~C-c C-m s o~
+** Drafting
+   https://www.gnu.org/software/emacs/manual/html_node/gnus/Drafts.html#Drafts
+ - save draft: normal buffer saving, for eg. ~C-x C-s~
+   continue draft: enter the draft group (~nndraft:drafts~) and ~D e~ (~gnus-draft-edit-message~)
+   the variable ~nndraft-directory~ says where ~nndraft~ is to store its files
+ - delete draft: the normal ~B <DEL>~ command (Mail Group command)
+** TODO lists
+1. setup security for reading https://www.gnu.org/software/emacs/manual/html_node/gnus/Security.html and and for sending https://www.gnu.org/software/emacs/manual/html_node/message/Signing-and-encryption.html#Signing-and-encryption See also https://www.gnu.org/software/emacs/manual/html_node/emacs/Mail-Signature.html
+2. Dovecot, OfflineIMAP, search  start from https://www.reddit.com/r/emacs/comments/dgxvn/gnus_dovecot_offlineimap_search_a_great_howto/
+3. organize folder structure
+4. set gnus-posting-styles so that from header automatically matches to the correct one
+5. encrypt ~.authinfo~ file (gpg?) and try to remove ~defvar~ from ~.gnus.el~
+   - I might also need to change (add-to-list ~'(nnimap "protonmail" ...)~ and ~(add-to-list '(nnimap "CCP" ...)~ because re-running the code would likely expand something "~secondary-select-method~"
+6. Saw the warning that ~bbdb~ was depreciate - check this
+* Org
+- unordered list:  ~-~, ~+~, ~*~
+- ordered list: numeral followed by either ~.~ or ~)~
+- repeating event: ~~ indicates the scheduling that repeats every month
+- ~~ indicates a non-accumulating in a sense that missing three events, for eg, does not initiate three alarms. (scheduled calling dad but forgot to call home for three weeks but no need to alert the reminder three times)
+- ~~ a repeating event with renewal on the time of completion (emptying trash can is scheduled for every three days but if it was done after five days there is no need to do it a day after - three days will be sufficient)
+- Line wrapping variable ~org-startup-truncated~
+* LaTeX
+** ~texdoc~ and ~tlmgr~
+- ~$ texdoc <option>~ ~$ texdoctk~ find & view documentation in TeX Live
+  - ~$ texdoc -l <package_name>~ use list mode: show a list of results
+- ~$ tlmgr~ ~$ tlmgr -gui~
+** Highlight
+- ~\colorbox{}~ behaves bad with multi-line texts. The ~\hl{}~ macro provided by the package ~soul~ works better.
+** AMS-LaTeX
+
+https://www.ams.org/publications/authors/tex/amslatex
+*** amsmath
+
+The *amsmath part* is an extension package for LaTeX that provides various features to facilitate writing math formulas and to improve the typographical quality of their output.
+- ~$ texdoc -l amsmath~
+  - ~README~
+  - ~diff-m.txt~  differences between this version and previous ones
+  - ~amsldoc.pdf~ amsmaath user's guide
+  - ~technote.tex~, ~technote.pdf~: technical notes on the amsmath package (source and output)
+  - ~testmath.tex~, ~testmath.pdf~: sample paper for the amsmath package (source and output)
+  - ~subeqn.tex~, ~subeqn.pdf~: sample document illustrating use of the subequations environment and the effect of the ~fleqn~ option (source and output)
+  - ~thmtest.tex~, ~thmtest.pdf~: test of standard and custom theorem styles with newtheorem and theoremstyle (source and output)
+*** amscls
+
+The *amscls part* contains AMS "document class" files (amsart, amsbook and amsproc.cls) and a theorem package (amsthm.sty) that can be used independently. These provide the setup necessary to give a LaTeX document the general structure and appearance of an AMS article or book.
+- ~$ texdoc -l amscls~
+  - ~README~
+  - ~diff-c.txt~ differences between this version and previous ones
+  - ~amsthdoc.pdf~ AMS theorem package user's guide
+  - AMS Auther Handbooks: separate guides for each type of document class
+*** amsfonts
+
+*amsfonts* is a collection of fonts that extends the Computer Modern family with additional symbols and alphabets intended for use in mathematical contexts. Full LaTeX support is provided by the included *amssymb* and several script-specific packages.
+*** amsrefs
+
+*amsrefs* is an extension package for LaTeX that supports the organization and formatting of bibliographic information directly within a document.
+*** ~amsmidx.sty~
+
+Package for use with document classes based on ~amsbook.cls~ to produce multiple indexes. Instructions are in the file ~amsmidx.pdf~. The package ~imakeidx~ is an approved alternative to ~amsmidx~
+** ~amsbooka.sty~
+
+Package for use with document classes based on ~amsbook.cls~ for books that contain chapters written by individual authors. This package will properly format tables of contents as well as the chapter headings. Instructions are in the AMS Author FAQ.
+** ~amsthm~ package
+*** Theorem numbering
+
+- ~\newtheorem{<env_name>}{<text>}[<parent_counter>]~
+  - ~<parent_counter>~ is comparable to ~\numberwithin~ i.e., the numbering will restart whenever that sectional level is encountered.
+- ~\newtheorem{<env_name>}[<shared_counter>]{<text>}~
+  - ~<shared_counter>~ makes the numbering to progress sequentially for all theorem elements using this counter.
+** Package management
+- ~ec~ package was required by ~soul~ through ~ectt1000~
+- ~soul~ package provides the highlight ~hl~, overstrike ~st~, underline
+
+- Mac Lane, S., & Moerdijk, I. (1994). Sheaves in geometry and
+  logic. New York: Springer-Verlag.
+ ~ul~
+- ~l3packages~ was required by ~mdframed~ through ~xparse.sty~
+- ~l3kernel~ was required by ~mdframed~ through ~expl3.sty~
+- ~needspace~ was required by ~mdframed~ through ~needspace.sty~
+- ~mdframed~ enables paragraph box coloring by the environment ~mdframed~
+- ~pgf~ installs ~tikz~ package that was required by ~mdframed~ with ~framemethod=tikz~
+- ~mathrsfs~ package gives ~mathscr~ font
+* Linux Debian
+
+info, install-info
+Man pages: (1) user commands, (2) system calls, (3) subroutines, (4) devices, (5) file formats, (6) games, (7) miscellaneous, (8) system administrations
+** Find files
+~$ find / -name 'program.c'~
+** Refreshing apps with new config
+- ~$ killall xmobar; xmobar &~
+** Security
+- Get random MAC address
+  1) disconnect from vpn: ~$ nordvpn d~
+  2) ~$ sudo ifconfig wlp4s0 down~
+  3) ~$ sudo macchanger -r -b wlp4s0~
+  4) ~$ sudo ifconfig wlp4s0 up~
+  5) connect network
+  6) connect vpn: ~$ nordvpn c <server>~
+** ~macchanger~
+** ~dmenu~
+Setting ~$PATH~ in ~\~/.bashrc~ doesn't ensure your WM/dmenu will inherit this env.
+A more relevant question to ask is, "How do you login?" Usually the env exported in ~\~/.bash_profile~ or ~\~/.profile~ are available in your X applications. Launch ~dmenu_run~ as you normally do, then in ~dmenu~, type ~echo $PATH > /tmp/path~ Then in a terminal, ~cat /tmp/path~ to see what that ~$PATH~ is. test
+** init conf files
+~/etc/profile~ is the system-wide ~.profile~ file for the Bourne shell (~shell(1)~)
+This sets ~PATH~ variables:
+- for root, ~PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin~
+- for non-root, ~PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games~
+And then, it calls ~/etc/bash.bashrc~ if it exist.
+
+~/etc/bash.bashrc~ is the system-wide ~.bashrc~ file for interactive ~bash(1)~ shells.
+
+~xinit~ is used to start the X Window system server and a first client program on systems that are not using a display manager such as ~xdm(1)~ or in environments that use multiple window systems. When this first client exists, ~xinit~ will kill the X server and then terminate. The ~startx~ script is a front end to ~xinit(1)~ that provides a somewhat nicer user interface for running a single session of the X Window system.
+
+~/etc/X11/Xsession~ is used by display managers and ~xinit~ (~startx~). In this file, variables used by all session scripts are initialized:
+- ~OPTIONFILE=/etc/X11/Xresources~
+- ~SYSRESOURCES=/etc/X11/Xresources~
+- ~USRRESOURCES=$HOME/.Xresources~
+- ~SYSSESSIONDIR=/etc/X11/Xsession.d~
+- ~USERXSESSION=$HOME/.xsession~
+- ~USERXSESSIONRC=$HOME/.xsessionrc~
+- ~ALTUSERXSESSION=$HOME/.Xsession~
+- ~ERRFILE=$HOME/.xsession-errors~
+** Package management
+
+~dpkg~ is a tool to install, build, remove and manage Debian packages. The primary and more user-friendly front-end for ~dpkg~ is ~apt~. ~dpkg~ itself is controlled by entirely via command line parameters, which consist of exactly one action and zero or more options. The action-parameter tells ~dpkg~ what to do and options control the behavior of the action in some way. ~dpkg~ can also be used as a front-end to ~dpkg-deb(1)~ and ~dpkg-query(1)~.
+
+~dpkg-deb~ packs, unpacks and provides information about Debian archives. Use ~dpkg~ to install and remove packages from your system~.
+
+~dpkg-query~ is a tool to show information about packages listed in the ~dpkg~ database.
+
+~apt(8)~ provides a high-level commandline interface for the package management system. It is intended as an end user interface and enables some options better suited for interative usage by default compared to more specialized APT tools like ~apt-get(8)~ and ~apt-cache(8)~.
+
+~apt-get(8)~ is the command-line tool for handling packages, and may be considered the user's "back-end" to other tools using the APT library. Several "front-end" interfaces exist, such as ~aptitude(8)~, ~synaptic(8)~ and ~wajig(1)~.
+
+~apt-cache~ performs a variety of operations on APT's package cache. ~apt-cache~ does not manipulate the state of the system but does provide operations to search and generate interesting out from the package metadata. The metadata is acquired and updated via the 'update' command of e.g. ~apt-get~, so that it can be outdated if the last update is too long ago, but in exchange ~apt-cache~ works independently of the availability of the configured sources (e.g. offline).
+
+~synaptic~ is a frontend for the apt package management system. It allows you to perform all actions of the command line tool ~apt-get~ in a graphical environment. This includes installing, upgrading, downgrading and removing of single packages or even upgrading your whole system.
+
+- List contents of uninstalled packages (Might need ~# apt update~ first): ~$ apt-file list <package_name>~
+- List contents of installed packages: ~$ dpkg -L <package_name>~
+- Search: ~$ apt search <search_key_words>~ (I seems that ~<search_key_word>~ can be consisted of multiple words, e.g., ~$ apt search mac changer~
+- Show details: ~$ apt show <package_name>~
+*** Determining dependency from sources or executables
+~$ ldd <executable_file_name>~
+** Graphics
+- ~radeontool~ package: utility to control ATI Radeon backlight functions on laptops
+- ~radeontop~ package: utility to show Radeon GPU utilization
+- https://github.com/0xbb/gpu-switch
+
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+GRUB_DEFAULT=0
+#GRUB_HIDDEN_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_TIMEOUT=10
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_CMDLINE_LINUX=""
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+
+# If you change this file, run 'update-grub' afterwards to update
+# /boot/grub/grub.cfg.
+# For full documentation of the options in this file, see:
+#   info -f grub -n 'Simple configuration'
+GRUB_DEFAULT=0
+#GRUB_HIDDEN_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+GRUB_TIMEOUT=20
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_backlight=video idle=nomwait quiet splash"
+GRUB_CMDLINE_LINUX=""
+# Uncomment to enable BadRAM filtering, modify to suit your needs
+# This works with Linux (no patch required) and with any kernel that obtains
+# the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
+#GRUB_BADRAM="0x01234567,0xfefefefe,0x89abcdef,0xefefefef"
+# Uncomment to disable graphical terminal (grub-pc only)
+#GRUB_TERMINAL=console
+# The resolution used on graphical terminal
+# note that you can use only modes which your graphic card supports via VBE
+# you can see them in real GRUB with the command `vbeinfo'
+#GRUB_GFXMODE=640x480
+# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
+#GRUB_DISABLE_LINUX_UUID=true
+# Uncomment to disable generation of recovery mode menu entries
+#GRUB_DISABLE_RECOVERY="true"
+# Uncomment to get a beep at grub start
+#GRUB_INIT_TUNE="480 440 1"
+----------------------------------------------------------------------
+** Screen brightness
+
+~$ xrandr --output eDP --birghtness 0.5~
+Here, ~eDP~ is the display name given by ~xrandr~
+TODO: There must be a better way of doing this with GUI app
+** Emacs compilation
+
+After downloading the source to ~/src/debian/~ I installed dependency one by one
+and then ran the following at the root directory (~/src/debian/emacs-26.1/)
+~./configure --build=amd64-linux-gnu --with-mailutils --with-sound=yes --with-wide-int --with-xwidgets --with-gconf --with-xft --with-modules --with-x~
+For the explanation of the options, run ~# ./configure --help~
+Originally, I tried it with the option ~--with-cario~ but I got the emacs with breaking screen (maybe because it was indicated that Cairo support in Debian is `experimental'? Without this, everything looks fine.
+I failed to compile it to make emacs to use ~lxaw3d~ even after installing all xaw3d packages through Synaptic package manager
+** laptop-mode-tools
+
+Laptop mode is a Linux kernel feature that allows your laptop to save
+considerable power ...
+** Problem with hibernation
+
+After doing the hibernation, I couldn't log in. Instead, the system said
+"Suspending console(s) (use no_console_suspend to debug)"
+I could fix this by doing the followings:
+1. Boot from the USB (live disk)
+2. mount the suspended disk: ~sudo mount /dev/sda3 /mnt~
+3. mount special partitions
+~sudo mount --bind /dev /mnt/dev~
+~sudo mount --bind /proc /mnt/proc~
+~sudo mount --bind /sys /mnt/sys~
+4. Chroot into ~/mnt~: ~sudo chroot /mnt~
+   after this, I became the root of the old system
+5. Clear caches and swap spaces: ~swapoff -a && swapon -a~
+   then the system will say it found some suspended spaces but it resets it anyway
+   This only clears swap space so it might be more safe to clear caches too
+   ~echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'~
+   As can be seen from the command, it'll display a message upon completion.
+6. ~exit~ so come back to the "Live" session
+7. Might need to unmount but it seems not necessary
+   ~sudo umount /mnt/sys~
+   ~sudo umount /mnt/proc~
+   ~sudo umount /mnt/dev~
+   ~sudo umount /mnt~
+8. DONE!! Reboot.
+** Connecting WiFi
+
+When connecting to a public wifi that needs going through a specfic page, then do ~route~ on terminal and put the address under `Genmask' to the web browser's address bar.
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    0      0        0 wlp4s0
+172.31.98.0     0.0.0.0         255.255.254.0   U     0      0        0 wlp4s0
+Putting `255.255.254.0' worked
+** Night screen
+
+run ~sct 4500~
+~sct~ without argument sets it to the default 6500(K)
+** Wallpaper
+
+The location for the original wallpaper was ~/etc/alternatives~ that are linked files
+** Identify kernel
+
+- ~uname -a~
+- ~cat /proc/version~
+- ~dmesg | grep Linux~
+** git
+- Cloning: ~$ git clone <address>~
+- Status: ~$ git status~
+- ~$ git remote show oritin~
+- list tags: ~$ git tag~
+  - with the first line of the annotation message: ~$ git tag -n~
+  - with the first 5 lines: ~$ git tag -5n~
+  - see the tag data: ~git show <tag>~
+  - the current tag: ~git describe --tags~
+- pull down all changes from the remote location ~git fetch~
+- switch to a different branch or restore to previous state: ~git checkout~
+- check out a specific tag: ~git checkout tags/<tag_name>~
+** Hardware info
+- ~$ lscpu~ gathers CPU architecture information from ~sysfs~, ~/proc/cpuinfo~ and any applicatble architecture-specific libraries
+- ~$ cat /proc/cpuinfo~
+- ~$ lshw~ a small tool to extract detailed information, from different ~/proc~ files, on the hardware configuration of the machine reporting exact memory configuration, firmware version, mainboard configuration, CPU version and speed, cache configuration, bus speed, etc. ~$ lshw -short~ gives a short list.
+- ~# hwinfo~ to probe for the hardware present in the system. Can be used to generate a system overview log which can be later used for support. Said to detailed more than what ~lshw~ can report. ~# hwinfo --short~ for shortened list.
+- ~$ lspci~ display information about PCI buses in the system and devices connected to them. The VGA adapter, graphics card, USB ports, SATA controllers, etc are all said to fall under this category.
+- ~$ lsscsi~ lists SCSI devices, i.e., storages (or hosts) and their attributes.
+- ~$ lsusb~ lists USB devides by displaying information about USB buses in the system
+- ~$ inxi~ is a command line system information script (10K line "mega bash script") in a friendly way that non-technical users can read easily.
+- ~$ lsblk~ lists information about all available or the specified block devices by reading the ~sysfs~ filesystem and ~udev db~ to gather information.
+- ~$ df~ reports file system disk space usage - the amount of disk space available on the file system containing each file name argument. If no file name is given, the space available on all currently mounted file systems is shown. Disk space is shown in 1K blocks by default unless the environment variable ~POSIXLY_CORRECT~ is set in which case 512-bytes blocks are used.
+- ~# fdisk -l~ ~fdisk~ also list out the partition information.
+- ~$ mount | column -t~ ~mount~ also lists mounted file systems.
+- ~$ free~ displays the total amount of free and used physical and swap memory in the system as well as the buffers and caches used by the kernel gathered by parsing ~/proc/meminfo~. ~$ free --human~ shows the result in "human-readable" form.
+- ~# dmidecode -t processor~, ~# dmidecode -t memory~, ~# dmidecode -t bios~: ~dmidecode~ dumps a computer's DMI table contents that contains a description of the system's hardware components in a human-readable way.
+- ~/proc/cpuinfo~, ~/proc/meminfo~, ~/proc/version~, ~/proc/scsi/scsi~, ~/proc/partitions~
+- ~# hdparm -i /dev/sda~ provides an interface to various kernel interfaces supported by the Linus SATA/PATA/SAS "libata" subsystems and the older IDE driver subsystem.
+** Package management
+List contents of uninstalled packages
+(Might need ~# apt update~ first)
+~$ apt-file list <package_name>~
+
+List contents of installed packages
+~$ dpkg -L <package_name>~
+** Natrual scrolling
+
+- THIS METHOD DIDN'T WORK: If you would like your touchpad to behave like the natural scrolling mode in Mac OS X Lion, you have to add the next line to your ~/.Xmodmap~ ~pointer = 1 2 3 5 4 7 6 8 9 10 11 12~  Then I reloaded the update with ~$ xmodmap ~/.Xmodmap~. The commenting starting with ~#~ does not seem to work so I had to remove it.
+- (see ~xorg.conf(5)~, ~libinput(4)~ man page) Configuring Trackpad behavior is done by adding Options as the followings:
+#+NAME: /usr/share/X11/xorg.conf.d/40-libinput.conf
+#+BEGIN_SRC <xorg.conf>
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "NaturalScrolling" "On"
+        Option "Tapping" "On"
+        Option "TappingDrag" "On"
+EndSection
+#+END_SRC
+- To swap "command" keys and the "control" key (on Macbook Pro), I edited ~/usr/share/X11/xkb/symbols/pc~
+#+NAME ~/usr/share/X11/xkb/symbols/pc~
+#+BEGIN_SRC <con>
+    key <LCTL> {        [ Super_L               ]       };
+    key <LWIN> {        [ Control_L             ]       };
+    key <RCTL> {        [ Super_R               ]       };
+    key <RWIN> {        [ Control_R             ]       };
+#+END_SRC
+** Screen brightness
+
+~$ xrandr --output eDP --birghtness 0.5~
+Here, ~eDP~ is the display name given by ~xrandr~
+TODO: There must be a better way of doing this with GUI app
+** Emacs compilation
+
+After downloading the source to ~/src/debian/~ I installed dependency one by one
+and then ran the following at the root directory (~/src/debian/emacs-26.1/)
+~./configure --build=amd64-linux-gnu --with-mailutils --with-sound=yes --with-wide-int --with-xwidgets --with-gconf --with-xft --with-modules --with-x~
+For the explanation of the options, run ~# ./configure --help~
+Originally, I tried it with the option ~--with-cario~ but I got the emacs with breaking screen (maybe because it was indicated that Cairo support in Debian is `experimental'? Without this, everything looks fine.
+I failed to compile it to make emacs to use ~lxaw3d~ even after installing all xaw3d packages through Synaptic package manager
+** laptop-mode-tools
+
+Laptop mode is a Linux kernel feature that allows your laptop to save
+considerable power ...
+** Problem with hibernation
+
+After doing the hibernation, I couldn't log in. Instead, the system said
+"Suspending console(s) (use no_console_suspend to debug)"
+I could fix this by doing the followings:
+1. Boot from the USB (live disk)
+2. mount the suspended disk: ~sudo mount /dev/sda3 /mnt~
+3. mount special partitions
+~sudo mount --bind /dev /mnt/dev~
+~sudo mount --bind /proc /mnt/proc~
+~sudo mount --bind /sys /mnt/sys~
+4. Chroot into ~/mnt~: ~sudo chroot /mnt~
+   after this, I became the root of the old system
+5. Clear caches and swap spaces: ~swapoff -a && swapon -a~
+   then the system will say it found some suspended spaces but it resets it anyway
+   This only clears swap space so it might be more safe to clear caches too
+   ~echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'~
+   As can be seen from the command, it'll display a message upon completion.
+6. ~exit~ so come back to the "Live" session
+7. Might need to unmount but it seems not necessary
+   ~sudo umount /mnt/sys~
+   ~sudo umount /mnt/proc~
+   ~sudo umount /mnt/dev~
+   ~sudo umount /mnt~
+8. DONE!! Reboot.
+** Connecting WiFi
+
+When connecting to a public wifi that needs going through a specfic page, then do ~route~ on terminal and put the address under `Genmask' to the web browser's address bar.
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         gateway         0.0.0.0         UG    0      0        0 wlp4s0
+172.31.98.0     0.0.0.0         255.255.254.0   U     0      0        0 wlp4s0
+Putting `255.255.254.0' worked
+** Night screen
+
+run ~sct 4500~
+~sct~ without argument sets it to the default 6500(K)
+** X-Windows Screen resolution/Font size
+
+run
+- ~xdpyinfo | grep -B 2 resolution~ to get the resolution and current dpi
+- ~xrandr | grep -w connected~ to get the screen resolution
+- then convert dimension in milimeters (mm) into inches (in) for hight and width and divide the current resolution by the inch - the resulting number will be around 220 and that is supposed to be the standard dpi
+- Set ~Xft.dpi~ accordingly in the file ~\~/.Xresources~. Fonts get larger for larger dpi and get smaller for smaller dpi.
+** X window: ~/~/.Xresources~ reload
+~$ xrdb -merge \~/.Xresources~
+** X-Window: display-manager (login window)
+- run ~# dpkg-reconfigure xdm~ or ~# dpkg-reconfigure lightdm~
+** Wallpaper
+
+The location for the original wallpaper was ~/etc/alternatives~ that are linked files
+** Identify kernel
+
+- ~uname -a~
+- ~cat /proc/version~
+- ~dmesg | grep Linux~
+** git
+- Cloning: ~$ git clone <address>~
+- Status: ~$ git status~
+- ~$ git remote show oritin~
+- list tags: ~$ git tag~
+  - with the first line of the annotation message: ~$ git tag -n~
+  - with the first 5 lines: ~$ git tag -5n~
+  - see the tag data: ~git show <tag>~
+  - the current tag: ~git describe --tags~
+- pull down all changes from the remote location ~git fetch~
+- switch to a different branch or restore to previous state: ~git checkout~
+- check out a specific tag: ~git checkout tags/<tag_name>~
+** CPU info
+
+~cat /proc/cpuinfo~
+** ~xterm~
+- scroll up one page: ~<Shift>+<PageUp>~ where ~<PageUp>~ is ~<Fn>+<Up>~
+- scroll down one page: ~<Shift>+<PageDown>~ where ~<PageDown>~ is ~<Fn>+<Down>~
+- scroll up half page: ~<Shift>+<Ctrl>+<PageUp>~
+- scroll down haf page: ~<Shift>+<Ctrl>+<PageDown>~
+- reverse-i-search (past commands): ~<Ctrl>+r~ and ~<Esc>~ to exit
+** ~# dmesg | tail~
+* OCaml / Coq
+
+Since there was no Ocaml on my computer, I did ~make cold~ to install opam for bootstrapping
+Then I did the "normal" installation of opam then installed ocaml through opam.
+This requires installation of ocaml. Installing opam as a root, I accidentally installed ocaml on the root folder altough the warning saying "doing this as a root is not recommended"
+For ocaml installation, I need to install ~bubblewrap~ debian package
+After installling opam by compiling, I used ~opam init~. However, from "https://coq.inria.fr/opam/www/using.html", it looks like the command
+~opam init -n --comp=ocaml-base-compiler.4.02.3 -j 2 # 2 is the number of CPU cores~
+with modification (on ocaml version and # of CPU cores that is 4) seems better
+Installation of OCaml modified my ~\~/.profile~
+The guide keep saying that I need to run ~eval $(opam env)$~
+The installation of CoqIDE required the debian package "libgtksourceview2.0-dev"
+Right after the installation, coqide complained "Gtk-Message: Failed to load module "atk-bridge"". I installed a debian package "libatk-adaptor" and it seems this resolves the problem. See "https://github.com/coq/coq/pull/8803"
+* Zathura
+
+- ~J~/~K~ go to the next/previous page
+- ~h~/~j~/~k~/~l~ scrol to the left/up/down/right direction
+- ~C-t/C-u/C-d/C-y~ scroll a half page left/up/down/right
+- ~t/<space-space>/<space>/y~ scroll a full page left/up/down/right
+- ~gg/G/nG~ go to the first/last/n-th page
+- ~H/L~ go to the top/bottom of the current page
+- ~C-c~ or ~<esc>~ abort
+- ~a/s~ adjust window in best-fit or width mode
+- ~+/-/\=~ zoom in/out/original size
+- ~/~ search, ~n/N~ search for the next/previous result
+- ~R~ reload the document
+- ~f~ follow links
+- ~F~ display link target
+- ~<tab>~ show index and swith to index mode
+  - ~k/j~ move to upper/lower entry
+  - ~l/h~ expand/collapse entry
+  - ~L/H~ expand/collapse all entry
+  - ~<space>~ or ~<return>~ select and open entry
+* MacOS
+** Safari
++ about:config change list
+  - gfx.color_management.display_profile;/Library/ColorSync/Profiles/Displays/Color LCD-1FBF2F7F-57EC-56E5-521F-556A305D1A61.icc
+  - gfx.color_management.enablev4;true
+  - gfx.color_management.mode;1
++ keyboard-shortcuts
+  - ~<CTL>-<TAB>~/~<CTL>-S-<TAB>~ go one tab to left/right
+  - ~C-[~/~C-]~ back/forward history
+  - ~S-C-a~ add-on management
+  - ~C-d~ bookmark this page
+  - ~S-b~ show/hide bookmark side bar
+  - ~S-C-h~ show history
+  - ~C-f~ search (find)
+  - ~C-g~ search again
+  - ~C-j~ show download list
+** Packages
+
+- ~perlbrew~, ~$ perlbrew init~ then ~$ cpan~ and on that ~cpan~ shell, ran ~cpan[n]> install Tk~ to install Perl/Tk that is needed by ~tlmgr -gui~. During the installation of ~Tk~ module, I got a complaints that ~cpan~ 'cannot find -lX11 anywhere' and that was resolved by installing ~xquartz~ by ~brew install xquartz~. Then run the app ~xquartz~ and run ~tlmgr -gui~ in its internal terminal.
+
+TEXDIR: ~/.local/texlive/2018
+TEXMFLOCAL: ~/.local/texlive/texmf-local
+TEXMFSYSVAR: ~/.local/texlive/2018/texmf-var
+TEXMFSYSCONFIG: ~/.local/texlive/2018/texmf-config

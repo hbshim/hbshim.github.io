@@ -1,0 +1,317 @@
+Basics:
+
+- ~HEAD~ is the pointer to the _working tree_
+- ~master~ is the pointer to the _local master branch_
+- ~detached HEAD~ is the situation where ~HEAD~ (current env) is not ~master~
+- ~WIP~ means _Work In Progress_ (stashing)
+- ~origin~ short name for the location of the remote
+- ~origin/master~ is called the _remote tracking branch_ (what the master branch looks like at ~origin~)
+- ~upstream~: let A be a repository, B a fork of A, C a local clone of B. Then A is called the _upstream_
+- ~fetch~ download remote to the local history
+- ~push~ upload the local history to remote
+
+* init
+
+#+BEGIN_SRC shell
+git init
+#+END_SRC
+
+* config
+
+#+BEGIN_SRC shell
+git config --global user.name "<NAME>"
+git config -- global user.email "<NAME@EMAIL.ADDRESS>"
+#+END_SRC
+
+#+BEGIN_SRC shell
+git config --local user.name "<NAME>"
+git config -- local user.email "<NAME@EMAIL.ADDRESS>"
+#+END_SRC
+
+To list config:
+#+BEGIN_SRC shell
+git config --list
+#+END_SRC
+
+* status
+
+#+BEGIN_SRC shell
+git status
+#+END_SRC
+
+* log
+
+#+BEGIN_SRC shell
+git log
+#+END_SRC
+
+#+BEGIN_SRC shell
+git log -p
+#+END_SRC
+
+#+BEGIN_SRC shell
+git log -- <FILE>
+#+END_SRC
+
+#+BEGIN_SRC shell
+git log --all --decorate --oneline --graph
+#+END_SRC
+It's convenient to alias this command
+
+* add: working tree -> staging area
+
+#+BEGIN_SRC shell
+git add FILE
+#+END_SRC
+
+~FILE~ can be a list of files, ~FILE1 FILE2 FILE3 ...~
+~.~ for ~FILE~ adds all modified files
+we can use regexp, for eg, ~S*~ for all files starting with ~S~
+
+* rm: remove from both working tree and the staging area
+
+#+BEGIN_SRC shell
+git rm <FILE>
+#+END_SRC
+
+* commit: staging area -> history
+
+#+BEGIN_SRC shell
+git commit
+#+END_SRC
+
+To commit with a short commit message:
+#+BEGIN_SRC shell
+git commit -m "<SHORT COMMIT MESSAGE>"
+#+END_SRC
+
+To commit without any commit message:
+#+BEGIN_SRC shell
+git commit --no-edit
+#+END_SRC
+
+To amend the last commit:
+#+BEGIN_SRC shell
+git commit --amend
+#+END_SRC
+(This does changes the ID of the last commit. Amending works only for the latest  commit.)
+
+To commit without
+* add+commit: working tree -> staging area and history
+
+#+BEGIN_SRC shell
+git commit -a
+#+END_SRC
+
+nothing to specify after ~git rm~
+
+* diff: working tree <-> staging area
+
+#+BEGIN_SRC shell
+git diff
+#+END_SRC
+
+* diff: staging area <-> history
+
+#+BEGIN_SRC shell
+git diff --staged
+#+END_SRC
+
+* checkout: working tree <- staging area
+
+#+BEGIN_SRC shell
+git checkout -- <FILE>
+#+END_SRC
+
+To place HEAD (i.e., to retrieve) to the state <HASH>:
+#+BEGIN_SRC shell
+git checkout <HASH>
+#+END_SRC
+
+~<HASH>~ can be the first five characters
+
+* checkout: working tree and staging area <- history
+
+#+BEGIN_SRC shell
+git checkout <HASH> -- <FILE>
+#+END_SRC
+
+* checkout branch
+
+#+BEGIN_SRC shell
+git chekout <BRANCH NAME>
+#+END_SRC
+
+* reset: staging area <- history
+
+#+BEGIN_SRC shell
+git reset HEAD <FILE>
+#+END_SRC
+
+* .gitignore
+
+~.gitignore~ lists of files that should be ignored. we can use regexp. a whole folder is indicated by ~<FOLDER>/~
+
+* branch: list
+
+To list all branches:
+#+BEGIN_SRC shell
+git branch
+#+END_SRC
+
+To list merged branches:
+#+BEGIN_SRC shell
+git branch --merged
+#+END_SRC
+
+To list local and remote branches:
+#+BEGIN_SRC shell
+git branch -a
+#+END_SRC
+
+To list remote tracking branches only:
+#+BEGIN_SRC shell
+git branch -r
+#+END_SRC
+
+* branch: create new
+
+To create a new branch from HEAD:
+#+BEGIN_SRC shell
+git branch <BRANCH NAME>
+#+END_SRC
+
+To create + checkout -> new branch:
+#+BEGIN_SRC shell
+git branch -b <BRANCH NAME>
+#+END_SRC
+
+* branch: remove
+
+#+BEGIN_SRC shell
+git branch -d <BRANCH>
+#+END_SRC
+
+* merge: HEAD -> master
+
+To merge <BRANCH> into master:
+#+BEGIN_SRC shell
+git merge <BRANCH>
+#+END_SRC
+The response can be different depending on the strategy:
+- fast-forward
+- three-way (recursive)
+  - In case of conflict, files with conflict get modified with diff contents. We can check and resolve these conflict by opening those files. When doing this, we also need to delete git markers.
+  - After conflicts are resolved, do ~git status~.
+  - Aborting the merge process will restore the original file contents:
+  #+BEGIN_SRC shell
+git merge --abort
+  #+END_SRC
+
+* stash: save
+
+To save working directory without staging:
+#+BEGIN_SRC shell
+git stash
+#+END_SRC
+
+To stash with comment:
+#+BEGIN_SRC shell
+git stash save "<comment>"
+#+END_SRC
+
+* stash: list
+
+To list all stashes:
+#+BEGIN_SRC shell
+git stash list
+#+END_SRC
+
+To list all stashes with changes:
+#+BEGIN_SRC shell
+git stash list -p
+#+END_SRC
+
+* stash: apply
+
+#+BEGIN_SRC shell
+git stash apply
+#+END_SRC
+
+#+BEGIN_SRC shell
+git stash apply <LABEL>
+#+END_SRC
+Here, ~<LABEL>~ is the one given by ~stash list~
+
+* clone
+
+#+BEGIN_SRC shell
+git clone git@github.com:name/git.git
+#+END_SRC
+
+* remote: add/remove
+
+To add upstream:
+#+BEGIN_SRC shell
+git remote add upstream git@github.com:name/git.git
+#+END_SRC
+
+To remove:
+#+BEGIN_SRC shell
+git remote remove <REMOTE NAME>
+#+END_SRC
+
+* remote: list
+
+To list remotes (short names only):
+#+BEGIN_SRC shell
+git remote
+#+END_SRC
+
+To list remotes (short and full names only):
+#+BEGIN_SRC shell
+git remote
+#+END_SRC
+
+* fetch: local repository <- remote repository
+
+#+BEGIN_SRC shell
+git fetch origin
+#+END_SRC
+Note that this does not affect local/HEAD. We need to merge, eg. ~git merge origin/master~ later.
+
+#+BEGIN_SRC shell
+git fetch upstream
+#+END_SRC
+
+To fetch and merge:
+#+BEGIN_SRC shell
+git pull
+#+END_SRC
+
+* push: local repository -> remote repository
+
+#+BEGIN_SRC shell
+git push <REMOTE REPOSITORY> <LOCAL BRANCH>
+#+END_SRC
+
+* rebase
+
+To "operate on" the last <n> commits back from HEAD:
+#+BEGIN_SRC shell
+git rebase -i HEAD~<n>
+#+END_SRC
+(~-i~ indicates "interactive".)
+
+Interactive commands:
+- ~reword~: edit commit message
+- ~drop~: remove commit
+We can also reorder commits by changing the order of the lines.
+
+* cherry-pick
+
+* template
+
+#+BEGIN_SRC shell
+
+#+END_SRC

@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-13 Thu 22:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="HYUNGBO SHIM" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb38bf8c">1. Emacs</a>
+<ul>
+<li><a href="#org0e99634">1.1. Abbrevs mode</a>
+<ul>
+<li><a href="#orgaf764b1">1.1.1. options</a></li>
+</ul>
+</li>
+<li><a href="#orgc7df5a0">1.2. <code>(ansi-)term</code> mode</a></li>
+<li><a href="#orgfd04951">1.3. Bookmarks</a></li>
+<li><a href="#org2cba8ed">1.4. helm</a></li>
+<li><a href="#org59042e4">1.5. <code>*buffers*</code></a></li>
+<li><a href="#orgaab12fb">1.6. <code>*kill-buffer*</code></a></li>
+<li><a href="#orgddcc422">1.7. Case conversion A &lt;-&gt; a</a></li>
+<li><a href="#org293a8af">1.8. Deleting and killing</a>
+<ul>
+<li><a href="#orgb7a0792">1.8.1. Deleting by character</a></li>
+</ul>
+</li>
+<li><a href="#org8144625">1.9. Dired</a>
+<ul>
+<li><a href="#org4d24f15">1.9.1. directories</a></li>
+<li><a href="#org4b1560a">1.9.2. flags</a></li>
+<li><a href="#orge36a407">1.9.3. files</a></li>
+<li><a href="#orgc5fd2df">1.9.4. marks</a></li>
+<li><a href="#orgfa71bae">1.9.5. shell command</a></li>
+</ul>
+</li>
+<li><a href="#org045a720">1.10. File</a></li>
+<li><a href="#orgfc06594">1.11. Find/replace</a></li>
+<li><a href="#org7552895">1.12. font</a></li>
+<li><a href="#orga3f04cf">1.13. frames</a></li>
+<li><a href="#org57dcfdf">1.14. help and info</a>
+<ul>
+<li><a href="#org612ed78">1.14.1. Browsing inside info</a></li>
+</ul>
+</li>
+<li><a href="#org12f4dc6">1.15. ispell (flyspell)</a></li>
+<li><a href="#orgc07db5e">1.16. Menubar <code>F10</code></a></li>
+<li><a href="#orgace8162">1.17. Moving around</a>
+<ul>
+<li><a href="#org4a2d4b5">1.17.1. by characters/lines</a></li>
+<li><a href="#org79969fd">1.17.2. by words</a></li>
+<li><a href="#org435eda5">1.17.3. horizontally</a></li>
+<li><a href="#org2f89594">1.17.4. by sentence</a></li>
+<li><a href="#org1967250">1.17.5. by paragraph</a></li>
+<li><a href="#org8b9dcbd">1.17.6. by matching parentheses</a></li>
+<li><a href="#org032f4bb">1.17.7. by buffer</a></li>
+<li><a href="#org07f833a">1.17.8. by page</a></li>
+<li><a href="#org87b9a94">1.17.9. back to previous position</a></li>
+<li><a href="#org78b040f">1.17.10. GO TO</a></li>
+</ul>
+</li>
+<li><a href="#org1064479">1.18. Outline minor mode</a>
+<ul>
+<li><a href="#org43453a3">1.18.1. Motion commands</a></li>
+<li><a href="#org7e35b6d">1.18.2. Visibility commands</a></li>
+</ul>
+</li>
+<li><a href="#orgfd8862f">1.19. Reference sites</a></li>
+<li><a href="#orgfffc75d">1.20. Region/Mark</a></li>
+<li><a href="#orgd8c870f">1.21. Registers</a></li>
+<li><a href="#org69c5cf1">1.22. Select</a></li>
+<li><a href="#org3f942ab">1.23. Sessions</a></li>
+<li><a href="#org50fb643">1.24. Symbol</a></li>
+<li><a href="#orgfccdb90">1.25. windows</a>
+<ul>
+<li><a href="#orgeefe791">1.25.1. transpose windows</a></li>
+</ul>
+</li>
+<li><a href="#org60fa841">1.26. YASnippet</a>
+<ul>
+<li><a href="#orgbfd0377">1.26.1. variables</a></li>
+</ul>
+</li>
+<li><a href="#org1af1b9b">1.27. AucTeX</a>
+<ul>
+<li><a href="#orgab06518">1.27.1. options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb38bf8c" class="outline-2">
+<h2 id="orgb38bf8c"><span class="section-number-2">1</span> Emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org0e99634" class="outline-3">
+<h3 id="org0e99634"><span class="section-number-3">1.1</span> Abbrevs mode</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li><a href="https://www.emacswiki.org/emacs/AbbrevMode">https://www.emacswiki.org/emacs/AbbrevMode</a></li>
+<li><code>abbrev-mode</code> start the (minor) mode</li>
+<li><code>C-x a l</code> (<code>add-mode-abbrev</code>) Define abbrev for current mode.</li>
+<li><code>C-x a i l</code> (<code>inverse-add-mode-abbrev</code>) define a word in the buffer as a mode-specific abbrev</li>
+<li><code>list-abbrevs</code> Display a list of defined abbrevs</li>
+<li><code>edit-abbrevs</code> edit abbrevs. This is the best way to add or remove abbrevs. The number in the middle column is the number of times you've used (expanded) the abbrev. To remove a abbrev, just delete the line. To add a abbrev, just add a line. When done, to load and or save, call any of:
+<ul class="org-ul">
+<li><code>C-c C-c</code> (<code>edit-abbrevs-redefine</code>) Redefine abbrevs according to current buffer contents.</li>
+<li><code>C-x C-s</code> (<code>abbrev-edit-save-buffer</code>) Redefine and save to abbrev file.</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgaf764b1" class="outline-4">
+<h4 id="orgaf764b1"><span class="section-number-4">1.1.1</span> options</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li><code>abbrev-file-name</code> The abbrevs is saved in a file at a path specified by this variable (default: <code>\~/.emacs.d/abbrev_defs</code>)</li>
+<li><code>save-abbrevs</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc7df5a0" class="outline-3">
+<h3 id="orgc7df5a0"><span class="section-number-3">1.2</span> <code>(ansi-)term</code> mode</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li><code>C-c C-j</code> (<code>term-line-mode</code>) switch to line mode (acts like an editor).</li>
+<li><code>C-c C-k</code> (<code>term-char-mode</code>) switch to char mode (acts like a usual terminal).</li>
+<li><code>C-c C-c</code> (<code>term-interrupt-subjob</code>) send a literal <code>C-c</code> to the sub-shell</li>
+<li><code>C-c &lt;char&gt;</code> is equivalent to <code>C-x &lt;char&gt;</code> in normal Emacs modes, e.g. <code>C-c o</code> invokes the global binding of <code>C-x o</code> which is normally `~other-window~'</li>
+<li><code>C-c C-q</code> (<code>term-pager-toggle</code>) toggle the page-at-a-time feature. When enabled, the mode-line displays the word `~page~' and each time Term receives more than a screenful of output, it pauses and displays `~**MORE**~' in the mode-line where <code>&lt;SPC&gt;</code> displays the next screenful of output and <code>?</code> displays the other options &#x2013; the interface is similar to the <code>more</code> program.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd04951" class="outline-3">
+<h3 id="orgfd04951"><span class="section-number-3">1.3</span> Bookmarks</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><code>C-x r m</code> (<code>bookmark-set</code>) Set the bookmark for the visited file, at point</li>
+<li><code>C-x r l</code> (<code>list-bookmarks</code>) list all bookmarks</li>
+<li><code>C-x r b</code> (<code>bookmark-jump</code>) then type a bookmark name. You can type <code>*</code> for wildcard</li>
+<li><code>bookmark-save</code> save all the current bookmark values in the default bookmark file <code>\~/.emacs.d/bookmarks</code>. Can be modified by setting the variable <code>bookmark-default-file</code></li>
+<li>when in the bookmark file:
+<ul class="org-ul">
+<li><code>d</code> mark the current item for remove</li>
+<li><code>x</code> remove all marked ones</li>
+<li><code>r</code> rename current item's title</li>
+<li><code>s</code> save the change</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2cba8ed" class="outline-3">
+<h3 id="org2cba8ed"><span class="section-number-3">1.4</span> helm</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li><code>RET</code> executes the default action upon exiting the Helm session</li>
+<li><code>C-j</code> executes the default action but without exiting the Helm session</li>
+<li><code>TAB</code> displays a list of actions available</li>
+<li><code>C-@</code> mark/unmark a candidate</li>
+<li><code>M-U</code> unmark all visible marked candidates at once</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org59042e4" class="outline-3">
+<h3 id="org59042e4"><span class="section-number-3">1.5</span> <code>*buffers*</code></h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li><code>C-x C-b</code> helm-buffers</li>
+<li><code>M-SPC</code> or <code>C-SPC</code> mark</li>
+<li><code>C-x &gt;</code> and <code>C-x &lt;</code> horizontal scroll</li>
+<li><code>C-x C-s</code>  save buffer without leaving Helm</li>
+<li><code>C-x s</code> save all unsaved buffers</li>
+<li><code>C-c d</code> delete buffer without leaving Helm</li>
+<li><code>M-D</code> delete marked buffers and leave Helm</li>
+<li><code>C-x k</code> is meant to kill buffers but cannot kill multiple buffers selected by <code>C-SPC</code> with <code>RET</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaab12fb" class="outline-3">
+<h3 id="orgaab12fb"><span class="section-number-3">1.6</span> <code>*kill-buffer*</code></h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>This seems only useful when killing the currently opened buffer</li>
+<li><code>C-x k</code> open kill-buffer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgddcc422" class="outline-3">
+<h3 id="orgddcc422"><span class="section-number-3">1.7</span> Case conversion A &lt;-&gt; a</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li><code>M-l/M-u</code> (<code>downcase-word/upcase-word</code>) convert following word to lower/upper case.</li>
+<li><code>M-c</code> (<code>capitalize-word</code>) capitalize the following word.</li>
+<li><code>C-x C-l/C-x C-u</code> (<code>downcase-region/upcase-region</code>) convert region to lower/upper case</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org293a8af" class="outline-3">
+<h3 id="org293a8af"><span class="section-number-3">1.8</span> Deleting and killing</h3>
+<div class="outline-text-3" id="text-1-8">
+</div>
+<div id="outline-container-orgb7a0792" class="outline-4">
+<h4 id="orgb7a0792"><span class="section-number-4">1.8.1</span> Deleting by character</h4>
+<div class="outline-text-4" id="text-1-8-1">
+<ul class="org-ul">
+<li><code>&lt;Del&gt;~/~C-d</code> Delete the character before/after point</li>
+
+<li><code>M-d~/~M-&lt;Del&gt;</code> Kill forward/back to the end/beginning of the next/previous word</li>
+
+<li><code>C-k~/~M-k</code> Kill to the end of the line/sentence</li>
+
+<li><code>C-o</code> Insert a blank line after the cursor</li>
+<li><code>C-S-&lt;DEL&gt;</code> (<code>kill-whole-line</code>) Kill a whole line</li>
+
+<li><code>C-u 50</code> or <code>M-5 0 &lt;moving_command&gt;</code> repeat the moving command by 50 times. The tutorial says <code>C-u</code> is better `because it works on any terminal'. `50' is called a "prefix argument". Exception: <code>C-u 8 C-v~/~C-u 8 M-v</code> Instead of scrolling 8 pages up/down, it scrolls the current screen by 8 lines up/down.</li>
+
+<li><code>mouse-3</code> (right click) set the mark at point then select up to and move point to where you click</li>
+<li><code>'shifted cursor motion keys'</code> Set the mark at point if the mark is inactive, then move point.</li>
+
+<li><code>C-w</code> Kill the selected region</li>
+<li><code>C-x &lt;TAB&gt;</code> Indent the selected region</li>
+<li><code>M-$</code> Check the spelling of words</li>
+
+<li><code>C-/</code>, <code>C-_</code>, <code>C-x u</code> <b>undo</b>. On some text terminals, typing <code>C-/</code> actually sends <code>C-_</code> to Emacs.</li>
+<li><code>C-g</code> changes the `direction'. So, after undoing <code>C-/</code> n-times, doing <code>C-g C-/</code> and repeating <code>C-/</code> (n-1)-times will do <b>redo</b> all.</li>
+
+<li>the auto saved file's name for "<code>hello.c</code>" is "<code>#hello.c#</code>". To recover auto-saved editing, run <code>M-x recover-this-file &lt;RET&gt;</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8144625" class="outline-3">
+<h3 id="org8144625"><span class="section-number-3">1.9</span> Dired</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li><code>C-x d</code> invoke Dired, <code>C-x 5 d</code> (<code>dired-other-frame</code>)</li>
+<li><code>g</code> re-read all directories (retains all marks)</li>
+</ul>
+</div>
+<div id="outline-container-org4d24f15" class="outline-4">
+<h4 id="org4d24f15"><span class="section-number-4">1.9.1</span> directories</h4>
+<div class="outline-text-4" id="text-1-9-1">
+<ul class="org-ul">
+<li><code>+</code> (<code>dired-create-directory</code>) create a directory</li>
+<li><code>C-M-n</code> (<code>dired-next-subdir</code>) go to next subdirectory header line regardless of level</li>
+<li><code>C-M-p</code> (<code>dired-prev-subdir</code>) go to previous subdirectory header line regardless of level</li>
+<li><code>C-M-u</code> (<code>dired-tree-up</code>) go up to the parent directory's header line</li>
+<li><code>C-M-d</code> (<code>dired-tree-down</code>)</li>
+<li><code>^</code> (<code>dired-up-directory</code>) go to parent directory</li>
+<li><code>&lt;</code> (<code>dired-prev-dirline</code>) move up to the previous directory-file line</li>
+<li><code>&gt;</code> (<code>dired-next-dirline</code>) move down to the next directory-file line</li>
+<li><code>a</code> (<code>dired-find-alternate-file</code>) visit file or directory on current line via</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4b1560a" class="outline-4">
+<h4 id="org4b1560a"><span class="section-number-4">1.9.2</span> flags</h4>
+<div class="outline-text-4" id="text-1-9-2">
+<ul class="org-ul">
+<li><code>d</code> (<code>dired-flag-file-deletion</code>) flag 'D' the file for deletion</li>
+<li><code>u</code> (<code>dired-unmark</code>) remove the deletion flag</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge36a407" class="outline-4">
+<h4 id="orge36a407"><span class="section-number-4">1.9.3</span> files</h4>
+<div class="outline-text-4" id="text-1-9-3">
+<ul class="org-ul">
+<li><code>x</code> (<code>dired-do-flagged-delete</code>) delete files flagged for deletion</li>
+<li>to create a new file in the directory, just use <code>C-x C-f</code> as usual</li>
+<li><code>f</code>, <code>e</code>, <code>&lt;ret&gt;</code> (<code>dired-find-file</code>) visit the file</li>
+<li><code>v</code> (<code>dired-view-file</code>) view the file with view mode (visit without change)</li>
+<li><code>a</code> (<code>dired-find-alternate-file</code>) visit file or directory on current line via `find-alternate-file'</li>
+<li><code>C NEW &lt;RET&gt;</code> (<code>dired-do-copy</code>) copy; <code>NEW</code> is the directory to copy into ir the new name</li>
+<li><code>D</code> (<code>dired-do-delete</code>) delete the specified or marked files</li>
+<li><code>x</code> (<code>dired-do-flagged-delete</code>) delete all flagged files</li>
+<li><code>S NEW &lt;RET&gt;</code> (<code>dired-do-symlink</code>) make symbolic links; this is line 'ln -s'</li>
+<li><code>M MODESPEC &lt;RET&gt;</code> (<code>dired-do-chmod</code>) change the mode</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc5fd2df" class="outline-4">
+<h4 id="orgc5fd2df"><span class="section-number-4">1.9.4</span> marks</h4>
+<div class="outline-text-4" id="text-1-9-4">
+<ul class="org-ul">
+<li><code>m</code> mark with '*'</li>
+<li><code>u</code> (<code>dired-unmark</code>) remove any mark</li>
+<li><code>U</code> (<code>dired-unmark-all-marks</code>) remove all marks from all files in the buffer</li>
+<li><code>M-}</code> (<code>dired-next-marked-file</code>) move down to the next marked file</li>
+<li><code>M-{</code> (<code>dired-prev-marked-file</code>) move up to the previous marked file</li>
+<li><code>C-_</code> (<code>dired-undo</code>) undo changes in the Dired buffer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfa71bae" class="outline-4">
+<h4 id="orgfa71bae"><span class="section-number-4">1.9.5</span> shell command</h4>
+<div class="outline-text-4" id="text-1-9-5">
+<ul class="org-ul">
+<li><code>M-x !</code> ('<code>dired-do-shell-command</code>') reads a shell command string in the minibuffer, and runs that shell command on one or more files</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org045a720" class="outline-3">
+<h3 id="org045a720"><span class="section-number-3">1.10</span> File</h3>
+<div class="outline-text-3" id="text-1-10">
+<ul class="org-ul">
+<li>save: <code>C-x C-s</code></li>
+<li>save as: <code>C-x C-w</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfc06594" class="outline-3">
+<h3 id="orgfc06594"><span class="section-number-3">1.11</span> Find/replace</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li>incremental search: <code>C-s</code> (forward), <code>C-r</code> (backward)</li>
+<li>find all occurrence: <code>M-s o</code> (<code>occur</code>)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7552895" class="outline-3">
+<h3 id="org7552895"><span class="section-number-3">1.12</span> font</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+M-x customize-face&lt;RET&gt;default&lt;RET&gt;
+</p>
+</div>
+</div>
+<div id="outline-container-orga3f04cf" class="outline-3">
+<h3 id="orga3f04cf"><span class="section-number-3">1.13</span> frames</h3>
+<div class="outline-text-3" id="text-1-13">
+<ul class="org-ul">
+<li><code>C-x 5 2</code> (<code>make-frame-command</code>) create a new frame</li>
+<li><code>C-x 5 0</code> (<code>delete-frame</code>) delete the selected frame</li>
+<li><code>C-x 5 1</code> delete all frames except the selected one</li>
+<li><code>C-x 5 o</code> cycle and select other frames</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org57dcfdf" class="outline-3">
+<h3 id="org57dcfdf"><span class="section-number-3">1.14</span> help and info</h3>
+<div class="outline-text-3" id="text-1-14">
+<ul class="org-ul">
+<li><code>C-h i</code> (<code>info</code>) run Info, the GNU documentation browser</li>
+<li><code>C-h b</code> (<code>describe-bindings</code>) display all active key bindings</li>
+<li><code>C-h c KEY</code> (<code>describe-key-briefly</code>) display the name of the command that <code>KEY</code> is bound to</li>
+<li><code>C-h k KEY</code> (<code>describe-key</code>) display the name and documentation of the command that <code>KEY</code> runs</li>
+<li>to open separate buffer for <code>info</code>, do <code>M-2 M-x info</code>, <code>M-3 M-x info</code>, etc.</li>
+<li><code>C-h</code> help apropos</li>
+<li><code>C-h c &lt;command&gt;</code> displays a very brief description of the command. Eg. <code>C-h c C-p</code>.</li>
+<li><code>C-h k &lt;command&gt;</code> displays the documentation of the function along with its name.</li>
+<li><code>C-h f &lt;function_name&gt;</code> describe a function. Eg. <code>C-h f previous-line&lt;RET&gt;</code>.</li>
+<li><code>C-h a &lt;keyword&gt;</code> or <code>M-x &lt;keyword&gt;</code> (command apropos) list all the commands whose names contain that keyword. Eg. <code>C-h a file&lt;RET&gt;</code> displays a list of all <code>M-x</code> commands with "file" in their names with character-command.</li>
+</ul>
+</div>
+<div id="outline-container-org612ed78" class="outline-4">
+<h4 id="org612ed78"><span class="section-number-4">1.14.1</span> Browsing inside info</h4>
+<div class="outline-text-4" id="text-1-14-1">
+<ul class="org-ul">
+<li><code>L</code> (<code>Info-history</code>), <code>l</code> (<code>Info-history-back</code>), <code>r</code> (<code>Info-history-forward</code>)</li>
+<li><code>^</code> (<code>Info-up</code>)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org12f4dc6" class="outline-3">
+<h3 id="org12f4dc6"><span class="section-number-3">1.15</span> ispell (flyspell)</h3>
+<div class="outline-text-3" id="text-1-15">
+<ul class="org-ul">
+<li><code>M-$</code> Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.
+<ul class="org-ul">
+<li><code>i</code> Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc07db5e" class="outline-3">
+<h3 id="orgc07db5e"><span class="section-number-3">1.16</span> Menubar <code>F10</code></h3>
+</div>
+<div id="outline-container-orgace8162" class="outline-3">
+<h3 id="orgace8162"><span class="section-number-3">1.17</span> Moving around</h3>
+<div class="outline-text-3" id="text-1-17">
+</div>
+<div id="outline-container-org4a2d4b5" class="outline-4">
+<h4 id="org4a2d4b5"><span class="section-number-4">1.17.1</span> by characters/lines</h4>
+<div class="outline-text-4" id="text-1-17-1">
+<ul class="org-ul">
+<li><code>C-b~/~C-f</code> move back/forward by one character</li>
+<li><code>C-p~/~C-n</code> move up/down by one line</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org79969fd" class="outline-4">
+<h4 id="org79969fd"><span class="section-number-4">1.17.2</span> by words</h4>
+<div class="outline-text-4" id="text-1-17-2">
+<ul class="org-ul">
+<li><code>M-b~/~M-f</code> move back/forward by one word</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org435eda5" class="outline-4">
+<h4 id="org435eda5"><span class="section-number-4">1.17.3</span> horizontally</h4>
+<div class="outline-text-4" id="text-1-17-3">
+<ul class="org-ul">
+<li><code>C-a~/~C-e</code> move to the beginning/end of the line</li>
+<li><code>M-m</code> (<code>back-to-indentation</code>) Jump to first non-whitespace character of the line</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2f89594" class="outline-4">
+<h4 id="org2f89594"><span class="section-number-4">1.17.4</span> by sentence</h4>
+<div class="outline-text-4" id="text-1-17-4">
+<ul class="org-ul">
+<li><code>M-a~/~M-e</code> move to the beginning/end of the sentence</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1967250" class="outline-4">
+<h4 id="org1967250"><span class="section-number-4">1.17.5</span> by paragraph</h4>
+<div class="outline-text-4" id="text-1-17-5">
+<ul class="org-ul">
+<li><code>M-{</code> (<code>backward-paragraph</code>) Move back to previous paragraph beginning</li>
+<li><code>M-}</code> (<code>forward-paragraph</code>) Move forward to next paragraph end.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b9dcbd" class="outline-4">
+<h4 id="org8b9dcbd"><span class="section-number-4">1.17.6</span> by matching parentheses</h4>
+<div class="outline-text-4" id="text-1-17-6">
+<ul class="org-ul">
+<li><code>C-M-f</code> (<code>forward-sexp</code>)</li>
+<li><code>C-M-b</code> (<code>backward-sexp</code>)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org032f4bb" class="outline-4">
+<h4 id="org032f4bb"><span class="section-number-4">1.17.7</span> by buffer</h4>
+<div class="outline-text-4" id="text-1-17-7">
+<ul class="org-ul">
+<li><code>M-&lt;</code> <code>M-&gt;</code> move to the beginning/end of the buffer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org07f833a" class="outline-4">
+<h4 id="org07f833a"><span class="section-number-4">1.17.8</span> by page</h4>
+<div class="outline-text-4" id="text-1-17-8">
+<ul class="org-ul">
+<li><code>C-v</code> <code>M-v</code> page down/up by one page</li>
+<li><code>C-M-v</code> scroll the other window</li>
+<li><code>C-l</code> Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87b9a94" class="outline-4">
+<h4 id="org87b9a94"><span class="section-number-4">1.17.9</span> back to previous position</h4>
+<div class="outline-text-4" id="text-1-17-9">
+<ul class="org-ul">
+<li><code>C-&lt;SPC&gt;</code> Set the mark at point</li>
+<li><code>C-x C-x</code> Set the mark at point, activate, then move back to the original point</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org78b040f" class="outline-4">
+<h4 id="org78b040f"><span class="section-number-4">1.17.10</span> GO TO</h4>
+<div class="outline-text-4" id="text-1-17-10">
+<ul class="org-ul">
+<li><code>M-g g</code> go to the line</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1064479" class="outline-3">
+<h3 id="org1064479"><span class="section-number-3">1.18</span> Outline minor mode</h3>
+<div class="outline-text-3" id="text-1-18">
+<ul class="org-ul">
+<li>A <i>heading line</i> together with all following <i>body lines</i> is called an <b>entry</b>.
+<ul class="org-ul">
+<li><code>outline-hide-entry</code> and <code>outline-show-entry</code> only applies to the body.</li>
+<li>The <b>body</b> as in <code>outline-hide-body</code> refers to all body lines in the buffer.</li>
+<li><b>All</b> as in <code>outline-show-all</code> literally means all of the lines in the buffer.</li>
+</ul></li>
+<li>A heading line together with all of its deeper entries is called a <b>subtree</b>.</li>
+<li>Immediate (one level down) subheadings of the current heading is called <b>children</b>.</li>
+<li>All of deeper subheadings under the current heading are called <b>branches</b>.</li>
+<li><i>Bodies</i> of the current heading and <i>bodies</i> of its subheadings are collectively called <b>leaves</b>.</li>
+<li>Everything except the top N levels of heading lines and their bodies are called <b>sublevels</b></li>
+<li>Everything except the heading or body with heading lines leading up to the top level are called <b>other</b></li>
+</ul>
+</div>
+<div id="outline-container-org43453a3" class="outline-4">
+<h4 id="org43453a3"><span class="section-number-4">1.18.1</span> Motion commands</h4>
+<div class="outline-text-4" id="text-1-18-1">
+<ul class="org-ul">
+<li><code>C-c @ C-n</code> (<code>outline-next-visible-heading</code>)     move point to the next     visible heading line</li>
+<li><code>C-c @ C-p</code> (<code>outline-previous-visible-heading</code>) move point to the previous visible heading line</li>
+
+<li><code>C-c @ C-f</code> (<code>outline-forward-same-level</code>)  move point to the next     visible heading line of the same level</li>
+<li><code>C-c @ C-b</code> (<code>outline-backward-same-level</code>) move point to the previous visible heading line of the same level</li>
+
+<li><code>C-c @ C-u</code> (<code>outline-up-heading</code>) move point up to a lower-level visible heading line</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7e35b6d" class="outline-4">
+<h4 id="org7e35b6d"><span class="section-number-4">1.18.2</span> Visibility commands</h4>
+<div class="outline-text-4" id="text-1-18-2">
+<ul class="org-ul">
+<li><code>C-c @ C-a</code> (<code>outline-show-all</code>) expand all (bufferwise)</li>
+<li><code>C-c @ C-q</code> (<code>outline-hide-sublevels</code>) collapse all (bufferwise) sublevels</li>
+
+<li><code>C-c @ C-d</code> (<code>outline-hide-subtree</code>) hide everything under the current heading except the heading itself</li>
+<li><code>C-c @ C-s</code> (<code>outline-show-subtree</code>) show everything under the current heading (body, subheadings and their bodies)</li>
+
+<li><code>C-c @ C-l</code> (<code>outline-hide-leaves</code>) hide the body of the current heading line and bodies of its subheadings</li>
+
+<li><code>C-c @ C-k</code> (<code>outline-show-branches</code>) show all subheadings, at all levels, of the current line</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd8862f" class="outline-3">
+<h3 id="orgfd8862f"><span class="section-number-3">1.19</span> Reference sites</h3>
+<div class="outline-text-3" id="text-1-19">
+<p>
+<a href="http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/">http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgfffc75d" class="outline-3">
+<h3 id="orgfffc75d"><span class="section-number-3">1.20</span> Region/Mark</h3>
+<div class="outline-text-3" id="text-1-20">
+<ul class="org-ul">
+<li><code>C-&lt;SPC&gt;</code> (<code>set-mark-command</code>) Set the mark at point, and activate it.</li>
+<li><code>C-x C-x</code> (<code>exchange-point-and-mark</code>) Set the mark at point, and activate it; then move point where the mark used to be.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd8c870f" class="outline-3">
+<h3 id="orgd8c870f"><span class="section-number-3">1.21</span> Registers</h3>
+<div class="outline-text-3" id="text-1-21">
+<ul class="org-ul">
+<li><code>M-x view-register RET r</code> display a description of what register <code>r</code> contains</li>
+
+<li>Saving Positions
+<ul class="org-ul">
+<li><code>C-x r SPC r</code> (<code>point-to-register</code>) record the position of point and the current buffer in register <code>r</code></li>
+<li><code>C-x r j r</code> (<code>jump-to-register</code>) jump to the position and buffer saved in register <code>r</code></li>
+</ul></li>
+
+<li>Saving text
+<ul class="org-ul">
+<li><code>C-x r s r</code> (<code>copy-to-register</code>) copy region into register <code>r</code></li>
+<li><code>C-x r i r</code> (<code>insert-register</code>) insert text from register <code>r</code></li>
+<li><code>M-x append-to-register RET r</code> append region to text in register <code>r</code></li>
+<li><code>C-x r +</code> (<code>increment-register</code>) if the register <code>r</code> contains a text, append region to text in register <code>r</code>. If the register contains a number, increase it by 1</li>
+<li><code>M-x prepend-to-register RET r</code> prepend region to text in register <code>r</code></li>
+</ul></li>
+
+<li>Saving numbers
+<ul class="org-ul">
+<li><code>C-u number C-x r n r</code> (<code>number-to-register</code>) store <code>number</code> into register <code>r</code></li>
+<li><code>C-u number C-x r + r</code> if the register <code>r</code> contains a number, increse that number by <code>number</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org69c5cf1" class="outline-3">
+<h3 id="org69c5cf1"><span class="section-number-3">1.22</span> Select</h3>
+<div class="outline-text-3" id="text-1-22">
+<ul class="org-ul">
+<li><code>C-x h</code> (<code>mark-whoe-buffer</code>) put point at beginning and mark at end of buffer (select all)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3f942ab" class="outline-3">
+<h3 id="org3f942ab"><span class="section-number-3">1.23</span> Sessions</h3>
+<div class="outline-text-3" id="text-1-23">
+<ul class="org-ul">
+<li>See info &gt; (emacs)Top &gt; Saving Emacs Sessions for detail</li>
+<li>if the variable <code>desktop-save-mode</code> is <code>t</code>,
+<ul class="org-ul">
+<li>Emacs looks, when it started, for a saved desktop in the current directory or in the location specified by <code>desktop-path</code> if specified by command <code>desktop-change-dir</code></li>
+<li>Emacs, by default, auto-saves the desktop whenever any of it changes. <code>desktop-auto-save-timeout</code> determines how frequently Emacs checks for modifications</li>
+</ul></li>
+<li><code>M-x desktop-save</code> Manually save the desktop</li>
+<li><code>M-x desktop-clear</code> empty the Emacs desktop by killing all buffers and clears the global variables listed in <code>desktop-clear-preserve-buffers-regexp</code></li>
+<li>if Emacs crashes, the lock stays on the dektop file and Emacs will ask next time whether use the locked desktop file or not. the variable <code>desktop-load-locked-desktop</code> valued <code>nil</code> will load the locked desktop file without asking</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org50fb643" class="outline-3">
+<h3 id="org50fb643"><span class="section-number-3">1.24</span> Symbol</h3>
+<div class="outline-text-3" id="text-1-24">
+<ul class="org-ul">
+<li><code>C-q C-&lt;KEY&gt;</code> Enter <code>^&lt;KEY&gt;</code> symbol, eg. <code>^A</code> for <code>CTRL-A</code> key combination</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfccdb90" class="outline-3">
+<h3 id="orgfccdb90"><span class="section-number-3">1.25</span> windows</h3>
+<div class="outline-text-3" id="text-1-25">
+<ul class="org-ul">
+<li><code>C-x o</code> (<code>other-window</code>) Select another window.</li>
+<li><code>C-M-v</code> (<code>scroll-other-window</code>) Scroll the next window.</li>
+<li><code>C-x 0</code> (<code>delete-window</code>) Delete the selected window.</li>
+<li><code>C-x 1</code> (<code>delete-other-windows</code>) Delete all windows in the selected frame except the selected window.</li>
+<li><code>C-x 4 0</code> (<code>kill-buffer-and-window</code>) Delete the selected window and kill the buffer that was showing in it. The last character in this key sequence is a zero.</li>
+<li><code>C-x ^</code> (<code>enlarge-window</code>) Make selected window taller.</li>
+<li><code>C-x }</code> (<code>enlarge-window-horizontally</code>) Make selected window wider.</li>
+<li><code>C-x {</code>  (<code>shrink-window-horizontally</code>) Make selected window narrower.</li>
+<li><code>C-x -</code> (<code>shrink-window-if-larger-than-buffer</code>) Shrink this window if its buffer doesn't need so many lines.</li>
+<li><code>C-x +</code> (<code>balance-windows</code>) Make all windows the same height.</li>
+</ul>
+</div>
+<div id="outline-container-orgeefe791" class="outline-4">
+<h4 id="orgeefe791"><span class="section-number-4">1.25.1</span> transpose windows</h4>
+<div class="outline-text-4" id="text-1-25-1">
+<ul class="org-ul">
+<li><a href="https:ff//www.emacswiki.org/emacs/TransposeWindows">https:ff//www.emacswiki.org/emacs/TransposeWindows</a></li>
+<li>top and bottom windows open and want to switch their positions: <code>C-x 0 C-x 4 b</code></li>
+<li>buttom window active and moving it to the top window: <code>C-x 0 C-x 2 C-x b RET</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org60fa841" class="outline-3">
+<h3 id="org60fa841"><span class="section-number-3">1.26</span> YASnippet</h3>
+<div class="outline-text-3" id="text-1-26">
+<ul class="org-ul">
+<li><code>C-c C-n</code> (<code>yas-new-snippet</code>) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use <code>C-c C-c</code> to save it.</li>
+</ul>
+</div>
+<div id="outline-container-orgbfd0377" class="outline-4">
+<h4 id="orgbfd0377"><span class="section-number-4">1.26.1</span> variables</h4>
+<div class="outline-text-4" id="text-1-26-1">
+<ul class="org-ul">
+<li><code>yas-global-mode</code> Non-nil if Yas-Global mode is enabled</li>
+<li><code>yas-snippet-dirs</code> list of top-level snippet directories</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1af1b9b" class="outline-3">
+<h3 id="org1af1b9b"><span class="section-number-3">1.27</span> AucTeX</h3>
+<div class="outline-text-3" id="text-1-27">
+</div>
+<div id="outline-container-orgab06518" class="outline-4">
+<h4 id="orgab06518"><span class="section-number-4">1.27.1</span> options</h4>
+<div class="outline-text-4" id="text-1-27-1">
+<ul class="org-ul">
+<li><code>preview-auto-reveal</code> Cause previews to open automatically when entered.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: HYUNGBO SHIM</p>
+<p class="date">Created: 2020-02-13 Thu 22:22</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
