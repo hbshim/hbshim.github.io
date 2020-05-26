@@ -309,7 +309,7 @@ git fetch upstream
 
 To fetch and merge:
 #+BEGIN_SRC shell
-git pull <REMOTE_NAME> <LOCAL_BRANCH_NAME>
+git pull <REMOTE> <BRANCH>
 #+END_SRC
 
 * push: local repository -> remote repository
