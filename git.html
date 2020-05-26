@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-05-26 Tue 15:05 -->
+<!-- 2020-05-26 Tue 15:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My Git Note</title>
@@ -234,36 +234,36 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge029b21">1. init</a></li>
-<li><a href="#org3c96892">2. config</a></li>
-<li><a href="#orgc27b91f">3. status</a></li>
-<li><a href="#orga725966">4. log</a></li>
-<li><a href="#orgf345d75">5. add: working tree -&gt; staging area</a></li>
-<li><a href="#org7dd749f">6. rm: remove from both working tree and the staging area</a></li>
-<li><a href="#orgcc1820a">7. commit: staging area -&gt; history</a></li>
-<li><a href="#org4002426">8. add+commit: working tree -&gt; staging area and history</a></li>
-<li><a href="#orga40fc4a">9. diff: working tree &lt;-&gt; staging area</a></li>
-<li><a href="#orgcd1cd5d">10. diff: staging area &lt;-&gt; history</a></li>
-<li><a href="#orga5b002a">11. checkout: working tree &lt;- staging area</a></li>
-<li><a href="#org6d2aeed">12. checkout: working tree and staging area &lt;- history</a></li>
-<li><a href="#org5f2401a">13. checkout branch</a></li>
-<li><a href="#orgdbfcd45">14. reset: staging area &lt;- history</a></li>
-<li><a href="#org5d24ec7">15. .gitignore</a></li>
-<li><a href="#orgb0ea9f0">16. branch: list</a></li>
-<li><a href="#orgff09546">17. branch: create new</a></li>
-<li><a href="#orgf020c80">18. branch: remove</a></li>
-<li><a href="#orgf680569">19. merge: HEAD -&gt; master</a></li>
-<li><a href="#org245b7a6">20. stash: save</a></li>
-<li><a href="#org50a2050">21. stash: list</a></li>
-<li><a href="#org53bc883">22. stash: apply</a></li>
-<li><a href="#orga267637">23. clone</a></li>
-<li><a href="#org2df1f87">24. remote: add/remove</a></li>
-<li><a href="#org6ff4918">25. remote: list</a></li>
-<li><a href="#org055dbe8">26. fetch: local repository &lt;- remote repository</a></li>
-<li><a href="#org5f6e654">27. push: local repository -&gt; remote repository</a></li>
-<li><a href="#org3df4583">28. rebase</a></li>
-<li><a href="#orgec8b327">29. cherry-pick</a></li>
-<li><a href="#orgd5b88c1">30. template</a></li>
+<li><a href="#org5cc92a5">1. init</a></li>
+<li><a href="#orgdeefb49">2. config</a></li>
+<li><a href="#org0eed308">3. status</a></li>
+<li><a href="#org27a58b1">4. log</a></li>
+<li><a href="#org692906c">5. add: working tree -&gt; staging area</a></li>
+<li><a href="#org388fb07">6. rm: remove from both working tree and the staging area</a></li>
+<li><a href="#org187b97c">7. commit: staging area -&gt; history</a></li>
+<li><a href="#org811a558">8. add+commit: working tree -&gt; staging area and history</a></li>
+<li><a href="#org755c92c">9. diff: working tree &lt;-&gt; staging area</a></li>
+<li><a href="#org80eb788">10. diff: staging area &lt;-&gt; history</a></li>
+<li><a href="#org97c4137">11. checkout: working tree &lt;- staging area</a></li>
+<li><a href="#org16a6147">12. checkout: working tree and staging area &lt;- history</a></li>
+<li><a href="#org02d68ae">13. checkout branch</a></li>
+<li><a href="#org9b143f0">14. reset: staging area &lt;- history</a></li>
+<li><a href="#org74b22b4">15. .gitignore</a></li>
+<li><a href="#org5e72933">16. branch: list</a></li>
+<li><a href="#orgdda2a61">17. branch: create new</a></li>
+<li><a href="#org20f5b2b">18. branch: remove</a></li>
+<li><a href="#orgf9ce9b5">19. merge: HEAD -&gt; master</a></li>
+<li><a href="#org8dc305d">20. stash: save</a></li>
+<li><a href="#org3825954">21. stash: list</a></li>
+<li><a href="#org224ef9f">22. stash: apply</a></li>
+<li><a href="#org6bec609">23. clone</a></li>
+<li><a href="#org6cb335c">24. remote: add/remove</a></li>
+<li><a href="#org4d63408">25. remote: list</a></li>
+<li><a href="#org1650e07">26. fetch: local repository &lt;- remote repository</a></li>
+<li><a href="#org33f832a">27. push: local repository -&gt; remote repository</a></li>
+<li><a href="#org497d296">28. rebase</a></li>
+<li><a href="#orgf47dd88">29. cherry-pick</a></li>
+<li><a href="#orge17f911">30. template</a></li>
 </ul>
 </div>
 </div>
@@ -283,8 +283,8 @@ Basics:
 <li><code>push</code> upload the local history to remote</li>
 </ul>
 
-<div id="outline-container-orge029b21" class="outline-2">
-<h2 id="orge029b21"><span class="section-number-2">1</span> init</h2>
+<div id="outline-container-org5cc92a5" class="outline-2">
+<h2 id="org5cc92a5"><span class="section-number-2">1</span> init</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-shell">git init
@@ -293,8 +293,8 @@ Basics:
 </div>
 </div>
 
-<div id="outline-container-org3c96892" class="outline-2">
-<h2 id="org3c96892"><span class="section-number-2">2</span> config</h2>
+<div id="outline-container-orgdeefb49" class="outline-2">
+<h2 id="orgdeefb49"><span class="section-number-2">2</span> config</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-shell">git config --global user.name <span style="color: #8b2252;">"&lt;NAME&gt;"</span>
@@ -318,8 +318,8 @@ To list config:
 </div>
 </div>
 
-<div id="outline-container-orgc27b91f" class="outline-2">
-<h2 id="orgc27b91f"><span class="section-number-2">3</span> status</h2>
+<div id="outline-container-org0eed308" class="outline-2">
+<h2 id="org0eed308"><span class="section-number-2">3</span> status</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-shell">git status
@@ -328,8 +328,8 @@ To list config:
 </div>
 </div>
 
-<div id="outline-container-orga725966" class="outline-2">
-<h2 id="orga725966"><span class="section-number-2">4</span> log</h2>
+<div id="outline-container-org27a58b1" class="outline-2">
+<h2 id="org27a58b1"><span class="section-number-2">4</span> log</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-shell">git log
@@ -356,8 +356,8 @@ It's convenient to alias this command
 </div>
 </div>
 
-<div id="outline-container-orgf345d75" class="outline-2">
-<h2 id="orgf345d75"><span class="section-number-2">5</span> add: working tree -&gt; staging area</h2>
+<div id="outline-container-org692906c" class="outline-2">
+<h2 id="org692906c"><span class="section-number-2">5</span> add: working tree -&gt; staging area</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-shell">git add FILE
@@ -379,8 +379,8 @@ To add all modified files
 </div>
 </div>
 
-<div id="outline-container-org7dd749f" class="outline-2">
-<h2 id="org7dd749f"><span class="section-number-2">6</span> rm: remove from both working tree and the staging area</h2>
+<div id="outline-container-org388fb07" class="outline-2">
+<h2 id="org388fb07"><span class="section-number-2">6</span> rm: remove from both working tree and the staging area</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-shell">git rm &lt;FILE&gt;
@@ -389,8 +389,8 @@ To add all modified files
 </div>
 </div>
 
-<div id="outline-container-orgcc1820a" class="outline-2">
-<h2 id="orgcc1820a"><span class="section-number-2">7</span> commit: staging area -&gt; history</h2>
+<div id="outline-container-org187b97c" class="outline-2">
+<h2 id="org187b97c"><span class="section-number-2">7</span> commit: staging area -&gt; history</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-shell">git commit
@@ -429,8 +429,8 @@ To commit without
 </p>
 </div>
 </div>
-<div id="outline-container-org4002426" class="outline-2">
-<h2 id="org4002426"><span class="section-number-2">8</span> add+commit: working tree -&gt; staging area and history</h2>
+<div id="outline-container-org811a558" class="outline-2">
+<h2 id="org811a558"><span class="section-number-2">8</span> add+commit: working tree -&gt; staging area and history</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-shell">git commit -a
@@ -443,8 +443,8 @@ nothing to specify after <code>git rm</code>
 </div>
 </div>
 
-<div id="outline-container-orga40fc4a" class="outline-2">
-<h2 id="orga40fc4a"><span class="section-number-2">9</span> diff: working tree &lt;-&gt; staging area</h2>
+<div id="outline-container-org755c92c" class="outline-2">
+<h2 id="org755c92c"><span class="section-number-2">9</span> diff: working tree &lt;-&gt; staging area</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-shell">git diff
@@ -453,8 +453,8 @@ nothing to specify after <code>git rm</code>
 </div>
 </div>
 
-<div id="outline-container-orgcd1cd5d" class="outline-2">
-<h2 id="orgcd1cd5d"><span class="section-number-2">10</span> diff: staging area &lt;-&gt; history</h2>
+<div id="outline-container-org80eb788" class="outline-2">
+<h2 id="org80eb788"><span class="section-number-2">10</span> diff: staging area &lt;-&gt; history</h2>
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
 <pre class="src src-shell">git diff --staged
@@ -463,8 +463,8 @@ nothing to specify after <code>git rm</code>
 </div>
 </div>
 
-<div id="outline-container-orga5b002a" class="outline-2">
-<h2 id="orga5b002a"><span class="section-number-2">11</span> checkout: working tree &lt;- staging area</h2>
+<div id="outline-container-org97c4137" class="outline-2">
+<h2 id="org97c4137"><span class="section-number-2">11</span> checkout: working tree &lt;- staging area</h2>
 <div class="outline-text-2" id="text-11">
 <div class="org-src-container">
 <pre class="src src-shell">git checkout -- &lt;FILE&gt;
@@ -485,8 +485,8 @@ To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:
 </div>
 </div>
 
-<div id="outline-container-org6d2aeed" class="outline-2">
-<h2 id="org6d2aeed"><span class="section-number-2">12</span> checkout: working tree and staging area &lt;- history</h2>
+<div id="outline-container-org16a6147" class="outline-2">
+<h2 id="org16a6147"><span class="section-number-2">12</span> checkout: working tree and staging area &lt;- history</h2>
 <div class="outline-text-2" id="text-12">
 <div class="org-src-container">
 <pre class="src src-shell">git checkout &lt;HASH&gt; -- &lt;FILE&gt;
@@ -495,8 +495,8 @@ To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:
 </div>
 </div>
 
-<div id="outline-container-org5f2401a" class="outline-2">
-<h2 id="org5f2401a"><span class="section-number-2">13</span> checkout branch</h2>
+<div id="outline-container-org02d68ae" class="outline-2">
+<h2 id="org02d68ae"><span class="section-number-2">13</span> checkout branch</h2>
 <div class="outline-text-2" id="text-13">
 <div class="org-src-container">
 <pre class="src src-shell">git chekout &lt;BRANCH NAME&gt;
@@ -505,8 +505,8 @@ To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:
 </div>
 </div>
 
-<div id="outline-container-orgdbfcd45" class="outline-2">
-<h2 id="orgdbfcd45"><span class="section-number-2">14</span> reset: staging area &lt;- history</h2>
+<div id="outline-container-org9b143f0" class="outline-2">
+<h2 id="org9b143f0"><span class="section-number-2">14</span> reset: staging area &lt;- history</h2>
 <div class="outline-text-2" id="text-14">
 <div class="org-src-container">
 <pre class="src src-shell">git reset HEAD &lt;FILE&gt;
@@ -515,8 +515,8 @@ To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:
 </div>
 </div>
 
-<div id="outline-container-org5d24ec7" class="outline-2">
-<h2 id="org5d24ec7"><span class="section-number-2">15</span> .gitignore</h2>
+<div id="outline-container-org74b22b4" class="outline-2">
+<h2 id="org74b22b4"><span class="section-number-2">15</span> .gitignore</h2>
 <div class="outline-text-2" id="text-15">
 <p>
 <code>.gitignore</code> lists of files that should be ignored. we can use regexp. a whole folder is indicated by <code>&lt;FOLDER&gt;/</code>
@@ -524,8 +524,8 @@ To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:
 </div>
 </div>
 
-<div id="outline-container-orgb0ea9f0" class="outline-2">
-<h2 id="orgb0ea9f0"><span class="section-number-2">16</span> branch: list</h2>
+<div id="outline-container-org5e72933" class="outline-2">
+<h2 id="org5e72933"><span class="section-number-2">16</span> branch: list</h2>
 <div class="outline-text-2" id="text-16">
 <p>
 To list all branches:
@@ -561,8 +561,8 @@ To list remote tracking branches only:
 </div>
 </div>
 
-<div id="outline-container-orgff09546" class="outline-2">
-<h2 id="orgff09546"><span class="section-number-2">17</span> branch: create new</h2>
+<div id="outline-container-orgdda2a61" class="outline-2">
+<h2 id="orgdda2a61"><span class="section-number-2">17</span> branch: create new</h2>
 <div class="outline-text-2" id="text-17">
 <p>
 To create a new branch from HEAD:
@@ -582,8 +582,8 @@ To create + checkout -&gt; new branch:
 </div>
 </div>
 
-<div id="outline-container-orgf020c80" class="outline-2">
-<h2 id="orgf020c80"><span class="section-number-2">18</span> branch: remove</h2>
+<div id="outline-container-org20f5b2b" class="outline-2">
+<h2 id="org20f5b2b"><span class="section-number-2">18</span> branch: remove</h2>
 <div class="outline-text-2" id="text-18">
 <div class="org-src-container">
 <pre class="src src-shell">git branch -d &lt;BRANCH&gt;
@@ -592,8 +592,8 @@ To create + checkout -&gt; new branch:
 </div>
 </div>
 
-<div id="outline-container-orgf680569" class="outline-2">
-<h2 id="orgf680569"><span class="section-number-2">19</span> merge: HEAD -&gt; master</h2>
+<div id="outline-container-orgf9ce9b5" class="outline-2">
+<h2 id="orgf9ce9b5"><span class="section-number-2">19</span> merge: HEAD -&gt; master</h2>
 <div class="outline-text-2" id="text-19">
 <p>
 To merge &lt;BRANCH&gt; into master:
@@ -623,8 +623,8 @@ three-way (recursive)
 </div>
 </div>
 
-<div id="outline-container-org245b7a6" class="outline-2">
-<h2 id="org245b7a6"><span class="section-number-2">20</span> stash: save</h2>
+<div id="outline-container-org8dc305d" class="outline-2">
+<h2 id="org8dc305d"><span class="section-number-2">20</span> stash: save</h2>
 <div class="outline-text-2" id="text-20">
 <p>
 To save working directory without staging:
@@ -644,8 +644,8 @@ To stash with comment:
 </div>
 </div>
 
-<div id="outline-container-org50a2050" class="outline-2">
-<h2 id="org50a2050"><span class="section-number-2">21</span> stash: list</h2>
+<div id="outline-container-org3825954" class="outline-2">
+<h2 id="org3825954"><span class="section-number-2">21</span> stash: list</h2>
 <div class="outline-text-2" id="text-21">
 <p>
 To list all stashes:
@@ -665,8 +665,8 @@ To list all stashes with changes:
 </div>
 </div>
 
-<div id="outline-container-org53bc883" class="outline-2">
-<h2 id="org53bc883"><span class="section-number-2">22</span> stash: apply</h2>
+<div id="outline-container-org224ef9f" class="outline-2">
+<h2 id="org224ef9f"><span class="section-number-2">22</span> stash: apply</h2>
 <div class="outline-text-2" id="text-22">
 <div class="org-src-container">
 <pre class="src src-shell">git stash apply
@@ -683,8 +683,8 @@ Here, <code>&lt;LABEL&gt;</code> is the one given by <code>stash list</code>
 </div>
 </div>
 
-<div id="outline-container-orga267637" class="outline-2">
-<h2 id="orga267637"><span class="section-number-2">23</span> clone</h2>
+<div id="outline-container-org6bec609" class="outline-2">
+<h2 id="org6bec609"><span class="section-number-2">23</span> clone</h2>
 <div class="outline-text-2" id="text-23">
 <div class="org-src-container">
 <pre class="src src-shell">git clone git@github.com:name/git.git
@@ -693,8 +693,8 @@ Here, <code>&lt;LABEL&gt;</code> is the one given by <code>stash list</code>
 </div>
 </div>
 
-<div id="outline-container-org2df1f87" class="outline-2">
-<h2 id="org2df1f87"><span class="section-number-2">24</span> remote: add/remove</h2>
+<div id="outline-container-org6cb335c" class="outline-2">
+<h2 id="org6cb335c"><span class="section-number-2">24</span> remote: add/remove</h2>
 <div class="outline-text-2" id="text-24">
 <p>
 To add a new remote:
@@ -727,8 +727,8 @@ After modifying remote/upstream, run <code>git remote -v</code> to verify.
 </div>
 </div>
 
-<div id="outline-container-org6ff4918" class="outline-2">
-<h2 id="org6ff4918"><span class="section-number-2">25</span> remote: list</h2>
+<div id="outline-container-org4d63408" class="outline-2">
+<h2 id="org4d63408"><span class="section-number-2">25</span> remote: list</h2>
 <div class="outline-text-2" id="text-25">
 <p>
 To list remotes (short names only):
@@ -756,8 +756,8 @@ To list remotes verbosely:
 </div>
 </div>
 
-<div id="outline-container-org055dbe8" class="outline-2">
-<h2 id="org055dbe8"><span class="section-number-2">26</span> fetch: local repository &lt;- remote repository</h2>
+<div id="outline-container-org1650e07" class="outline-2">
+<h2 id="org1650e07"><span class="section-number-2">26</span> fetch: local repository &lt;- remote repository</h2>
 <div class="outline-text-2" id="text-26">
 <div class="org-src-container">
 <pre class="src src-shell">git fetch origin
@@ -776,14 +776,14 @@ Note that this does not affect local/HEAD. We need to merge, eg. <code>git merge
 To fetch and merge:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">git pull
+<pre class="src src-shell">git pull &lt;REMOTE_NAME&gt; &lt;LOCAL_BRANCH_NAME&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5f6e654" class="outline-2">
-<h2 id="org5f6e654"><span class="section-number-2">27</span> push: local repository -&gt; remote repository</h2>
+<div id="outline-container-org33f832a" class="outline-2">
+<h2 id="org33f832a"><span class="section-number-2">27</span> push: local repository -&gt; remote repository</h2>
 <div class="outline-text-2" id="text-27">
 <div class="org-src-container">
 <pre class="src src-shell">git push &lt;REMOTE REPOSITORY: eg. origin&gt; &lt;LOCAL BRANCH: eg. master&gt;
@@ -792,8 +792,8 @@ To fetch and merge:
 </div>
 </div>
 
-<div id="outline-container-org3df4583" class="outline-2">
-<h2 id="org3df4583"><span class="section-number-2">28</span> rebase</h2>
+<div id="outline-container-org497d296" class="outline-2">
+<h2 id="org497d296"><span class="section-number-2">28</span> rebase</h2>
 <div class="outline-text-2" id="text-28">
 <p>
 To "operate on" the last &lt;n&gt; commits back from HEAD:
@@ -819,12 +819,12 @@ We can also reorder commits by changing the order of the lines.
 </div>
 </div>
 
-<div id="outline-container-orgec8b327" class="outline-2">
-<h2 id="orgec8b327"><span class="section-number-2">29</span> cherry-pick</h2>
+<div id="outline-container-orgf47dd88" class="outline-2">
+<h2 id="orgf47dd88"><span class="section-number-2">29</span> cherry-pick</h2>
 </div>
 
-<div id="outline-container-orgd5b88c1" class="outline-2">
-<h2 id="orgd5b88c1"><span class="section-number-2">30</span> template</h2>
+<div id="outline-container-orge17f911" class="outline-2">
+<h2 id="orge17f911"><span class="section-number-2">30</span> template</h2>
 <div class="outline-text-2" id="text-30">
 <div class="org-src-container">
 <pre class="src src-shell">
@@ -836,7 +836,7 @@ We can also reorder commits by changing the order of the lines.
 <div id="postamble" class="status">
 <p class="date">Date: Tue May 26 12:21:12 2020</p>
 <p class="author">Author: Hyungbo Shim</p>
-<p class="date">Created: 2020-05-26 Tue 15:05</p>
+<p class="date">Created: 2020-05-26 Tue 15:13</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -89,8 +89,13 @@ It's convenient to alias this command
     git add FILE
 
 ``FILE`` can be a list of files, ``FILE1 FILE2 FILE3 ...``
-``.`` for ``FILE`` adds all modified files
 we can use regexp, for eg, ``S*`` for all files starting with ``S``
+
+To add all modified files
+
+.. code:: shell
+
+    git add .
 
 6 rm: remove from both working tree and the staging area
 --------------------------------------------------------
@@ -338,6 +343,8 @@ To remove:
 
     git remote remove <REMOTE NAME>
 
+After modifying remote/upstream, run ``git remote -v`` to verify.
+
 25 remote: list
 ---------------
 
@@ -352,6 +359,12 @@ To list remotes (short and full names only):
 .. code:: shell
 
     git remote
+
+To list remotes verbosely:
+
+.. code:: shell
+
+    git remote -v
 
 26 fetch: local repository <- remote repository
 -----------------------------------------------
@@ -377,7 +390,7 @@ To fetch and merge:
 
 .. code:: shell
 
-    git push <REMOTE REPOSITORY> <LOCAL BRANCH>
+    git push <REMOTE REPOSITORY: eg. origin> <LOCAL BRANCH: eg. master>
 
 28 rebase
 ---------
