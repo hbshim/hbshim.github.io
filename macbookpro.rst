@@ -1,0 +1,138 @@
+    :Author: Hyungbo Shim
+
+.. contents::
+
+1 emacs keybinding
+------------------
+
+- from `https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict <https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict>`_
+
+- Get this file: Emacs Opt Bindings.dict, Edit it (optionally), — it’s self-explainary. Then save (creating the directory if there isn’t one) as ``~/Library/KeyBindings/DefaultKeyBinding.dict``
+
+2 MAC address changer
+---------------------
+
+- ``sudo macchanger -r en0``
+
+3 Brew
+------
+
+- Help
+
+  - ``brew --version`` Display the version of Homebrew.
+
+  - ``brew help`` Print Help Information
+
+  - ``brew help <sub-command>`` Print Help Info for a brew command
+
+  - ``brew doctor`` Check system for potential problems.
+
+- Update
+
+  - ``brew update`` Fetch latest version of homebrew and formula
+
+  - ``brew outdated`` Show formulae with an updated version available
+
+  - ``brew upgrade`` Upgrade all outdated and UN pinned brews
+
+  - ``brew upgrade <formula>`` Upgrade only the specified brew
+
+  - ``brew pin <formula>`` Prevent the specified formulae from being upgraded
+
+  - ``brew unpin <formula>`` Allow the specified formulae to be upgraded.
+
+- Repositories
+
+  - ``brew tap`` List all the current tapped repositories (taps)
+
+  - ``brew tap <user/repo>`` Tap a formula repository from Github using https for tap `https://github.com/user/homebrew-repo <https://github.com/user/homebrew-repo>`_
+
+  - ``brew tap <user/repo> <URL>`` Tap a formula repository from the specified URL
+
+  - ``brew untap <user/repo>`` Remove the given tap from the repository
+
+- Cask
+
+  - ``brew tap homebrew/cask`` Tap the Cask repository from Github.
+
+  - ``brew cask list`` List all the installed casks .
+
+  - ``brew search <text>`` Search all known casks based on the substring text.
+
+  - ``brew cask install <cask>`` Install the given cask.
+
+  - ``brew cask reinstall <cask>`` Reinstalls the given Cask
+
+  - ``brew cask uninstall <cask>`` Uninstall the given cask.
+
+- Search, Install, Remove
+
+  - ``brew list`` List all the installed formulae.
+
+  - ``brew search`` Display all locally available formulae for brewing.
+
+  - ``brew search <text>`` Perform a substring search of formulae names for brewing.
+
+  - ``brew info <formula>`` Display information about the formula.
+
+  - ``brew install <formula>`` Install the formula.
+
+  - ``brew uninstall <formula>`` Uninstall the formula.
+
+- Cleanup
+
+  - ``brew cleanup`` Remove older versions of installed formulae.
+
+  - ``brew cleanup <formula>`` Remove older versions of specified formula.
+
+  - ``brew cleanup -n`` Display all formula that will be removed (dry run)
+
+- Shell Environment Variables
+
+  - Add the following in the shell init file, ``~/.bash_profile``
+
+.. code:: shell
+
+    export MANPATH="/usr/local/share/man:$MANPATH"
+    export INFOPATH="/usr/local/share/info:$INFOPATH"
+
+And then make sure that the emacs package ``exec-path-from-shell`` is available and the emacs variable ``exec-path-from-shell-variables`` contains both of "PATH" and "MANPATH". We need this to ensure that Emacs ``man`` directs to the man pages of applications installed by Brew.
+For example, macos native ``bash`` is very old but we can get newer version of bash (that will be located under ``/usr/local``) through brew. This causes a conflict between older and newer versions of man pages. By setting ``MANPATH="/usr/local/share/man:$MANPATH"`` I could make sure that the man page for newer bash is accessed by ``man bash``. If we do ``MANPATH="$MANPATH:/usr/local/share/man"``, then the newer bash might get lower priority.
+
+4 Terminal commands
+-------------------
+
+- ``s-r`` back search command history
+
+- ``s-x`` quit
+
+- ``$ printenv | less`` show all of the environment variables
+
+5 Firefox
+---------
+
+- Tue Apr 14 15:36:38 EDT 2020
+
+  - app.update.badgeWaitTime: 345600 -> 0
+
+  - browser.send\ :sub:`pings`\: false -> true
+
+  - geo.enabled: true -> false
+
+- Wed Apr 15 14:14:01 EDT 2020
+
+  - app.update.silent: -> true
+
+6 Thunderbird
+-------------
+
+- Tue Apr 14 17:22:03 EDT 2020
+
+  - app.update.silent: false -> true
+
+  - app.update.badgeWaitTime: 0 -> default 345600
+
+7 three finger dragging
+-----------------------
+
+- System Preference > Accessibility > Pointer Control > Trackpad Options > Enable dragging > three finger drag

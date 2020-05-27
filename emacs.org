@@ -117,8 +117,9 @@
 - incremental search: ~C-s~ (forward), ~C-r~ (backward)
 - find all occurrence: ~M-s o~ (~occur~)
 ** font
-
- M-x customize-face<RET>default<RET>
+  - M-x customize-face<RET>default<RET>
+  - ~C-x C-+~ (~(text-scale-adjust INC)~) / ~C-x C--~ (~(text-scale-adjust -INC)~) to increase/decrease the size.
+  - ~C-x C-0~ reset to the default font size
 ** frames
 - ~C-x 5 2~ (~make-frame-command~) create a new frame
 - ~C-x 5 0~ (~delete-frame~) delete the selected frame

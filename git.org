@@ -4,17 +4,39 @@
 #+EMAIL: hbshim@gmail.com
 #+LANGUAGE: en
 
-Basics:
+* Learning Sources
+  - The following YouTube videos were helpful:
+    - Introduction to Git - Core Concepts (by David Mahler): https://youtu.be/uR6G2v_WsRA
+    - Introduction to Git - Branching and Merging (by David Mahler): https://youtu.be/FyAAIHHClqI
+    - Introduction to Git - Remotes (by David Mahler): https://youtu.be/Gg4bLk8cGNo
+    - Rewriting Git History - Amend, Reword, Delete, Reorder, Squash and Split (by "The Modern Coder"): https://youtu.be/ElRzTuYln0M
+  - Web resources
+    - Git reference manual: https://git-scm.com/docs
+    - Git Handbook (by GitHub): https://guides.github.com/introduction/git-handbook/
+* Basic concepts and terms:
+  - Overall structure: *working tree* <-(checkout)-|-(add)->  *staging area* <-(reset)-|-(commit)-> *history* <-(fetch/pull)-|-(push)-> *remote*
+  - difference: *working tree* <-> *staging area* <-> *history*
+  - _working tree_ is also called the _workspace_
+  - _staging area_ is also called as the _index_, _cache_, _directory cache_, _current directory cache_, _staged files_ ([[https://gitguys.com/topics/whats-the-deal-with-the-git-index/][ref]]). It is a single, large, binary file in ~<baseOfRepo>/.git/index~, which LISTS all files in the current branch, their sha1 checksums, time stamps and the file name -- it is NOT another directory with a copy of files in it.
+  - _history_ is also called as the _local repository_. This is a hidden directory (~.git~) including an ~objects~ directory CONTAINING ALL versions of every file in the repo (local branches and copies of remote branches) as a compressed [[https://en.wikipedia.org/wiki/Binary_large_object]["blob" (Binary Large Object)]] file. ([[https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git][ref]])
+  - ~HEAD~ is the pointer to the _working tree_
+  - ~master~ is the pointer to the _local master branch_
+  - ~detached HEAD~ is the situation where ~HEAD~ (current working tree) is not ~master~
+  - ~WIP~ means _Work In Progress_ (stashing)
+  - ~origin~ short name for the location of the remote
+  - ~origin/master~ is called the _remote tracking branch_ (what the master branch looks like at ~origin~)
+  - ~upstream~: let A be a repository, B be a fork of A, C be a local clone of B. Then A is called the _upstream_ of C
+  - ~fetch~ download remote to the local history
+  - ~push~ upload the local history to remote
+  - ~merge~
+  - ~tag~ specific points in a repository’s history as being important, eg. v1.0, v2.0, ...
+* .gitignore
 
-- ~HEAD~ is the pointer to the _working tree_
-- ~master~ is the pointer to the _local master branch_
-- ~detached HEAD~ is the situation where ~HEAD~ (current env) is not ~master~
-- ~WIP~ means _Work In Progress_ (stashing)
-- ~origin~ short name for the location of the remote
-- ~origin/master~ is called the _remote tracking branch_ (what the master branch looks like at ~origin~)
-- ~upstream~: let A be a repository, B a fork of A, C a local clone of B. Then A is called the _upstream_
-- ~fetch~ download remote to the local history
-- ~push~ upload the local history to remote
+The file ~.gitignore~ lists files, per line, that should be ignored.
+ - comments starts with ~#~: ~# COMMENT~
+ - we can explicitly specify files, ~.DS_Store~
+ - we can use regexp, ~*~~, ~*.log~
+ - a whole folder is indicated by ~<FOLDER>/~
 
 * init
 
@@ -62,7 +84,7 @@ git log -- <FILE>
 #+BEGIN_SRC shell
 git log --all --decorate --oneline --graph
 #+END_SRC
-It's convenient to alias this command
+It's convenient to alias this.
 
 * add: working tree -> staging area
 
@@ -157,10 +179,6 @@ git chekout <BRANCH NAME>
 #+BEGIN_SRC shell
 git reset HEAD <FILE>
 #+END_SRC
-
-* .gitignore
-
-~.gitignore~ lists of files that should be ignored. we can use regexp. a whole folder is indicated by ~<FOLDER>/~
 
 * branch: list
 
@@ -317,7 +335,6 @@ The error "fatal: refusing to merge unrelated histories" may occur when we try t
 git pull <REMOTE> <BRANCH> --allow-unrelated-histories
 #+END_SRC
 
-
 * push: local repository -> remote repository
 
 #+BEGIN_SRC shell
@@ -338,9 +355,3 @@ Interactive commands:
 We can also reorder commits by changing the order of the lines.
 
 * cherry-pick
-
-* template
-
-#+BEGIN_SRC shell
-
-#+END_SRC

@@ -7,13 +7,45 @@ My Git Note
 
 .. contents::
 
-Basics:
+
+
+1 Learning Sources
+------------------
+
+- The following YouTube videos were helpful:
+
+  - Introduction to Git - Core Concepts (by David Mahler): `https://youtu.be/uR6G2v_WsRA <https://youtu.be/uR6G2v_WsRA>`_
+
+  - Introduction to Git - Branching and Merging (by David Mahler): `https://youtu.be/FyAAIHHClqI <https://youtu.be/FyAAIHHClqI>`_
+
+  - Introduction to Git - Remotes (by David Mahler): `https://youtu.be/Gg4bLk8cGNo <https://youtu.be/Gg4bLk8cGNo>`_
+
+  - Rewriting Git History - Amend, Reword, Delete, Reorder, Squash and Split (by "The Modern Coder"): `https://youtu.be/ElRzTuYln0M <https://youtu.be/ElRzTuYln0M>`_
+
+- Web resources
+
+  - Git reference manual: `https://git-scm.com/docs <https://git-scm.com/docs>`_
+
+  - Git Handbook (by GitHub): `https://guides.github.com/introduction/git-handbook/ <https://guides.github.com/introduction/git-handbook/>`_
+
+2 Basic concepts and terms:
+---------------------------
+
+- Overall structure: **working tree** <-(checkout)-|-(add)->  **staging area** <-(reset)-|-(commit)-> **history** <-(fetch/pull)-|-(push)-> **remote**
+
+- difference: **working tree** <-> **staging area** <-> **history**
+
+- working tree is also called the workspace
+
+- staging area is also called as the index, cache, directory cache, current directory cache, staged files (`ref <https://gitguys.com/topics/whats-the-deal-with-the-git-index/>`_). It is a single, large, binary file in ``<baseOfRepo>/.git/index``, which LISTS all files in the current branch, their sha1 checksums, time stamps and the file name -- it is NOT another directory with a copy of files in it.
+
+- history is also called as the local repository. This is a hidden directory (``.git``) including an ``objects`` directory CONTAINING ALL versions of every file in the repo (local branches and copies of remote branches) as a compressed `"blob" (Binary Large Object) <https://en.wikipedia.org/wiki/Binary_large_object>`_ file. (`ref <https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git>`_)
 
 - ``HEAD`` is the pointer to the working tree
 
 - ``master`` is the pointer to the local master branch
 
-- ``detached HEAD`` is the situation where ``HEAD`` (current env) is not ``master``
+- ``detached HEAD`` is the situation where ``HEAD`` (current working tree) is not ``master``
 
 - ``WIP`` means Work In Progress (stashing)
 
@@ -21,20 +53,37 @@ Basics:
 
 - ``origin/master`` is called the remote tracking branch (what the master branch looks like at ``origin``)
 
-- ``upstream``: let A be a repository, B a fork of A, C a local clone of B. Then A is called the upstream
+- ``upstream``: let A be a repository, B be a fork of A, C be a local clone of B. Then A is called the upstream of C
 
 - ``fetch`` download remote to the local history
 
 - ``push`` upload the local history to remote
 
-1 init
+- ``merge``
+
+- ``tag`` specific points in a repository’s history as being important, eg. v1.0, v2.0, ...
+
+3 .gitignore
+------------
+
+The file ``.gitignore`` lists files, per line, that should be ignored.
+
+- comments starts with ``#``: ``# COMMENT``
+
+- we can explicitly specify files, ``.DS_Store``
+
+- we can use regexp, ``\*~``, ``\*.log``
+
+- a whole folder is indicated by ``<FOLDER>/``
+
+4 init
 ------
 
 .. code:: shell
 
     git init
 
-2 config
+5 config
 --------
 
 .. code:: shell
@@ -53,14 +102,14 @@ To list config:
 
     git config --list
 
-3 status
+6 status
 --------
 
 .. code:: shell
 
     git status
 
-4 log
+7 log
 -----
 
 .. code:: shell
@@ -79,9 +128,9 @@ To list config:
 
     git log --all --decorate --oneline --graph
 
-It's convenient to alias this command
+It's convenient to alias this.
 
-5 add: working tree -> staging area
+8 add: working tree -> staging area
 -----------------------------------
 
 .. code:: shell
@@ -97,15 +146,15 @@ To add all modified files
 
     git add .
 
-6 rm: remove from both working tree and the staging area
+9 rm: remove from both working tree and the staging area
 --------------------------------------------------------
 
 .. code:: shell
 
     git rm <FILE>
 
-7 commit: staging area -> history
----------------------------------
+10 commit: staging area -> history
+----------------------------------
 
 .. code:: shell
 
@@ -133,8 +182,8 @@ To amend the last commit:
 
 To commit without
 
-8 add+commit: working tree -> staging area and history
-------------------------------------------------------
+11 add+commit: working tree -> staging area and history
+-------------------------------------------------------
 
 .. code:: shell
 
@@ -142,21 +191,21 @@ To commit without
 
 nothing to specify after ``git rm``
 
-9 diff: working tree <-> staging area
--------------------------------------
+12 diff: working tree <-> staging area
+--------------------------------------
 
 .. code:: shell
 
     git diff
 
-10 diff: staging area <-> history
+13 diff: staging area <-> history
 ---------------------------------
 
 .. code:: shell
 
     git diff --staged
 
-11 checkout: working tree <- staging area
+14 checkout: working tree <- staging area
 -----------------------------------------
 
 .. code:: shell
@@ -171,33 +220,28 @@ To place HEAD (i.e., to retrieve) to the state <HASH>:
 
 ``<HASH>`` can be the first five characters
 
-12 checkout: working tree and staging area <- history
+15 checkout: working tree and staging area <- history
 -----------------------------------------------------
 
 .. code:: shell
 
     git checkout <HASH> -- <FILE>
 
-13 checkout branch
+16 checkout branch
 ------------------
 
 .. code:: shell
 
     git chekout <BRANCH NAME>
 
-14 reset: staging area <- history
+17 reset: staging area <- history
 ---------------------------------
 
 .. code:: shell
 
     git reset HEAD <FILE>
 
-15 .gitignore
--------------
-
-``.gitignore`` lists of files that should be ignored. we can use regexp. a whole folder is indicated by ``<FOLDER>/``
-
-16 branch: list
+18 branch: list
 ---------------
 
 To list all branches:
@@ -224,7 +268,7 @@ To list remote tracking branches only:
 
     git branch -r
 
-17 branch: create new
+19 branch: create new
 ---------------------
 
 To create a new branch from HEAD:
@@ -239,14 +283,14 @@ To create + checkout -> new branch:
 
     git branch -b <BRANCH NAME>
 
-18 branch: remove
+20 branch: remove
 -----------------
 
 .. code:: shell
 
     git branch -d <BRANCH>
 
-19 merge: HEAD -> master
+21 merge: HEAD -> master
 ------------------------
 
 To merge <BRANCH> into master:
@@ -271,7 +315,7 @@ The response can be different depending on the strategy:
 
       git merge --abort
 
-20 stash: save
+22 stash: save
 --------------
 
 To save working directory without staging:
@@ -286,7 +330,7 @@ To stash with comment:
 
     git stash save "<comment>"
 
-21 stash: list
+23 stash: list
 --------------
 
 To list all stashes:
@@ -301,7 +345,7 @@ To list all stashes with changes:
 
     git stash list -p
 
-22 stash: apply
+24 stash: apply
 ---------------
 
 .. code:: shell
@@ -314,14 +358,14 @@ To list all stashes with changes:
 
 Here, ``<LABEL>`` is the one given by ``stash list``
 
-23 clone
+25 clone
 --------
 
 .. code:: shell
 
     git clone git@github.com:name/git.git
 
-24 remote: add/remove
+26 remote: add/remove
 ---------------------
 
 To add a new remote:
@@ -345,7 +389,7 @@ To remove:
 
 After modifying remote/upstream, run ``git remote -v`` to verify.
 
-25 remote: list
+27 remote: list
 ---------------
 
 To list remotes (short names only):
@@ -366,7 +410,7 @@ To list remotes verbosely:
 
     git remote -v
 
-26 fetch: local repository <- remote repository
+28 fetch: local repository <- remote repository
 -----------------------------------------------
 
 .. code:: shell
@@ -391,14 +435,14 @@ The error "fatal: refusing to merge unrelated histories" may occur when we try t
 
     git pull <REMOTE> <BRANCH> --allow-unrelated-histories
 
-27 push: local repository -> remote repository
+29 push: local repository -> remote repository
 ----------------------------------------------
 
 .. code:: shell
 
     git push <REMOTE REPOSITORY: eg. origin> <LOCAL BRANCH: eg. master>
 
-28 rebase
+30 rebase
 ---------
 
 To "operate on" the last <n> commits back from HEAD:
@@ -417,8 +461,5 @@ Interactive commands:
 
 We can also reorder commits by changing the order of the lines.
 
-29 cherry-pick
+31 cherry-pick
 --------------
-
-30 template
------------
