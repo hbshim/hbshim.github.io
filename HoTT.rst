@@ -1,9 +1,6 @@
     :Author: Hyungbo Shim
 
-.. contents::
-
-[html writers]
-math-output: mathjax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
+    :math-output: mathjax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
 
 1 Type theory
 -------------
