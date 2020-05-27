@@ -2,8 +2,8 @@
 
 .. contents::
 
-math-output: mathjax
-             https://polyfill.io/v3/polyfill.min.js?features=es6
+[html writers]
+math-output: mathjax https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js
 
 1 Type theory
 -------------
