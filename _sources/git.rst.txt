@@ -455,6 +455,27 @@ The error "fatal: refusing to merge unrelated histories" may occur when we try t
 
     git push <REMOTE REPOSITORY: eg. origin> <LOCAL BRANCH: eg. master>
 
+.. code:: shell
+
+    $ git push --set-upstream origin master
+    To https://...
+     ! [rejected]        master -> master (fetch first)
+    error: failed to push some refs to 'https://...'
+    hint: Updates were rejected because the remote contains work that you do
+    hint: not have locally. This is usually caused by another repository pushing
+    hint: to the same ref. You may want to first integrate the remote changes
+    hint: (e.g., 'git pull ...') before pushing again.
+    hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+    hbshim@aleph:~/Dropbox/Workspace/math/build/html$ git push -f
+    fatal: The current branch master has no upstream branch.
+    To push the current branch and set the remote as upstream, use
+
+        git push --set-upstream origin master
+
+.. code:: bash
+
+    $ git push -f
+
 30 rebase
 ---------
 
