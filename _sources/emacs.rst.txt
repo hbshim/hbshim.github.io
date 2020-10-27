@@ -690,9 +690,15 @@ Emacs
 3.8 Insert entries
 ~~~~~~~~~~~~~~~~~~
 
-- ``M-<RET>`` (``org-meta-return``) Insert a new heading, item or row.
+- ``M-<RET>`` (``org-meta-return``) Insert a new item of the same level as the current one.
 
 - ``C-<RET>`` (``org-insert-heading-respect-content``) Insert a new heading at the end of the current subtree.
+
+- ``<TAB>-<RET>`` new list item at a new level
+
+- ``<M>-<RIGHT>`` make current item one level lower (Promoting/Demoting headings)
+
+- ``<M>-<LEFT>`` make current item one level higher (Promoting/Demoting headings)
 
 - ``<TAB>`` (``org-cycle``) The first ``<TAB>`` demotes the entry to become a child of the previous one.  The next ``<TAB>`` makes it a parent, and so on, all the way to top level.  Yet another ``<TAB>``, and you are back to the initial level.
 
@@ -704,14 +710,23 @@ Emacs
 
 - ``C-c C-x C-l`` toggle latex preview
 
-3.10 Moving subtrees up/down
+3.10 Motion
+~~~~~~~~~~~
+
+- ``C-c C-n`` (``org-next-visible-heading``) next heading
+
+- ``C-c C-p`` (``org-previous-visible-heading``) previous heading
+
+- ``C-c C-u`` (``outline-up-heading``) backward to higher level heading
+
+3.11 Moving subtrees up/down
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``M-<UP>`` (``org-move-subtree-up``) Move subtree up.
 
 - ``M-<DOWN>`` (``org-move-subtree-down``) Move subtree down.
 
-3.11 Paragraphs
+3.12 Paragraphs
 ~~~~~~~~~~~~~~~
 
 - ``#+BEGIN_VERSE`` / ``#+END_VERSE``
@@ -720,7 +735,7 @@ Emacs
 
 - ``#+BEGIN_CENTER`` / ``#+END_CENTER``
 
-3.12 Promoting/Demoting headings
+3.13 Promoting/Demoting headings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``M-<LEFT>`` (``org-do-promote``) Promote current heading by one level.
@@ -731,12 +746,12 @@ Emacs
 
 - ``M-S-<RIGHT>`` (``org-demote-subtree``) Demote the current subtree by one level.
 
-3.13 Sort
+3.14 Sort
 ~~~~~~~~~
 
 - ``C-c ^`` Sort the plain list. Prompt for the sorting method: numerically, alphabetically, by time, or by custom function.
 
-3.14 Special symbols
+3.15 Special symbols
 ~~~~~~~~~~~~~~~~~~~~
 
 - ``\`` and maybe a few letters, then ``M-TAB`` to see possible completions of special symbols. If you need such a symbol inside a word, terminate it with a pair of curly brackets for eg. ``\pi{}d``.
@@ -747,7 +762,7 @@ Emacs
 
 - ``C-c C-x \`` (``org-toggle-pretty-entities``) Toggle display of entities as UTF-8 characters. This does not change the buffer content which remains plain ASCII, but it overlays the UTF-8 character for display purposes only.
 
-3.15 Superscript and subscript
+3.16 Superscript and subscript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``^`` and ``_`` are used to indicate super- and subscripts. We may surround multi-character sub- and superscripts with curly braces.
@@ -756,7 +771,7 @@ Emacs
 
 - ``C-c C-x \`` (``org-toggle-pretty-entities``) formats sub- and superscripts in a WYSIWYM way.
 
-3.16 time stamp
+3.17 time stamp
 ~~~~~~~~~~~~~~~
 
 - ``C-c .`` (``org-time-stamp``) Prompt for a date and insert a corresponding timestamp. When the cursor is at an existing timestamp in the buffer, the command is used to modify this timestamp instead of inserting a new one. When this command is used twice in succession, a time range is inserted.
@@ -765,12 +780,12 @@ Emacs
 
 - ``C-u C-c .`` / ``C-u C-c !`` Like ``C-c .`` and ``C-c !``, but use the alternative format which contains date and time. The default time can be rounded to multiples of 5 minutes, see the option ``org-time-stamp-rounding-minutes``.
 
-3.16.1 variables
+3.17.1 variables
 ^^^^^^^^^^^^^^^^
 
 - ``org-hide-emphasis-markers``
 
-3.17 Visibility cycling
+3.18 Visibility cycling
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``<TAB>`` (``org-cycle``) Subtree cycling
