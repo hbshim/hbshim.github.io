@@ -7,17 +7,25 @@ Coq
 
 
 
-1 References
+1 Update
+--------
+
+.. code:: shell
+
+    $ opam update
+    $ opam upgrade coq
+
+2 References
 ------------
 
 - `https://coq.inria.fr/stdlib/ <https://coq.inria.fr/stdlib/>`_
 
-2 Terms
+3 Terms
 -------
 
 - ***qualified identifier*** Example. "A.B.C" means an identifier C is qualified by B that is qualified by A.
 
-3 Gallina
+4 Gallina
 ---------
 
 - ``match`` t ``with`` c\ :sub:`1`\ :math:`\Rightarrow` e\ :sub:`1`\ ``|`` c\ :sub:`2`\ :math:`\Rightarrow` e\ :sub:`2`\ ``|...|`` c\ :sub:`1`\ :math:`\Rightarrow` e\ :sub:`l`\ ``end``
@@ -40,7 +48,7 @@ Coq
 
 - ``let v:= t1 in t2`` where ``v`` is an identifier and ``t1`` and ``t2`` are expression is the local binding ``(λv.t2)`` that will evaluated as ``((λv.t2) t1)`` then ``t2[v/t1]`` after the β-reduction.
 
-4 Vernacular Command
+5 Vernacular Command
 --------------------
 
 - ``Require Import`` *``Coq.Unicode.Utf8.``*
@@ -137,7 +145,7 @@ Coq
         | S p => f (iterate A f p x)
         end.
 
-5 Tactic
+6 Tactic
 --------
 
 - ``tac1; tac2; ...; tacn`` combination of tactics
@@ -193,7 +201,7 @@ Coq
 
 - ``rewrite ← H`` if there is a hypothesis ``H:x=y`` then ``e ↦ e[y/x]``
 
-6 Module
+7 Module
 --------
 
 - ``my_module.v`` can be loaded in the current context with command ``Load my_module``.
@@ -202,7 +210,7 @@ Coq
 
 - when a new module ``N`` requires an old module ``M`` we can use ``Require Export M`` in module ``N`` so that ``M`` is automatically visible when ``N`` is required.
 
-7 Inductive definitions
+8 Inductive definitions
 -----------------------
 
 .. code:: coq
