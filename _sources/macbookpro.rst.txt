@@ -1,0 +1,788 @@
+====
+Misc
+====
+
+
+.. contents::
+
+
+
+1 emacs keybinding
+------------------
+
+- from `https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict <https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict>`_
+
+- Get this file: Emacs Opt Bindings.dict, Edit it (optionally), — it’s self-explainary. Then save (creating the directory if there isn’t one) as ``~/Library/KeyBindings/DefaultKeyBinding.dict``
+
+2 MAC address changer
+---------------------
+
+- ``sudo macchanger -r en0``
+
+3 Brew
+------
+
+- Help
+
+  - ``brew --version`` Display the version of Homebrew.
+
+  - ``brew help`` Print Help Information
+
+  - ``brew help <sub-command>`` Print Help Info for a brew command
+
+  - ``brew doctor`` Check system for potential problems.
+
+- Update
+
+  - ``brew update`` Fetch latest version of homebrew and formula
+
+  - ``brew outdated`` Show formulae with an updated version available
+
+  - ``brew upgrade`` Upgrade all outdated and UN pinned brews
+
+  - ``brew upgrade <formula>`` Upgrade only the specified brew
+
+  - ``brew pin <formula>`` Prevent the specified formulae from being upgraded
+
+  - ``brew unpin <formula>`` Allow the specified formulae to be upgraded.
+
+- Repositories
+
+  - ``brew tap`` List all the current tapped repositories (taps)
+
+  - ``brew tap <user/repo>`` Tap a formula repository from Github using https for tap `https://github.com/user/homebrew-repo <https://github.com/user/homebrew-repo>`_
+
+  - ``brew tap <user/repo> <URL>`` Tap a formula repository from the specified URL
+
+  - ``brew untap <user/repo>`` Remove the given tap from the repository
+
+- Cask
+
+  - ``brew tap homebrew/cask`` Tap the Cask repository from Github.
+
+  - ``brew cask list`` List all the installed casks .
+
+  - ``brew search <text>`` Search all known casks based on the substring text.
+
+  - ``brew cask install <cask>`` Install the given cask.
+
+  - ``brew cask reinstall <cask>`` Reinstalls the given Cask
+
+  - ``brew cask uninstall <cask>`` Uninstall the given cask.
+
+- Search, Install, Remove
+
+  - ``brew list`` List all the installed formulae.
+
+  - ``brew search`` Display all locally available formulae for brewing.
+
+  - ``brew search <text>`` Perform a substring search of formulae names for brewing.
+
+  - ``brew info <formula>`` Display information about the formula.
+
+  - ``brew install <formula>`` Install the formula.
+
+  - ``brew uninstall <formula>`` Uninstall the formula.
+
+- Cleanup
+
+  - ``brew cleanup`` Remove older versions of installed formulae.
+
+  - ``brew cleanup <formula>`` Remove older versions of specified formula.
+
+  - ``brew cleanup -n`` Display all formula that will be removed (dry run)
+
+- Shell Environment Variables
+
+  - Add the following in the shell init file, ``~/.bash_profile``
+
+.. code:: shell
+
+    export MANPATH="/usr/local/share/man:$MANPATH"
+    export INFOPATH="/usr/local/share/info:$INFOPATH"
+
+And then make sure that the emacs package ``exec-path-from-shell`` is available and the emacs variable ``exec-path-from-shell-variables`` contains both of "PATH" and "MANPATH". We need this to ensure that Emacs ``man`` directs to the man pages of applications installed by Brew.
+For example, macos native ``bash`` is very old but we can get newer version of bash (that will be located under ``/usr/local``) through brew. This causes a conflict between older and newer versions of man pages. By setting ``MANPATH="/usr/local/share/man:$MANPATH"`` I could make sure that the man page for newer bash is accessed by ``man bash``. If we do ``MANPATH="$MANPATH:/usr/local/share/man"``, then the newer bash might get lower priority.
+
+4 Terminal commands
+-------------------
+
+- ``s-r`` back search command history
+
+- ``s-x`` quit
+
+- ``$ printenv | less`` show all of the environment variables
+
+5 Firefox
+---------
+
+- Tue Apr 14 15:36:38 EDT 2020
+
+  - app.update.badgeWaitTime: 345600 -> 0
+
+  - browser.send\ :sub:`pings`\: false -> true
+
+  - geo.enabled: true -> false
+
+- Wed Apr 15 14:14:01 EDT 2020
+
+  - app.update.silent: -> true
+
+6 Thunderbird
+-------------
+
+- Tue Apr 14 17:22:03 EDT 2020
+
+  - app.update.silent: false -> true
+
+  - app.update.badgeWaitTime: 0 -> default 345600
+
+7 three finger dragging
+-----------------------
+
+- System Preference > Accessibility > Pointer Control > Trackpad Options > Enable dragging > three finger drag
+
+8 gpg
+-----
+
+- From `ref <https://www.reddit.com/r/commandline/comments/5eb6ft/gpgagent_connection_refused/>`_:
+
+.. code:: shell
+
+    $ pgrep -u $(whoami) -l gpg-agent
+    32479 gpg-agent
+    $ kill 32479
+    $ cat s.gpg-agent
+    cat: s.gpg-agent: connection refused
+    $ eval $(gpg-agent --daemon)
+    $ ps -a | grep "gpg"
+      402 ??         0:00.01 /bin/bash /usr/local/macgpg2/libexec/shutdown-gpg-agent
+    75090 ??         0:00.00 gpg-agent --daemon
+    75099 ttys000    0:00.00 grep gpg
+    $ kill 75090
+    $ kill 402
+    $ cat S.gpg-agent
+    cat: S.gpg-agent: Connection refused
+
+.. code:: shell
+
+    ==> unbound
+    To have launchd start unbound now and restart at startup:
+      sudo brew services start unbound
+    $ sudo brew services start unbound
+    Password:
+    Service `unbound` already started, use `brew services restart unbound` to restart.
+    $ sudo brew services restart unbound
+    Stopping `unbound`... (might take a while)
+    ==> Successfully stopped `unbound` (label: homebrew.mxcl.unbound)
+    Warning: Taking root:admin ownership of some unbound paths:
+      /usr/local/Cellar/unbound/1.10.1/sbin
+      /usr/local/Cellar/unbound/1.10.1/sbin/unbound
+      /usr/local/opt/unbound
+      /usr/local/opt/unbound/sbin
+      /usr/local/var/homebrew/linked/unbound
+    This will require manual removal of these paths using `sudo rm` on
+    brew upgrade/reinstall/uninstall.
+    ==> Successfully started `unbound` (label: homebrew.mxcl.unbound)
+
+    $ brew reinstall unbound
+    ==> Summary
+    🍺  /usr/local/Cellar/unbound/1.10.1: 57 files, 5MB
+    Error: Could not remove unbound backup keg! Do so manually:
+      sudo rm -rf /usr/local/Cellar/unbound/1.10.1.reinstall
+
+    $ ls /usr/local/Cellar/unbound
+    1.10.1			1.10.1.reinstall	1.9.3_1
+    $ sudo rm -rf /usr/local/Cellar/unbound/1.10.1.reinstall
+    $ sudo rm -rf /usr/local/Cellar/unbound/1.10.1
+    $ sudo rm -rf /usr/local/opt/unbound
+    $ sudo rm -rf /usr/local/opt/unbound/sbin
+    $ sudo rm -rf /usr/local/var/homebrew/linked/unbound
+
+.. code:: shell
+
+    ==> Installing gnupg
+    ==> Pouring gnupg-2.2.20.catalina.bottle.tar.gz
+    Error: The `brew link` step did not complete successfully
+    The formula built, but is not symlinked into /usr/local
+    Could not symlink bin/gpg
+    Target /usr/local/bin/gpg
+    already exists. You may want to remove it:
+      rm '/usr/local/bin/gpg'
+
+    To force the link and overwrite all conflicting files:
+      brew link --overwrite gnupg
+
+    To list all files that would be deleted:
+      brew link --overwrite --dry-run gnupg
+
+    Possible conflicting files are:
+    /usr/local/bin/gpg -> /usr/local/MacGPG2/bin/gpg2
+    ==> Summary
+    🍺  /usr/local/Cellar/gnupg/2.2.20: 134 files, 11.2MB
+
+.. code:: shell
+
+    hbshim@aleph:~$ brew upgrade
+    ==> Upgrading 41 outdated packages:
+    pkg-config 0.29.2 -> 0.29.2_3
+    libheif 1.5.1 -> 1.6.2_1
+    opam 2.0.6 -> 2.0.7
+    adwaita-icon-theme 3.34.3 -> 3.36.1
+    libxml2 2.9.9_2 -> 2.9.10_1
+    ilmbase 2.3.0 -> 2.5.1
+    ghostscript 9.27 -> 9.52
+    gtk+3 3.24.12_1 -> 3.24.18_1
+    pixman 0.38.4 -> 0.40.0
+    python 3.7.6_1 -> 3.7.7
+    gdk-pixbuf 2.40.0 -> 2.40.0_1
+    icu4c 64.2 -> 66.1
+    shared-mime-info 1.13.1 -> 2.0
+    atk 2.34.1 -> 2.36.0
+    harfbuzz 2.6.4 -> 2.6.6
+    glib 2.62.4 -> 2.64.3
+    qt 5.13.1 -> 5.14.2
+    r 3.6.1_1 -> 4.0.0_1
+    libde265 1.0.3 -> 1.0.5
+    graphite2 1.3.13 -> 1.3.14
+    gcc 9.2.0 -> 9.3.0_1
+    cairo 1.16.0_2 -> 1.16.0_3
+    webp 1.0.3 -> 1.1.0
+    fribidi 1.0.8 -> 1.0.9
+    openexr 2.3.0 -> 2.5.1
+    openblas 0.3.7 -> 0.3.9
+    railwaycat/emacsmacport/emacs-mac emacs-26.3-z-mac-7.7 -> emacs-26.3-z-mac-7.9
+    librsvg 2.46.4 -> 2.48.4
+    isl 0.21 -> 0.22.1
+    sip 4.19.8_14 -> 4.19.22
+    pcre2 10.33 -> 10.35
+    pcre 8.43 -> 8.44
+    libepoxy 1.5.4 -> 1.5.4_1
+    x265 3.1.2 -> 3.3
+    texinfo 6.6 -> 6.7
+    libomp 8.0.1 -> 10.0.0
+    imagemagick 7.0.8-66 -> 7.0.10-14
+    automake 1.16.1_1 -> 1.16.2
+    pyqt 5.10.1_1 -> 5.14.2
+    git 2.23.0_1 -> 2.26.2_1
+    gsettings-desktop-schemas 3.34.0 -> 3.36.1_1
+    ==> Upgrading libxml2 2.9.9_2 -> 2.9.10_1
+    ==> Downloading https://homebrew.bintray.com/bottles/libxml2-2.9.10_1.catalina.b
+    ==> Downloading from https://akamai.bintray.com/ba/bab6280370d9e7171d34e79ed1c1c
+    ######################################################################## 100.0%
+    ==> Pouring libxml2-2.9.10_1.catalina.bottle.tar.gz
+    ==> Caveats
+    libxml2 is keg-only, which means it was not symlinked into /usr/local,
+    because macOS already provides this software and installing another version in
+    parallel can cause all kinds of trouble.
+
+    If you need to have libxml2 first in your PATH run:
+      echo 'export PATH="/usr/local/opt/libxml2/bin:$PATH"' >> /Users/hbshim/.bash_profile
+
+    For compilers to find libxml2 you may need to set:
+      export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+      export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+
+    For pkg-config to find libxml2 you may need to set:
+      export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+
+    ==> Summary
+    🍺  /usr/local/Cellar/libxml2/2.9.10_1: 280 files, 10.5MB
+    Removing: /usr/local/Cellar/libxml2/2.9.9_2... (281 files, 10.5MB)
+    ==> Upgrading icu4c 64.2 -> 66.1
+    ==> Downloading https://homebrew.bintray.com/bottles/icu4c-66.1.catalina.bottle.
+    ==> Downloading from https://akamai.bintray.com/f0/f01dbe4266d1180c1da01d973200e
+    ######################################################################## 100.0%
+    ==> Pouring icu4c-66.1.catalina.bottle.tar.gz
+    ==> Caveats
+    icu4c is keg-only, which means it was not symlinked into /usr/local,
+    because macOS provides libicucore.dylib (but nothing else).
+
+    If you need to have icu4c first in your PATH run:
+      echo 'export PATH="/usr/local/opt/icu4c/bin:$PATH"' >> /Users/hbshim/.bash_profile
+      echo 'export PATH="/usr/local/opt/icu4c/sbin:$PATH"' >> /Users/hbshim/.bash_profile
+
+    For compilers to find icu4c you may need to set:
+      export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+      export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+
+    For pkg-config to find icu4c you may need to set:
+      export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+
+    ==> Summary
+    🍺  /usr/local/Cellar/icu4c/66.1: 258 files, 70.4MB
+    Removing: /usr/local/Cellar/icu4c/64.2... (257 files, 69.3MB)
+    ==> Upgrading openblas 0.3.7 -> 0.3.9
+    ==> Downloading https://homebrew.bintray.com/bottles/isl-0.22.1.catalina.bottle.
+    ==> Downloading from https://akamai.bintray.com/b5/b5319e3bbbb36ef3536d841999b74
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/gcc-9.3.0_1.catalina.bottle
+    ==> Downloading from https://akamai.bintray.com/57/57e53d66ad43fe05b5a2f93d6a7cf
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/openblas-0.3.9.catalina.bot
+    ==> Downloading from https://akamai.bintray.com/7f/7f61aa85ee83058e3ac4898f74b67
+    ######################################################################## 100.0%
+    ==> Installing dependencies for openblas: isl and gcc
+    ==> Installing openblas dependency: isl
+    ==> Pouring isl-0.22.1.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/isl/0.22.1: 72 files, 4.7MB
+    ==> Installing openblas dependency: gcc
+    ==> Pouring gcc-9.3.0_1.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/gcc/9.3.0_1: 1,461 files, 287.6MB
+    ==> Installing openblas
+    ==> Pouring openblas-0.3.9.catalina.bottle.tar.gz
+    ==> Caveats
+    openblas is keg-only, which means it was not symlinked into /usr/local,
+    because macOS provides BLAS in Accelerate.framework.
+
+    For compilers to find openblas you may need to set:
+      export LDFLAGS="-L/usr/local/opt/openblas/lib"
+      export CPPFLAGS="-I/usr/local/opt/openblas/include"
+
+    For pkg-config to find openblas you may need to set:
+      export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
+
+    ==> Summary
+    🍺  /usr/local/Cellar/openblas/0.3.9: 23 files, 119.7MB
+    Removing: /usr/local/Cellar/openblas/0.3.7... (22 files, 120.2MB)
+    ==> Upgrading texinfo 6.6 -> 6.7
+    ==> Downloading https://homebrew.bintray.com/bottles/texinfo-6.7.catalina.bottle
+    ==> Downloading from https://akamai.bintray.com/06/0686381d97b0448c10d11eaba5972
+    ######################################################################## 100.0%
+    ==> Pouring texinfo-6.7.catalina.bottle.tar.gz
+    ==> Caveats
+    texinfo is keg-only, which means it was not symlinked into /usr/local,
+    because macOS already provides this software and installing another version in
+    parallel can cause all kinds of trouble.
+
+    If you need to have texinfo first in your PATH run:
+      echo 'export PATH="/usr/local/opt/texinfo/bin:$PATH"' >> /Users/hbshim/.bash_profile
+
+    ==> Summary
+    🍺  /usr/local/Cellar/texinfo/6.7: 404 files, 7.4MB
+    Removing: /usr/local/Cellar/texinfo/6.6... (404 files, 7.3MB)
+    ==> Upgrading qt 5.13.1 -> 5.14.2
+    ==> Downloading https://homebrew.bintray.com/bottles/qt-5.14.2.catalina.bottle.t
+    ==> Downloading from https://akamai.bintray.com/23/235bbe918f05509380ba870b24a84
+    ######################################################################## 100.0%
+    ==> Pouring qt-5.14.2.catalina.bottle.tar.gz
+    ==> Caveats
+    We agreed to the Qt open source license for you.
+    If this is unacceptable you should uninstall.
+
+    qt is keg-only, which means it was not symlinked into /usr/local,
+    because Qt 5 has CMake issues when linked.
+
+    If you need to have qt first in your PATH run:
+      echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> /Users/hbshim/.bash_profile
+
+    For compilers to find qt you may need to set:
+      export LDFLAGS="-L/usr/local/opt/qt/lib"
+      export CPPFLAGS="-I/usr/local/opt/qt/include"
+
+    For pkg-config to find qt you may need to set:
+      export PKG_CONFIG_PATH="/usr/local/opt/qt/lib/pkgconfig"
+
+    ==> Summary
+    🍺  /usr/local/Cellar/qt/5.14.2: 10,429 files, 362.5MB
+    Removing: /usr/local/Cellar/qt/5.13.1... (9,858 files, 328.2MB)
+    ==> Upgrading ghostscript 9.27 -> 9.52
+    ==> Downloading https://homebrew.bintray.com/bottles/ghostscript-9.52.catalina.b
+    ==> Downloading from https://akamai.bintray.com/8c/8cd0efa1e5525f849be3ee1e50e16
+    ######################################################################## 100.0%
+    ==> Pouring ghostscript-9.52.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/ghostscript/9.52: 671 files, 87.4MB
+    Removing: /usr/local/Cellar/ghostscript/9.27... (670 files, 81.7MB)
+    ==> Upgrading gtk+3 3.24.12_1 -> 3.24.18_1
+    ==> Downloading https://homebrew.bintray.com/bottles/pcre-8.44.catalina.bottle.t
+    ==> Downloading from https://akamai.bintray.com/f8/f8ac266e04f984fa55091a43f0fdc
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/glib-2.64.3.catalina.bottle
+    ==> Downloading from https://akamai.bintray.com/c7/c7259832a3bf3fe8093962473718a
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/atk-2.36.0.catalina.bottle.
+    ==> Downloading from https://akamai.bintray.com/10/1065293046ab2984940dfa0b9c9e7
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/gdk-pixbuf-2.40.0_1.catalin
+    ==> Downloading from https://akamai.bintray.com/d7/d70823971bb0c34d1ca997233471c
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/gsettings-desktop-schemas-3
+    ==> Downloading from https://akamai.bintray.com/ca/ca79e0409fb9d658c9ab2f9e3ecde
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/libepoxy-1.5.4_1.catalina.b
+    ==> Downloading from https://akamai.bintray.com/9f/9f58a2eab6aafcc95ade6893bde8d
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/pixman-0.40.0.catalina.bott
+    ==> Downloading from https://akamai.bintray.com/18/1862e6826a4bedb97af8dcb9ab849
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/cairo-1.16.0_3.catalina.bot
+    ==> Downloading from https://akamai.bintray.com/6a/6a23a68837269a8410a54950fdc88
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/fribidi-1.0.9.catalina.bott
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/graphite2-1.3.14.catalina.b
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/harfbuzz-2.6.6.catalina.bot
+    ==> Downloading from https://akamai.bintray.com/ed/ed8d542e4b3b118e6888fb3ffcb92
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/gtk%2B3-3.24.18_1.catalina.
+    ==> Downloading from https://akamai.bintray.com/a4/a45ed17500b46bd419b997e075fb3
+    ######################################################################## 100.0%
+    ==> Installing dependencies for gtk+3: pcre, glib, atk, gdk-pixbuf, gsettings-desktop-schemas, libepoxy, pixman, cairo, fribidi, graphite2 and harfbuzz
+    ==> Installing gtk+3 dependency: pcre
+    ==> Pouring pcre-8.44.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/pcre/8.44: 204 files, 5.5MB
+    ==> Installing gtk+3 dependency: glib
+    ==> Pouring glib-2.64.3.catalina.bottle.tar.gz
+    ==> Caveats
+    Bash completion has been installed to:
+      /usr/local/etc/bash_completion.d
+    ==> Summary
+    🍺  /usr/local/Cellar/glib/2.64.3: 436 files, 15.7MB
+    ==> Installing gtk+3 dependency: atk
+    ==> Pouring atk-2.36.0.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/atk/2.36.0: 145 files, 2.6MB
+    ==> Installing gtk+3 dependency: gdk-pixbuf
+    ==> Pouring gdk-pixbuf-2.40.0_1.catalina.bottle.tar.gz
+    ==> /usr/local/Cellar/gdk-pixbuf/2.40.0_1/bin/gdk-pixbuf-query-loaders --update-
+    🍺  /usr/local/Cellar/gdk-pixbuf/2.40.0_1: 149 files, 3.3MB
+    ==> Installing gtk+3 dependency: gsettings-desktop-schemas
+    ==> Pouring gsettings-desktop-schemas-3.36.1_1.catalina.bottle.tar.gz
+    ==> /usr/local/opt/glib/bin/glib-compile-schemas /usr/local/share/glib-2.0/schem
+    🍺  /usr/local/Cellar/gsettings-desktop-schemas/3.36.1_1: 97 files, 4.4MB
+    ==> Installing gtk+3 dependency: libepoxy
+    ==> Pouring libepoxy-1.5.4_1.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/libepoxy/1.5.4_1: 10 files, 3.1MB
+    ==> Installing gtk+3 dependency: pixman
+    ==> Pouring pixman-0.40.0.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/pixman/0.40.0: 14 files, 1.3MB
+    ==> Installing gtk+3 dependency: cairo
+    ==> Pouring cairo-1.16.0_3.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/cairo/1.16.0_3: 117 files, 5.7MB
+    ==> Installing gtk+3 dependency: fribidi
+    ==> Pouring fribidi-1.0.9.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/fribidi/1.0.9: 67 files, 608.6KB
+    ==> Installing gtk+3 dependency: graphite2
+    ==> Pouring graphite2-1.3.14.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/graphite2/1.3.14: 18 files, 235.5KB
+    ==> Installing gtk+3 dependency: harfbuzz
+    ==> Pouring harfbuzz-2.6.6.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/harfbuzz/2.6.6: 165 files, 11.6MB
+    ==> Installing gtk+3
+    ==> Pouring gtk+3-3.24.18_1.catalina.bottle.tar.gz
+    ==> /usr/local/opt/glib/bin/glib-compile-schemas /usr/local/share/glib-2.0/schem
+    ==> /usr/local/Cellar/gtk+3/3.24.18_1/bin/gtk3-update-icon-cache -f -t /usr/loca
+    ==> /usr/local/Cellar/gtk+3/3.24.18_1/bin/gtk-query-immodules-3.0 > /usr/local/l
+    🍺  /usr/local/Cellar/gtk+3/3.24.18_1: 714 files, 53.2MB
+    Removing: /usr/local/Cellar/gtk+3/3.24.12_1... (711 files, 52.2MB)
+    ==> Upgrading pixman 0.40.0 -> 0.40.0
+    ==> Downloading https://homebrew.bintray.com/bottles/pixman-0.40.0.catalina.bott
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/1467433ca4986c02d33473bf97a1ef33136d95b159d1019fb591430677134811--pixman-0.40.0.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/pixman/0.38.4... (13 files, 1.3MB)
+    ==> Upgrading python 3.7.6_1 -> 3.7.7
+    ==> Downloading https://homebrew.bintray.com/bottles/python-3.7.7.catalina.bottl
+    ==> Downloading from https://akamai.bintray.com/ac/acd595852aecc2bfa46c57d86db71
+    ######################################################################## 100.0%
+    ==> Pouring python-3.7.7.catalina.bottle.tar.gz
+    Error: The `brew link` step did not complete successfully
+    The formula built, but is not symlinked into /usr/local
+    Could not symlink Frameworks/Python.framework/Headers
+    Target /usr/local/Frameworks/Python.framework/Headers
+    is a symlink belonging to python@2. You can unlink it:
+      brew unlink python@2
+
+    To force the link and overwrite all conflicting files:
+      brew link --overwrite python
+
+    To list all files that would be deleted:
+      brew link --overwrite --dry-run python
+
+    Possible conflicting files are:
+    /usr/local/Frameworks/Python.framework/Headers -> /usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Headers
+    /usr/local/Frameworks/Python.framework/Python -> /usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Python
+    /usr/local/Frameworks/Python.framework/Resources -> /usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Resources
+    /usr/local/Frameworks/Python.framework/Versions/Current -> /usr/local/Cellar/python@2/2.7.16/Frameworks/Python.framework/Versions/Current
+    ==> /usr/local/Cellar/python/3.7.7/bin/python3 -s setup.py --no-user-cfg install
+    ==> /usr/local/Cellar/python/3.7.7/bin/python3 -s setup.py --no-user-cfg install
+    ==> /usr/local/Cellar/python/3.7.7/bin/python3 -s setup.py --no-user-cfg install
+    ==> Caveats
+    Python has been installed as
+      /usr/local/bin/python3
+
+    Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+    `python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+      /usr/local/opt/python/libexec/bin
+
+    You can install Python packages with
+      pip3 install <package>
+    They will install into the site-package directory
+      /usr/local/lib/python3.7/site-packages
+
+    See: https://docs.brew.sh/Homebrew-and-Python
+    ==> Summary
+    🍺  /usr/local/Cellar/python/3.7.7: 4,006 files, 61.2MB
+    Removing: /usr/local/Cellar/python/3.7.4_1... (3,865 files, 60MB)
+    Removing: /usr/local/Cellar/python/3.7.6_1... (4,060 files, 62.3MB)
+    ==> Upgrading gdk-pixbuf 2.40.0_1 -> 2.40.0_1
+    ==> Downloading https://homebrew.bintray.com/bottles/gdk-pixbuf-2.40.0_1.catalin
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/5f37386c6fb78bb2ed325445829c17b997bf154cbfb72c09c5943ecc7e371f3a--gdk-pixbuf-2.40.0_1.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/gdk-pixbuf/2.40.0... (149 files, 3.3MB)
+    ==> Upgrading shared-mime-info 1.13.1 -> 2.0
+    ==> Downloading https://homebrew.bintray.com/bottles/docbook-5.1_1.catalina.bott
+    ==> Downloading from https://akamai.bintray.com/81/8152e5356c47a7b8282f3ed84ee3f
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/docbook-xsl-1.79.2_1.catali
+    ==> Downloading from https://akamai.bintray.com/65/65a5442556a88a865ef377cb73df0
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/gnu-getopt-2.35.2.catalina.
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/xmlto-0.0.28.catalina.bottl
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/shared-mime-info-2.0.catali
+    ==> Downloading from https://akamai.bintray.com/5a/5aefdc7964e569188cb67a49f4a42
+    ######################################################################## 100.0%
+    ==> Installing dependencies for shared-mime-info: docbook, docbook-xsl, gnu-getopt and xmlto
+    ==> Installing shared-mime-info dependency: docbook
+    ==> Pouring docbook-5.1_1.catalina.bottle.tar.gz
+    ==> xmlcatalog --noout --create /usr/local/etc/xml/catalog
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/4.2/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/4.1.2/cat
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/4.3/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/4.4/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/4.5/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/5.0/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook/docbook/xml/5.1/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook/docbook/
+    ==> Caveats
+    To use the DocBook package in your XML toolchain,
+    you need to add the following to your ~/.bashrc:
+
+    export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+    ==> Summary
+    🍺  /usr/local/Cellar/docbook/5.1_1: 199 files, 8.9MB
+    ==> Installing shared-mime-info dependency: docbook-xsl
+    ==> Pouring docbook-xsl-1.79.2_1.catalina.bottle.tar.gz
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook-xsl/docbook-xsl/catal
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook-xsl/docb
+    ==> xmlcatalog --noout --del https://cdn.docbook.org/release/xsl-nons/1.79.2 /us
+    ==> xmlcatalog --noout --add rewriteSystem https://cdn.docbook.org/release/xsl-n
+    ==> xmlcatalog --noout --add rewriteURI https://cdn.docbook.org/release/xsl-nons
+    ==> xmlcatalog --noout --del https://cdn.docbook.org/release/xsl-nons/current /u
+    ==> xmlcatalog --noout --add rewriteSystem https://cdn.docbook.org/release/xsl-n
+    ==> xmlcatalog --noout --add rewriteURI https://cdn.docbook.org/release/xsl-nons
+    ==> xmlcatalog --noout --del http://docbook.sourceforge.net/release/xsl/1.79.2 /
+    ==> xmlcatalog --noout --add rewriteSystem http://docbook.sourceforge.net/releas
+    ==> xmlcatalog --noout --add rewriteURI http://docbook.sourceforge.net/release/x
+    ==> xmlcatalog --noout --del http://docbook.sourceforge.net/release/xsl/current
+    ==> xmlcatalog --noout --add rewriteSystem http://docbook.sourceforge.net/releas
+    ==> xmlcatalog --noout --add rewriteURI http://docbook.sourceforge.net/release/x
+    ==> xmlcatalog --noout --del file:///usr/local/opt/docbook-xsl/docbook-xsl-ns/ca
+    ==> xmlcatalog --noout --add nextCatalog  file:///usr/local/opt/docbook-xsl/docb
+    ==> xmlcatalog --noout --del https://cdn.docbook.org/release/xsl/1.79.2 /usr/loc
+    ==> xmlcatalog --noout --add rewriteSystem https://cdn.docbook.org/release/xsl/1
+    ==> xmlcatalog --noout --add rewriteURI https://cdn.docbook.org/release/xsl/1.79
+    ==> xmlcatalog --noout --del https://cdn.docbook.org/release/xsl/current /usr/lo
+    ==> xmlcatalog --noout --add rewriteSystem https://cdn.docbook.org/release/xsl/c
+    ==> xmlcatalog --noout --add rewriteURI https://cdn.docbook.org/release/xsl/curr
+    ==> xmlcatalog --noout --del http://docbook.sourceforge.net/release/xsl-ns/1.79.
+    ==> xmlcatalog --noout --add rewriteSystem http://docbook.sourceforge.net/releas
+    ==> xmlcatalog --noout --add rewriteURI http://docbook.sourceforge.net/release/x
+    ==> xmlcatalog --noout --del http://docbook.sourceforge.net/release/xsl-ns/curre
+    ==> xmlcatalog --noout --add rewriteSystem http://docbook.sourceforge.net/releas
+    ==> xmlcatalog --noout --add rewriteURI http://docbook.sourceforge.net/release/x
+    🍺  /usr/local/Cellar/docbook-xsl/1.79.2_1: 4,910 files, 94.0MB
+    ==> Installing shared-mime-info dependency: gnu-getopt
+    ==> Pouring gnu-getopt-2.35.2.catalina.bottle.tar.gz
+    ==> Caveats
+    gnu-getopt is keg-only, which means it was not symlinked into /usr/local,
+    because macOS already provides this software and installing another version in
+    parallel can cause all kinds of trouble.
+
+    If you need to have gnu-getopt first in your PATH run:
+      echo 'export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"' >> /Users/hbshim/.bash_profile
+
+
+    Bash completion has been installed to:
+      /usr/local/opt/gnu-getopt/etc/bash_completion.d
+    ==> Summary
+    🍺  /usr/local/Cellar/gnu-getopt/2.35.2: 10 files, 164.6KB
+    ==> Installing shared-mime-info dependency: xmlto
+    ==> Pouring xmlto-0.0.28.catalina.bottle.1.tar.gz
+    🍺  /usr/local/Cellar/xmlto/0.0.28: 46 files, 142.0KB
+    ==> Installing shared-mime-info
+    ==> Pouring shared-mime-info-2.0.catalina.bottle.tar.gz
+    ==> /usr/local/Cellar/shared-mime-info/2.0/bin/update-mime-database /usr/local/s
+    🍺  /usr/local/Cellar/shared-mime-info/2.0: 86 files, 4.4MB
+    Removing: /usr/local/Cellar/shared-mime-info/1.13.1... (85 files, 4.7MB)
+    ==> Upgrading atk 2.36.0 -> 2.36.0
+    ==> Downloading https://homebrew.bintray.com/bottles/atk-2.36.0.catalina.bottle.
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/f829d766756e96e15375047ee55cbf78a485182bd32dbc58184ce315063df866--atk-2.36.0.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/atk/2.34.1... (144 files, 2.5MB)
+    ==> Upgrading harfbuzz 2.6.6 -> 2.6.6
+    ==> Downloading https://homebrew.bintray.com/bottles/harfbuzz-2.6.6.catalina.bot
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/c43b000b9ff257ac1a8f12f3c1dab6699316c241fe5191540f2ccfcc9eada39e--harfbuzz-2.6.6.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/harfbuzz/2.6.4... (158 files, 10.8MB)
+    ==> Upgrading glib 2.64.3 -> 2.64.3
+    ==> Downloading https://homebrew.bintray.com/bottles/glib-2.64.3.catalina.bottle
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/46b0145de4c6c376b11e97c81305bc79bb4c1f40491a9b5ab015909245197b03--glib-2.64.3.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/glib/2.62.0_1... (430 files, 15.3MB)
+    Removing: /usr/local/Cellar/glib/2.62.4... (435 files, 15.4MB)
+    ==> Upgrading r 3.6.1_1 -> 4.0.0_1
+    ==> Downloading https://homebrew.bintray.com/bottles/pcre2-10.35.catalina.bottle
+    ==> Downloading from https://akamai.bintray.com/6a/6a1e59a5db23d684f92d2bf695601
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/r-4.0.0_1.catalina.bottle.1
+    ==> Downloading from https://akamai.bintray.com/cf/cff148724950c35ef1f42450259ea
+    ######################################################################## 100.0%
+    ==> Installing dependencies for r: pcre2
+    ==> Installing r dependency: pcre2
+    ==> Pouring pcre2-10.35.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/pcre2/10.35: 230 files, 6.0MB
+    ==> Installing r
+    ==> Pouring r-4.0.0_1.catalina.bottle.1.tar.gz
+    🍺  /usr/local/Cellar/r/4.0.0_1: 2,127 files, 58.7MB
+    Removing: /usr/local/Cellar/r/3.6.1_1... (2,122 files, 56.6MB)
+    ==> Upgrading libde265 1.0.3 -> 1.0.5
+    ==> Downloading https://homebrew.bintray.com/bottles/libde265-1.0.5.catalina.bot
+    ==> Downloading from https://akamai.bintray.com/76/7621e45fa0b119aff03a8c3ff3ed9
+    ######################################################################## 100.0%
+    ==> Pouring libde265-1.0.5.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/libde265/1.0.5: 22 files, 2MB
+    Removing: /usr/local/Cellar/libde265/1.0.3... (22 files, 2MB)
+    ==> Upgrading graphite2 1.3.14 -> 1.3.14
+    ==> Downloading https://homebrew.bintray.com/bottles/graphite2-1.3.14.catalina.b
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/f82223bbae546c8a1a2c31bd6b6782bef27defa85ccbadd45d144f61b218cb54--graphite2-1.3.14.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/graphite2/1.3.13... (18 files, 235.2KB)
+    ==> Upgrading gcc 9.3.0_1 -> 9.3.0_1
+    ==> Downloading https://homebrew.bintray.com/bottles/gcc-9.3.0_1.catalina.bottle
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/83715360d32d11cc73ee5f884144a9e88d4dcd133ab4e61dfd5f6316d9b53d29--gcc-9.3.0_1.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/gcc/9.2.0... (1,462 files, 291.4MB)
+    ==> Upgrading cairo 1.16.0_3 -> 1.16.0_3
+    ==> Downloading https://homebrew.bintray.com/bottles/cairo-1.16.0_3.catalina.bot
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/400810ac1d59b33d0897918c4d9f6e508765252806de43fc4fec819264d873f4--cairo-1.16.0_3.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/cairo/1.16.0_2... (117 files, 5.5MB)
+    ==> Upgrading webp 1.0.3 -> 1.1.0
+    ==> Downloading https://homebrew.bintray.com/bottles/webp-1.1.0.catalina.bottle.
+    ==> Downloading from https://akamai.bintray.com/27/27c76a7054277ff5a2e844c5996fc
+    ######################################################################## 100.0%
+    ==> Pouring webp-1.1.0.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/webp/1.1.0: 39 files, 2.1MB
+    Removing: /usr/local/Cellar/webp/1.0.3... (39 files, 2.1MB)
+    ==> Upgrading fribidi 1.0.9 -> 1.0.9
+    ==> Downloading https://homebrew.bintray.com/bottles/fribidi-1.0.9.catalina.bott
+    Already downloaded: /Users/hbshim/Library/Caches/Homebrew/downloads/cf2f7c1c9d1b91e6ec27245221f24c3a1a3a5e30f89964b0701c3f423194b7c4--fribidi-1.0.9.catalina.bottle.tar.gz
+    Removing: /usr/local/Cellar/fribidi/1.0.5... (66 files, 581.3KB)
+    Removing: /usr/local/Cellar/fribidi/1.0.8... (67 files, 601.3KB)
+    ==> Upgrading openexr 2.3.0 -> 2.5.1
+    ==> Downloading https://homebrew.bintray.com/bottles/ilmbase-2.5.1.catalina.bott
+    ==> Downloading from https://akamai.bintray.com/47/4748d38413303488484f98d5fbb94
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/openexr-2.5.1.catalina.bott
+    ==> Downloading from https://akamai.bintray.com/47/47c325cb83311e1e25666d3863623
+    ######################################################################## 100.0%
+    ==> Installing dependencies for openexr: ilmbase
+    ==> Installing openexr dependency: ilmbase
+    ==> Pouring ilmbase-2.5.1.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/ilmbase/2.5.1: 87 files, 1.6MB
+    ==> Installing openexr
+    ==> Pouring openexr-2.5.1.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/openexr/2.5.1: 152 files, 6.6MB
+    Removing: /usr/local/Cellar/openexr/2.3.0... (132 files, 10.7MB)
+    ==> Upgrading railwaycat/emacsmacport/emacs-mac emacs-26.3-z-mac-7.7 -
+    ==> Downloading https://homebrew.bintray.com/bottles/automake-1.16.2.catalina.bo
+    ==> Downloading from https://akamai.bintray.com/fe/fe26d4df57481b6a7ca0a6915c37c
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/pkg-config-0.29.2_3.catalin
+    ==> Downloading from https://akamai.bintray.com/80/80f141e695f73bd058fd82e9f539d
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/x265-3.3.catalina.bottle.ta
+    ==> Downloading from https://akamai.bintray.com/81/81909d142c67d3228c55e6eae8819
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/libheif-1.6.2_1.catalina.bo
+    ==> Downloading from https://akamai.bintray.com/8c/8c9daabc72f34cc6857eb44e9df06
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/libomp-10.0.0.catalina.bott
+    ==> Downloading from https://akamai.bintray.com/0e/0ea757dbea7bf12141ef1d209d2f3
+    ######################################################################## 100.0%
+    ==> Downloading https://homebrew.bintray.com/bottles/imagemagick-7.0.10-14.catal
+    ==> Downloading from https://akamai.bintray.com/bd/bd188f22ea4373a97496a1f469d02
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/emacsfodder/emacs-icons-projec
+    ######################################################################## 100.0%
+    ==> Downloading https://s3.amazonaws.com/emacs-mac-port/Emacs.icns.modern
+    ######################################################################## 100.0%
+    ==> Downloading https://github.com/nashamri/spacemacs-logo/blob/master/spacemacs
+    ==> Downloading from https://raw.githubusercontent.com/nashamri/spacemacs-logo/m
+    ######################################################################## 100.0%
+    ==> Downloading https://raw.githubusercontent.com/d12frosted/homebrew-emacs-plus
+    ######################################################################## 100.0%
+    ==> Downloading https://emacs.sexy/img/Emacs.icns
+    ######################################################################## 100.0%
+    ==> Downloading https://bitbucket.org/mituharu/emacs-mac/get/emacs-26.3-mac-7.9.
+    ######################################################################## 100.0%
+    Warning: A newer Command Line Tools release is available.
+    Update them from Software Update in System Preferences or run:
+      softwareupdate --all --install --force
+
+    If that doesn't show you an update run:
+      sudo rm -rf /Library/Developer/CommandLineTools
+      sudo xcode-select --install
+
+    Alternatively, manually download them from:
+      https://developer.apple.com/download/more/.
+
+    ==> Installing dependencies for railwaycat/emacsmacport/emacs-mac: automake, pkg-config, x265, libheif, libomp and imagemagick
+    ==> Installing railwaycat/emacsmacport/emacs-mac dependency: automake
+    ==> Pouring automake-1.16.2.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/automake/1.16.2: 131 files, 3.4MB
+    ==> Installing railwaycat/emacsmacport/emacs-mac dependency: pkg-config
+    ==> Pouring pkg-config-0.29.2_3.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/pkg-config/0.29.2_3: 11 files, 623.7KB
+    ==> Installing railwaycat/emacsmacport/emacs-mac dependency: x265
+    ==> Pouring x265-3.3.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/x265/3.3: 11 files, 35.4MB
+    ==> Installing railwaycat/emacsmacport/emacs-mac dependency: libheif
+    ==> Pouring libheif-1.6.2_1.catalina.bottle.tar.gz
+    ==> /usr/local/opt/shared-mime-info/bin/update-mime-database /usr/local/share/mi
+    🍺  /usr/local/Cellar/libheif/1.6.2_1: 23 files, 2.3MB
+    ==> Installing railwaycat/emacsmacport/emacs-mac dependency: libomp
+    ==> Pouring libomp-10.0.0.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/libomp/10.0.0: 9 files, 1.3MB
+    ==> Installing railwaycat/emacsmacport/emacs-mac dependency: imagemagick
+    ==> Pouring imagemagick-7.0.10-14.catalina.bottle.tar.gz
+    🍺  /usr/local/Cellar/imagemagick/7.0.10-14: 1,493 files, 25.0MB
+    ==> Installing railwaycat/emacsmacport/emacs-mac --with-modules --with
+    ==> Patching
+    Error: An exception occurred within a child process:
+      Errno::ENOENT: No such file or directory @ rb_sysopen - /Users/hbshim/Library/Caches/Homebrew/downloads/481db406a9f064d618913d52172ad647765ab84ff8131278e725a4e223303610--emacs-mac-title-bar-7.4.patch
+    hbshim@aleph:~$

@@ -1,0 +1,20 @@
+============
+MathJax Test
+============
+
+    :Author: Hyungbo Shim
+    :Date: Thu May 28 00:43:07 2020
+
+.. contents::
+
+If you see
+
+
+.. math::
+
+    \int_{0}^{1} \sin x\, dx
+
+
+then mathjax works for equations.
+
+If you see :math:`f(x)=x^{2}+2x+1` then inline math also works!

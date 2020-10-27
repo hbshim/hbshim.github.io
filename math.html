@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>math dump &mdash; Notes  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="MathJax Test" href="mathjaxtest.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">1 Emacs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#abbrevs-mode">1.1 Abbrevs mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#options">1.1.1 options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#ansi-term-mode">1.2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#bookmarks">1.3 Bookmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#helm">1.4 helm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#buffers">1.5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#kill-buffer">1.6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#case-conversion-a-a">1.7 Case conversion A &lt;-&gt; a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-and-killing">1.8 Deleting and killing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#deleting-by-character">1.8.1 Deleting by character</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#dired">1.9 Dired</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#directories">1.9.1 directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#flags">1.9.2 flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#files">1.9.3 files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#marks">1.9.4 marks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#shell-command">1.9.5 shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#id2">1.9.6 options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#file">1.10 File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#find-replace">1.11 Find/replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#font">1.12 font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#frames">1.13 frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#help-and-info">1.14 help and info</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#browsing-inside-info">1.14.1 Browsing inside info</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#ispell-flyspell">1.15 ispell (flyspell)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#menubar-f10">1.16 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-around">1.17 Moving around</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-characters-lines">1.17.1 by characters/lines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-words">1.17.2 by words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#horizontally">1.17.3 horizontally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-sentence">1.17.4 by sentence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-paragraph">1.17.5 by paragraph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-matching-parentheses">1.17.6 by matching parentheses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-buffer">1.17.7 by buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-page">1.17.8 by page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#back-to-previous-position">1.17.9 back to previous position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#go-to">1.17.10 GO TO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#outline-minor-mode">1.18 Outline minor mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#motion-commands">1.18.1 Motion commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#visibility-commands">1.18.2 Visibility commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#reference-sites">1.19 Reference sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#region-mark">1.20 Region/Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#registers">1.21 Registers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#select">1.22 Select</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#sessions">1.23 Sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#symbol">1.24 Symbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#timestamp">1.25 Timestamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#windows">1.26 windows</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#transpose-windows">1.26.1 transpose windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#yasnippet">1.27 YASnippet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#variables">1.27.1 variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id3">1.28 Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#auto-reverting">1.29 (Auto)reverting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#performance-profiling">1.30 Performance profiling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auctex">2 AucTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#org">3 Org</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id4">3.1 Font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-cycling">3.2 Visibility cycling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#insert-entries">3.3 Insert entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#promoting-demoting-headings">3.4 Promoting/Demoting headings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-subtrees-up-down">3.5 Moving subtrees up/down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#exporting">3.6 Exporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#html-export-command">3.6.1 HTML export command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#time-stamp">3.7 time stamp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#id5">3.7.1 variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#export-options">3.8 Export options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#paragraphs">3.9 Paragraphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#examples-and-codes">3.10 Examples and codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#images">3.11 Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#footnote">3.12 Footnote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#superscript-and-subscript">3.13 Superscript and subscript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#special-symbols">3.14 Special symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#latex-preview">3.15 Latex preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#sort">3.16 Sort</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">4 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">5 Magit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#xquartz">1 XQuartz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package">2 Add section number to the pdf bookmark (outline) generated by hyperref package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc">3 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#change-font-size-temporarily">4 change font size temporarily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-an-area-begin-small-end-small">4.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-a-word-small-word">4.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#as-a-switcher-small">4.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">5 putting a formula inside of a table cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#variable">6 variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">7 setcounter enumi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#learning-sources">1 Learning Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#basic-concepts-and-terms">2 Basic concepts and terms:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#gitignore">3 .gitignore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#init">4 init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#config">5 config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#status">6 status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#log">7 log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#add-working-tree-staging-area">8 add: working tree -&gt; staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rm-remove-from-both-working-tree-and-the-staging-area">9 rm: remove from both working tree and the staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#commit-staging-area-history">10 commit: staging area -&gt; history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#add-commit-working-tree-staging-area-and-history">11 add+commit: working tree -&gt; staging area and history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#diff-working-tree-staging-area">12 diff: working tree &lt;-&gt; staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#diff-staging-area-history">13 diff: staging area &lt;-&gt; history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-working-tree-staging-area">14 checkout: working tree &lt;- staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-working-tree-and-staging-area-history">15 checkout: working tree and staging area &lt;- history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-branch">16 checkout branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#reset-staging-area-history">17 reset: staging area &lt;- history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-list">18 branch: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-create-new">19 branch: create new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-remove">20 branch: remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#merge-head-master">21 merge: HEAD -&gt; master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">22 Stash: save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">23 stash: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">24 stash: apply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#clone">25 clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">26 remote: add/remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">27 remote: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">28 fetch: local repository &lt;- remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">29 push: local repository -&gt; remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">30 rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">31 cherry-pick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="macbookpro.html">Misc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#emacs-keybinding">1 emacs keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#mac-address-changer">2 MAC address changer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#brew">3 Brew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#terminal-commands">4 Terminal commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#firefox">5 Firefox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#thunderbird">6 Thunderbird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#three-finger-dragging">7 three finger dragging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">math dump</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#binomial-coefficients">1 binomial coefficients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#identities">1.1 identities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stirling-number">1.2 Stirling number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#derivatives">1.3 derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relationship-with-polynomials">1.4 relationship with polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finite-sums">1.5 finite sums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#series-generating-functions">1.6 series, generating functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#divisibility">1.7 divisibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inequalities">1.8 inequalities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asymptotes">1.9 asymptotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-gamma-function">1.10 the gamma function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-beta-function">1.11 the beta function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stirling-numbers">2 Stirling numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fibonacci-number">3 Fibonacci number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#trigonometric-functions">4 trigonometric functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#series-multisection">5 series multisection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beta-function">6 Beta function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#euler-integral-of-the-first-kind">7 Euler integral of the first kind</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>math dump</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/math.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="math-dump">
+<h1><a class="toc-backref" href="#id1">math dump</a><a class="headerlink" href="#math-dump" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Hyungbo Shim</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#math-dump" id="id1">math dump</a><ul>
+<li><a class="reference internal" href="#binomial-coefficients" id="id2">1 binomial coefficients</a><ul>
+<li><a class="reference internal" href="#identities" id="id3">1.1 identities</a></li>
+<li><a class="reference internal" href="#stirling-number" id="id4">1.2 Stirling number</a></li>
+<li><a class="reference internal" href="#derivatives" id="id5">1.3 derivatives</a></li>
+<li><a class="reference internal" href="#relationship-with-polynomials" id="id6">1.4 relationship with polynomials</a></li>
+<li><a class="reference internal" href="#finite-sums" id="id7">1.5 finite sums</a></li>
+<li><a class="reference internal" href="#series-generating-functions" id="id8">1.6 series, generating functions</a></li>
+<li><a class="reference internal" href="#divisibility" id="id9">1.7 divisibility</a></li>
+<li><a class="reference internal" href="#inequalities" id="id10">1.8 inequalities</a></li>
+<li><a class="reference internal" href="#asymptotes" id="id11">1.9 asymptotes</a></li>
+<li><a class="reference internal" href="#the-gamma-function" id="id12">1.10 the gamma function</a></li>
+<li><a class="reference internal" href="#the-beta-function" id="id13">1.11 the beta function</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stirling-numbers" id="id14">2 Stirling numbers</a></li>
+<li><a class="reference internal" href="#fibonacci-number" id="id15">3 Fibonacci number</a></li>
+<li><a class="reference internal" href="#trigonometric-functions" id="id16">4 trigonometric functions</a></li>
+<li><a class="reference internal" href="#series-multisection" id="id17">5 series multisection</a></li>
+<li><a class="reference internal" href="#beta-function" id="id18">6 Beta function</a></li>
+<li><a class="reference internal" href="#euler-integral-of-the-first-kind" id="id19">7 Euler integral of the first kind</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="binomial-coefficients">
+<h2><a class="toc-backref" href="#id2">1 binomial coefficients</a><a class="headerlink" href="#binomial-coefficients" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>a <strong>central binomial coefficient</strong> is a binomial coefficient of the form <span class="math notranslate nohighlight">\(\displaystyle \binom{2n}{n}\)</span></li>
+<li>Interpretation of binomial coefficients <span class="math notranslate nohighlight">\(N:=\displaystyle \binom{m}{n}\)</span><ul>
+<li>There are <span class="math notranslate nohighlight">\(N\)</span> ways to choose <span class="math notranslate nohighlight">\(n\)</span> elements from a set of <span class="math notranslate nohighlight">\(m\)</span> elements.</li>
+<li>There are <span class="math notranslate nohighlight">\(N\)</span> ways to choose <span class="math notranslate nohighlight">\(n\)</span> objects from a collection (in which repetitions are allowed) of <span class="math notranslate nohighlight">\(m-n+1\)</span> objects.</li>
+<li>There are <span class="math notranslate nohighlight">\(N\)</span> strings containing <span class="math notranslate nohighlight">\(n\)</span> ones and <span class="math notranslate nohighlight">\(m-n\)</span> zeros.</li>
+<li>There are <span class="math notranslate nohighlight">\(N\)</span> strings consisting of <span class="math notranslate nohighlight">\(n\)</span> ones and <span class="math notranslate nohighlight">\(m-1\)</span> zeros such that no two ones are adjacent.</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle (X+Y)^{n} = \sum_{k=0}^{n} \binom{n}{k} X^{n-k} Y^{k}\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb{N}_{\ge 0}\)</span> and <span class="math notranslate nohighlight">\(X,Y\)</span> are indeterminates.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="identities">
+<h3><a class="toc-backref" href="#id3">1.1 identities</a><a class="headerlink" href="#identities" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{m}{n} = \binom{m}{m-n}\)</span> for <span class="math notranslate nohighlight">\(m,n\in\mathbb{N}_{\ge 0}\)</span> such that <span class="math notranslate nohighlight">\(m \ge n\)</span>. However, for those <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \binom{-n}{m} \ne \binom{-n}{-n-m}\)</span>.</li>
+<li><strong>Pascal’s rule</strong> (<strong>Pascal’s triangle</strong>):
+<span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} + \binom{n}{k+1}=\binom{n+1}{k+1}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} = \frac{n}{k} \binom{n-1}{k-1}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n-1}{k} - \binom{n-1}{k-1} = \frac{n-2k}{n} \binom{n}{k}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{i} \binom{n-i}{j} = \binom{n}{j} \binom{n-j}{i}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} = \frac{n+1-k}{k} \binom{n}{k-1}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \int_{-\pi}^{\pi} \cos ((2m-n)x)\cos^{n}x\, dx = \frac{\pi}{2^{n-1}} \binom{n}{m}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \int_{-\pi}^{\pi} \sin((2m-n)x) \sin^{n}x \, dx = \begin{cases}(-1)^{m+(n+2)/2}\frac{\pi}{2^{n-1}}\binom{n}{m} &amp; \text{ when } n\text{ is odd}\\ 0 &amp; \text{ otherwise}  \end{cases}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \int_{-\pi}^{\pi} \cos((2m-n)x) \sin^{n}x \, dx = \begin{cases}(-1)^{m+(n/2)}\frac{\pi}{2^{n-1}} \binom{n}{m} &amp; \text{ when } n \text{ is even}\\ 0 &amp; \text{ otherwise}\end{cases}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{z}{k} = (-1)^{k} \binom{-z+k-1}{k} = \frac{(-1)^{k}}{(k+1)^{z+1}\cdot \Gamma(-z)} \prod_{j=k+1}^\infty \frac{(1+\frac{1}{j})^{-z-1}}{1- \frac{z+1}{j} }\)</span> for <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{1/2}{k} = \binom{2k}{k} \frac{(-1)^{k+1}}{2^{2k}(2k-1)}\)</span> for <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{w}{z} = \frac{\sin z\pi}{\sin w\pi} \binom{-z-1}{-w-1} = \frac{\sin (w-z)\pi}{\sin w\pi} \binom{z-w-1}{z}\)</span> for <span class="math notranslate nohighlight">\(w,z\in\mathbb{C}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{w}{z} \binom{z}{w} = \frac{\sin (w-z)\pi}{(w-z)\pi}\)</span> for <span class="math notranslate nohighlight">\(w,z\in\mathbb{C}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{w}{z} = \frac{\Gamma(w+1)}{\Gamma(z+1)\Gamma(w-z+1)} = \frac{1}{(w+1)B(w-z+1,z+1)}\)</span>  where <span class="math notranslate nohighlight">\(B(\_,\_)\)</span> is the Beta function for <span class="math notranslate nohighlight">\(w,z\in\mathbb{C}\)</span></li>
+</ul>
+</div>
+<div class="section" id="stirling-number">
+<h3><a class="toc-backref" href="#id4">1.2 Stirling number</a><a class="headerlink" href="#stirling-number" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{t}{k} = \sum_{i=0}^{k} s(k,i)\frac{t^{i}}{k!}\)</span> where <span class="math notranslate nohighlight">\(s(k,i)\)</span> is the Stirling number of the first kind</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle  \binom{z}{n} = \frac{1}{n!} \sum_{k=0}^{n} z^{k} s(n,k) = \sum_{k=0}^{n} (z-z_{0})^{k} \sum_{l=k}^{n} \binom{z_{0}}{l-k} \frac{s(n+k-j,k)}{(n+k-j)!} = \sum_{k=0}^{n} (z-z_{0})^{k} \sum_{l=k}^{n} z_{0}^{l-k} \binom{l}{k} \frac{s(n,l)}{n!}\)</span> for <span class="math notranslate nohighlight">\(z,z_{0}\in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span></li>
+</ul>
+</div>
+<div class="section" id="derivatives">
+<h3><a class="toc-backref" href="#id5">1.3 derivatives</a><a class="headerlink" href="#derivatives" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} \binom{t}{k} = \binom{t}{k} \sum_{i=0}^{k-1} \frac{1}{t-i}\)</span></li>
+</ul>
+</div>
+<div class="section" id="relationship-with-polynomials">
+<h3><a class="toc-backref" href="#id6">1.4 relationship with polynomials</a><a class="headerlink" href="#relationship-with-polynomials" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle (X+Y)^{n} = \sum_{k=0}^{n} \binom{n}{k} X^{n-k} Y^{k}\)</span> for <span class="math notranslate nohighlight">\(n \in \mathbb{N}_{\ge 0}\)</span> and <span class="math notranslate nohighlight">\(X,Y\)</span> are indeterminates.</li>
+<li>for a field <span class="math notranslate nohighlight">\(K\)</span> of characteristic <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(P(t) \in K[t]\)</span> is uniquely expressed as <span class="math notranslate nohighlight">\(\displaystyle P(t) = \sum_{k=0}^{\deg P} a_{k} \binom{t}{k}\)</span> where <span class="math notranslate nohighlight">\(\displaystyle a_{k} = (-1)^{k-i} \binom{k}{i} P(i)\)</span> , the /k/th difference of the sequence <span class="math notranslate nohighlight">\(P(0),P(1),\ldots,P(k)\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(j) = 0\)</span> where <span class="math notranslate nohighlight">\(P(j)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(&lt; n\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(m+(n-j)d) = d^{n}\cdot n!\cdot a_{n}\)</span> where <span class="math notranslate nohighlight">\(P(x)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(\le n\)</span>, <span class="math notranslate nohighlight">\(a_{n}\)</span> is its coefficient of degree <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m,d\in \mathbb{C}\)</span></li>
+</ul>
+</div>
+<div class="section" id="finite-sums">
+<h3><a class="toc-backref" href="#id7">1.5 finite sums</a><a class="headerlink" href="#finite-sums" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^{n} \binom{n}{k} = 2^n\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^{n} k \binom{n}{k} = n 2^{n-1}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^{n} k^2 \binom{n}{k} = (n+n^{2})2^{n-2}\)</span></p>
+</li>
+<li><p class="first"><strong>Chu-Vandermonde identity</strong>:
+<span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} \binom{m}{j} \binom{n-m}{k-j} = \binom{n}{k}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{m} \binom{m}{j}^{2} = \binom{2m}{m}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{m=k}^{n} \binom{m}{k} = \binom{n+1}{k+1}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{r=0}^{m} \binom{n+r}{r} = \binom{n+m+1}{m}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^{\lfloor n/2\rfloor} \binom{n-k}{k} = F(n+1)\)</span> where <span class="math notranslate nohighlight">\(F(n)\)</span> is the <span class="math notranslate nohighlight">\(n\)</span> th Fibonacci number</p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{t} + \binom{n}{t+s} + \binom{n}{t+2s} + \cdots = \frac{1}{s} \sum_{j=0}^{s-1} \left(2 \cos \frac{\pi j}{s} \right)^{n} \cos \frac{\pi (n-2t) j}{s}\)</span>
+<em>Proof.</em> This follows from the multisection of a binomial expansion</p>
+<div class="math notranslate nohighlight">
+\[(1+x)^{n} = \binom{n}{0}x^{0}  + \binom{n}{1} x + \binom{n}{2} x^{2} +\cdots\]</div>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{k} (-1)^{j} \binom{n}{j} = (-1)^{k} \binom{n-1}{k}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(j) = 0\)</span> where <span class="math notranslate nohighlight">\(P(j)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(&lt; n\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(m+(n-j)d) = d^{n}\cdot n!\cdot a_{n}\)</span> where <span class="math notranslate nohighlight">\(P(x)\)</span> is a polynomial of degree <span class="math notranslate nohighlight">\(\le n\)</span>, <span class="math notranslate nohighlight">\(a_{n}\)</span> is its coefficient of degree <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(m,d\in \mathbb{C}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \sum_{k-q}^{n} \binom{n}{k} \binom{k}{q} = 2^{n-q} \binom{n}{q}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \binom{z}{m} \binom{z}{n} = \sum_{k=0}^{m} \binom{m+n-k}{k,m-k,n-k} \binom{z}{m+n-k}\)</span> for <span class="math notranslate nohighlight">\(z\in\mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(m,n\in\mathbb{N}_{\ge 0}\)</span></p>
+</li>
+<li><p class="first"><strong>Dixon’s identity</strong>: <span class="math notranslate nohighlight">\(\displaystyle \sum_{k=-a}^{a} (-1)^{k} \binom{a+b}{a+k} \binom{b+c}{b+k} \binom{c+a}{c+k} = \frac{(a+b+c)!}{a! b! c!}\)</span> where <span class="math notranslate nohighlight">\(a,b,c \in \mathbb{N}_{\ge 0}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \binom{z}{n}^{-1} = \sum_{k=0}^{n-1} (-1)^{n-1-k} \binom{n}{k} \frac{n-k}{z-k}\)</span> for <span class="math notranslate nohighlight">\(z\in\mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(n\in\mathbb{N}_{\ge 0}\)</span></p>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\displaystyle \binom{z+n}{n}^{-1} = \sum_{k=1}^{n} (-1)^{k-1} \binom{n}{k} \frac{k}{z+k}\)</span> for <span class="math notranslate nohighlight">\(z\in\mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(n\in\mathbb{N}_{\ge 0}\)</span></p>
+</li>
+</ul>
+</div>
+<div class="section" id="series-generating-functions">
+<h3><a class="toc-backref" href="#id8">1.6 series, generating functions</a><a class="headerlink" href="#series-generating-functions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle (1+z)^{\alpha} = \sum_{k=0}^{\infty} \binom{\alpha}{k} z^{k}\)</span> for any <span class="math notranslate nohighlight">\(\alpha,z\in \mathbb{C}\)</span> with the radius for convergence <span class="math notranslate nohighlight">\(1\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \frac{k-1}{k} \sum_{j=0}^{\infty} \frac{1}{\binom{j+x}{k} }= \frac{1}{\binom{x-1}{k-1} }\)</span> converges for <span class="math notranslate nohighlight">\(k \ge 2\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^{\infty} \binom{n}{k} x^{k} = (1+x)^{n}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{n=k}^{\infty} \binom{n}{k} y^{n} = \frac{y^{k}}{(1-y)^{k+1}}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^{\infty} \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n} = \frac{1}{1-y-xy}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^{\infty} \sum_{k=0}^{\infty} \binom{n+k}{k} x^{k} y^{n} = \frac{1}{1-x-y}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{n=0}^{\infty} \sum_{k=0}^{\infty} \binom{n+k}{k} \frac{x^{k} y^{n}}{(n+k)!} = e^{x+y}\)</span></li>
+<li><strong>Newton’s binomial series</strong>:
+<span class="math notranslate nohighlight">\(\displaystyle (1+z)^{\alpha} = \sum_{k=0}^{\infty} \binom{\alpha}{k} z^{k}\)</span> for <span class="math notranslate nohighlight">\(z,\alpha \in \mathbb{C}\)</span> with the radius of convergence is <span class="math notranslate nohighlight">\(1\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle (1-z)^{-(\alpha+1)} = \sum_{k=0}^{\infty} \binom{k+\alpha}{k} z^{k}\)</span> for <span class="math notranslate nohighlight">\(z,\alpha \in \mathbb{C}\)</span> with the radius of convergence is <span class="math notranslate nohighlight">\(1\)</span>.</li>
+</ul>
+</div>
+<div class="section" id="divisibility">
+<h3><a class="toc-backref" href="#id9">1.7 divisibility</a><a class="headerlink" href="#divisibility" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Kummer</strong>: <span class="math notranslate nohighlight">\(\displaystyle \forall m,n \in \mathbb{N}_{\ge 0}, \forall\)</span> prime <span class="math notranslate nohighlight">\(p\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \max\left\{ a  \in \mathbb{N}_{\ge 0}  \mid p^{a}\Bigg| \binom{m+n}{m}\right\} =\)</span> the number of carries when <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are added in base <span class="math notranslate nohighlight">\(p\)</span> <span class="math notranslate nohighlight">\(= \# \{j \in \mathbb{N}_{\ge 0} \mid {}\)</span> the fractional part of <span class="math notranslate nohighlight">\(m/p^{j}\)</span> is greater than the fractional part of <span class="math notranslate nohighlight">\((m+n)/p^j\}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \frac{n}{\mathrm{GCD}(n,k)}\Big| \binom{n}{k}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle p\Big| \binom{p^r}{s}\)</span> for <span class="math notranslate nohighlight">\(\displaystyle \forall r,s \in \mathbb{Z}\)</span> such that <span class="math notranslate nohighlight">\(s &lt; p^{r}\)</span> where <span class="math notranslate nohighlight">\(p\)</span> is a prime number but <span class="math notranslate nohighlight">\(\displaystyle p^{k}\not\Big| \binom{p^r}{s}\)</span> in general for <span class="math notranslate nohighlight">\(k \ge 2\)</span>, for eg, <span class="math notranslate nohighlight">\(\displaystyle 3^{2}\not\Big| \binom{9}{6}\)</span></li>
+<li><strong>Singmaster</strong>: any integer divides almost all binomial coefficients. Note that the number of binomial coefficient <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> with <span class="math notranslate nohighlight">\(n&lt;N\)</span> is <span class="math notranslate nohighlight">\(N(N+1)/2\)</span>. Let <span class="math notranslate nohighlight">\(f(d,N)\)</span> be the number of binomial coefficients <span class="math notranslate nohighlight">\(\binom{n}{k}\)</span> with <span class="math notranslate nohighlight">\(n&lt; N\)</span> such that <span class="math notranslate nohighlight">\(d | \binom{n}{k}\)</span>. Then, for any <span class="math notranslate nohighlight">\(d\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \lim_{N\rightarrow \infty} \frac{f(d,N)}{N(N+1)/2} = 1\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \frac{\mathrm{LCM}(n,n+1,\ldots,n+k)}{n\cdot \mathrm{LCM} \left(\binom{k}{0}, \binom{k}{1}, \ldots, \binom{k}{k}   \right)} \ \Big| \ \binom{n+k}{k} \ \Big| \ \frac{\mathrm{LCM}(n,n+1,\ldots,n+k)}{n}\)</span></li>
+<li><span class="math notranslate nohighlight">\(n \ge 2\)</span> is prime <span class="math notranslate nohighlight">\(\displaystyle \Leftrightarrow \forall 1 \le k &lt; n,\, n\Big| \binom{n}{k}\)</span></li>
+</ul>
+</div>
+<div class="section" id="inequalities">
+<h3><a class="toc-backref" href="#id10">1.8 inequalities</a><a class="headerlink" href="#inequalities" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \frac{n^{k}}{k^{k}} \le \binom{n}{k} \le \frac{n^{k}}{k!} &lt;  \Big(\frac{n\cdot e}{k} \Big)^k\)</span> for <span class="math notranslate nohighlight">\(1 \le k \le n\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{mn}{n} \ge \frac{m^{m(n-1)+1}}{\sqrt{n}\cdot (m-1)^{(m-1)(n-1)}}\)</span> for <span class="math notranslate nohighlight">\(m\ge 2\)</span> and <span class="math notranslate nohighlight">\(n\ge 1\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{i=0}^{k} \binom{n}{i} \le \sum_{i=0}^{k} n^{i}\cdot 1^{k-i} \le (1+n)^{k}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \frac{2^{n\cdot H(\varepsilon)}}{\sqrt{8 n \varepsilon (1-\varepsilon)}} \le \sum_{i=0}^{k} \binom{n}{i} \le 2^{n\cdot H(\varepsilon)}\)</span> for any integers <span class="math notranslate nohighlight">\(n\ge k\ge 1\)</span> with <span class="math notranslate nohighlight">\(\varepsilon {}\dot{=}{} k/2 \le 1/2\)</span> and <span class="math notranslate nohighlight">\(H\)</span> is the binary entropy function</li>
+</ul>
+</div>
+<div class="section" id="asymptotes">
+<h3><a class="toc-backref" href="#id11">1.9 asymptotes</a><a class="headerlink" href="#asymptotes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} \sim \sqrt{\frac{n}{2 \pi k (n-k)} } \cdot \frac{ n^{n}}{k^{k}(n-k)^{n-k}}\)</span> for <span class="math notranslate nohighlight">\(n,k \gg 0\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{2n}{n} \sim \frac{2^{2n}}{\sqrt{\pi n}}\)</span> for <span class="math notranslate nohighlight">\(n \gg 0\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} \sim 2^{nH(k/n)}\)</span> where <span class="math notranslate nohighlight">\(H\)</span> is the binary entropy function <span class="math notranslate nohighlight">\(H(p) := -p \log_{2}(p)-(1-p)\log_{2} (1-p)\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} \approx \frac{(n-k/2)^{k}}{k^{k} e^{-k} \sqrt{2\pi k}} = \frac{(n/k-1/2)^{k} e^{k}}{\sqrt{2 \pi k}}\)</span> for <span class="math notranslate nohighlight">\(n\gg 0\)</span> and <span class="math notranslate nohighlight">\(k \ll n\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} \approx \exp\Big( k \log (n/k-1/2)+k - 1/2 \log (2\pi k)\Big)\)</span> for <span class="math notranslate nohighlight">\(n\gg 0\)</span> and <span class="math notranslate nohighlight">\(k \ll n\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} \approx \exp \Big( (n+1/2)\log \frac{n+1/2}{n-k+1/2} + k \log \frac{n-k+1/2}{k} - 1/2 \log (2\pi k) \Big)\)</span> for <span class="math notranslate nohighlight">\(n\gg 0\)</span> and <span class="math notranslate nohighlight">\(k \ll n\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{n}{k} \sim \binom{n}{n/2} e^{-d^{2}/(2n)} \sim \frac{2^{n}}{\sqrt{2^{-1} n \pi}} e^{-d^{2}/(2n)}\)</span> where <span class="math notranslate nohighlight">\(d=n-2k\)</span> for <span class="math notranslate nohighlight">\(n \gg 0\)</span> and <span class="math notranslate nohighlight">\(|n/2-k| = o(n^{2/3})\)</span> (so that <span class="math notranslate nohighlight">\(n \propto k\)</span>)</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{z}{k} \approx \frac{(-1)^{k}}{k^{z+1}\cdot \Gamma(-z)}\)</span> for <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span> such that <span class="math notranslate nohighlight">\(k \gg 0\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{z}{k} \approx \frac{(-1)^{k}}{k^{z+1}\cdot \Gamma(-z)}\)</span> for <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span> such that <span class="math notranslate nohighlight">\(k \gg 0\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{z+k}{k} = \frac{k^{z}}{\Gamma(z+1)} \Big(1 + \frac{z(z+1)}{2k} + O(k^{-2}) \Big)\)</span> for <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span> such that <span class="math notranslate nohighlight">\(k \gg 0\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{z+k}{k} \approx \frac{e^{z(H_{k}-\gamma)}}{\Gamma(z+1)}\)</span> for <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span> such that <span class="math notranslate nohighlight">\(k \gg 0\)</span> where <span class="math notranslate nohighlight">\(H_{k}\)</span> is the <span class="math notranslate nohighlight">\(k\)</span> th harmonic number and <span class="math notranslate nohighlight">\(\gamma\)</span> is the Euler-Mascheroni constant.</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \lim_{k \rightarrow \infty} \binom{z+k}{j} \Bigg{/} \binom{k}{j} = \left(1- \frac{j}{k} \right)^{-z}\)</span> for <span class="math notranslate nohighlight">\(z,j \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span> where <span class="math notranslate nohighlight">\(j/k\)</span> converges in <span class="math notranslate nohighlight">\(\mathbb{C}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \lim_{k\rightarrow \infty} \binom{j}{j-k}\Bigg{/} \binom{j-z}{j-k} = \left(\frac{j}{k}\right)^{z}\)</span> for <span class="math notranslate nohighlight">\(z,j \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span> where <span class="math notranslate nohighlight">\(j/k\)</span> converges in <span class="math notranslate nohighlight">\(\mathbb{C}\)</span></li>
+</ul>
+</div>
+<div class="section" id="the-gamma-function">
+<h3><a class="toc-backref" href="#id12">1.10 the gamma function</a><a class="headerlink" href="#the-gamma-function" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{z}{k} = (-1)^{k} \binom{-z+k-1}{k} = \frac{(-1)^{k}}{(k+1)^{z+1}\cdot \Gamma(-z)} \prod_{j=k+1}^\infty \frac{(1+\frac{1}{j})^{-z-1}}{1- \frac{z+1}{j} }\)</span> for <span class="math notranslate nohighlight">\(z \in \mathbb{C}\)</span> and <span class="math notranslate nohighlight">\(k \in \mathbb{N}_{\ge 0}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{w}{z} = \frac{\Gamma(w+1)}{\Gamma(z+1)\Gamma(w-z+1)} = \frac{1}{(w+1)B(w-z+1,z+1)}\)</span>  where <span class="math notranslate nohighlight">\(B(\_,\_)\)</span> is the Beta function for <span class="math notranslate nohighlight">\(w,z\in\mathbb{C}\)</span></li>
+</ul>
+</div>
+<div class="section" id="the-beta-function">
+<h3><a class="toc-backref" href="#id13">1.11 the beta function</a><a class="headerlink" href="#the-beta-function" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \binom{w}{z} = \frac{\Gamma(w+1)}{\Gamma(z+1)\Gamma(w-z+1)} = \frac{1}{(w+1)B(w-z+1,z+1)}\)</span>  where <span class="math notranslate nohighlight">\(B(\_,\_)\)</span> is the Beta function for <span class="math notranslate nohighlight">\(w,z\in\mathbb{C}\)</span></li>
+</ul>
+</div>
+</div>
+<div class="section" id="stirling-numbers">
+<h2><a class="toc-backref" href="#id14">2 Stirling numbers</a><a class="headerlink" href="#stirling-numbers" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><strong>Stirling numbers of the first kind</strong>: <span class="math notranslate nohighlight">\(\displaystyle \frac{x!}{n!} = \sum_{k=0}^{n} s(n,k)x^k\)</span></p>
+</li>
+<li><p class="first">table for <span class="math notranslate nohighlight">\(s(n,k)\)</span></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="5%" />
+<col width="11%" />
+<col width="13%" />
+<col width="13%" />
+<col width="11%" />
+<col width="11%" />
+<col width="10%" />
+<col width="8%" />
+<col width="6%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">nk</th>
+<th class="head">0</th>
+<th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">4</th>
+<th class="head">5</th>
+<th class="head">6</th>
+<th class="head">7</th>
+<th class="head">8</th>
+<th class="head">9</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>0</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>0</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>0</td>
+<td>6</td>
+<td>11</td>
+<td>6</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>0</td>
+<td>24</td>
+<td>50</td>
+<td>35</td>
+<td>10</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>0</td>
+<td>120</td>
+<td>274</td>
+<td>225</td>
+<td>85</td>
+<td>15</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>0</td>
+<td>720</td>
+<td>1764</td>
+<td>1624</td>
+<td>735</td>
+<td>175</td>
+<td>21</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td>8</td>
+<td>0</td>
+<td>5040</td>
+<td>13068</td>
+<td>13132</td>
+<td>6769</td>
+<td>1960</td>
+<td>322</td>
+<td>28</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>0</td>
+<td>40320</td>
+<td>109584</td>
+<td>118124</td>
+<td>67284</td>
+<td>22449</td>
+<td>4536</td>
+<td>546</td>
+<td>36</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<div class="section" id="fibonacci-number">
+<h2><a class="toc-backref" href="#id15">3 Fibonacci number</a><a class="headerlink" href="#fibonacci-number" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(\displaystyle \sum_{k=0}^{\lfloor n/2\rfloor} \binom{n-k}{k} = F(n+1)\)</span> where <span class="math notranslate nohighlight">\(F(n)\)</span> is the <span class="math notranslate nohighlight">\(n\)</span> th Fibonacci number</li>
+</ul>
+</div>
+<div class="section" id="trigonometric-functions">
+<h2><a class="toc-backref" href="#id16">4 trigonometric functions</a><a class="headerlink" href="#trigonometric-functions" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="series-multisection">
+<h2><a class="toc-backref" href="#id17">5 series multisection</a><a class="headerlink" href="#series-multisection" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="beta-function">
+<h2><a class="toc-backref" href="#id18">6 Beta function</a><a class="headerlink" href="#beta-function" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">For <span class="math notranslate nohighlight">\(w,z\in \mathbb{C}\)</span> both with strictly positive real parts, the <strong>beta function</strong> is defined as an integral over the unit interval on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[B(w,z) := \int_{0}^{1} t^{w-1}(1-t)^{z-1} \, dt\]</div>
+</li>
+<li><p class="first">For <span class="math notranslate nohighlight">\(w,z\in \mathbb{C}\)</span> both with strictly positive real parts and <span class="math notranslate nohighlight">\(x\in \mathbb{R}\)</span>, the <strong>incomplete beta function</strong> is defined as an integral over an interval on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[B(x;w,z) := \int_{0}^{x} t^{w-1}(1-t)^{z-1} \, dt\]</div>
+</li>
+<li><p class="first">For <span class="math notranslate nohighlight">\(w,z\in \mathbb{C}\)</span> both with strictly positive real parts and <span class="math notranslate nohighlight">\(x\in \mathbb{R}\)</span>, the <strong>regularized (incomplete) beta function</strong> is defined as the ratio</p>
+<div class="math notranslate nohighlight">
+\[I_{x}(w,z) := \frac{B(x;w,z)}{B(w,z)}\]</div>
+</li>
+<li><p class="first">The <strong>$boldsymbol{F}$-distribution</strong> <span class="math notranslate nohighlight">\(F(k;n,p)\)</span> is a discrete probability distribution describing the probability of having <span class="math notranslate nohighlight">\(\lfloor k\rfloor\)</span> times of success, regardless of the order, of probability <span class="math notranslate nohighlight">\(p\)</span> out of <span class="math notranslate nohighlight">\(n\)</span> trials:</p>
+<div class="math notranslate nohighlight">
+\[F(k;n,p) := \sum_{i=0}^{k} \binom{n}{i} p^{i}(1-p)^{n-i} = I_{1-p}(n-k,k+1)\]</div>
+</li>
+</ul>
+</div>
+<div class="section" id="euler-integral-of-the-first-kind">
+<h2><a class="toc-backref" href="#id19">7 Euler integral of the first kind</a><a class="headerlink" href="#euler-integral-of-the-first-kind" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>This is an another name for the beta function.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="mathjaxtest.html" class="btn btn-neutral float-left" title="MathJax Test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, hbshim@gmail.com
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

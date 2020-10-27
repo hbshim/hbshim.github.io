@@ -1,0 +1,294 @@
+=========
+math dump
+=========
+
+    :Author: Hyungbo Shim
+
+.. contents::
+
+
+
+1 binomial coefficients
+-----------------------
+
+- a **central binomial coefficient** is a binomial coefficient of the form :math:`\displaystyle \binom{2n}{n}`
+
+- Interpretation of binomial coefficients :math:`N:=\displaystyle \binom{m}{n}`
+
+  - There are :math:`N` ways to choose :math:`n` elements from a set of :math:`m` elements.
+
+  - There are :math:`N` ways to choose :math:`n` objects from a collection (in which repetitions are allowed) of :math:`m-n+1` objects.
+
+  - There are :math:`N` strings containing :math:`n` ones and :math:`m-n` zeros.
+
+  - There are :math:`N` strings consisting of :math:`n` ones and :math:`m-1` zeros such that no two ones are adjacent.
+
+  - :math:`\displaystyle (X+Y)^{n} = \sum_{k=0}^{n} \binom{n}{k} X^{n-k} Y^{k}` for :math:`n \in \mathbb{N}_{\ge 0}` and :math:`X,Y` are indeterminates.
+
+1.1 identities
+~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \binom{m}{n} = \binom{m}{m-n}` for :math:`m,n\in\mathbb{N}_{\ge 0}` such that :math:`m \ge n`. However, for those :math:`m` and :math:`n`, :math:`\displaystyle \binom{-n}{m} \ne \binom{-n}{-n-m}`.
+
+- **Pascal's rule** (**Pascal's triangle**):
+  :math:`\displaystyle \binom{n}{k} + \binom{n}{k+1}=\binom{n+1}{k+1}`
+
+- :math:`\displaystyle \binom{n}{k} = \frac{n}{k} \binom{n-1}{k-1}`
+
+- :math:`\displaystyle \binom{n-1}{k} - \binom{n-1}{k-1} = \frac{n-2k}{n} \binom{n}{k}`
+
+- :math:`\displaystyle \binom{n}{i} \binom{n-i}{j} = \binom{n}{j} \binom{n-j}{i}`
+
+- :math:`\displaystyle \binom{n}{k} = \frac{n+1-k}{k} \binom{n}{k-1}`
+
+- :math:`\displaystyle \int_{-\pi}^{\pi} \cos ((2m-n)x)\cos^{n}x\, dx = \frac{\pi}{2^{n-1}} \binom{n}{m}`
+
+- :math:`\displaystyle \int_{-\pi}^{\pi} \sin((2m-n)x) \sin^{n}x \, dx = \begin{cases}(-1)^{m+(n+2)/2}\frac{\pi}{2^{n-1}}\binom{n}{m} & \text{ when } n\text{ is odd}\\ 0 & \text{ otherwise}  \end{cases}`
+
+- :math:`\displaystyle \int_{-\pi}^{\pi} \cos((2m-n)x) \sin^{n}x \, dx = \begin{cases}(-1)^{m+(n/2)}\frac{\pi}{2^{n-1}} \binom{n}{m} & \text{ when } n \text{ is even}\\ 0 & \text{ otherwise}\end{cases}`
+
+- :math:`\displaystyle \binom{z}{k} = (-1)^{k} \binom{-z+k-1}{k} = \frac{(-1)^{k}}{(k+1)^{z+1}\cdot \Gamma(-z)} \prod_{j=k+1}^\infty \frac{(1+\frac{1}{j})^{-z-1}}{1- \frac{z+1}{j} }` for :math:`z \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}`
+
+- :math:`\displaystyle \binom{1/2}{k} = \binom{2k}{k} \frac{(-1)^{k+1}}{2^{2k}(2k-1)}` for :math:`k \in \mathbb{N}_{\ge 0}`
+
+- :math:`\displaystyle \binom{w}{z} = \frac{\sin z\pi}{\sin w\pi} \binom{-z-1}{-w-1} = \frac{\sin (w-z)\pi}{\sin w\pi} \binom{z-w-1}{z}` for :math:`w,z\in\mathbb{C}`
+
+- :math:`\displaystyle \binom{w}{z} \binom{z}{w} = \frac{\sin (w-z)\pi}{(w-z)\pi}` for :math:`w,z\in\mathbb{C}`
+
+- :math:`\displaystyle \binom{w}{z} = \frac{\Gamma(w+1)}{\Gamma(z+1)\Gamma(w-z+1)} = \frac{1}{(w+1)B(w-z+1,z+1)}`  where :math:`B(\_,\_)` is the Beta function for :math:`w,z\in\mathbb{C}`
+
+1.2 Stirling number
+~~~~~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \binom{t}{k} = \sum_{i=0}^{k} s(k,i)\frac{t^{i}}{k!}` where :math:`s(k,i)` is the Stirling number of the first kind
+
+- :math:`\displaystyle  \binom{z}{n} = \frac{1}{n!} \sum_{k=0}^{n} z^{k} s(n,k) = \sum_{k=0}^{n} (z-z_{0})^{k} \sum_{l=k}^{n} \binom{z_{0}}{l-k} \frac{s(n+k-j,k)}{(n+k-j)!} = \sum_{k=0}^{n} (z-z_{0})^{k} \sum_{l=k}^{n} z_{0}^{l-k} \binom{l}{k} \frac{s(n,l)}{n!}` for :math:`z,z_{0}\in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}`
+
+1.3 derivatives
+~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \frac{d}{dt} \binom{t}{k} = \binom{t}{k} \sum_{i=0}^{k-1} \frac{1}{t-i}`
+
+1.4 relationship with polynomials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle (X+Y)^{n} = \sum_{k=0}^{n} \binom{n}{k} X^{n-k} Y^{k}` for :math:`n \in \mathbb{N}_{\ge 0}` and :math:`X,Y` are indeterminates.
+
+- for a field :math:`K` of characteristic :math:`0`, :math:`P(t) \in K[t]` is uniquely expressed as :math:`\displaystyle P(t) = \sum_{k=0}^{\deg P} a_{k} \binom{t}{k}` where :math:`\displaystyle a_{k} = (-1)^{k-i} \binom{k}{i} P(i)` , the /k/th difference of the sequence :math:`P(0),P(1),\ldots,P(k)`
+
+- :math:`\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(j) = 0` where :math:`P(j)` is a polynomial of degree :math:`< n`
+
+- :math:`\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(m+(n-j)d) = d^{n}\cdot n!\cdot a_{n}` where :math:`P(x)` is a polynomial of degree :math:`\le n`, :math:`a_{n}` is its coefficient of degree :math:`n` and :math:`m,d\in \mathbb{C}`
+
+1.5 finite sums
+~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \sum_{k=0}^{n} \binom{n}{k} = 2^n`
+
+- :math:`\displaystyle \sum_{k=0}^{n} k \binom{n}{k} = n 2^{n-1}`
+
+- :math:`\displaystyle \sum_{k=0}^{n} k^2 \binom{n}{k} = (n+n^{2})2^{n-2}`
+
+- **Chu-Vandermonde identity**:
+  :math:`\displaystyle \sum_{j=0}^{k} \binom{m}{j} \binom{n-m}{k-j} = \binom{n}{k}`
+
+- :math:`\displaystyle \sum_{j=0}^{m} \binom{m}{j}^{2} = \binom{2m}{m}`
+
+- :math:`\displaystyle \sum_{m=k}^{n} \binom{m}{k} = \binom{n+1}{k+1}`
+
+- :math:`\displaystyle \sum_{r=0}^{m} \binom{n+r}{r} = \binom{n+m+1}{m}`
+
+- :math:`\displaystyle \sum_{k=0}^{\lfloor n/2\rfloor} \binom{n-k}{k} = F(n+1)` where :math:`F(n)` is the :math:`n` th Fibonacci number
+
+- :math:`\displaystyle \binom{n}{t} + \binom{n}{t+s} + \binom{n}{t+2s} + \cdots = \frac{1}{s} \sum_{j=0}^{s-1} \left(2 \cos \frac{\pi j}{s} \right)^{n} \cos \frac{\pi (n-2t) j}{s}`
+  *Proof.* This follows from the multisection of a binomial expansion
+
+
+  .. math::
+
+      (1+x)^{n} = \binom{n}{0}x^{0}  + \binom{n}{1} x + \binom{n}{2} x^{2} +\cdots
+
+- :math:`\displaystyle \sum_{j=0}^{k} (-1)^{j} \binom{n}{j} = (-1)^{k} \binom{n-1}{k}`
+
+- :math:`\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(j) = 0` where :math:`P(j)` is a polynomial of degree :math:`< n`
+
+- :math:`\displaystyle \sum_{j=0}^{n} (-1)^{j} \binom{n}{j} P(m+(n-j)d) = d^{n}\cdot n!\cdot a_{n}` where :math:`P(x)` is a polynomial of degree :math:`\le n`, :math:`a_{n}` is its coefficient of degree :math:`n` and :math:`m,d\in \mathbb{C}`
+
+- :math:`\displaystyle \sum_{k-q}^{n} \binom{n}{k} \binom{k}{q} = 2^{n-q} \binom{n}{q}`
+
+- :math:`\displaystyle \binom{z}{m} \binom{z}{n} = \sum_{k=0}^{m} \binom{m+n-k}{k,m-k,n-k} \binom{z}{m+n-k}` for :math:`z\in\mathbb{C}` and :math:`m,n\in\mathbb{N}_{\ge 0}`
+
+- **Dixon's identity**: :math:`\displaystyle \sum_{k=-a}^{a} (-1)^{k} \binom{a+b}{a+k} \binom{b+c}{b+k} \binom{c+a}{c+k} = \frac{(a+b+c)!}{a! b! c!}` where :math:`a,b,c \in \mathbb{N}_{\ge 0}`
+
+- :math:`\displaystyle \binom{z}{n}^{-1} = \sum_{k=0}^{n-1} (-1)^{n-1-k} \binom{n}{k} \frac{n-k}{z-k}` for :math:`z\in\mathbb{C}` and :math:`n\in\mathbb{N}_{\ge 0}`
+
+- :math:`\displaystyle \binom{z+n}{n}^{-1} = \sum_{k=1}^{n} (-1)^{k-1} \binom{n}{k} \frac{k}{z+k}` for :math:`z\in\mathbb{C}` and :math:`n\in\mathbb{N}_{\ge 0}`
+
+1.6 series, generating functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle (1+z)^{\alpha} = \sum_{k=0}^{\infty} \binom{\alpha}{k} z^{k}` for any :math:`\alpha,z\in \mathbb{C}` with the radius for convergence :math:`1`.
+
+- :math:`\displaystyle \frac{k-1}{k} \sum_{j=0}^{\infty} \frac{1}{\binom{j+x}{k} }= \frac{1}{\binom{x-1}{k-1} }` converges for :math:`k \ge 2`
+
+- :math:`\displaystyle \sum_{k=0}^{\infty} \binom{n}{k} x^{k} = (1+x)^{n}`
+
+- :math:`\displaystyle \sum_{n=k}^{\infty} \binom{n}{k} y^{n} = \frac{y^{k}}{(1-y)^{k+1}}`
+
+- :math:`\displaystyle \sum_{n=0}^{\infty} \sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n} = \frac{1}{1-y-xy}`
+
+- :math:`\displaystyle \sum_{n=0}^{\infty} \sum_{k=0}^{\infty} \binom{n+k}{k} x^{k} y^{n} = \frac{1}{1-x-y}`
+
+- :math:`\displaystyle \sum_{n=0}^{\infty} \sum_{k=0}^{\infty} \binom{n+k}{k} \frac{x^{k} y^{n}}{(n+k)!} = e^{x+y}`
+
+- **Newton's binomial series**:
+  :math:`\displaystyle (1+z)^{\alpha} = \sum_{k=0}^{\infty} \binom{\alpha}{k} z^{k}` for :math:`z,\alpha \in \mathbb{C}` with the radius of convergence is :math:`1`.
+
+- :math:`\displaystyle (1-z)^{-(\alpha+1)} = \sum_{k=0}^{\infty} \binom{k+\alpha}{k} z^{k}` for :math:`z,\alpha \in \mathbb{C}` with the radius of convergence is :math:`1`.
+
+1.7 divisibility
+~~~~~~~~~~~~~~~~
+
+- **Kummer**: :math:`\displaystyle \forall m,n \in \mathbb{N}_{\ge 0}, \forall` prime :math:`p`, :math:`\displaystyle \max\left\{ a  \in \mathbb{N}_{\ge 0}  \mid p^{a}\Bigg| \binom{m+n}{m}\right\} =` the number of carries when :math:`m` and :math:`n` are added in base :math:`p` :math:`= \# \{j \in \mathbb{N}_{\ge 0} \mid {}` the fractional part of :math:`m/p^{j}` is greater than the fractional part of :math:`(m+n)/p^j\}`
+
+- :math:`\displaystyle \frac{n}{\mathrm{GCD}(n,k)}\Big| \binom{n}{k}`
+
+- :math:`\displaystyle p\Big| \binom{p^r}{s}` for :math:`\displaystyle \forall r,s \in \mathbb{Z}` such that :math:`s < p^{r}` where :math:`p` is a prime number but :math:`\displaystyle p^{k}\not\Big| \binom{p^r}{s}` in general for :math:`k \ge 2`, for eg, :math:`\displaystyle 3^{2}\not\Big| \binom{9}{6}`
+
+- **Singmaster**: any integer divides almost all binomial coefficients. Note that the number of binomial coefficient :math:`\binom{n}{k}` with :math:`n<N` is :math:`N(N+1)/2`. Let :math:`f(d,N)` be the number of binomial coefficients :math:`\binom{n}{k}` with :math:`n< N` such that :math:`d | \binom{n}{k}`. Then, for any :math:`d`, :math:`\displaystyle \lim_{N\rightarrow \infty} \frac{f(d,N)}{N(N+1)/2} = 1`
+
+- :math:`\displaystyle \frac{\mathrm{LCM}(n,n+1,\ldots,n+k)}{n\cdot \mathrm{LCM} \left(\binom{k}{0}, \binom{k}{1}, \ldots, \binom{k}{k}   \right)} \ \Big| \ \binom{n+k}{k} \ \Big| \ \frac{\mathrm{LCM}(n,n+1,\ldots,n+k)}{n}`
+
+- :math:`n \ge 2` is prime :math:`\displaystyle \Leftrightarrow \forall 1 \le k < n,\, n\Big| \binom{n}{k}`
+
+1.8 inequalities
+~~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \frac{n^{k}}{k^{k}} \le \binom{n}{k} \le \frac{n^{k}}{k!} <  \Big(\frac{n\cdot e}{k} \Big)^k` for :math:`1 \le k \le n`
+
+- :math:`\displaystyle \binom{mn}{n} \ge \frac{m^{m(n-1)+1}}{\sqrt{n}\cdot (m-1)^{(m-1)(n-1)}}` for :math:`m\ge 2` and :math:`n\ge 1`
+
+- :math:`\displaystyle \sum_{i=0}^{k} \binom{n}{i} \le \sum_{i=0}^{k} n^{i}\cdot 1^{k-i} \le (1+n)^{k}`
+
+- :math:`\displaystyle \frac{2^{n\cdot H(\varepsilon)}}{\sqrt{8 n \varepsilon (1-\varepsilon)}} \le \sum_{i=0}^{k} \binom{n}{i} \le 2^{n\cdot H(\varepsilon)}` for any integers :math:`n\ge k\ge 1` with :math:`\varepsilon {}\dot{=}{} k/2 \le 1/2` and :math:`H` is the binary entropy function
+
+1.9 asymptotes
+~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \binom{n}{k} \sim \sqrt{\frac{n}{2 \pi k (n-k)} } \cdot \frac{ n^{n}}{k^{k}(n-k)^{n-k}}` for :math:`n,k \gg 0`
+
+- :math:`\displaystyle \binom{2n}{n} \sim \frac{2^{2n}}{\sqrt{\pi n}}` for :math:`n \gg 0`
+
+- :math:`\displaystyle \binom{n}{k} \sim 2^{nH(k/n)}` where :math:`H` is the binary entropy function :math:`H(p) := -p \log_{2}(p)-(1-p)\log_{2} (1-p)`
+
+- :math:`\displaystyle \binom{n}{k} \approx \frac{(n-k/2)^{k}}{k^{k} e^{-k} \sqrt{2\pi k}} = \frac{(n/k-1/2)^{k} e^{k}}{\sqrt{2 \pi k}}` for :math:`n\gg 0` and :math:`k \ll n`
+
+- :math:`\displaystyle \binom{n}{k} \approx \exp\Big( k \log (n/k-1/2)+k - 1/2 \log (2\pi k)\Big)` for :math:`n\gg 0` and :math:`k \ll n`
+
+- :math:`\displaystyle \binom{n}{k} \approx \exp \Big( (n+1/2)\log \frac{n+1/2}{n-k+1/2} + k \log \frac{n-k+1/2}{k} - 1/2 \log (2\pi k) \Big)` for :math:`n\gg 0` and :math:`k \ll n`
+
+- :math:`\displaystyle \binom{n}{k} \sim \binom{n}{n/2} e^{-d^{2}/(2n)} \sim \frac{2^{n}}{\sqrt{2^{-1} n \pi}} e^{-d^{2}/(2n)}` where :math:`d=n-2k` for :math:`n \gg 0` and :math:`|n/2-k| = o(n^{2/3})` (so that :math:`n \propto k`)
+
+- :math:`\displaystyle \binom{z}{k} \approx \frac{(-1)^{k}}{k^{z+1}\cdot \Gamma(-z)}` for :math:`z \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}` such that :math:`k \gg 0`
+
+- :math:`\displaystyle \binom{z}{k} \approx \frac{(-1)^{k}}{k^{z+1}\cdot \Gamma(-z)}` for :math:`z \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}` such that :math:`k \gg 0`
+
+- :math:`\displaystyle \binom{z+k}{k} = \frac{k^{z}}{\Gamma(z+1)} \Big(1 + \frac{z(z+1)}{2k} + O(k^{-2}) \Big)` for :math:`z \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}` such that :math:`k \gg 0`
+
+- :math:`\displaystyle \binom{z+k}{k} \approx \frac{e^{z(H_{k}-\gamma)}}{\Gamma(z+1)}` for :math:`z \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}` such that :math:`k \gg 0` where :math:`H_{k}` is the :math:`k` th harmonic number and :math:`\gamma` is the Euler-Mascheroni constant.
+
+- :math:`\displaystyle \lim_{k \rightarrow \infty} \binom{z+k}{j} \Bigg{/} \binom{k}{j} = \left(1- \frac{j}{k} \right)^{-z}` for :math:`z,j \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}` where :math:`j/k` converges in :math:`\mathbb{C}`
+
+- :math:`\displaystyle \lim_{k\rightarrow \infty} \binom{j}{j-k}\Bigg{/} \binom{j-z}{j-k} = \left(\frac{j}{k}\right)^{z}` for :math:`z,j \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}` where :math:`j/k` converges in :math:`\mathbb{C}`
+
+1.10 the gamma function
+~~~~~~~~~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \binom{z}{k} = (-1)^{k} \binom{-z+k-1}{k} = \frac{(-1)^{k}}{(k+1)^{z+1}\cdot \Gamma(-z)} \prod_{j=k+1}^\infty \frac{(1+\frac{1}{j})^{-z-1}}{1- \frac{z+1}{j} }` for :math:`z \in \mathbb{C}` and :math:`k \in \mathbb{N}_{\ge 0}`
+
+- :math:`\displaystyle \binom{w}{z} = \frac{\Gamma(w+1)}{\Gamma(z+1)\Gamma(w-z+1)} = \frac{1}{(w+1)B(w-z+1,z+1)}`  where :math:`B(\_,\_)` is the Beta function for :math:`w,z\in\mathbb{C}`
+
+1.11 the beta function
+~~~~~~~~~~~~~~~~~~~~~~
+
+- :math:`\displaystyle \binom{w}{z} = \frac{\Gamma(w+1)}{\Gamma(z+1)\Gamma(w-z+1)} = \frac{1}{(w+1)B(w-z+1,z+1)}`  where :math:`B(\_,\_)` is the Beta function for :math:`w,z\in\mathbb{C}`
+
+2 Stirling numbers
+------------------
+
+- **Stirling numbers of the first kind**: :math:`\displaystyle \frac{x!}{n!} = \sum_{k=0}^{n} s(n,k)x^k`
+
+- table for :math:`s(n,k)`
+
+  .. table::
+
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      | n\k | 0 |     1 |      2 |      3 |     4 |     5 |    6 |   7 |  8 | 9 |
+      +=====+===+=======+========+========+=======+=======+======+=====+====+===+
+      |   0 | 1 | \     | \      | \      | \     | \     | \    | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   1 | 0 |     1 | \      | \      | \     | \     | \    | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   2 | 0 |     1 |      1 | \      | \     | \     | \    | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   3 | 0 |     2 |      3 |      1 | \     | \     | \    | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   4 | 0 |     6 |     11 |      6 |     1 | \     | \    | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   5 | 0 |    24 |     50 |     35 |    10 |     1 | \    | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   6 | 0 |   120 |    274 |    225 |    85 |    15 |    1 | \   | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   7 | 0 |   720 |   1764 |   1624 |   735 |   175 |   21 |   1 | \  | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   8 | 0 |  5040 |  13068 |  13132 |  6769 |  1960 |  322 |  28 |  1 | \ |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+      |   9 | 0 | 40320 | 109584 | 118124 | 67284 | 22449 | 4536 | 546 | 36 | 1 |
+      +-----+---+-------+--------+--------+-------+-------+------+-----+----+---+
+
+3 Fibonacci number
+------------------
+
+- :math:`\displaystyle \sum_{k=0}^{\lfloor n/2\rfloor} \binom{n-k}{k} = F(n+1)` where :math:`F(n)` is the :math:`n` th Fibonacci number
+
+4 trigonometric functions
+-------------------------
+
+5 series multisection
+---------------------
+
+6 Beta function
+---------------
+
+- For :math:`w,z\in \mathbb{C}` both with strictly positive real parts, the **beta function** is defined as an integral over the unit interval on :math:`\mathbb{R}` as
+
+
+  .. math::
+
+      B(w,z) := \int_{0}^{1} t^{w-1}(1-t)^{z-1} \, dt
+
+- For :math:`w,z\in \mathbb{C}` both with strictly positive real parts and :math:`x\in \mathbb{R}`, the **incomplete beta function** is defined as an integral over an interval on :math:`\mathbb{R}` as
+
+
+  .. math::
+
+      B(x;w,z) := \int_{0}^{x} t^{w-1}(1-t)^{z-1} \, dt
+
+- For :math:`w,z\in \mathbb{C}` both with strictly positive real parts and :math:`x\in \mathbb{R}`, the **regularized (incomplete) beta function** is defined as the ratio
+
+
+  .. math::
+
+      I_{x}(w,z) := \frac{B(x;w,z)}{B(w,z)}
+
+- The **$\boldsymbol{F}$-distribution** :math:`F(k;n,p)` is a discrete probability distribution describing the probability of having :math:`\lfloor k\rfloor` times of success, regardless of the order, of probability :math:`p` out of :math:`n` trials:
+
+
+  .. math::
+
+      F(k;n,p) := \sum_{i=0}^{k} \binom{n}{i} p^{i}(1-p)^{n-i} = I_{1-p}(n-k,k+1)
+
+7 Euler integral of the first kind
+----------------------------------
+
+- This is an another name for the beta function.

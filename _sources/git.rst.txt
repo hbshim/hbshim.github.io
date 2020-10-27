@@ -1,0 +1,540 @@
+===
+Git
+===
+
+    :Date: Tue May 26 12:21:12 2020
+
+.. contents::
+
+
+
+1 Learning Sources
+------------------
+
+- The following YouTube videos were helpful:
+
+  - Introduction to Git - Core Concepts (by David Mahler): `https://youtu.be/uR6G2v_WsRA <https://youtu.be/uR6G2v_WsRA>`_
+
+  - Introduction to Git - Branching and Merging (by David Mahler): `https://youtu.be/FyAAIHHClqI <https://youtu.be/FyAAIHHClqI>`_
+
+  - Introduction to Git - Remotes (by David Mahler): `https://youtu.be/Gg4bLk8cGNo <https://youtu.be/Gg4bLk8cGNo>`_
+
+  - Rewriting Git History - Amend, Reword, Delete, Reorder, Squash and Split (by "The Modern Coder"): `https://youtu.be/ElRzTuYln0M <https://youtu.be/ElRzTuYln0M>`_
+
+- Web resources
+
+  - Git reference manual: `https://git-scm.com/docs <https://git-scm.com/docs>`_
+
+  - Git Handbook (by GitHub): `https://guides.github.com/introduction/git-handbook/ <https://guides.github.com/introduction/git-handbook/>`_
+
+2 Basic concepts and terms:
+---------------------------
+
+- Overall structure: **working tree** <-(checkout)-|-(add)->  **staging area** <-(reset)-|-(commit)-> **history** <-(fetch/pull)-|-(push)-> **remote**
+
+- difference: **working tree** <-> **staging area** <-> **history**
+
+- working tree is also called the workspace
+
+- staging area is also called as the index, cache, directory cache, current directory cache, staged files (`ref <https://gitguys.com/topics/whats-the-deal-with-the-git-index/>`_). It is a single, large, binary file in ``<baseOfRepo>/.git/index``, which LISTS all files in the current branch, their sha1 checksums, time stamps and the file name -- it is NOT another directory with a copy of files in it.
+
+- history is also called as the local repository. This is a hidden directory (``.git``) including an ``objects`` directory CONTAINING ALL versions of every file in the repo (local branches and copies of remote branches) as a compressed `"blob" (Binary Large Object) <https://en.wikipedia.org/wiki/Binary_large_object>`_ file. (`ref <https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git>`_)
+
+- ``HEAD`` is the pointer to the working tree. To find where HEAD points to, run
+
+  .. code:: shell
+
+      cat .git/HEAD
+
+- ``master`` is the pointer to the local master branch
+
+- ``detached HEAD`` is the situation where ``HEAD`` (current working tree) is not ``master`` or with a branch name.
+
+- ``WIP`` means Work In Progress (stashing)
+
+- ``origin`` short name for the location of the remote
+
+- ``origin/master`` is called the remote tracking branch (what the master branch looks like at ``origin``)
+
+- ``upstream``: let A be a repository, B be a fork of A, C be a local clone of B. Then A is called the upstream of C
+
+- ``fetch`` download remote to the local history
+
+- ``push`` upload the local history to remote
+
+- ``merge``
+
+- ``tag`` specific points in a repository’s history as being important, eg. v1.0, v2.0, ...
+
+- ``branch`` Local branches aren't automatically synchronized to the remotes so we have to explicitly push the branches you want to share. (TODO: continue to `Remote Branch <https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches>`_)
+
+3 .gitignore
+------------
+
+The file ``.gitignore`` lists files, per line, that should be ignored.
+
+- comments starts with ``#``: ``# COMMENT``
+
+- we can explicitly specify files, ``.DS_Store``
+
+- we can use regexp, ``\*~``, ``\*.log``
+
+- a whole folder is indicated by ``<FOLDER>/``
+
+4 init
+------
+
+.. code:: shell
+
+    git init
+
+5 config
+--------
+
+.. code:: shell
+
+    git config --global user.name "<NAME>"
+    git config -- global user.email "<NAME@EMAIL.ADDRESS>"
+
+.. code:: shell
+
+    git config --local user.name "<NAME>"
+    git config -- local user.email "<NAME@EMAIL.ADDRESS>"
+
+To list config:
+
+.. code:: shell
+
+    git config --list
+
+6 status
+--------
+
+.. code:: shell
+
+    git status
+
+7 log
+-----
+
+.. code:: shell
+
+    git log
+
+.. code:: shell
+
+    git log -p
+
+.. code:: shell
+
+    git log -- <FILE>
+
+.. code:: shell
+
+    git log --all --decorate --oneline --graph
+
+It's convenient to alias this.
+
+8 add: working tree -> staging area
+-----------------------------------
+
+.. code:: shell
+
+    git add FILE
+
+``FILE`` can be a list of files, ``FILE1 FILE2 FILE3 ...``
+we can use regexp, for eg, ``S*`` for all files starting with ``S``
+
+To add all modified files
+
+.. code:: shell
+
+    git add .
+
+9 rm: remove from both working tree and the staging area
+--------------------------------------------------------
+
+.. code:: shell
+
+    git rm <FILE>
+
+10 commit: staging area -> history
+----------------------------------
+
+.. code:: shell
+
+    git commit
+
+To commit with a short commit message:
+
+.. code:: shell
+
+    git commit -m "<SHORT COMMIT MESSAGE>"
+
+To commit without any commit message:
+
+.. code:: shell
+
+    git commit --no-edit
+
+To amend the last commit:
+
+.. code:: shell
+
+    git commit --amend
+
+(This does changes the ID of the last commit. Amending works only for the latest  commit.)
+
+To commit without
+
+11 add+commit: working tree -> staging area and history
+-------------------------------------------------------
+
+.. code:: shell
+
+    git commit -a
+
+nothing to specify after ``git rm``
+
+12 diff: working tree <-> staging area
+--------------------------------------
+
+.. code:: shell
+
+    git diff
+
+13 diff: staging area <-> history
+---------------------------------
+
+.. code:: shell
+
+    git diff --staged
+
+14 checkout: working tree <- staging area
+-----------------------------------------
+
+.. code:: shell
+
+    git checkout -- <FILE>
+
+To place HEAD (i.e., to retrieve) to the state <HASH>:
+
+.. code:: shell
+
+    git checkout <HASH>
+
+``<HASH>`` can be the first five characters
+
+15 checkout: working tree and staging area <- history
+-----------------------------------------------------
+
+.. code:: shell
+
+    git checkout <HASH> -- <FILE>
+
+16 checkout branch
+------------------
+
+.. code:: shell
+
+    git chekout <BRANCH NAME>
+
+17 reset: staging area <- history
+---------------------------------
+
+.. code:: shell
+
+    git reset HEAD <FILE>
+
+18 branch: list
+---------------
+
+To list all branches:
+
+.. code:: shell
+
+    git branch
+
+To list merged branches:
+
+.. code:: shell
+
+    git branch --merged
+
+To list local and remote branches:
+
+.. code:: shell
+
+    git branch -a
+
+To list remote tracking branches only:
+
+.. code:: shell
+
+    git branch -r
+
+19 branch: create new
+---------------------
+
+To create a new branch from HEAD:
+
+.. code:: shell
+
+    git branch <BRANCH NAME>
+
+To create + checkout -> new branch:
+
+.. code:: shell
+
+    git branch -b <BRANCH NAME>
+
+20 branch: remove
+-----------------
+
+.. code:: shell
+
+    git branch -d <BRANCH>
+
+21 merge: HEAD -> master
+------------------------
+
+To merge <BRANCH> into master:
+
+.. code:: shell
+
+    git merge <BRANCH>
+
+The response can be different depending on the strategy:
+
+- fast-forward
+
+- three-way (recursive)
+
+  - In case of conflict, files with conflict get modified with diff contents. We can check and resolve these conflict by opening those files. When doing this, we also need to delete git markers.
+
+  - After conflicts are resolved, do ``git status``.
+
+  - Aborting the merge process will restore the original file contents:
+
+  .. code:: shell
+
+      git merge --abort
+
+If all named commits are already ancestors of HEAD, git merge will exit early with the message "**Already up to date.**" This is the situation when we try to merge the same branch. In such a situation, differentiate two points by distinct branches, merge, and then remove the unnecessary branch name.
+
+**After merging** with ``master`` branch with another branch, ``<BRANCH>`` to say, the branch ``<BRANCH>`` that may not be necessary anymore is not automatically deleted. We have to this manually:
+
+.. code:: shell
+
+    git branch -d <BRANCH>
+
+22 Stash: save
+--------------
+
+To save working directory without staging:
+
+.. code:: shell
+
+    git stash
+
+To stash with comment:
+
+.. code:: shell
+
+    git stash save "<comment>"
+
+23 stash: list
+--------------
+
+To list all stashes:
+
+.. code:: shell
+
+    git stash list
+
+To list all stashes with changes:
+
+.. code:: shell
+
+    git stash list -p
+
+24 stash: apply
+---------------
+
+.. code:: shell
+
+    git stash apply
+
+.. code:: shell
+
+    git stash apply <LABEL>
+
+Here, ``<LABEL>`` is the one given by ``stash list``
+
+25 clone
+--------
+
+.. code:: shell
+
+    git clone git@github.com:name/git.git
+
+26 remote: add/remove
+---------------------
+
+To add a new remote:
+
+.. code:: shell
+
+    git remote add origin <REMOTE REPOSITORY URL>
+
+
+To add upstream:
+
+.. code:: shell
+
+    git remote add upstream <UPSTREAM REPOSITORY URL>
+
+To remove:
+
+.. code:: shell
+
+    git remote remove <REMOTE NAME>
+
+After modifying remote/upstream, run ``git remote -v`` to verify.
+
+27 remote: list
+---------------
+
+To list remotes (short names only):
+
+.. code:: shell
+
+    git remote
+
+To list remotes (short and full names only):
+
+.. code:: shell
+
+    git remote
+
+To list remotes verbosely:
+
+.. code:: shell
+
+    git remote -v
+
+28 fetch: local repository <- remote repository
+-----------------------------------------------
+
+.. code:: shell
+
+    git fetch origin
+
+Note that this does not affect local/HEAD. We need to merge, eg. ``git merge origin/master`` later.
+
+.. code:: shell
+
+    git fetch upstream
+
+To fetch and merge:
+
+.. code:: shell
+
+    git pull <REMOTE> <BRANCH>
+
+The error "fatal: refusing to merge unrelated histories" may occur when we try to merge/pull unrelated repositories together. For example, we might try to resume old project from scratch while wanting to keep the same GitHub repository. To resolve this:
+
+.. code:: shell
+
+    git pull <REMOTE> <BRANCH> --allow-unrelated-histories
+
+29 push: local repository -> remote repository
+----------------------------------------------
+
+.. code:: shell
+
+    git push <REMOTE REPOSITORY: eg. origin> <LOCAL BRANCH: eg. master>
+
+30 rebase
+---------
+
+To "operate on" the last <n> commits back from HEAD:
+
+.. code:: shell
+
+    git rebase -i HEAD~<n>
+
+(``-i`` indicates "interactive".)
+
+Interactive commands:
+
+- ``reword``: edit commit message
+
+- ``drop``: remove commit
+
+We can also reorder commits by changing the order of the lines.
+
+31 cherry-pick
+--------------
+
+32 tag
+------
+
+To list tags,
+
+.. code:: shell
+
+    git tag
+
+
+To create an annotated tag named ``TAG``:
+
+.. code:: shell
+
+    git tag -a <TAG> -m "<COMMENT>"
+
+To see the data for the tag named ``TAG``
+
+.. code:: shell
+
+    git show <TAG>
+
+To push the tag ``TAG`` to the remote ``original``:
+
+.. code:: shell
+
+    git push origin <TAG>
+
+To push all tags to the remote ``original``:
+
+.. code:: shell
+
+    git push origin --tags
+
+To delete the tag ``TAG``:
+
+.. code:: shell
+
+    git tag -d <TAG>
+
+Caution: This does not remove ``TAG`` from the remote.
+
+To delete the tag ``TAG`` from the remote ``original``:
+
+.. code:: shell
+
+    git push origin --delete <TAG>
+
+To checkout ``TAG``:
+
+.. code:: shell
+
+    git checkout <TAG>
+
+This will cause the "detached HEAD" state since what was checked out is merely a commit hash not a branch (even if there was branch tip pointing to the commit ``TAG``). We need to branch out to work on and modify the commit hash ``TAG``:
+
+.. code:: shell
+
+    git checkout -b <BRANCH> <TAG>
+
+git should respond with the message "Switched to a new branch ``<BRANCH>``."

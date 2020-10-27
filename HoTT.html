@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 Type theory &mdash; Notes  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">1 Emacs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#abbrevs-mode">1.1 Abbrevs mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#options">1.1.1 options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#ansi-term-mode">1.2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#bookmarks">1.3 Bookmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#helm">1.4 helm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#buffers">1.5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#kill-buffer">1.6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#case-conversion-a-a">1.7 Case conversion A &lt;-&gt; a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-and-killing">1.8 Deleting and killing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#deleting-by-character">1.8.1 Deleting by character</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#dired">1.9 Dired</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#directories">1.9.1 directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#flags">1.9.2 flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#files">1.9.3 files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#marks">1.9.4 marks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#shell-command">1.9.5 shell command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#id2">1.9.6 options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#file">1.10 File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#find-replace">1.11 Find/replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#font">1.12 font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#frames">1.13 frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#help-and-info">1.14 help and info</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#browsing-inside-info">1.14.1 Browsing inside info</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#ispell-flyspell">1.15 ispell (flyspell)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#menubar-f10">1.16 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-around">1.17 Moving around</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-characters-lines">1.17.1 by characters/lines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-words">1.17.2 by words</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#horizontally">1.17.3 horizontally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-sentence">1.17.4 by sentence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-paragraph">1.17.5 by paragraph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-matching-parentheses">1.17.6 by matching parentheses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-buffer">1.17.7 by buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-page">1.17.8 by page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#back-to-previous-position">1.17.9 back to previous position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#go-to">1.17.10 GO TO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#outline-minor-mode">1.18 Outline minor mode</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#motion-commands">1.18.1 Motion commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#visibility-commands">1.18.2 Visibility commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#reference-sites">1.19 Reference sites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#region-mark">1.20 Region/Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#registers">1.21 Registers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#select">1.22 Select</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#sessions">1.23 Sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#symbol">1.24 Symbol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#timestamp">1.25 Timestamp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#windows">1.26 windows</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#transpose-windows">1.26.1 transpose windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#yasnippet">1.27 YASnippet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#variables">1.27.1 variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id3">1.28 Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#auto-reverting">1.29 (Auto)reverting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#performance-profiling">1.30 Performance profiling</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auctex">2 AucTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#org">3 Org</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id4">3.1 Font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-cycling">3.2 Visibility cycling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#insert-entries">3.3 Insert entries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#promoting-demoting-headings">3.4 Promoting/Demoting headings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-subtrees-up-down">3.5 Moving subtrees up/down</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#exporting">3.6 Exporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#html-export-command">3.6.1 HTML export command</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#time-stamp">3.7 time stamp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="emacs.html#id5">3.7.1 variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#export-options">3.8 Export options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#paragraphs">3.9 Paragraphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#examples-and-codes">3.10 Examples and codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#images">3.11 Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#footnote">3.12 Footnote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#superscript-and-subscript">3.13 Superscript and subscript</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#special-symbols">3.14 Special symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#latex-preview">3.15 Latex preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#sort">3.16 Sort</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">4 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">5 Magit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#xquartz">1 XQuartz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package">2 Add section number to the pdf bookmark (outline) generated by hyperref package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc">3 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#change-font-size-temporarily">4 change font size temporarily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-an-area-begin-small-end-small">4.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-a-word-small-word">4.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#as-a-switcher-small">4.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">5 putting a formula inside of a table cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#variable">6 variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">7 setcounter enumi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#learning-sources">1 Learning Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#basic-concepts-and-terms">2 Basic concepts and terms:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#gitignore">3 .gitignore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#init">4 init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#config">5 config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#status">6 status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#log">7 log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#add-working-tree-staging-area">8 add: working tree -&gt; staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rm-remove-from-both-working-tree-and-the-staging-area">9 rm: remove from both working tree and the staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#commit-staging-area-history">10 commit: staging area -&gt; history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#add-commit-working-tree-staging-area-and-history">11 add+commit: working tree -&gt; staging area and history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#diff-working-tree-staging-area">12 diff: working tree &lt;-&gt; staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#diff-staging-area-history">13 diff: staging area &lt;-&gt; history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-working-tree-staging-area">14 checkout: working tree &lt;- staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-working-tree-and-staging-area-history">15 checkout: working tree and staging area &lt;- history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-branch">16 checkout branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#reset-staging-area-history">17 reset: staging area &lt;- history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-list">18 branch: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-create-new">19 branch: create new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-remove">20 branch: remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#merge-head-master">21 merge: HEAD -&gt; master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">22 Stash: save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">23 stash: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">24 stash: apply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#clone">25 clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">26 remote: add/remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">27 remote: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">28 fetch: local repository &lt;- remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">29 push: local repository -&gt; remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">30 rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">31 cherry-pick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="macbookpro.html">Misc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#emacs-keybinding">1 emacs keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#mac-address-changer">2 MAC address changer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#brew">3 Brew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#terminal-commands">4 Terminal commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#firefox">5 Firefox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#thunderbird">6 Thunderbird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#three-finger-dragging">7 three finger dragging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">math dump</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html#binomial-coefficients">1 binomial coefficients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="math.html#identities">1.1 identities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#stirling-number">1.2 Stirling number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#derivatives">1.3 derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#relationship-with-polynomials">1.4 relationship with polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#finite-sums">1.5 finite sums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#series-generating-functions">1.6 series, generating functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#divisibility">1.7 divisibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#inequalities">1.8 inequalities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#asymptotes">1.9 asymptotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#the-gamma-function">1.10 the gamma function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#the-beta-function">1.11 the beta function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#stirling-numbers">2 Stirling numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#fibonacci-number">3 Fibonacci number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#trigonometric-functions">4 trigonometric functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#series-multisection">5 series multisection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#beta-function">6 Beta function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#euler-integral-of-the-first-kind">7 Euler integral of the first kind</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1 Type theory</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/HoTT.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Hyungbo Shim</td>
+</tr>
+<tr class="field-even field"><th class="field-name">math-output:</th><td class="field-body">mathjax <a class="reference external" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js</a></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="section" id="type-theory">
+<h1>1 Type theory<a class="headerlink" href="#type-theory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="type-theory-versus-set-theory">
+<h2>1.1 1.1 Type Theory versus Set Theory<a class="headerlink" href="#type-theory-versus-set-theory" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Equality is a type:</strong> <span class="math notranslate nohighlight">\(a=_{A} b\)</span> for <span class="math notranslate nohighlight">\(a,b : A\)</span>. When <span class="math notranslate nohighlight">\(a =_{A} b\)</span> is inhabited, we say <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are <strong>(propositionally) equal</strong>.</li>
+<li>The introduction of <strong>definitional equality</strong>: <span class="math notranslate nohighlight">\(a :\equiv b\)</span> means <span class="math notranslate nohighlight">\(a\)</span> is defined to be <span class="math notranslate nohighlight">\(b\)</span>.</li>
+<li><strong>Type judgment</strong> <span class="math notranslate nohighlight">\(a:A\)</span>:<ul>
+<li>When <span class="math notranslate nohighlight">\(A:\mathtt{Type}\)</span>, <span class="math notranslate nohighlight">\(a:A\)</span> is pronounced as “the term <span class="math notranslate nohighlight">\(a\)</span> has type <span class="math notranslate nohighlight">\(A\)</span>”, “<span class="math notranslate nohighlight">\(a\)</span> is an element of <span class="math notranslate nohighlight">\(A\)</span>”, “<span class="math notranslate nohighlight">\(a\)</span> is a point of <span class="math notranslate nohighlight">\(A\)</span>” and “<span class="math notranslate nohighlight">\(a\)</span> is an object of type <span class="math notranslate nohighlight">\(A\)</span>”.<ul>
+<li><span class="math notranslate nohighlight">\(a:A\)</span> may be regarded as analogous to the set theoretic <span class="math notranslate nohighlight">\(a\in A\)</span> but there is an essential difference that <span class="math notranslate nohighlight">\(a:A\)</span> is a judgment while <span class="math notranslate nohighlight">\(a\in A\)</span> is a proposition so that statements like “<span class="math notranslate nohighlight">\((a:A)\Rightarrow (b:B)\)</span>” is meaningless.</li>
+</ul>
+</li>
+<li>When <span class="math notranslate nohighlight">\(A:\mathtt{Prop}\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, in <span class="math notranslate nohighlight">\(a:A\)</span>, may be called a <strong>witness to the provability</strong> of <span class="math notranslate nohighlight">\(A\)</span>, or <strong>evidence of the truth</strong> of <span class="math notranslate nohighlight">\(A\)</span>, or even a <strong>proof</strong> of <span class="math notranslate nohighlight">\(A\)</span>.<ul>
+<li><span class="math notranslate nohighlight">\(a:A\)</span> is <strong>derivable in type theory</strong>, for some <span class="math notranslate nohighlight">\(a\)</span>, precisely when the analogous judgement “<span class="math notranslate nohighlight">\(A\)</span> has a proof” is derivable in first-order logic modulo differences in the axioms assumed and in the encoding of mathematics.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Judgmental equality</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{a\equiv b:A}\)</span> means <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are definitionally equal objects of type <span class="math notranslate nohighlight">\(A\)</span>.</li>
+<li>Judgments may depend on <strong>assumptions</strong> of the form <span class="math notranslate nohighlight">\(a:A\)</span> where <span class="math notranslate nohighlight">\(x\)</span> is a variable and <span class="math notranslate nohighlight">\(A:\mathtt{Type}\)</span>. The collection of assumptions is called the <strong>context</strong>.<ul>
+<li>An assumption of the form <span class="math notranslate nohighlight">\(x:A:\mathtt{Prop}\)</span> is a <strong>hypothesis</strong> that we assume <span class="math notranslate nohighlight">\(A:\mathtt{Prop}\)</span> holds.</li>
+<li>Example:<ul>
+<li><span class="math notranslate nohighlight">\(m,n:\mathbb{N}\vdash m+n:\mathbb{N}\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(x,y:A:\mathtt{Type}, p:x=_{A} y\vdash p^{-1}:y=_{A} x\)</span>. We may instead say that assuming <span class="math notranslate nohighlight">\(x=_{A} y\)</span>, we can prove <span class="math notranslate nohighlight">\(y=_{A} X\)</span>.</li>
+</ul>
+</li>
+<li>We CANNOT assume or prove a judgmental equality <span class="math notranslate nohighlight">\(x\equiv y\)</span> since it is not a type.</li>
+<li>We may say “<span class="math notranslate nohighlight">\(\exists f:A\rightarrow B, f(x)\equiv y\)</span>” that is two separate judgments: first, the judgment <span class="math notranslate nohighlight">\(f:A\rightarrow B\)</span>, then the additional judment <span class="math notranslate nohighlight">\(f(x)\equiv y\)</span>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="function-types">
+<h2>1.2 1.2 Function types<a class="headerlink" href="#function-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The <strong>function type</strong>: <span class="math notranslate nohighlight">\((A \rightarrow B) : \mathcal{U}\)</span></li>
+<li>The function type of <em>several variables</em> is defined by the following equivalent (so that <span class="math notranslate nohighlight">\(f(a,b)\equiv f(a)(b)\)</span>) methods:<ul>
+<li>by using a cartesian product: <span class="math notranslate nohighlight">\(f : (a, b) \mapsto f(a, b) : A \times B \rightarrow C\)</span>.</li>
+<li>by <strong>Currying</strong>: <span class="math notranslate nohighlight">\(f: a \mapsto f(a) \mapsto f(a)(b) : A \rightarrow B \rightarrow C\)</span>.</li>
+</ul>
+</li>
+<li>We define <span class="math notranslate nohighlight">\(f:a\rightarrow b\)</span> by giving an equation <span class="math notranslate nohighlight">\(f(x) :\equiv \Phi\)</span> where <span class="math notranslate nohighlight">\(x:a\)</span> is a variable and <span class="math notranslate nohighlight">\(\Phi:B\)</span> is an expression which may use <span class="math notranslate nohighlight">\(x\)</span>.<ul>
+<li>Note that <span class="math notranslate nohighlight">\(f \not\equiv \Phi\)</span>. Instead, <span class="math notranslate nohighlight">\(f(x):\equiv\Phi : B\)</span> for <span class="math notranslate nohighlight">\(x:A\)</span> so that <span class="math notranslate nohighlight">\(x\)</span> is no longer a variable in either <span class="math notranslate nohighlight">\(f(x)\)</span> or <span class="math notranslate nohighlight">\(\Phi\)</span> and I should not be writing <span class="math notranslate nohighlight">\(\Phi(x)\)</span>. In this way, I can write <span class="math notranslate nohighlight">\(f(x)[a/x]\)</span> or <span class="math notranslate nohighlight">\(\Phi[a/x]\)</span> for replacing <span class="math notranslate nohighlight">\(x\)</span> by <span class="math notranslate nohighlight">\(a\)</span>, that is an <span class="math notranslate nohighlight">\(\alpha\)</span>-conversion, but it does not make sense to write <span class="math notranslate nohighlight">\(f[a/x]\)</span>- but if it happens, it should be read as the same as <span class="math notranslate nohighlight">\(f(x)[a/x]\)</span>.</li>
+</ul>
+</li>
+<li><strong>:math:`boldsymbol{alpha}`-conversion</strong>: <span class="math notranslate nohighlight">\(\lambda x.\, \Phi \rightsquigarrow \lambda y.\, \Phi[y/x]\)</span> by the judgmental equality <span class="math notranslate nohighlight">\(\lambda x.\, f(x) \equiv \lambda y.\, f(y)\)</span>.</li>
+<li><strong>:math:`boldsymbol{lambda}`-abstraction</strong>: for an expression <span class="math notranslate nohighlight">\(\Phi\)</span>, we can write <span class="math notranslate nohighlight">\((\lambda(x:A).\Phi):A\rightarrow B\)</span>. Equivalently, we write<ul>
+<li><span class="math notranslate nohighlight">\((x\mapsto \Phi):A\rightarrow B\)</span>, or</li>
+<li><span class="math notranslate nohighlight">\(g(x,\_)\)</span> for <span class="math notranslate nohighlight">\(\lambda y.\, g(x,y)\)</span> (<strong>implicit :math:`boldsymbol{lambda}`-abstraction</strong>).</li>
+<li><span class="math notranslate nohighlight">\(\lambda\)</span> scope over the rest of the expression unless delimited with parentheses.<ul>
+<li>Example: <span class="math notranslate nohighlight">\(\lambda x.\, x+x\)</span> is <span class="math notranslate nohighlight">\(\lambda x.\, (x+x)\)</span> not <span class="math notranslate nohighlight">\((\lambda x.\, x)+x\)</span>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>:math:`boldsymbol{beta}`-reduction</strong> (<strong>computation rule</strong>): <span class="math notranslate nohighlight">\((\lambda x.\,\Phi)(a) \rightsquigarrow \Phi[a/x]\)</span> by the definitional equality <span class="math notranslate nohighlight">\((\lambda x.\Phi)(a)\)</span> <span class="math notranslate nohighlight">\(:\equiv\)</span> <span class="math notranslate nohighlight">\(\equiv \Phi[a/x]\)</span>.</li>
+<li><strong>:math:`boldsymbol{eta}`-expansion</strong>: <span class="math notranslate nohighlight">\(f \rightsquigarrow \lambda x.\, f(x)\)</span> by the definitional equality <span class="math notranslate nohighlight">\(f\equiv (\lambda x.\, f(x))\)</span>. This is called the <strong>uniqueness principle for function types</strong> by having <span class="math notranslate nohighlight">\(f\)</span> uniquely determined by its values.</li>
+<li>A <strong>polymorphic function</strong> is a function that takes a type as one of its arguments and then acts on elements of that type or of other types constructed from it.<ul>
+<li>Example:<ul>
+<li><span class="math notranslate nohighlight">\(\mathtt{id}:\equiv \lambda (A:\mathcal{U}).\, \lambda(x:A).\, x : \prod_{(A:\mathcal{U})} A\rightarrow A\)</span>.<ul>
+<li>We can also define <span class="math notranslate nohighlight">\(\mathtt{id}\)</span> by specifying the argument type <span class="math notranslate nohighlight">\(A\)</span>: <span class="math notranslate nohighlight">\(\mathtt{id}_{A}:\equiv \lambda (x:A).\, x:A\rightarrow A\)</span>.</li>
+</ul>
+</li>
+<li><span class="math notranslate nohighlight">\(\displaystyle{\mathtt{swap} :\prod_{(A,B,C:\mathcal{U})}  (A\rightarrow B\rightarrow C)\rightarrow (B\rightarrow A\rightarrow C)}\)</span> with either<ul>
+<li><span class="math notranslate nohighlight">\(\mathtt{swap}(A,B,C,g):\equiv \lambda b.\, \lambda a.\, g(a)(b)\)</span>, or equivalently,</li>
+<li><span class="math notranslate nohighlight">\(\mathtt{swap}_{A,B,C}(g)(b,a):\equiv g(a,b)\)</span>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="universes-and-families">
+<h2>1.3 1.3 Universes and families<a class="headerlink" href="#universes-and-families" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>a hierarchy of <strong>universes</strong>: <span class="math notranslate nohighlight">\(\mathcal{U}_{0} : \mathcal{U}_{1} : \mathcal{U}_{2} : \cdots\)</span></li>
+<li>the universes are <strong>cumulative</strong> that <span class="math notranslate nohighlight">\(A : \mathcal{U}_{i} \Rightarrow A : \mathcal{U}_{i+1}\)</span>.<ul>
+<li>We do not identify indices <span class="math notranslate nohighlight">\(i\)</span> with ‘natural numbers <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> of type theory’. (p.25)</li>
+</ul>
+</li>
+<li><span class="math notranslate nohighlight">\(A\)</span> is a <strong>type</strong> <span class="math notranslate nohighlight">\(:= \exists i, A : \mathcal{U}_{i}\)</span>. When some universe <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> is assumed, then types beloning to it is referred as <strong>small types</strong>.</li>
+<li><strong>Typical ambiguity</strong>: Usually, we omit <span class="math notranslate nohighlight">\(i\)</span> and write <span class="math notranslate nohighlight">\(A : \mathcal{U}\)</span>. In this way, we simply write <span class="math notranslate nohighlight">\(\mathcal{U} : \mathcal{U}\)</span> for <span class="math notranslate nohighlight">\(\mathcal{U}_{i} : \mathcal{U}_{i+1}\)</span> for any <span class="math notranslate nohighlight">\(i\)</span>.</li>
+<li><strong>Family of types</strong> (<strong>type family</strong>): models a collections of types varying over a given type by a function <span class="math notranslate nohighlight">\(B : A \rightarrow \mathcal{U}\)</span>.</li>
+<li><strong>constant family type</strong>: given by a constant function <span class="math notranslate nohighlight">\((\lambda (x:A) \, .\, B) : A \rightarrow \mathcal{U}\)</span>.</li>
+<li>Non-example: there is no universe large enough to be the codomain of “<span class="math notranslate nohighlight">\(\lambda (i:\mathbb{N})\, .\, \mathcal{U}_{i}\)</span>”.</li>
+</ul>
+</div>
+<div class="section" id="dependent-function-types-pi-types">
+<h2>1.4 1.4 Dependent function types (<span class="math notranslate nohighlight">\(\Pi\)</span>-types)<a class="headerlink" href="#dependent-function-types-pi-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Given <span class="math notranslate nohighlight">\(A : \mathcal{U}\)</span> and a family <span class="math notranslate nohighlight">\(B : A \rightarrow \mathcal{U}\)</span>, the <strong>dependent function type</strong> <span class="math notranslate nohighlight">\(\prod_{(x:A)} B(x) : \mathcal{U}\)</span> can be constructed.<ul>
+<li>We may write <span class="math notranslate nohighlight">\(\prod_{(x:A)} B(x)\)</span>, <span class="math notranslate nohighlight">\(\displaystyle{\prod_{(x:A)} B(x)}\)</span>, <span class="math notranslate nohighlight">\(\prod(x:A),\, B(x)\)</span>.</li>
+<li>If <span class="math notranslate nohighlight">\(B\)</span> is a constant family, then we fall back to a function type <span class="math notranslate nohighlight">\(\prod_{(x:A)} B \equiv (A \rightarrow B)\)</span>.</li>
+</ul>
+</li>
+<li>To define <span class="math notranslate nohighlight">\(f:\prod_{(x:A)} B(x)\)</span>, we need an expression <span class="math notranslate nohighlight">\(\Phi : B(x)\)</span>, possibly involving <span class="math notranslate nohighlight">\(x:A\)</span>, and<ul>
+<li>then write <span class="math notranslate nohighlight">\(f(x) :\equiv \Phi\)</span> for <span class="math notranslate nohighlight">\(x:A\)</span>.</li>
+<li>or use <em>:math:`lambda`-abstraction</em> <span class="math notranslate nohighlight">\(\lambda x. \, \Phi  : \prod_{x:A} B(x)\)</span>.</li>
+</ul>
+</li>
+<li>We can <strong>apply</strong> a dependent function <span class="math notranslate nohighlight">\(f:\prod_{(x:A)} B(x)\)</span> to an argument <span class="math notranslate nohighlight">\(a:A\)</span> to obtain an element <span class="math notranslate nohighlight">\(f(a) : B(a)\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\prod\)</span> scope over the rest of the expression unless delimited with parentheses.<ul>
+<li>Example: <span class="math notranslate nohighlight">\(\mathtt{id}:\prod_{(a:\mathcal{U})} A\rightarrow A\)</span> is <span class="math notranslate nohighlight">\(\mathtt{id}: \prod_{(a:\mathcal{U})}(A\rightarrow A)\)</span> not <span class="math notranslate nohighlight">\(\mathtt{id}:\Big(\prod_{(a:\mathcal{U})}\Big)\rightarrow A\)</span>.</li>
+</ul>
+</li>
+<li>In general, for repeated dependent function type, each domain may depends on the previous one and the codomain may depend on all.<ul>
+<li>Example: <span class="math notranslate nohighlight">\(\prod_{(x:A)} \prod_{(y:B(x))} C(x,y)\)</span>.</li>
+<li>But when each argument type are independent from each other, as in <span class="math notranslate nohighlight">\(\prod_{(A:\mathcal{U})}\prod_{(B:\mathcal{U})} (A\rightarrow B)\rightarrow (B\rightarrow A)\)</span>, we can abbreviate it as <span class="math notranslate nohighlight">\(\prod_{(A,B:\mathcal{U})}(A\rightarrow B)\rightarrow (B\rightarrow A)\)</span>.</li>
+<li>Example: The domain of <span class="math notranslate nohighlight">\(\mathtt{swap}\)</span> is <span class="math notranslate nohighlight">\(\prod_{(A:\mathcal{U})} \prod_{(B:\mathcal{U})} \prod_{(C:\mathcal{U})}(A\rightarrow B\rightarrow C)\)</span> and we write it simply as <span class="math notranslate nohighlight">\(\prod_{(A,B,C:\mathcal{U})}(A\rightarrow B\rightarrow C)\)</span>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="product-types">
+<h2>1.5 1.5 Product types<a class="headerlink" href="#product-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>General pattern for introduction of types:<ol class="arabic">
+<li><strong>formation rules</strong>: how to form new types from old types by the type former.<ul>
+<li>Example: <span class="math notranslate nohighlight">\(\cfrac{A:\mathcal{U} \quad B:\mathcal{U}}{A\rightarrow B:\mathcal{U}}\)</span>, <span class="math notranslate nohighlight">\(\cfrac{A:\mathcal{U} \quad x:A \vdash B(x):\mathcal{U}}{ \big(\prod_{(x:A)}B(x)\big):\mathcal{U}}\)</span>.</li>
+</ul>
+</li>
+<li><strong>introduction rules</strong> (<strong>constructors</strong>): how to inhabit the type<ul>
+<li>Example: <span class="math notranslate nohighlight">\(\cfrac{x:A\,\vdash 2x:B}{\vdash \lambda x.\, 2x:A \rightarrow B}\)</span>.</li>
+</ul>
+</li>
+<li><strong>elimination rules</strong> (<strong>eliminators</strong>): how to use elements of the new type.</li>
+<li><strong>computation rule</strong> (<strong>:math:`boldsymbol{beta}`-reduction</strong>): how an eliminator acts on a constructor.</li>
+<li><strong>uniqueness principle</strong> (<strong>:math:`boldsymbol{eta}`-expansion</strong>): expresses uniqueness of maps into/out of the new type.<ul>
+<li><strong>propositional uniqueness principle</strong> is when a propositional equality is provable from other rules for the type while the uniqueness principle was not provided as a rule.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="formal-type-theory">
+<h1>2 Formal Type Theory<a class="headerlink" href="#formal-type-theory" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><strong>contextual judgment</strong><ul>
+<li><span class="math notranslate nohighlight">\(\Gamma\, \mathtt{ctx}\)</span> ; <span class="math notranslate nohighlight">\(\Gamma\)</span> is well-formed context, that is defined to be a list of judgments <span class="math notranslate nohighlight">\(x_{1}:A_{1}, x_{2}:A_{2},\ldots,x_{n}:A_{n}\)</span>.</li>
+<li>Rules:<ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{ }{\cdot \, \mathtt{ctx}}\, \mathtt{ctx}\mathrm{-EMP}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\cfrac{x_{1}:A_{1},\ldots,x_{n-1}:A_{n-1}\, \vdash A_{n}:\mathcal{U}_{i}}{(x_{1}:A_{1},\ldots,x_{n}:A_{n})\, \mathtt{ctx}}\, \mathtt{ctx}\mathrm{-EXT}\)</span>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>typing judgment</strong><ul>
+<li><span class="math notranslate nohighlight">\(\Gamma \, \vdash a:A\)</span></li>
+<li>Rules:<ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma \, \vdash a:A \quad \Gamma, x:A, \Delta \, \vdash b:B}{\Gamma,\Delta[a/x] \, \vdash b[a/x]: B[a/x]}\, \mathtt{Subst}_{\mathtt{1}}\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\, \vdash A:\mathcal{U}_{\mathtt{i}}\quad \Gamma,\Delta\, \vdash b:B}{\Gamma,x:A,\Delta\, \vdash b:B} \, \mathtt{Wkg}_{\mathtt{1}}\)</span>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>judgmental equality</strong><ul>
+<li><span class="math notranslate nohighlight">\(\Gamma\,\vdash a\equiv a' : A\)</span>.</li>
+<li>Rules:<ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\, \vdash a:A\quad \Gamma,x:A,\Delta\,\vdash b\equiv c:B}{\Gamma,\Delta[a/x]\, \vdash b[a/x]\equiv c[a/x]:B[a/x]}\, \mathtt{Subst}_{\mathtt{2}}\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\, \vdash A:\mathcal{U}_{i}\quad \Gamma,\Delta\, \vdash b\equiv c:B}{\Gamma,x:A,\Delta\, \vdash b\equiv c:B}\, \mathtt{Wkg}_{\mathtt{2}}\)</span>.</li>
+</ul>
+</li>
+<li>judgmental equality is an equivalence relation respected by typing:<ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\, a:A}{\Gamma\, a\equiv a:A}\)</span> ; (element) reflexivity.</li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\,\vdash a\equiv b:A}{\Gamma\, \vdash b\equiv a:A}\)</span> ; (element) symmetricity.</li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\, \vdash a\equiv b:A \quad \Gamma\, \vdash b\equiv c:A}{\Gamma\, \vdash a\equiv c:A}\)</span> ; (element) transitivity.</li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\,\vdash a:A\quad \Gamma\,\vdash A\equiv B:\mathcal{U}_{i}}{\Gamma\,\vdash a:B}\)</span> ;</li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\,\vdash a\equiv b:A\quad \Gamma\,\vdash A\equiv B:\mathcal{U}_{i}}{\Gamma\,\vdash a\equiv b:B}\)</span> ;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>inference rule</strong><ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{\mathcal{J}_{1}\quad \cdots \quad \mathcal{J}_k}{\mathcal{J}}\, \mathtt{NAME}\)</span> where <span class="math notranslate nohighlight">\(\mathcal{J}_{1},\ldots,\mathcal{J}_{n},\mathcal{J}\)</span> are judgments not types ; given the <strong>hypotheses</strong> <span class="math notranslate nohighlight">\(\mathcal{J}_{1},\ldots,\mathcal{J}_{k}\)</span>, the <strong>conclusion</strong> <span class="math notranslate nohighlight">\(\mathcal{J}\)</span> is derived by <span class="math notranslate nohighlight">\(\mathtt{NAME}\)</span>.</li>
+</ul>
+</li>
+<li><strong>contextual judgment =&gt; typing judgment</strong><ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{ (x_{1}:A_{1},\ldots,x_{n}:A_{n})\, \mathtt{ctx} }{ x_{1}:A_{1},\ldots,x_{n}:A_{n}\, \vdash x_{i}:A_{i}}\, \mathtt{Vble}\)</span>.</li>
+</ul>
+</li>
+<li><strong>Type universes</strong>: We postulate the exisence of type universes <span class="math notranslate nohighlight">\(\mathcal{U}_{0},\mathcal{U}_{1},\mathcal{U}_{2},\ldots\)</span> with the following rules:<ul>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\,\mathtt{ctx}}{\Gamma\, \vdash \mathcal{U}_{i}:\mathcal{U}_{i+1}} \mathcal{U}\mathtt{-INTRO}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\cfrac{\Gamma\, \vdash A:\mathcal{U}_{i}}{\Gamma\, \vdash A:\mathcal{U}_{i+1}}\)</span> <span class="math notranslate nohighlight">\(\mathcal{U}\)</span>-CUMUL.</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, hbshim@gmail.com
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,651 @@
+===
+Coq
+===
+
+
+.. contents::
+
+
+
+1 References
+------------
+
+- `https://coq.inria.fr/stdlib/ <https://coq.inria.fr/stdlib/>`_
+
+2 Terms
+-------
+
+- ***qualified identifier*** Example. "A.B.C" means an identifier C is qualified by B that is qualified by A.
+
+3 Gallina
+---------
+
+- ``match`` t ``with`` c\ :sub:`1`\ :math:`\Rightarrow` e\ :sub:`1`\ ``|`` c\ :sub:`2`\ :math:`\Rightarrow` e\ :sub:`2`\ ``|...|`` c\ :sub:`1`\ :math:`\Rightarrow` e\ :sub:`l`\ ``end``
+
+- ``if`` t ``then`` e\ :sub:`1`\ ``else`` e\ :sub:`2`\ is equivalent to ``match`` t ``with true`` :math:`\Rightarrow` e\ :sub:`1`\ ``| false`` :math:`\Rightarrow` e\ :sub:`2`\ ``end``
+
+- ``fun n:nat => (n*n*n)%nat`` is a function of type ``nat -> nat`` and has the same meaning as
+
+  - ``λ n:nat. n*n*n`` in typed λ-calculus
+
+  - ``fun (n:nat) -> n*n*n`` in ocaml
+
+- the followings are all equivalent
+
+  - ``fun n:nat => fun p:nat => fun z:Z => (Z_of_nat(n+p)+z)%Z``
+
+  - ``fun n p:nat => fun z:Z => (Z_of_nat(n+p)+z)%Z``
+
+  - ``fun (n p:nat) (z:Z) => (Z_of_nat(n+p)+z)%Z``
+
+- ``let v:= t1 in t2`` where ``v`` is an identifier and ``t1`` and ``t2`` are expression is the local binding ``(λv.t2)`` that will evaluated as ``((λv.t2) t1)`` then ``t2[v/t1]`` after the β-reduction.
+
+4 Vernacular Command
+--------------------
+
+- ``Require Import`` *``Coq.Unicode.Utf8.``*
+
+- ``Require Import`` *``Arith.``*
+
+- ``Require Import`` *``ZArith.``*
+
+- ``Require Import`` *``Bool.``*
+
+- ``Print Libraries``
+
+- ``Open Scope`` *``Z_scope.``*
+
+- ``Close Scope`` *``Z_scope.``*
+
+- ``Open Scope`` *``nat_scope.``*
+
+- ``Set`` *``Printing Notations.``*
+
+- ``Unset`` *``Printing Notations.``*
+
+- ``Reset Initial``
+
+- ``Reset`` *``id``*
+
+- The followings all have the same meaning
+
+  - ``Definition cube := fun z:Z => z*z*z``
+
+  - ``Definition cube (z:Z):Z := z*z*z``
+
+  - ``Definition cube z := z*z*z``
+
+- ``Eval compute in (h 56 78)`` when ``h:nat->nat->nat`` evaluate ``h(56,78)``. ``Eval compute`` is synomym for ``Eval cbv iota beta zeta delta``.
+
+- ``Locate "_ * _"``
+
+- ``Hypothesis`` *``h:P``*
+
+- ``Variables`` *``h:P``*
+
+- ``Axiom`` *``h:P``*
+
+- ``Parameter`` *``x:P``*
+
+- ``Theorem`` ``Lemma``
+
+- ``Proof``
+
+- ``Qed`` build the proof term corresponding to the sequence of tactics, check the term's type is the initial statement, save this new theorem as a definition liking to the theorem name, its statement (i.e., type), and the proof term.
+
+- ``Print`` *``something``*
+
+- ``Reset`` *``something``*
+
+- ``Section`` *``proof_of_something``* ``End`` *``proof_of_something``*
+
+- ``SearchPattern`` *``(_ + _ <= _)%Z.``*
+
+- ``Show 7`` show 7th subgoal.
+
+- ``Restart`` restart the proof.
+
+- ``Abort`` abort the proof.
+
+- ``Identity Coercion id : C >-> D``
+
+- ``Fixpoint f (a:T) := expr`` defines a function on a variable ``a`` recursively.
+
+  .. code:: coq
+
+      Fixpoint mult2 (n:nat):nat :=
+        match n with
+        | 0 => 0
+        | S p => S (S (mult2 p))
+        end.
+
+- ``Fixpoint f (a1:T1) ... (ap:Tp) {struct ai}: T := expr`` defines a function with variables ``a1``,..., ``ap`` that is recursively defined on the variable ``ai``
+
+  .. code:: coq
+
+      Fixpoint plus (n m:nat) {struct n}:nat :=
+        match n with
+        | 0 => m
+        | S p => S (plus p m)
+        end.
+
+  .. code:: coq
+
+      Fixpoint iterate (A:Set)(f:A -> A)(n:nat)(x:A){struct n}:A :=
+        match n with
+        | 0 => x
+        | S p => f (iterate A f p x)
+        end.
+
+5 Tactic
+--------
+
+- ``tac1; tac2; ...; tacn`` combination of tactics
+
+- ``tac; [tac1|tac2|...|tacn]`` exactly ``n`` goals are generated so apply tactic ``taci`` to the ~i~th subgoal
+
+- ``tac || tac'`` apply ``tac`` and if it fails, apply ``tac'``
+
+- ``idtac`` leaves the goal as it is and always succeeds
+
+- ``fail`` alwas fail. ``tac; fail`` fails only when ``tac`` generates new goals
+
+- ``try tac`` behaves like ``tac || idtac``
+
+- ``intros`` add hypotheses
+
+- ``apply H`` apply hypothesis ``H`` to the current goal
+
+- ``assumption`` the statement to prove is exactly the statement of the hypothesis
+
+- ``exact`` similar to ``assumption`` but global
+
+- ``auto``
+
+- ``cut`` suppose we have hypotheses ``(H:P->Q) (H0:Q->R) (H1:(P->R)->T->Q) (H2:(P->R)->T)`` To prove ``Q``, we can see that ``P->R`` is easy to prove by ``H`` and ``H0``, and from ``P->R`` it is easy to finish the proof by ``H1`` and ``H2``. So once the goal ``Q`` is generated, we first make an assumption that ``P->R`` that is to be proved later by ``cut P->R`` that generates ``(P->Q)->R`` so that we can ``intro`` the term for ``P->Q``
+
+- ``assert`` opposite of ``cut``. In the example for ``cut``, we can first ``assert P->R`` and prove it, then use it to prove ``Q`` later.
+
+- ``unfold lt``
+
+- ``reflexivity`` when a goal is ``a=a``. this is synonym to ``apply refl_equal``
+
+- ``left`` when a goal is ``a \/ (b)``, prove it by proving ``a``
+
+- ``right`` when a goal is ``a \/ (b)``, prove it by priving ``b``
+
+- ``elim t`` when ``t:T`` where ``T`` is inductive type, then ``elim t`` as the same as ``pattern t; apply T_ind`` or ``T_rec``, or etc depending the goal sort. If ``t= b|c`` and if the goal is ``t -> d`` this eliminate ``a`` to produce subgoals ``b->d`` and ``c->d``
+
+- ``elim t using T_ind2`` same as ``elim t`` but ``t`` does need to be an inductive type as long as ``T_ind`` is of the form of an induction principle which has the form ``∀P:T→S, P t1→P t2→...→(∀t:T, P t)``.
+
+- ``pattern m`` when we want to prove ``m:month ⊢ m=Jan ∨ ... ∨ m=Dec``, we can use ``pattern m`` to convert the goal into ``(λm0:month, m0=Jan ∨ ... ∨ m0=Dec) m`` to use ``month_ind`` that is of the form ``∀P:month→Prop, P Jan → ... → P Dec → ∀m:month, P m``.
+
+- ``induction`` *``v``* is similar to ``intros until`` *``v``* ``; elim`` *``v``* follwed by a collection of ``intros`` in each branch
+
+- ``case t`` where ``t:T`` and ``T`` is an inductive type. This replaces all instances of ``t`` in the goal statement with all possible cases, as defined by the inductive type.
+
+- ``discriminate H`` where ``H:t1 = t2 ⊢ e`` while ``t1 ≠ t2``.
+
+- ``discriminate`` when the goal is ``t1 ≠ t2`` while ``t1 ≠ t2``.
+  First, ``t1 ≠ t2`` is equivalent to ``t1 = t2 → False``. Then the goal is to prove  ``H:t1 = t2 ⊢ False``. Since ``t1 ≠ t2``, we can define a function ``F:=(λ t:T. if t=t1 True and if t=t2 False)`` so that the goal becomes ``H:t1=t2 ⊢ (F t2)``. Rewriting by the assumption ``H`` we obtain ``H:t1=t2 ⊢ (F t1)`` that is ``H:t1=t2 ⊢ True``. Then ``trivial`` finishes the proof. This is the situation where ``False ⊢ True`` and ``False ⊢ False``.
+
+- ``rewrite H`` if there is a hypothesis ``H:x=y`` then ``e ↦ e[x/y]``
+
+- ``rewrite ← H`` if there is a hypothesis ``H:x=y`` then ``e ↦ e[y/x]``
+
+6 Module
+--------
+
+- ``my_module.v`` can be loaded in the current context with command ``Load my_module``.
+
+- compiling the module ``my_module.v`` by ``coqc`` creates a file ``my_module.vo`` that can be reloaded with ``Require Import my_module``
+
+- when a new module ``N`` requires an old module ``M`` we can use ``Require Export M`` in module ``N`` so that ``M`` is automatically visible when ``N`` is required.
+
+7 Inductive definitions
+-----------------------
+
+.. code:: coq
+
+    Inductive month : Set :=
+      January : month   | February : month | March : month
+      | April : month   | May : month      | June : month
+      | July : month    | August : month   | September : month
+      | October : month | November : month | December : month.
+
+.. code:: coq
+
+    Theorem month_equal :
+      forall m:month,
+        m=January \/ m=February \/ m=March \/ m=April \/
+        m=May \/ m=June \/ m=July \/ m=August \/
+        m=September \/ m=October \/ m=November \/ m=December.
+    Proof.
+      induction m; auto 12.
+    Qed.
+
+.. code:: coq
+
+    Check (fun b:bool => match b with true => 33 | false => 45 end).
+
+.. code:: coq
+
+    Definition month_length (leap:bool) (m:month) : nat :=
+      match m with
+      | January => 31 | February => if leap then 29 else 28
+      | March => 31   | April => 30    | May => 31  | June => 30
+      | July => 31    | August => 31   | September => 30
+      | October => 31 | November => 30 | December => 31
+      end.
+
+.. code:: coq
+
+    Fail Definition month_length : bool->month->nat :=
+      fun (leap:bool) (m:month) => match m with January => 31 end.
+
+.. code:: coq
+
+    Definition month_length' (leap:bool) :=
+      month_rec (fun m:month => nat)
+      31 (if leap then 29 else 28) 31 30 31 30 31 31 30 31 30 31. 
+
+.. code:: coq
+
+    Definition month_length'' (leap:bool) (m:month) :=
+      match m with
+      | February => if leap then 29 else 28
+      | April => 30 | June => 30 | September => 30 | November => 30
+      | other => 31
+      end.
+
+.. code:: coq
+
+    Eval compute in (fun leap => month_length leap November).
+
+.. code:: coq
+
+    Theorem length_february : month_length false February = 28.
+    Proof.
+      simpl.
+      trivial.
+    Qed.
+
+.. code:: coq
+
+    Inductive plane : Set := point : Z->Z->plane.
+
+.. code:: coq
+
+    Definition abscissa (p:plane) : Z :=
+      match p with point x y => x end.
+
+.. code:: coq
+
+    Reset plane.
+    Record plane : Set := point {abscissa : Z; ordinate : Z}.
+
+.. code:: coq
+
+    Inductive vehicle : Set :=
+    | bicycle : nat->vehicle
+    | motorized : nat->nat->vehicle.
+
+.. code:: coq
+
+    Definition nb_wheels (v:vehicle) : nat :=
+      match v with
+      | bicycle x => 2
+      | motorized x n => n
+      end.
+
+.. code:: coq
+
+    Definition nb_seats (v:vehicle) : nat :=
+      match v with
+      | bicycle x => x
+      | motorized x _ => x
+      end.
+
+.. code:: coq
+
+    Theorem at_least_28 :
+      forall (leap:bool) (m:month), 28 <= month_length leap m.
+    Proof.
+      intros leap m; case m; simpl; auto with arith.
+      case leap; auto with arith.
+    Qed.
+
+.. code:: coq
+
+    Definition next_month (m:month) :=
+      match m with
+        January => February  | February => March | March => April
+      | April => May         | May => June       | June => July
+      | July => August       | August => September
+      | September => October | October => November
+      | November => December | December => January
+      end.
+
+.. code:: coq
+
+    Theorem next_august_then_july:
+      forall m:month, next_month m = August -> m=July.
+    Proof.
+      intro m; case m; simpl; intro Hnext_eq.
+      Show 7.
+      trivial.
+      Show 1.
+      discriminate Hnext_eq.
+    Abort.
+
+.. code:: coq
+
+    Theorem bicycle_eq_seats :
+      forall x1 y1:nat, bicycle x1 = bicycle y1 -> x1 = y1.
+    Proof.
+      intros x1 y1 H.
+      injection H.
+      trivial.
+    Qed.
+
+.. code:: coq
+
+    Theorem next_march_shorter :
+      forall (leap:bool) (m1 m2:month), next_month m1 = March ->
+        month_length leap m1 <= month_length leap m2.
+    Proof.
+      intros leap m1 m2 H.
+      case m1.
+      Show 4.
+      simpl.
+      Abort.
+
+.. code:: coq
+
+    Theorem next_march_shorter :
+      forall (leap:bool) (m1 m2:month), next_month m1 = March ->
+        month_length leap m1 <= month_length leap m2.
+    Proof.
+      intros leap m1 m2.
+      case m1.
+      Show 4.
+      Abort.
+
+.. code:: coq
+
+    Theorem next_march_shorter :
+      forall (leap:bool) (m1 m2:month), next_month m1 = March ->
+        month_length leap m1 <= month_length leap m2.
+    Proof.
+      intros leap m1 m2 H.
+      generalize H.
+    Abort.
+
+.. code:: coq
+
+    Theorem test : forall (x y:nat), 0 <= x + y + y.
+    Proof.
+      intros.
+      generalize (x+y+y).
+    Abort.
+
+.. code:: coq
+
+    Theorem next_march_shorter :
+      forall (leap:bool) (m1 m2:month), next_month m1 = March ->
+        month_length leap m1 <= month_length leap m2.
+    Proof.
+      intros leap m1 m2 H.
+      generalize (refl_equal m1).
+    Abort.
+
+.. code:: coq
+
+    Theorem plus_assoc :
+      forall x y z:nat, (x+y)+z = x+(y+z).
+    Proof.
+      intros x y z.
+      elim x.
+      rewrite plus_O_n.
+      rewrite plus_O_n.
+      reflexivity.
+      intros x' Hrec.
+      Check plus_Sn_m.
+      rewrite (plus_Sn_m x' y).
+      rewrite (plus_Sn_m (x'+y) z).
+      rewrite (plus_Sn_m x' (y+z)).
+      rewrite Hrec.
+      reflexivity.
+    Qed.
+
+.. code:: coq
+
+    Fixpoint mult2 (n:nat) : nat :=
+      match n with 0 => 0 | S p => S (S (mult2 p)) end.
+
+.. code:: coq
+
+    Fixpoint plus (n m:nat) {struct n} : nat :=
+      match n with 0 => m | S p => S (plus p m) end.
+
+.. code:: coq
+
+    Fixpoint iterate (A:Set) (f:A->A) (n:nat) (x:A) {struct n} : A :=
+      match n with 0 => x | S p => f (iterate A f p x) end.
+
+.. code:: coq
+
+    Inductive Z_btree : Set :=
+      | Z_leaf : Z_btree
+      | Z_bnode : Z -> Z_btree -> Z_btree -> Z_btree.
+
+.. code:: coq
+
+    Fixpoint sum_all_values (t:Z_btree) : Z :=
+      (match t with
+       | Z_leaf => 0
+       | Z_bnode v t1 t2 => v + sum_all_values t1 + sum_all_values t2
+       end)%Z.
+
+.. code:: coq
+
+    Fixpoint zero_present (t:Z_btree) : bool :=
+      match t with
+      | Z_leaf => false
+      | Z_bnode (0%Z) t1 t2 => true
+      | Z_bnode _ t1 t2 => if (zero_present t1) then true else zero_present t2
+      end.
+
+.. code:: coq
+
+    Fixpoint Psucc (x:positive) : positive :=
+      match x with
+      | xI x' => xO (Psucc x')
+      | xO x' => xI x'
+      | xH => 2%positive
+      end.
+
+.. code:: coq
+
+    Inductive Z_fbtree : Set :=
+    | Z_fleaf : Z_fbtree
+    | Z_fnode : Z -> (bool -> Z_fbtree) -> Z_fbtree.
+
+.. code:: coq
+
+    Definition right_son (t:Z_btree) : Z_btree :=
+      match t with
+      | Z_leaf => Z_leaf
+      | Z_bnode a t1 t2 => t2
+      end.
+
+.. code:: coq
+
+    Definition fright_son (t:Z_fbtree) : Z_fbtree :=
+      match t with
+      | Z_fleaf => Z_fleaf
+      | Z_fnode a f => f false
+      end.
+
+.. code:: coq
+
+    Fixpoint fsum_all_values (t:Z_fbtree) : Z :=
+      (match t with
+       | Z_fleaf => 0
+       | Z_fnode v f => v + fsum_all_values (f true) + fsum_all_values (f false)
+       end )%Z.
+
+.. code:: coq
+
+    Inductive Z_inf_branch_tree : Set :=
+      Z_inf_leaf : Z_inf_branch_tree
+    | Z_inf_node : Z -> (nat -> Z_inf_branch_tree) -> Z_inf_branch_tree.
+
+.. code:: coq
+
+    Fail Fixpoint n_sum_all_values (n:nat) (t:Z_inf_branch_tree) {struct t} : Z :=
+      (match t with
+         Z_inf_leaf => 0
+       | Z_inf_node v f => v + sum_f n (fun x:nat => n_sum_all_values n (f x))
+      end )%Z.
+
+.. code:: coq
+
+    Theorem plus_assoc' : forall (x y z:nat), x+y+z=x+(y+z).
+    Proof.
+      intros x y z.
+      elim x.
+      simpl.
+      reflexivity.
+      intros n H.
+      (** %(** ``\verb|rewrite H|'' would not work yet so we need *) *)
+      simpl.
+      rewrite H.
+      reflexivity.
+    Qed.
+
+.. code:: coq
+
+    Definition mult2' : nat -> nat :=
+      fix f (n:nat) : nat :=
+        match n with
+          0 => 0
+        | S p => S (S (f p))
+        end.
+
+.. code:: coq
+
+    Require Import List.
+    Print list.
+    Check cons.
+
+    Fixpoint app (A:Set) (l m:list A) {struct l} : list A :=
+      match l with
+      | nil => m                          (** %(** not ``\verb|nil A => m|'' *) *)
+      | cons a l1 => cons a (app A l1 m)  (** %(** not ``\verb|cons A a l1|'' nor ``\verb|(app l1 m)|''  *) *)                      
+      end.
+
+.. code:: coq
+
+    Print option.
+
+    Definition pred_option (n:nat) : option nat :=
+      match n with
+        0 => None       (** %(** ``\verb|pred_option|'' is not defined for 0 *) *)
+      | S p => Some p
+      end.
+
+.. code:: coq
+
+    Definition pred2_option (n:nat) : option nat :=
+      match pred_option n with
+        None => None
+      | Some p => pred_option p
+      end.
+
+.. code:: coq
+
+    Fixpoint nth_option (A:Set) (n:nat) (l:list A) {struct l} : option A :=
+      match n, l with
+        0, cons a t1 => Some a
+      | S p, cons a t1 => nth_option A p t1
+      | n, nil => None
+      end.
+
+.. code:: coq
+
+    Print prod.
+
+    Print fst.
+
+.. code:: coq
+
+    Print sum.
+
+    Check (sum nat bool).
+
+    Check (inl bool 4).
+
+.. code:: coq
+
+    Inductive ltree (n:nat) : Set :=
+      lleaf : ltree n
+    | lnode : forall p:nat, p <= n -> ltree n -> ltree n -> ltree n.
+
+.. code:: coq
+
+    Inductive sqrt_data (n:nat) : Set :=
+      sqrt_intro : forall x:nat, x*x <= n -> n < (S x)*(S x) -> sqrt_data n.
+
+.. code:: coq
+
+    Inductive htree (A:Set) : nat -> Set :=
+      hleaf : A -> htree A 0
+    | hnode : forall n:nat, A -> htree A n -> htree A n -> htree A (S n).
+
+.. code:: coq
+
+    Fixpoint htree_to_btree (n:nat) (t:htree Z n) {struct t} : Z_btree :=
+      match t with
+        hleaf _ x => Z_bnode x Z_leaf Z_leaf
+      | hnode _ p v t1 t2 => Z_bnode v (htree_to_btree p t1) (htree_to_btree p t2)
+      end.
+
+.. code:: coq
+
+    Fixpoint invert (A:Set) (n:nat) (t:htree A n) {struct t} : htree A n :=
+      match t in htree _ x return htree A x with
+        hleaf _ v => hleaf A v
+      | hnode _ p v t1 t2 => hnode A p v (invert A p t2) (invert A p t1)
+      end.
+
+.. code:: coq
+
+    Print Empty_set.
+
+    Check Empty_set_ind.
+
+.. code:: coq
+
+    Inductive strange : Set :=
+      cs : strange -> strange.
+
+    Theorem strange_empty : forall (x:strange), False.
+    intro x.
+    elim x.
+    trivial.  
+    Qed.
+
+.. code:: coq
+
+    Inductive even_line : nat -> Set :=
+      even_empty_line : even_line 0
+    | even_step_line : forall (n:nat), even_line n -> even_line (S (S n)).
+
+    Check even_empty_line.
+
+    Check even_step_line _ even_empty_line.
+
+    Check even_step_line _ (even_step_line _ even_empty_line).
+
+    Check even_line 3.
