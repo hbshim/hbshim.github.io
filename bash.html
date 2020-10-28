@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; Notes  documentation</title>
+  <title>Bash &mdash; Notes  documentation</title>
   
 
   
@@ -26,7 +26,6 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/javascript" src="_static/searchtools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -36,7 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Elisp" href="elisp.html" />
+    <link rel="prev" title="Misc" href="macbookpro.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -63,7 +64,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -81,7 +82,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">1 Emacs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#abbrevs-mode">1.1 Abbrevs mode</a><ul>
@@ -262,14 +263,14 @@
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#character">1 character</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#completion">2 completion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#history">3 history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#line">4 line</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#misc">5 misc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#startup-files">6 Startup Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#word">7 word</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#character">1 character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#completion">2 completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#history">3 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line">4 line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#misc">5 misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#startup-files">6 Startup Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#word">7 word</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="elisp.html">Elisp</a><ul>
@@ -366,12 +367,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Search</li>
+      <li>Bash</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/bash.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -383,24 +386,95 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="bash">
+<h1>Bash<a class="headerlink" href="#bash" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="character">
+<h2>1 character<a class="headerlink" href="#character" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">C-f</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-char</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-b</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-char</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-d</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-char</span></code>) delete character at point</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;DEL&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-delete-char</span></code>) delete the character behind (before) the cursor</li>
+</ul>
+</div>
+<div class="section" id="completion">
+<h2>2 completion<a class="headerlink" href="#completion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">complete</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-?</span></code> (<code class="docutils literal notranslate"><span class="pre">possible-completions</span></code>) list possible completions</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-*</span></code> (<code class="docutils literal notranslate"><span class="pre">insert-completions</span></code>) insert all completions generated by <code class="docutils literal notranslate"><span class="pre">M-?</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">M-/</span></code> (<code class="docutils literal notranslate"><span class="pre">complete-filename</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">/</span></code> (<code class="docutils literal notranslate"><span class="pre">possible-filename-completions</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-!</span></code> (<code class="docutils literal notranslate"><span class="pre">complete-command</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">!</span></code> (<code class="docutils literal notranslate"><span class="pre">possible-command-completions</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-&lt;TAB&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dynamic-complete-history</span></code>)</li>
+</ul>
+</div>
+<div class="section" id="history">
+<h2>3 history<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">C-p</span></code> (<code class="docutils literal notranslate"><span class="pre">previous-history</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">next-history</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-r</span></code> (<code class="docutils literal notranslate"><span class="pre">reverse-search-history</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-search-history</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-C-y</span></code> (<code class="docutils literal notranslate"><span class="pre">yank-nth-arg</span></code>) insert the first argument from the previous command</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-1</span> <span class="pre">M-C-y</span></code> insert the second argument from the previous command</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-.</span></code> (<code class="docutils literal notranslate"><span class="pre">yank-last-arg</span></code>) insert the last argument from the previous command</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-1</span> <span class="pre">M-.</span></code> insert the second to last from the previous command</li>
+</ul>
+</div>
+<div class="section" id="line">
+<h2>4 line<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">C-a</span></code> (<code class="docutils literal notranslate"><span class="pre">beginning-of-line</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-e</span></code> (<code class="docutils literal notranslate"><span class="pre">end-of-line</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-k</span></code> (<code class="docutils literal notranslate"><span class="pre">kill-line</span></code>) kill from the point to the end of the line</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;DEL&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-kill-line</span></code>) kill from the point to the beginning of the line</li>
+</ul>
+</div>
+<div class="section" id="misc">
+<h2>5 misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">C-l</span></code> (<code class="docutils literal notranslate"><span class="pre">clear-screen</span></code>)</li>
+<li>(<code class="docutils literal notranslate"><span class="pre">redraw-current-line</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-r</span></code> (<code class="docutils literal notranslate"><span class="pre">re-read-init-file</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-g</span></code> (<code class="docutils literal notranslate"><span class="pre">abort</span></code>) abort the current editing command and ring the terminal bell</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-u</span></code> (<code class="docutils literal notranslate"><span class="pre">undo</span></code>) incremental undo per line</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-v</span></code> (<code class="docutils literal notranslate"><span class="pre">display-shell-version</span></code>)</li>
+</ul>
+</div>
+<div class="section" id="startup-files">
+<h2>6 Startup Files<a class="headerlink" href="#startup-files" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>~.bash<sub>profile</sub>\_ is for a login-shell. Commands that need to run only once go in this file (eg. setting paths)</li>
+<li><code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> is for a non-login-shell. Commands that should run every time when <code class="docutils literal notranslate"><span class="pre">bash</span></code> is called go in this file. (eg. abbreviations and custom functions)</li>
+</ul>
+</div>
+<div class="section" id="word">
+<h2>7 word<a class="headerlink" href="#word" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">M-f</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-word</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-b</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-word</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-d</span></code> (<code class="docutils literal notranslate"><span class="pre">kill-word</span></code>) kill from the point to the end of the current (or next) word</li>
+<li><code class="docutils literal notranslate"><span class="pre">M-&lt;DEL&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-kill-word</span></code>) kill the word behind point</li>
+</ul>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="elisp.html" class="btn btn-neutral float-right" title="Elisp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="macbookpro.html" class="btn btn-neutral float-left" title="Misc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -433,14 +507,7 @@
   
   
     
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
