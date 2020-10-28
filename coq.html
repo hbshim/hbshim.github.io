@@ -153,8 +153,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#id3">1.29 Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#auto-reverting">1.30 (Auto)reverting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#performance-profiling">1.31 Performance profiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visual-line-mode">1.30 Visual line mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#auto-reverting">1.31 (Auto)reverting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#performance-profiling">1.32 Performance profiling</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#auctex">2 AucTeX</a></li>
@@ -263,6 +264,31 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elisp.html">Elisp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#terminology">1 terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#keyword">1.1 keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-items">1.2 customization items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-variables">1.3 customizable variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-faces">1.4 customizable faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-groups">1.5 customization groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#global-variables">1.6 global variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#composite-types">1.7 composite types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#symbols">2 symbols</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id2">2.1 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defcustom">2.2 defcustom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defface">2.3 defface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defgroup">2.4 defgroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defvar">2.5 defvar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defconst">2.6 defconst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#repeat-element-type">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#function-list-rest-objects">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#choice-alternative-types">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">math dump</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math.html#binomial-coefficients">1 binomial coefficients</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="math.html#identities">1.1 identities</a></li>
@@ -382,7 +408,7 @@ $ opam upgrade coq
 <li>See <a class="reference external" href="https://coq.inria.fr/refman/using/tools/coqdoc.html">https://coq.inria.fr/refman/using/tools/coqdoc.html</a></li>
 <li>to generate documents of all Coq files in and under the current directory, run</li>
 </ul>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ find . -name *.v &gt; allfiles
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ find . -name &quot;*.v&quot; &gt; allfiles
 $ coqdoc --html --directory index -Q . Coq --files-from allfiles --table-of-contents
 $ rm allfiles
 </pre></div>

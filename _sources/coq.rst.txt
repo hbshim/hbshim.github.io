@@ -24,7 +24,7 @@ Coq
 
 .. code:: bash
 
-    $ find . -name *.v > allfiles
+    $ find . -name "*.v" > allfiles
     $ coqdoc --html --directory index -Q . Coq --files-from allfiles --table-of-contents
     $ rm allfiles
 

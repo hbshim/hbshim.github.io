@@ -4,8 +4,6 @@ Emacs
 
     :Date: Mon Oct 26 13:40:38 EDT 2020
 
-.. contents::
-
 
 
 1 Emacs
