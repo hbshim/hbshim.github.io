@@ -2,7 +2,6 @@
 math dump
 =========
 
-    :Author: Hyungbo Shim
 
 .. contents::
 
