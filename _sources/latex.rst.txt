@@ -2,7 +2,6 @@
 LaTeX
 =====
 
-    :Author: Hyungbo Shim
     :Date: Mon Oct 26 14:17:15 EDT 2020
 
 .. contents::
