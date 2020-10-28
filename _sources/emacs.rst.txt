@@ -308,63 +308,68 @@ Emacs
 
 - ``^`` (``Info-up``)
 
-1.15 ispell (flyspell)
+1.15 history
+~~~~~~~~~~~~
+
+- ``C-h l`` (``view-lossage``) Display last few input keystrokes and the commands run.
+
+1.16 ispell (flyspell)
 ~~~~~~~~~~~~~~~~~~~~~~
 
 - ``M-$`` Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.
 
   - ``i`` Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.
 
-1.16 Menubar ``F10``
+1.17 Menubar ``F10``
 ~~~~~~~~~~~~~~~~~~~~
 
-1.17 Moving around
+1.18 Moving around
 ~~~~~~~~~~~~~~~~~~
 
-1.17.1 by characters/lines
+1.18.1 by characters/lines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``C-b~/~C-f`` move back/forward by one character
 
 - ``C-p~/~C-n`` move up/down by one line
 
-1.17.2 by words
+1.18.2 by words
 ^^^^^^^^^^^^^^^
 
 - ``M-b~/~M-f`` move back/forward by one word
 
-1.17.3 horizontally
+1.18.3 horizontally
 ^^^^^^^^^^^^^^^^^^^
 
 - ``C-a~/~C-e`` move to the beginning/end of the line
 
 - ``M-m`` (``back-to-indentation``) Jump to first non-whitespace character of the line
 
-1.17.4 by sentence
+1.18.4 by sentence
 ^^^^^^^^^^^^^^^^^^
 
 - ``M-a~/~M-e`` move to the beginning/end of the sentence
 
-1.17.5 by paragraph
+1.18.5 by paragraph
 ^^^^^^^^^^^^^^^^^^^
 
 - ``M-{`` (``backward-paragraph``) Move back to previous paragraph beginning
 
 - ``M-}`` (``forward-paragraph``) Move forward to next paragraph end.
 
-1.17.6 by matching parentheses
+1.18.6 by matching parentheses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``C-M-f`` (``forward-sexp``)
 
 - ``C-M-b`` (``backward-sexp``)
 
-1.17.7 by buffer
+1.18.7 by buffer
 ^^^^^^^^^^^^^^^^
 
 - ``M-<`` ``M->`` move to the beginning/end of the buffer
 
-1.17.8 by page
+1.18.8 by page
 ^^^^^^^^^^^^^^
 
 - ``C-v`` ``M-v`` page down/up by one page
@@ -373,19 +378,19 @@ Emacs
 
 - ``C-l`` Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen
 
-1.17.9 back to previous position
+1.18.9 back to previous position
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``C-<SPC>`` Set the mark at point
 
 - ``C-x C-x`` Set the mark at point, activate, then move back to the original point
 
-1.17.10 GO TO
+1.18.10 GO TO
 ^^^^^^^^^^^^^
 
 - ``M-g g`` go to the line
 
-1.18 Outline minor mode
+1.19 Outline minor mode
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 - A *heading line* together with all following *body lines* is called an **entry**.
@@ -408,7 +413,7 @@ Emacs
 
 - Everything except the heading or body with heading lines leading up to the top level are called **other**
 
-1.18.1 Motion commands
+1.19.1 Motion commands
 ^^^^^^^^^^^^^^^^^^^^^^
 
 - ``C-c @ C-n`` (``outline-next-visible-heading``)     move point to the next     visible heading line
@@ -421,7 +426,7 @@ Emacs
 
 - ``C-c @ C-u`` (``outline-up-heading``) move point up to a lower-level visible heading line
 
-1.18.2 Visibility commands
+1.19.2 Visibility commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - ``C-c @ C-a`` (``outline-show-all``) expand all (bufferwise)
@@ -436,19 +441,19 @@ Emacs
 
 - ``C-c @ C-k`` (``outline-show-branches``) show all subheadings, at all levels, of the current line
 
-1.19 Reference sites
+1.20 Reference sites
 ~~~~~~~~~~~~~~~~~~~~
 
 `http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/ <http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/>`_
 
-1.20 Region/Mark
+1.21 Region/Mark
 ~~~~~~~~~~~~~~~~
 
 - ``C-<SPC>`` (``set-mark-command``) Set the mark at point, and activate it.
 
 - ``C-x C-x`` (``exchange-point-and-mark``) Set the mark at point, and activate it; then move point where the mark used to be.
 
-1.21 Registers
+1.22 Registers
 ~~~~~~~~~~~~~~
 
 - ``M-x view-register RET r`` display a description of what register ``r`` contains
@@ -477,12 +482,12 @@ Emacs
 
   - ``C-u number C-x r + r`` if the register ``r`` contains a number, increse that number by ``number``
 
-1.22 Select
+1.23 Select
 ~~~~~~~~~~~
 
 - ``C-x h`` (``mark-whoe-buffer``) put point at beginning and mark at end of buffer (select all)
 
-1.23 Sessions
+1.24 Sessions
 ~~~~~~~~~~~~~
 
 - See info > (emacs)Top > Saving Emacs Sessions for detail
@@ -499,17 +504,17 @@ Emacs
 
 - if Emacs crashes, the lock stays on the dektop file and Emacs will ask next time whether use the locked desktop file or not. the variable ``desktop-load-locked-desktop`` valued ``nil`` will load the locked desktop file without asking
 
-1.24 Symbol
+1.25 Symbol
 ~~~~~~~~~~~
 
 - ``C-q C-<KEY>`` Enter ``^<KEY>`` symbol, eg. ``^A`` for ``CTRL-A`` key combination
 
-1.25 Timestamp
+1.26 Timestamp
 ~~~~~~~~~~~~~~
 
 - ``C-u M-! date`` insert timestamp
 
-1.26 windows
+1.27 windows
 ~~~~~~~~~~~~
 
 - ``C-x o`` (``other-window``) Select another window.
@@ -532,7 +537,7 @@ Emacs
 
 - ``C-x +`` (``balance-windows``) Make all windows the same height.
 
-1.26.1 transpose windows
+1.27.1 transpose windows
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 - `https:ff//www.emacswiki.org/emacs/TransposeWindows <https:ff//www.emacswiki.org/emacs/TransposeWindows>`_
@@ -541,19 +546,19 @@ Emacs
 
 - buttom window active and moving it to the top window: ``C-x 0 C-x 2 C-x b RET``
 
-1.27 YASnippet
+1.28 YASnippet
 ~~~~~~~~~~~~~~
 
 - ``C-c C-n`` (``yas-new-snippet``) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use ``C-c C-c`` to save it.
 
-1.27.1 variables
+1.28.1 variables
 ^^^^^^^^^^^^^^^^
 
 - ``yas-global-mode`` Non-nil if Yas-Global mode is enabled
 
 - ``yas-snippet-dirs`` list of top-level snippet directories
 
-1.28 Variables
+1.29 Variables
 ~~~~~~~~~~~~~~
 
 - See `info:emacs#File Variables <emacs#File%20Variables>`_
@@ -582,12 +587,27 @@ Emacs
 
 - Check the variable ``safe-local-variable-values`` (in ``.emacs``) to check the list of "safe" local variables.
 
-1.29 (Auto)reverting
+1.30 Visual line mode
+~~~~~~~~~~~~~~~~~~~~~
+
+- wrap words when line breaking (soft lines wrap)
+
+  - **lines wrapping** breaks long line that does not fit the screen horizontally
+
+  - **hard lines wrapping** is direct wrapping that may break a line in the middle of a word
+
+- compare: visual line is like a logical page for PDF documents - they are not real ('physical') lines but just visual ('logical')
+
+  - move around or edit lines by visual line
+
+- ``Adaptive-Wrap-Prefix`` makes visual line mode respect listing item levels with proper indentation
+
+1.31 (Auto)reverting
 ~~~~~~~~~~~~~~~~~~~~
 
 - See `info:emacs#Autorevert <emacs#Autorevert>`_
 
-1.30 Performance profiling
+1.32 Performance profiling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - See `info:elisp#Profiling <elisp#Profiling>`_

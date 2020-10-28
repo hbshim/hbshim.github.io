@@ -16,6 +16,7 @@ Welcome to Notes's documentation!
    coq
    macbookpro
    mathjaxtest
+   elisp
    math
 
 Indices and tables
