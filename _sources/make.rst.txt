@@ -1,0 +1,414 @@
+====
+Make
+====
+
+
+
+
+1 terms
+-------
+
+- **target**
+
+- **rule**
+
+- **expansion**
+
+2 Rule
+------
+
+.. code:: make
+
+    targets : prerequisites
+            recipe
+            …
+
+.. code:: make
+
+    targets : prerequisites ; recipe
+            recipe
+            …
+
+- A **rule** tells make two things:
+
+  - when the targets are out of date, and
+
+  - how to update them when necessary.
+
+- The **targets** are file names that needs to be updated, if necessary.
+
+  - in case of multiple targets, they are separated by spaces.
+
+  - Wildcard characters may be used
+
+  - a name of the form ``a(m)`` represents member ``m`` in archive file ``a`` (archiving members as targets).
+
+  - Usually there is only one target per rule, but occasionally there is a reason to have more.
+
+- The **recipe** specifies how to update the target
+
+  - lines start with a tab character (or the first character in the value of the ``.RECIPEPREFIX`` variable).
+
+  - How to update the target is specified by a recipe. is one or more lines to be executed by the shell (normally ‘sh’), but with some extra features
+
+  - The first recipe line
+
+    - may appear on the line after the prerequisites, with a tab character, or
+
+    - may appear on the same line, with a semicolon.
+
+    Either way, the effect is the same. There are other differences in the syntax of recipes.
+
+- A target is considered *out of date* if it does not exist or if it is older, in terms of last-modification time, than any of the **prerequisites**.
+
+  - The prerequisites consist of file names (with wildcards or archive members) separated by spaces.
+
+  - If any of the prerequisites changes, the contents of the existing target file are considered no longer valid.
+
+- *long line*: There is no limit on the length of a line but we may use a backslash followed by a newline, but this is not required.
+
+3 how ``make`` reads a makefile
+-------------------------------
+
+- ``make`` runs in two phases
+
+  - first phase
+
+    - reads all, including included, makefiles
+
+    - internalize all the variables, values, implicit/explicit rules, and builds a dependency graph of all targets and prerequisites
+
+  - second phase
+
+    - determine which targets need to be updated and run the recipes accordingly
+
+4 operators
+-----------
+
+5 assignments
+-------------
+
+- **lists**
+
+  .. code:: make
+
+      objects = main.o foo.o bar.o utils.o
+
+  defines a variable named ``objects`` with value "``main.o foo.o bar.o utils.o``". Whitespace around the variable name and immediately after the ‘=’ is ignored.
+
+- **recursively expanded variables**: if it contains references to other variables, these references are expanded whenever this variable is substituted (**recursive expansion**).
+
+  .. code:: make
+
+      foo = $(bar)
+      bar = $(ugh)
+      ugh = Huh?
+
+      all:;echo $(foo)
+
+will echo ``Huh?``.
+
+- **simply expanded variables**: this is synchronous in a sense that it contains their values as of the time the variable was defined.
+
+  .. code:: make
+
+      x := foo
+      y := $(x) bar
+      x := later
+
+  is equivalent to
+
+  .. code:: make
+
+      y := foo bar
+      x := later
+
+- **conditional variable**: define if undefined
+
+  .. code:: make
+
+      FOO ?= bar
+
+  is equivalent to
+
+  .. code:: make
+
+      ifeq ($(origin FOO), undefined)
+        FOO = bar
+      endif
+
+- **shell assignment**: execute a shell script (on the RHS) and set a variable (on the LHS) to its output.
+
+  .. code:: make
+
+      hash != printf '\043'
+      file_list != find . -name '*.c
+
+  is equivalent to
+
+  .. code:: make
+
+      hash := $(shell printf '\043')
+      var := $(shell find . -name "*.c")
+
+  the exit status of the just-invoked shell script is stored in the ``.SHELLSTATUS`` variable
+
+- ``+=`` append
+
+  .. code:: make
+
+      variable := value
+      variable += more
+
+  is equivalent to
+
+  .. code:: make
+
+      variable := value
+      variable += more
+
+  and *similar* to
+
+  .. code:: make
+
+      temp = value
+      variable = $(temp) more
+
+  The difference is that when ``+=`` is applied to a recursively expanded variable, it stores the text verbatim (``value``), and saves these variable (``temp``) and function references to be expanded later, when you refer to the new variable (as ``$(variable)``). Here, the variable ``temp`` is never defined though.
+
+6 functions
+-----------
+
+- ``origin <variable>`` will return the 'origin' of ~<variable>.
+
+  .. code:: make
+
+      $(origin variable)
+
+  will return a string that indicates how the variable was defined.
+
+  - '``undefined``': it was never defined
+
+  - '``default``': a default definition; the later definition if multiply defined
+
+  - '``environment``': if inherited from the outer environment
+
+  - '``environment override``': inherited from the environment but 'over-rided' by '``-e``' option
+
+  - '``file``': defined in a makefile
+
+  - '``command line``': defined on the command line
+
+  - '``override``': defined with an ~override' directive in a makefile
+
+  - '``automatic``': automatic variable defined for the execution of the recipe
+
+- ``include <filenames>``  suspend reading the current makefile and read one or more other makefiles before continuing.
+
+  .. code:: make
+
+      include foo *.mk $(bar)
+
+  is equivalent to
+
+  .. code:: make
+
+      include foo a.mk b.mk c.mk bish bash
+
+7 variables
+-----------
+
+- ``.SHELLSTATUS``
+
+8 special targets
+-----------------
+
+8.1 Phony targets
+~~~~~~~~~~~~~~~~~
+
+- Consider the following:
+
+  .. code:: make
+
+      clean:
+              rm *.o temp
+
+  There are two possibilities:
+
+  - if there is no file named "``clean``" then ``$ make clean`` will run the ``rm`` command;
+
+  - if there is a file named "``clean``" then, since there is no prerequisites and ``clean`` does not create a file, the file will be considered up to date and the recipe won't be executed.
+
+- If we want to run the recipe regardless of whether a file "``clean``" exists or not, we explicitly declare the target to be phony by making it a prerequisite of the special target ``.PHONY``
+
+  .. code:: make
+
+      .PHONY: clean
+      clean:
+              rm *.o temp
+
+8.2 silent
+~~~~~~~~~~
+
+- ``.SILENT`` without prerequisites prevents all recipe echoing, as if all recipes started with ‘@’.
+
+9 The dollar sign
+-----------------
+
+- ``$(<function> <arguments>)`` or ``$(<function> <arguments>)``
+
+  - a function call
+
+  - ``<function>`` is a function name
+
+  - ``<arguments>`` separated from the function name by one or more spaces or tabs, and if there is more than one argument, then they are separated by commas
+
+  - If the arguments themselves contain other function calls or variable references, it is wisest to use the same kind of delimiters for all the references; write ``$(subst a,b,$(x))``, not ``$(subst a,b,${x})``
+
+- In case if one need to put ``$`` in a target or prerequisite, see the manual "§4.2 Rule Syntax".
+
+- A variable with ``$`` in its name might have strange results, see the manual "§6.3.2 Computed Variable Names".
+
+- ``$(<variable>)`` or ``${<variable}``
+
+  - *strict textual substitution* of a variable's value, called the **variable referencing**. The following
+
+    .. code:: make
+
+        foo = c
+        prog.o : prog.$(foo)
+                $(foo)$(foo) -$(foo) prog.$(foo)
+
+    is equivalent to
+
+    .. code:: make
+
+        prog.o : prog.c
+                cc -c prog.c
+
+  - can be used in any context: targets, prerequisites, recipes, most directives, and new variable values
+
+  - ``$`` followed by a character other than '``$``', '``(``' or '``{``' treats that single character as the variable name; thus ``$foo`` is regarded as ``$(f)`` + the string ``oo``
+
+10 Recipe echoing
+-----------------
+
+- Each line of the recipe is printed (**echoed**) before it is executed (send to the shell).
+
+- When a line starts with ‘@’, the echoing of that line is suppressed and the ‘@’ is discarded before the line is passed to the shell.
+
+  .. code:: make
+
+      echo About to make distribution files
+
+  will result the following duplicates
+
+  ::
+
+      echo About to make distribution files
+      About to make distribution files
+
+  but
+
+  .. code:: make
+
+      @echo About to make distribution files
+
+  will give
+
+  ::
+
+      About to make distribution files
+
+11 flags
+--------
+
+- ‘-n’ or ‘--just-print’ it only echoes most recipes, including even the recipe lines starting with ‘@’, without executing them (dry-running).
+
+- ‘-s’ or ‘--silent’ flag to make prevents all echoing, as if all recipes started with ‘@’. A rule in the makefile for the special target .SILENT without prerequisites has the same effect
+
+12 conditional
+--------------
+
+syntax
+
+.. code:: make
+
+    <conditional-directive>
+    <text-if-true>
+    else
+    <text-if-false>
+    endif
+
+Conditionals may be nested many times or it may not have ``else`` and ``text-if-false`` part at all.
+
+12.1 ``ifdef``, ``ifndef``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``ifdef <variable-name>``
+
+- If the value of that variable has a non-empty, the ``text-if-true`` is effective;
+
+  .. code:: make
+
+      bar =
+      foo = $(bar)
+      ifdef foo
+      frobozz = yes
+      else
+      frobozz = no
+      endif
+
+  sets ``frobozz`` to ``yes`` (the variable is not expanded - otherwise the result would be ``no``.)
+
+- otherwise, ``the text-if-false``, if any, is effective.
+
+  - Variables that have never been defined have an empty value.
+
+    .. code:: make
+
+        ifdef foo
+        frobozz = yes
+        else
+        frobozz = no
+        endif
+
+    sets ``frobozz`` to ``no``.
+
+- Because ``ifdef`` does not expand the variable, it will return true for all definitions except those like ``foo =``. To test for an empty value, use ``ifeq ($(foo),)``.
+
+12.2 ``ifeq``, ``ifneq``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``ifeq (arg1, arg2)`` or ``ifeq 'arg1' 'arg2'`` or ``ifeq "arg1" "arg2"``
+
+  - ``ifeq`` expand all variable references in ``arg1`` and ``arg2`` and compare them.
+
+  - If they are identical, the ``text-if-true`` is effective;
+
+  - otherwise, the ``text-if-false``, if any, is effective.
+
+  .. code:: make
+
+      foo: $(objects)
+      ifeq ($(CC),gcc)
+              $(CC) -o foo $(objects) $(libs_for_gcc)
+      else
+              $(CC) -o foo $(objects) $(normal_libs)
+      endif
+
+When the variable CC has the value ‘gcc’, the above example has this effect:
+
+.. code:: make
+
+    foo: $(objects)
+            $(CC) -o foo $(objects) $(libs_for_gcc)
+
+When the variable CC has any other value, the effect is this:
+
+.. code:: make
+
+    foo: $(objects)
+            $(CC) -o foo $(objects) $(normal_libs)
+
+- ``ifneq (arg1, arg2)`` or ``ifneq 'arg1' 'arg2'`` or ``ifneq "arg1" "arg2"`` will do the opposite.

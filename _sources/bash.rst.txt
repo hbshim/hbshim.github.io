@@ -83,7 +83,7 @@ Bash
 6 Startup Files
 ---------------
 
-- ~.bash\ :sub:`profile`\\_ is for a login-shell. Commands that need to run only once go in this file (eg. setting paths)
+- ``.bash_profile`` is for a login-shell. Commands that need to run only once go in this file (eg. setting paths)
 
 - ``.bashrc`` is for a non-login-shell. Commands that should run every time when ``bash`` is called go in this file. (eg. abbreviations and custom functions)
 

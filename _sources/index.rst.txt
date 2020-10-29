@@ -16,6 +16,7 @@ Welcome to Notes's documentation!
    coq
    macbookpro
    bash
+   make
    elisp
    mathjaxtest
    math
