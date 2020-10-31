@@ -3,19 +3,46 @@ Make
 ====
 
 
+This document mainly summarizes the "GNU make" manual.
 
+1 overview
+----------
 
-1 terms
--------
+The ``make`` utility automatically determines which pieces of a large program need to be recompiled, and issues commands to recompile them. It runs in two phases:
 
-- **target**
+- first phase
 
-- **rule**
+  - reads all ``makefile``'s, including the ones included in a ``makefile``
 
-- **expansion**
+  - internalize all the variables, values, implicit/explicit rules, and builds a dependency graph of all targets and prerequisites
+
+- second phase
+
+  - determine which targets need to be updated and run the recipes accordingly.
+
+When you give the command:
+
+.. code:: shell
+
+    $ make
+
+``make`` reads the ``makefile`` in the current directory and begins by processing the first rule, the **default goal**, whose name does not start with '``.``'.
+
+- This behavior can be overridden using the command line (see Arguments to Specify the Goals) or with the ``.DEFAULT_GOAL`` special variable.
+
+Before ``make`` can fully process this rule, it must process the rules for the files, **prerequisites**, that the first rule depends on. Each of these files is processed according to its own rule.
+
+- These rules say to update each file by compiling its source file.
+
+- The recompilation must be done if the source file, or any of the header files named as prerequisites, is more recent than the object file, or if the object file does not exist.
+
+A Rule that is not a prerequisite of the goal, or a prerequisite of a prerequisite, ..., that rule is not processed, unless you tell ``make`` to do so (eg. the shell command ``$ make clean``). 
 
 2 Rule
 ------
+
+2.1 Explicit rules
+~~~~~~~~~~~~~~~~~~
 
 .. code:: make
 
@@ -65,27 +92,53 @@ Make
 
   - If any of the prerequisites changes, the contents of the existing target file are considered no longer valid.
 
-- *long line*: There is no limit on the length of a line but we may use a backslash followed by a newline, but this is not required.
+- *long line*: There is no limit on the length of a line but we may use a backslash ``/`` followed by a newline, but this is not required. ``make`` will combine the newline with surrounding spaces into a single space.
 
-3 how ``make`` reads a makefile
--------------------------------
+  - If we don't want space for the line breaking, we can do the following:
 
-- ``make`` runs in two phases
+    .. code:: make
 
-  - first phase
+        var := one$\
+               word
 
-    - reads all, including included, makefiles
+    This will be interpreted as ``var := one$ word`` that is ``var := one$( )word`` and since the variable " " does not exists, i.e., '``$( )=``', it becomes ``var := oneword``.
 
-    - internalize all the variables, values, implicit/explicit rules, and builds a dependency graph of all targets and prerequisites
+2.2 Implicit rules
+~~~~~~~~~~~~~~~~~~
 
-  - second phase
+- The following does not provides recipes for rules but it works since they are regarded as 'implicit', i.e., ``make`` can 'deduce' these rules by itself:
 
-    - determine which targets need to be updated and run the recipes accordingly
+  .. code:: make
 
-4 operators
+      objects = main.o kbd.o command.o display.o \
+                insert.o search.o files.o utils.o
+
+      edit : $(objects)
+              cc -o edit $(objects)
+
+      $(objects) : defs.h
+      kbd.o command.o files.o : command.h
+      display.o insert.o search.o files.o : buffer.h
+
+- there are built-in rules that can be used implicitly
+
+- chained rules combines implicit rules
+
+- pattern rules defines implicit rules and its target contains ``%``
+
+- suffix rules are the obsolete way of defining implicit rules for ``make`` but supported for backward compatibility.
+
+- implicit rule search describes how ``make`` searches for an implicit rule
+
+2.3 Last-resort rule
+~~~~~~~~~~~~~~~~~~~~
+
+- last resort is a recipe for rules which cannot be found, explicitly or implicitly, written as a terminal 'match-anything pattern rule', so that it will match any target, with no prerequisites.
+
+3 operators
 -----------
 
-5 assignments
+4 assignments
 -------------
 
 - **lists**
@@ -96,7 +149,7 @@ Make
 
   defines a variable named ``objects`` with value "``main.o foo.o bar.o utils.o``". Whitespace around the variable name and immediately after the ‘=’ is ignored.
 
-- **recursively expanded variables**: if it contains references to other variables, these references are expanded whenever this variable is substituted (**recursive expansion**).
+- **recursively expanded variables**: if it contains references to other variables, these references are expanded whenever this variable is substituted (called **recursive expansion** but doesn't seem to be really recursive but 'asynchronous').
 
   .. code:: make
 
@@ -176,6 +229,43 @@ will echo ``Huh?``.
 
   The difference is that when ``+=`` is applied to a recursively expanded variable, it stores the text verbatim (``value``), and saves these variable (``temp``) and function references to be expanded later, when you refer to the new variable (as ``$(variable)``). Here, the variable ``temp`` is never defined though.
 
+5 directives
+------------
+
+A **directive** is an instruction for ``make`` to do something special while reading the makefile. 
+
+- ``include <filenames>`` suspend reading the current makefile and read one or more other makefiles before continuing. The environment variable ``MAKEFILES``, if defined, does the same without the explicit ``include`` directive.
+
+- ``ifeq``, ``ifneq``, ``ifdef``, ``ifndef`` are conditional directives. See "conditional".
+
+- ``define`` is another way of setting a value for a variable that can include the newline characters. Eg:
+
+  .. code:: make
+
+      define := two-lines
+      echo foo
+      echo $(bar)
+      endef
+
+  is functionally equivalent to
+
+  .. code:: make
+
+      two-lines := echo foo; echo $(bar)
+
+  ('functionally' equivalent because two shell commands separated by '``;``' behave like two separated shell commands.)
+
+  - We can use any value assigning operator '``=``', '``+=``', etc, in place of '``:=``'. If omitted, it will be assumed the asynchronous '``=``'.
+
+  - The last newline character will be ignored. So, if we want to assign a single newline character to a variable, we have to put two lines:
+
+    .. code:: make
+
+        define newline
+
+
+        endef
+
 6 functions
 -----------
 
@@ -215,10 +305,14 @@ will echo ``Huh?``.
 
       include foo a.mk b.mk c.mk bish bash
 
-7 variables
------------
+7 special variables
+-------------------
 
 - ``.SHELLSTATUS``
+
+- ``.DEFAULT_GOAL``
+
+- ``~MAKEFILES``
 
 8 special targets
 -----------------
@@ -241,13 +335,18 @@ will echo ``Huh?``.
 
 - If we want to run the recipe regardless of whether a file "``clean``" exists or not, we explicitly declare the target to be phony by making it a prerequisite of the special target ``.PHONY``
 
+8.2 clean
+~~~~~~~~~
+
+- This is a typical example of using ``.PHONY`` rule.
+
   .. code:: make
 
       .PHONY: clean
       clean:
               rm *.o temp
 
-8.2 silent
+8.3 silent
 ~~~~~~~~~~
 
 - ``.SILENT`` without prerequisites prevents all recipe echoing, as if all recipes started with ‘@’.

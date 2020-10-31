@@ -2,15 +2,12 @@
 Emacs
 =====
 
-    :Date: Mon Oct 26 13:40:38 EDT 2020
+    :Date: October 31, 2020
 
 
 
-1 Emacs
--------
-
-1.1 Abbrevs mode
-~~~~~~~~~~~~~~~~
+1 Abbrevs mode
+--------------
 
 - `https://www.emacswiki.org/emacs/AbbrevMode <https://www.emacswiki.org/emacs/AbbrevMode>`_
 
@@ -28,15 +25,15 @@ Emacs
 
   - ``C-x C-s`` (``abbrev-edit-save-buffer``) Redefine and save to abbrev file.
 
-1.1.1 options
-^^^^^^^^^^^^^
+1.1 options
+~~~~~~~~~~~
 
 - ``abbrev-file-name`` The abbrevs is saved in a file at a path specified by this variable (default: ``\~/.emacs.d/abbrev_defs``)
 
 - ``save-abbrevs``
 
-1.2 ``(ansi-)term`` mode
-~~~~~~~~~~~~~~~~~~~~~~~~
+2 ``(ansi-)term`` mode
+----------------------
 
 - ``C-c C-j`` (``term-line-mode``) switch to line mode (acts like an editor).
 
@@ -50,8 +47,8 @@ Emacs
 
 - When the bash complains “cannot read termcap database”, then create a symlink ``~/.terminfo/65 -> /usr/local/share/emacs/26.3/etc/e`` that is another symlink to ``/usr/local/Cellar/emacs-mac/emacs-26.3-z-mac-7.7/share/emacs/26.3/etc/``. Sources say that the name of directory should be ``e`` but in this macos it has to be ``65``. Check this by ``ls /usr/share/terminfo`` and then ``sudo find /usr/share/terminfo -name "eterm*"``.
 
-1.3 Bookmarks
-~~~~~~~~~~~~~
+3 Bookmarks
+-----------
 
 - ``C-x r m`` (``bookmark-set``) Set the bookmark for the visited file, at point
 
@@ -71,8 +68,8 @@ Emacs
 
   - ``s`` save the change
 
-1.4 helm
-~~~~~~~~
+4 helm
+------
 
 - ``RET`` executes the default action upon exiting the Helm session
 
@@ -84,8 +81,8 @@ Emacs
 
 - ``M-U`` unmark all visible marked candidates at once
 
-1.5 ``\*buffers*``
-~~~~~~~~~~~~~~~~~~
+5 ``\*buffers*``
+----------------
 
 - ``C-x C-b`` helm-buffers
 
@@ -103,15 +100,15 @@ Emacs
 
 - ``C-x k`` is meant to kill buffers but cannot kill multiple buffers selected by ``C-SPC`` with ``RET``.
 
-1.6 ``\*kill-buffer*``
-~~~~~~~~~~~~~~~~~~~~~~
+6 ``\*kill-buffer*``
+--------------------
 
 - This seems only useful when killing the currently opened buffer
 
 - ``C-x k`` open kill-buffer
 
-1.7 Case conversion A <-> a
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7 Case conversion A <-> a
+-------------------------
 
 - ``M-l/M-u`` (``downcase-word/upcase-word``) convert following word to lower/upper case.
 
@@ -119,11 +116,11 @@ Emacs
 
 - ``C-x C-l/C-x C-u`` (``downcase-region/upcase-region``) convert region to lower/upper case
 
-1.8 Deleting and killing
-~~~~~~~~~~~~~~~~~~~~~~~~
+8 Deleting and killing
+----------------------
 
-1.8.1 Deleting by character
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+8.1 Deleting by character
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``<Del>~/~C-d`` Delete the character before/after point
 
@@ -153,8 +150,8 @@ Emacs
 
 - the auto saved file's name for "``hello.c``" is "``#hello.c#``". To recover auto-saved editing, run ``M-x recover-this-file <RET>``
 
-1.9 Dired
-~~~~~~~~~
+9 Dired
+-------
 
 - ``C-x d`` invoke Dired, ``C-x 5 d`` (``dired-other-frame``)
 
@@ -166,8 +163,8 @@ Emacs
 
 - ``(`` (``dired-hide-details-mode``)
 
-1.9.1 directories
-^^^^^^^^^^^^^^^^^
+9.1 directories
+~~~~~~~~~~~~~~~
 
 - ``+`` (``dired-create-directory``) create a directory
 
@@ -187,15 +184,15 @@ Emacs
 
 - ``a`` (``dired-find-alternate-file``) visit file or directory on current line via
 
-1.9.2 flags
-^^^^^^^^^^^
+9.2 flags
+~~~~~~~~~
 
 - ``d`` (``dired-flag-file-deletion``) flag 'D' the file for deletion
 
 - ``u`` (``dired-unmark``) remove the deletion flag
 
-1.9.3 files
-^^^^^^^^^^^
+9.3 files
+~~~~~~~~~
 
 - ``x`` (``dired-do-flagged-delete``) delete files flagged for deletion
 
@@ -217,8 +214,8 @@ Emacs
 
 - ``M MODESPEC <RET>`` (``dired-do-chmod``) change the mode
 
-1.9.4 marks
-^^^^^^^^^^^
+9.4 marks
+~~~~~~~~~
 
 - ``m`` mark with '\*'
 
@@ -232,32 +229,32 @@ Emacs
 
 - ``C-_`` (``dired-undo``) undo changes in the Dired buffer
 
-1.9.5 shell command
-^^^^^^^^^^^^^^^^^^^
+9.5 shell command
+~~~~~~~~~~~~~~~~~
 
 - ``M-x !`` ('``dired-do-shell-command``') reads a shell command string in the minibuffer, and runs that shell command on one or more files
 
-1.9.6 options
-^^^^^^^^^^^^^
+9.6 options
+~~~~~~~~~~~
 
 - ``Dired-Listing-Switches``
 
-1.10 File
-~~~~~~~~~
+10 File
+-------
 
 - save: ``C-x C-s``
 
 - save as: ``C-x C-w``
 
-1.11 Find/replace
-~~~~~~~~~~~~~~~~~
+11 Find/replace
+---------------
 
 - incremental search: ``C-s`` (forward), ``C-r`` (backward)
 
 - find all occurrence: ``M-s o`` (``occur``)
 
-1.12 font
-~~~~~~~~~
+12 font
+-------
 
 - M-x customize-face<RET>default<RET>
 
@@ -265,8 +262,8 @@ Emacs
 
 - ``C-x C-0`` reset to the default font size
 
-1.13 frames
-~~~~~~~~~~~
+13 frames
+---------
 
 - ``C-x 5 2`` (``make-frame-command``) create a new frame
 
@@ -276,8 +273,8 @@ Emacs
 
 - ``C-x 5 o`` cycle and select other frames
 
-1.14 help and info
-~~~~~~~~~~~~~~~~~~
+14 help and info
+----------------
 
 - ``C-h i`` (``info``) run Info, the GNU documentation browser
 
@@ -299,76 +296,88 @@ Emacs
 
 - ``C-h a <keyword>`` or ``M-x <keyword>`` (command apropos) list all the commands whose names contain that keyword. Eg. ``C-h a file<RET>`` displays a list of all ``M-x`` commands with "file" in their names with character-command.
 
-1.14.1 Browsing inside info
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14.1 Browsing inside info
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``L`` (``Info-history``), ``l`` (``Info-history-back``), ``r`` (``Info-history-forward``)
 
 - ``^`` (``Info-up``)
 
-1.15 history
-~~~~~~~~~~~~
+15 history
+----------
 
 - ``C-h l`` (``view-lossage``) Display last few input keystrokes and the commands run.
 
-1.16 ispell (flyspell)
-~~~~~~~~~~~~~~~~~~~~~~
+16 ispell (flyspell)
+--------------------
 
 - ``M-$`` Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.
 
   - ``i`` Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.
 
-1.17 Menubar ``F10``
-~~~~~~~~~~~~~~~~~~~~
+17 Key-binding
+--------------
 
-1.18 Moving around
-~~~~~~~~~~~~~~~~~~
+In case of conflict between key-bindings with major or minor modes, we can add a hook as the following to remove or change the undesired key-bindings. Once 'unbounded', the it will be bound to another mode in lower priority.
 
-1.18.1 by characters/lines
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code:: elisp
+
+    (add-hook 'reftex-mode-hook
+              (lambda ()
+                (define-key reftex-mode-map "\C-c&" nil)
+                (define-key reftex-mode-map "\C-c(" 'my-insert-label)))
+
+18 Menubar ``F10``
+------------------
+
+19 Moving around
+----------------
+
+19.1 by characters/lines
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-b~/~C-f`` move back/forward by one character
 
 - ``C-p~/~C-n`` move up/down by one line
 
-1.18.2 by words
-^^^^^^^^^^^^^^^
+19.2 by words
+~~~~~~~~~~~~~
 
 - ``M-b~/~M-f`` move back/forward by one word
 
-1.18.3 horizontally
-^^^^^^^^^^^^^^^^^^^
+19.3 horizontally
+~~~~~~~~~~~~~~~~~
 
 - ``C-a~/~C-e`` move to the beginning/end of the line
 
 - ``M-m`` (``back-to-indentation``) Jump to first non-whitespace character of the line
 
-1.18.4 by sentence
-^^^^^^^^^^^^^^^^^^
+19.4 by sentence
+~~~~~~~~~~~~~~~~
 
 - ``M-a~/~M-e`` move to the beginning/end of the sentence
 
-1.18.5 by paragraph
-^^^^^^^^^^^^^^^^^^^
+19.5 by paragraph
+~~~~~~~~~~~~~~~~~
 
 - ``M-{`` (``backward-paragraph``) Move back to previous paragraph beginning
 
 - ``M-}`` (``forward-paragraph``) Move forward to next paragraph end.
 
-1.18.6 by matching parentheses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+19.6 by matching parentheses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-M-f`` (``forward-sexp``)
 
 - ``C-M-b`` (``backward-sexp``)
 
-1.18.7 by buffer
-^^^^^^^^^^^^^^^^
+19.7 by buffer
+~~~~~~~~~~~~~~
 
 - ``M-<`` ``M->`` move to the beginning/end of the buffer
 
-1.18.8 by page
-^^^^^^^^^^^^^^
+19.8 by page
+~~~~~~~~~~~~
 
 - ``C-v`` ``M-v`` page down/up by one page
 
@@ -376,20 +385,20 @@ Emacs
 
 - ``C-l`` Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen
 
-1.18.9 back to previous position
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+19.9 back to previous position
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-<SPC>`` Set the mark at point
 
 - ``C-x C-x`` Set the mark at point, activate, then move back to the original point
 
-1.18.10 GO TO
-^^^^^^^^^^^^^
+19.10 GO TO
+~~~~~~~~~~~
 
 - ``M-g g`` go to the line
 
-1.19 Outline minor mode
-~~~~~~~~~~~~~~~~~~~~~~~
+20 Outline minor mode
+---------------------
 
 - A *heading line* together with all following *body lines* is called an **entry**.
 
@@ -411,8 +420,8 @@ Emacs
 
 - Everything except the heading or body with heading lines leading up to the top level are called **other**
 
-1.19.1 Motion commands
-^^^^^^^^^^^^^^^^^^^^^^
+20.1 Motion commands
+~~~~~~~~~~~~~~~~~~~~
 
 - ``C-c @ C-n`` (``outline-next-visible-heading``)     move point to the next     visible heading line
 
@@ -424,8 +433,8 @@ Emacs
 
 - ``C-c @ C-u`` (``outline-up-heading``) move point up to a lower-level visible heading line
 
-1.19.2 Visibility commands
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+20.2 Visibility commands
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-c @ C-a`` (``outline-show-all``) expand all (bufferwise)
 
@@ -439,20 +448,20 @@ Emacs
 
 - ``C-c @ C-k`` (``outline-show-branches``) show all subheadings, at all levels, of the current line
 
-1.20 Reference sites
-~~~~~~~~~~~~~~~~~~~~
+21 Reference sites
+------------------
 
 `http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/ <http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/>`_
 
-1.21 Region/Mark
-~~~~~~~~~~~~~~~~
+22 Region/Mark
+--------------
 
 - ``C-<SPC>`` (``set-mark-command``) Set the mark at point, and activate it.
 
 - ``C-x C-x`` (``exchange-point-and-mark``) Set the mark at point, and activate it; then move point where the mark used to be.
 
-1.22 Registers
-~~~~~~~~~~~~~~
+23 Registers
+------------
 
 - ``M-x view-register RET r`` display a description of what register ``r`` contains
 
@@ -480,13 +489,13 @@ Emacs
 
   - ``C-u number C-x r + r`` if the register ``r`` contains a number, increse that number by ``number``
 
-1.23 Select
-~~~~~~~~~~~
+24 Select
+---------
 
 - ``C-x h`` (``mark-whoe-buffer``) put point at beginning and mark at end of buffer (select all)
 
-1.24 Sessions
-~~~~~~~~~~~~~
+25 Sessions
+-----------
 
 - See info > (emacs)Top > Saving Emacs Sessions for detail
 
@@ -502,18 +511,27 @@ Emacs
 
 - if Emacs crashes, the lock stays on the dektop file and Emacs will ask next time whether use the locked desktop file or not. the variable ``desktop-load-locked-desktop`` valued ``nil`` will load the locked desktop file without asking
 
-1.25 Symbol
-~~~~~~~~~~~
+26 Symbol
+---------
 
 - ``C-q C-<KEY>`` Enter ``^<KEY>`` symbol, eg. ``^A`` for ``CTRL-A`` key combination
 
-1.26 Timestamp
-~~~~~~~~~~~~~~
+27 Timestamp
+------------
 
-- ``C-u M-! date`` insert timestamp
+- ``C-u M-! date`` insert timestamp manually.
 
-1.27 windows
-~~~~~~~~~~~~
+- Placing the line ``Time-stamp: " "`` or ``Time-stamp: "< >"`` within the first eight lines will make Emacs automatically put date and time on that line. The keyword ``Time-stamp`` can be customizing variables ``time-stamp-start``, ``time-stamp-end`` as the following, as an example.
+
+  ::
+
+      # -*- time-stamp-start: "DATE:\\s-"; time-stamp-end: "$"; time-stamp-format: "%:b %02d, %:y" -*-
+      #+DATE: 
+
+  This will automatically update the timestamp on ``DATE`` whenever saving any change. The function ``time-stamp-toggle-active`` will switch time-stamping on/off, the option ``time-stamp-active`` will set the mode on/off.
+
+28 windows
+----------
 
 - ``C-x o`` (``other-window``) Select another window.
 
@@ -535,8 +553,8 @@ Emacs
 
 - ``C-x +`` (``balance-windows``) Make all windows the same height.
 
-1.27.1 transpose windows
-^^^^^^^^^^^^^^^^^^^^^^^^
+28.1 transpose windows
+~~~~~~~~~~~~~~~~~~~~~~
 
 - `https:ff//www.emacswiki.org/emacs/TransposeWindows <https:ff//www.emacswiki.org/emacs/TransposeWindows>`_
 
@@ -544,20 +562,20 @@ Emacs
 
 - buttom window active and moving it to the top window: ``C-x 0 C-x 2 C-x b RET``
 
-1.28 YASnippet
-~~~~~~~~~~~~~~
+29 YASnippet
+------------
 
 - ``C-c C-n`` (``yas-new-snippet``) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use ``C-c C-c`` to save it.
 
-1.28.1 variables
-^^^^^^^^^^^^^^^^
+29.1 variables
+~~~~~~~~~~~~~~
 
 - ``yas-global-mode`` Non-nil if Yas-Global mode is enabled
 
 - ``yas-snippet-dirs`` list of top-level snippet directories
 
-1.29 Variables
-~~~~~~~~~~~~~~
+30 Variables
+------------
 
 - See `info:emacs#File Variables <emacs#File%20Variables>`_
 
@@ -585,8 +603,8 @@ Emacs
 
 - Check the variable ``safe-local-variable-values`` (in ``.emacs``) to check the list of "safe" local variables.
 
-1.30 Visual line mode
-~~~~~~~~~~~~~~~~~~~~~
+31 Visual line mode
+-------------------
 
 - wrap words when line breaking (soft lines wrap)
 
@@ -600,13 +618,13 @@ Emacs
 
 - ``Adaptive-Wrap-Prefix`` makes visual line mode respect listing item levels with proper indentation
 
-1.31 (Auto)reverting
-~~~~~~~~~~~~~~~~~~~~
+32 (Auto)reverting
+------------------
 
 - See `info:emacs#Autorevert <emacs#Autorevert>`_
 
-1.32 Performance profiling
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+33 Performance profiling
+------------------------
 
 - See `info:elisp#Profiling <elisp#Profiling>`_
 
@@ -618,204 +636,27 @@ Emacs
 
 - ``M-x profiler-stop`` after finishing the profiling.
 
-2 AucTeX
---------
-
-.. table::
-
-    +---------------------------------------+----------------------------------------------------------------------+
-    | option                                | description                                                          |
-    +=======================================+======================================================================+
-    | ``preview-auto-reveal``               | Cause previews to open automatically when entered.                   |
-    +---------------------------------------+----------------------------------------------------------------------+
-    | ``helm-bibtex-library-path``          | A directory or list of directories in which PDFs are stored.         |
-    +---------------------------------------+----------------------------------------------------------------------+
-    | ``helm-candidate-number-limit``       | Global limit for number of candidates displayed.                     |
-    +---------------------------------------+----------------------------------------------------------------------+
-    | ``helm-ff-candidate-number-limit``    | The ‘helm-candidate-number-limit’ for ‘helm-find-files’ and friends. |
-    +---------------------------------------+----------------------------------------------------------------------+
-    | ``helm-occur-candidate-number-limit`` | Value of ‘helm-candidate-number-limit’ for helm-occur.               |
-    +---------------------------------------+----------------------------------------------------------------------+
-    | \                                     | \                                                                    |
-    +---------------------------------------+----------------------------------------------------------------------+
-
-3 Org
------
-
-3.1 Code block
-~~~~~~~~~~~~~~
-
-::
-
-    #+NAME: <name>
-    #+BEGIN_SRC <language> <switches> <header arguments>
-      <body>
-    #+END_SRC
-
-3.2 Example block
-~~~~~~~~~~~~~~~~~
-
-- ``#+BEGIN_EXAMPLE`` / ``#+END_EXAMPLE``
-
-- ``:`` *``Some example from a text file.``*
-
-- ``#+BEGIN_SRC emacs-lisp`` / ``#+END_SRC``
-
-3.3 Export options
-~~~~~~~~~~~~~~~~~~
-
-- ``#+TITLE: the title to be shown``
-
-- ``#+AUTHOR: the author (default taken from user-full-name)``
-
-- ``#+DATE: a date, fixed, or an Org timestamp``
-
-- ``#+EMAIL: his/her email address (default from user-mail-address)``
-
-- ``#+LANGUAGE: language, e.g. ‘en’ (org-export-default-language)``
-
-- ``#+OPTIONS: H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t ...``
-
-3.4 Exporting
-~~~~~~~~~~~~~
-
-3.4.1 HTML export command
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- ``C-c C-e h h`` (``org-html-export-to-html``) Export as HTML file with a ‘.html’ extension.
-
-3.5 Font
-~~~~~~~~
-
-- ``\*bold*``, ``/italic/``, ``_underlined_``, ``=verbatim=``, ``~code~``, ``+strike-through+``, ``/~italic code~/``
-
-3.6 Footnote
-~~~~~~~~~~~~
-
-- ``[fn:1]`` footnote definition when at column 0
-
-- ``C-c C-x f`` switch footnote definition / (first) reference or create a new footnote
-
-- ``C-c C-c`` Jump between definition and reference.
-
-3.7 Images
-~~~~~~~~~~
-
-- ``./img/cat.jpg``
-
-- ``#+CAPTION: the caption for the next figure link (or table)`` / ``#+NAME: fig:SED-HR4049`` ``[[./img/a.jpg]]``
-
-3.8 Insert entries
-~~~~~~~~~~~~~~~~~~
-
-- ``M-<RET>`` (``org-meta-return``) Insert a new item of the same level as the current one.
-
-- ``C-<RET>`` (``org-insert-heading-respect-content``) Insert a new heading at the end of the current subtree.
-
-- ``<TAB>-<RET>`` new list item at a new level
-
-- ``<M>-<RIGHT>`` make current item one level lower (Promoting/Demoting headings)
-
-- ``<M>-<LEFT>`` make current item one level higher (Promoting/Demoting headings)
-
-- ``<TAB>`` (``org-cycle``) The first ``<TAB>`` demotes the entry to become a child of the previous one.  The next ``<TAB>`` makes it a parent, and so on, all the way to top level.  Yet another ``<TAB>``, and you are back to the initial level.
-
-3.9 Latex preview
-~~~~~~~~~~~~~~~~~
-
-- ``org-compile-file: File "/tmp/orgtex5473MjV.dvi" wasn’t produced. Please adjust ’dvipng’ part of ‘org-preview-latex-process-alist’.``
-  a log is generated, ``/tmp/orgtex9997XKu.log``. Something interesting is in this log: ``LaTeX Error: File `wrapfig.sty' not found.`` Then a quick search tells me texlive-latex-extra package is missing.
-
-- ``C-c C-x C-l`` toggle latex preview
-
-3.10 Motion
-~~~~~~~~~~~
-
-- ``C-c C-n`` (``org-next-visible-heading``) next heading
-
-- ``C-c C-p`` (``org-previous-visible-heading``) previous heading
-
-- ``C-c C-u`` (``outline-up-heading``) backward to higher level heading
-
-3.11 Moving subtrees up/down
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- ``M-<UP>`` (``org-move-subtree-up``) Move subtree up.
-
-- ``M-<DOWN>`` (``org-move-subtree-down``) Move subtree down.
-
-3.12 Paragraphs
-~~~~~~~~~~~~~~~
-
-- ``#+BEGIN_VERSE`` / ``#+END_VERSE``
-
-- ``#+BEGIN_QUOTE`` / ``#+END_QUOTE``
-
-- ``#+BEGIN_CENTER`` / ``#+END_CENTER``
-
-3.13 Promoting/Demoting headings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- ``M-<LEFT>`` (``org-do-promote``) Promote current heading by one level.
-
-- ``M-<RIGHT>`` (``org-do-demote``) Demote current heading by one level.
-
-- ``M-S-<LEFT>`` (``org-promote-subtree``) Promote the current subtree by one level.
-
-- ``M-S-<RIGHT>`` (``org-demote-subtree``) Demote the current subtree by one level.
-
-3.14 Sort
-~~~~~~~~~
-
-- ``C-c ^`` Sort the plain list. Prompt for the sorting method: numerically, alphabetically, by time, or by custom function.
-
-3.15 Special symbols
-~~~~~~~~~~~~~~~~~~~~
-
-- ``\`` and maybe a few letters, then ``M-TAB`` to see possible completions of special symbols. If you need such a symbol inside a word, terminate it with a pair of curly brackets for eg. ``\pi{}d``.
-
-- ``command org-entities-help`` a command to browse the complete list from a dedicated buffer
-
-- ``org-entities-user`` define own symbols
-
-- ``C-c C-x \`` (``org-toggle-pretty-entities``) Toggle display of entities as UTF-8 characters. This does not change the buffer content which remains plain ASCII, but it overlays the UTF-8 character for display purposes only.
-
-3.16 Superscript and subscript
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- ``^`` and ``_`` are used to indicate super- and subscripts. We may surround multi-character sub- and superscripts with curly braces.
-
-- ``org-use-sub-superscripts`` a variable that determines whether to interprete ``_`` as a subscript or not. Eg. setting this variable to ``{}``, '``a_b``' is not interpreted as a subscript, but '``a_{b}`` is.
-
-- ``C-c C-x \`` (``org-toggle-pretty-entities``) formats sub- and superscripts in a WYSIWYM way.
-
-3.17 time stamp
-~~~~~~~~~~~~~~~
-
-- ``C-c .`` (``org-time-stamp``) Prompt for a date and insert a corresponding timestamp. When the cursor is at an existing timestamp in the buffer, the command is used to modify this timestamp instead of inserting a new one. When this command is used twice in succession, a time range is inserted.
-
-- ``C-c !`` (``org-time-stamp-inactive``) Like ``C-c .``, but insert an inactive timestamp that will not cause an agenda entry.
-
-- ``C-u C-c .`` / ``C-u C-c !`` Like ``C-c .`` and ``C-c !``, but use the alternative format which contains date and time. The default time can be rounded to multiples of 5 minutes, see the option ``org-time-stamp-rounding-minutes``.
-
-3.17.1 variables
-^^^^^^^^^^^^^^^^
-
-- ``org-hide-emphasis-markers``
-
-3.18 Visibility cycling
-~~~~~~~~~~~~~~~~~~~~~~~
-
-- ``<TAB>`` (``org-cycle``) Subtree cycling
-
-4 emacsclient
--------------
+34 emacsclient
+--------------
 
 .. code:: shell
 
     emacsclient -e '(with-current-buffer "Downloads" (dired-previous-line 3))'
 
-5 Magit
--------
+35 Magit
+--------
 
-.. table::
+36 Hide-show mode
+-----------------
+
+- ``hs-minor-mode``
+
+- ``C-c @ C-a``, ``C-c @ C-M-s`` (``hs-show-all``)
+
+- ``C-c @ C-t``, ``C-c @ C-M-h`` (``hs-hide-all``)
+
+- ``C-c @ C-s`` (``hs-show-block``) Select a block and show it.
+
+- ``hs-hide-block`` Select a block and hide it.
+
+- ``C-c @ C-e``, ``C-c @ C-c`` (``hs-toggle-hiding``) Toggle hiding/showing of a block.

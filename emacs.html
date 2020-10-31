@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="LaTeX" href="latex.html" />
+    <link rel="next" title="Orgmode" href="orgmode.html" />
     <link rel="prev" title="Welcome to Notes’s documentation!" href="index.html" /> 
 </head>
 
@@ -84,110 +84,129 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Emacs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1 Emacs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#abbrevs-mode">1.1 Abbrevs mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#options">1.1.1 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abbrevs-mode">1 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#options">1.1 options</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ansi-term-mode">1.2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bookmarks">1.3 Bookmarks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#helm">1.4 helm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#buffers">1.5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kill-buffer">1.6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#case-conversion-a-a">1.7 Case conversion A &lt;-&gt; a</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deleting-and-killing">1.8 Deleting and killing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#deleting-by-character">1.8.1 Deleting by character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bookmarks">3 Bookmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#helm">4 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-and-killing">8 Deleting and killing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-by-character">8.1 Deleting by character</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#dired">1.9 Dired</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#directories">1.9.1 directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#flags">1.9.2 flags</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#files">1.9.3 files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#marks">1.9.4 marks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#shell-command">1.9.5 shell command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">1.9.6 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dired">9 Dired</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directories">9.1 directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flags">9.2 flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files">9.3 files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#marks">9.4 marks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shell-command">9.5 shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">9.6 options</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#file">1.10 File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#find-replace">1.11 Find/replace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#font">1.12 font</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#frames">1.13 frames</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#help-and-info">1.14 help and info</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#browsing-inside-info">1.14.1 Browsing inside info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file">10 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-replace">11 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#font">12 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frames">13 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help-and-info">14 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#browsing-inside-info">14.1 Browsing inside info</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#history">1.15 history</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ispell-flyspell">1.16 ispell (flyspell)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#menubar-f10">1.17 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#moving-around">1.18 Moving around</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#by-characters-lines">1.18.1 by characters/lines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#by-words">1.18.2 by words</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#horizontally">1.18.3 horizontally</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#by-sentence">1.18.4 by sentence</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#by-paragraph">1.18.5 by paragraph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#by-matching-parentheses">1.18.6 by matching parentheses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#by-buffer">1.18.7 by buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#by-page">1.18.8 by page</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#back-to-previous-position">1.18.9 back to previous position</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#go-to">1.18.10 GO TO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#history">15 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ispell-flyspell">16 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-binding">17 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-around">19 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#by-characters-lines">19.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-words">19.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#horizontally">19.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-sentence">19.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-paragraph">19.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-matching-parentheses">19.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-buffer">19.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#by-page">19.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#back-to-previous-position">19.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#go-to">19.10 GO TO</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#outline-minor-mode">1.19 Outline minor mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#motion-commands">1.19.1 Motion commands</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visibility-commands">1.19.2 Visibility commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outline-minor-mode">20 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#motion-commands">20.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visibility-commands">20.2 Visibility commands</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#reference-sites">1.20 Reference sites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#region-mark">1.21 Region/Mark</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#registers">1.22 Registers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#select">1.23 Select</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sessions">1.24 Sessions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#symbol">1.25 Symbol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#timestamp">1.26 Timestamp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#windows">1.27 windows</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#transpose-windows">1.27.1 transpose windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference-sites">21 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#region-mark">22 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#registers">23 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#select">24 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sessions">25 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#symbol">26 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#timestamp">27 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">28 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#transpose-windows">28.1 transpose windows</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#yasnippet">1.28 YASnippet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#variables">1.28.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#yasnippet">29 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variables">29.1 variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">1.29 Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#visual-line-mode">1.30 Visual line mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#auto-reverting">1.31 (Auto)reverting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#performance-profiling">1.32 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">30 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-line-mode">31 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-reverting">32 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#performance-profiling">33 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#emacsclient">34 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#magit">35 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#auctex">2 AucTeX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#org">3 Org</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#code-block">3.1 Code block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example-block">3.2 Example block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#export-options">3.3 Export options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exporting">3.4 Exporting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#html-export-command">3.4.1 HTML export command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">1 Code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">2 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">3 Export options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">4 Exporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">4.1 HTML export command</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.5 Font</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#footnote">3.6 Footnote</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#images">3.7 Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#insert-entries">3.8 Insert entries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#latex-preview">3.9 Latex preview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#motion">3.10 Motion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#moving-subtrees-up-down">3.11 Moving subtrees up/down</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#paragraphs">3.12 Paragraphs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#promoting-demoting-headings">3.13 Promoting/Demoting headings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sort">3.14 Sort</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#special-symbols">3.15 Special symbols</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#superscript-and-subscript">3.16 Superscript and subscript</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#time-stamp">3.17 time stamp</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id5">3.17.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">5 Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">6 Footnote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">7 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">8 Insert entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">9 Latex preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">10 Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">11 Moving subtrees up/down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">12 Paragraphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">13 Promoting/Demoting headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">14 Repeated tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">15 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">16 Special symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">17 Superscript and subscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">18 time stamp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">18.1 automatic time-stamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">18.2 variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#visibility-cycling">3.18 Visibility cycling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">19 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">20 Visibility cycling</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#emacsclient">4 emacsclient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#magit">5 Magit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auctex.html">AUCTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id1">1 AucTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#macros">2 Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#style-files">3 style files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#specifying-locations-of-style-files">3.1 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#global-styles">3.1.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#private-styles">3.1.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#local-styles">3.1.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#all-combined">3.1.4 All Combined</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#options">3.2 Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id2">4 ??</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -263,7 +282,45 @@
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#character">1 character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#completion">2 completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#history">3 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#line">4 line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#misc">5 misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#startup-files">6 Startup Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#word">7 word</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="make.html">Make</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="make.html#overview">1 overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#rule">2 Rule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#explicit-rules">2.1 Explicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#implicit-rules">2.2 Implicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#last-resort-rule">2.3 Last-resort rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#operators">3 operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#assignments">4 assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#directives">5 directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#functions">6 functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-variables">7 special variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-targets">8 special targets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#phony-targets">8.1 Phony targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#clean">8.2 clean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#silent">8.3 silent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#the-dollar-sign">9 The dollar sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#recipe-echoing">10 Recipe echoing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#flags">11 flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#conditional">12 conditional</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifdef-ifndef">12.1 <code class="docutils literal notranslate"><span class="pre">ifdef</span></code>, <code class="docutils literal notranslate"><span class="pre">ifndef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifeq-ifneq">12.2 <code class="docutils literal notranslate"><span class="pre">ifeq</span></code>, <code class="docutils literal notranslate"><span class="pre">ifneq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="elisp.html">Elisp</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="elisp.html#terminology">1 terminology</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="elisp.html#keyword">1.1 keyword</a></li>
@@ -289,6 +346,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math.html">math dump</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="math.html#binomial-coefficients">1 binomial coefficients</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="math.html#identities">1.1 identities</a></li>
@@ -383,15 +441,13 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">Mon Oct 26 13:40:38 EDT 2020</td>
+<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">October 31, 2020</td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
-<div class="section" id="id1">
-<h2>1 Emacs<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="abbrevs-mode">
-<h3>1.1 Abbrevs mode<a class="headerlink" href="#abbrevs-mode" title="Permalink to this headline">¶</a></h3>
+<h2>1 Abbrevs mode<a class="headerlink" href="#abbrevs-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://www.emacswiki.org/emacs/AbbrevMode">https://www.emacswiki.org/emacs/AbbrevMode</a></li>
 <li><code class="docutils literal notranslate"><span class="pre">abbrev-mode</span></code> start the (minor) mode</li>
@@ -405,7 +461,7 @@
 </li>
 </ul>
 <div class="section" id="options">
-<h4>1.1.1 options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
+<h3>1.1 options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">abbrev-file-name</span></code> The abbrevs is saved in a file at a path specified by this variable (default: <code class="docutils literal notranslate"><span class="pre">\~/.emacs.d/abbrev_defs</span></code>)</li>
 <li><code class="docutils literal notranslate"><span class="pre">save-abbrevs</span></code></li>
@@ -413,7 +469,7 @@
 </div>
 </div>
 <div class="section" id="ansi-term-mode">
-<h3>1.2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode<a class="headerlink" href="#ansi-term-mode" title="Permalink to this headline">¶</a></h3>
+<h2>2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode<a class="headerlink" href="#ansi-term-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-j</span></code> (<code class="docutils literal notranslate"><span class="pre">term-line-mode</span></code>) switch to line mode (acts like an editor).</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-k</span></code> (<code class="docutils literal notranslate"><span class="pre">term-char-mode</span></code>) switch to char mode (acts like a usual terminal).</li>
@@ -424,7 +480,7 @@
 </ul>
 </div>
 <div class="section" id="bookmarks">
-<h3>1.3 Bookmarks<a class="headerlink" href="#bookmarks" title="Permalink to this headline">¶</a></h3>
+<h2>3 Bookmarks<a class="headerlink" href="#bookmarks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">m</span></code> (<code class="docutils literal notranslate"><span class="pre">bookmark-set</span></code>) Set the bookmark for the visited file, at point</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">list-bookmarks</span></code>) list all bookmarks</li>
@@ -440,7 +496,7 @@
 </ul>
 </div>
 <div class="section" id="helm">
-<h3>1.4 helm<a class="headerlink" href="#helm" title="Permalink to this headline">¶</a></h3>
+<h2>4 helm<a class="headerlink" href="#helm" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">RET</span></code> executes the default action upon exiting the Helm session</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-j</span></code> executes the default action but without exiting the Helm session</li>
@@ -450,7 +506,7 @@
 </ul>
 </div>
 <div class="section" id="buffers">
-<h3>1.5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code><a class="headerlink" href="#buffers" title="Permalink to this headline">¶</a></h3>
+<h2>5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code><a class="headerlink" href="#buffers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-b</span></code> helm-buffers</li>
 <li><code class="docutils literal notranslate"><span class="pre">M-SPC</span></code> or <code class="docutils literal notranslate"><span class="pre">C-SPC</span></code> mark</li>
@@ -463,14 +519,14 @@
 </ul>
 </div>
 <div class="section" id="kill-buffer">
-<h3>1.6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code><a class="headerlink" href="#kill-buffer" title="Permalink to this headline">¶</a></h3>
+<h2>6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code><a class="headerlink" href="#kill-buffer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>This seems only useful when killing the currently opened buffer</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">k</span></code> open kill-buffer</li>
 </ul>
 </div>
 <div class="section" id="case-conversion-a-a">
-<h3>1.7 Case conversion A &lt;-&gt; a<a class="headerlink" href="#case-conversion-a-a" title="Permalink to this headline">¶</a></h3>
+<h2>7 Case conversion A &lt;-&gt; a<a class="headerlink" href="#case-conversion-a-a" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-l/M-u</span></code> (<code class="docutils literal notranslate"><span class="pre">downcase-word/upcase-word</span></code>) convert following word to lower/upper case.</li>
 <li><code class="docutils literal notranslate"><span class="pre">M-c</span></code> (<code class="docutils literal notranslate"><span class="pre">capitalize-word</span></code>) capitalize the following word.</li>
@@ -478,9 +534,9 @@
 </ul>
 </div>
 <div class="section" id="deleting-and-killing">
-<h3>1.8 Deleting and killing<a class="headerlink" href="#deleting-and-killing" title="Permalink to this headline">¶</a></h3>
+<h2>8 Deleting and killing<a class="headerlink" href="#deleting-and-killing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="deleting-by-character">
-<h4>1.8.1 Deleting by character<a class="headerlink" href="#deleting-by-character" title="Permalink to this headline">¶</a></h4>
+<h3>8.1 Deleting by character<a class="headerlink" href="#deleting-by-character" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">&lt;Del&gt;~/~C-d</span></code> Delete the character before/after point</li>
 <li><code class="docutils literal notranslate"><span class="pre">M-d~/~M-&lt;Del&gt;</span></code> Kill forward/back to the end/beginning of the next/previous word</li>
@@ -500,7 +556,7 @@
 </div>
 </div>
 <div class="section" id="dired">
-<h3>1.9 Dired<a class="headerlink" href="#dired" title="Permalink to this headline">¶</a></h3>
+<h2>9 Dired<a class="headerlink" href="#dired" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">d</span></code> invoke Dired, <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-other-frame</span></code>)</li>
 <li><code class="docutils literal notranslate"><span class="pre">g</span></code> re-read all directories (retains all marks)</li>
@@ -511,7 +567,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">(</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-hide-details-mode</span></code>)</li>
 </ul>
 <div class="section" id="directories">
-<h4>1.9.1 directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h4>
+<h3>9.1 directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-create-directory</span></code>) create a directory</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-M-n</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-subdir</span></code>) go to next subdirectory header line regardless of level</li>
@@ -525,14 +581,14 @@
 </ul>
 </div>
 <div class="section" id="flags">
-<h4>1.9.2 flags<a class="headerlink" href="#flags" title="Permalink to this headline">¶</a></h4>
+<h3>9.2 flags<a class="headerlink" href="#flags" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-flag-file-deletion</span></code>) flag ‘D’ the file for deletion</li>
 <li><code class="docutils literal notranslate"><span class="pre">u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark</span></code>) remove the deletion flag</li>
 </ul>
 </div>
 <div class="section" id="files">
-<h4>1.9.3 files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h4>
+<h3>9.3 files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">x</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-flagged-delete</span></code>) delete files flagged for deletion</li>
 <li>to create a new file in the directory, just use <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-f</span></code> as usual</li>
@@ -547,7 +603,7 @@
 </ul>
 </div>
 <div class="section" id="marks">
-<h4>1.9.4 marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h4>
+<h3>9.4 marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">m</span></code> mark with ‘*’</li>
 <li><code class="docutils literal notranslate"><span class="pre">u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark</span></code>) remove any mark</li>
@@ -558,34 +614,34 @@
 </ul>
 </div>
 <div class="section" id="shell-command">
-<h4>1.9.5 shell command<a class="headerlink" href="#shell-command" title="Permalink to this headline">¶</a></h4>
+<h3>9.5 shell command<a class="headerlink" href="#shell-command" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">!</span></code> (‘<code class="docutils literal notranslate"><span class="pre">dired-do-shell-command</span></code>’) reads a shell command string in the minibuffer, and runs that shell command on one or more files</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h4>1.9.6 options<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h3>9.6 options<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">Dired-Listing-Switches</span></code></li>
 </ul>
 </div>
 </div>
 <div class="section" id="file">
-<h3>1.10 File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
+<h2>10 File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>save: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code></li>
 <li>save as: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-w</span></code></li>
 </ul>
 </div>
 <div class="section" id="find-replace">
-<h3>1.11 Find/replace<a class="headerlink" href="#find-replace" title="Permalink to this headline">¶</a></h3>
+<h2>11 Find/replace<a class="headerlink" href="#find-replace" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>incremental search: <code class="docutils literal notranslate"><span class="pre">C-s</span></code> (forward), <code class="docutils literal notranslate"><span class="pre">C-r</span></code> (backward)</li>
 <li>find all occurrence: <code class="docutils literal notranslate"><span class="pre">M-s</span> <span class="pre">o</span></code> (<code class="docutils literal notranslate"><span class="pre">occur</span></code>)</li>
 </ul>
 </div>
 <div class="section" id="font">
-<h3>1.12 font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h3>
+<h2>12 font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>M-x customize-face&lt;RET&gt;default&lt;RET&gt;</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-+</span></code> (<code class="docutils literal notranslate"><span class="pre">(text-scale-adjust</span> <span class="pre">INC)</span></code>) / <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C--</span></code> (<code class="docutils literal notranslate"><span class="pre">(text-scale-adjust</span> <span class="pre">-INC)</span></code>) to increase/decrease the size.</li>
@@ -593,7 +649,7 @@
 </ul>
 </div>
 <div class="section" id="frames">
-<h3>1.13 frames<a class="headerlink" href="#frames" title="Permalink to this headline">¶</a></h3>
+<h2>13 frames<a class="headerlink" href="#frames" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">2</span></code> (<code class="docutils literal notranslate"><span class="pre">make-frame-command</span></code>) create a new frame</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-frame</span></code>) delete the selected frame</li>
@@ -602,7 +658,7 @@
 </ul>
 </div>
 <div class="section" id="help-and-info">
-<h3>1.14 help and info<a class="headerlink" href="#help-and-info" title="Permalink to this headline">¶</a></h3>
+<h2>14 help and info<a class="headerlink" href="#help-and-info" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">info</span></code>) run Info, the GNU documentation browser</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-bindings</span></code>) display all active key bindings</li>
@@ -616,7 +672,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">a</span> <span class="pre">&lt;keyword&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">&lt;keyword&gt;</span></code> (command apropos) list all the commands whose names contain that keyword. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">a</span> <span class="pre">file&lt;RET&gt;</span></code> displays a list of all <code class="docutils literal notranslate"><span class="pre">M-x</span></code> commands with “file” in their names with character-command.</li>
 </ul>
 <div class="section" id="browsing-inside-info">
-<h4>1.14.1 Browsing inside info<a class="headerlink" href="#browsing-inside-info" title="Permalink to this headline">¶</a></h4>
+<h3>14.1 Browsing inside info<a class="headerlink" href="#browsing-inside-info" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">L</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history</span></code>), <code class="docutils literal notranslate"><span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history-back</span></code>), <code class="docutils literal notranslate"><span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history-forward</span></code>)</li>
 <li><code class="docutils literal notranslate"><span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-up</span></code>)</li>
@@ -624,13 +680,13 @@
 </div>
 </div>
 <div class="section" id="history">
-<h3>1.15 history<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h3>
+<h2>15 history<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">view-lossage</span></code>) Display last few input keystrokes and the commands run.</li>
 </ul>
 </div>
 <div class="section" id="ispell-flyspell">
-<h3>1.16 ispell (flyspell)<a class="headerlink" href="#ispell-flyspell" title="Permalink to this headline">¶</a></h3>
+<h2>16 ispell (flyspell)<a class="headerlink" href="#ispell-flyspell" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-$</span></code> Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.<ul>
 <li><code class="docutils literal notranslate"><span class="pre">i</span></code> Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.</li>
@@ -638,59 +694,69 @@
 </li>
 </ul>
 </div>
+<div class="section" id="key-binding">
+<h2>17 Key-binding<a class="headerlink" href="#key-binding" title="Permalink to this headline">¶</a></h2>
+<p>In case of conflict between key-bindings with major or minor modes, we can add a hook as the following to remove or change the undesired key-bindings. Once ‘unbounded’, the it will be bound to another mode in lower priority.</p>
+<div class="code elisp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="s1">&#39;reftex-mode-hook</span>
+          <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+            <span class="p">(</span><span class="n">define</span><span class="o">-</span><span class="n">key</span> <span class="n">reftex</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="nb">map</span> <span class="s2">&quot;\C-c&amp;&quot;</span> <span class="n">nil</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">define</span><span class="o">-</span><span class="n">key</span> <span class="n">reftex</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="nb">map</span> <span class="s2">&quot;\C-c(&quot;</span> <span class="s1">&#39;my-insert-label)))</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="menubar-f10">
-<h3>1.17 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code><a class="headerlink" href="#menubar-f10" title="Permalink to this headline">¶</a></h3>
+<h2>18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code><a class="headerlink" href="#menubar-f10" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="moving-around">
-<h3>1.18 Moving around<a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h3>
+<h2>19 Moving around<a class="headerlink" href="#moving-around" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="by-characters-lines">
-<h4>1.18.1 by characters/lines<a class="headerlink" href="#by-characters-lines" title="Permalink to this headline">¶</a></h4>
+<h3>19.1 by characters/lines<a class="headerlink" href="#by-characters-lines" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-b~/~C-f</span></code> move back/forward by one character</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-p~/~C-n</span></code> move up/down by one line</li>
 </ul>
 </div>
 <div class="section" id="by-words">
-<h4>1.18.2 by words<a class="headerlink" href="#by-words" title="Permalink to this headline">¶</a></h4>
+<h3>19.2 by words<a class="headerlink" href="#by-words" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-b~/~M-f</span></code> move back/forward by one word</li>
 </ul>
 </div>
 <div class="section" id="horizontally">
-<h4>1.18.3 horizontally<a class="headerlink" href="#horizontally" title="Permalink to this headline">¶</a></h4>
+<h3>19.3 horizontally<a class="headerlink" href="#horizontally" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-a~/~C-e</span></code> move to the beginning/end of the line</li>
 <li><code class="docutils literal notranslate"><span class="pre">M-m</span></code> (<code class="docutils literal notranslate"><span class="pre">back-to-indentation</span></code>) Jump to first non-whitespace character of the line</li>
 </ul>
 </div>
 <div class="section" id="by-sentence">
-<h4>1.18.4 by sentence<a class="headerlink" href="#by-sentence" title="Permalink to this headline">¶</a></h4>
+<h3>19.4 by sentence<a class="headerlink" href="#by-sentence" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-a~/~M-e</span></code> move to the beginning/end of the sentence</li>
 </ul>
 </div>
 <div class="section" id="by-paragraph">
-<h4>1.18.5 by paragraph<a class="headerlink" href="#by-paragraph" title="Permalink to this headline">¶</a></h4>
+<h3>19.5 by paragraph<a class="headerlink" href="#by-paragraph" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-{</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-paragraph</span></code>) Move back to previous paragraph beginning</li>
 <li><code class="docutils literal notranslate"><span class="pre">M-}</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-paragraph</span></code>) Move forward to next paragraph end.</li>
 </ul>
 </div>
 <div class="section" id="by-matching-parentheses">
-<h4>1.18.6 by matching parentheses<a class="headerlink" href="#by-matching-parentheses" title="Permalink to this headline">¶</a></h4>
+<h3>19.6 by matching parentheses<a class="headerlink" href="#by-matching-parentheses" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-M-f</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-sexp</span></code>)</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-M-b</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-sexp</span></code>)</li>
 </ul>
 </div>
 <div class="section" id="by-buffer">
-<h4>1.18.7 by buffer<a class="headerlink" href="#by-buffer" title="Permalink to this headline">¶</a></h4>
+<h3>19.7 by buffer<a class="headerlink" href="#by-buffer" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">M-&gt;</span></code> move to the beginning/end of the buffer</li>
 </ul>
 </div>
 <div class="section" id="by-page">
-<h4>1.18.8 by page<a class="headerlink" href="#by-page" title="Permalink to this headline">¶</a></h4>
+<h3>19.8 by page<a class="headerlink" href="#by-page" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-v</span></code> <code class="docutils literal notranslate"><span class="pre">M-v</span></code> page down/up by one page</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-M-v</span></code> scroll the other window</li>
@@ -698,21 +764,21 @@
 </ul>
 </div>
 <div class="section" id="back-to-previous-position">
-<h4>1.18.9 back to previous position<a class="headerlink" href="#back-to-previous-position" title="Permalink to this headline">¶</a></h4>
+<h3>19.9 back to previous position<a class="headerlink" href="#back-to-previous-position" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-&lt;SPC&gt;</span></code> Set the mark at point</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-x</span></code> Set the mark at point, activate, then move back to the original point</li>
 </ul>
 </div>
 <div class="section" id="go-to">
-<h4>1.18.10 GO TO<a class="headerlink" href="#go-to" title="Permalink to this headline">¶</a></h4>
+<h3>19.10 GO TO<a class="headerlink" href="#go-to" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-g</span> <span class="pre">g</span></code> go to the line</li>
 </ul>
 </div>
 </div>
 <div class="section" id="outline-minor-mode">
-<h3>1.19 Outline minor mode<a class="headerlink" href="#outline-minor-mode" title="Permalink to this headline">¶</a></h3>
+<h2>20 Outline minor mode<a class="headerlink" href="#outline-minor-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>A <em>heading line</em> together with all following <em>body lines</em> is called an <strong>entry</strong>.<ul>
 <li><code class="docutils literal notranslate"><span class="pre">outline-hide-entry</span></code> and <code class="docutils literal notranslate"><span class="pre">outline-show-entry</span></code> only applies to the body.</li>
@@ -728,7 +794,7 @@
 <li>Everything except the heading or body with heading lines leading up to the top level are called <strong>other</strong></li>
 </ul>
 <div class="section" id="motion-commands">
-<h4>1.19.1 Motion commands<a class="headerlink" href="#motion-commands" title="Permalink to this headline">¶</a></h4>
+<h3>20.1 Motion commands<a class="headerlink" href="#motion-commands" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-next-visible-heading</span></code>)     move point to the next     visible heading line</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-p</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-previous-visible-heading</span></code>) move point to the previous visible heading line</li>
@@ -738,7 +804,7 @@
 </ul>
 </div>
 <div class="section" id="visibility-commands">
-<h4>1.19.2 Visibility commands<a class="headerlink" href="#visibility-commands" title="Permalink to this headline">¶</a></h4>
+<h3>20.2 Visibility commands<a class="headerlink" href="#visibility-commands" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-a</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-all</span></code>) expand all (bufferwise)</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-sublevels</span></code>) collapse all (bufferwise) sublevels</li>
@@ -750,18 +816,18 @@
 </div>
 </div>
 <div class="section" id="reference-sites">
-<h3>1.20 Reference sites<a class="headerlink" href="#reference-sites" title="Permalink to this headline">¶</a></h3>
+<h2>21 Reference sites<a class="headerlink" href="#reference-sites" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/">http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/</a></p>
 </div>
 <div class="section" id="region-mark">
-<h3>1.21 Region/Mark<a class="headerlink" href="#region-mark" title="Permalink to this headline">¶</a></h3>
+<h2>22 Region/Mark<a class="headerlink" href="#region-mark" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-&lt;SPC&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">set-mark-command</span></code>) Set the mark at point, and activate it.</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-x</span></code> (<code class="docutils literal notranslate"><span class="pre">exchange-point-and-mark</span></code>) Set the mark at point, and activate it; then move point where the mark used to be.</li>
 </ul>
 </div>
 <div class="section" id="registers">
-<h3>1.22 Registers<a class="headerlink" href="#registers" title="Permalink to this headline">¶</a></h3>
+<h2>23 Registers<a class="headerlink" href="#registers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">view-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> display a description of what register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains</li>
 <li>Saving Positions<ul>
@@ -785,13 +851,13 @@
 </ul>
 </div>
 <div class="section" id="select">
-<h3>1.23 Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<h2>24 Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">h</span></code> (<code class="docutils literal notranslate"><span class="pre">mark-whoe-buffer</span></code>) put point at beginning and mark at end of buffer (select all)</li>
 </ul>
 </div>
 <div class="section" id="sessions">
-<h3>1.24 Sessions<a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h3>
+<h2>25 Sessions<a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>See info &gt; (emacs)Top &gt; Saving Emacs Sessions for detail</li>
 <li>if the variable <code class="docutils literal notranslate"><span class="pre">desktop-save-mode</span></code> is <code class="docutils literal notranslate"><span class="pre">t</span></code>,<ul>
@@ -805,19 +871,27 @@
 </ul>
 </div>
 <div class="section" id="symbol">
-<h3>1.25 Symbol<a class="headerlink" href="#symbol" title="Permalink to this headline">¶</a></h3>
+<h2>26 Symbol<a class="headerlink" href="#symbol" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-q</span> <span class="pre">C-&lt;KEY&gt;</span></code> Enter <code class="docutils literal notranslate"><span class="pre">^&lt;KEY&gt;</span></code> symbol, eg. <code class="docutils literal notranslate"><span class="pre">^A</span></code> for <code class="docutils literal notranslate"><span class="pre">CTRL-A</span></code> key combination</li>
 </ul>
 </div>
 <div class="section" id="timestamp">
-<h3>1.26 Timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">M-!</span> <span class="pre">date</span></code> insert timestamp</li>
+<h2>27 Timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">M-!</span> <span class="pre">date</span></code> insert timestamp manually.</p>
+</li>
+<li><p class="first">Placing the line <code class="docutils literal notranslate"><span class="pre">Time-stamp:</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">Time-stamp:</span> <span class="pre">&quot;&lt;</span> <span class="pre">&gt;&quot;</span></code> within the first eight lines will make Emacs automatically put date and time on that line. The keyword <code class="docutils literal notranslate"><span class="pre">Time-stamp</span></code> can be customizing variables <code class="docutils literal notranslate"><span class="pre">time-stamp-start</span></code>, <code class="docutils literal notranslate"><span class="pre">time-stamp-end</span></code> as the following, as an example.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- time-stamp-start: &quot;DATE:\\s-&quot;; time-stamp-end: &quot;$&quot;; time-stamp-format: &quot;%:b %02d, %:y&quot; -*-</span>
+<span class="c1">#+DATE:</span>
+</pre></div>
+</div>
+<p>This will automatically update the timestamp on <code class="docutils literal notranslate"><span class="pre">DATE</span></code> whenever saving any change. The function <code class="docutils literal notranslate"><span class="pre">time-stamp-toggle-active</span></code> will switch time-stamping on/off, the option <code class="docutils literal notranslate"><span class="pre">time-stamp-active</span></code> will set the mode on/off.</p>
+</li>
 </ul>
 </div>
 <div class="section" id="windows">
-<h3>1.27 windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<h2>28 windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">o</span></code> (<code class="docutils literal notranslate"><span class="pre">other-window</span></code>) Select another window.</li>
 <li><code class="docutils literal notranslate"><span class="pre">C-M-v</span></code> (<code class="docutils literal notranslate"><span class="pre">scroll-other-window</span></code>) Scroll the next window.</li>
@@ -831,7 +905,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">balance-windows</span></code>) Make all windows the same height.</li>
 </ul>
 <div class="section" id="transpose-windows">
-<h4>1.27.1 transpose windows<a class="headerlink" href="#transpose-windows" title="Permalink to this headline">¶</a></h4>
+<h3>28.1 transpose windows<a class="headerlink" href="#transpose-windows" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https:ff//www.emacswiki.org/emacs/TransposeWindows">https:ff//www.emacswiki.org/emacs/TransposeWindows</a></li>
 <li>top and bottom windows open and want to switch their positions: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span> <span class="pre">C-x</span> <span class="pre">4</span> <span class="pre">b</span></code></li>
@@ -840,20 +914,20 @@
 </div>
 </div>
 <div class="section" id="yasnippet">
-<h3>1.28 YASnippet<a class="headerlink" href="#yasnippet" title="Permalink to this headline">¶</a></h3>
+<h2>29 YASnippet<a class="headerlink" href="#yasnippet" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">yas-new-snippet</span></code>) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> to save it.</li>
 </ul>
 <div class="section" id="variables">
-<h4>1.28.1 variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
+<h3>29.1 variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">yas-global-mode</span></code> Non-nil if Yas-Global mode is enabled</li>
 <li><code class="docutils literal notranslate"><span class="pre">yas-snippet-dirs</span></code> list of top-level snippet directories</li>
 </ul>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>1.29 Variables<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h2>30 Variables<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p class="first">See <a class="reference external" href="emacs#File%20Variables">info:emacs#File Variables</a></p>
 <ul>
@@ -885,7 +959,7 @@
 </ul>
 </div>
 <div class="section" id="visual-line-mode">
-<h3>1.30 Visual line mode<a class="headerlink" href="#visual-line-mode" title="Permalink to this headline">¶</a></h3>
+<h2>31 Visual line mode<a class="headerlink" href="#visual-line-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>wrap words when line breaking (soft lines wrap)<ul>
 <li><strong>lines wrapping</strong> breaks long line that does not fit the screen horizontally</li>
@@ -900,13 +974,13 @@
 </ul>
 </div>
 <div class="section" id="auto-reverting">
-<h3>1.31 (Auto)reverting<a class="headerlink" href="#auto-reverting" title="Permalink to this headline">¶</a></h3>
+<h2>32 (Auto)reverting<a class="headerlink" href="#auto-reverting" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>See <a class="reference external" href="emacs#Autorevert">info:emacs#Autorevert</a></li>
 </ul>
 </div>
 <div class="section" id="performance-profiling">
-<h3>1.32 Performance profiling<a class="headerlink" href="#performance-profiling" title="Permalink to this headline">¶</a></h3>
+<h2>33 Performance profiling<a class="headerlink" href="#performance-profiling" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>See <a class="reference external" href="elisp#Profiling">info:elisp#Profiling</a></li>
 <li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-start</span></code> to begin profiling</li>
@@ -915,204 +989,25 @@
 <li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-stop</span></code> after finishing the profiling.</li>
 </ul>
 </div>
-</div>
-<div class="section" id="auctex">
-<h2>2 AucTeX<a class="headerlink" href="#auctex" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="36%" />
-<col width="64%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">option</th>
-<th class="head">description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">preview-auto-reveal</span></code></td>
-<td>Cause previews to open automatically when entered.</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">helm-bibtex-library-path</span></code></td>
-<td>A directory or list of directories in which PDFs are stored.</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">helm-candidate-number-limit</span></code></td>
-<td>Global limit for number of candidates displayed.</td>
-</tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">helm-ff-candidate-number-limit</span></code></td>
-<td>The ‘helm-candidate-number-limit’ for ‘helm-find-files’ and friends.</td>
-</tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">helm-occur-candidate-number-limit</span></code></td>
-<td>Value of ‘helm-candidate-number-limit’ for helm-occur.</td>
-</tr>
-<tr class="row-odd"><td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="org">
-<h2>3 Org<a class="headerlink" href="#org" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="code-block">
-<h3>3.1 Code block<a class="headerlink" href="#code-block" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#+NAME: &lt;name&gt;</span>
-<span class="c1">#+BEGIN_SRC &lt;language&gt; &lt;switches&gt; &lt;header arguments&gt;</span>
-  <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-<span class="c1">#+END_SRC</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="example-block">
-<h3>3.2 Example block<a class="headerlink" href="#example-block" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">#+BEGIN_EXAMPLE</span></code> / <code class="docutils literal notranslate"><span class="pre">#+END_EXAMPLE</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">:</span></code> <em>``Some example from a text file.``</em></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+BEGIN_SRC</span> <span class="pre">emacs-lisp</span></code> / <code class="docutils literal notranslate"><span class="pre">#+END_SRC</span></code></li>
-</ul>
-</div>
-<div class="section" id="export-options">
-<h3>3.3 Export options<a class="headerlink" href="#export-options" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">#+TITLE:</span> <span class="pre">the</span> <span class="pre">title</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">shown</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+AUTHOR:</span> <span class="pre">the</span> <span class="pre">author</span> <span class="pre">(default</span> <span class="pre">taken</span> <span class="pre">from</span> <span class="pre">user-full-name)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+DATE:</span> <span class="pre">a</span> <span class="pre">date,</span> <span class="pre">fixed,</span> <span class="pre">or</span> <span class="pre">an</span> <span class="pre">Org</span> <span class="pre">timestamp</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+EMAIL:</span> <span class="pre">his/her</span> <span class="pre">email</span> <span class="pre">address</span> <span class="pre">(default</span> <span class="pre">from</span> <span class="pre">user-mail-address)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+LANGUAGE:</span> <span class="pre">language,</span> <span class="pre">e.g.</span> <span class="pre">‘en’</span> <span class="pre">(org-export-default-language)</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+OPTIONS:</span> <span class="pre">H:2</span> <span class="pre">num:t</span> <span class="pre">toc:t</span> <span class="pre">\n:nil</span> <span class="pre">::t</span> <span class="pre">|:t</span> <span class="pre">^:t</span> <span class="pre">f:t</span> <span class="pre">tex:t</span> <span class="pre">...</span></code></li>
-</ul>
-</div>
-<div class="section" id="exporting">
-<h3>3.4 Exporting<a class="headerlink" href="#exporting" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="html-export-command">
-<h4>3.4.1 HTML export command<a class="headerlink" href="#html-export-command" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span> <span class="pre">h</span> <span class="pre">h</span></code> (<code class="docutils literal notranslate"><span class="pre">org-html-export-to-html</span></code>) Export as HTML file with a ‘.html’ extension.</li>
-</ul>
-</div>
-</div>
-<div class="section" id="id4">
-<h3>3.5 Font<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">\*bold*</span></code>, <code class="docutils literal notranslate"><span class="pre">/italic/</span></code>, <code class="docutils literal notranslate"><span class="pre">_underlined_</span></code>, <code class="docutils literal notranslate"><span class="pre">=verbatim=</span></code>, <code class="docutils literal notranslate"><span class="pre">~code~</span></code>, <code class="docutils literal notranslate"><span class="pre">+strike-through+</span></code>, <code class="docutils literal notranslate"><span class="pre">/~italic</span> <span class="pre">code~/</span></code></li>
-</ul>
-</div>
-<div class="section" id="footnote">
-<h3>3.6 Footnote<a class="headerlink" href="#footnote" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">[fn:1]</span></code> footnote definition when at column 0</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-x</span> <span class="pre">f</span></code> switch footnote definition / (first) reference or create a new footnote</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> Jump between definition and reference.</li>
-</ul>
-</div>
-<div class="section" id="images">
-<h3>3.7 Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">./img/cat.jpg</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+CAPTION:</span> <span class="pre">the</span> <span class="pre">caption</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">next</span> <span class="pre">figure</span> <span class="pre">link</span> <span class="pre">(or</span> <span class="pre">table)</span></code> / <code class="docutils literal notranslate"><span class="pre">#+NAME:</span> <span class="pre">fig:SED-HR4049</span></code> <code class="docutils literal notranslate"><span class="pre">[[./img/a.jpg]]</span></code></li>
-</ul>
-</div>
-<div class="section" id="insert-entries">
-<h3>3.8 Insert entries<a class="headerlink" href="#insert-entries" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-meta-return</span></code>) Insert a new item of the same level as the current one.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-insert-heading-respect-content</span></code>) Insert a new heading at the end of the current subtree.</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;-&lt;RET&gt;</span></code> new list item at a new level</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;M&gt;-&lt;RIGHT&gt;</span></code> make current item one level lower (Promoting/Demoting headings)</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;M&gt;-&lt;LEFT&gt;</span></code> make current item one level higher (Promoting/Demoting headings)</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-cycle</span></code>) The first <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code> demotes the entry to become a child of the previous one.  The next <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code> makes it a parent, and so on, all the way to top level.  Yet another <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code>, and you are back to the initial level.</li>
-</ul>
-</div>
-<div class="section" id="latex-preview">
-<h3>3.9 Latex preview<a class="headerlink" href="#latex-preview" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">org-compile-file:</span> <span class="pre">File</span> <span class="pre">&quot;/tmp/orgtex5473MjV.dvi&quot;</span> <span class="pre">wasn’t</span> <span class="pre">produced.</span> <span class="pre">Please</span> <span class="pre">adjust</span> <span class="pre">’dvipng’</span> <span class="pre">part</span> <span class="pre">of</span> <span class="pre">‘org-preview-latex-process-alist’.</span></code>
-a log is generated, <code class="docutils literal notranslate"><span class="pre">/tmp/orgtex9997XKu.log</span></code>. Something interesting is in this log: <code class="docutils literal notranslate"><span class="pre">LaTeX</span> <span class="pre">Error:</span> <span class="pre">File</span> <span class="pre">`wrapfig.sty'</span> <span class="pre">not</span> <span class="pre">found.</span></code> Then a quick search tells me texlive-latex-extra package is missing.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-x</span> <span class="pre">C-l</span></code> toggle latex preview</li>
-</ul>
-</div>
-<div class="section" id="motion">
-<h3>3.10 Motion<a class="headerlink" href="#motion" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">org-next-visible-heading</span></code>) next heading</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-p</span></code> (<code class="docutils literal notranslate"><span class="pre">org-previous-visible-heading</span></code>) previous heading</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-u</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-up-heading</span></code>) backward to higher level heading</li>
-</ul>
-</div>
-<div class="section" id="moving-subtrees-up-down">
-<h3>3.11 Moving subtrees up/down<a class="headerlink" href="#moving-subtrees-up-down" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-&lt;UP&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-move-subtree-up</span></code>) Move subtree up.</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-&lt;DOWN&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-move-subtree-down</span></code>) Move subtree down.</li>
-</ul>
-</div>
-<div class="section" id="paragraphs">
-<h3>3.12 Paragraphs<a class="headerlink" href="#paragraphs" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">#+BEGIN_VERSE</span></code> / <code class="docutils literal notranslate"><span class="pre">#+END_VERSE</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+BEGIN_QUOTE</span></code> / <code class="docutils literal notranslate"><span class="pre">#+END_QUOTE</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">#+BEGIN_CENTER</span></code> / <code class="docutils literal notranslate"><span class="pre">#+END_CENTER</span></code></li>
-</ul>
-</div>
-<div class="section" id="promoting-demoting-headings">
-<h3>3.13 Promoting/Demoting headings<a class="headerlink" href="#promoting-demoting-headings" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-&lt;LEFT&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-do-promote</span></code>) Promote current heading by one level.</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-&lt;RIGHT&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-do-demote</span></code>) Demote current heading by one level.</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-S-&lt;LEFT&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-promote-subtree</span></code>) Promote the current subtree by one level.</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-S-&lt;RIGHT&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-demote-subtree</span></code>) Demote the current subtree by one level.</li>
-</ul>
-</div>
-<div class="section" id="sort">
-<h3>3.14 Sort<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">^</span></code> Sort the plain list. Prompt for the sorting method: numerically, alphabetically, by time, or by custom function.</li>
-</ul>
-</div>
-<div class="section" id="special-symbols">
-<h3>3.15 Special symbols<a class="headerlink" href="#special-symbols" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">\</span></code> and maybe a few letters, then <code class="docutils literal notranslate"><span class="pre">M-TAB</span></code> to see possible completions of special symbols. If you need such a symbol inside a word, terminate it with a pair of curly brackets for eg. <code class="docutils literal notranslate"><span class="pre">\pi{}d</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">org-entities-help</span></code> a command to browse the complete list from a dedicated buffer</li>
-<li><code class="docutils literal notranslate"><span class="pre">org-entities-user</span></code> define own symbols</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-x</span> <span class="pre">\</span></code> (<code class="docutils literal notranslate"><span class="pre">org-toggle-pretty-entities</span></code>) Toggle display of entities as UTF-8 characters. This does not change the buffer content which remains plain ASCII, but it overlays the UTF-8 character for display purposes only.</li>
-</ul>
-</div>
-<div class="section" id="superscript-and-subscript">
-<h3>3.16 Superscript and subscript<a class="headerlink" href="#superscript-and-subscript" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">_</span></code> are used to indicate super- and subscripts. We may surround multi-character sub- and superscripts with curly braces.</li>
-<li><code class="docutils literal notranslate"><span class="pre">org-use-sub-superscripts</span></code> a variable that determines whether to interprete <code class="docutils literal notranslate"><span class="pre">_</span></code> as a subscript or not. Eg. setting this variable to <code class="docutils literal notranslate"><span class="pre">{}</span></code>, ‘<code class="docutils literal notranslate"><span class="pre">a_b</span></code>’ is not interpreted as a subscript, but ‘<code class="docutils literal notranslate"><span class="pre">a_{b}</span></code> is.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-x</span> <span class="pre">\</span></code> (<code class="docutils literal notranslate"><span class="pre">org-toggle-pretty-entities</span></code>) formats sub- and superscripts in a WYSIWYM way.</li>
-</ul>
-</div>
-<div class="section" id="time-stamp">
-<h3>3.17 time stamp<a class="headerlink" href="#time-stamp" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">.</span></code> (<code class="docutils literal notranslate"><span class="pre">org-time-stamp</span></code>) Prompt for a date and insert a corresponding timestamp. When the cursor is at an existing timestamp in the buffer, the command is used to modify this timestamp instead of inserting a new one. When this command is used twice in succession, a time range is inserted.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">!</span></code> (<code class="docutils literal notranslate"><span class="pre">org-time-stamp-inactive</span></code>) Like <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">.</span></code>, but insert an inactive timestamp that will not cause an agenda entry.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">C-c</span> <span class="pre">.</span></code> / <code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">C-c</span> <span class="pre">!</span></code> Like <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">!</span></code>, but use the alternative format which contains date and time. The default time can be rounded to multiples of 5 minutes, see the option <code class="docutils literal notranslate"><span class="pre">org-time-stamp-rounding-minutes</span></code>.</li>
-</ul>
-<div class="section" id="id5">
-<h4>3.17.1 variables<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">org-hide-emphasis-markers</span></code></li>
-</ul>
-</div>
-</div>
-<div class="section" id="visibility-cycling">
-<h3>3.18 Visibility cycling<a class="headerlink" href="#visibility-cycling" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">org-cycle</span></code>) Subtree cycling</li>
-</ul>
-</div>
-</div>
 <div class="section" id="emacsclient">
-<h2>4 emacsclient<a class="headerlink" href="#emacsclient" title="Permalink to this headline">¶</a></h2>
+<h2>34 emacsclient<a class="headerlink" href="#emacsclient" title="Permalink to this headline">¶</a></h2>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">emacsclient</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;(with-current-buffer &quot;Downloads&quot; (dired-previous-line 3))&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="magit">
-<h2>5 Magit<a class="headerlink" href="#magit" title="Permalink to this headline">¶</a></h2>
+<h2>35 Magit<a class="headerlink" href="#magit" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="hide-show-mode">
+<h2>36 Hide-show mode<a class="headerlink" href="#hide-show-mode" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">hs-minor-mode</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-a</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-M-s</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-show-all</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-t</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-M-h</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-hide-all</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-show-block</span></code>) Select a block and show it.</li>
+<li><code class="docutils literal notranslate"><span class="pre">hs-hide-block</span></code> Select a block and hide it.</li>
+<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-e</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-toggle-hiding</span></code>) Toggle hiding/showing of a block.</li>
+</ul>
 </div>
 </div>
 
@@ -1124,7 +1019,7 @@ a log is generated, <code class="docutils literal notranslate"><span class="pre"
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="latex.html" class="btn btn-neutral float-right" title="LaTeX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="orgmode.html" class="btn btn-neutral float-right" title="Orgmode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Notes’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
