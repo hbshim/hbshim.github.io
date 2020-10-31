@@ -108,6 +108,59 @@ This contains locations for globally or personally defined TeX macros because AU
 
 - ``LaTeX-find-matching-end``
 
+- ``LaTeX-modify-environment`` Modify current ENVIRONMENT.
+
 - ``LaTeX-current-environment``
 
-- 
+- ``LaTeX-forward-paragraph``
+
+- ``LaTeX-backward-paragraph``
+
+- ``LaTeX-fill-region (from to)`` Fill and indent the text in region from FROM to TO as LaTeX text.
+
+- ``LaTeX-indent-line`` "Indent the line containing point, as LaTeX source.
+
+6 customization options
+-----------------------
+
+- ``LaTeX-label-function`` A function inserting a label at point or returning a label string. I set this to the following function:
+
+  .. code:: elisp
+
+      (defun my-LaTeX-label (&optional name type no-insert)
+        "Insert automatically generated label without asking the label name. 
+      This will be used for AUCTeX `LaTeX-label-function' variable."
+        (let ((listOfLetters "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+              (timeStamp (string-to-number (reverse (number-to-string (- (string-to-number (format-time-string "%s")) (* 60 60 24 365 50))))))
+              (label ""))
+          (while (not (= timeStamp 0))
+            (let ((i (mod timeStamp (length listOfLetters))))
+              (setq label (concat label (substring listOfLetters i (1+ i))))
+              (setq timeStamp (truncate (/ timeStamp (length listOfLetters))))))
+          (while (not (= (length label) 6))
+            (setq label (concat "0" label)))
+          (unless no-insert
+            (delete-blank-lines)
+            (previous-line)
+            (end-of-line)
+            (insert " ")
+            (insert TeX-esc "label" TeX-grop label TeX-grcl))
+          label))
+
+- ``LaTeX-electric-left-right-brace nil`` If non-nil, insert right brace with suitable macro after typing left brace.
+
+- ``LaTeX-label-alist`` Lookup prefixes for labels.
+
+  - An alist where the CAR is the environment name, and the CDR either the prefix or a symbol referring to one. eg.
+    ``("equation" . LaTeX-equation-label)``
+
+  - If the name is not found, or if the CDR is nil, no label is automatically inserted for that environment.
+
+  - If you want to automatically insert a label for a environment but with an empty prefix, use the empty string ``""`` as the CDR of the corresponding entry.
+
+7 hooks
+-------
+
+- ``LaTeX-after-modify-env-hook nil`` List of functions to be run at the end of '``LaTeX-modify-environment``'. Each function is called with four arguments.
+
+- ``LaTeX-after-insert-env-hook nil`` List of functions to be run at the end of '``LaTeX-insert-environment``'. Each function is called with three arguments.

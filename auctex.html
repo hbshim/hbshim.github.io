@@ -207,6 +207,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">4 ??</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#useful-functions">5 useful functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customization-options">6 customization options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hooks">7 hooks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -553,8 +555,57 @@
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">LaTeX-find-matching-begin</span></code></li>
 <li><code class="docutils literal notranslate"><span class="pre">LaTeX-find-matching-end</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-modify-environment</span></code> Modify current ENVIRONMENT.</li>
 <li><code class="docutils literal notranslate"><span class="pre">LaTeX-current-environment</span></code></li>
-<li></li>
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-forward-paragraph</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-backward-paragraph</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-fill-region</span> <span class="pre">(from</span> <span class="pre">to)</span></code> Fill and indent the text in region from FROM to TO as LaTeX text.</li>
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-indent-line</span></code> “Indent the line containing point, as LaTeX source.</li>
+</ul>
+</div>
+<div class="section" id="customization-options">
+<h2>6 customization options<a class="headerlink" href="#customization-options" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LaTeX-label-function</span></code> A function inserting a label at point or returning a label string. I set this to the following function:</p>
+<div class="code elisp highlight-default notranslate"><div class="highlight"><pre><span></span>(defun my-LaTeX-label (&amp;optional name type no-insert)
+  &quot;Insert automatically generated label without asking the label name.
+This will be used for AUCTeX `LaTeX-label-function&#39; variable.&quot;
+  (let ((listOfLetters &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)
+        (timeStamp (string-to-number (reverse (number-to-string (- (string-to-number (format-time-string &quot;%s&quot;)) (* 60 60 24 365 50))))))
+        (label &quot;&quot;))
+    (while (not (= timeStamp 0))
+      (let ((i (mod timeStamp (length listOfLetters))))
+        (setq label (concat label (substring listOfLetters i (1+ i))))
+        (setq timeStamp (truncate (/ timeStamp (length listOfLetters))))))
+    (while (not (= (length label) 6))
+      (setq label (concat &quot;0&quot; label)))
+    (unless no-insert
+      (delete-blank-lines)
+      (previous-line)
+      (end-of-line)
+      (insert &quot; &quot;)
+      (insert TeX-esc &quot;label&quot; TeX-grop label TeX-grcl))
+    label))
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LaTeX-electric-left-right-brace</span> <span class="pre">nil</span></code> If non-nil, insert right brace with suitable macro after typing left brace.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LaTeX-label-alist</span></code> Lookup prefixes for labels.</p>
+<ul class="simple">
+<li>An alist where the CAR is the environment name, and the CDR either the prefix or a symbol referring to one. eg.
+<code class="docutils literal notranslate"><span class="pre">(&quot;equation&quot;</span> <span class="pre">.</span> <span class="pre">LaTeX-equation-label)</span></code></li>
+<li>If the name is not found, or if the CDR is nil, no label is automatically inserted for that environment.</li>
+<li>If you want to automatically insert a label for a environment but with an empty prefix, use the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> as the CDR of the corresponding entry.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="hooks">
+<h2>7 hooks<a class="headerlink" href="#hooks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-after-modify-env-hook</span> <span class="pre">nil</span></code> List of functions to be run at the end of ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-modify-environment</span></code>’. Each function is called with four arguments.</li>
+<li><code class="docutils literal notranslate"><span class="pre">LaTeX-after-insert-env-hook</span> <span class="pre">nil</span></code> List of functions to be run at the end of ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-insert-environment</span></code>’. Each function is called with three arguments.</li>
 </ul>
 </div>
 </div>
