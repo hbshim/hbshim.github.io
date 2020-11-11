@@ -1,12 +1,54 @@
-=======
-Orgmode
-=======
+=======================
+Orgmode and Emacs Diary
+=======================
 
-    :Date: October 30, 2020
+    :Date: October 31, 2020
 
 
 
-1 Code block
+1 Agenda view
+-------------
+
+- (``org-agenda``) activate Agenda view
+
+  - ``C-u 2 1 C-c a a`` show the next 21 days schedule. Different number works of course.
+
+- ``S`` / ``M`` / ``C`` display Sunrise/Sunset times, show lunar phases and to convert to other calendars
+
+- ``c`` switch back and forth between calendar and agenda
+
+- ``org-agenda-to-appt`` add the appointments of your agenda files. This also reads a '``APPT_WARNTIME``' property which will then override the value of '``appt-message-warning-time``'.
+
+1.1 Variables
+~~~~~~~~~~~~~
+
+- ``org-agenda-files`` The information to be shown is normally collected from  the files listed in this variable.  If a directory is part of this list, all files with the extension ``\*.org`` in this directory will be included.
+
+  - orgmode offers functions ``org-agenda-file-to-front`` and ``org-remove-file`` to add/remove such files from the variable list, but the list will be managed manually in ``.emacs`` file (so I'll remove the keyboard bindings ``C-c [`` and ``C-c ]``).
+
+- ``(setq org-agenda-include-diary t)`` include entries from the Emacs diary into Org mode’s agenda; all diary entries including holidays, anniversaries, etc., will be included in the agenda buffer created by Org mode
+
+- ``org-agenda-start-on-weekday`` set the first day of a week. ``0`` denotes Sunday, ``1`` Monday, ...
+
+- ``org-agenda-include-diary`` include entries from the Emacs diary into Org mode’s agenda
+
+2 Sunrise/sunset
+----------------
+
+- ``sunrise-sunset`` Display times of sunrise and sunset for today’s date.
+
+- ``C-u M-x sunrise-sunset`` Display times of sunrise and sunset for a specified date.
+
+- ``C-u C-u M-x sunrise-sunset`` display the times of sunrise and sunset for any location and any date
+
+- ``calendar-sunrise-sunset-month`` Display times of sunrise and sunset for the selected month.
+
+2.1 Variables
+~~~~~~~~~~~~~
+
+- ``calendar-latitude 40.1`` / ``calendar-longitude -88.2`` / ``calendar-location-name "Urbana, IL"``
+
+3 Code block
 ------------
 
 ::
@@ -16,7 +58,7 @@ Orgmode
       <body>
     #+END_SRC
 
-2 Example block
+4 Example block
 ---------------
 
 - ``#+BEGIN_EXAMPLE`` / ``#+END_EXAMPLE``
@@ -25,7 +67,7 @@ Orgmode
 
 - ``#+BEGIN_SRC emacs-lisp`` / ``#+END_SRC``
 
-3 Export options
+5 Export options
 ----------------
 
 - ``#+TITLE: the title to be shown``
@@ -40,20 +82,20 @@ Orgmode
 
 - ``#+OPTIONS: H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t ...``
 
-4 Exporting
+6 Exporting
 -----------
 
-4.1 HTML export command
+6.1 HTML export command
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-c C-e h h`` (``org-html-export-to-html``) Export as HTML file with a ‘.html’ extension.
 
-5 Font
+7 Font
 ------
 
 - ``\*bold*``, ``/italic/``, ``_underlined_``, ``=verbatim=``, ``~code~``, ``+strike-through+``, ``/~italic code~/``
 
-6 Footnote
+8 Footnote
 ----------
 
 - ``[fn:1]`` footnote definition when at column 0
@@ -62,15 +104,15 @@ Orgmode
 
 - ``C-c C-c`` Jump between definition and reference.
 
-7 Images
+9 Images
 --------
 
 - ``./img/cat.jpg``
 
 - ``#+CAPTION: the caption for the next figure link (or table)`` / ``#+NAME: fig:SED-HR4049`` ``[[./img/a.jpg]]``
 
-8 Insert entries
-----------------
+10 Insert entries
+-----------------
 
 - ``M-<RET>`` (``org-meta-return``) Insert a new item of the same level as the current one.
 
@@ -84,15 +126,15 @@ Orgmode
 
 - ``<TAB>`` (``org-cycle``) The first ``<TAB>`` demotes the entry to become a child of the previous one.  The next ``<TAB>`` makes it a parent, and so on, all the way to top level.  Yet another ``<TAB>``, and you are back to the initial level.
 
-9 Latex preview
----------------
+11 Latex preview
+----------------
 
 - ``org-compile-file: File "/tmp/orgtex5473MjV.dvi" wasn’t produced. Please adjust ’dvipng’ part of ‘org-preview-latex-process-alist’.``
   a log is generated, ``/tmp/orgtex9997XKu.log``. Something interesting is in this log: ``LaTeX Error: File `wrapfig.sty' not found.`` Then a quick search tells me texlive-latex-extra package is missing.
 
 - ``C-c C-x C-l`` toggle latex preview
 
-10 Motion
+12 Motion
 ---------
 
 - ``C-c C-n`` (``org-next-visible-heading``) next heading
@@ -101,14 +143,14 @@ Orgmode
 
 - ``C-c C-u`` (``outline-up-heading``) backward to higher level heading
 
-11 Moving subtrees up/down
+13 Moving subtrees up/down
 --------------------------
 
 - ``M-<UP>`` (``org-move-subtree-up``) Move subtree up.
 
 - ``M-<DOWN>`` (``org-move-subtree-down``) Move subtree down.
 
-12 Paragraphs
+14 Paragraphs
 -------------
 
 - ``#+BEGIN_VERSE`` / ``#+END_VERSE``
@@ -117,7 +159,7 @@ Orgmode
 
 - ``#+BEGIN_CENTER`` / ``#+END_CENTER``
 
-13 Promoting/Demoting headings
+15 Promoting/Demoting headings
 ------------------------------
 
 - ``M-<LEFT>`` (``org-do-promote``) Promote current heading by one level.
@@ -128,7 +170,7 @@ Orgmode
 
 - ``M-S-<RIGHT>`` (``org-demote-subtree``) Demote the current subtree by one level.
 
-14 Repeated tasks
+16 Repeated tasks
 -----------------
 
 - yearly/monthly/weekly/daily corresponds to ``y/w/m/d/h`` letters
@@ -147,12 +189,12 @@ Orgmode
 
 - ``C-c C-x c`` (``org-clone-subtree-with-time-shift``) Clone a subtree by making a number of sibling copies of it.  You will be prompted for the number of copies to make, and you can also specify if any timestamps in the entry should be shifted.  This can be useful, for example, to create a number of tasks related to a series of lectures to prepare.
 
-15 Sort
+17 Sort
 -------
 
 - ``C-c ^`` Sort the plain list. Prompt for the sorting method: numerically, alphabetically, by time, or by custom function.
 
-16 Special symbols
+18 Special symbols
 ------------------
 
 - ``\`` and maybe a few letters, then ``M-TAB`` to see possible completions of special symbols. If you need such a symbol inside a word, terminate it with a pair of curly brackets for eg. ``\pi{}d``.
@@ -163,7 +205,7 @@ Orgmode
 
 - ``C-c C-x \`` (``org-toggle-pretty-entities``) Toggle display of entities as UTF-8 characters. This does not change the buffer content which remains plain ASCII, but it overlays the UTF-8 character for display purposes only.
 
-17 Superscript and subscript
+19 Superscript and subscript
 ----------------------------
 
 - ``^`` and ``_`` are used to indicate super- and subscripts. We may surround multi-character sub- and superscripts with curly braces.
@@ -172,7 +214,7 @@ Orgmode
 
 - ``C-c C-x \`` (``org-toggle-pretty-entities``) formats sub- and superscripts in a WYSIWYM way.
 
-18 time stamp
+20 time stamp
 -------------
 
 - ``C-c .`` (``org-time-stamp``) Prompt for a date and insert a corresponding timestamp. When the cursor is at an existing timestamp in the buffer, the command is used to modify this timestamp instead of inserting a new one. When this command is used twice in succession, a time range is inserted.
@@ -181,7 +223,7 @@ Orgmode
 
 - ``C-u C-c .`` / ``C-u C-c !`` Like ``C-c .`` and ``C-c !``, but use the alternative format which contains date and time. The default time can be rounded to multiples of 5 minutes, see the option ``org-time-stamp-rounding-minutes``.
 
-18.1 automatic time-stamping
+20.1 automatic time-stamping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -191,12 +233,17 @@ Orgmode
 
 This will automatically update the timestamp on ``DATE`` whenever saving any change. The function ``time-stamp-toggle-active`` will switch time-stamping on/off, the option ``time-stamp-active`` will set the mode on/off.
 
-18.2 variables
+20.2 variables
 ~~~~~~~~~~~~~~
 
 - ``org-hide-emphasis-markers``
 
-19 ``TODO``
+20.3 time stamp in TODO
+~~~~~~~~~~~~~~~~~~~~~~~
+
+See TODO section
+
+21 ``TODO``
 -----------
 
 - ``S-M-RET`` (``org-insert-todo-heading``) Insert a new TODO entry below the current one.
@@ -209,10 +256,6 @@ This will automatically update the timestamp on ``DATE`` whenever saving any cha
             '((sequence "TODO" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
   The vertical bar separates the TODO keywords (states that need action) from the DONE states (which need no further action). If you do not provide the separator bar, the last state is used as the DONE state.
-
-- ``C-c .`` (``org-time-stamp``) Prompt for a date and insert a corresponding timestamp. We can put date and time as ``jan 1 2020 10:45pm-11:45pm``.
-
-- ``C-c !`` (``org-time-stamp-inactive``) Like C-c ., insert an inactive timestamp that will not cause an agenda entry.
 
 - ``C-c C-q`` (``org-set-tags-command``) Enter new tags for the current headline. ("tags" replaces the obsolete "types of action items".)
 
@@ -230,7 +273,16 @@ This will automatically update the timestamp on ``DATE`` whenever saving any cha
 
 - ``S-UP`` (``org-priority-up``) / ``S-DOWN`` (``org-priority-down``)
 
-20 Visibility cycling
+21.1 Time stamp
+~~~~~~~~~~~~~~~
+
+- ``C-c .`` (``org-time-stamp``) Prompt for a date and insert a corresponding timestamp. We can put date and time as ``jan 1 2020 10:45pm-11:45pm``.
+
+- ``C-c !`` (``org-time-stamp-inactive``) Like C-c ., insert an inactive timestamp that will not cause an agenda entry.
+
+- ``C-u C-c .`` / ``C-u C-c !`` insert current day/time accordingly (active/inactive)
+
+22 Visibility cycling
 ---------------------
 
 - ``<TAB>`` (``org-cycle``) Subtree cycling

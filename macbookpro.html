@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,32 +11,34 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MathJax Test" href="mathjaxtest.html" />
-    <link rel="prev" title="Git" href="git.html" /> 
+    <link rel="next" title="Bash" href="bash.html" />
+    <link rel="prev" title="Coq" href="coq.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Notes
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Notes
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,106 +86,151 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">1 Emacs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#abbrevs-mode">1.1 Abbrevs mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#options">1.1.1 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">1 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">1.1 options</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#ansi-term-mode">1.2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#bookmarks">1.3 Bookmarks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#helm">1.4 helm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#buffers">1.5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#kill-buffer">1.6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#case-conversion-a-a">1.7 Case conversion A &lt;-&gt; a</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-and-killing">1.8 Deleting and killing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#deleting-by-character">1.8.1 Deleting by character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">3 Bookmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">4 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#deleting-and-killing">8 Deleting and killing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-by-character">8.1 Deleting by character</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#dired">1.9 Dired</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#directories">1.9.1 directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#flags">1.9.2 flags</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#files">1.9.3 files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#marks">1.9.4 marks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#shell-command">1.9.5 shell command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#id2">1.9.6 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#dired">9 Dired</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#directories">9.1 directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#flags">9.2 flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#files">9.3 files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#marks">9.4 marks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#shell-command">9.5 shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id1">9.6 options</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#file">1.10 File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#find-replace">1.11 Find/replace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#font">1.12 font</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#frames">1.13 frames</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#help-and-info">1.14 help and info</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#browsing-inside-info">1.14.1 Browsing inside info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">10 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">11 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">12 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">13 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">14 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">14.1 Browsing inside info</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#ispell-flyspell">1.15 ispell (flyspell)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#menubar-f10">1.16 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-around">1.17 Moving around</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-characters-lines">1.17.1 by characters/lines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-words">1.17.2 by words</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#horizontally">1.17.3 horizontally</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-sentence">1.17.4 by sentence</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-paragraph">1.17.5 by paragraph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-matching-parentheses">1.17.6 by matching parentheses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-buffer">1.17.7 by buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-page">1.17.8 by page</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#back-to-previous-position">1.17.9 back to previous position</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#go-to">1.17.10 GO TO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">15 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">16 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">17 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">19 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">19.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">19.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">19.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">19.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">19.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">19.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">19.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">19.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">19.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">19.10 GO TO</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#outline-minor-mode">1.18 Outline minor mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#motion-commands">1.18.1 Motion commands</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#visibility-commands">1.18.2 Visibility commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">20 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">20.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">20.2 Visibility commands</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#reference-sites">1.19 Reference sites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#region-mark">1.20 Region/Mark</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#registers">1.21 Registers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#select">1.22 Select</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#sessions">1.23 Sessions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#symbol">1.24 Symbol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#timestamp">1.25 Timestamp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#windows">1.26 windows</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#transpose-windows">1.26.1 transpose windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">21 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">22 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">23 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">24 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">25 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">26 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">27 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">28 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">28.1 transpose windows</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#yasnippet">1.27 YASnippet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#variables">1.27.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">29 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#variables">29.1 variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#id3">1.28 Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#auto-reverting">1.29 (Auto)reverting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#performance-profiling">1.30 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">30 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">31 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">32 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">33 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">34 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">35 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#auctex">2 AucTeX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#org">3 Org</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#id4">3.1 Font</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-cycling">3.2 Visibility cycling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#insert-entries">3.3 Insert entries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#promoting-demoting-headings">3.4 Promoting/Demoting headings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-subtrees-up-down">3.5 Moving subtrees up/down</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#exporting">3.6 Exporting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#html-export-command">3.6.1 HTML export command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#agenda-view">1 Agenda view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">1.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#time-stamp">3.7 time stamp</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#id5">3.7.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sunrise-sunset">2 Sunrise/sunset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#export-options">3.8 Export options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#paragraphs">3.9 Paragraphs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#examples-and-codes">3.10 Examples and codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#images">3.11 Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#footnote">3.12 Footnote</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#superscript-and-subscript">3.13 Superscript and subscript</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#special-symbols">3.14 Special symbols</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#latex-preview">3.15 Latex preview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#sort">3.16 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">4 emacsclient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">5 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">7 Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">8 Footnote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">9 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">10 Insert entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">11 Latex preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">12 Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">13 Moving subtrees up/down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">14 Paragraphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">15 Promoting/Demoting headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">16 Repeated tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">17 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">18 Special symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">19 Superscript and subscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">20 time stamp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">20.1 automatic time-stamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id2">20.2 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#time-stamp-in-todo">20.3 time stamp in TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">21 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id3">21.1 Time stamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">22 Visibility cycling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auctex.html">AUCTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id1">1 AucTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#macros">2 Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#style-files">3 style files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-style-hooks">3.1 Adding style hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-symbols">3.2 adding symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-environments">3.3 adding environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#defining-environments-with-arguments">3.3.1 defining environments with arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#replacing-predefined-environment-style-by-using-ignore">3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#specifying-locations-of-style-files">3.4 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#global-styles">3.4.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#private-styles">3.4.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#local-styles">3.4.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#all-combined">3.4.4 All Combined</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#options">3.5 Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id2">4 ??</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -199,6 +246,17 @@
 <li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">5 putting a formula inside of a table cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex.html#variable">6 variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">7 setcounter enumi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_sequences_pkg.html">LaTeX Pkg: spectralsequences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#environment-structure">1 Environment structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spectral_sequences_pkg.html#global-options">1.1 Global options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#classes">2 Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#differentials">3 Differentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#grouping">4 Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#commands">5 Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
@@ -236,6 +294,18 @@
 <li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="coq.html">Coq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#update">1 Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#coqdoc-documentation">2 Coqdoc (documentation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#references">3 References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#terms">4 Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#gallina">5 Gallina</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#vernacular-command">6 Vernacular Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#tactic">7 Tactic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#module">8 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#inductive-definitions">9 Inductive definitions</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Misc</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#emacs-keybinding">1 emacs keybinding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mac-address-changer">2 MAC address changer</a></li>
@@ -245,6 +315,75 @@
 <li class="toctree-l2"><a class="reference internal" href="#thunderbird">6 Thunderbird</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#three-finger-dragging">7 three finger dragging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gpg">8 gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-signals">9 system signals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kill-signals">9.1 Kill signals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#character">1 character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#completion">2 completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#history">3 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#line">4 line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#misc">5 misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#startup-files">6 Startup Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#word">7 word</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="make.html">Make</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="make.html#overview">1 overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#rule">2 Rule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#explicit-rules">2.1 Explicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#implicit-rules">2.2 Implicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#last-resort-rule">2.3 Last-resort rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#operators">3 operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#assignments">4 assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#directives">5 directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#functions">6 functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-variables">7 special variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-targets">8 special targets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#phony-targets">8.1 Phony targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#clean">8.2 clean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#silent">8.3 silent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#the-dollar-sign">9 The dollar sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#recipe-echoing">10 Recipe echoing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#flags">11 flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#conditional">12 conditional</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifdef-ifndef">12.1 <code class="docutils literal notranslate"><span class="pre">ifdef</span></code>, <code class="docutils literal notranslate"><span class="pre">ifndef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifeq-ifneq">12.2 <code class="docutils literal notranslate"><span class="pre">ifeq</span></code>, <code class="docutils literal notranslate"><span class="pre">ifneq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elisp.html">Elisp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#terminology">1 terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#keyword">1.1 keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-items">1.2 customization items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-variables">1.3 customizable variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-faces">1.4 customizable faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-groups">1.5 customization groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#global-variables">1.6 global variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#composite-types">1.7 composite types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#symbols">2 symbols</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id2">2.1 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defcustom">2.2 defcustom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defface">2.3 defface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defgroup">2.4 defgroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defvar">2.5 defvar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defconst">2.6 defconst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#repeat-element-type">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#function-list-rest-objects">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#choice-alternative-types">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#to-be-organized-later">3 to be organized later</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -276,6 +415,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -314,7 +454,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Misc</li>
     
@@ -337,18 +477,31 @@
             
   <div class="section" id="misc">
 <h1><a class="toc-backref" href="#id1">Misc</a><a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>November 10, 2020</p>
+</dd>
+</dl>
+</div></blockquote>
 <div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
+<p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#misc" id="id1">Misc</a><ul>
-<li><a class="reference internal" href="#emacs-keybinding" id="id2">1 emacs keybinding</a></li>
-<li><a class="reference internal" href="#mac-address-changer" id="id3">2 MAC address changer</a></li>
-<li><a class="reference internal" href="#brew" id="id4">3 Brew</a></li>
-<li><a class="reference internal" href="#terminal-commands" id="id5">4 Terminal commands</a></li>
-<li><a class="reference internal" href="#firefox" id="id6">5 Firefox</a></li>
-<li><a class="reference internal" href="#thunderbird" id="id7">6 Thunderbird</a></li>
-<li><a class="reference internal" href="#three-finger-dragging" id="id8">7 three finger dragging</a></li>
-<li><a class="reference internal" href="#gpg" id="id9">8 gpg</a></li>
+<li><p><a class="reference internal" href="#misc" id="id1">Misc</a></p>
+<ul>
+<li><p><a class="reference internal" href="#emacs-keybinding" id="id2">1 emacs keybinding</a></p></li>
+<li><p><a class="reference internal" href="#mac-address-changer" id="id3">2 MAC address changer</a></p></li>
+<li><p><a class="reference internal" href="#brew" id="id4">3 Brew</a></p></li>
+<li><p><a class="reference internal" href="#terminal-commands" id="id5">4 Terminal commands</a></p></li>
+<li><p><a class="reference internal" href="#firefox" id="id6">5 Firefox</a></p></li>
+<li><p><a class="reference internal" href="#thunderbird" id="id7">6 Thunderbird</a></p></li>
+<li><p><a class="reference internal" href="#three-finger-dragging" id="id8">7 three finger dragging</a></p></li>
+<li><p><a class="reference internal" href="#gpg" id="id9">8 gpg</a></p></li>
+<li><p><a class="reference internal" href="#system-signals" id="id10">9 system signals</a></p>
+<ul>
+<li><p><a class="reference internal" href="#kill-signals" id="id11">9.1 Kill signals</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -356,73 +509,80 @@
 <div class="section" id="emacs-keybinding">
 <h2><a class="toc-backref" href="#id2">1 emacs keybinding</a><a class="headerlink" href="#emacs-keybinding" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>from <a class="reference external" href="https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict">https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict</a></li>
-<li>Get this file: Emacs Opt Bindings.dict, Edit it (optionally), — it’s self-explainary. Then save (creating the directory if there isn’t one) as <code class="docutils literal notranslate"><span class="pre">~/Library/KeyBindings/DefaultKeyBinding.dict</span></code></li>
+<li><p>from <a class="reference external" href="https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict">https://gist.github.com/cheapRoc/9670905#file-emacskeybinding-dict</a></p></li>
+<li><p>Get this file: Emacs Opt Bindings.dict, Edit it (optionally), — it’s self-explainary. Then save (creating the directory if there isn’t one) as <code class="docutils literal notranslate"><span class="pre">~/Library/KeyBindings/DefaultKeyBinding.dict</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="mac-address-changer">
 <h2><a class="toc-backref" href="#id3">2 MAC address changer</a><a class="headerlink" href="#mac-address-changer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">macchanger</span> <span class="pre">-r</span> <span class="pre">en0</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">macchanger</span> <span class="pre">-r</span> <span class="pre">en0</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="brew">
 <h2><a class="toc-backref" href="#id4">3 Brew</a><a class="headerlink" href="#brew" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Help<ul>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">--version</span></code> Display the version of Homebrew.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">help</span></code> Print Help Information</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">help</span> <span class="pre">&lt;sub-command&gt;</span></code> Print Help Info for a brew command</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">doctor</span></code> Check system for potential problems.</li>
+<li><p>Help</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">--version</span></code> Display the version of Homebrew.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">help</span></code> Print Help Information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">help</span> <span class="pre">&lt;sub-command&gt;</span></code> Print Help Info for a brew command</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">doctor</span></code> Check system for potential problems.</p></li>
 </ul>
 </li>
-<li>Update<ul>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">update</span></code> Fetch latest version of homebrew and formula</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">outdated</span></code> Show formulae with an updated version available</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">upgrade</span></code> Upgrade all outdated and UN pinned brews</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">upgrade</span> <span class="pre">&lt;formula&gt;</span></code> Upgrade only the specified brew</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">pin</span> <span class="pre">&lt;formula&gt;</span></code> Prevent the specified formulae from being upgraded</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">unpin</span> <span class="pre">&lt;formula&gt;</span></code> Allow the specified formulae to be upgraded.</li>
+<li><p>Update</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">update</span></code> Fetch latest version of homebrew and formula</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">outdated</span></code> Show formulae with an updated version available</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">upgrade</span></code> Upgrade all outdated and UN pinned brews</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">upgrade</span> <span class="pre">&lt;formula&gt;</span></code> Upgrade only the specified brew</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">pin</span> <span class="pre">&lt;formula&gt;</span></code> Prevent the specified formulae from being upgraded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">unpin</span> <span class="pre">&lt;formula&gt;</span></code> Allow the specified formulae to be upgraded.</p></li>
 </ul>
 </li>
-<li>Repositories<ul>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span></code> List all the current tapped repositories (taps)</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span> <span class="pre">&lt;user/repo&gt;</span></code> Tap a formula repository from Github using https for tap <a class="reference external" href="https://github.com/user/homebrew-repo">https://github.com/user/homebrew-repo</a></li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span> <span class="pre">&lt;user/repo&gt;</span> <span class="pre">&lt;URL&gt;</span></code> Tap a formula repository from the specified URL</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">untap</span> <span class="pre">&lt;user/repo&gt;</span></code> Remove the given tap from the repository</li>
+<li><p>Repositories</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span></code> List all the current tapped repositories (taps)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span> <span class="pre">&lt;user/repo&gt;</span></code> Tap a formula repository from Github using https for tap <a class="reference external" href="https://github.com/user/homebrew-repo">https://github.com/user/homebrew-repo</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span> <span class="pre">&lt;user/repo&gt;</span> <span class="pre">&lt;URL&gt;</span></code> Tap a formula repository from the specified URL</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">untap</span> <span class="pre">&lt;user/repo&gt;</span></code> Remove the given tap from the repository</p></li>
 </ul>
 </li>
-<li>Cask<ul>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span> <span class="pre">homebrew/cask</span></code> Tap the Cask repository from Github.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">list</span></code> List all the installed casks .</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">search</span> <span class="pre">&lt;text&gt;</span></code> Search all known casks based on the substring text.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">install</span> <span class="pre">&lt;cask&gt;</span></code> Install the given cask.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">reinstall</span> <span class="pre">&lt;cask&gt;</span></code> Reinstalls the given Cask</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">uninstall</span> <span class="pre">&lt;cask&gt;</span></code> Uninstall the given cask.</li>
+<li><p>Cask</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">tap</span> <span class="pre">homebrew/cask</span></code> Tap the Cask repository from Github.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">list</span></code> List all the installed casks .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">search</span> <span class="pre">&lt;text&gt;</span></code> Search all known casks based on the substring text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">install</span> <span class="pre">&lt;cask&gt;</span></code> Install the given cask.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">reinstall</span> <span class="pre">&lt;cask&gt;</span></code> Reinstalls the given Cask</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cask</span> <span class="pre">uninstall</span> <span class="pre">&lt;cask&gt;</span></code> Uninstall the given cask.</p></li>
 </ul>
 </li>
-<li>Search, Install, Remove<ul>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">list</span></code> List all the installed formulae.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">search</span></code> Display all locally available formulae for brewing.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">search</span> <span class="pre">&lt;text&gt;</span></code> Perform a substring search of formulae names for brewing.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">info</span> <span class="pre">&lt;formula&gt;</span></code> Display information about the formula.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">&lt;formula&gt;</span></code> Install the formula.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">uninstall</span> <span class="pre">&lt;formula&gt;</span></code> Uninstall the formula.</li>
+<li><p>Search, Install, Remove</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">list</span></code> List all the installed formulae.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">search</span></code> Display all locally available formulae for brewing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">search</span> <span class="pre">&lt;text&gt;</span></code> Perform a substring search of formulae names for brewing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">info</span> <span class="pre">&lt;formula&gt;</span></code> Display information about the formula.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">&lt;formula&gt;</span></code> Install the formula.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">uninstall</span> <span class="pre">&lt;formula&gt;</span></code> Uninstall the formula.</p></li>
 </ul>
 </li>
-<li>Cleanup<ul>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cleanup</span></code> Remove older versions of installed formulae.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cleanup</span> <span class="pre">&lt;formula&gt;</span></code> Remove older versions of specified formula.</li>
-<li><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cleanup</span> <span class="pre">-n</span></code> Display all formula that will be removed (dry run)</li>
+<li><p>Cleanup</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cleanup</span></code> Remove older versions of installed formulae.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cleanup</span> <span class="pre">&lt;formula&gt;</span></code> Remove older versions of specified formula.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">cleanup</span> <span class="pre">-n</span></code> Display all formula that will be removed (dry run)</p></li>
 </ul>
 </li>
-<li>Shell Environment Variables<ul>
-<li>Add the following in the shell init file, <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code></li>
+<li><p>Shell Environment Variables</p>
+<ul>
+<li><p>Add the following in the shell init file, <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code></p></li>
 </ul>
 </li>
 </ul>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">MANPATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/share/man:$MANPATH&quot;</span>
-<span class="n">export</span> <span class="n">INFOPATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/share/info:$INFOPATH&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">MANPATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/share/man:</span><span class="nv">$MANPATH</span><span class="s2">&quot;</span>
+<span class="nb">export</span> <span class="nv">INFOPATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/share/info:</span><span class="nv">$INFOPATH</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>And then make sure that the emacs package <code class="docutils literal notranslate"><span class="pre">exec-path-from-shell</span></code> is available and the emacs variable <code class="docutils literal notranslate"><span class="pre">exec-path-from-shell-variables</span></code> contains both of “PATH” and “MANPATH”. We need this to ensure that Emacs <code class="docutils literal notranslate"><span class="pre">man</span></code> directs to the man pages of applications installed by Brew.
@@ -431,22 +591,24 @@ For example, macos native <code class="docutils literal notranslate"><span class
 <div class="section" id="terminal-commands">
 <h2><a class="toc-backref" href="#id5">4 Terminal commands</a><a class="headerlink" href="#terminal-commands" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">s-r</span></code> back search command history</li>
-<li><code class="docutils literal notranslate"><span class="pre">s-x</span></code> quit</li>
-<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">printenv</span> <span class="pre">|</span> <span class="pre">less</span></code> show all of the environment variables</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s-r</span></code> back search command history</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s-x</span></code> quit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">printenv</span> <span class="pre">|</span> <span class="pre">less</span></code> show all of the environment variables</p></li>
 </ul>
 </div>
 <div class="section" id="firefox">
 <h2><a class="toc-backref" href="#id6">5 Firefox</a><a class="headerlink" href="#firefox" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Tue Apr 14 15:36:38 EDT 2020<ul>
-<li>app.update.badgeWaitTime: 345600 -&gt; 0</li>
-<li>browser.send<sub>pings</sub>: false -&gt; true</li>
-<li>geo.enabled: true -&gt; false</li>
+<li><p>Tue Apr 14 15:36:38 EDT 2020</p>
+<ul>
+<li><p>app.update.badgeWaitTime: 345600 -&gt; 0</p></li>
+<li><p>browser.send<sub>pings</sub>: false -&gt; true</p></li>
+<li><p>geo.enabled: true -&gt; false</p></li>
 </ul>
 </li>
-<li>Wed Apr 15 14:14:01 EDT 2020<ul>
-<li>app.update.silent: -&gt; true</li>
+<li><p>Wed Apr 15 14:14:01 EDT 2020</p>
+<ul>
+<li><p>app.update.silent: -&gt; true</p></li>
 </ul>
 </li>
 </ul>
@@ -454,9 +616,10 @@ For example, macos native <code class="docutils literal notranslate"><span class
 <div class="section" id="thunderbird">
 <h2><a class="toc-backref" href="#id7">6 Thunderbird</a><a class="headerlink" href="#thunderbird" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Tue Apr 14 17:22:03 EDT 2020<ul>
-<li>app.update.silent: false -&gt; true</li>
-<li>app.update.badgeWaitTime: 0 -&gt; default 345600</li>
+<li><p>Tue Apr 14 17:22:03 EDT 2020</p>
+<ul>
+<li><p>app.update.silent: false -&gt; true</p></li>
+<li><p>app.update.badgeWaitTime: 0 -&gt; default 345600</p></li>
 </ul>
 </li>
 </ul>
@@ -464,57 +627,57 @@ For example, macos native <code class="docutils literal notranslate"><span class
 <div class="section" id="three-finger-dragging">
 <h2><a class="toc-backref" href="#id8">7 three finger dragging</a><a class="headerlink" href="#three-finger-dragging" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>System Preference &gt; Accessibility &gt; Pointer Control &gt; Trackpad Options &gt; Enable dragging &gt; three finger drag</li>
+<li><p>System Preference &gt; Accessibility &gt; Pointer Control &gt; Trackpad Options &gt; Enable dragging &gt; three finger drag</p></li>
 </ul>
 </div>
 <div class="section" id="gpg">
 <h2><a class="toc-backref" href="#id9">8 gpg</a><a class="headerlink" href="#gpg" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>From <a class="reference external" href="https://www.reddit.com/r/commandline/comments/5eb6ft/gpgagent_connection_refused/">ref</a>:</li>
+<li><p>From <a class="reference external" href="https://www.reddit.com/r/commandline/comments/5eb6ft/gpgagent_connection_refused/">ref</a>:</p></li>
 </ul>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span>$ pgrep -u $(whoami) -l gpg-agent
-32479 gpg-agent
-$ kill 32479
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ pgrep -u <span class="k">$(</span>whoami<span class="k">)</span> -l gpg-agent
+<span class="m">32479</span> gpg-agent
+$ <span class="nb">kill</span> <span class="m">32479</span>
 $ cat s.gpg-agent
 cat: s.gpg-agent: connection refused
-$ eval $(gpg-agent --daemon)
-$ ps -a | grep &quot;gpg&quot;
-  402 ??         0:00.01 /bin/bash /usr/local/macgpg2/libexec/shutdown-gpg-agent
-75090 ??         0:00.00 gpg-agent --daemon
-75099 ttys000    0:00.00 grep gpg
-$ kill 75090
-$ kill 402
+$ <span class="nb">eval</span> <span class="k">$(</span>gpg-agent --daemon<span class="k">)</span>
+$ ps -a <span class="p">|</span> grep <span class="s2">&quot;gpg&quot;</span>
+  <span class="m">402</span> ??         <span class="m">0</span>:00.01 /bin/bash /usr/local/macgpg2/libexec/shutdown-gpg-agent
+<span class="m">75090</span> ??         <span class="m">0</span>:00.00 gpg-agent --daemon
+<span class="m">75099</span> ttys000    <span class="m">0</span>:00.00 grep gpg
+$ <span class="nb">kill</span> <span class="m">75090</span>
+$ <span class="nb">kill</span> <span class="m">402</span>
 $ cat S.gpg-agent
 cat: S.gpg-agent: Connection refused
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span>==&gt; unbound
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">==</span>&gt; unbound
 To have launchd start unbound now and restart at startup:
   sudo brew services start unbound
 $ sudo brew services start unbound
 Password:
-Service `unbound` already started, use `brew services restart unbound` to restart.
+Service <span class="sb">`</span>unbound<span class="sb">`</span> already started, use <span class="sb">`</span>brew services restart unbound<span class="sb">`</span> to restart.
 $ sudo brew services restart unbound
-Stopping `unbound`... (might take a while)
-==&gt; Successfully stopped `unbound` (label: homebrew.mxcl.unbound)
+Stopping <span class="sb">`</span>unbound<span class="sb">`</span>... <span class="o">(</span>might take a <span class="k">while</span><span class="o">)</span>
+<span class="o">==</span>&gt; Successfully stopped <span class="sb">`</span>unbound<span class="sb">`</span> <span class="o">(</span>label: homebrew.mxcl.unbound<span class="o">)</span>
 Warning: Taking root:admin ownership of some unbound paths:
   /usr/local/Cellar/unbound/1.10.1/sbin
   /usr/local/Cellar/unbound/1.10.1/sbin/unbound
   /usr/local/opt/unbound
   /usr/local/opt/unbound/sbin
   /usr/local/var/homebrew/linked/unbound
-This will require manual removal of these paths using `sudo rm` on
+This will require manual removal of these paths using <span class="sb">`</span>sudo rm<span class="sb">`</span> on
 brew upgrade/reinstall/uninstall.
-==&gt; Successfully started `unbound` (label: homebrew.mxcl.unbound)
+<span class="o">==</span>&gt; Successfully started <span class="sb">`</span>unbound<span class="sb">`</span> <span class="o">(</span>label: homebrew.mxcl.unbound<span class="o">)</span>
 
-$ brew reinstall unbound
-==&gt; Summary
-🍺  /usr/local/Cellar/unbound/1.10.1: 57 files, 5MB
+$ brew reinstall <span class="nv">unbound</span>
+<span class="o">==</span>&gt; Summary
+🍺  /usr/local/Cellar/unbound/1.10.1: <span class="m">57</span> files, 5MB
 Error: Could not remove unbound backup keg! Do so manually:
   sudo rm -rf /usr/local/Cellar/unbound/1.10.1.reinstall
 
 $ ls /usr/local/Cellar/unbound
-1.10.1                      1.10.1.reinstall        1.9.3_1
+<span class="m">1</span>.10.1                      <span class="m">1</span>.10.1.reinstall        <span class="m">1</span>.9.3_1
 $ sudo rm -rf /usr/local/Cellar/unbound/1.10.1.reinstall
 $ sudo rm -rf /usr/local/Cellar/unbound/1.10.1
 $ sudo rm -rf /usr/local/opt/unbound
@@ -522,14 +685,14 @@ $ sudo rm -rf /usr/local/opt/unbound/sbin
 $ sudo rm -rf /usr/local/var/homebrew/linked/unbound
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span>==&gt; Installing gnupg
-==&gt; Pouring gnupg-2.2.20.catalina.bottle.tar.gz
-Error: The `brew link` step did not complete successfully
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">==</span>&gt; Installing <span class="nv">gnupg</span>
+<span class="o">==</span>&gt; Pouring gnupg-2.2.20.catalina.bottle.tar.gz
+Error: The <span class="sb">`</span>brew link<span class="sb">`</span> step did not <span class="nb">complete</span> successfully
 The formula built, but is not symlinked into /usr/local
 Could not symlink bin/gpg
 Target /usr/local/bin/gpg
 already exists. You may want to remove it:
-  rm &#39;/usr/local/bin/gpg&#39;
+  rm <span class="s1">&#39;/usr/local/bin/gpg&#39;</span>
 
 To force the link and overwrite all conflicting files:
   brew link --overwrite gnupg
@@ -539,11 +702,11 @@ To list all files that would be deleted:
 
 Possible conflicting files are:
 /usr/local/bin/gpg -&gt; /usr/local/MacGPG2/bin/gpg2
-==&gt; Summary
-🍺  /usr/local/Cellar/gnupg/2.2.20: 134 files, 11.2MB
+<span class="o">==</span>&gt; Summary
+🍺  /usr/local/Cellar/gnupg/2.2.20: <span class="m">134</span> files, <span class="m">11</span>.2MB
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span>hbshim@aleph:~$ brew upgrade
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>hbshim@aleph:~$ brew upgrade
 ==&gt; Upgrading 41 outdated packages:
 pkg-config 0.29.2 -&gt; 0.29.2_3
 libheif 1.5.1 -&gt; 1.6.2_1
@@ -1109,6 +1272,53 @@ hbshim@aleph:~$
 </pre></div>
 </div>
 </div>
+<div class="section" id="system-signals">
+<h2><a class="toc-backref" href="#id10">9 system signals</a><a class="headerlink" href="#system-signals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kill-signals">
+<h3><a class="toc-backref" href="#id11">9.1 Kill signals</a><a class="headerlink" href="#kill-signals" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 30%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>signal name</strong></p></th>
+<th class="head"><p><strong>signal value</strong></p></th>
+<th class="head"><p><strong>effect</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SIGHUP</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Hangup</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SIGINT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td><p>Interrupt from keyboard</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+<td><p>Kill signal</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">15</span></code></p></td>
+<td><p>Termination signal</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SIGSTOP</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">19</span></code></p></td>
+<td><p>Stop the process</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGSTOP</span></code> makes the operating system pause a process’s execution. The process <strong>cannot ignore</strong> the signal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> forces the process to stop executing immediately. The process <strong>cannot ignore</strong> this signal. This process <strong>does not get to clean-up</strong> either.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> requests a process to stop running. This signal <strong>can be ignored</strong>. The process is given time to gracefully shutdown so that it can save its progress and release resources.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGINT</span></code> is very similar to <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> and equivalent to pressing <code class="docutils literal notranslate"><span class="pre">Control-C</span></code> key on the terminal.</p></li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -1119,10 +1329,10 @@ hbshim@aleph:~$
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mathjaxtest.html" class="btn btn-neutral float-right" title="MathJax Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="bash.html" class="btn btn-neutral float-right" title="Bash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="git.html" class="btn btn-neutral float-left" title="Git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="coq.html" class="btn btn-neutral float-left" title="Coq" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1131,11 +1341,19 @@ hbshim@aleph:~$
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, hbshim@gmail.com
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1146,7 +1364,6 @@ hbshim@aleph:~$
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,31 +11,33 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Orgmode" href="orgmode.html" />
+    <link rel="next" title="Orgmode and Emacs Diary" href="orgmode.html" />
     <link rel="prev" title="Welcome to Notes’s documentation!" href="index.html" /> 
 </head>
 
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Notes
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Notes
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -161,52 +163,74 @@
 <li class="toctree-l2"><a class="reference internal" href="#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">1 Code block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">2 Example block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">3 Export options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">4 Exporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">4.1 HTML export command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#agenda-view">1 Agenda view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">1.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">5 Font</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">6 Footnote</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">7 Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">8 Insert entries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">9 Latex preview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">10 Motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">11 Moving subtrees up/down</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">12 Paragraphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">13 Promoting/Demoting headings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">14 Repeated tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">15 Sort</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">16 Special symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">17 Superscript and subscript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">18 time stamp</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">18.1 automatic time-stamping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">18.2 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sunrise-sunset">2 Sunrise/sunset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">19 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">20 Visibility cycling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">7 Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">8 Footnote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">9 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">10 Insert entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">11 Latex preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">12 Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">13 Moving subtrees up/down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">14 Paragraphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">15 Promoting/Demoting headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">16 Repeated tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">17 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">18 Special symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">19 Superscript and subscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">20 time stamp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">20.1 automatic time-stamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id2">20.2 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#time-stamp-in-todo">20.3 time stamp in TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">21 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id3">21.1 Time stamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">22 Visibility cycling</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="auctex.html">AUCTeX</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#id1">1 AucTeX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#macros">2 Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#style-files">3 style files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="auctex.html#specifying-locations-of-style-files">3.1 Specifying locations of style files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="auctex.html#global-styles">3.1.1 Global styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="auctex.html#private-styles">3.1.2 Private styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="auctex.html#local-styles">3.1.3 Local styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="auctex.html#all-combined">3.1.4 All Combined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-style-hooks">3.1 Adding style hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-symbols">3.2 adding symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-environments">3.3 adding environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#defining-environments-with-arguments">3.3.1 defining environments with arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#replacing-predefined-environment-style-by-using-ignore">3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="auctex.html#options">3.2 Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#specifying-locations-of-style-files">3.4 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#global-styles">3.4.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#private-styles">3.4.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#local-styles">3.4.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#all-combined">3.4.4 All Combined</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#options">3.5 Options</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#id2">4 ??</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -222,6 +246,17 @@
 <li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">5 putting a formula inside of a table cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex.html#variable">6 variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">7 setcounter enumi</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spectral_sequences_pkg.html">LaTeX Pkg: spectralsequences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#environment-structure">1 Environment structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spectral_sequences_pkg.html#global-options">1.1 Global options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#classes">2 Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#differentials">3 Differentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#grouping">4 Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#commands">5 Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
@@ -280,6 +315,10 @@
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#thunderbird">6 Thunderbird</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#three-finger-dragging">7 three finger dragging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#system-signals">9 system signals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="macbookpro.html#kill-signals">9.1 Kill signals</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
@@ -344,6 +383,7 @@
 <li class="toctree-l3"><a class="reference internal" href="elisp.html#choice-alternative-types">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#to-be-organized-later">3 to be organized later</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -375,6 +415,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -413,7 +454,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Emacs</li>
     
@@ -437,60 +478,59 @@
   <div class="section" id="emacs">
 <h1>Emacs<a class="headerlink" href="#emacs" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">October 31, 2020</td>
-</tr>
-</tbody>
-</table>
+<div><dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>November 10, 2020</p>
+</dd>
+</dl>
 </div></blockquote>
 <div class="section" id="abbrevs-mode">
 <h2>1 Abbrevs mode<a class="headerlink" href="#abbrevs-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://www.emacswiki.org/emacs/AbbrevMode">https://www.emacswiki.org/emacs/AbbrevMode</a></li>
-<li><code class="docutils literal notranslate"><span class="pre">abbrev-mode</span></code> start the (minor) mode</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">a</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">add-mode-abbrev</span></code>) Define abbrev for current mode.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">a</span> <span class="pre">i</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">inverse-add-mode-abbrev</span></code>) define a word in the buffer as a mode-specific abbrev</li>
-<li><code class="docutils literal notranslate"><span class="pre">list-abbrevs</span></code> Display a list of defined abbrevs</li>
-<li><code class="docutils literal notranslate"><span class="pre">edit-abbrevs</span></code> edit abbrevs. This is the best way to add or remove abbrevs. The number in the middle column is the number of times you’ve used (expanded) the abbrev. To remove a abbrev, just delete the line. To add a abbrev, just add a line. When done, to load and or save, call any of:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">edit-abbrevs-redefine</span></code>) Redefine abbrevs according to current buffer contents.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">abbrev-edit-save-buffer</span></code>) Redefine and save to abbrev file.</li>
+<li><p><a class="reference external" href="https://www.emacswiki.org/emacs/AbbrevMode">https://www.emacswiki.org/emacs/AbbrevMode</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abbrev-mode</span></code> start the (minor) mode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">a</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">add-mode-abbrev</span></code>) Define abbrev for current mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">a</span> <span class="pre">i</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">inverse-add-mode-abbrev</span></code>) define a word in the buffer as a mode-specific abbrev</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list-abbrevs</span></code> Display a list of defined abbrevs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edit-abbrevs</span></code> edit abbrevs. This is the best way to add or remove abbrevs. The number in the middle column is the number of times you’ve used (expanded) the abbrev. To remove a abbrev, just delete the line. To add a abbrev, just add a line. When done, to load and or save, call any of:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">edit-abbrevs-redefine</span></code>) Redefine abbrevs according to current buffer contents.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">abbrev-edit-save-buffer</span></code>) Redefine and save to abbrev file.</p></li>
 </ul>
 </li>
 </ul>
 <div class="section" id="options">
 <h3>1.1 options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">abbrev-file-name</span></code> The abbrevs is saved in a file at a path specified by this variable (default: <code class="docutils literal notranslate"><span class="pre">\~/.emacs.d/abbrev_defs</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">save-abbrevs</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abbrev-file-name</span></code> The abbrevs is saved in a file at a path specified by this variable (default: <code class="docutils literal notranslate"><span class="pre">\~/.emacs.d/abbrev_defs</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save-abbrevs</span></code></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="ansi-term-mode">
 <h2>2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode<a class="headerlink" href="#ansi-term-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-j</span></code> (<code class="docutils literal notranslate"><span class="pre">term-line-mode</span></code>) switch to line mode (acts like an editor).</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-k</span></code> (<code class="docutils literal notranslate"><span class="pre">term-char-mode</span></code>) switch to char mode (acts like a usual terminal).</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">term-interrupt-subjob</span></code>) send a literal <code class="docutils literal notranslate"><span class="pre">C-c</span></code> to the sub-shell</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&lt;char&gt;</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;char&gt;</span></code> in normal Emacs modes, e.g. <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">o</span></code> invokes the global binding of <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">o</span></code> which is normally `~other-window~’</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">term-pager-toggle</span></code>) toggle the page-at-a-time feature. When enabled, the mode-line displays the word `~page~’ and each time Term receives more than a screenful of output, it pauses and displays `~**MORE**~’ in the mode-line where <code class="docutils literal notranslate"><span class="pre">&lt;SPC&gt;</span></code> displays the next screenful of output and <code class="docutils literal notranslate"><span class="pre">?</span></code> displays the other options – the interface is similar to the <code class="docutils literal notranslate"><span class="pre">more</span></code> program.</li>
-<li>When the bash complains “cannot read termcap database”, then create a symlink <code class="docutils literal notranslate"><span class="pre">~/.terminfo/65</span> <span class="pre">-&gt;</span> <span class="pre">/usr/local/share/emacs/26.3/etc/e</span></code> that is another symlink to <code class="docutils literal notranslate"><span class="pre">/usr/local/Cellar/emacs-mac/emacs-26.3-z-mac-7.7/share/emacs/26.3/etc/</span></code>. Sources say that the name of directory should be <code class="docutils literal notranslate"><span class="pre">e</span></code> but in this macos it has to be <code class="docutils literal notranslate"><span class="pre">65</span></code>. Check this by <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/usr/share/terminfo</span></code> and then <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">find</span> <span class="pre">/usr/share/terminfo</span> <span class="pre">-name</span> <span class="pre">&quot;eterm*&quot;</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-j</span></code> (<code class="docutils literal notranslate"><span class="pre">term-line-mode</span></code>) switch to line mode (acts like an editor).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-k</span></code> (<code class="docutils literal notranslate"><span class="pre">term-char-mode</span></code>) switch to char mode (acts like a usual terminal).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">term-interrupt-subjob</span></code>) send a literal <code class="docutils literal notranslate"><span class="pre">C-c</span></code> to the sub-shell</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&lt;char&gt;</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;char&gt;</span></code> in normal Emacs modes, e.g. <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">o</span></code> invokes the global binding of <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">o</span></code> which is normally `~other-window~’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">term-pager-toggle</span></code>) toggle the page-at-a-time feature. When enabled, the mode-line displays the word `~page~’ and each time Term receives more than a screenful of output, it pauses and displays `~**MORE**~’ in the mode-line where <code class="docutils literal notranslate"><span class="pre">&lt;SPC&gt;</span></code> displays the next screenful of output and <code class="docutils literal notranslate"><span class="pre">?</span></code> displays the other options – the interface is similar to the <code class="docutils literal notranslate"><span class="pre">more</span></code> program.</p></li>
+<li><p>When the bash complains “cannot read termcap database”, then create a symlink <code class="docutils literal notranslate"><span class="pre">~/.terminfo/65</span> <span class="pre">-&gt;</span> <span class="pre">/usr/local/share/emacs/26.3/etc/e</span></code> that is another symlink to <code class="docutils literal notranslate"><span class="pre">/usr/local/Cellar/emacs-mac/emacs-26.3-z-mac-7.7/share/emacs/26.3/etc/</span></code>. Sources say that the name of directory should be <code class="docutils literal notranslate"><span class="pre">e</span></code> but in this macos it has to be <code class="docutils literal notranslate"><span class="pre">65</span></code>. Check this by <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/usr/share/terminfo</span></code> and then <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">find</span> <span class="pre">/usr/share/terminfo</span> <span class="pre">-name</span> <span class="pre">&quot;eterm*&quot;</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="bookmarks">
 <h2>3 Bookmarks<a class="headerlink" href="#bookmarks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">m</span></code> (<code class="docutils literal notranslate"><span class="pre">bookmark-set</span></code>) Set the bookmark for the visited file, at point</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">list-bookmarks</span></code>) list all bookmarks</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">bookmark-jump</span></code>) then type a bookmark name. You can type <code class="docutils literal notranslate"><span class="pre">\*</span></code> for wildcard</li>
-<li><code class="docutils literal notranslate"><span class="pre">bookmark-save</span></code> save all the current bookmark values in the default bookmark file <code class="docutils literal notranslate"><span class="pre">\~/.emacs.d/bookmarks</span></code>. Can be modified by setting the variable <code class="docutils literal notranslate"><span class="pre">bookmark-default-file</span></code></li>
-<li>when in the bookmark file:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">d</span></code> mark the current item for remove</li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span></code> remove all marked ones</li>
-<li><code class="docutils literal notranslate"><span class="pre">r</span></code> rename current item’s title</li>
-<li><code class="docutils literal notranslate"><span class="pre">s</span></code> save the change</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">m</span></code> (<code class="docutils literal notranslate"><span class="pre">bookmark-set</span></code>) Set the bookmark for the visited file, at point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">list-bookmarks</span></code>) list all bookmarks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">bookmark-jump</span></code> / <code class="docutils literal notranslate"><span class="pre">helm-bookmarks</span></code> / <code class="docutils literal notranslate"><span class="pre">helm-filtered-bookmarks</span></code>) then type a bookmark name. You can type <code class="docutils literal notranslate"><span class="pre">\*</span></code> for wildcard</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bookmark-save</span></code> save all the current bookmark values in the default bookmark file <code class="docutils literal notranslate"><span class="pre">\~/.emacs.d/bookmarks</span></code>. Can be modified by setting the variable <code class="docutils literal notranslate"><span class="pre">bookmark-default-file</span></code></p></li>
+<li><p>when in the bookmark file:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> mark the current item for remove</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> remove all marked ones</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> rename current item’s title</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> save the change</p></li>
 </ul>
 </li>
 </ul>
@@ -498,39 +538,39 @@
 <div class="section" id="helm">
 <h2>4 helm<a class="headerlink" href="#helm" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">RET</span></code> executes the default action upon exiting the Helm session</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-j</span></code> executes the default action but without exiting the Helm session</li>
-<li><code class="docutils literal notranslate"><span class="pre">TAB</span></code> displays a list of actions available</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-&#64;</span></code> mark/unmark a candidate</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-U</span></code> unmark all visible marked candidates at once</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RET</span></code> executes the default action upon exiting the Helm session</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-j</span></code> executes the default action but without exiting the Helm session</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TAB</span></code> displays a list of actions available</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-&#64;</span></code> mark/unmark a candidate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-U</span></code> unmark all visible marked candidates at once</p></li>
 </ul>
 </div>
 <div class="section" id="buffers">
 <h2>5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code><a class="headerlink" href="#buffers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-b</span></code> helm-buffers</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-SPC</span></code> or <code class="docutils literal notranslate"><span class="pre">C-SPC</span></code> mark</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;</span></code> horizontal scroll</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code>  save buffer without leaving Helm</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">s</span></code> save all unsaved buffers</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">d</span></code> delete buffer without leaving Helm</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-D</span></code> delete marked buffers and leave Helm</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">k</span></code> is meant to kill buffers but cannot kill multiple buffers selected by <code class="docutils literal notranslate"><span class="pre">C-SPC</span></code> with <code class="docutils literal notranslate"><span class="pre">RET</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-b</span></code> helm-buffers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-SPC</span></code> or <code class="docutils literal notranslate"><span class="pre">C-SPC</span></code> mark</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;</span></code> horizontal scroll</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code>  save buffer without leaving Helm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">s</span></code> save all unsaved buffers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">d</span></code> delete buffer without leaving Helm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-D</span></code> delete marked buffers and leave Helm</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">k</span></code> is meant to kill buffers but cannot kill multiple buffers selected by <code class="docutils literal notranslate"><span class="pre">C-SPC</span></code> with <code class="docutils literal notranslate"><span class="pre">RET</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="kill-buffer">
 <h2>6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code><a class="headerlink" href="#kill-buffer" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>This seems only useful when killing the currently opened buffer</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">k</span></code> open kill-buffer</li>
+<li><p>This seems only useful when killing the currently opened buffer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">k</span></code> open kill-buffer</p></li>
 </ul>
 </div>
 <div class="section" id="case-conversion-a-a">
 <h2>7 Case conversion A &lt;-&gt; a<a class="headerlink" href="#case-conversion-a-a" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-l/M-u</span></code> (<code class="docutils literal notranslate"><span class="pre">downcase-word/upcase-word</span></code>) convert following word to lower/upper case.</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-c</span></code> (<code class="docutils literal notranslate"><span class="pre">capitalize-word</span></code>) capitalize the following word.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-l/C-x</span> <span class="pre">C-u</span></code> (<code class="docutils literal notranslate"><span class="pre">downcase-region/upcase-region</span></code>) convert region to lower/upper case</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-l/M-u</span></code> (<code class="docutils literal notranslate"><span class="pre">downcase-word/upcase-word</span></code>) convert following word to lower/upper case.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-c</span></code> (<code class="docutils literal notranslate"><span class="pre">capitalize-word</span></code>) capitalize the following word.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-l/C-x</span> <span class="pre">C-u</span></code> (<code class="docutils literal notranslate"><span class="pre">downcase-region/upcase-region</span></code>) convert region to lower/upper case</p></li>
 </ul>
 </div>
 <div class="section" id="deleting-and-killing">
@@ -538,158 +578,161 @@
 <div class="section" id="deleting-by-character">
 <h3>8.1 Deleting by character<a class="headerlink" href="#deleting-by-character" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">&lt;Del&gt;~/~C-d</span></code> Delete the character before/after point</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-d~/~M-&lt;Del&gt;</span></code> Kill forward/back to the end/beginning of the next/previous word</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-k~/~M-k</span></code> Kill to the end of the line/sentence</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-o</span></code> Insert a blank line after the cursor</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-S-&lt;DEL&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">kill-whole-line</span></code>) Kill a whole line</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">50</span></code> or <code class="docutils literal notranslate"><span class="pre">M-5</span> <span class="pre">0</span> <span class="pre">&lt;moving_command&gt;</span></code> repeat the moving command by 50 times. The tutorial says <code class="docutils literal notranslate"><span class="pre">C-u</span></code> is better `because it works on any terminal’. `50’ is called a “prefix argument”. Exception: <code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">8</span> <span class="pre">C-v~/~C-u</span> <span class="pre">8</span> <span class="pre">M-v</span></code> Instead of scrolling 8 pages up/down, it scrolls the current screen by 8 lines up/down.</li>
-<li><code class="docutils literal notranslate"><span class="pre">mouse-3</span></code> (right click) set the mark at point then select up to and move point to where you click</li>
-<li><code class="docutils literal notranslate"><span class="pre">'shifted</span> <span class="pre">cursor</span> <span class="pre">motion</span> <span class="pre">keys'</span></code> Set the mark at point if the mark is inactive, then move point.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-w</span></code> Kill the selected region</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;TAB&gt;</span></code> Indent the selected region</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-$</span></code> Check the spelling of words</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-/</span></code>, <code class="docutils literal notranslate"><span class="pre">C-_</span></code>, <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">u</span></code> <strong>undo</strong>. On some text terminals, typing <code class="docutils literal notranslate"><span class="pre">C-/</span></code> actually sends <code class="docutils literal notranslate"><span class="pre">C-_</span></code> to Emacs.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-g</span></code> changes the `direction’. So, after undoing <code class="docutils literal notranslate"><span class="pre">C-/</span></code> n-times, doing <code class="docutils literal notranslate"><span class="pre">C-g</span> <span class="pre">C-/</span></code> and repeating <code class="docutils literal notranslate"><span class="pre">C-/</span></code> (n-1)-times will do <strong>redo</strong> all.</li>
-<li>the auto saved file’s name for “<code class="docutils literal notranslate"><span class="pre">hello.c</span></code>” is “<code class="docutils literal notranslate"><span class="pre">#hello.c#</span></code>”. To recover auto-saved editing, run <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">recover-this-file</span> <span class="pre">&lt;RET&gt;</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;Del&gt;~/~C-d</span></code> Delete the character before/after point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-d~/~M-&lt;Del&gt;</span></code> Kill forward/back to the end/beginning of the next/previous word</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-k~/~M-k</span></code> Kill to the end of the line/sentence</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-o</span></code> Insert a blank line after the cursor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-S-&lt;DEL&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">kill-whole-line</span></code>) Kill a whole line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">50</span></code> or <code class="docutils literal notranslate"><span class="pre">M-5</span> <span class="pre">0</span> <span class="pre">&lt;moving_command&gt;</span></code> repeat the moving command by 50 times. The tutorial says <code class="docutils literal notranslate"><span class="pre">C-u</span></code> is better `because it works on any terminal’. `50’ is called a “prefix argument”. Exception: <code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">8</span> <span class="pre">C-v~/~C-u</span> <span class="pre">8</span> <span class="pre">M-v</span></code> Instead of scrolling 8 pages up/down, it scrolls the current screen by 8 lines up/down.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse-3</span></code> (right click) set the mark at point then select up to and move point to where you click</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'shifted</span> <span class="pre">cursor</span> <span class="pre">motion</span> <span class="pre">keys'</span></code> Set the mark at point if the mark is inactive, then move point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-w</span></code> Kill the selected region</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">&lt;TAB&gt;</span></code> Indent the selected region</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-$</span></code> Check the spelling of words</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-/</span></code>, <code class="docutils literal notranslate"><span class="pre">C-_</span></code>, <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">u</span></code> <strong>undo</strong>. On some text terminals, typing <code class="docutils literal notranslate"><span class="pre">C-/</span></code> actually sends <code class="docutils literal notranslate"><span class="pre">C-_</span></code> to Emacs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-g</span></code> changes the `direction’. So, after undoing <code class="docutils literal notranslate"><span class="pre">C-/</span></code> n-times, doing <code class="docutils literal notranslate"><span class="pre">C-g</span> <span class="pre">C-/</span></code> and repeating <code class="docutils literal notranslate"><span class="pre">C-/</span></code> (n-1)-times will do <strong>redo</strong> all.</p></li>
+<li><p>the auto saved file’s name for “<code class="docutils literal notranslate"><span class="pre">hello.c</span></code>” is “<code class="docutils literal notranslate"><span class="pre">#hello.c#</span></code>”. To recover auto-saved editing, run <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">recover-this-file</span> <span class="pre">&lt;RET&gt;</span></code></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="dired">
 <h2>9 Dired<a class="headerlink" href="#dired" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">d</span></code> invoke Dired, <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-other-frame</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">g</span></code> re-read all directories (retains all marks)</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-toggle-read-only</span></code>) edit Dired buffer with Wdired, or make it read-only. After the edit, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> to apply the changes, or <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&lt;ESC&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-k</span></code>) to cancel.<ul>
-<li>We can even edit symlinks by editing the dired buffer: a symlink is displayed as <code class="docutils literal notranslate"><span class="pre">&lt;SYMLINK&gt;</span> <span class="pre">-&gt;</span> <span class="pre">&lt;TARGET&gt;</span></code> and we can edit <code class="docutils literal notranslate"><span class="pre">TARGET</span></code>. Short listing mode only shows <code class="docutils literal notranslate"><span class="pre">&lt;SYMLINK&gt;</span> <span class="pre">-&gt;</span></code> without target but we can switch to the long listing with <code class="docutils literal notranslate"><span class="pre">(</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">d</span></code> invoke Dired, <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-other-frame</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code> re-read all directories (retains all marks)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-toggle-read-only</span></code>) edit Dired buffer with Wdired, or make it read-only. After the edit, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> to apply the changes, or <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&lt;ESC&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-k</span></code>) to cancel.</p>
+<ul>
+<li><p>We can even edit symlinks by editing the dired buffer: a symlink is displayed as <code class="docutils literal notranslate"><span class="pre">&lt;SYMLINK&gt;</span> <span class="pre">-&gt;</span> <span class="pre">&lt;TARGET&gt;</span></code> and we can edit <code class="docutils literal notranslate"><span class="pre">TARGET</span></code>. Short listing mode only shows <code class="docutils literal notranslate"><span class="pre">&lt;SYMLINK&gt;</span> <span class="pre">-&gt;</span></code> without target but we can switch to the long listing with <code class="docutils literal notranslate"><span class="pre">(</span></code>.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">(</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-hide-details-mode</span></code>)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-hide-details-mode</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find-grep-dired</span></code> / <code class="docutils literal notranslate"><span class="pre">(find-grep-dired</span> <span class="pre">DIR</span> <span class="pre">REGEXP)</span></code> Find files in <code class="docutils literal notranslate"><span class="pre">DIR</span></code> that contain matches for <code class="docutils literal notranslate"><span class="pre">REGEXP</span></code> and start Dired on output.</p></li>
 </ul>
 <div class="section" id="directories">
 <h3>9.1 directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-create-directory</span></code>) create a directory</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-n</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-subdir</span></code>) go to next subdirectory header line regardless of level</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-p</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-prev-subdir</span></code>) go to previous subdirectory header line regardless of level</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-tree-up</span></code>) go up to the parent directory’s header line</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-tree-down</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-up-directory</span></code>) go to parent directory</li>
-<li><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-prev-dirline</span></code>) move up to the previous directory-file line</li>
-<li><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-dirline</span></code>) move down to the next directory-file line</li>
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-find-alternate-file</span></code>) visit file or directory on current line via</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-create-directory</span></code>) create a directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-n</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-subdir</span></code>) go to next subdirectory header line regardless of level</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-p</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-prev-subdir</span></code>) go to previous subdirectory header line regardless of level</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-tree-up</span></code>) go up to the parent directory’s header line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-tree-down</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-up-directory</span></code>) go to parent directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-prev-dirline</span></code>) move up to the previous directory-file line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-dirline</span></code>) move down to the next directory-file line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-find-alternate-file</span></code>) visit file or directory on current line via</p></li>
 </ul>
 </div>
 <div class="section" id="flags">
 <h3>9.2 flags<a class="headerlink" href="#flags" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-flag-file-deletion</span></code>) flag ‘D’ the file for deletion</li>
-<li><code class="docutils literal notranslate"><span class="pre">u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark</span></code>) remove the deletion flag</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-flag-file-deletion</span></code>) flag ‘D’ the file for deletion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark</span></code>) remove the deletion flag</p></li>
 </ul>
 </div>
 <div class="section" id="files">
 <h3>9.3 files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">x</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-flagged-delete</span></code>) delete files flagged for deletion</li>
-<li>to create a new file in the directory, just use <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-f</span></code> as usual</li>
-<li><code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ret&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-find-file</span></code>) visit the file</li>
-<li><code class="docutils literal notranslate"><span class="pre">v</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-view-file</span></code>) view the file with view mode (visit without change)</li>
-<li><code class="docutils literal notranslate"><span class="pre">a</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-find-alternate-file</span></code>) visit file or directory on current line via `find-alternate-file’</li>
-<li><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">NEW</span> <span class="pre">&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-copy</span></code>) copy; <code class="docutils literal notranslate"><span class="pre">NEW</span></code> is the directory to copy into ir the new name</li>
-<li><code class="docutils literal notranslate"><span class="pre">D</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-delete</span></code>) delete the specified or marked files</li>
-<li><code class="docutils literal notranslate"><span class="pre">x</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-flagged-delete</span></code>) delete all flagged files</li>
-<li><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">NEW</span> <span class="pre">&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-symlink</span></code>) make symbolic links; this is line ‘ln -s’</li>
-<li><code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">MODESPEC</span> <span class="pre">&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-chmod</span></code>) change the mode</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-flagged-delete</span></code>) delete files flagged for deletion</p></li>
+<li><p>to create a new file in the directory, just use <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-f</span></code> as usual</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">e</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;ret&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-find-file</span></code>) visit the file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-view-file</span></code>) view the file with view mode (visit without change)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-find-alternate-file</span></code>) visit file or directory on current line via `find-alternate-file’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">NEW</span> <span class="pre">&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-copy</span></code>) copy; <code class="docutils literal notranslate"><span class="pre">NEW</span></code> is the directory to copy into ir the new name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-delete</span></code>) delete the specified or marked files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-flagged-delete</span></code>) delete all flagged files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">NEW</span> <span class="pre">&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-symlink</span></code>) make symbolic links; this is line ‘ln -s’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M</span> <span class="pre">MODESPEC</span> <span class="pre">&lt;RET&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-do-chmod</span></code>) change the mode</p></li>
 </ul>
 </div>
 <div class="section" id="marks">
 <h3>9.4 marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">m</span></code> mark with ‘*’</li>
-<li><code class="docutils literal notranslate"><span class="pre">u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark</span></code>) remove any mark</li>
-<li><code class="docutils literal notranslate"><span class="pre">U</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark-all-marks</span></code>) remove all marks from all files in the buffer</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-}</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-marked-file</span></code>) move down to the next marked file</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-{</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-prev-marked-file</span></code>) move up to the previous marked file</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-_</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-undo</span></code>) undo changes in the Dired buffer</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> mark with ‘*’</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark</span></code>) remove any mark</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-unmark-all-marks</span></code>) remove all marks from all files in the buffer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-}</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-next-marked-file</span></code>) move down to the next marked file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-{</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-prev-marked-file</span></code>) move up to the previous marked file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-_</span></code> (<code class="docutils literal notranslate"><span class="pre">dired-undo</span></code>) undo changes in the Dired buffer</p></li>
 </ul>
 </div>
 <div class="section" id="shell-command">
 <h3>9.5 shell command<a class="headerlink" href="#shell-command" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">!</span></code> (‘<code class="docutils literal notranslate"><span class="pre">dired-do-shell-command</span></code>’) reads a shell command string in the minibuffer, and runs that shell command on one or more files</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">!</span></code> (‘<code class="docutils literal notranslate"><span class="pre">dired-do-shell-command</span></code>’) reads a shell command string in the minibuffer, and runs that shell command on one or more files</p></li>
 </ul>
 </div>
 <div class="section" id="id1">
 <h3>9.6 options<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Dired-Listing-Switches</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dired-Listing-Switches</span></code></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="file">
 <h2>10 File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>save: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code></li>
-<li>save as: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-w</span></code></li>
+<li><p>save: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-s</span></code></p></li>
+<li><p>save as: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-w</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="find-replace">
 <h2>11 Find/replace<a class="headerlink" href="#find-replace" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>incremental search: <code class="docutils literal notranslate"><span class="pre">C-s</span></code> (forward), <code class="docutils literal notranslate"><span class="pre">C-r</span></code> (backward)</li>
-<li>find all occurrence: <code class="docutils literal notranslate"><span class="pre">M-s</span> <span class="pre">o</span></code> (<code class="docutils literal notranslate"><span class="pre">occur</span></code>)</li>
+<li><p>incremental search: <code class="docutils literal notranslate"><span class="pre">C-s</span></code> (forward), <code class="docutils literal notranslate"><span class="pre">C-r</span></code> (backward)</p></li>
+<li><p>find all occurrence: <code class="docutils literal notranslate"><span class="pre">M-s</span> <span class="pre">o</span></code> (<code class="docutils literal notranslate"><span class="pre">occur</span></code>)</p></li>
 </ul>
 </div>
 <div class="section" id="font">
 <h2>12 font<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>M-x customize-face&lt;RET&gt;default&lt;RET&gt;</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-+</span></code> (<code class="docutils literal notranslate"><span class="pre">(text-scale-adjust</span> <span class="pre">INC)</span></code>) / <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C--</span></code> (<code class="docutils literal notranslate"><span class="pre">(text-scale-adjust</span> <span class="pre">-INC)</span></code>) to increase/decrease the size.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-0</span></code> reset to the default font size</li>
+<li><p>M-x customize-face&lt;RET&gt;default&lt;RET&gt;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-+</span></code> (<code class="docutils literal notranslate"><span class="pre">(text-scale-adjust</span> <span class="pre">INC)</span></code>) / <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C--</span></code> (<code class="docutils literal notranslate"><span class="pre">(text-scale-adjust</span> <span class="pre">-INC)</span></code>) to increase/decrease the size.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-0</span></code> reset to the default font size</p></li>
 </ul>
 </div>
 <div class="section" id="frames">
 <h2>13 frames<a class="headerlink" href="#frames" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">2</span></code> (<code class="docutils literal notranslate"><span class="pre">make-frame-command</span></code>) create a new frame</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-frame</span></code>) delete the selected frame</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">1</span></code> delete all frames except the selected one</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">o</span></code> cycle and select other frames</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">2</span></code> (<code class="docutils literal notranslate"><span class="pre">make-frame-command</span></code>) create a new frame</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-frame</span></code>) delete the selected frame</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">1</span></code> delete all frames except the selected one</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">5</span> <span class="pre">o</span></code> cycle and select other frames</p></li>
 </ul>
 </div>
 <div class="section" id="help-and-info">
 <h2>14 help and info<a class="headerlink" href="#help-and-info" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">info</span></code>) run Info, the GNU documentation browser</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-bindings</span></code>) display all active key bindings</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">c</span> <span class="pre">KEY</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-key-briefly</span></code>) display the name of the command that <code class="docutils literal notranslate"><span class="pre">KEY</span></code> is bound to</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">k</span> <span class="pre">KEY</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-key</span></code>) display the name and documentation of the command that <code class="docutils literal notranslate"><span class="pre">KEY</span></code> runs</li>
-<li>to open separate buffer for <code class="docutils literal notranslate"><span class="pre">info</span></code>, do <code class="docutils literal notranslate"><span class="pre">M-2</span> <span class="pre">M-x</span> <span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">M-3</span> <span class="pre">M-x</span> <span class="pre">info</span></code>, etc.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span></code> help apropos</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">c</span> <span class="pre">&lt;command&gt;</span></code> displays a very brief description of the command. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">c</span> <span class="pre">C-p</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">k</span> <span class="pre">&lt;command&gt;</span></code> displays the documentation of the function along with its name.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">f</span> <span class="pre">&lt;function_name&gt;</span></code> describe a function. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">f</span> <span class="pre">previous-line&lt;RET&gt;</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">a</span> <span class="pre">&lt;keyword&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">&lt;keyword&gt;</span></code> (command apropos) list all the commands whose names contain that keyword. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">a</span> <span class="pre">file&lt;RET&gt;</span></code> displays a list of all <code class="docutils literal notranslate"><span class="pre">M-x</span></code> commands with “file” in their names with character-command.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">i</span></code> (<code class="docutils literal notranslate"><span class="pre">info</span></code>) run Info, the GNU documentation browser</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-bindings</span></code>) display all active key bindings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">c</span> <span class="pre">KEY</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-key-briefly</span></code>) display the name of the command that <code class="docutils literal notranslate"><span class="pre">KEY</span></code> is bound to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">k</span> <span class="pre">KEY</span></code> (<code class="docutils literal notranslate"><span class="pre">describe-key</span></code>) display the name and documentation of the command that <code class="docutils literal notranslate"><span class="pre">KEY</span></code> runs</p></li>
+<li><p>to open separate buffer for <code class="docutils literal notranslate"><span class="pre">info</span></code>, do <code class="docutils literal notranslate"><span class="pre">M-2</span> <span class="pre">M-x</span> <span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">M-3</span> <span class="pre">M-x</span> <span class="pre">info</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span></code> help apropos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">c</span> <span class="pre">&lt;command&gt;</span></code> displays a very brief description of the command. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">c</span> <span class="pre">C-p</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">k</span> <span class="pre">&lt;command&gt;</span></code> displays the documentation of the function along with its name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">f</span> <span class="pre">&lt;function_name&gt;</span></code> describe a function. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">f</span> <span class="pre">previous-line&lt;RET&gt;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">a</span> <span class="pre">&lt;keyword&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">&lt;keyword&gt;</span></code> (command apropos) list all the commands whose names contain that keyword. Eg. <code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">a</span> <span class="pre">file&lt;RET&gt;</span></code> displays a list of all <code class="docutils literal notranslate"><span class="pre">M-x</span></code> commands with “file” in their names with character-command.</p></li>
 </ul>
 <div class="section" id="browsing-inside-info">
 <h3>14.1 Browsing inside info<a class="headerlink" href="#browsing-inside-info" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">L</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history</span></code>), <code class="docutils literal notranslate"><span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history-back</span></code>), <code class="docutils literal notranslate"><span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history-forward</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-up</span></code>)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history</span></code>), <code class="docutils literal notranslate"><span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history-back</span></code>), <code class="docutils literal notranslate"><span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-history-forward</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">Info-up</span></code>)</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="history">
 <h2>15 history<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">view-lossage</span></code>) Display last few input keystrokes and the commands run.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-h</span> <span class="pre">l</span></code> (<code class="docutils literal notranslate"><span class="pre">view-lossage</span></code>) Display last few input keystrokes and the commands run.</p></li>
 </ul>
 </div>
 <div class="section" id="ispell-flyspell">
 <h2>16 ispell (flyspell)<a class="headerlink" href="#ispell-flyspell" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-$</span></code> Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.<ul>
-<li><code class="docutils literal notranslate"><span class="pre">i</span></code> Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-$</span></code> Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.</p></li>
 </ul>
 </li>
 </ul>
@@ -697,10 +740,10 @@
 <div class="section" id="key-binding">
 <h2>17 Key-binding<a class="headerlink" href="#key-binding" title="Permalink to this headline">¶</a></h2>
 <p>In case of conflict between key-bindings with major or minor modes, we can add a hook as the following to remove or change the undesired key-bindings. Once ‘unbounded’, the it will be bound to another mode in lower priority.</p>
-<div class="code elisp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="s1">&#39;reftex-mode-hook</span>
-          <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
-            <span class="p">(</span><span class="n">define</span><span class="o">-</span><span class="n">key</span> <span class="n">reftex</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="nb">map</span> <span class="s2">&quot;\C-c&amp;&quot;</span> <span class="n">nil</span><span class="p">)</span>
-            <span class="p">(</span><span class="n">define</span><span class="o">-</span><span class="n">key</span> <span class="n">reftex</span><span class="o">-</span><span class="n">mode</span><span class="o">-</span><span class="nb">map</span> <span class="s2">&quot;\C-c(&quot;</span> <span class="s1">&#39;my-insert-label)))</span>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;reftex-mode-hook</span>
+          <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span>
+            <span class="p">(</span><span class="nf">define-key</span> <span class="nv">reftex-mode-map</span> <span class="s">&quot;\C-c&amp;&quot;</span> <span class="no">nil</span><span class="p">)</span>
+            <span class="p">(</span><span class="nf">define-key</span> <span class="nv">reftex-mode-map</span> <span class="s">&quot;\C-c(&quot;</span> <span class="ss">&#39;my-insert-label</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -712,106 +755,107 @@
 <div class="section" id="by-characters-lines">
 <h3>19.1 by characters/lines<a class="headerlink" href="#by-characters-lines" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-b~/~C-f</span></code> move back/forward by one character</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-p~/~C-n</span></code> move up/down by one line</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-b~/~C-f</span></code> move back/forward by one character</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-p~/~C-n</span></code> move up/down by one line</p></li>
 </ul>
 </div>
 <div class="section" id="by-words">
 <h3>19.2 by words<a class="headerlink" href="#by-words" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-b~/~M-f</span></code> move back/forward by one word</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-b~/~M-f</span></code> move back/forward by one word</p></li>
 </ul>
 </div>
 <div class="section" id="horizontally">
 <h3>19.3 horizontally<a class="headerlink" href="#horizontally" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-a~/~C-e</span></code> move to the beginning/end of the line</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-m</span></code> (<code class="docutils literal notranslate"><span class="pre">back-to-indentation</span></code>) Jump to first non-whitespace character of the line</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-a~/~C-e</span></code> move to the beginning/end of the line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-m</span></code> (<code class="docutils literal notranslate"><span class="pre">back-to-indentation</span></code>) Jump to first non-whitespace character of the line</p></li>
 </ul>
 </div>
 <div class="section" id="by-sentence">
 <h3>19.4 by sentence<a class="headerlink" href="#by-sentence" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-a~/~M-e</span></code> move to the beginning/end of the sentence</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-a~/~M-e</span></code> move to the beginning/end of the sentence</p></li>
 </ul>
 </div>
 <div class="section" id="by-paragraph">
 <h3>19.5 by paragraph<a class="headerlink" href="#by-paragraph" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-{</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-paragraph</span></code>) Move back to previous paragraph beginning</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-}</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-paragraph</span></code>) Move forward to next paragraph end.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-{</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-paragraph</span></code>) Move back to previous paragraph beginning</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-}</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-paragraph</span></code>) Move forward to next paragraph end.</p></li>
 </ul>
 </div>
 <div class="section" id="by-matching-parentheses">
 <h3>19.6 by matching parentheses<a class="headerlink" href="#by-matching-parentheses" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-M-f</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-sexp</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-b</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-sexp</span></code>)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-f</span></code> (<code class="docutils literal notranslate"><span class="pre">forward-sexp</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-b</span></code> (<code class="docutils literal notranslate"><span class="pre">backward-sexp</span></code>)</p></li>
 </ul>
 </div>
 <div class="section" id="by-buffer">
 <h3>19.7 by buffer<a class="headerlink" href="#by-buffer" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">M-&gt;</span></code> move to the beginning/end of the buffer</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">M-&gt;</span></code> move to the beginning/end of the buffer</p></li>
 </ul>
 </div>
 <div class="section" id="by-page">
 <h3>19.8 by page<a class="headerlink" href="#by-page" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-v</span></code> <code class="docutils literal notranslate"><span class="pre">M-v</span></code> page down/up by one page</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-v</span></code> scroll the other window</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-l</span></code> Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-v</span></code> <code class="docutils literal notranslate"><span class="pre">M-v</span></code> page down/up by one page</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-v</span></code> scroll the other window</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-l</span></code> Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen</p></li>
 </ul>
 </div>
 <div class="section" id="back-to-previous-position">
 <h3>19.9 back to previous position<a class="headerlink" href="#back-to-previous-position" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-&lt;SPC&gt;</span></code> Set the mark at point</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-x</span></code> Set the mark at point, activate, then move back to the original point</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-&lt;SPC&gt;</span></code> Set the mark at point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-x</span></code> Set the mark at point, activate, then move back to the original point</p></li>
 </ul>
 </div>
 <div class="section" id="go-to">
 <h3>19.10 GO TO<a class="headerlink" href="#go-to" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-g</span> <span class="pre">g</span></code> go to the line</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-g</span> <span class="pre">g</span></code> go to the line</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="outline-minor-mode">
 <h2>20 Outline minor mode<a class="headerlink" href="#outline-minor-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>A <em>heading line</em> together with all following <em>body lines</em> is called an <strong>entry</strong>.<ul>
-<li><code class="docutils literal notranslate"><span class="pre">outline-hide-entry</span></code> and <code class="docutils literal notranslate"><span class="pre">outline-show-entry</span></code> only applies to the body.</li>
-<li>The <strong>body</strong> as in <code class="docutils literal notranslate"><span class="pre">outline-hide-body</span></code> refers to all body lines in the buffer.</li>
-<li><strong>All</strong> as in <code class="docutils literal notranslate"><span class="pre">outline-show-all</span></code> literally means all of the lines in the buffer.</li>
+<li><p>A <em>heading line</em> together with all following <em>body lines</em> is called an <strong>entry</strong>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">outline-hide-entry</span></code> and <code class="docutils literal notranslate"><span class="pre">outline-show-entry</span></code> only applies to the body.</p></li>
+<li><p>The <strong>body</strong> as in <code class="docutils literal notranslate"><span class="pre">outline-hide-body</span></code> refers to all body lines in the buffer.</p></li>
+<li><p><strong>All</strong> as in <code class="docutils literal notranslate"><span class="pre">outline-show-all</span></code> literally means all of the lines in the buffer.</p></li>
 </ul>
 </li>
-<li>A heading line together with all of its deeper entries is called a <strong>subtree</strong>.</li>
-<li>Immediate (one level down) subheadings of the current heading is called <strong>children</strong>.</li>
-<li>All of deeper subheadings under the current heading are called <strong>branches</strong>.</li>
-<li><em>Bodies</em> of the current heading and <em>bodies</em> of its subheadings are collectively called <strong>leaves</strong>.</li>
-<li>Everything except the top N levels of heading lines and their bodies are called <strong>sublevels</strong></li>
-<li>Everything except the heading or body with heading lines leading up to the top level are called <strong>other</strong></li>
+<li><p>A heading line together with all of its deeper entries is called a <strong>subtree</strong>.</p></li>
+<li><p>Immediate (one level down) subheadings of the current heading is called <strong>children</strong>.</p></li>
+<li><p>All of deeper subheadings under the current heading are called <strong>branches</strong>.</p></li>
+<li><p><em>Bodies</em> of the current heading and <em>bodies</em> of its subheadings are collectively called <strong>leaves</strong>.</p></li>
+<li><p>Everything except the top N levels of heading lines and their bodies are called <strong>sublevels</strong></p></li>
+<li><p>Everything except the heading or body with heading lines leading up to the top level are called <strong>other</strong></p></li>
 </ul>
 <div class="section" id="motion-commands">
 <h3>20.1 Motion commands<a class="headerlink" href="#motion-commands" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-next-visible-heading</span></code>)     move point to the next     visible heading line</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-p</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-previous-visible-heading</span></code>) move point to the previous visible heading line</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-f</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-forward-same-level</span></code>)  move point to the next     visible heading line of the same level</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-b</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-backward-same-level</span></code>) move point to the previous visible heading line of the same level</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-u</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-up-heading</span></code>) move point up to a lower-level visible heading line</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-next-visible-heading</span></code>)     move point to the next     visible heading line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-p</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-previous-visible-heading</span></code>) move point to the previous visible heading line</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-f</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-forward-same-level</span></code>)  move point to the next     visible heading line of the same level</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-b</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-backward-same-level</span></code>) move point to the previous visible heading line of the same level</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-u</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-up-heading</span></code>) move point up to a lower-level visible heading line</p></li>
 </ul>
 </div>
 <div class="section" id="visibility-commands">
 <h3>20.2 Visibility commands<a class="headerlink" href="#visibility-commands" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-a</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-all</span></code>) expand all (bufferwise)</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-sublevels</span></code>) collapse all (bufferwise) sublevels</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-d</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-subtree</span></code>) hide everything under the current heading except the heading itself</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-subtree</span></code>) show everything under the current heading (body, subheadings and their bodies)</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-l</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-leaves</span></code>) hide the body of the current heading line and bodies of its subheadings</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-k</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-branches</span></code>) show all subheadings, at all levels, of the current line</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-a</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-all</span></code>) expand all (bufferwise)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-q</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-sublevels</span></code>) collapse all (bufferwise) sublevels</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-d</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-subtree</span></code>) hide everything under the current heading except the heading itself</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-subtree</span></code>) show everything under the current heading (body, subheadings and their bodies)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-l</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-hide-leaves</span></code>) hide the body of the current heading line and bodies of its subheadings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-k</span></code> (<code class="docutils literal notranslate"><span class="pre">outline-show-branches</span></code>) show all subheadings, at all levels, of the current line</p></li>
 </ul>
 </div>
 </div>
@@ -822,30 +866,33 @@
 <div class="section" id="region-mark">
 <h2>22 Region/Mark<a class="headerlink" href="#region-mark" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-&lt;SPC&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">set-mark-command</span></code>) Set the mark at point, and activate it.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-x</span></code> (<code class="docutils literal notranslate"><span class="pre">exchange-point-and-mark</span></code>) Set the mark at point, and activate it; then move point where the mark used to be.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-&lt;SPC&gt;</span></code> (<code class="docutils literal notranslate"><span class="pre">set-mark-command</span></code>) Set the mark at point, and activate it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">C-x</span></code> (<code class="docutils literal notranslate"><span class="pre">exchange-point-and-mark</span></code>) Set the mark at point, and activate it; then move point where the mark used to be.</p></li>
 </ul>
 </div>
 <div class="section" id="registers">
 <h2>23 Registers<a class="headerlink" href="#registers" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">view-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> display a description of what register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains</li>
-<li>Saving Positions<ul>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">SPC</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">point-to-register</span></code>) record the position of point and the current buffer in register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">j</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">jump-to-register</span></code>) jump to the position and buffer saved in register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">view-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> display a description of what register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains</p></li>
+<li><p>Saving Positions</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">SPC</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">point-to-register</span></code>) record the position of point and the current buffer in register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">j</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">jump-to-register</span></code>) jump to the position and buffer saved in register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
 </ul>
 </li>
-<li>Saving text<ul>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">s</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">copy-to-register</span></code>) copy region into register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">i</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">insert-register</span></code>) insert text from register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">append-to-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> append region to text in register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">increment-register</span></code>) if the register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains a text, append region to text in register <code class="docutils literal notranslate"><span class="pre">r</span></code>. If the register contains a number, increase it by 1</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">prepend-to-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> prepend region to text in register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
+<li><p>Saving text</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">s</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">copy-to-register</span></code>) copy region into register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">i</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">insert-register</span></code>) insert text from register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">append-to-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> append region to text in register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">increment-register</span></code>) if the register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains a text, append region to text in register <code class="docutils literal notranslate"><span class="pre">r</span></code>. If the register contains a number, increase it by 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">prepend-to-register</span> <span class="pre">RET</span> <span class="pre">r</span></code> prepend region to text in register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
 </ul>
 </li>
-<li>Saving numbers<ul>
-<li><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">number</span> <span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">n</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">number-to-register</span></code>) store <code class="docutils literal notranslate"><span class="pre">number</span></code> into register <code class="docutils literal notranslate"><span class="pre">r</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">number</span> <span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">+</span> <span class="pre">r</span></code> if the register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains a number, increse that number by <code class="docutils literal notranslate"><span class="pre">number</span></code></li>
+<li><p>Saving numbers</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">number</span> <span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">n</span> <span class="pre">r</span></code> (<code class="docutils literal notranslate"><span class="pre">number-to-register</span></code>) store <code class="docutils literal notranslate"><span class="pre">number</span></code> into register <code class="docutils literal notranslate"><span class="pre">r</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">number</span> <span class="pre">C-x</span> <span class="pre">r</span> <span class="pre">+</span> <span class="pre">r</span></code> if the register <code class="docutils literal notranslate"><span class="pre">r</span></code> contains a number, increse that number by <code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -853,35 +900,35 @@
 <div class="section" id="select">
 <h2>24 Select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">h</span></code> (<code class="docutils literal notranslate"><span class="pre">mark-whoe-buffer</span></code>) put point at beginning and mark at end of buffer (select all)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">h</span></code> (<code class="docutils literal notranslate"><span class="pre">mark-whoe-buffer</span></code>) put point at beginning and mark at end of buffer (select all)</p></li>
 </ul>
 </div>
 <div class="section" id="sessions">
 <h2>25 Sessions<a class="headerlink" href="#sessions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>See info &gt; (emacs)Top &gt; Saving Emacs Sessions for detail</li>
-<li>if the variable <code class="docutils literal notranslate"><span class="pre">desktop-save-mode</span></code> is <code class="docutils literal notranslate"><span class="pre">t</span></code>,<ul>
-<li>Emacs looks, when it started, for a saved desktop in the current directory or in the location specified by <code class="docutils literal notranslate"><span class="pre">desktop-path</span></code> if specified by command <code class="docutils literal notranslate"><span class="pre">desktop-change-dir</span></code></li>
-<li>Emacs, by default, auto-saves the desktop whenever any of it changes. <code class="docutils literal notranslate"><span class="pre">desktop-auto-save-timeout</span></code> determines how frequently Emacs checks for modifications</li>
+<li><p>See info &gt; (emacs)Top &gt; Saving Emacs Sessions for detail</p></li>
+<li><p>if the variable <code class="docutils literal notranslate"><span class="pre">desktop-save-mode</span></code> is <code class="docutils literal notranslate"><span class="pre">t</span></code>,</p>
+<ul>
+<li><p>Emacs looks, when it started, for a saved desktop in the current directory or in the location specified by <code class="docutils literal notranslate"><span class="pre">desktop-path</span></code> if specified by command <code class="docutils literal notranslate"><span class="pre">desktop-change-dir</span></code></p></li>
+<li><p>Emacs, by default, auto-saves the desktop whenever any of it changes. <code class="docutils literal notranslate"><span class="pre">desktop-auto-save-timeout</span></code> determines how frequently Emacs checks for modifications</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">desktop-save</span></code> Manually save the desktop</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">desktop-clear</span></code> empty the Emacs desktop by killing all buffers and clears the global variables listed in <code class="docutils literal notranslate"><span class="pre">desktop-clear-preserve-buffers-regexp</span></code></li>
-<li>if Emacs crashes, the lock stays on the dektop file and Emacs will ask next time whether use the locked desktop file or not. the variable <code class="docutils literal notranslate"><span class="pre">desktop-load-locked-desktop</span></code> valued <code class="docutils literal notranslate"><span class="pre">nil</span></code> will load the locked desktop file without asking</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">desktop-save</span></code> Manually save the desktop</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">desktop-clear</span></code> empty the Emacs desktop by killing all buffers and clears the global variables listed in <code class="docutils literal notranslate"><span class="pre">desktop-clear-preserve-buffers-regexp</span></code></p></li>
+<li><p>if Emacs crashes, the lock stays on the dektop file and Emacs will ask next time whether use the locked desktop file or not. the variable <code class="docutils literal notranslate"><span class="pre">desktop-load-locked-desktop</span></code> valued <code class="docutils literal notranslate"><span class="pre">nil</span></code> will load the locked desktop file without asking</p></li>
 </ul>
 </div>
 <div class="section" id="symbol">
 <h2>26 Symbol<a class="headerlink" href="#symbol" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-q</span> <span class="pre">C-&lt;KEY&gt;</span></code> Enter <code class="docutils literal notranslate"><span class="pre">^&lt;KEY&gt;</span></code> symbol, eg. <code class="docutils literal notranslate"><span class="pre">^A</span></code> for <code class="docutils literal notranslate"><span class="pre">CTRL-A</span></code> key combination</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-q</span> <span class="pre">C-&lt;KEY&gt;</span></code> Enter <code class="docutils literal notranslate"><span class="pre">^&lt;KEY&gt;</span></code> symbol, eg. <code class="docutils literal notranslate"><span class="pre">^A</span></code> for <code class="docutils literal notranslate"><span class="pre">CTRL-A</span></code> key combination</p></li>
 </ul>
 </div>
 <div class="section" id="timestamp">
 <h2>27 Timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">M-!</span> <span class="pre">date</span></code> insert timestamp manually.</p>
-</li>
-<li><p class="first">Placing the line <code class="docutils literal notranslate"><span class="pre">Time-stamp:</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">Time-stamp:</span> <span class="pre">&quot;&lt;</span> <span class="pre">&gt;&quot;</span></code> within the first eight lines will make Emacs automatically put date and time on that line. The keyword <code class="docutils literal notranslate"><span class="pre">Time-stamp</span></code> can be customizing variables <code class="docutils literal notranslate"><span class="pre">time-stamp-start</span></code>, <code class="docutils literal notranslate"><span class="pre">time-stamp-end</span></code> as the following, as an example.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-u</span> <span class="pre">M-!</span> <span class="pre">date</span></code> insert timestamp manually.</p></li>
+<li><p>Placing the line <code class="docutils literal notranslate"><span class="pre">Time-stamp:</span> <span class="pre">&quot;</span> <span class="pre">&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">Time-stamp:</span> <span class="pre">&quot;&lt;</span> <span class="pre">&gt;&quot;</span></code> within the first eight lines will make Emacs automatically put date and time on that line. The keyword <code class="docutils literal notranslate"><span class="pre">Time-stamp</span></code> can be customizing variables <code class="docutils literal notranslate"><span class="pre">time-stamp-start</span></code>, <code class="docutils literal notranslate"><span class="pre">time-stamp-end</span></code> as the following, as an example.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- time-stamp-start: &quot;DATE:\\s-&quot;; time-stamp-end: &quot;$&quot;; time-stamp-format: &quot;%:b %02d, %:y&quot; -*-</span>
 <span class="c1">#+DATE:</span>
 </pre></div>
@@ -893,105 +940,101 @@
 <div class="section" id="windows">
 <h2>28 windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">o</span></code> (<code class="docutils literal notranslate"><span class="pre">other-window</span></code>) Select another window.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-M-v</span></code> (<code class="docutils literal notranslate"><span class="pre">scroll-other-window</span></code>) Scroll the next window.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-window</span></code>) Delete the selected window.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">1</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-other-windows</span></code>) Delete all windows in the selected frame except the selected window.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">4</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">kill-buffer-and-window</span></code>) Delete the selected window and kill the buffer that was showing in it. The last character in this key sequence is a zero.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">enlarge-window</span></code>) Make selected window taller.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">}</span></code> (<code class="docutils literal notranslate"><span class="pre">enlarge-window-horizontally</span></code>) Make selected window wider.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">{</span></code>  (<code class="docutils literal notranslate"><span class="pre">shrink-window-horizontally</span></code>) Make selected window narrower.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">-</span></code> (<code class="docutils literal notranslate"><span class="pre">shrink-window-if-larger-than-buffer</span></code>) Shrink this window if its buffer doesn’t need so many lines.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">balance-windows</span></code>) Make all windows the same height.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">o</span></code> (<code class="docutils literal notranslate"><span class="pre">other-window</span></code>) Select another window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-M-v</span></code> (<code class="docutils literal notranslate"><span class="pre">scroll-other-window</span></code>) Scroll the next window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-window</span></code>) Delete the selected window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">1</span></code> (<code class="docutils literal notranslate"><span class="pre">delete-other-windows</span></code>) Delete all windows in the selected frame except the selected window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">4</span> <span class="pre">0</span></code> (<code class="docutils literal notranslate"><span class="pre">kill-buffer-and-window</span></code>) Delete the selected window and kill the buffer that was showing in it. The last character in this key sequence is a zero.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">^</span></code> (<code class="docutils literal notranslate"><span class="pre">enlarge-window</span></code>) Make selected window taller.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">}</span></code> (<code class="docutils literal notranslate"><span class="pre">enlarge-window-horizontally</span></code>) Make selected window wider.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">{</span></code>  (<code class="docutils literal notranslate"><span class="pre">shrink-window-horizontally</span></code>) Make selected window narrower.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">-</span></code> (<code class="docutils literal notranslate"><span class="pre">shrink-window-if-larger-than-buffer</span></code>) Shrink this window if its buffer doesn’t need so many lines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">+</span></code> (<code class="docutils literal notranslate"><span class="pre">balance-windows</span></code>) Make all windows the same height.</p></li>
 </ul>
 <div class="section" id="transpose-windows">
 <h3>28.1 transpose windows<a class="headerlink" href="#transpose-windows" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https:ff//www.emacswiki.org/emacs/TransposeWindows">https:ff//www.emacswiki.org/emacs/TransposeWindows</a></li>
-<li>top and bottom windows open and want to switch their positions: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span> <span class="pre">C-x</span> <span class="pre">4</span> <span class="pre">b</span></code></li>
-<li>buttom window active and moving it to the top window: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span> <span class="pre">C-x</span> <span class="pre">2</span> <span class="pre">C-x</span> <span class="pre">b</span> <span class="pre">RET</span></code></li>
+<li><p><a class="reference external" href="https:ff//www.emacswiki.org/emacs/TransposeWindows">https:ff//www.emacswiki.org/emacs/TransposeWindows</a></p></li>
+<li><p>top and bottom windows open and want to switch their positions: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span> <span class="pre">C-x</span> <span class="pre">4</span> <span class="pre">b</span></code></p></li>
+<li><p>buttom window active and moving it to the top window: <code class="docutils literal notranslate"><span class="pre">C-x</span> <span class="pre">0</span> <span class="pre">C-x</span> <span class="pre">2</span> <span class="pre">C-x</span> <span class="pre">b</span> <span class="pre">RET</span></code></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="yasnippet">
 <h2>29 YASnippet<a class="headerlink" href="#yasnippet" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">yas-new-snippet</span></code>) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> to save it.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-n</span></code> (<code class="docutils literal notranslate"><span class="pre">yas-new-snippet</span></code>) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-c</span></code> to save it.</p></li>
 </ul>
 <div class="section" id="variables">
 <h3>29.1 variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">yas-global-mode</span></code> Non-nil if Yas-Global mode is enabled</li>
-<li><code class="docutils literal notranslate"><span class="pre">yas-snippet-dirs</span></code> list of top-level snippet directories</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yas-global-mode</span></code> Non-nil if Yas-Global mode is enabled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yas-snippet-dirs</span></code> list of top-level snippet directories</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>30 Variables<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">See <a class="reference external" href="emacs#File%20Variables">info:emacs#File Variables</a></p>
+<li><p>See <a class="reference external" href="emacs#File%20Variables">info:emacs#File Variables</a></p>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">-*-</span> <span class="pre">coding:</span> <span class="pre">utf-8</span> <span class="pre">-*-</span></code></p>
-</li>
-<li><p class="first">local variable example</p>
-</li>
-<li><p class="first">Per-Directory Local Variables</p>
-</li>
-<li><p class="first">specified by the file named <code class="docutils literal notranslate"><span class="pre">.dir-locals.el</span></code> in the directory</p>
-</li>
-<li><p class="first">See <a class="reference external" href="emacs#Directory%20Variables">info:emacs#Directory Variables</a></p>
-</li>
-<li><p class="first">Example</p>
-<div class="code elisp highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">((</span><span class="n">nil</span> <span class="o">.</span> <span class="p">((</span><span class="n">indent</span><span class="o">-</span><span class="n">tabs</span><span class="o">-</span><span class="n">mode</span> <span class="o">.</span> <span class="n">t</span><span class="p">)</span>
-        <span class="p">(</span><span class="n">fill</span><span class="o">-</span><span class="n">column</span> <span class="o">.</span> <span class="mi">80</span><span class="p">)))</span>
-<span class="p">(</span><span class="n">c</span><span class="o">-</span><span class="n">mode</span> <span class="o">.</span> <span class="p">((</span><span class="n">c</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="n">style</span> <span class="o">.</span> <span class="s2">&quot;BSD&quot;</span><span class="p">)</span>
-           <span class="p">(</span><span class="n">subdirs</span> <span class="o">.</span> <span class="n">nil</span><span class="p">)))</span>
-<span class="p">(</span><span class="s2">&quot;src/imported&quot;</span>
- <span class="o">.</span> <span class="p">((</span><span class="n">nil</span> <span class="o">.</span> <span class="p">((</span><span class="n">change</span><span class="o">-</span><span class="n">log</span><span class="o">-</span><span class="n">default</span><span class="o">-</span><span class="n">name</span>
-             <span class="o">.</span> <span class="s2">&quot;ChangeLog.local&quot;</span><span class="p">))))))</span>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">-*-</span> <span class="pre">coding:</span> <span class="pre">utf-8</span> <span class="pre">-*-</span></code></p></li>
+<li><p>local variable example</p></li>
+<li><p>Per-Directory Local Variables</p></li>
+<li><p>specified by the file named <code class="docutils literal notranslate"><span class="pre">.dir-locals.el</span></code> in the directory</p></li>
+<li><p>See <a class="reference external" href="emacs#Directory%20Variables">info:emacs#Directory Variables</a></p></li>
+<li><p>Example</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="no">nil</span> <span class="o">.</span> <span class="p">((</span><span class="nv">indent-tabs-mode</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
+         <span class="p">(</span><span class="nv">fill-column</span> <span class="o">.</span> <span class="mi">80</span><span class="p">)))</span>
+ <span class="p">(</span><span class="nv">c-mode</span> <span class="o">.</span> <span class="p">((</span><span class="nv">c-file-style</span> <span class="o">.</span> <span class="s">&quot;BSD&quot;</span><span class="p">)</span>
+            <span class="p">(</span><span class="nv">subdirs</span> <span class="o">.</span> <span class="no">nil</span><span class="p">)))</span>
+ <span class="p">(</span><span class="s">&quot;src/imported&quot;</span>
+  <span class="o">.</span> <span class="p">((</span><span class="no">nil</span> <span class="o">.</span> <span class="p">((</span><span class="nv">change-log-default-name</span>
+              <span class="o">.</span> <span class="s">&quot;ChangeLog.local&quot;</span><span class="p">))))))</span>
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
-<li><p class="first">Check the variable <code class="docutils literal notranslate"><span class="pre">safe-local-variable-values</span></code> (in <code class="docutils literal notranslate"><span class="pre">.emacs</span></code>) to check the list of “safe” local variables.</p>
-</li>
+<li><p>Check the variable <code class="docutils literal notranslate"><span class="pre">safe-local-variable-values</span></code> (in <code class="docutils literal notranslate"><span class="pre">.emacs</span></code>) to check the list of “safe” local variables.</p></li>
 </ul>
 </div>
 <div class="section" id="visual-line-mode">
 <h2>31 Visual line mode<a class="headerlink" href="#visual-line-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>wrap words when line breaking (soft lines wrap)<ul>
-<li><strong>lines wrapping</strong> breaks long line that does not fit the screen horizontally</li>
-<li><strong>hard lines wrapping</strong> is direct wrapping that may break a line in the middle of a word</li>
+<li><p>wrap words when line breaking (soft lines wrap)</p>
+<ul>
+<li><p><strong>lines wrapping</strong> breaks long line that does not fit the screen horizontally</p></li>
+<li><p><strong>hard lines wrapping</strong> is direct wrapping that may break a line in the middle of a word</p></li>
 </ul>
 </li>
-<li>compare: visual line is like a logical page for PDF documents - they are not real (‘physical’) lines but just visual (‘logical’)<ul>
-<li>move around or edit lines by visual line</li>
+<li><p>compare: visual line is like a logical page for PDF documents - they are not real (‘physical’) lines but just visual (‘logical’)</p>
+<ul>
+<li><p>move around or edit lines by visual line</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">Adaptive-Wrap-Prefix</span></code> makes visual line mode respect listing item levels with proper indentation</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Adaptive-Wrap-Prefix</span></code> makes visual line mode respect listing item levels with proper indentation</p></li>
 </ul>
 </div>
 <div class="section" id="auto-reverting">
 <h2>32 (Auto)reverting<a class="headerlink" href="#auto-reverting" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>See <a class="reference external" href="emacs#Autorevert">info:emacs#Autorevert</a></li>
+<li><p>See <a class="reference external" href="emacs#Autorevert">info:emacs#Autorevert</a></p></li>
 </ul>
 </div>
 <div class="section" id="performance-profiling">
 <h2>33 Performance profiling<a class="headerlink" href="#performance-profiling" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>See <a class="reference external" href="elisp#Profiling">info:elisp#Profiling</a></li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-start</span></code> to begin profiling</li>
-<li>Then run the code you’d like to speed up.</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-report</span></code> to display a summary buffer</li>
-<li><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-stop</span></code> after finishing the profiling.</li>
+<li><p>See <a class="reference external" href="elisp#Profiling">info:elisp#Profiling</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-start</span></code> to begin profiling</p></li>
+<li><p>Then run the code you’d like to speed up.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-report</span></code> to display a summary buffer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M-x</span> <span class="pre">profiler-stop</span></code> after finishing the profiling.</p></li>
 </ul>
 </div>
 <div class="section" id="emacsclient">
 <h2>34 emacsclient<a class="headerlink" href="#emacsclient" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">emacsclient</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;(with-current-buffer &quot;Downloads&quot; (dired-previous-line 3))&#39;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>emacsclient -e <span class="s1">&#39;(with-current-buffer &quot;Downloads&quot; (dired-previous-line 3))&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1001,12 +1044,12 @@
 <div class="section" id="hide-show-mode">
 <h2>36 Hide-show mode<a class="headerlink" href="#hide-show-mode" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">hs-minor-mode</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-a</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-M-s</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-show-all</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-t</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-M-h</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-hide-all</span></code>)</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-show-block</span></code>) Select a block and show it.</li>
-<li><code class="docutils literal notranslate"><span class="pre">hs-hide-block</span></code> Select a block and hide it.</li>
-<li><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-e</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-toggle-hiding</span></code>) Toggle hiding/showing of a block.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hs-minor-mode</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-a</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-M-s</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-show-all</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-t</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-M-h</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-hide-all</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-s</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-show-block</span></code>) Select a block and show it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hs-hide-block</span></code> Select a block and hide it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-e</span></code>, <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">&#64;</span> <span class="pre">C-c</span></code> (<code class="docutils literal notranslate"><span class="pre">hs-toggle-hiding</span></code>) Toggle hiding/showing of a block.</p></li>
 </ul>
 </div>
 </div>
@@ -1019,7 +1062,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="orgmode.html" class="btn btn-neutral float-right" title="Orgmode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="orgmode.html" class="btn btn-neutral float-right" title="Orgmode and Emacs Diary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Notes’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1031,11 +1074,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, hbshim@gmail.com
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1046,7 +1097,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

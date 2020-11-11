@@ -2,6 +2,7 @@
 Elisp
 =====
 
+    :Date: November 09, 2020
 
 .. contents::
 
@@ -118,3 +119,10 @@ Elisp
 - The value must fit one of ALTERNATIVE-TYPES.  For example, ‘(choice integer string)’ allows either an integer or a string.
 
 - In the customization buffer, the user selects an alternative using a menu, and can then edit the value in the usual way for that alternative.
+
+3 to be organized later
+-----------------------
+
+- ``(derived-mode-p &rest MODES)``
+
+  Non-nil if the current major mode is derived from one of MODES. Uses the ‘derived-mode-parent’ property of the symbol (``MODES``) to trace backwards.

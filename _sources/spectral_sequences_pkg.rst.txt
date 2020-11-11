@@ -1,0 +1,202 @@
+============================
+LaTeX Pkg: spectralsequences
+============================
+
+    :Date: November 10, 2020
+
+
+
+1 Environment structure
+-----------------------
+
+- ``\begin{sseqdata}[<options>] <environment contents> \end{sseqdata}``
+
+  - Store a spectral sequence to be printed later. You must use the ``name`` option to refer this later. ``OPTIONS`` are separated by comma and quotation symbols like ``"..."`` or ``'...'`` is not used for strings. eg. ``[name = sseq example, Adams grading, yscale = 0.53 ]`` sets that the name of the spectral sequence to be referred later is named ``sseq example`` with the degree of differentials specified by ``Adams grading`` with the y-axis scaled by factor of 0.53.
+
+- ``\begin{sseqpage}[<options>] <environment contents> \end{sseqpage}``
+
+  - This environment is used for printing a page of existing spectral sequence that was already specified. We refer the previously defined one named ``sseq example`` by putting ``name = sseq example`` also in OPTIONS here.
+
+    - The body of the environment adds local changes – classes, differentials, structure lines, and arbitrary TikZ options that are by default only printed on this particular page.
+
+  - This can also be used to print a stand-alone page of a spectral sequence directly.
+
+- ``\printpage[<options>]``
+
+  - This prints a page of existing spectral sequence that was already specified as-is. We refer the previously defined one named ``sseq example`` by putting ``name = sseq example`` also in OPTIONS here. This is equivalent to a ``sseqpage`` environment with an empty body.
+
+1.1 Global options
+~~~~~~~~~~~~~~~~~~
+
+- ``name = <sseq name>``
+
+- ``page = <page number>`` / ``page = <page number>-<page max>`` (initially ``0``)
+
+- ``degree = {<x degree>}{<y degree>}`` Specifies the degree of differentials as the ``x`` and ``y`` displacement of a page ``#1`` differential. The ``<x degree>`` and ``<y degree>`` should both be mathematical expressions in one variable ``#1`` that evaluate to integers on any input.
+
+  - ``cohomological Serre grading`` is equivalent to ``degree = {#1}{1-#1}``
+
+  - ``homological Serre grading`` is equivalent to ``degree = {-#1}{#1-1}``
+
+  - ``Adams grading`` is equivalent to ``{-1}{#1}``
+
+- ``strict degree`` / ``lax degree`` controls whether an error occurs or not if there is a differential that doesn't have the proper grading. The default is 'strict'.
+
+- ``no differentials`` / ``draw differentials`` specifies whether differentials is drew or not.
+
+2 Classes
+---------
+
+- ``\class[<options>](x,y)``
+
+  - This places a class at the coordinate ``(x,y)`` where ``x`` and ``y`` are integers.
+
+    - Multiple classes at the same position will be automatically arranged that can be explicitly described by the ``class pattern`` option.
+
+      - Eg. ``\class(2,0) \class(2,0)`` puts two classes at ``(2,0)``.
+
+      - The first one at ``(x,y)`` is referred by ``(x,y,1)``, the second one by ``(x,y,2)``, etc.
+
+- If a class is the source or the target of a differential on a certain page, then the page of the class is set to that page, and the class is only appeared on pages up to that number and disappears from the next page assuming that the differential is an isomorphism.
+
+  - In the case where the differential is not an isomorphism, use one of the followings to make the desired class reappear:
+
+    - ``\replaceclass[<options>](x,y <, tag>)`` where ``<tag>`` is an automatically assigned integer, or explicitly specified tag with ``tag`` in the class option, that specifies a desired class in case of multiple classes at the same position.
+
+    - ``\replaceclass[<options>](<classname>)``
+
+    - ``\replacesource[<options>]`` / ``\replacetarget[<options>]``
+
+  - ``\classoptions[<options>](x,y <, tag>)`` / ``\classoptions[<options>](<classname>)`` / ``\classoptions[<options>]`` add options to an existing class.
+
+3 Differentials
+---------------
+
+- ``\d<page>(x,y)`` creates a differential starting at ``(x,y)`` of length determined by the specified page and the grading rule (eg. homological, cohomological, or Adams).
+
+  - In order to use the ``\d`` command like this, you must first specify the degree of the differentials as an option to the ``{sseqdata}`` or ``{sseqpage}``.
+
+  - When the option ``degree`` is specified, then spectralsequences will check whether the difference between the source and target is appropriate for a differential of a given page, and if not it will throw an error. If this is undesirable, you can use the ``lax degree`` option.
+
+- ``\d[<options>]<page>(x, y, <sourcen>, <targetn>)`` specifies classes in the case of multiple ones.
+
+  - For example, ``\d2(1,0,1,2)`` specifies a second page differential whose source is located at ``(1,0)`` as the first class and the target is the second one among classes located at the position determined accordingly by the grading rule.
+
+  - In case where multiple classes and single classes are mixed, we can do something like ``\d2(3,0,,2)`` in the case where the source position has one single class.
+
+  - Negative indices will count from the most recent class in the coordinate (so the most recent is -1, the second most recent is -2, etc).
+
+    - Eg. ``\d[red]2(1,0,-1,-2)``
+
+- ``\d[<options>]<page>``
+
+- / ``\d[<options>]<page>(source name <,target n>)`` / ``\d[<options>]<page>(<source coordinate>)(<target coordinate>)``
+
+- ``\d2(x,y)``
+
+  - This puts a differential (an arrow) starting from ``(x,y)`` at the 2nd page according to the grading rule (eg. the homological grading will make it have the target at ``(x-1,y+2)``).
+
+4 Grouping
+----------
+
+- We can set a group of classes and lines for reuse by using ``\NewSseqGroup`` macro.
+
+  .. code:: tex
+
+      \NewSseqGroup\mygroup {} {
+      \class(0,0)
+      \class(0,1)
+      \class(0,2)
+      \class(1,1)
+      \class(2,2)
+      \structline(0,0)(0,1)
+      \structline(0,1)(0,2)
+      \structline(0,0)(1,1)
+      \structline(1,1)(2,2)
+      }
+      \begin{sseqpage}[ classes = fill, class labels = { left = 0.3em } ]
+      \mygroup(0,0)
+      \mygroup(1,2)
+      \classoptions["2"](0,1)
+      \classoptions["\eta"](1,1)
+      \end{sseqpage}
+
+5 Commands
+----------
+
+- ``\sseqset{<keys>}`` adjust the global options for all spectral sequences in the current scope, or for apply options to the rest of the current spectral sequence. This is used outside of the ``{sseqpage}`` or ``{sseqdata}`` environments. The following keys creates reusable styles.
+
+  - ``.global sseq style = <keys>`` if the style is a set of global options
+
+  - ``.global sseq append style = <keys>``
+
+  - ``.sseq style = <keys>`` if the style is applied to individual objects (classes, differentials, structure lines, circle classes, and tikz primitives)
+
+  - ``.sseq append style = <keys>``
+
+5.1 Loops
+~~~~~~~~~
+
+- ``\foreach ... in ...`` do the definite (finite and bounded) iteration.
+
+  - Example:
+
+    .. code:: tex
+
+        \foreach \x in {0,2,...,6}
+        \foreach \y in {0,...,3}{
+        \class(\x,\y)
+        }
+
+    means
+
+    .. code:: common-lisp
+
+        (dolist (\x '(0 2 4 6)) (dolist (\y '(0 1 2 3)) \class(\x,\y)))
+
+  - Example:
+
+    .. code:: tex
+
+        \foreach \x/\y/\label in {0/1/a,1/1/b,0/0/c,1/0/d}{
+        \class["\label" above](\x,\y)
+        }
+
+    means
+
+    .. code:: common-lisp
+
+        (dolist (p '( (0,1,a) (0,1,b) (1,1,b) (1,0,d))) \class(p))
+
+- ``\Do`` and its variants do the indefinite iteration that can go off the page.
+
+  - Example:
+
+    .. code:: tex
+
+        \class(0,0)
+        \DoUntilOutOfBoundsThenNMore{3}{
+            \class(\lastx+1,\lasty+1)
+            \structline
+        }
+        \class(4,0)
+        \d3
+        \DoUntilOutOfBounds{
+            \class(\lastx+1,\lasty+1)
+            \structline
+        \d3
+        }
+
+  - Example:
+
+    .. code:: tex
+
+        \class(0,0)
+        \DoUntilOutOfBounds{
+            \class(\lastx+1,\lasty+1)
+            \structline
+            \DoUntilOutOfBounds{
+                \class(\lastx,\lasty+1)
+                \structline
+            }
+        }

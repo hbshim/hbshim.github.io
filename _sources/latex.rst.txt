@@ -2,50 +2,169 @@
 LaTeX
 =====
 
-    :Date: Mon Oct 26 14:17:15 EDT 2020
+    :Author: Hyungbo Shim
+    :Date: November 11, 2020
 
 .. contents::
 
 
 
-1 XQuartz
+1 DVI
+-----
+
+The following is a summary of the Wikipedia page  [1]_ .
+
+The **device independent file format** (**DVI**) is the output file format of the TeX typesetting program. DVI files are typically used as input to a second program (called a DVI driver) which translates DVI files to graphical data.
+
+A **driver** is a program for previewing DVI files on a user's computer display. Drivers are also used by **converters** that convert DVI to popular **page description languages** (e.g. PostScript, PDF) for rendering (by, eg. Ghostscript) and printing.
+
+- DVI-to-PS converters
+
+  - **dvips** is the de facto standard.
+
+- DVI-to-PDF converters
+
+  - **dvipdf** is a thin wrapper around dvips and Ghostscript.
+
+  - **dvipdfm** supports most of the newer special functions of the PDF format, including bookmarks, annotations, thumbnails, and dvips specials — a feature making possible the inclusion of Encapsulated PostScript (.eps) files like METAPOST output — as well inclusion of JPEG and PNG images; other features of dvipdfm include partial font embedding (reducing file size) and balancing the internal PDF document trees to speed up rendering of large documents. However, many of these features (except for the direct support for .eps files) are **also present in pdfTeX**, which typesets TeX directly to PDF.
+
+  - **dvipdfmx** is an extended version of the dvipdfm to support multi-byte character encodings and CJK character sets for East Asian languages as its primary goal.
+
+- DVI-to-SVG converters:
+
+  - **dvisvgm** is the only one included in CTAN and actively maintained as of 2014.
+
+  - **dvisvg**
+
+  - **dvi2svg**
+
+DVI differs from PostScript and PDF in that it does not support any form of **font embedding**. For a DVI file to be printed or even properly previewed, the fonts it references must be already installed.
+
+Like PDF, DVI uses a limited sort of termination guaranteed machine language with that is not a full, Turing-complete programming language like PostScript. 
+
+2 PostScript
+------------
+
+From Wikipedia  [2]_ , [3]_ :
+
+**PostScript** (PS) is a page description language in the electronic publishing and desktop publishing business. It is a dynamically typed, concatenative programming language.
+
+**PDF** has largely replaced PostScript as *de facto* standard for electronic document distribution. On high-end printers, PostScript processors remain common, and their use can dramatically reduce the CPU work involved in printing documents, transferring the work of rendering PostScript images from the computer to the printer.
+
+**Metafont** can be embedded into PostScript.
+
+A file format converter, eg. **ps2pdf** that is distributed with **Ghostscript**, converts PostScript to PDF or vice versa.
+
+3 Encapsulated PostScript (EPS)
+-------------------------------
+
+From Wikipedia  [4]_ :
+
+**Encapsulated PostScript** (**EPS**) is a Document Structuring Conventions–conforming (DSC) PostScript document format usable as a graphics file format that can be placed within another PostScript document and includes a low-resolution preview "encapsulated" within it.
+
+An EPS file contains a BoundingBox DSC comment, describing the rectangle containing the image described by the EPS file. Applications, even if they are unable to directly render the PostScript inside, can use this information to lay out the page.
+
+EPS, together with DSC's Open Structuring Conventions, form the basis of early versions of the Adobe Illustrator Artwork file format.
+
+4 Raster fonts
+--------------
+
+From Wikipedia  [5]_ :
+
+A **raster font** (more commonly, a bitmap font or a pixel font) is a font that stores each glyph as an array of pixels (that is, a bitmap). Raster fonts are simply collections of **raster images** (also more commonly called bitmap images) of glyphs.
+
+In comparison, **vector fonts** (including, and sometimes standing as a synonym for **outline fonts**) use Bézier curves, drawing instructions and mathematical formulae to describe each glyph, which make the character outlines scalable to any size.
+
+5 Metafont
+----------
+
+From Wikipedia  [3]_ :
+
+**Metafont** is a description language used to define raster fonts. It is also the name of the interpreter that executes Metafont code, generating the bitmap fonts that can be embedded into some page description languages, eg. PostScript.
+
+One of the characteristics of Metafont is that the points defining the shapes of the glyphs are defined with geometrical equations.
+
+Another characteristic is that Metafont is a macro language, where operations such as "draw a lower case top of stem serif at point 4" might appear as one macro instruction (with the point as argument) in the program for a letter.
+
+Many families of Metafont fonts are set up so that the main source file for a font only defines a small number of design parameters (x-height, em width, slant, vertical stroke width, etc.), then calling a separate source file common for a whole range of fonts to actually draw the individual glyphs — this is the **meta aspect** of the system.
+
+6 Ghostscript
+-------------
+
+From Wikipedia  [6]_ :
+
+**Ghostscript** is a suite of software based on an interpreter for PostScript (PS) and Portable Document Format (PDF) page description languages – as it takes the form of a language interpreter, it can also be used as a general purpose programming environment.
+
+Its main purposes are the rasterization or rendering of such page description language files, for the display or printing of document pages, and the conversion between PostScript and PDF files. It can also serve as the back-end for PDF to **raster image converters** (to, eg., png, tiff, jpeg, etc.)
+
+The **ps2pdf** conversion program comes with the ghostscript distribution.
+
+7 Raster image converters
+-------------------------
+
+As mentioned in § Ghostscript, rater image converters convert PostScript or PDF to raster images. Those include ps2gif, ps2png, ps2tiff, ps2tiff, etc.
+
+8 Image file formats, compared
+------------------------------
+
+Sources of the following summary include  [7]_ ,  [8]_ 
+
+- **GIF** (Graphics Interchange Format) is an old low-color image format, common on the web. It is suitable for simple graphics such as drawings, logos, icons, graphics with flat colors and graphics without gradients. A GIF can be animated and used for simple animations. Lossless. Can represent max 256 colors.
+
+- **PNG** (Portable Network Graphics) is another common web format with features such as compression ratio (except for photos) and transparency. But it cannot be animated. Great for icons. Lossless. Can represent max 256 colors (PNG-8) or unlimited colors (PNG-24).
+
+- **JPEG** (Joint Photographic Experts Group) is the common format for photos. Its lossy compression algorithm is suited for squeezing photos to small files. Good for still images and photography. Can represent millions of colors. millions of colors.
+
+- **TIFF** (Tagged Image File Format) is a versatile image format. It has the ability to store multiple images, such as the pages of a scanned or faxed document.
+
+- **SVG** is good for graphics for high-dpi displays. vector and lossless. unlimited colors.
+
+  - DVI-to-SVG converters  [1]_ :
+
+    - **dvisvgm** is the only one included in CTAN and actively maintained as of 2014.
+
+    - **dvisvg**
+
+    - **dvi2svg**
+
+9 XQuartz
 ---------
 
 - ``tlgmr -gui`` TeX Live Manager
 
 - ``texdoctk`` TeX Documentation Browser
 
-2 Add section number to the pdf bookmark (outline) generated by hyperref package
---------------------------------------------------------------------------------
+10 Add section number to the pdf bookmark (outline) generated by hyperref package
+---------------------------------------------------------------------------------
 
 ``\hypersetup{bookmarksnumbered}``
 
-3 shorter space after the period mark (not end of the sentence but for abbreviations, etc)
-------------------------------------------------------------------------------------------
+11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)
+-------------------------------------------------------------------------------------------
 
 ``\@`` eg. ``Ph.D.\@Shim``
 
-4 change font size temporarily
-------------------------------
+12 change font size temporarily
+-------------------------------
 
 in the followings, we can replace ``small`` with the one among ``tiny``, ``scriptsize``, ``footnotesize``, ``small``, ``normalsize``, ``large``, ``Large``, ``LARGE``, ``huge``, ``Huge``
 
-4.1 of an area ``\begin{small} \end{small}``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12.1 of an area ``\begin{small} \end{small}``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4.2 of a word ``{\small WORD}``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12.2 of a word ``{\small WORD}``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4.3 as a switcher ``\small``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+12.3 as a switcher ``\small``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-5 putting a formula inside of a table cell
-------------------------------------------
+13 putting a formula inside of a table cell
+-------------------------------------------
 
 ``\parbox{.5em}{\begin{equation*}\end{equation*}}`` (``.5em`` indicates the size of the padding around the equation)
 
-6 variable
-----------
+14 variable
+-----------
 
 - add the following to preamble:
 
@@ -55,8 +174,8 @@ in the followings, we can replace ``small`` with the one among ``tiny``, ``scrip
 
   Then  use ``\newCommandName{}`` in the text
 
-7 setcounter enumi
-------------------
+15 setcounter enumi
+-------------------
 
 .. code:: tex
 
@@ -64,3 +183,20 @@ in the followings, we can replace ``small`` with the one among ``tiny``, ``scrip
       \setcounter{enumi}{4}
       \item fifth element
     \end{enumerate}
+
+
+.. [1] `https://en.wikipedia.org/wiki/Device_independent_file_format <https://en.wikipedia.org/wiki/Device_independent_file_format>`_
+
+.. [2] `https://en.wikipedia.org/wiki/PostScript <https://en.wikipedia.org/wiki/PostScript>`_
+
+.. [3] `https://en.wikipedia.org/wiki/Metafont <https://en.wikipedia.org/wiki/Metafont>`_
+
+.. [4] `https://en.wikipedia.org/wiki/Encapsulated_PostScript <https://en.wikipedia.org/wiki/Encapsulated_PostScript>`_
+
+.. [5] `https://en.wikipedia.org/wiki/Computer_font <https://en.wikipedia.org/wiki/Computer_font>`_
+
+.. [6] `https://en.wikipedia.org/wiki/Ghostscript <https://en.wikipedia.org/wiki/Ghostscript>`_
+
+.. [7] `https://www.aivosto.com/articles/imageformats.html <https://www.aivosto.com/articles/imageformats.html>`_
+
+.. [8] `https://www.sitepoint.com/gif-png-jpg-which-one-to-use/ <https://www.sitepoint.com/gif-png-jpg-which-one-to-use/>`_

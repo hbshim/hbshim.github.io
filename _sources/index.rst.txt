@@ -14,6 +14,7 @@ Welcome to Notes's documentation!
    orgmode
    auctex
    latex
+   spectral_sequences_pkg
    git
    coq
    macbookpro

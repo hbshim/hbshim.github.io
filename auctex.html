@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,32 +11,34 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="LaTeX" href="latex.html" />
-    <link rel="prev" title="Orgmode" href="orgmode.html" /> 
+    <link rel="prev" title="Orgmode and Emacs Diary" href="orgmode.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Notes
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Notes
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -161,54 +163,74 @@
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">1 Code block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">2 Example block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">3 Export options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">4 Exporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">4.1 HTML export command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#agenda-view">1 Agenda view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">1.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">5 Font</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">6 Footnote</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">7 Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">8 Insert entries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">9 Latex preview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">10 Motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">11 Moving subtrees up/down</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">12 Paragraphs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">13 Promoting/Demoting headings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">14 Repeated tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">15 Sort</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">16 Special symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">17 Superscript and subscript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">18 time stamp</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">18.1 automatic time-stamping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">18.2 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sunrise-sunset">2 Sunrise/sunset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">19 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">20 Visibility cycling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">7 Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">8 Footnote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">9 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">10 Insert entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">11 Latex preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">12 Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">13 Moving subtrees up/down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">14 Paragraphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">15 Promoting/Demoting headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">16 Repeated tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">17 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">18 Special symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">19 Superscript and subscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">20 time stamp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">20.1 automatic time-stamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id2">20.2 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#time-stamp-in-todo">20.3 time stamp in TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">21 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id3">21.1 Time stamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">22 Visibility cycling</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">AUCTeX</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">1 AucTeX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#macros">2 Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#style-files">3 style files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#specifying-locations-of-style-files">3.1 Specifying locations of style files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#global-styles">3.1.1 Global styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#private-styles">3.1.2 Private styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#local-styles">3.1.3 Local styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#all-combined">3.1.4 All Combined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-style-hooks">3.1 Adding style hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-symbols">3.2 adding symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-environments">3.3 adding environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-environments-with-arguments">3.3.1 defining environments with arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replacing-predefined-environment-style-by-using-ignore">3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#options">3.2 Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-locations-of-style-files">3.4 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global-styles">3.4.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#private-styles">3.4.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#local-styles">3.4.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-combined">3.4.4 All Combined</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#options">3.5 Options</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">4 ??</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#useful-functions">5 useful functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#customization-options">6 customization options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hooks">7 hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tmp-items">8 Tmp items</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -346,6 +368,7 @@
 <li class="toctree-l3"><a class="reference internal" href="elisp.html#choice-alternative-types">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#to-be-organized-later">3 to be organized later</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -377,6 +400,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -415,7 +439,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>AUCTeX</li>
     
@@ -439,45 +463,42 @@
   <div class="section" id="auctex">
 <h1>AUCTeX<a class="headerlink" href="#auctex" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">October 31, 2020</td>
-</tr>
-</tbody>
-</table>
+<div><dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>November 09, 2020</p>
+</dd>
+</dl>
 </div></blockquote>
 <div class="section" id="id1">
 <h2>1 AucTeX<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="36%" />
-<col width="64%" />
+<col style="width: 36%" />
+<col style="width: 64%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">option</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>option</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">preview-auto-reveal</span></code></td>
-<td>Cause previews to open automatically when entered.</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">preview-auto-reveal</span></code></p></td>
+<td><p>Cause previews to open automatically when entered.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">helm-bibtex-library-path</span></code></td>
-<td>A directory or list of directories in which PDFs are stored.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">helm-bibtex-library-path</span></code></p></td>
+<td><p>A directory or list of directories in which PDFs are stored.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">helm-candidate-number-limit</span></code></td>
-<td>Global limit for number of candidates displayed.</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">helm-candidate-number-limit</span></code></p></td>
+<td><p>Global limit for number of candidates displayed.</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">helm-ff-candidate-number-limit</span></code></td>
-<td>The ‘helm-candidate-number-limit’ for ‘helm-find-files’ and friends.</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">helm-ff-candidate-number-limit</span></code></p></td>
+<td><p>The ‘helm-candidate-number-limit’ for ‘helm-find-files’ and friends.</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">helm-occur-candidate-number-limit</span></code></td>
-<td>Value of ‘helm-candidate-number-limit’ for helm-occur.</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">helm-occur-candidate-number-limit</span></code></p></td>
+<td><p>Value of ‘helm-candidate-number-limit’ for helm-occur.</p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td></td>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -485,118 +506,307 @@
 <div class="section" id="macros">
 <h2>2 Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-macro-global</span></code> Directories containing the site’s TeX macro and style files (<code class="docutils literal notranslate"><span class="pre">\*.sty</span></code> files).</li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-macro-private</span></code> Directories where you store your personal TeX macros. The value defaults<ul>
-<li>to the directories listed in the ‘<code class="docutils literal notranslate"><span class="pre">TEXINPUTS</span></code>’ and ‘<code class="docutils literal notranslate"><span class="pre">BIBINPUTS</span></code>’ environment variables or</li>
-<li>to the respective directories in <code class="docutils literal notranslate"><span class="pre">$TEXMFHOME</span></code> if no results can be obtained from the environment variables.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-macro-global</span></code> Directories containing the site’s TeX macro and style files (<code class="docutils literal notranslate"><span class="pre">\*.sty</span></code> files).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-macro-private</span></code> Directories where you store your personal TeX macros. The value defaults</p>
+<ul>
+<li><p>to the directories listed in the ‘<code class="docutils literal notranslate"><span class="pre">TEXINPUTS</span></code>’ and ‘<code class="docutils literal notranslate"><span class="pre">BIBINPUTS</span></code>’ environment variables or</p></li>
+<li><p>to the respective directories in <code class="docutils literal notranslate"><span class="pre">$TEXMFHOME</span></code> if no results can be obtained from the environment variables.</p></li>
 </ul>
 </li>
-<li>Note: The environment variable <code class="docutils literal notranslate"><span class="pre">TEXINPUTS</span></code> contains <code class="docutils literal notranslate"><span class="pre">~/.emacs.d/elpa/auctex-12.2.3/latex</span></code> while <code class="docutils literal notranslate"><span class="pre">BIBINPUTS</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXMFHOME</span></code> were empty.</li>
+<li><p>Note: The environment variable <code class="docutils literal notranslate"><span class="pre">TEXINPUTS</span></code> contains <code class="docutils literal notranslate"><span class="pre">~/.emacs.d/elpa/auctex-12.2.3/latex</span></code> while <code class="docutils literal notranslate"><span class="pre">BIBINPUTS</span></code> and <code class="docutils literal notranslate"><span class="pre">TEXMFHOME</span></code> were empty.</p></li>
 </ul>
 </div>
 <div class="section" id="style-files">
 <h2>3 style files<a class="headerlink" href="#style-files" title="Permalink to this headline">¶</a></h2>
+<p>It was advertised that we can automate certain repetitive types of editing by using “style files” but none of the following material introduced in the official \*info\* page DIDN’T WORK!! It was not even clear at all how AUCTeX chooses and loads certain style files although it seems I could use <code class="docutils literal notranslate"><span class="pre">TeX-run-style-hooks</span></code> function for it.</p>
+<p>It turned out that <strong>``amsthm.el`` was aggressively stealing charge of all of the environment settings by overwriting every custom styles I made</strong>, so it seems better to rely on the minimum automatic parsing feature by putting some trivial, if not look dumb, declarations like <code class="docutils literal notranslate"><span class="pre">\newcommand{\triangleright}{\triangleright}</span></code>, in the latex preamble expecting to be recognized by AUCTeX.</p>
+<p>Of course, I’m sure that I could dig in more to make it work in a way that AUCTeX originally intended, but it doesn’t seem worth the effort at all.</p>
+<div class="section" id="adding-style-hooks">
+<h3>3.1 Adding style hooks<a class="headerlink" href="#adding-style-hooks" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">TeX-add-style-hook</span>
+ <span class="s">&quot;book&quot;</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+   <span class="p">(</span><span class="nv">LaTeX-largest-level-set</span> <span class="s">&quot;chapter&quot;</span><span class="p">))</span>
+ <span class="nv">LaTeX-dialect</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>loads for any LaTeX document using the book document class (or style before LaTeX2e)c</p></li>
+<li><p>the largest kind of section in such a document is chapter</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-add-style-hook</span> <span class="pre">STYLE</span> <span class="pre">HOOK</span> <span class="pre">&amp;optional</span> <span class="pre">DIALECT-EXPR</span></code></p>
+<p>Add HOOK to the list of functions to run when we use the TeX file STYLE and the current dialect is one in the set derived from DIALECT-EXPR that may be one of</p>
+<ul class="simple">
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">:latex</span></code>’ For all files in LaTeX mode, or any mode derived thereof. It is thought more futureproof for argument DIALECT-EXPR to pass constant ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-dialect</span></code>’ currently defined to ‘<code class="docutils literal notranslate"><span class="pre">:latex</span></code>’, rather than passing ‘<code class="docutils literal notranslate"><span class="pre">:latex</span></code>’ directly.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">:bibtex</span></code>’ For all files in BibTeX mode, or any mode derived thereof.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">:texinfo</span></code>’ For all files in Texinfo mode.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">:plain-tex</span></code>’ For all files in plain-TeX mode, or any mode derived thereof.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">:context</span></code>’ For all files in ConTeXt mode.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">:classopt</span></code>’ For class options of LaTeX document.  This is provided as pseudo-dialect for style hooks associated with class options.</p></li>
+</ul>
+<p>We can combine them using a logical connectives, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">nor</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>. When DIALECT-EXPR is omitted, then HOOK is allowed to be run whatever the current dialect is.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="adding-symbols">
+<h3>3.2 adding symbols<a class="headerlink" href="#adding-symbols" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">TeX-add-style-hook</span>
+ <span class="s">&quot;latex&quot;</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+   <span class="p">(</span><span class="nv">TeX-add-symbols</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;arabic&quot;</span> <span class="nv">TeX-arg-counter</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;label&quot;</span> <span class="nv">TeX-arg-define-label</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;ref&quot;</span> <span class="nv">TeX-arg-ref</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;newcommand&quot;</span> <span class="nv">TeX-arg-define-macro</span> <span class="nv">[</span> <span class="s">&quot;Number of arguments&quot;</span> <span class="nv">]</span> <span class="no">t</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;newtheorem&quot;</span> <span class="nv">TeX-arg-define-environment</span>
+      <span class="nv">[</span> <span class="nv">TeX-arg-environment</span> <span class="s">&quot;Numbered like&quot;</span> <span class="nv">]</span>
+      <span class="no">t</span> <span class="nv">[</span> <span class="nv">TeX-arg-counter</span> <span class="s">&quot;Within counter&quot;</span> <span class="nv">]</span><span class="p">))))</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-add-symbols</span> <span class="pre">SYMBOL</span></code> Add each SYMBOL to the list of known symbols.</p></li>
+<li><p>Each argument is a list describing one symbol.</p>
+<ul class="simple">
+<li><p>The head of the list is the name of the symbol,</p></li>
+<li><p>the remaining elements describe each argument.</p></li>
+</ul>
+<p>If there are no additional elements, the symbol will be inserted with point inside braces.  Otherwise, each argument of this function should match an argument of the TeX macro.  What is done depends on the argument type.</p>
+<ul class="simple">
+<li><p>‘<strong>string</strong>’ Use the string as a prompt to prompt for the argument.</p></li>
+<li><p>‘<strong>number</strong>’ Insert that many braces, leave point inside the first.  0 and -1 are special.  0 means that no braces are inserted.  -1 means that braces are inserted around the macro and an active region (e.g. ‘{tiny foo}’).  If there is no active region, no braces are inserted.</p></li>
+<li><p>‘<strong>nil</strong>’ Insert empty braces.</p></li>
+<li><p>‘<strong>t</strong>’ Insert empty braces, leave point between the braces.</p></li>
+<li><p>‘<strong>other symbols</strong>’ Call the symbol as a function.</p>
+<ul>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-conditional</span></code>’ Implements if EXPR THEN ELSE. If EXPR evaluates to true, parse THEN as an argument list, else parse ELSE as an argument list.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-literal</span></code>’ Insert its arguments into the buffer.  Used for specifying extra syntax for a macro.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-free</span></code>’ Parse its arguments but use no braces when they are inserted.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-eval</span></code>’ Evaluate arguments and insert the result in the buffer.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-label</span></code>’ Prompt for a label completing with known labels.  If RefTeX is active, prompt for the reference format.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-ref</span></code>’ Prompt for a label completing with known labels.  If RefTeX is active, do not prompt for the reference format.  Usually, reference macros should use this function instead of ‘TeX-arg-label’.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-index-tag</span></code>’ Prompt for an index tag.  This is the name of an index, not the entry.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-index</span></code>’ Prompt for an index entry completing with known entries.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-length</span></code>’ Prompt for a LaTeX length completing with known lengths.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-macro</span></code>’ Prompt for a TeX macro with completion.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-date</span></code>’ Prompt for a date, defaulting to the current date.  The format of the date is specified by the ‘<code class="docutils literal notranslate"><span class="pre">TeX-date-format</span></code>’ option.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-version</span></code>’ Prompt for the version of a file, using as initial input the current date.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-environment</span></code>’ Prompt for a LaTeX environment with completion.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-cite</span></code>’ Prompt for a BibTeX citation.  If the variable ‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-cite-note-p</span></code>’ is non-nil, ask also for optional note in citations.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-counter</span></code>’ Prompt for a LaTeX counter completing with known counters.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-savebox</span></code>’ Prompt for a LaTeX savebox completing with known saveboxes.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-file</span></code>’ Prompt for a filename in the current directory, and use it with the extension.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-file-name</span></code>’ Prompt for a filename and use as initial input the name of the file being visited in the current buffer, with extension.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-file-name-sans-extension</span></code>’ Prompt for a filename and use as initial input the name of the file being visited in the current buffer, without extension.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-input-file</span></code>’ Prompt for the name of an input file in TeX’s search path, and use it without the extension.  Run the style hooks for the file.  (Note that the behavior (type of prompt and inserted file name) of the function can be controlled by the variable ‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-input-file-search</span></code>’.)</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-label</span></code>’ Prompt for a label completing with known labels.  Add label to list of defined labels.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-length</span></code>’ Prompt for a LaTeX length completing with known lengths.  Add length to list of defined lengths.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-macro</span></code>’ Prompt for a TeX macro with completion.  Add macro to list of defined macros.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-environment</span></code>’ Prompt for a LaTeX environment with completion.  Add environment to list of defined environments.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-cite</span></code>’ Prompt for a BibTeX citation.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-counter</span></code>’ Prompt for a LaTeX counter.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-define-savebox</span></code>’ Prompt for a LaTeX savebox.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-document</span></code>’ Prompt for a LaTeX document class, using ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-default-style</span></code>’ as default value and ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-default-options</span></code>’ as default list of options.  If the variable ‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-input-file-search</span></code>’ is <code class="docutils literal notranslate"><span class="pre">t</span></code>, you will be able to complete with all LaTeX classes available on your system, otherwise classes listed in the variable ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-style-list</span></code>’ will be used for completion.  It is also provided completion for options of many common classes.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-arg-usepackage</span></code>’ Prompt for LaTeX packages.  If the variable ‘TeX-arg-input-file-search’ is t, you will be able to complete with all LaTeX packages available on your system.  It is also provided completion for options of many common packages.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-bibstyle</span></code>’ Prompt for a BibTeX style file completing with all style available on your system.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-bibliography</span></code>’ Prompt for BibTeX database files completing with all databases available on your system.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-corner</span></code>’ Prompt for a LaTeX side or corner position with completion.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-lr</span></code>’ Prompt for a LaTeX side with completion.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-tb</span></code>’ Prompt for a LaTeX side with completion.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-pagestyle</span></code>’ Prompt for a LaTeX pagestyle with completion.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-verb</span></code>’ Prompt for delimiter and text.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-verb-delim-or-brace</span></code>’ Prompt for delimiter and text.  This function is similar to ‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-verb</span></code>’, but is intended for macros which take their argument enclosed in delimiters or in braces.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-pair</span></code>’ Insert a pair of numbers, use arguments for prompt.  The numbers are surrounded by parentheses and separated with a comma.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-size</span></code>’ Insert width and height as a pair.  No arguments.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-coordinate</span></code>’ Insert x and y coordinates as a pair.  No arguments.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-arg-author</span></code>’ Prompt for document author, using ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-default-author</span></code>’ as initial input.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-read-key-val</span></code>’ Prompt for a key=value list of options and return them.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">TeX-arg-key-val</span></code>’ Prompt for a key=value list of options and insert it as a TeX macro argument.</p></li>
+</ul>
+</li>
+<li><p>‘<strong>list</strong>’ If the car is a string, insert it as a prompt and the next element as initial input.  Otherwise, call the car of the list with the remaining elements as arguments.</p></li>
+<li><p>‘<strong>vector</strong>’ Optional argument.  If it has more than one element, parse it as a list, otherwise parse the only element as above.  Use square brackets instead of curly braces, and is not inserted on empty user input.</p></li>
+</ul>
+</li>
+<li><p>If a macro is defined multiple times, AUCTeX will choose the one with the longest definition (i.e.  the one with the most arguments).</p>
+<ul class="simple">
+<li><p>To overwrite <code class="docutils literal notranslate"><span class="pre">'(&quot;tref&quot;</span> <span class="pre">1)</span></code>, you can specify <code class="docutils literal notranslate"><span class="pre">'(&quot;tref&quot;</span> <span class="pre">TeX-arg-ref</span> <span class="pre">ignore)</span></code>. ‘<code class="docutils literal notranslate"><span class="pre">ignore</span></code>’ is a function that does not do anything.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="adding-environments">
+<h3>3.3 adding environments<a class="headerlink" href="#adding-environments" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">TeX-add-style-hook</span>
+ <span class="s">&quot;latex&quot;</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+   <span class="p">(</span><span class="nv">LaTeX-add-environments</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;document&quot;</span> <span class="nv">LaTeX-env-document</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;enumerate&quot;</span> <span class="nv">LaTeX-env-item</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;itemize&quot;</span> <span class="nv">LaTeX-env-item</span><span class="p">)</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;list&quot;</span> <span class="nv">LaTeX-env-list</span><span class="p">))))</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-add-environments</span> <span class="pre">ENV</span> <span class="pre">...</span></code> Add each ENV to list of loaded environments.</p></li>
+<li><p>Following is a list of available hooks:</p>
+<ul>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-item</span></code>’ Insert the given environment and the first item.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-figure</span></code>’ Insert the given figure-like environment with a caption and a label.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-array</span></code>’ Insert the given array-like environment with position and column specifications.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-label</span></code>’ Insert the given environment with a label.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-list</span></code>’ Insert the given list-like environment, a specifier for the label and the first item.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-minipage</span></code>’ Insert the given minipage-like environment with position and width specifications.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-tabular*</span></code>’ Insert the given <code class="docutils literal notranslate"><span class="pre">tabular*</span></code>-like environment with width, position and column specifications.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-picture</span></code>’ Insert the given environment with width and height specifications.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-bib</span></code>’ Insert the given environment with a label for a bibitem.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-contents</span></code>’ Insert the given environment with a filename as its argument.</p></li>
+<li><p>‘<code class="docutils literal notranslate"><span class="pre">LaTeX-env-args</span></code>’ Insert the given environment with arguments.  You can use this as a hook in case you want to specify multiple complex arguments just like in elements of ‘<code class="docutils literal notranslate"><span class="pre">TeX-add-symbols</span></code>’.  This is most useful if the specification of arguments to be prompted for with strings and strings wrapped in a vector as described above is too limited.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-insert-environment</span> <span class="pre">ENV</span> <span class="pre">[</span> <span class="pre">EXTRA</span> <span class="pre">]</span></code> Insert environment of type ENV, with optional argument EXTRA.</p></li>
+</ul>
+<div class="section" id="defining-environments-with-arguments">
+<h4>3.3.1 defining environments with arguments<a class="headerlink" href="#defining-environments-with-arguments" title="Permalink to this headline">¶</a></h4>
+<p>If you have defined a ‘loop’ environment with the three arguments FROM, TO, and STEP, you can add support for them in a style file.</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="c">%% loop.sty</span>
+
+<span class="k">\newenvironment</span><span class="nb">{</span>loop<span class="nb">}</span>[3]<span class="nb">{</span>...<span class="nb">}{</span>...<span class="nb">}</span>
+</pre></div>
+</div>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="c1">;; loop.el</span>
+
+<span class="p">(</span><span class="nv">TeX-add-style-hook</span>
+ <span class="s">&quot;loop&quot;</span>
+ <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+   <span class="p">(</span><span class="nv">LaTeX-add-environments</span>
+    <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;loop&quot;</span> <span class="s">&quot;From&quot;</span> <span class="s">&quot;To&quot;</span> <span class="s">&quot;Step&quot;</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="replacing-predefined-environment-style-by-using-ignore">
+<h4>3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code><a class="headerlink" href="#replacing-predefined-environment-style-by-using-ignore" title="Permalink to this headline">¶</a></h4>
+<p>If you have an enumerate style file, and want it to replace the standard LaTeX enumerate hook above, you could define an ‘enumerate.el’ file as follows, and place it in the appropriate style directory.</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span>  <span class="p">(</span><span class="nv">TeX-add-style-hook</span>
+   <span class="s">&quot;latex&quot;</span>
+   <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
+     <span class="p">(</span><span class="nv">LaTeX-add-environments</span>
+      <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;enumerate&quot;</span> <span class="nv">LaTeX-env-enumerate</span> <span class="nv">foo</span><span class="p">))))</span>
+
+  <span class="p">(</span><span class="nb">defun</span> <span class="nv">LaTeX-env-enumerate</span> <span class="p">(</span><span class="nv">environment</span> <span class="k">&amp;optional</span> <span class="k">ignore</span><span class="p">)</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="nv">The</span> <span class="nc">symbol</span> <span class="o">&#39;``</span><span class="nv">foo</span><span class="o">``&#39;</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">passed</span> <span class="nv">to</span> <span class="o">&#39;``</span><span class="nv">LaTeX-env-enumerate</span><span class="o">``&#39;</span> <span class="nv">as</span> <span class="k">the</span>
+</pre></div>
+</div>
+<p>second argument, but since we only added it to overwrite the definition
+in ‘<code class="docutils literal notranslate"><span class="pre">latex.el</span></code>’ it is just ignored.</p>
+<p>Here is an example from ‘listings.el’ which calls a function with one argument in order to prompt for a key=value list to be inserted as an optional argument of the ‘lstlisting’ environment:</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">LaTeX-add-environments</span>
+ <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;lstlisting&quot;</span> <span class="nv">LaTeX-env-args</span>
+   <span class="nv">[TeX-arg-key-val</span> <span class="nv">LaTeX-listings-key-val-options]</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="specifying-locations-of-style-files">
-<h3>3.1 Specifying locations of style files<a class="headerlink" href="#specifying-locations-of-style-files" title="Permalink to this headline">¶</a></h3>
-<p>This contains locations for globally or personally defined TeX macros because AUCTeX uses those to automatically generate corresponding style files.</p>
+<h3>3.4 Specifying locations of style files<a class="headerlink" href="#specifying-locations-of-style-files" title="Permalink to this headline">¶</a></h3>
+<p>This contains locations for globally or personally defined TeX macros because AUCTeX uses those to automatically generate corresponding style files. (The following classification is too specific for me, so I symlinked local style directories to private style directories.)</p>
 <div class="section" id="global-styles">
-<h4>3.1.1 Global styles<a class="headerlink" href="#global-styles" title="Permalink to this headline">¶</a></h4>
+<h4>3.4.1 Global styles<a class="headerlink" href="#global-styles" title="Permalink to this headline">¶</a></h4>
 <p><strong>Global styles</strong> correspond to TeX macros shared by all users of a site.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-macro-global</span></code> Directories containing the site’s TeX macro and style files. These seem to be TeX installed ones, eg. “<code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">/texlive/2019/texmf-dist/tex/</span></code>”</li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-style-global</span></code> Directory containing hand generated TeX information. This seems to be the directory contained in the AUCTeX package: “<em>Users/hbshim</em>.emacs.d/elpa/auctex-12.2.3/style”)</li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-auto-global</span></code> Directory containing automatically generated information.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-macro-global</span></code> Directories containing the site’s TeX macro and style files. These seem to be TeX installed ones, eg. “<code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">/texlive/2019/texmf-dist/tex/</span></code>”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-style-global</span></code> Directory containing hand generated TeX information. This seems to be the directory contained in the AUCTeX package: “<em>Users/hbshim</em>.emacs.d/elpa/auctex-12.2.3/style”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-auto-global</span></code> Directory containing automatically generated information.</p></li>
 </ul>
 </div>
 <div class="section" id="private-styles">
-<h4>3.1.2 Private styles<a class="headerlink" href="#private-styles" title="Permalink to this headline">¶</a></h4>
+<h4>3.4.2 Private styles<a class="headerlink" href="#private-styles" title="Permalink to this headline">¶</a></h4>
 <p><strong>Private styles</strong> correspond to TeX macros for a single user.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-macro-private</span></code> Directories where you store your personal TeX macros. The value defaults<ul>
-<li>to the directories listed in the ‘<code class="docutils literal notranslate"><span class="pre">TEXINPUTS</span></code>’ and ‘<code class="docutils literal notranslate"><span class="pre">BIBINPUTS</span></code>’ environment variables or</li>
-<li>to the respective directories in <code class="docutils literal notranslate"><span class="pre">$TEXMFHOME</span></code> if no results can be obtained from the environment variables.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-macro-private</span></code> Directories where you store your personal TeX macros. The value defaults</p>
+<ul>
+<li><p>to the directories listed in the ‘<code class="docutils literal notranslate"><span class="pre">TEXINPUTS</span></code>’ and ‘<code class="docutils literal notranslate"><span class="pre">BIBINPUTS</span></code>’ environment variables or</p></li>
+<li><p>to the respective directories in <code class="docutils literal notranslate"><span class="pre">$TEXMFHOME</span></code> if no results can be obtained from the environment variables.</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-style-private</span></code> List of directories containing hand generated AUCTeX style files (default: “~/.emacs.d/auctex/style”)</li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-auto-private</span></code> List of directories containing automatically generated AUCTeX style files.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-style-private</span></code> List of directories containing hand generated AUCTeX style files (default: “~/.emacs.d/auctex/style”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-auto-private</span></code> List of directories containing automatically generated AUCTeX style files.</p></li>
 </ul>
 </div>
 <div class="section" id="local-styles">
-<h4>3.1.3 Local styles<a class="headerlink" href="#local-styles" title="Permalink to this headline">¶</a></h4>
+<h4>3.4.3 Local styles<a class="headerlink" href="#local-styles" title="Permalink to this headline">¶</a></h4>
 <p><strong>Local styles</strong> correspond to TeX macros found in the current directory.</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-style-local</span></code> Directory containing hand generated TeX information.</li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-auto-local</span></code> Directory containing automatically generated TeX information.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-style-local</span></code> Directory containing hand generated TeX information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-auto-local</span></code> Directory containing automatically generated TeX information.</p></li>
 </ul>
 </div>
 <div class="section" id="all-combined">
-<h4>3.1.4 All Combined<a class="headerlink" href="#all-combined" title="Permalink to this headline">¶</a></h4>
+<h4>3.4.4 All Combined<a class="headerlink" href="#all-combined" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-style-path</span></code> List of directories to search for AUCTeX style files. Per default, this list variable is built from the values of the variables <code class="docutils literal notranslate"><span class="pre">TeX-style-global</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-auto-global</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-style-private</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-auto-private</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-style-local</span></code> and <code class="docutils literal notranslate"><span class="pre">TeX-auto-local</span></code>.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-style-path</span></code> List of directories to search for AUCTeX style files. Per default, this list variable is built from the values of the variables <code class="docutils literal notranslate"><span class="pre">TeX-style-global</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-auto-global</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-style-private</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-auto-private</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-style-local</span></code> and <code class="docutils literal notranslate"><span class="pre">TeX-auto-local</span></code>.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="options">
-<h3>3.2 Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<h3>3.5 Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-file-recurse</span></code> Whether to search TeX directories recursively. <code class="docutils literal notranslate"><span class="pre">nil</span></code> means do not recurse, a positive integer means go that far deep in the directory hierarchy, <code class="docutils literal notranslate"><span class="pre">t</span></code> means recurse indefinitely.</li>
-<li><code class="docutils literal notranslate"><span class="pre">TeX-auto-ignore</span></code> List of symbols to ignore when scanning a TeX style file.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-file-recurse</span></code> Whether to search TeX directories recursively. <code class="docutils literal notranslate"><span class="pre">nil</span></code> means do not recurse, a positive integer means go that far deep in the directory hierarchy, <code class="docutils literal notranslate"><span class="pre">t</span></code> means recurse indefinitely.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-auto-ignore</span></code> List of symbols to ignore when scanning a TeX style file.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>4 ??<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">TeX-ignore-file</span></code> Regular expression matching file/directory names to ignore what will not be considered when searching for TeX files in a directory.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TeX-ignore-file</span></code> Regular expression matching file/directory names to ignore what will not be considered when searching for TeX files in a directory.</p></li>
 </ul>
 </div>
 <div class="section" id="useful-functions">
 <h2>5 useful functions<a class="headerlink" href="#useful-functions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-find-matching-begin</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-find-matching-end</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-modify-environment</span></code> Modify current ENVIRONMENT.</li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-current-environment</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-forward-paragraph</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-backward-paragraph</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-fill-region</span> <span class="pre">(from</span> <span class="pre">to)</span></code> Fill and indent the text in region from FROM to TO as LaTeX text.</li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-indent-line</span></code> “Indent the line containing point, as LaTeX source.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-find-matching-begin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-find-matching-end</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-modify-environment</span></code> Modify current ENVIRONMENT.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-current-environment</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-forward-paragraph</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-backward-paragraph</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-fill-region</span> <span class="pre">(from</span> <span class="pre">to)</span></code> Fill and indent the text in region from FROM to TO as LaTeX text.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-indent-line</span></code> “Indent the line containing point, as LaTeX source.</p></li>
 </ul>
 </div>
 <div class="section" id="customization-options">
 <h2>6 customization options<a class="headerlink" href="#customization-options" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LaTeX-label-function</span></code> A function inserting a label at point or returning a label string. I set this to the following function:</p>
-<div class="code elisp highlight-default notranslate"><div class="highlight"><pre><span></span>(defun my-LaTeX-label (&amp;optional name type no-insert)
-  &quot;Insert automatically generated label without asking the label name.
-This will be used for AUCTeX `LaTeX-label-function&#39; variable.&quot;
-  (let ((listOfLetters &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)
-        (timeStamp (string-to-number (reverse (number-to-string (- (string-to-number (format-time-string &quot;%s&quot;)) (* 60 60 24 365 50))))))
-        (label &quot;&quot;))
-    (while (not (= timeStamp 0))
-      (let ((i (mod timeStamp (length listOfLetters))))
-        (setq label (concat label (substring listOfLetters i (1+ i))))
-        (setq timeStamp (truncate (/ timeStamp (length listOfLetters))))))
-    (while (not (= (length label) 6))
-      (setq label (concat &quot;0&quot; label)))
-    (unless no-insert
-      (delete-blank-lines)
-      (previous-line)
-      (end-of-line)
-      (insert &quot; &quot;)
-      (insert TeX-esc &quot;label&quot; TeX-grop label TeX-grcl))
-    label))
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-label-function</span></code> A function inserting a label at point or returning a label string. I set this to the following function:</p>
+<div class="highlight-elisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">my-LaTeX-label</span> <span class="p">(</span><span class="kp">&amp;optional</span> <span class="nv">name</span> <span class="nv">type</span> <span class="nv">no-insert</span><span class="p">)</span>
+  <span class="s">&quot;Insert automatically generated label without asking the label name.</span>
+<span class="s">This will be used for AUCTeX </span><span class="ss">`LaTeX-label-function&#39;</span><span class="s"> variable.&quot;</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">listOfLetters</span> <span class="s">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">timeStamp</span> <span class="p">(</span><span class="nf">string-to-number</span> <span class="p">(</span><span class="nf">reverse</span> <span class="p">(</span><span class="nf">number-to-string</span> <span class="p">(</span><span class="nf">-</span> <span class="p">(</span><span class="nf">string-to-number</span> <span class="p">(</span><span class="nf">format-time-string</span> <span class="s">&quot;%s&quot;</span><span class="p">))</span> <span class="p">(</span><span class="nf">*</span> <span class="mi">60</span> <span class="mi">60</span> <span class="mi">24</span> <span class="mi">365</span> <span class="mi">50</span><span class="p">))))))</span>
+        <span class="p">(</span><span class="nv">label</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nf">=</span> <span class="nv">timeStamp</span> <span class="mi">0</span><span class="p">))</span>
+      <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">i</span> <span class="p">(</span><span class="nf">mod</span> <span class="nv">timeStamp</span> <span class="p">(</span><span class="nf">length</span> <span class="nv">listOfLetters</span><span class="p">))))</span>
+        <span class="p">(</span><span class="k">setq</span> <span class="nv">label</span> <span class="p">(</span><span class="nf">concat</span> <span class="nv">label</span> <span class="p">(</span><span class="nf">substring</span> <span class="nv">listOfLetters</span> <span class="nv">i</span> <span class="p">(</span><span class="nf">1+</span> <span class="nv">i</span><span class="p">))))</span>
+        <span class="p">(</span><span class="k">setq</span> <span class="nv">timeStamp</span> <span class="p">(</span><span class="nf">truncate</span> <span class="p">(</span><span class="nf">/</span> <span class="nv">timeStamp</span> <span class="p">(</span><span class="nf">length</span> <span class="nv">listOfLetters</span><span class="p">))))))</span>
+    <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="nv">not</span> <span class="p">(</span><span class="nf">=</span> <span class="p">(</span><span class="nf">length</span> <span class="nv">label</span><span class="p">)</span> <span class="mi">6</span><span class="p">))</span>
+      <span class="p">(</span><span class="k">setq</span> <span class="nv">label</span> <span class="p">(</span><span class="nf">concat</span> <span class="s">&quot;0&quot;</span> <span class="nv">label</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">unless</span> <span class="nv">no-insert</span>
+      <span class="p">(</span><span class="nv">delete-blank-lines</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">previous-line</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">end-of-line</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">insert</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">insert</span> <span class="nv">TeX-esc</span> <span class="s">&quot;label&quot;</span> <span class="nv">TeX-grop</span> <span class="nv">label</span> <span class="nv">TeX-grcl</span><span class="p">))</span>
+    <span class="nv">label</span><span class="p">))</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LaTeX-electric-left-right-brace</span> <span class="pre">nil</span></code> If non-nil, insert right brace with suitable macro after typing left brace.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">LaTeX-label-alist</span></code> Lookup prefixes for labels.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-electric-left-right-brace</span> <span class="pre">nil</span></code> If non-nil, insert right brace with suitable macro after typing left brace.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-label-alist</span></code> Lookup prefixes for labels.</p>
 <ul class="simple">
-<li>An alist where the CAR is the environment name, and the CDR either the prefix or a symbol referring to one. eg.
-<code class="docutils literal notranslate"><span class="pre">(&quot;equation&quot;</span> <span class="pre">.</span> <span class="pre">LaTeX-equation-label)</span></code></li>
-<li>If the name is not found, or if the CDR is nil, no label is automatically inserted for that environment.</li>
-<li>If you want to automatically insert a label for a environment but with an empty prefix, use the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> as the CDR of the corresponding entry.</li>
+<li><p>An alist where the CAR is the environment name, and the CDR either the prefix or a symbol referring to one. eg.
+<code class="docutils literal notranslate"><span class="pre">(&quot;equation&quot;</span> <span class="pre">.</span> <span class="pre">LaTeX-equation-label)</span></code></p></li>
+<li><p>If the name is not found, or if the CDR is nil, no label is automatically inserted for that environment.</p></li>
+<li><p>If you want to automatically insert a label for a environment but with an empty prefix, use the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> as the CDR of the corresponding entry.</p></li>
 </ul>
 </li>
 </ul>
@@ -604,8 +814,15 @@ This will be used for AUCTeX `LaTeX-label-function&#39; variable.&quot;
 <div class="section" id="hooks">
 <h2>7 hooks<a class="headerlink" href="#hooks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-after-modify-env-hook</span> <span class="pre">nil</span></code> List of functions to be run at the end of ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-modify-environment</span></code>’. Each function is called with four arguments.</li>
-<li><code class="docutils literal notranslate"><span class="pre">LaTeX-after-insert-env-hook</span> <span class="pre">nil</span></code> List of functions to be run at the end of ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-insert-environment</span></code>’. Each function is called with three arguments.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-after-modify-env-hook</span> <span class="pre">nil</span></code> List of functions to be run at the end of ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-modify-environment</span></code>’. Each function is called with four arguments.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-after-insert-env-hook</span> <span class="pre">nil</span></code> List of functions to be run at the end of ‘<code class="docutils literal notranslate"><span class="pre">LaTeX-insert-environment</span></code>’. Each function is called with three arguments.</p></li>
+</ul>
+</div>
+<div class="section" id="tmp-items">
+<h2>8 Tmp items<a class="headerlink" href="#tmp-items" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-begin-regexp</span></code> an regexp matching macros considered begins</p></li>
+<li></li>
 </ul>
 </div>
 </div>
@@ -621,7 +838,7 @@ This will be used for AUCTeX `LaTeX-label-function&#39; variable.&quot;
         <a href="latex.html" class="btn btn-neutral float-right" title="LaTeX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="orgmode.html" class="btn btn-neutral float-left" title="Orgmode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="orgmode.html" class="btn btn-neutral float-left" title="Orgmode and Emacs Diary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -630,11 +847,19 @@ This will be used for AUCTeX `LaTeX-label-function&#39; variable.&quot;
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, hbshim@gmail.com
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -645,7 +870,6 @@ This will be used for AUCTeX `LaTeX-label-function&#39; variable.&quot;
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

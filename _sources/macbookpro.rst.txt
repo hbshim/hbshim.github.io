@@ -2,6 +2,7 @@
 Misc
 ====
 
+    :Date: November 10, 2020
 
 .. contents::
 
@@ -786,3 +787,33 @@ For example, macos native ``bash`` is very old but we can get newer version of b
     Error: An exception occurred within a child process:
       Errno::ENOENT: No such file or directory @ rb_sysopen - /Users/hbshim/Library/Caches/Homebrew/downloads/481db406a9f064d618913d52172ad647765ab84ff8131278e725a4e223303610--emacs-mac-title-bar-7.4.patch
     hbshim@aleph:~$
+
+9 system signals
+----------------
+
+9.1 Kill signals
+~~~~~~~~~~~~~~~~
+
+.. table::
+
+    +-----------------+------------------+-------------------------+
+    | **signal name** | **signal value** | **effect**              |
+    +=================+==================+=========================+
+    | ``SIGHUP``      | ``1``            | Hangup                  |
+    +-----------------+------------------+-------------------------+
+    | ``SIGINT``      | ``2``            | Interrupt from keyboard |
+    +-----------------+------------------+-------------------------+
+    | ``SIGKILL``     | ``9``            | Kill signal             |
+    +-----------------+------------------+-------------------------+
+    | ``SIGTERM``     | ``15``           | Termination signal      |
+    +-----------------+------------------+-------------------------+
+    | ``SIGSTOP``     | ``19``           | Stop the process        |
+    +-----------------+------------------+-------------------------+
+
+- ``SIGSTOP`` makes the operating system pause a process's execution. The process **cannot ignore** the signal.
+
+- ``SIGKILL`` forces the process to stop executing immediately. The process **cannot ignore** this signal. This process **does not get to clean-up** either.
+
+- ``SIGTERM`` requests a process to stop running. This signal **can be ignored**. The process is given time to gracefully shutdown so that it can save its progress and release resources.
+
+- ``SIGINT`` is very similar to ``SIGTERM`` and equivalent to pressing ``Control-C`` key on the terminal.

@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>LaTeX Pkg: spectralsequences &mdash; Notes  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Git" href="git.html" />
+    <link rel="prev" title="LaTeX" href="latex.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Notes
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">1 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">1.1 options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">3 Bookmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">4 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#deleting-and-killing">8 Deleting and killing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-by-character">8.1 Deleting by character</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#dired">9 Dired</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#directories">9.1 directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#flags">9.2 flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#files">9.3 files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#marks">9.4 marks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#shell-command">9.5 shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id1">9.6 options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">10 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">11 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">12 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">13 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">14 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">14.1 Browsing inside info</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">15 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">16 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">17 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">19 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">19.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">19.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">19.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">19.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">19.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">19.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">19.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">19.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">19.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">19.10 GO TO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">20 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">20.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">20.2 Visibility commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">21 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">22 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">23 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">24 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">25 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">26 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">27 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">28 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">28.1 transpose windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">29 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#variables">29.1 variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">30 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">31 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">32 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">33 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">34 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">35 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#agenda-view">1 Agenda view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">1.1 Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sunrise-sunset">2 Sunrise/sunset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">7 Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">8 Footnote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">9 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">10 Insert entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">11 Latex preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">12 Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">13 Moving subtrees up/down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">14 Paragraphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">15 Promoting/Demoting headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">16 Repeated tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">17 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">18 Special symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">19 Superscript and subscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">20 time stamp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">20.1 automatic time-stamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id2">20.2 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#time-stamp-in-todo">20.3 time stamp in TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">21 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id3">21.1 Time stamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">22 Visibility cycling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auctex.html">AUCTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id1">1 AucTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#macros">2 Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#style-files">3 style files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-style-hooks">3.1 Adding style hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-symbols">3.2 adding symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#adding-environments">3.3 adding environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#defining-environments-with-arguments">3.3.1 defining environments with arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#replacing-predefined-environment-style-by-using-ignore">3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#specifying-locations-of-style-files">3.4 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#global-styles">3.4.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#private-styles">3.4.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#local-styles">3.4.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#all-combined">3.4.4 All Combined</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#options">3.5 Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id2">4 ??</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#dvi">1 DVI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#postscript">2 PostScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#encapsulated-postscript-eps">3 Encapsulated PostScript (EPS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#raster-fonts">4 Raster fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#metafont">5 Metafont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#ghostscript">6 Ghostscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#raster-image-converters">7 Raster image converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#image-file-formats-compared">8 Image file formats, compared</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#xquartz">9 XQuartz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package">10 Add section number to the pdf bookmark (outline) generated by hyperref package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc">11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#change-font-size-temporarily">12 change font size temporarily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-an-area-begin-small-end-small">12.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-a-word-small-word">12.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#as-a-switcher-small">12.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">13 putting a formula inside of a table cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#variable">14 variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">15 setcounter enumi</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LaTeX Pkg: spectralsequences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#environment-structure">1 Environment structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-options">1.1 Global options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">2 Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#differentials">3 Differentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grouping">4 Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">5 Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loops">5.1 Loops</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#learning-sources">1 Learning Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#basic-concepts-and-terms">2 Basic concepts and terms:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#gitignore">3 .gitignore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#init">4 init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#config">5 config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#status">6 status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#log">7 log</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#add-working-tree-staging-area">8 add: working tree -&gt; staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rm-remove-from-both-working-tree-and-the-staging-area">9 rm: remove from both working tree and the staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#commit-staging-area-history">10 commit: staging area -&gt; history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#add-commit-working-tree-staging-area-and-history">11 add+commit: working tree -&gt; staging area and history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#diff-working-tree-staging-area">12 diff: working tree &lt;-&gt; staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#diff-staging-area-history">13 diff: staging area &lt;-&gt; history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-working-tree-staging-area">14 checkout: working tree &lt;- staging area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-working-tree-and-staging-area-history">15 checkout: working tree and staging area &lt;- history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#checkout-branch">16 checkout branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#reset-staging-area-history">17 reset: staging area &lt;- history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-list">18 branch: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-create-new">19 branch: create new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#branch-remove">20 branch: remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#merge-head-master">21 merge: HEAD -&gt; master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">22 Stash: save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">23 stash: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">24 stash: apply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#clone">25 clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">26 remote: add/remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">27 remote: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">28 fetch: local repository &lt;- remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">29 push: local repository -&gt; remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">30 rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">31 cherry-pick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coq.html">Coq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#update">1 Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#coqdoc-documentation">2 Coqdoc (documentation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#references">3 References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#terms">4 Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#gallina">5 Gallina</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#vernacular-command">6 Vernacular Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#tactic">7 Tactic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#module">8 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#inductive-definitions">9 Inductive definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="macbookpro.html">Misc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#emacs-keybinding">1 emacs keybinding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#mac-address-changer">2 MAC address changer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#brew">3 Brew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#terminal-commands">4 Terminal commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#firefox">5 Firefox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#thunderbird">6 Thunderbird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#three-finger-dragging">7 three finger dragging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#system-signals">9 system signals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="macbookpro.html#kill-signals">9.1 Kill signals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#character">1 character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#completion">2 completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#history">3 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#line">4 line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#misc">5 misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#startup-files">6 Startup Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#word">7 word</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="make.html">Make</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="make.html#overview">1 overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#rule">2 Rule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#explicit-rules">2.1 Explicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#implicit-rules">2.2 Implicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#last-resort-rule">2.3 Last-resort rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#operators">3 operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#assignments">4 assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#directives">5 directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#functions">6 functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-variables">7 special variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-targets">8 special targets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#phony-targets">8.1 Phony targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#clean">8.2 clean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#silent">8.3 silent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#the-dollar-sign">9 The dollar sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#recipe-echoing">10 Recipe echoing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#flags">11 flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#conditional">12 conditional</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifdef-ifndef">12.1 <code class="docutils literal notranslate"><span class="pre">ifdef</span></code>, <code class="docutils literal notranslate"><span class="pre">ifndef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifeq-ifneq">12.2 <code class="docutils literal notranslate"><span class="pre">ifeq</span></code>, <code class="docutils literal notranslate"><span class="pre">ifneq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elisp.html">Elisp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#terminology">1 terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#keyword">1.1 keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-items">1.2 customization items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-variables">1.3 customizable variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-faces">1.4 customizable faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-groups">1.5 customization groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#global-variables">1.6 global variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#composite-types">1.7 composite types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#symbols">2 symbols</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id2">2.1 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defcustom">2.2 defcustom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defface">2.3 defface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defgroup">2.4 defgroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defvar">2.5 defvar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defconst">2.6 defconst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#repeat-element-type">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#function-list-rest-objects">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#choice-alternative-types">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#to-be-organized-later">3 to be organized later</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="math.html">math dump</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="math.html#binomial-coefficients">1 binomial coefficients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="math.html#identities">1.1 identities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#stirling-number">1.2 Stirling number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#derivatives">1.3 derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#relationship-with-polynomials">1.4 relationship with polynomials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#finite-sums">1.5 finite sums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#series-generating-functions">1.6 series, generating functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#divisibility">1.7 divisibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#inequalities">1.8 inequalities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#asymptotes">1.9 asymptotes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#the-gamma-function">1.10 the gamma function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="math.html#the-beta-function">1.11 the beta function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#stirling-numbers">2 Stirling numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#fibonacci-number">3 Fibonacci number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#trigonometric-functions">4 trigonometric functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#series-multisection">5 series multisection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#beta-function">6 Beta function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="math.html#euler-integral-of-the-first-kind">7 Euler integral of the first kind</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Notes</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>LaTeX Pkg: spectralsequences</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/spectral_sequences_pkg.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="latex-pkg-spectralsequences">
+<h1>LaTeX Pkg: spectralsequences<a class="headerlink" href="#latex-pkg-spectralsequences" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>November 10, 2020</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="section" id="environment-structure">
+<h2>1 Environment structure<a class="headerlink" href="#environment-structure" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\begin{sseqdata}[&lt;options&gt;]</span> <span class="pre">&lt;environment</span> <span class="pre">contents&gt;</span> <span class="pre">\end{sseqdata}</span></code></p>
+<ul>
+<li><p>Store a spectral sequence to be printed later. You must use the <code class="docutils literal notranslate"><span class="pre">name</span></code> option to refer this later. <code class="docutils literal notranslate"><span class="pre">OPTIONS</span></code> are separated by comma and quotation symbols like <code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'...'</span></code> is not used for strings. eg. <code class="docutils literal notranslate"><span class="pre">[name</span> <span class="pre">=</span> <span class="pre">sseq</span> <span class="pre">example,</span> <span class="pre">Adams</span> <span class="pre">grading,</span> <span class="pre">yscale</span> <span class="pre">=</span> <span class="pre">0.53</span> <span class="pre">]</span></code> sets that the name of the spectral sequence to be referred later is named <code class="docutils literal notranslate"><span class="pre">sseq</span> <span class="pre">example</span></code> with the degree of differentials specified by <code class="docutils literal notranslate"><span class="pre">Adams</span> <span class="pre">grading</span></code> with the y-axis scaled by factor of 0.53.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\begin{sseqpage}[&lt;options&gt;]</span> <span class="pre">&lt;environment</span> <span class="pre">contents&gt;</span> <span class="pre">\end{sseqpage}</span></code></p>
+<ul>
+<li><p>This environment is used for printing a page of existing spectral sequence that was already specified. We refer the previously defined one named <code class="docutils literal notranslate"><span class="pre">sseq</span> <span class="pre">example</span></code> by putting <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">sseq</span> <span class="pre">example</span></code> also in OPTIONS here.</p>
+<ul>
+<li><p>The body of the environment adds local changes – classes, differentials, structure lines, and arbitrary TikZ options that are by default only printed on this particular page.</p></li>
+</ul>
+</li>
+<li><p>This can also be used to print a stand-alone page of a spectral sequence directly.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\printpage[&lt;options&gt;]</span></code></p>
+<ul>
+<li><p>This prints a page of existing spectral sequence that was already specified as-is. We refer the previously defined one named <code class="docutils literal notranslate"><span class="pre">sseq</span> <span class="pre">example</span></code> by putting <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">sseq</span> <span class="pre">example</span></code> also in OPTIONS here. This is equivalent to a <code class="docutils literal notranslate"><span class="pre">sseqpage</span></code> environment with an empty body.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="global-options">
+<h3>1.1 Global options<a class="headerlink" href="#global-options" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&lt;sseq</span> <span class="pre">name&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">page</span> <span class="pre">=</span> <span class="pre">&lt;page</span> <span class="pre">number&gt;</span></code> / <code class="docutils literal notranslate"><span class="pre">page</span> <span class="pre">=</span> <span class="pre">&lt;page</span> <span class="pre">number&gt;-&lt;page</span> <span class="pre">max&gt;</span></code> (initially <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">degree</span> <span class="pre">=</span> <span class="pre">{&lt;x</span> <span class="pre">degree&gt;}{&lt;y</span> <span class="pre">degree&gt;}</span></code> Specifies the degree of differentials as the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> displacement of a page <code class="docutils literal notranslate"><span class="pre">#1</span></code> differential. The <code class="docutils literal notranslate"><span class="pre">&lt;x</span> <span class="pre">degree&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;y</span> <span class="pre">degree&gt;</span></code> should both be mathematical expressions in one variable <code class="docutils literal notranslate"><span class="pre">#1</span></code> that evaluate to integers on any input.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cohomological</span> <span class="pre">Serre</span> <span class="pre">grading</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">degree</span> <span class="pre">=</span> <span class="pre">{#1}{1-#1}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">homological</span> <span class="pre">Serre</span> <span class="pre">grading</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">degree</span> <span class="pre">=</span> <span class="pre">{-#1}{#1-1}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Adams</span> <span class="pre">grading</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">{-1}{#1}</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strict</span> <span class="pre">degree</span></code> / <code class="docutils literal notranslate"><span class="pre">lax</span> <span class="pre">degree</span></code> controls whether an error occurs or not if there is a differential that doesn’t have the proper grading. The default is ‘strict’.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">differentials</span></code> / <code class="docutils literal notranslate"><span class="pre">draw</span> <span class="pre">differentials</span></code> specifies whether differentials is drew or not.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="classes">
+<h2>2 Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\class[&lt;options&gt;](x,y)</span></code></p>
+<ul>
+<li><p>This places a class at the coordinate <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are integers.</p>
+<ul>
+<li><p>Multiple classes at the same position will be automatically arranged that can be explicitly described by the <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">pattern</span></code> option.</p>
+<ul>
+<li><p>Eg. <code class="docutils literal notranslate"><span class="pre">\class(2,0)</span> <span class="pre">\class(2,0)</span></code> puts two classes at <code class="docutils literal notranslate"><span class="pre">(2,0)</span></code>.</p></li>
+<li><p>The first one at <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> is referred by <code class="docutils literal notranslate"><span class="pre">(x,y,1)</span></code>, the second one by <code class="docutils literal notranslate"><span class="pre">(x,y,2)</span></code>, etc.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>If a class is the source or the target of a differential on a certain page, then the page of the class is set to that page, and the class is only appeared on pages up to that number and disappears from the next page assuming that the differential is an isomorphism.</p>
+<ul>
+<li><p>In the case where the differential is not an isomorphism, use one of the followings to make the desired class reappear:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">\replaceclass[&lt;options&gt;](x,y</span> <span class="pre">&lt;,</span> <span class="pre">tag&gt;)</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;tag&gt;</span></code> is an automatically assigned integer, or explicitly specified tag with <code class="docutils literal notranslate"><span class="pre">tag</span></code> in the class option, that specifies a desired class in case of multiple classes at the same position.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\replaceclass[&lt;options&gt;](&lt;classname&gt;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\replacesource[&lt;options&gt;]</span></code> / <code class="docutils literal notranslate"><span class="pre">\replacetarget[&lt;options&gt;]</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\classoptions[&lt;options&gt;](x,y</span> <span class="pre">&lt;,</span> <span class="pre">tag&gt;)</span></code> / <code class="docutils literal notranslate"><span class="pre">\classoptions[&lt;options&gt;](&lt;classname&gt;)</span></code> / <code class="docutils literal notranslate"><span class="pre">\classoptions[&lt;options&gt;]</span></code> add options to an existing class.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="differentials">
+<h2>3 Differentials<a class="headerlink" href="#differentials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\d&lt;page&gt;(x,y)</span></code> creates a differential starting at <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> of length determined by the specified page and the grading rule (eg. homological, cohomological, or Adams).</p>
+<ul>
+<li><p>In order to use the <code class="docutils literal notranslate"><span class="pre">\d</span></code> command like this, you must first specify the degree of the differentials as an option to the <code class="docutils literal notranslate"><span class="pre">{sseqdata}</span></code> or <code class="docutils literal notranslate"><span class="pre">{sseqpage}</span></code>.</p></li>
+<li><p>When the option <code class="docutils literal notranslate"><span class="pre">degree</span></code> is specified, then spectralsequences will check whether the difference between the source and target is appropriate for a differential of a given page, and if not it will throw an error. If this is undesirable, you can use the <code class="docutils literal notranslate"><span class="pre">lax</span> <span class="pre">degree</span></code> option.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\d[&lt;options&gt;]&lt;page&gt;(x,</span> <span class="pre">y,</span> <span class="pre">&lt;sourcen&gt;,</span> <span class="pre">&lt;targetn&gt;)</span></code> specifies classes in the case of multiple ones.</p>
+<ul>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">\d2(1,0,1,2)</span></code> specifies a second page differential whose source is located at <code class="docutils literal notranslate"><span class="pre">(1,0)</span></code> as the first class and the target is the second one among classes located at the position determined accordingly by the grading rule.</p></li>
+<li><p>In case where multiple classes and single classes are mixed, we can do something like <code class="docutils literal notranslate"><span class="pre">\d2(3,0,,2)</span></code> in the case where the source position has one single class.</p></li>
+<li><p>Negative indices will count from the most recent class in the coordinate (so the most recent is -1, the second most recent is -2, etc).</p>
+<ul>
+<li><p>Eg. <code class="docutils literal notranslate"><span class="pre">\d[red]2(1,0,-1,-2)</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\d[&lt;options&gt;]&lt;page&gt;</span></code></p></li>
+<li><p>/ <code class="docutils literal notranslate"><span class="pre">\d[&lt;options&gt;]&lt;page&gt;(source</span> <span class="pre">name</span> <span class="pre">&lt;,target</span> <span class="pre">n&gt;)</span></code> / <code class="docutils literal notranslate"><span class="pre">\d[&lt;options&gt;]&lt;page&gt;(&lt;source</span> <span class="pre">coordinate&gt;)(&lt;target</span> <span class="pre">coordinate&gt;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\d2(x,y)</span></code></p>
+<ul>
+<li><p>This puts a differential (an arrow) starting from <code class="docutils literal notranslate"><span class="pre">(x,y)</span></code> at the 2nd page according to the grading rule (eg. the homological grading will make it have the target at <code class="docutils literal notranslate"><span class="pre">(x-1,y+2)</span></code>).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="grouping">
+<h2>4 Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>We can set a group of classes and lines for reuse by using <code class="docutils literal notranslate"><span class="pre">\NewSseqGroup</span></code> macro.</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\NewSseqGroup\mygroup</span> <span class="nb">{}</span> <span class="nb">{</span>
+<span class="k">\class</span>(0,0)
+<span class="k">\class</span>(0,1)
+<span class="k">\class</span>(0,2)
+<span class="k">\class</span>(1,1)
+<span class="k">\class</span>(2,2)
+<span class="k">\structline</span>(0,0)(0,1)
+<span class="k">\structline</span>(0,1)(0,2)
+<span class="k">\structline</span>(0,0)(1,1)
+<span class="k">\structline</span>(1,1)(2,2)
+<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>sseqpage<span class="nb">}</span>[ classes = fill, class labels = <span class="nb">{</span> left = 0.3em <span class="nb">}</span> ]
+<span class="k">\mygroup</span>(0,0)
+<span class="k">\mygroup</span>(1,2)
+<span class="k">\classoptions</span><span class="na">[&quot;2&quot;]</span>(0,1)
+<span class="k">\classoptions</span><span class="na">[&quot;\eta&quot;]</span>(1,1)
+<span class="k">\end</span><span class="nb">{</span>sseqpage<span class="nb">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="commands">
+<h2>5 Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\sseqset{&lt;keys&gt;}</span></code> adjust the global options for all spectral sequences in the current scope, or for apply options to the rest of the current spectral sequence. This is used outside of the <code class="docutils literal notranslate"><span class="pre">{sseqpage}</span></code> or <code class="docutils literal notranslate"><span class="pre">{sseqdata}</span></code> environments. The following keys creates reusable styles.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.global</span> <span class="pre">sseq</span> <span class="pre">style</span> <span class="pre">=</span> <span class="pre">&lt;keys&gt;</span></code> if the style is a set of global options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.global</span> <span class="pre">sseq</span> <span class="pre">append</span> <span class="pre">style</span> <span class="pre">=</span> <span class="pre">&lt;keys&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.sseq</span> <span class="pre">style</span> <span class="pre">=</span> <span class="pre">&lt;keys&gt;</span></code> if the style is applied to individual objects (classes, differentials, structure lines, circle classes, and tikz primitives)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.sseq</span> <span class="pre">append</span> <span class="pre">style</span> <span class="pre">=</span> <span class="pre">&lt;keys&gt;</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="loops">
+<h3>5.1 Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">\foreach</span> <span class="pre">...</span> <span class="pre">in</span> <span class="pre">...</span></code> do the definite (finite and bounded) iteration.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\foreach</span> <span class="k">\x</span> in <span class="nb">{</span>0,2,...,6<span class="nb">}</span>
+<span class="k">\foreach</span> <span class="k">\y</span> in <span class="nb">{</span>0,...,3<span class="nb">}{</span>
+<span class="k">\class</span>(<span class="k">\x</span>,<span class="k">\y</span>)
+<span class="nb">}</span>
+</pre></div>
+</div>
+<p>means</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">\x</span> <span class="o">&#39;</span><span class="p">(</span><span class="mi">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">))</span> <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">\y</span> <span class="o">&#39;</span><span class="p">(</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span> <span class="nv">\class</span><span class="p">(</span><span class="nv">\x,\y</span><span class="p">)))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Example:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\foreach</span> <span class="k">\x</span>/<span class="k">\y</span>/<span class="k">\label</span> in <span class="nb">{</span>0/1/a,1/1/b,0/0/c,1/0/d<span class="nb">}{</span>
+<span class="k">\class</span><span class="na">[&quot;\label&quot; above]</span>(<span class="k">\x</span>,<span class="k">\y</span>)
+<span class="nb">}</span>
+</pre></div>
+</div>
+<p>means</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">p</span> <span class="o">&#39;</span><span class="p">(</span> <span class="p">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="nv">a</span><span class="p">)</span> <span class="p">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="o">,</span><span class="nv">b</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="nv">d</span><span class="p">)))</span> <span class="nv">\class</span><span class="p">(</span><span class="nv">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\Do</span></code> and its variants do the indefinite iteration that can go off the page.</p>
+<ul>
+<li><p>Example:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\class</span>(0,0)
+<span class="k">\DoUntilOutOfBoundsThenNMore</span><span class="nb">{</span>3<span class="nb">}{</span>
+    <span class="k">\class</span>(<span class="k">\lastx</span>+1,<span class="k">\lasty</span>+1)
+    <span class="k">\structline</span>
+<span class="nb">}</span>
+<span class="k">\class</span>(4,0)
+<span class="k">\d</span>3
+<span class="k">\DoUntilOutOfBounds</span><span class="nb">{</span>
+    <span class="k">\class</span>(<span class="k">\lastx</span>+1,<span class="k">\lasty</span>+1)
+    <span class="k">\structline</span>
+<span class="k">\d</span>3
+<span class="nb">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Example:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\class</span>(0,0)
+<span class="k">\DoUntilOutOfBounds</span><span class="nb">{</span>
+    <span class="k">\class</span>(<span class="k">\lastx</span>+1,<span class="k">\lasty</span>+1)
+    <span class="k">\structline</span>
+    <span class="k">\DoUntilOutOfBounds</span><span class="nb">{</span>
+        <span class="k">\class</span>(<span class="k">\lastx</span>,<span class="k">\lasty</span>+1)
+        <span class="k">\structline</span>
+    <span class="nb">}</span>
+<span class="nb">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="git.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="latex.html" class="btn btn-neutral float-left" title="LaTeX" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, hbshim@gmail.com
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

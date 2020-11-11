@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,28 +11,30 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Coq" href="coq.html" />
@@ -51,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> Notes
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Notes
           
 
           
@@ -74,6 +75,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,107 +86,144 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#id1">1 Emacs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#abbrevs-mode">1.1 Abbrevs mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#options">1.1.1 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">1 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">1.1 options</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#ansi-term-mode">1.2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#bookmarks">1.3 Bookmarks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#helm">1.4 helm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#buffers">1.5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#kill-buffer">1.6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#case-conversion-a-a">1.7 Case conversion A &lt;-&gt; a</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-and-killing">1.8 Deleting and killing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#deleting-by-character">1.8.1 Deleting by character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">3 Bookmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">4 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#deleting-and-killing">8 Deleting and killing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-by-character">8.1 Deleting by character</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#dired">1.9 Dired</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#directories">1.9.1 directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#flags">1.9.2 flags</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#files">1.9.3 files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#marks">1.9.4 marks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#shell-command">1.9.5 shell command</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#id2">1.9.6 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#dired">9 Dired</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#directories">9.1 directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#flags">9.2 flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#files">9.3 files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#marks">9.4 marks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#shell-command">9.5 shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id1">9.6 options</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#file">1.10 File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#find-replace">1.11 Find/replace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#font">1.12 font</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#frames">1.13 frames</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#help-and-info">1.14 help and info</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#browsing-inside-info">1.14.1 Browsing inside info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">10 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">11 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">12 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">13 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">14 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">14.1 Browsing inside info</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#ispell-flyspell">1.15 ispell (flyspell)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#menubar-f10">1.16 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-around">1.17 Moving around</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-characters-lines">1.17.1 by characters/lines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-words">1.17.2 by words</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#horizontally">1.17.3 horizontally</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-sentence">1.17.4 by sentence</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-paragraph">1.17.5 by paragraph</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-matching-parentheses">1.17.6 by matching parentheses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-buffer">1.17.7 by buffer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#by-page">1.17.8 by page</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#back-to-previous-position">1.17.9 back to previous position</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#go-to">1.17.10 GO TO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">15 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">16 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">17 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">19 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">19.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">19.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">19.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">19.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">19.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">19.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">19.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">19.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">19.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">19.10 GO TO</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#outline-minor-mode">1.18 Outline minor mode</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#motion-commands">1.18.1 Motion commands</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#visibility-commands">1.18.2 Visibility commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">20 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">20.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">20.2 Visibility commands</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#reference-sites">1.19 Reference sites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#region-mark">1.20 Region/Mark</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#registers">1.21 Registers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#select">1.22 Select</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#sessions">1.23 Sessions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#symbol">1.24 Symbol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#timestamp">1.25 Timestamp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#windows">1.26 windows</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#transpose-windows">1.26.1 transpose windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">21 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">22 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">23 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">24 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">25 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">26 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">27 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">28 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">28.1 transpose windows</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#yasnippet">1.27 YASnippet</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#variables">1.27.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">29 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#variables">29.1 variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#id3">1.28 Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#auto-reverting">1.29 (Auto)reverting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#performance-profiling">1.30 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">30 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">31 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">32 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">33 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">34 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">35 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#auctex">2 AucTeX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#org">3 Org</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#code-block">3.1 Code block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#example-block">3.2 Example block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#export-options">3.3 Export options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#exporting">3.4 Exporting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#html-export-command">3.4.1 HTML export command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#agenda-view">1 Agenda view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#variables">1.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#id4">3.5 Font</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#footnote">3.6 Footnote</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#images">3.7 Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#insert-entries">3.8 Insert entries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#latex-preview">3.9 Latex preview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#moving-subtrees-up-down">3.10 Moving subtrees up/down</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#paragraphs">3.11 Paragraphs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#promoting-demoting-headings">3.12 Promoting/Demoting headings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#sort">3.13 Sort</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#special-symbols">3.14 Special symbols</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#superscript-and-subscript">3.15 Superscript and subscript</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#time-stamp">3.16 time stamp</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emacs.html#id5">3.16.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sunrise-sunset">2 Sunrise/sunset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-cycling">3.17 Visibility cycling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">4 emacsclient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">5 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#font">7 Font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#footnote">8 Footnote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#images">9 Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#insert-entries">10 Insert entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#latex-preview">11 Latex preview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#motion">12 Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#moving-subtrees-up-down">13 Moving subtrees up/down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#paragraphs">14 Paragraphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#promoting-demoting-headings">15 Promoting/Demoting headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#repeated-tasks">16 Repeated tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#sort">17 Sort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#special-symbols">18 Special symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#superscript-and-subscript">19 Superscript and subscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#time-stamp">20 time stamp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#automatic-time-stamping">20.1 automatic time-stamping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id2">20.2 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#time-stamp-in-todo">20.3 time stamp in TODO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#todo">21 <code class="docutils literal notranslate"><span class="pre">TODO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#id3">21.1 Time stamp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#visibility-cycling">22 Visibility cycling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auctex.html">AUCTeX</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id1">1 AucTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#macros">2 Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#style-files">3 style files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#specifying-locations-of-style-files">3.1 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#global-styles">3.1.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#private-styles">3.1.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#local-styles">3.1.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auctex.html#all-combined">3.1.4 All Combined</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#options">3.2 Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#id2">4 ??</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -238,13 +277,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coq.html">Coq</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#references">1 References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#terms">2 Terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#gallina">3 Gallina</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#vernacular-command">4 Vernacular Command</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#tactic">5 Tactic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#module">6 Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coq.html#inductive-definitions">7 Inductive definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#update">1 Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#coqdoc-documentation">2 Coqdoc (documentation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#references">3 References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#terms">4 Terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#gallina">5 Gallina</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#vernacular-command">6 Vernacular Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#tactic">7 Tactic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#module">8 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coq.html#inductive-definitions">9 Inductive definitions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="macbookpro.html">Misc</a><ul>
@@ -256,6 +297,70 @@
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#thunderbird">6 Thunderbird</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#three-finger-dragging">7 three finger dragging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#character">1 character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#completion">2 completion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#history">3 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#line">4 line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#misc">5 misc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#startup-files">6 Startup Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#word">7 word</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="make.html">Make</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="make.html#overview">1 overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#rule">2 Rule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#explicit-rules">2.1 Explicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#implicit-rules">2.2 Implicit rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#last-resort-rule">2.3 Last-resort rule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#operators">3 operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#assignments">4 assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#directives">5 directives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#functions">6 functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-variables">7 special variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#special-targets">8 special targets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#phony-targets">8.1 Phony targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#clean">8.2 clean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#silent">8.3 silent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#the-dollar-sign">9 The dollar sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#recipe-echoing">10 Recipe echoing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#flags">11 flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make.html#conditional">12 conditional</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifdef-ifndef">12.1 <code class="docutils literal notranslate"><span class="pre">ifdef</span></code>, <code class="docutils literal notranslate"><span class="pre">ifndef</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="make.html#ifeq-ifneq">12.2 <code class="docutils literal notranslate"><span class="pre">ifeq</span></code>, <code class="docutils literal notranslate"><span class="pre">ifneq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elisp.html">Elisp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#terminology">1 terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#keyword">1.1 keyword</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-items">1.2 customization items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-variables">1.3 customizable variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customizable-faces">1.4 customizable faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-groups">1.5 customization groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#global-variables">1.6 global variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#composite-types">1.7 composite types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#symbols">2 symbols</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id2">2.1 :</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defcustom">2.2 defcustom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defface">2.3 defface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defgroup">2.4 defgroup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defvar">2.5 defvar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#defconst">2.6 defconst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#repeat-element-type">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#function-list-rest-objects">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#choice-alternative-types">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -287,6 +392,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -325,7 +431,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Git</li>
     
@@ -349,51 +455,49 @@
   <div class="section" id="git">
 <h1><a class="toc-backref" href="#id6">Git</a><a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Date:</th><td class="field-body">Tue May 26 12:21:12 2020</td>
-</tr>
-</tbody>
-</table>
+<div><dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>Tue May 26 12:21:12 2020</p>
+</dd>
+</dl>
 </div></blockquote>
 <div class="contents topic" id="contents">
-<p class="topic-title first">Contents</p>
+<p class="topic-title">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#git" id="id6">Git</a><ul>
-<li><a class="reference internal" href="#learning-sources" id="id7">1 Learning Sources</a></li>
-<li><a class="reference internal" href="#basic-concepts-and-terms" id="id8">2 Basic concepts and terms:</a></li>
-<li><a class="reference internal" href="#gitignore" id="id9">3 .gitignore</a></li>
-<li><a class="reference internal" href="#init" id="id10">4 init</a></li>
-<li><a class="reference internal" href="#config" id="id11">5 config</a></li>
-<li><a class="reference internal" href="#status" id="id12">6 status</a></li>
-<li><a class="reference internal" href="#log" id="id13">7 log</a></li>
-<li><a class="reference internal" href="#add-working-tree-staging-area" id="id14">8 add: working tree -&gt; staging area</a></li>
-<li><a class="reference internal" href="#rm-remove-from-both-working-tree-and-the-staging-area" id="id15">9 rm: remove from both working tree and the staging area</a></li>
-<li><a class="reference internal" href="#commit-staging-area-history" id="id16">10 commit: staging area -&gt; history</a></li>
-<li><a class="reference internal" href="#add-commit-working-tree-staging-area-and-history" id="id17">11 add+commit: working tree -&gt; staging area and history</a></li>
-<li><a class="reference internal" href="#diff-working-tree-staging-area" id="id18">12 diff: working tree &lt;-&gt; staging area</a></li>
-<li><a class="reference internal" href="#diff-staging-area-history" id="id19">13 diff: staging area &lt;-&gt; history</a></li>
-<li><a class="reference internal" href="#checkout-working-tree-staging-area" id="id20">14 checkout: working tree &lt;- staging area</a></li>
-<li><a class="reference internal" href="#checkout-working-tree-and-staging-area-history" id="id21">15 checkout: working tree and staging area &lt;- history</a></li>
-<li><a class="reference internal" href="#checkout-branch" id="id22">16 checkout branch</a></li>
-<li><a class="reference internal" href="#reset-staging-area-history" id="id23">17 reset: staging area &lt;- history</a></li>
-<li><a class="reference internal" href="#branch-list" id="id24">18 branch: list</a></li>
-<li><a class="reference internal" href="#branch-create-new" id="id25">19 branch: create new</a></li>
-<li><a class="reference internal" href="#branch-remove" id="id26">20 branch: remove</a></li>
-<li><a class="reference internal" href="#merge-head-master" id="id27">21 merge: HEAD -&gt; master</a></li>
-<li><a class="reference internal" href="#stash-save" id="id28">22 Stash: save</a></li>
-<li><a class="reference internal" href="#stash-list" id="id29">23 stash: list</a></li>
-<li><a class="reference internal" href="#stash-apply" id="id30">24 stash: apply</a></li>
-<li><a class="reference internal" href="#clone" id="id31">25 clone</a></li>
-<li><a class="reference internal" href="#remote-add-remove" id="id32">26 remote: add/remove</a></li>
-<li><a class="reference internal" href="#remote-list" id="id33">27 remote: list</a></li>
-<li><a class="reference internal" href="#fetch-local-repository-remote-repository" id="id34">28 fetch: local repository &lt;- remote repository</a></li>
-<li><a class="reference internal" href="#push-local-repository-remote-repository" id="id35">29 push: local repository -&gt; remote repository</a></li>
-<li><a class="reference internal" href="#rebase" id="id36">30 rebase</a></li>
-<li><a class="reference internal" href="#cherry-pick" id="id37">31 cherry-pick</a></li>
-<li><a class="reference internal" href="#tag" id="id38">32 tag</a></li>
+<li><p><a class="reference internal" href="#git" id="id6">Git</a></p>
+<ul>
+<li><p><a class="reference internal" href="#learning-sources" id="id7">1 Learning Sources</a></p></li>
+<li><p><a class="reference internal" href="#basic-concepts-and-terms" id="id8">2 Basic concepts and terms:</a></p></li>
+<li><p><a class="reference internal" href="#gitignore" id="id9">3 .gitignore</a></p></li>
+<li><p><a class="reference internal" href="#init" id="id10">4 init</a></p></li>
+<li><p><a class="reference internal" href="#config" id="id11">5 config</a></p></li>
+<li><p><a class="reference internal" href="#status" id="id12">6 status</a></p></li>
+<li><p><a class="reference internal" href="#log" id="id13">7 log</a></p></li>
+<li><p><a class="reference internal" href="#add-working-tree-staging-area" id="id14">8 add: working tree -&gt; staging area</a></p></li>
+<li><p><a class="reference internal" href="#rm-remove-from-both-working-tree-and-the-staging-area" id="id15">9 rm: remove from both working tree and the staging area</a></p></li>
+<li><p><a class="reference internal" href="#commit-staging-area-history" id="id16">10 commit: staging area -&gt; history</a></p></li>
+<li><p><a class="reference internal" href="#add-commit-working-tree-staging-area-and-history" id="id17">11 add+commit: working tree -&gt; staging area and history</a></p></li>
+<li><p><a class="reference internal" href="#diff-working-tree-staging-area" id="id18">12 diff: working tree &lt;-&gt; staging area</a></p></li>
+<li><p><a class="reference internal" href="#diff-staging-area-history" id="id19">13 diff: staging area &lt;-&gt; history</a></p></li>
+<li><p><a class="reference internal" href="#checkout-working-tree-staging-area" id="id20">14 checkout: working tree &lt;- staging area</a></p></li>
+<li><p><a class="reference internal" href="#checkout-working-tree-and-staging-area-history" id="id21">15 checkout: working tree and staging area &lt;- history</a></p></li>
+<li><p><a class="reference internal" href="#checkout-branch" id="id22">16 checkout branch</a></p></li>
+<li><p><a class="reference internal" href="#reset-staging-area-history" id="id23">17 reset: staging area &lt;- history</a></p></li>
+<li><p><a class="reference internal" href="#branch-list" id="id24">18 branch: list</a></p></li>
+<li><p><a class="reference internal" href="#branch-create-new" id="id25">19 branch: create new</a></p></li>
+<li><p><a class="reference internal" href="#branch-remove" id="id26">20 branch: remove</a></p></li>
+<li><p><a class="reference internal" href="#merge-head-master" id="id27">21 merge: HEAD -&gt; master</a></p></li>
+<li><p><a class="reference internal" href="#stash-save" id="id28">22 Stash: save</a></p></li>
+<li><p><a class="reference internal" href="#stash-list" id="id29">23 stash: list</a></p></li>
+<li><p><a class="reference internal" href="#stash-apply" id="id30">24 stash: apply</a></p></li>
+<li><p><a class="reference internal" href="#clone" id="id31">25 clone</a></p></li>
+<li><p><a class="reference internal" href="#remote-add-remove" id="id32">26 remote: add/remove</a></p></li>
+<li><p><a class="reference internal" href="#remote-list" id="id33">27 remote: list</a></p></li>
+<li><p><a class="reference internal" href="#fetch-local-repository-remote-repository" id="id34">28 fetch: local repository &lt;- remote repository</a></p></li>
+<li><p><a class="reference internal" href="#push-local-repository-remote-repository" id="id35">29 push: local repository -&gt; remote repository</a></p></li>
+<li><p><a class="reference internal" href="#rebase" id="id36">30 rebase</a></p></li>
+<li><p><a class="reference internal" href="#cherry-pick" id="id37">31 cherry-pick</a></p></li>
+<li><p><a class="reference internal" href="#tag" id="id38">32 tag</a></p></li>
 </ul>
 </li>
 </ul>
@@ -401,16 +505,18 @@
 <div class="section" id="learning-sources">
 <h2><a class="toc-backref" href="#id7">1 Learning Sources</a><a class="headerlink" href="#learning-sources" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>The following YouTube videos were helpful:<ul>
-<li>Introduction to Git - Core Concepts (by David Mahler): <a class="reference external" href="https://youtu.be/uR6G2v_WsRA">https://youtu.be/uR6G2v_WsRA</a></li>
-<li>Introduction to Git - Branching and Merging (by David Mahler): <a class="reference external" href="https://youtu.be/FyAAIHHClqI">https://youtu.be/FyAAIHHClqI</a></li>
-<li>Introduction to Git - Remotes (by David Mahler): <a class="reference external" href="https://youtu.be/Gg4bLk8cGNo">https://youtu.be/Gg4bLk8cGNo</a></li>
-<li>Rewriting Git History - Amend, Reword, Delete, Reorder, Squash and Split (by “The Modern Coder”): <a class="reference external" href="https://youtu.be/ElRzTuYln0M">https://youtu.be/ElRzTuYln0M</a></li>
+<li><p>The following YouTube videos were helpful:</p>
+<ul>
+<li><p>Introduction to Git - Core Concepts (by David Mahler): <a class="reference external" href="https://youtu.be/uR6G2v_WsRA">https://youtu.be/uR6G2v_WsRA</a></p></li>
+<li><p>Introduction to Git - Branching and Merging (by David Mahler): <a class="reference external" href="https://youtu.be/FyAAIHHClqI">https://youtu.be/FyAAIHHClqI</a></p></li>
+<li><p>Introduction to Git - Remotes (by David Mahler): <a class="reference external" href="https://youtu.be/Gg4bLk8cGNo">https://youtu.be/Gg4bLk8cGNo</a></p></li>
+<li><p>Rewriting Git History - Amend, Reword, Delete, Reorder, Squash and Split (by “The Modern Coder”): <a class="reference external" href="https://youtu.be/ElRzTuYln0M">https://youtu.be/ElRzTuYln0M</a></p></li>
 </ul>
 </li>
-<li>Web resources<ul>
-<li>Git reference manual: <a class="reference external" href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
-<li>Git Handbook (by GitHub): <a class="reference external" href="https://guides.github.com/introduction/git-handbook/">https://guides.github.com/introduction/git-handbook/</a></li>
+<li><p>Web resources</p>
+<ul>
+<li><p>Git reference manual: <a class="reference external" href="https://git-scm.com/docs">https://git-scm.com/docs</a></p></li>
+<li><p>Git Handbook (by GitHub): <a class="reference external" href="https://guides.github.com/introduction/git-handbook/">https://guides.github.com/introduction/git-handbook/</a></p></li>
 </ul>
 </li>
 </ul>
@@ -418,131 +524,115 @@
 <div class="section" id="basic-concepts-and-terms">
 <h2><a class="toc-backref" href="#id8">2 Basic concepts and terms:</a><a class="headerlink" href="#basic-concepts-and-terms" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Overall structure: <strong>working tree</strong> &lt;-(checkout)-<a href="#id4"><span class="problematic" id="id5">|-(add)-&gt;  **staging area** &lt;-(reset)-|</span></a>-(commit)-&gt; <strong>history</strong> &lt;-(fetch/pull)-<a href="#id1"><span class="problematic" id="id2">|</span></a>-(push)-&gt; <strong>remote</strong></p>
-</li>
-<li><p class="first">difference: <strong>working tree</strong> &lt;-&gt; <strong>staging area</strong> &lt;-&gt; <strong>history</strong></p>
-</li>
-<li><p class="first">working tree is also called the workspace</p>
-</li>
-<li><p class="first">staging area is also called as the index, cache, directory cache, current directory cache, staged files (<a class="reference external" href="https://gitguys.com/topics/whats-the-deal-with-the-git-index/">ref</a>). It is a single, large, binary file in <code class="docutils literal notranslate"><span class="pre">&lt;baseOfRepo&gt;/.git/index</span></code>, which LISTS all files in the current branch, their sha1 checksums, time stamps and the file name – it is NOT another directory with a copy of files in it.</p>
-</li>
-<li><p class="first">history is also called as the local repository. This is a hidden directory (<code class="docutils literal notranslate"><span class="pre">.git</span></code>) including an <code class="docutils literal notranslate"><span class="pre">objects</span></code> directory CONTAINING ALL versions of every file in the repo (local branches and copies of remote branches) as a compressed <a class="reference external" href="https://en.wikipedia.org/wiki/Binary_large_object">“blob” (Binary Large Object)</a> file. (<a class="reference external" href="https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git">ref</a>)</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is the pointer to the working tree. To find where HEAD points to, run</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">git</span><span class="o">/</span><span class="n">HEAD</span>
+<li><p>Overall structure: <strong>working tree</strong> &lt;-(checkout)-<a href="#id4"><span class="problematic" id="id5">|-(add)-&gt;  **staging area** &lt;-(reset)-|</span></a>-(commit)-&gt; <strong>history</strong> &lt;-(fetch/pull)-<a href="#id1"><span class="problematic" id="id2">|</span></a>-(push)-&gt; <strong>remote</strong></p></li>
+<li><p>difference: <strong>working tree</strong> &lt;-&gt; <strong>staging area</strong> &lt;-&gt; <strong>history</strong></p></li>
+<li><p>working tree is also called the workspace</p></li>
+<li><p>staging area is also called as the index, cache, directory cache, current directory cache, staged files (<a class="reference external" href="https://gitguys.com/topics/whats-the-deal-with-the-git-index/">ref</a>). It is a single, large, binary file in <code class="docutils literal notranslate"><span class="pre">&lt;baseOfRepo&gt;/.git/index</span></code>, which LISTS all files in the current branch, their sha1 checksums, time stamps and the file name – it is NOT another directory with a copy of files in it.</p></li>
+<li><p>history is also called as the local repository. This is a hidden directory (<code class="docutils literal notranslate"><span class="pre">.git</span></code>) including an <code class="docutils literal notranslate"><span class="pre">objects</span></code> directory CONTAINING ALL versions of every file in the repo (local branches and copies of remote branches) as a compressed <a class="reference external" href="https://en.wikipedia.org/wiki/Binary_large_object">“blob” (Binary Large Object)</a> file. (<a class="reference external" href="https://stackoverflow.com/questions/3689838/whats-the-difference-between-head-working-tree-and-index-in-git">ref</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is the pointer to the working tree. To find where HEAD points to, run</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cat .git/HEAD
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">master</span></code> is the pointer to the local master branch</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">detached</span> <span class="pre">HEAD</span></code> is the situation where <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> (current working tree) is not <code class="docutils literal notranslate"><span class="pre">master</span></code> or with a branch name.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">WIP</span></code> means Work In Progress (stashing)</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">origin</span></code> short name for the location of the remote</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">origin/master</span></code> is called the remote tracking branch (what the master branch looks like at <code class="docutils literal notranslate"><span class="pre">origin</span></code>)</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">upstream</span></code>: let A be a repository, B be a fork of A, C be a local clone of B. Then A is called the upstream of C</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">fetch</span></code> download remote to the local history</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">push</span></code> upload the local history to remote</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">merge</span></code></p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tag</span></code> specific points in a repository’s history as being important, eg. v1.0, v2.0, …</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">branch</span></code> Local branches aren’t automatically synchronized to the remotes so we have to explicitly push the branches you want to share. (TODO: continue to <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches">Remote Branch</a>)</p>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code> is the pointer to the local master branch</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">detached</span> <span class="pre">HEAD</span></code> is the situation where <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> (current working tree) is not <code class="docutils literal notranslate"><span class="pre">master</span></code> or with a branch name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIP</span></code> means Work In Progress (stashing)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">origin</span></code> short name for the location of the remote</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">origin/master</span></code> is called the remote tracking branch (what the master branch looks like at <code class="docutils literal notranslate"><span class="pre">origin</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upstream</span></code>: let A be a repository, B be a fork of A, C be a local clone of B. Then A is called the upstream of C</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fetch</span></code> download remote to the local history</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">push</span></code> upload the local history to remote</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">merge</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tag</span></code> specific points in a repository’s history as being important, eg. v1.0, v2.0, …</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">branch</span></code> Local branches aren’t automatically synchronized to the remotes so we have to explicitly push the branches you want to share. (TODO: continue to <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches">Remote Branch</a>)</p></li>
 </ul>
 </div>
 <div class="section" id="gitignore">
 <h2><a class="toc-backref" href="#id9">3 .gitignore</a><a class="headerlink" href="#gitignore" title="Permalink to this headline">¶</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> lists files, per line, that should be ignored.</p>
 <ul class="simple">
-<li>comments starts with <code class="docutils literal notranslate"><span class="pre">#</span></code>: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">COMMENT</span></code></li>
-<li>we can explicitly specify files, <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code></li>
-<li>we can use regexp, <code class="docutils literal notranslate"><span class="pre">\*~</span></code>, <code class="docutils literal notranslate"><span class="pre">\*.log</span></code></li>
-<li>a whole folder is indicated by <code class="docutils literal notranslate"><span class="pre">&lt;FOLDER&gt;/</span></code></li>
+<li><p>comments starts with <code class="docutils literal notranslate"><span class="pre">#</span></code>: <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">COMMENT</span></code></p></li>
+<li><p>we can explicitly specify files, <code class="docutils literal notranslate"><span class="pre">.DS_Store</span></code></p></li>
+<li><p>we can use regexp, <code class="docutils literal notranslate"><span class="pre">\*~</span></code>, <code class="docutils literal notranslate"><span class="pre">\*.log</span></code></p></li>
+<li><p>a whole folder is indicated by <code class="docutils literal notranslate"><span class="pre">&lt;FOLDER&gt;/</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="init">
 <h2><a class="toc-backref" href="#id10">4 init</a><a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git init
 </pre></div>
 </div>
 </div>
 <div class="section" id="config">
 <h2><a class="toc-backref" href="#id11">5 config</a><a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;&lt;NAME&gt;&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span> <span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;&lt;NAME@EMAIL.ADDRESS&gt;&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;&lt;NAME&gt;&quot;</span>
+git config -- global user.email <span class="s2">&quot;&lt;NAME@EMAIL.ADDRESS&gt;&quot;</span>
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">local</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;&lt;NAME&gt;&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span> <span class="n">local</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;&lt;NAME@EMAIL.ADDRESS&gt;&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config --local user.name <span class="s2">&quot;&lt;NAME&gt;&quot;</span>
+git config -- <span class="nb">local</span> user.email <span class="s2">&quot;&lt;NAME@EMAIL.ADDRESS&gt;&quot;</span>
 </pre></div>
 </div>
 <p>To list config:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="nb">list</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config --list
 </pre></div>
 </div>
 </div>
 <div class="section" id="status">
 <h2><a class="toc-backref" href="#id12">6 status</a><a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </div>
 </div>
 <div class="section" id="log">
 <h2><a class="toc-backref" href="#id13">7 log</a><a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git log
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="o">-</span><span class="n">p</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git log -p
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="o">--</span> <span class="o">&lt;</span><span class="n">FILE</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git log -- &lt;FILE&gt;
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">decorate</span> <span class="o">--</span><span class="n">oneline</span> <span class="o">--</span><span class="n">graph</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git log --all --decorate --oneline --graph
 </pre></div>
 </div>
 <p>It’s convenient to alias this.</p>
 </div>
 <div class="section" id="add-working-tree-staging-area">
 <h2><a class="toc-backref" href="#id14">8 add: working tree -&gt; staging area</a><a class="headerlink" href="#add-working-tree-staging-area" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">FILE</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git add FILE
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">FILE</span></code> can be a list of files, <code class="docutils literal notranslate"><span class="pre">FILE1</span> <span class="pre">FILE2</span> <span class="pre">FILE3</span> <span class="pre">...</span></code>
 we can use regexp, for eg, <code class="docutils literal notranslate"><span class="pre">S*</span></code> for all files starting with <code class="docutils literal notranslate"><span class="pre">S</span></code></p>
 <p>To add all modified files</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git add .
 </pre></div>
 </div>
 </div>
 <div class="section" id="rm-remove-from-both-working-tree-and-the-staging-area">
 <h2><a class="toc-backref" href="#id15">9 rm: remove from both working tree and the staging area</a><a class="headerlink" href="#rm-remove-from-both-working-tree-and-the-staging-area" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rm</span> <span class="o">&lt;</span><span class="n">FILE</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git rm &lt;FILE&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="commit-staging-area-history">
 <h2><a class="toc-backref" href="#id16">10 commit: staging area -&gt; history</a><a class="headerlink" href="#commit-staging-area-history" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git commit
 </pre></div>
 </div>
 <p>To commit with a short commit message:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;&lt;SHORT COMMIT MESSAGE&gt;&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;&lt;SHORT COMMIT MESSAGE&gt;&quot;</span>
 </pre></div>
 </div>
 <p>To commit without any commit message:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">edit</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git commit --no-edit
 </pre></div>
 </div>
 <p>To amend the last commit:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git commit --amend
 </pre></div>
 </div>
 <p>(This does changes the ID of the last commit. Amending works only for the latest  commit.)</p>
@@ -550,165 +640,164 @@ we can use regexp, for eg, <code class="docutils literal notranslate"><span clas
 </div>
 <div class="section" id="add-commit-working-tree-staging-area-and-history">
 <h2><a class="toc-backref" href="#id17">11 add+commit: working tree -&gt; staging area and history</a><a class="headerlink" href="#add-commit-working-tree-staging-area-and-history" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git commit -a
 </pre></div>
 </div>
 <p>nothing to specify after <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rm</span></code></p>
 </div>
 <div class="section" id="diff-working-tree-staging-area">
 <h2><a class="toc-backref" href="#id18">12 diff: working tree &lt;-&gt; staging area</a><a class="headerlink" href="#diff-working-tree-staging-area" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git diff
 </pre></div>
 </div>
 </div>
 <div class="section" id="diff-staging-area-history">
 <h2><a class="toc-backref" href="#id19">13 diff: staging area &lt;-&gt; history</a><a class="headerlink" href="#diff-staging-area-history" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span> <span class="o">--</span><span class="n">staged</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git diff --staged
 </pre></div>
 </div>
 </div>
 <div class="section" id="checkout-working-tree-staging-area">
 <h2><a class="toc-backref" href="#id20">14 checkout: working tree &lt;- staging area</a><a class="headerlink" href="#checkout-working-tree-staging-area" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span> <span class="o">&lt;</span><span class="n">FILE</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout -- &lt;FILE&gt;
 </pre></div>
 </div>
 <p>To place HEAD (i.e., to retrieve) to the state &lt;HASH&gt;:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">HASH</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout &lt;HASH&gt;
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;HASH&gt;</span></code> can be the first five characters</p>
 </div>
 <div class="section" id="checkout-working-tree-and-staging-area-history">
 <h2><a class="toc-backref" href="#id21">15 checkout: working tree and staging area &lt;- history</a><a class="headerlink" href="#checkout-working-tree-and-staging-area-history" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">HASH</span><span class="o">&gt;</span> <span class="o">--</span> <span class="o">&lt;</span><span class="n">FILE</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout &lt;HASH&gt; -- &lt;FILE&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="checkout-branch">
 <h2><a class="toc-backref" href="#id22">16 checkout branch</a><a class="headerlink" href="#checkout-branch" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">chekout</span> <span class="o">&lt;</span><span class="n">BRANCH</span> <span class="n">NAME</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git chekout &lt;BRANCH NAME&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="reset-staging-area-history">
 <h2><a class="toc-backref" href="#id23">17 reset: staging area &lt;- history</a><a class="headerlink" href="#reset-staging-area-history" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">reset</span> <span class="n">HEAD</span> <span class="o">&lt;</span><span class="n">FILE</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git reset HEAD &lt;FILE&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="branch-list">
 <h2><a class="toc-backref" href="#id24">18 branch: list</a><a class="headerlink" href="#branch-list" title="Permalink to this headline">¶</a></h2>
 <p>To list all branches:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch
 </pre></div>
 </div>
 <p>To list merged branches:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">--</span><span class="n">merged</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch --merged
 </pre></div>
 </div>
 <p>To list local and remote branches:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">a</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -a
 </pre></div>
 </div>
 <p>To list remote tracking branches only:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">r</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -r
 </pre></div>
 </div>
 </div>
 <div class="section" id="branch-create-new">
 <h2><a class="toc-backref" href="#id25">19 branch: create new</a><a class="headerlink" href="#branch-create-new" title="Permalink to this headline">¶</a></h2>
 <p>To create a new branch from HEAD:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">&lt;</span><span class="n">BRANCH</span> <span class="n">NAME</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch &lt;BRANCH NAME&gt;
 </pre></div>
 </div>
 <p>To create + checkout -&gt; new branch:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">BRANCH</span> <span class="n">NAME</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -b &lt;BRANCH NAME&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="branch-remove">
 <h2><a class="toc-backref" href="#id26">20 branch: remove</a><a class="headerlink" href="#branch-remove" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">BRANCH</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -d &lt;BRANCH&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="merge-head-master">
 <h2><a class="toc-backref" href="#id27">21 merge: HEAD -&gt; master</a><a class="headerlink" href="#merge-head-master" title="Permalink to this headline">¶</a></h2>
 <p>To merge &lt;BRANCH&gt; into master:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="o">&lt;</span><span class="n">BRANCH</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git merge &lt;BRANCH&gt;
 </pre></div>
 </div>
 <p>The response can be different depending on the strategy:</p>
 <ul>
-<li><p class="first">fast-forward</p>
-</li>
-<li><p class="first">three-way (recursive)</p>
+<li><p>fast-forward</p></li>
+<li><p>three-way (recursive)</p>
 <ul class="simple">
-<li>In case of conflict, files with conflict get modified with diff contents. We can check and resolve these conflict by opening those files. When doing this, we also need to delete git markers.</li>
-<li>After conflicts are resolved, do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</li>
-<li>Aborting the merge process will restore the original file contents:</li>
+<li><p>In case of conflict, files with conflict get modified with diff contents. We can check and resolve these conflict by opening those files. When doing this, we also need to delete git markers.</p></li>
+<li><p>After conflicts are resolved, do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p></li>
+<li><p>Aborting the merge process will restore the original file contents:</p></li>
 </ul>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">abort</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git merge --abort
 </pre></div>
 </div>
 </li>
 </ul>
 <p>If all named commits are already ancestors of HEAD, git merge will exit early with the message “<strong>Already up to date.</strong>” This is the situation when we try to merge the same branch. In such a situation, differentiate two points by distinct branches, merge, and then remove the unnecessary branch name.</p>
 <p><strong>After merging</strong> with <code class="docutils literal notranslate"><span class="pre">master</span></code> branch with another branch, <code class="docutils literal notranslate"><span class="pre">&lt;BRANCH&gt;</span></code> to say, the branch <code class="docutils literal notranslate"><span class="pre">&lt;BRANCH&gt;</span></code> that may not be necessary anymore is not automatically deleted. We have to this manually:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">BRANCH</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git branch -d &lt;BRANCH&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="stash-save">
 <h2><a class="toc-backref" href="#id28">22 Stash: save</a><a class="headerlink" href="#stash-save" title="Permalink to this headline">¶</a></h2>
 <p>To save working directory without staging:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git stash
 </pre></div>
 </div>
 <p>To stash with comment:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="n">save</span> <span class="s2">&quot;&lt;comment&gt;&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git stash save <span class="s2">&quot;&lt;comment&gt;&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="stash-list">
 <h2><a class="toc-backref" href="#id29">23 stash: list</a><a class="headerlink" href="#stash-list" title="Permalink to this headline">¶</a></h2>
 <p>To list all stashes:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="nb">list</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git stash list
 </pre></div>
 </div>
 <p>To list all stashes with changes:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="nb">list</span> <span class="o">-</span><span class="n">p</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git stash list -p
 </pre></div>
 </div>
 </div>
 <div class="section" id="stash-apply">
 <h2><a class="toc-backref" href="#id30">24 stash: apply</a><a class="headerlink" href="#stash-apply" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="n">apply</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git stash apply
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">stash</span> <span class="n">apply</span> <span class="o">&lt;</span><span class="n">LABEL</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git stash apply &lt;LABEL&gt;
 </pre></div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">&lt;LABEL&gt;</span></code> is the one given by <code class="docutils literal notranslate"><span class="pre">stash</span> <span class="pre">list</span></code></p>
 </div>
 <div class="section" id="clone">
 <h2><a class="toc-backref" href="#id31">25 clone</a><a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">name</span><span class="o">/</span><span class="n">git</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:name/git.git
 </pre></div>
 </div>
 </div>
 <div class="section" id="remote-add-remove">
 <h2><a class="toc-backref" href="#id32">26 remote: add/remove</a><a class="headerlink" href="#remote-add-remove" title="Permalink to this headline">¶</a></h2>
 <p>To add a new remote:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">REMOTE</span> <span class="n">REPOSITORY</span> <span class="n">URL</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add origin &lt;REMOTE REPOSITORY URL&gt;
 </pre></div>
 </div>
 <p>To add upstream:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="o">&lt;</span><span class="n">UPSTREAM</span> <span class="n">REPOSITORY</span> <span class="n">URL</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add upstream &lt;UPSTREAM REPOSITORY URL&gt;
 </pre></div>
 </div>
 <p>To remove:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">remove</span> <span class="o">&lt;</span><span class="n">REMOTE</span> <span class="n">NAME</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote remove &lt;REMOTE NAME&gt;
 </pre></div>
 </div>
 <p>After modifying remote/upstream, run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to verify.</p>
@@ -716,72 +805,72 @@ we can use regexp, for eg, <code class="docutils literal notranslate"><span clas
 <div class="section" id="remote-list">
 <h2><a class="toc-backref" href="#id33">27 remote: list</a><a class="headerlink" href="#remote-list" title="Permalink to this headline">¶</a></h2>
 <p>To list remotes (short names only):</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote
 </pre></div>
 </div>
 <p>To list remotes (short and full names only):</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote
 </pre></div>
 </div>
 <p>To list remotes verbosely:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote -v
 </pre></div>
 </div>
 </div>
 <div class="section" id="fetch-local-repository-remote-repository">
 <h2><a class="toc-backref" href="#id34">28 fetch: local repository &lt;- remote repository</a><a class="headerlink" href="#fetch-local-repository-remote-repository" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">origin</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git fetch origin
 </pre></div>
 </div>
 <p>Note that this does not affect local/HEAD. We need to merge, eg. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">origin/master</span></code> later.</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git fetch upstream
 </pre></div>
 </div>
 <p>To fetch and merge:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">&lt;</span><span class="n">REMOTE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">BRANCH</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull &lt;REMOTE&gt; &lt;BRANCH&gt;
 </pre></div>
 </div>
 <p>The error “fatal: refusing to merge unrelated histories” may occur when we try to merge/pull unrelated repositories together. For example, we might try to resume old project from scratch while wanting to keep the same GitHub repository. To resolve this:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">&lt;</span><span class="n">REMOTE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">BRANCH</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">unrelated</span><span class="o">-</span><span class="n">histories</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull &lt;REMOTE&gt; &lt;BRANCH&gt; --allow-unrelated-histories
 </pre></div>
 </div>
 </div>
 <div class="section" id="push-local-repository-remote-repository">
 <h2><a class="toc-backref" href="#id35">29 push: local repository -&gt; remote repository</a><a class="headerlink" href="#push-local-repository-remote-repository" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">&lt;</span><span class="n">REMOTE</span> <span class="n">REPOSITORY</span><span class="p">:</span> <span class="n">eg</span><span class="o">.</span> <span class="n">origin</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">LOCAL</span> <span class="n">BRANCH</span><span class="p">:</span> <span class="n">eg</span><span class="o">.</span> <span class="n">master</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push &lt;REMOTE REPOSITORY: eg. origin&gt; &lt;LOCAL BRANCH: eg. master&gt;
 </pre></div>
 </div>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push --set-upstream origin master
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git push --set-upstream origin master
 To https://...
- ! [rejected]        master -&gt; master (fetch first)
-error: failed to push some refs to &#39;https://...&#39;
-hint: Updates were rejected because the remote contains work that you do
+ ! <span class="o">[</span>rejected<span class="o">]</span>        master -&gt; master <span class="o">(</span>fetch first<span class="o">)</span>
+error: failed to push some refs to <span class="s1">&#39;https://...&#39;</span>
+hint: Updates were rejected because the remote contains work that you <span class="k">do</span>
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., &#39;git pull ...&#39;) before pushing again.
-hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
+hint: <span class="o">(</span>e.g., <span class="s1">&#39;git pull ...&#39;</span><span class="o">)</span> before pushing again.
+hint: See the <span class="s1">&#39;Note about fast-forwards&#39;</span> in <span class="s1">&#39;git push --help&#39;</span> <span class="k">for</span> details.
 hbshim@aleph:~/Dropbox/Workspace/math/build/html$ git push -f
 fatal: The current branch master has no upstream branch.
-To push the current branch and set the remote as upstream, use
+To push the current branch and <span class="nb">set</span> the remote as upstream, use
 
     git push --set-upstream origin master
 </pre></div>
 </div>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push -f
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push -f
 </pre></div>
 </div>
 </div>
 <div class="section" id="rebase">
 <h2><a class="toc-backref" href="#id36">30 rebase</a><a class="headerlink" href="#rebase" title="Permalink to this headline">¶</a></h2>
 <p>To “operate on” the last &lt;n&gt; commits back from HEAD:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">rebase</span> <span class="o">-</span><span class="n">i</span> <span class="n">HEAD</span><span class="o">~&lt;</span><span class="n">n</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git rebase -i HEAD~&lt;n&gt;
 </pre></div>
 </div>
 <p>(<code class="docutils literal notranslate"><span class="pre">-i</span></code> indicates “interactive”.)</p>
 <p>Interactive commands:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">reword</span></code>: edit commit message</li>
-<li><code class="docutils literal notranslate"><span class="pre">drop</span></code>: remove commit</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reword</span></code>: edit commit message</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drop</span></code>: remove commit</p></li>
 </ul>
 <p>We can also reorder commits by changing the order of the lines.</p>
 </div>
@@ -791,40 +880,40 @@ To push the current branch and set the remote as upstream, use
 <div class="section" id="tag">
 <h2><a class="toc-backref" href="#id38">32 tag</a><a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h2>
 <p>To list tags,</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git tag
 </pre></div>
 </div>
 <p>To create an annotated tag named <code class="docutils literal notranslate"><span class="pre">TAG</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">a</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;&lt;COMMENT&gt;&quot;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git tag -a &lt;TAG&gt; -m <span class="s2">&quot;&lt;COMMENT&gt;&quot;</span>
 </pre></div>
 </div>
 <p>To see the data for the tag named <code class="docutils literal notranslate"><span class="pre">TAG</span></code></p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">show</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git show &lt;TAG&gt;
 </pre></div>
 </div>
 <p>To push the tag <code class="docutils literal notranslate"><span class="pre">TAG</span></code> to the remote <code class="docutils literal notranslate"><span class="pre">original</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push origin &lt;TAG&gt;
 </pre></div>
 </div>
 <p>To push all tags to the remote <code class="docutils literal notranslate"><span class="pre">original</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">tags</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push origin --tags
 </pre></div>
 </div>
 <p>To delete the tag <code class="docutils literal notranslate"><span class="pre">TAG</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">d</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git tag -d &lt;TAG&gt;
 </pre></div>
 </div>
 <p>Caution: This does not remove <code class="docutils literal notranslate"><span class="pre">TAG</span></code> from the remote.</p>
 <p>To delete the tag <code class="docutils literal notranslate"><span class="pre">TAG</span></code> from the remote <code class="docutils literal notranslate"><span class="pre">original</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push origin --delete &lt;TAG&gt;
 </pre></div>
 </div>
 <p>To checkout <code class="docutils literal notranslate"><span class="pre">TAG</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout &lt;TAG&gt;
 </pre></div>
 </div>
 <p>This will cause the “detached HEAD” state since what was checked out is merely a commit hash not a branch (even if there was branch tip pointing to the commit <code class="docutils literal notranslate"><span class="pre">TAG</span></code>). We need to branch out to work on and modify the commit hash <code class="docutils literal notranslate"><span class="pre">TAG</span></code>:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">BRANCH</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">TAG</span><span class="o">&gt;</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git checkout -b &lt;BRANCH&gt; &lt;TAG&gt;
 </pre></div>
 </div>
 <p>git should respond with the message “Switched to a new branch <code class="docutils literal notranslate"><span class="pre">&lt;BRANCH&gt;</span></code>.”</p>
@@ -851,11 +940,19 @@ To push the current branch and set the remote as upstream, use
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright 2020, hbshim@gmail.com
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -866,7 +963,6 @@ To push the current branch and set the remote as upstream, use
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

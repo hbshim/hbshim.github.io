@@ -2,7 +2,7 @@
 AUCTeX
 ======
 
-    :Date: October 31, 2020
+    :Date: November 09, 2020
 
 
 
@@ -43,23 +43,283 @@ AUCTeX
 3 style files
 -------------
 
-3.1 Specifying locations of style files
+It was advertised that we can automate certain repetitive types of editing by using "style files" but none of the following material introduced in the official \\\*info\\\* page DIDN'T WORK!! It was not even clear at all how AUCTeX chooses and loads certain style files although it seems I could use ``TeX-run-style-hooks`` function for it. 
+
+It turned out that **``amsthm.el`` was aggressively stealing charge of all of the environment settings by overwriting every custom styles I made**, so it seems better to rely on the minimum automatic parsing feature by putting some trivial, if not look dumb, declarations like ``\newcommand{\triangleright}{\triangleright}``, in the latex preamble expecting to be recognized by AUCTeX. 
+
+Of course, I'm sure that I could dig in more to make it work in a way that AUCTeX originally intended, but it doesn't seem worth the effort at all.
+
+3.1 Adding style hooks
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (TeX-add-style-hook
+     "book"
+     (lambda ()
+       (LaTeX-largest-level-set "chapter"))
+     LaTeX-dialect)
+
+- loads for any LaTeX document using the book document class (or style before LaTeX2e)c
+
+- the largest kind of section in such a document is chapter
+
+- ``TeX-add-style-hook STYLE HOOK &optional DIALECT-EXPR``
+
+  Add HOOK to the list of functions to run when we use the TeX file STYLE and the current dialect is one in the set derived from DIALECT-EXPR that may be one of
+
+  - '``:latex``' For all files in LaTeX mode, or any mode derived thereof. It is thought more futureproof for argument DIALECT-EXPR to pass constant '``LaTeX-dialect``' currently defined to '``:latex``', rather than passing '``:latex``' directly.
+
+  - '``:bibtex``' For all files in BibTeX mode, or any mode derived thereof.
+
+  - '``:texinfo``' For all files in Texinfo mode.
+
+  - '``:plain-tex``' For all files in plain-TeX mode, or any mode derived thereof.
+
+  - '``:context``' For all files in ConTeXt mode.
+
+  - '``:classopt``' For class options of LaTeX document.  This is provided as pseudo-dialect for style hooks associated with class options.
+
+  We can combine them using a logical connectives, ``or``, ``and``, ``nor``, ``not``. When DIALECT-EXPR is omitted, then HOOK is allowed to be run whatever the current dialect is.
+
+3.2 adding symbols
+~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (TeX-add-style-hook
+     "latex"
+     (lambda ()
+       (TeX-add-symbols
+        '("arabic" TeX-arg-counter)
+        '("label" TeX-arg-define-label)
+        '("ref" TeX-arg-ref)
+        '("newcommand" TeX-arg-define-macro [ "Number of arguments" ] t)
+        '("newtheorem" TeX-arg-define-environment
+          [ TeX-arg-environment "Numbered like" ]
+          t [ TeX-arg-counter "Within counter" ]))))
+
+- ``TeX-add-symbols SYMBOL`` Add each SYMBOL to the list of known symbols.
+
+- Each argument is a list describing one symbol.
+
+  - The head of the list is the name of the symbol,
+
+  - the remaining elements describe each argument.
+
+  If there are no additional elements, the symbol will be inserted with point inside braces.  Otherwise, each argument of this function should match an argument of the TeX macro.  What is done depends on the argument type.
+
+  - '**string**' Use the string as a prompt to prompt for the argument.
+
+  - '**number**' Insert that many braces, leave point inside the first.  0 and -1 are special.  0 means that no braces are inserted.  -1 means that braces are inserted around the macro and an active region (e.g. '{\tiny foo}').  If there is no active region, no braces are inserted.
+
+  - '**nil**' Insert empty braces.
+
+  - '**t**' Insert empty braces, leave point between the braces.
+
+  - '**other symbols**' Call the symbol as a function.
+
+    - '``TeX-arg-conditional``' Implements if EXPR THEN ELSE. If EXPR evaluates to true, parse THEN as an argument list, else parse ELSE as an argument list.
+
+    - '``TeX-arg-literal``' Insert its arguments into the buffer.  Used for specifying extra syntax for a macro.
+
+    - '``TeX-arg-free``' Parse its arguments but use no braces when they are inserted.
+
+    - '``TeX-arg-eval``' Evaluate arguments and insert the result in the buffer.
+
+    - '``TeX-arg-label``' Prompt for a label completing with known labels.  If RefTeX is active, prompt for the reference format.
+
+    - '``TeX-arg-ref``' Prompt for a label completing with known labels.  If RefTeX is active, do not prompt for the reference format.  Usually, reference macros should use this function instead of 'TeX-arg-label'.
+
+    - '``TeX-arg-index-tag``' Prompt for an index tag.  This is the name of an index, not the entry.
+
+    - '``TeX-arg-index``' Prompt for an index entry completing with known entries.
+
+    - '``TeX-arg-length``' Prompt for a LaTeX length completing with known lengths.
+
+    - '``TeX-arg-macro``' Prompt for a TeX macro with completion.
+
+    - '``TeX-arg-date``' Prompt for a date, defaulting to the current date.  The format of the date is specified by the '``TeX-date-format``' option.
+
+    - '``TeX-arg-version``' Prompt for the version of a file, using as initial input the current date.
+
+    - '``TeX-arg-environment``' Prompt for a LaTeX environment with completion.
+
+    - '``TeX-arg-cite``' Prompt for a BibTeX citation.  If the variable '``TeX-arg-cite-note-p``' is non-nil, ask also for optional note in citations.
+
+    - '``TeX-arg-counter``' Prompt for a LaTeX counter completing with known counters.
+
+    - '``TeX-arg-savebox``' Prompt for a LaTeX savebox completing with known saveboxes.
+
+    - '``TeX-arg-file``' Prompt for a filename in the current directory, and use it with the extension.
+
+    - '``TeX-arg-file-name``' Prompt for a filename and use as initial input the name of the file being visited in the current buffer, with extension.
+
+    - '``TeX-arg-file-name-sans-extension``' Prompt for a filename and use as initial input the name of the file being visited in the current buffer, without extension.
+
+    - '``TeX-arg-input-file``' Prompt for the name of an input file in TeX's search path, and use it without the extension.  Run the style hooks for the file.  (Note that the behavior (type of prompt and inserted file name) of the function can be controlled by the variable '``TeX-arg-input-file-search``'.)
+
+    - '``TeX-arg-define-label``' Prompt for a label completing with known labels.  Add label to list of defined labels.
+
+    - '``TeX-arg-define-length``' Prompt for a LaTeX length completing with known lengths.  Add length to list of defined lengths.
+
+    - '``TeX-arg-define-macro``' Prompt for a TeX macro with completion.  Add macro to list of defined macros.
+
+    - '``TeX-arg-define-environment``' Prompt for a LaTeX environment with completion.  Add environment to list of defined environments.
+
+    - '``TeX-arg-define-cite``' Prompt for a BibTeX citation.
+
+    - '``TeX-arg-define-counter``' Prompt for a LaTeX counter.
+
+    - '``TeX-arg-define-savebox``' Prompt for a LaTeX savebox.
+
+    - '``TeX-arg-document``' Prompt for a LaTeX document class, using '``LaTeX-default-style``' as default value and '``LaTeX-default-options``' as default list of options.  If the variable '``TeX-arg-input-file-search``' is ``t``, you will be able to complete with all LaTeX classes available on your system, otherwise classes listed in the variable '``LaTeX-style-list``' will be used for completion.  It is also provided completion for options of many common classes.
+
+    - '``LaTeX-arg-usepackage``' Prompt for LaTeX packages.  If the variable 'TeX-arg-input-file-search' is t, you will be able to complete with all LaTeX packages available on your system.  It is also provided completion for options of many common packages.
+
+    - '``TeX-arg-bibstyle``' Prompt for a BibTeX style file completing with all style available on your system.
+
+    - '``TeX-arg-bibliography``' Prompt for BibTeX database files completing with all databases available on your system.
+
+    - '``TeX-arg-corner``' Prompt for a LaTeX side or corner position with completion.
+
+    - '``TeX-arg-lr``' Prompt for a LaTeX side with completion.
+
+    - '``TeX-arg-tb``' Prompt for a LaTeX side with completion.
+
+    - '``TeX-arg-pagestyle``' Prompt for a LaTeX pagestyle with completion.
+
+    - '``TeX-arg-verb``' Prompt for delimiter and text.
+
+    - '``TeX-arg-verb-delim-or-brace``' Prompt for delimiter and text.  This function is similar to '``TeX-arg-verb``', but is intended for macros which take their argument enclosed in delimiters or in braces.
+
+    - '``TeX-arg-pair``' Insert a pair of numbers, use arguments for prompt.  The numbers are surrounded by parentheses and separated with a comma.
+
+    - '``TeX-arg-size``' Insert width and height as a pair.  No arguments.
+
+    - '``TeX-arg-coordinate``' Insert x and y coordinates as a pair.  No arguments.
+
+    - '``LaTeX-arg-author``' Prompt for document author, using '``LaTeX-default-author``' as initial input.
+
+    - '``TeX-read-key-val``' Prompt for a key=value list of options and return them.
+
+    - '``TeX-arg-key-val``' Prompt for a key=value list of options and insert it as a TeX macro argument.
+
+  - '**list**' If the car is a string, insert it as a prompt and the next element as initial input.  Otherwise, call the car of the list with the remaining elements as arguments.
+
+  - '**vector**' Optional argument.  If it has more than one element, parse it as a list, otherwise parse the only element as above.  Use square brackets instead of curly braces, and is not inserted on empty user input.
+
+- If a macro is defined multiple times, AUCTeX will choose the one with the longest definition (i.e.  the one with the most arguments).
+
+  - To overwrite ``'("tref" 1)``, you can specify ``'("tref" TeX-arg-ref ignore)``. '``ignore``' is a function that does not do anything.
+
+3.3 adding environments
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (TeX-add-style-hook
+     "latex"
+     (lambda ()
+       (LaTeX-add-environments
+        '("document" LaTeX-env-document)
+        '("enumerate" LaTeX-env-item)
+        '("itemize" LaTeX-env-item)
+        '("list" LaTeX-env-list))))
+
+- ``LaTeX-add-environments ENV ...`` Add each ENV to list of loaded environments.
+
+- Following is a list of available hooks:
+
+  - '``LaTeX-env-item``' Insert the given environment and the first item.
+
+  - '``LaTeX-env-figure``' Insert the given figure-like environment with a caption and a label.
+
+  - '``LaTeX-env-array``' Insert the given array-like environment with position and column specifications.
+
+  - '``LaTeX-env-label``' Insert the given environment with a label.
+
+  - '``LaTeX-env-list``' Insert the given list-like environment, a specifier for the label and the first item.
+
+  - '``LaTeX-env-minipage``' Insert the given minipage-like environment with position and width specifications.
+
+  - '``LaTeX-env-tabular*``' Insert the given ``tabular*``-like environment with width, position and column specifications.
+
+  - '``LaTeX-env-picture``' Insert the given environment with width and height specifications.
+
+  - '``LaTeX-env-bib``' Insert the given environment with a label for a bibitem.
+
+  - '``LaTeX-env-contents``' Insert the given environment with a filename as its argument.
+
+  - '``LaTeX-env-args``' Insert the given environment with arguments.  You can use this as a hook in case you want to specify multiple complex arguments just like in elements of '``TeX-add-symbols``'.  This is most useful if the specification of arguments to be prompted for with strings and strings wrapped in a vector as described above is too limited.
+
+- ``LaTeX-insert-environment ENV [ EXTRA ]`` Insert environment of type ENV, with optional argument EXTRA.
+
+3.3.1 defining environments with arguments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have defined a 'loop' environment with the three arguments FROM, TO, and STEP, you can add support for them in a style file.
+
+.. code:: tex
+
+    %% loop.sty
+
+    \newenvironment{loop}[3]{...}{...}
+
+.. code:: common-lisp
+
+    ;; loop.el
+
+    (TeX-add-style-hook
+     "loop"
+     (lambda ()
+       (LaTeX-add-environments
+        '("loop" "From" "To" "Step"))))
+
+3.3.2 replacing predefined environment style by using ``ignore``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have an enumerate style file, and want it to replace the standard LaTeX enumerate hook above, you could define an 'enumerate.el' file as follows, and place it in the appropriate style directory.
+
+.. code:: common-lisp
+
+    (TeX-add-style-hook
+     "latex"
+     (lambda ()
+       (LaTeX-add-environments
+        '("enumerate" LaTeX-env-enumerate foo))))
+
+    (defun LaTeX-env-enumerate (environment &optional ignore) ...)
+
+  The symbol '``foo``' will be passed to '``LaTeX-env-enumerate``' as the
+second argument, but since we only added it to overwrite the definition
+in '``latex.el``' it is just ignored.
+
+Here is an example from 'listings.el' which calls a function with one argument in order to prompt for a key=value list to be inserted as an optional argument of the 'lstlisting' environment:
+
+.. code:: common-lisp
+
+    (LaTeX-add-environments
+     '("lstlisting" LaTeX-env-args
+       [TeX-arg-key-val LaTeX-listings-key-val-options]))
+
+3.4 Specifying locations of style files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This contains locations for globally or personally defined TeX macros because AUCTeX uses those to automatically generate corresponding style files.
+This contains locations for globally or personally defined TeX macros because AUCTeX uses those to automatically generate corresponding style files. (The following classification is too specific for me, so I symlinked local style directories to private style directories.)
 
-3.1.1 Global styles
+3.4.1 Global styles
 ^^^^^^^^^^^^^^^^^^^
 
 **Global styles** correspond to TeX macros shared by all users of a site.
 
 - ``TeX-macro-global`` Directories containing the site’s TeX macro and style files. These seem to be TeX installed ones, eg. "``... /texlive/2019/texmf-dist/tex/``"
 
-- ``TeX-style-global`` Directory containing hand generated TeX information. This seems to be the directory contained in the AUCTeX package: "*Users/hbshim*.emacs.d/elpa/auctex-12.2.3/style")
+- ``TeX-style-global`` Directory containing hand generated TeX information. This seems to be the directory contained in the AUCTeX package: "*Users/hbshim*.emacs.d/elpa/auctex-12.2.3/style"
 
 - ``TeX-auto-global`` Directory containing automatically generated information.
 
-3.1.2 Private styles
+3.4.2 Private styles
 ^^^^^^^^^^^^^^^^^^^^
 
 **Private styles** correspond to TeX macros for a single user.
@@ -74,7 +334,7 @@ This contains locations for globally or personally defined TeX macros because AU
 
 - ``TeX-auto-private`` List of directories containing automatically generated AUCTeX style files.
 
-3.1.3 Local styles
+3.4.3 Local styles
 ^^^^^^^^^^^^^^^^^^
 
 **Local styles** correspond to TeX macros found in the current directory. 
@@ -83,12 +343,12 @@ This contains locations for globally or personally defined TeX macros because AU
 
 - ``TeX-auto-local`` Directory containing automatically generated TeX information.
 
-3.1.4 All Combined
+3.4.4 All Combined
 ^^^^^^^^^^^^^^^^^^
 
 - ``TeX-style-path`` List of directories to search for AUCTeX style files. Per default, this list variable is built from the values of the variables ``TeX-style-global``, ``TeX-auto-global``, ``TeX-style-private``, ``TeX-auto-private``, ``TeX-style-local`` and ``TeX-auto-local``.
 
-3.2 Options
+3.5 Options
 ~~~~~~~~~~~
 
 - ``TeX-file-recurse`` Whether to search TeX directories recursively. ``nil`` means do not recurse, a positive integer means go that far deep in the directory hierarchy, ``t`` means recurse indefinitely.
@@ -164,3 +424,10 @@ This contains locations for globally or personally defined TeX macros because AU
 - ``LaTeX-after-modify-env-hook nil`` List of functions to be run at the end of '``LaTeX-modify-environment``'. Each function is called with four arguments.
 
 - ``LaTeX-after-insert-env-hook nil`` List of functions to be run at the end of '``LaTeX-insert-environment``'. Each function is called with three arguments.
+
+8 Tmp items
+-----------
+
+- ``LaTeX-begin-regexp`` an regexp matching macros considered begins
+
+- 

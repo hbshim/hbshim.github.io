@@ -2,7 +2,7 @@
 Emacs
 =====
 
-    :Date: October 31, 2020
+    :Date: November 10, 2020
 
 
 
@@ -54,7 +54,7 @@ Emacs
 
 - ``C-x r l`` (``list-bookmarks``) list all bookmarks
 
-- ``C-x r b`` (``bookmark-jump``) then type a bookmark name. You can type ``\*`` for wildcard
+- ``C-x r b`` (``bookmark-jump`` / ``helm-bookmarks`` / ``helm-filtered-bookmarks``) then type a bookmark name. You can type ``\*`` for wildcard
 
 - ``bookmark-save`` save all the current bookmark values in the default bookmark file ``\~/.emacs.d/bookmarks``. Can be modified by setting the variable ``bookmark-default-file``
 
@@ -162,6 +162,8 @@ Emacs
   - We can even edit symlinks by editing the dired buffer: a symlink is displayed as ``<SYMLINK> -> <TARGET>`` and we can edit ``TARGET``. Short listing mode only shows ``<SYMLINK> ->`` without target but we can switch to the long listing with ``(``.
 
 - ``(`` (``dired-hide-details-mode``)
+
+- ``find-grep-dired`` / ``(find-grep-dired DIR REGEXP)`` Find files in ``DIR`` that contain matches for ``REGEXP`` and start Dired on output.
 
 9.1 directories
 ~~~~~~~~~~~~~~~
@@ -591,15 +593,15 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
   - Example
 
-    .. code:: elisp
+    .. code:: common-lisp
 
-         ((nil . ((indent-tabs-mode . t)
-                (fill-column . 80)))
-        (c-mode . ((c-file-style . "BSD")
-                   (subdirs . nil)))
-        ("src/imported"
-         . ((nil . ((change-log-default-name
-                     . "ChangeLog.local"))))))
+        ((nil . ((indent-tabs-mode . t)
+                 (fill-column . 80)))
+         (c-mode . ((c-file-style . "BSD")
+                    (subdirs . nil)))
+         ("src/imported"
+          . ((nil . ((change-log-default-name
+                      . "ChangeLog.local"))))))
 
 - Check the variable ``safe-local-variable-values`` (in ``.emacs``) to check the list of "safe" local variables.
 
