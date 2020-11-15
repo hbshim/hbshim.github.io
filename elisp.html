@@ -86,15 +86,15 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">1 Abbrevs mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">1.1 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">1 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">2 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">3 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">4 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">5 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">5.1 options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">3 Bookmarks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">4 helm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">6 Bookmarks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#deleting-and-killing">8 Deleting and killing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-by-character">8.1 Deleting by character</a></li>
@@ -109,58 +109,60 @@
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#id1">9.6 options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">10 File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">11 Find/replace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">12 font</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">13 frames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">14 help and info</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">14.1 Browsing inside info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">10 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">11 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">12 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">13 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">14 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">15 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">16 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">16.1 Browsing inside info</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">15 history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">16 ispell (flyspell)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">17 Key-binding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">19 Moving around</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">19.1 by characters/lines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">19.2 by words</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">19.3 horizontally</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">19.4 by sentence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">19.5 by paragraph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">19.6 by matching parentheses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">19.7 by buffer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">19.8 by page</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">19.9 back to previous position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">19.10 GO TO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">17 Hide-show mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">18 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">19 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">20 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">21 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">22 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes-listing-all-major-and-minor">23 Modes, listing all major and minor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">24 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">24.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">24.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">24.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">24.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">24.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">24.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">24.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">24.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">24.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">24.10 GO TO</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">20 Outline minor mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">20.1 Motion commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">20.2 Visibility commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">25 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">25.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">25.2 Visibility commands</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">21 Reference sites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">22 Region/Mark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">23 Registers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">24 Select</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">25 Sessions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">26 Symbol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">27 Timestamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">28 windows</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">28.1 transpose windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">26 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">27 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">28 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">29 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">30 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">31 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">32 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">33 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#variables">34 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">35 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">36 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">36.1 transpose windows</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">29 YASnippet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#variables">29.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">37 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id2">37.1 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#suppressing-warnings">37.2 Suppressing warnings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">30 Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">31 Visual line mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">32 (Auto)reverting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">33 Performance profiling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">34 emacsclient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">35 Magit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
@@ -172,8 +174,11 @@
 <li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#todo-state-options-n-n-numbering-r-l">3.1 TODO state options, +n, -n, numbering, -r, -l</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-verse-quote-center-blocks">4 Example/Verse/Quote/Center blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
@@ -230,22 +235,46 @@
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#functions">8.1 functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#variables">8.2 variables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#xquartz">1 XQuartz</a></li>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package">2 Add section number to the pdf bookmark (outline) generated by hyperref package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc">3 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#change-font-size-temporarily">4 change font size temporarily</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="latex.html#of-an-area-begin-small-end-small">4.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="latex.html#of-a-word-small-word">4.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="latex.html#as-a-switcher-small">4.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#dvi">1 DVI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#postscript">2 PostScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#encapsulated-postscript-eps">3 Encapsulated PostScript (EPS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#raster-fonts">4 Raster fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#metafont">5 Metafont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#ghostscript">6 Ghostscript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#raster-image-converters">7 Raster image converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#image-file-formats-compared">8 Image file formats, compared</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#xquartz">9 XQuartz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package">10 Add section number to the pdf bookmark (outline) generated by hyperref package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc">11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#change-font-size-temporarily">12 change font size temporarily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-an-area-begin-small-end-small">12.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#of-a-word-small-word">12.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#as-a-switcher-small">12.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">5 putting a formula inside of a table cell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#variable">6 variable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">7 setcounter enumi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">13 putting a formula inside of a table cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#variable">14 variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">15 setcounter enumi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#newcommand-renewcommand">16 newcommand / renewcommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#temp">17 temp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#tds">17.1 TDS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#texmf">17.2 texmf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="latex_pkg_preview.html">LaTeX Pkg: preview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex_pkg_preview.html#package-options">1 Package options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex_pkg_preview.html#environments">2 Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex_pkg_preview.html#commands">3 Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
@@ -270,17 +299,18 @@
 <li class="toctree-l2"><a class="reference internal" href="git.html#branch-create-new">19 branch: create new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#branch-remove">20 branch: remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#merge-head-master">21 merge: HEAD -&gt; master</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">22 Stash: save</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">23 stash: list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">24 stash: apply</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#clone">25 clone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">26 remote: add/remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">27 remote: list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">28 fetch: local repository &lt;- remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">29 push: local repository -&gt; remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">30 rebase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">31 cherry-pick</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#restore">22 restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">23 Stash: save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">24 stash: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">25 stash: apply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#clone">26 clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">27 remote: add/remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">28 remote: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">29 fetch: local repository &lt;- remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">30 push: local repository -&gt; remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">31 rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">32 cherry-pick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tag">33 tag</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coq.html">Coq</a><ul>
@@ -304,6 +334,10 @@
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#thunderbird">6 Thunderbird</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#three-finger-dragging">7 three finger dragging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macbookpro.html#gpg">8 gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macbookpro.html#system-signals">9 system signals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="macbookpro.html#kill-signals">9.1 Kill signals</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a><ul>
@@ -369,6 +403,56 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#to-be-organized-later">3 to be organized later</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">4 functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">4.1 <code class="docutils literal notranslate"><span class="pre">defcustom</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#append">4.2 <code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list">4.3 <code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#expand-file-name">4.4 <code class="docutils literal notranslate"><span class="pre">expand-file-name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-relative-name">4.5 <code class="docutils literal notranslate"><span class="pre">file-relative-name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#or">4.6 <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#and">4.7 <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundp">4.8 <code class="docutils literal notranslate"><span class="pre">boundp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#concat">4.9 <code class="docutils literal notranslate"><span class="pre">concat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mapc">4.10 <code class="docutils literal notranslate"><span class="pre">mapc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#when">4.11 <code class="docutils literal notranslate"><span class="pre">when</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setq">4.12 <code class="docutils literal notranslate"><span class="pre">setq</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nreverse">4.13 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repeat">4.14 <code class="docutils literal notranslate"><span class="pre">repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set">4.15 <code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cond">4.16 <code class="docutils literal notranslate"><span class="pre">cond</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string-match-match">4.17 <code class="docutils literal notranslate"><span class="pre">string-match</span></code>, <code class="docutils literal notranslate"><span class="pre">match-...</span></code>,</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#string-match">4.17.1 <code class="docutils literal notranslate"><span class="pre">string-match</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#match-string">4.17.2 <code class="docutils literal notranslate"><span class="pre">match-string</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#match-beginning">4.17.3 <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#match-end">4.17.4 <code class="docutils literal notranslate"><span class="pre">match-end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">4.17.5 Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#substring">4.18 <code class="docutils literal notranslate"><span class="pre">substring</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if">4.19 <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stringp">4.20 <code class="docutils literal notranslate"><span class="pre">stringp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-name-directory">4.21 <code class="docutils literal notranslate"><span class="pre">file-name-directory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dolist">4.22 <code class="docutils literal notranslate"><span class="pre">dolist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assoc">4.23 <code class="docutils literal notranslate"><span class="pre">assoc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.24 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#variables">5 variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#user-emacs-directory">5.1 <code class="docutils literal notranslate"><span class="pre">user-emacs-directory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#terms">6 Terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#customization-group">6.1 customization group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#widget-type">6.2 widget type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parenthesis-constructions">6.3 parenthesis constructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cond-form">6.4 cond form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mapping-function">6.5 mapping function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#temp">7 temp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#variable-scope-and-shadowing">7.1 Variable scope and shadowing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -461,52 +545,107 @@
            <div itemprop="articleBody">
             
   <div class="section" id="elisp">
-<h1><a class="toc-backref" href="#id5">Elisp</a><a class="headerlink" href="#elisp" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id7">Elisp</a><a class="headerlink" href="#elisp" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">Date</dt>
-<dd class="field-odd"><p>November 09, 2020</p>
+<dd class="field-odd"><p>November 13, 2020</p>
 </dd>
 </dl>
 </div></blockquote>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#elisp" id="id5">Elisp</a></p>
+<li><p><a class="reference internal" href="#elisp" id="id7">Elisp</a></p>
 <ul>
-<li><p><a class="reference internal" href="#terminology" id="id6">1 terminology</a></p>
+<li><p><a class="reference internal" href="#terminology" id="id8">1 terminology</a></p>
 <ul>
-<li><p><a class="reference internal" href="#keyword" id="id7">1.1 keyword</a></p></li>
-<li><p><a class="reference internal" href="#customization-items" id="id8">1.2 customization items</a></p></li>
-<li><p><a class="reference internal" href="#customizable-variables" id="id9">1.3 customizable variables</a></p></li>
-<li><p><a class="reference internal" href="#customizable-faces" id="id10">1.4 customizable faces</a></p></li>
-<li><p><a class="reference internal" href="#customization-groups" id="id11">1.5 customization groups</a></p></li>
-<li><p><a class="reference internal" href="#global-variables" id="id12">1.6 global variables</a></p></li>
-<li><p><a class="reference internal" href="#composite-types" id="id13">1.7 composite types</a></p></li>
+<li><p><a class="reference internal" href="#keyword" id="id9">1.1 keyword</a></p></li>
+<li><p><a class="reference internal" href="#customization-items" id="id10">1.2 customization items</a></p></li>
+<li><p><a class="reference internal" href="#customizable-variables" id="id11">1.3 customizable variables</a></p></li>
+<li><p><a class="reference internal" href="#customizable-faces" id="id12">1.4 customizable faces</a></p></li>
+<li><p><a class="reference internal" href="#customization-groups" id="id13">1.5 customization groups</a></p></li>
+<li><p><a class="reference internal" href="#global-variables" id="id14">1.6 global variables</a></p></li>
+<li><p><a class="reference internal" href="#composite-types" id="id15">1.7 composite types</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#symbols" id="id14">2 symbols</a></p>
+<li><p><a class="reference internal" href="#symbols" id="id16">2 symbols</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id2" id="id15">2.1 :</a></p></li>
-<li><p><a class="reference internal" href="#defcustom" id="id16">2.2 defcustom</a></p></li>
-<li><p><a class="reference internal" href="#defface" id="id17">2.3 defface</a></p></li>
-<li><p><a class="reference internal" href="#defgroup" id="id18">2.4 defgroup</a></p></li>
-<li><p><a class="reference internal" href="#defvar" id="id19">2.5 defvar</a></p></li>
-<li><p><a class="reference internal" href="#defconst" id="id20">2.6 defconst</a></p></li>
-<li><p><a class="reference internal" href="#repeat-element-type" id="id21">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a></p></li>
-<li><p><a class="reference internal" href="#function-list-rest-objects" id="id22">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a></p></li>
-<li><p><a class="reference internal" href="#choice-alternative-types" id="id23">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id17">2.1 :</a></p></li>
+<li><p><a class="reference internal" href="#defcustom" id="id18">2.2 defcustom</a></p></li>
+<li><p><a class="reference internal" href="#defface" id="id19">2.3 defface</a></p></li>
+<li><p><a class="reference internal" href="#defgroup" id="id20">2.4 defgroup</a></p></li>
+<li><p><a class="reference internal" href="#defvar" id="id21">2.5 defvar</a></p></li>
+<li><p><a class="reference internal" href="#defconst" id="id22">2.6 defconst</a></p></li>
+<li><p><a class="reference internal" href="#repeat-element-type" id="id23">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a></p></li>
+<li><p><a class="reference internal" href="#function-list-rest-objects" id="id24">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a></p></li>
+<li><p><a class="reference internal" href="#choice-alternative-types" id="id25">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#to-be-organized-later" id="id24">3 to be organized later</a></p></li>
+<li><p><a class="reference internal" href="#to-be-organized-later" id="id26">3 to be organized later</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id27">4 functions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id28">4.1 <code class="docutils literal notranslate"><span class="pre">defcustom</span></code></a></p></li>
+<li><p><a class="reference internal" href="#append" id="id29">4.2 <code class="docutils literal notranslate"><span class="pre">append</span></code></a></p></li>
+<li><p><a class="reference internal" href="#list" id="id30">4.3 <code class="docutils literal notranslate"><span class="pre">list</span></code></a></p></li>
+<li><p><a class="reference internal" href="#expand-file-name" id="id31">4.4 <code class="docutils literal notranslate"><span class="pre">expand-file-name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#file-relative-name" id="id32">4.5 <code class="docutils literal notranslate"><span class="pre">file-relative-name</span></code></a></p></li>
+<li><p><a class="reference internal" href="#or" id="id33">4.6 <code class="docutils literal notranslate"><span class="pre">or</span></code></a></p></li>
+<li><p><a class="reference internal" href="#and" id="id34">4.7 <code class="docutils literal notranslate"><span class="pre">and</span></code></a></p></li>
+<li><p><a class="reference internal" href="#boundp" id="id35">4.8 <code class="docutils literal notranslate"><span class="pre">boundp</span></code></a></p></li>
+<li><p><a class="reference internal" href="#concat" id="id36">4.9 <code class="docutils literal notranslate"><span class="pre">concat</span></code></a></p></li>
+<li><p><a class="reference internal" href="#mapc" id="id37">4.10 <code class="docutils literal notranslate"><span class="pre">mapc</span></code></a></p></li>
+<li><p><a class="reference internal" href="#when" id="id38">4.11 <code class="docutils literal notranslate"><span class="pre">when</span></code></a></p></li>
+<li><p><a class="reference internal" href="#setq" id="id39">4.12 <code class="docutils literal notranslate"><span class="pre">setq</span></code></a></p></li>
+<li><p><a class="reference internal" href="#nreverse" id="id40">4.13 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></p></li>
+<li><p><a class="reference internal" href="#repeat" id="id41">4.14 <code class="docutils literal notranslate"><span class="pre">repeat</span></code></a></p></li>
+<li><p><a class="reference internal" href="#set" id="id42">4.15 <code class="docutils literal notranslate"><span class="pre">set</span></code></a></p></li>
+<li><p><a class="reference internal" href="#cond" id="id43">4.16 <code class="docutils literal notranslate"><span class="pre">cond</span></code></a></p></li>
+<li><p><a class="reference internal" href="#string-match-match" id="id44">4.17 <code class="docutils literal notranslate"><span class="pre">string-match</span></code>, <code class="docutils literal notranslate"><span class="pre">match-...</span></code>,</a></p>
+<ul>
+<li><p><a class="reference internal" href="#string-match" id="id45">4.17.1 <code class="docutils literal notranslate"><span class="pre">string-match</span></code></a></p></li>
+<li><p><a class="reference internal" href="#match-string" id="id46">4.17.2 <code class="docutils literal notranslate"><span class="pre">match-string</span></code></a></p></li>
+<li><p><a class="reference internal" href="#match-beginning" id="id47">4.17.3 <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code></a></p></li>
+<li><p><a class="reference internal" href="#match-end" id="id48">4.17.4 <code class="docutils literal notranslate"><span class="pre">match-end</span></code></a></p></li>
+<li><p><a class="reference internal" href="#example" id="id49">4.17.5 Example</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#substring" id="id50">4.18 <code class="docutils literal notranslate"><span class="pre">substring</span></code></a></p></li>
+<li><p><a class="reference internal" href="#if" id="id51">4.19 <code class="docutils literal notranslate"><span class="pre">if</span></code></a></p></li>
+<li><p><a class="reference internal" href="#stringp" id="id52">4.20 <code class="docutils literal notranslate"><span class="pre">stringp</span></code></a></p></li>
+<li><p><a class="reference internal" href="#file-name-directory" id="id53">4.21 <code class="docutils literal notranslate"><span class="pre">file-name-directory</span></code></a></p></li>
+<li><p><a class="reference internal" href="#dolist" id="id54">4.22 <code class="docutils literal notranslate"><span class="pre">dolist</span></code></a></p></li>
+<li><p><a class="reference internal" href="#assoc" id="id55">4.23 <code class="docutils literal notranslate"><span class="pre">assoc</span></code></a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id56">4.24 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#variables" id="id57">5 variables</a></p>
+<ul>
+<li><p><a class="reference internal" href="#user-emacs-directory" id="id58">5.1 <code class="docutils literal notranslate"><span class="pre">user-emacs-directory</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#terms" id="id59">6 Terms</a></p>
+<ul>
+<li><p><a class="reference internal" href="#customization-group" id="id60">6.1 customization group</a></p></li>
+<li><p><a class="reference internal" href="#widget-type" id="id61">6.2 widget type</a></p></li>
+<li><p><a class="reference internal" href="#parenthesis-constructions" id="id62">6.3 parenthesis constructions</a></p></li>
+<li><p><a class="reference internal" href="#cond-form" id="id63">6.4 cond form</a></p></li>
+<li><p><a class="reference internal" href="#mapping-function" id="id64">6.5 mapping function</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#temp" id="id65">7 temp</a></p>
+<ul>
+<li><p><a class="reference internal" href="#variable-scope-and-shadowing" id="id66">7.1 Variable scope and shadowing</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="terminology">
-<h2><a class="toc-backref" href="#id6">1 terminology</a><a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">1 terminology</a><a class="headerlink" href="#terminology" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="keyword">
-<h3><a class="toc-backref" href="#id7">1.1 keyword</a><a class="headerlink" href="#keyword" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">1.1 keyword</a><a class="headerlink" href="#keyword" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="elisp#Constant%20Variables">info:elisp#Constant Variables</a></p></li>
 <li><p>In Emacs Lisp, certain symbols normally evaluate to themselves.  These
@@ -515,7 +654,7 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </ul>
 </div>
 <div class="section" id="customization-items">
-<h3><a class="toc-backref" href="#id8">1.2 customization items</a><a class="headerlink" href="#customization-items" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">1.2 customization items</a><a class="headerlink" href="#customization-items" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="elisp#Customization">info:elisp#Customization</a></p></li>
 <li><p>customizable variables</p></li>
@@ -524,7 +663,7 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </ul>
 </div>
 <div class="section" id="customizable-variables">
-<h3><a class="toc-backref" href="#id9">1.3 customizable variables</a><a class="headerlink" href="#customizable-variables" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">1.3 customizable variables</a><a class="headerlink" href="#customizable-variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="elisp#Customization">info:elisp#Customization</a></p></li>
 <li><p>This is one kind of <a class="reference internal" href="#customization-items">1.2 customization items</a>.</p></li>
@@ -533,7 +672,7 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </ul>
 </div>
 <div class="section" id="customizable-faces">
-<h3><a class="toc-backref" href="#id10">1.4 customizable faces</a><a class="headerlink" href="#customizable-faces" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">1.4 customizable faces</a><a class="headerlink" href="#customizable-faces" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>This is one kind of <a class="reference internal" href="#customization-items">1.2 customization items</a>.</p></li>
 <li><p>defined with ‘defface’ (described separately in *note Defining Faces::)</p></li>
@@ -541,7 +680,7 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </ul>
 </div>
 <div class="section" id="customization-groups">
-<h3><a class="toc-backref" href="#id11">1.5 customization groups</a><a class="headerlink" href="#customization-groups" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">1.5 customization groups</a><a class="headerlink" href="#customization-groups" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>This is one kind of <a class="reference internal" href="#customization-items">1.2 customization items</a>.</p></li>
 <li><p>defined with ‘defgroup’ (*note Group Definitions::)</p></li>
@@ -549,7 +688,7 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </ul>
 </div>
 <div class="section" id="global-variables">
-<h3><a class="toc-backref" href="#id12">1.6 global variables</a><a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">1.6 global variables</a><a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="elisp#Defining%20Variables">info:elisp#Defining Variables</a></p></li>
 <li><p>A “variable definition” is a construct that announces your intention to use a symbol as a global variable.  It uses the special forms ‘defvar’ or ‘defconst’, which are documented below.</p>
@@ -561,48 +700,48 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </ul>
 </div>
 <div class="section" id="composite-types">
-<h3><a class="toc-backref" href="#id13">1.7 composite types</a><a class="headerlink" href="#composite-types" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">1.7 composite types</a><a class="headerlink" href="#composite-types" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="elisp#Composite%20Types">info:elisp#Composite Types</a></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="symbols">
-<h2><a class="toc-backref" href="#id14">2 symbols</a><a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">2 symbols</a><a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3><a class="toc-backref" href="#id15">2.1 :</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">2.1 :</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="defcustom">
-<h3><a class="toc-backref" href="#id16">2.2 defcustom</a><a class="headerlink" href="#defcustom" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">2.2 defcustom</a><a class="headerlink" href="#defcustom" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="defface">
-<h3><a class="toc-backref" href="#id17">2.3 defface</a><a class="headerlink" href="#defface" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">2.3 defface</a><a class="headerlink" href="#defface" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="defgroup">
-<h3><a class="toc-backref" href="#id18">2.4 defgroup</a><a class="headerlink" href="#defgroup" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">2.4 defgroup</a><a class="headerlink" href="#defgroup" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="defvar">
-<h3><a class="toc-backref" href="#id19">2.5 defvar</a><a class="headerlink" href="#defvar" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">2.5 defvar</a><a class="headerlink" href="#defvar" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="defconst">
-<h3><a class="toc-backref" href="#id20">2.6 defconst</a><a class="headerlink" href="#defconst" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">2.6 defconst</a><a class="headerlink" href="#defconst" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="repeat-element-type">
-<h3><a class="toc-backref" href="#id21">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a><a class="headerlink" href="#repeat-element-type" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">2.7 <code class="docutils literal notranslate"><span class="pre">‘(repeat</span> <span class="pre">ELEMENT-TYPE)’</span></code></a><a class="headerlink" href="#repeat-element-type" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>is a composite type constructor (<a class="reference external" href="elisp#Composite%20Types">info:elisp#Composite Types</a>)</p></li>
 <li><p>The value must be a list and each element of the list must fit the type ELEMENT-TYPE.  This appears in the customization buffer as a list of elements, with ‘[INS]’ and ‘[DEL]’ buttons for adding more elements or removing elements.</p></li>
 </ul>
 </div>
 <div class="section" id="function-list-rest-objects">
-<h3><a class="toc-backref" href="#id22">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a><a class="headerlink" href="#function-list-rest-objects" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">2.8 Function: <code class="docutils literal notranslate"><span class="pre">list</span> <span class="pre">&amp;rest</span> <span class="pre">OBJECTS</span></code></a><a class="headerlink" href="#function-list-rest-objects" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="elisp#Building%20Lists">info:elisp#Building Lists</a></p></li>
 <li><p>This function creates a list with OBJECTS as its elements.  The resulting list is always ‘nil’-terminated.  If no OBJECTS are given, the empty list is returned.</p></li>
 </ul>
 </div>
 <div class="section" id="choice-alternative-types">
-<h3><a class="toc-backref" href="#id23">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a><a class="headerlink" href="#choice-alternative-types" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">2.9 <code class="docutils literal notranslate"><span class="pre">‘(choice</span> <span class="pre">ALTERNATIVE-TYPES...)’</span></code></a><a class="headerlink" href="#choice-alternative-types" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>is a composite type constructor (<a class="reference external" href="elisp#Composite%20Types">info:elisp#Composite Types</a>)</p></li>
 <li><p>The value must fit one of ALTERNATIVE-TYPES.  For example, ‘(choice integer string)’ allows either an integer or a string.</p></li>
@@ -611,12 +750,382 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
 </div>
 </div>
 <div class="section" id="to-be-organized-later">
-<h2><a class="toc-backref" href="#id24">3 to be organized later</a><a class="headerlink" href="#to-be-organized-later" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id26">3 to be organized later</a><a class="headerlink" href="#to-be-organized-later" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">(derived-mode-p</span> <span class="pre">&amp;rest</span> <span class="pre">MODES)</span></code></p>
 <p>Non-nil if the current major mode is derived from one of MODES. Uses the ‘derived-mode-parent’ property of the symbol (<code class="docutils literal notranslate"><span class="pre">MODES</span></code>) to trace backwards.</p>
 </li>
 </ul>
+</div>
+<div class="section" id="functions">
+<h2><a class="toc-backref" href="#id27">4 functions</a><a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id28">4.1 <code class="docutils literal notranslate"><span class="pre">defcustom</span></code></a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>(defcustom SYMBOL STANDARD DOC &amp;rest ARGS)</p>
+<p>Probably introduced at or before Emacs version 20.</p>
+<p>Declare SYMBOL as a customizable variable.
+SYMBOL is the variable name; it should not be quoted.
+STANDARD is an expression specifying the variable’s standard
+value.  It should not be quoted.  It is evaluated once by
+‘defcustom’, and the value is assigned to SYMBOL if the variable
+is unbound.  The expression itself is also stored, so that
+Customize can re-evaluate it later to get the standard value.
+DOC is the variable documentation.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:group</span></code>  VALUE should be a customization group. Add SYMBOL (or FACE with ‘defface’) to that group.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:type</span></code> VALUE should be a widget type for editing the symbol’s value. Every ‘defcustom’ should specify a value for this keyword.</p></li>
+</ul>
+</div>
+<div class="section" id="append">
+<h3><a class="toc-backref" href="#id29">4.2 <code class="docutils literal notranslate"><span class="pre">append</span></code></a><a class="headerlink" href="#append" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="list">
+<h3><a class="toc-backref" href="#id30">4.3 <code class="docutils literal notranslate"><span class="pre">list</span></code></a><a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="expand-file-name">
+<h3><a class="toc-backref" href="#id31">4.4 <code class="docutils literal notranslate"><span class="pre">expand-file-name</span></code></a><a class="headerlink" href="#expand-file-name" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span>(expand-file-name &quot;foo&quot;)
+     ⇒ &quot;/xcssun/users/rms/lewis/foo&quot;
+
+(expand-file-name &quot;../foo&quot;)
+     ⇒ &quot;/xcssun/users/rms/foo&quot;
+
+(expand-file-name &quot;foo&quot; &quot;/usr/spool/&quot;)
+     ⇒ &quot;/usr/spool/foo&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-relative-name">
+<h3><a class="toc-backref" href="#id32">4.5 <code class="docutils literal notranslate"><span class="pre">file-relative-name</span></code></a><a class="headerlink" href="#file-relative-name" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">file-relative-name</span> <span class="nv">FILENAME</span> <span class="k">&amp;optional</span> <span class="nv">DIRECTORY</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Convert FILENAME to be relative to DIRECTORY (default: ‘default-directory’).</p></li>
+</ul>
+<p>This function returns a relative file name that is equivalent to FILENAME
+when used with that default directory as the default.
+If FILENAME is a relative file name, it will be interpreted as existing in
+‘default-directory’.
+If FILENAME and DIRECTORY lie on different machines or on different drives
+on a DOS/Windows machine, it returns FILENAME in expanded form.</p>
+<div class="highlight-\elisp notranslate"><div class="highlight"><pre><span></span>(file-relative-name &quot;/foo/bar&quot; &quot;/foo/&quot;)
+     ⇒ &quot;bar&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="or">
+<h3><a class="toc-backref" href="#id33">4.6 <code class="docutils literal notranslate"><span class="pre">or</span></code></a><a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="and">
+<h3><a class="toc-backref" href="#id34">4.7 <code class="docutils literal notranslate"><span class="pre">and</span></code></a><a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="boundp">
+<h3><a class="toc-backref" href="#id35">4.8 <code class="docutils literal notranslate"><span class="pre">boundp</span></code></a><a class="headerlink" href="#boundp" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="concat">
+<h3><a class="toc-backref" href="#id36">4.9 <code class="docutils literal notranslate"><span class="pre">concat</span></code></a><a class="headerlink" href="#concat" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mapc">
+<h3><a class="toc-backref" href="#id37">4.10 <code class="docutils literal notranslate"><span class="pre">mapc</span></code></a><a class="headerlink" href="#mapc" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">mapc</span> <span class="nv">FUNCTION</span> <span class="nv">SEQUENCE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Apply FUNCTION to each element of SEQUENCE for side effects only. Unlike ‘mapcar’, don’t accumulate the results.  Return SEQUENCE. SEQUENCE may be a list, a vector, a bool-vector, or a string.</p>
+</div>
+<div class="section" id="when">
+<h3><a class="toc-backref" href="#id38">4.11 <code class="docutils literal notranslate"><span class="pre">when</span></code></a><a class="headerlink" href="#when" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="setq">
+<h3><a class="toc-backref" href="#id39">4.12 <code class="docutils literal notranslate"><span class="pre">setq</span></code></a><a class="headerlink" href="#setq" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="nreverse">
+<h3><a class="toc-backref" href="#id40">4.13 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a><a class="headerlink" href="#nreverse" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="repeat">
+<h3><a class="toc-backref" href="#id41">4.14 <code class="docutils literal notranslate"><span class="pre">repeat</span></code></a><a class="headerlink" href="#repeat" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="set">
+<h3><a class="toc-backref" href="#id42">4.15 <code class="docutils literal notranslate"><span class="pre">set</span></code></a><a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="cond">
+<h3><a class="toc-backref" href="#id43">4.16 <code class="docutils literal notranslate"><span class="pre">cond</span></code></a><a class="headerlink" href="#cond" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-\elisp notranslate"><div class="highlight"><pre><span></span>(cond CLAUSES...)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Each CLAUSE looks like (CONDITION BODY…).</p></li>
+<li><p>Try each clause in the given order until one succeeds.</p>
+<ul>
+<li><p>CONDITION is evaluated and, if the value is non-nil, this clause succeeds.
+Once a clause <em>succeeds</em>, the expressions in BODY are evaluated and the result becomes the value of whole cond-form (cond …) while remaining clauses are ignored. In other words, cond-form terminates once it meets a succeeding clause.</p></li>
+<li><p>If no clause succeeds, cond returns nil.</p></li>
+</ul>
+</li>
+<li><p>If a clause has one element, as in (CONDITION), then the cond-form returns CONDITION’s value, if that is non-nil.</p></li>
+</ul>
+</div>
+<div class="section" id="string-match-match">
+<h3><a class="toc-backref" href="#id44">4.17 <code class="docutils literal notranslate"><span class="pre">string-match</span></code>, <code class="docutils literal notranslate"><span class="pre">match-...</span></code>,</a><a class="headerlink" href="#string-match-match" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="string-match">
+<h4><a class="toc-backref" href="#id45">4.17.1 <code class="docutils literal notranslate"><span class="pre">string-match</span></code></a><a class="headerlink" href="#string-match" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">string-match</span> <span class="nv">REGEXP</span> <span class="nv">STRING</span> <span class="k">&amp;optional</span> <span class="nv">START</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Return index of start of first match for REGEXP in STRING, or nil.</p></li>
+<li><p>If third arg START is non-nil, start search at that index in STRING.</p></li>
+<li><p>Matching ignores case if ‘<code class="docutils literal notranslate"><span class="pre">case-fold-search</span></code>’ is non-nil.</p></li>
+<li><p>For index of first char beyond the match, do <code class="docutils literal notranslate"><span class="pre">(match-end</span> <span class="pre">0)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">match-end</span></code> and <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code> also give indices of substrings matched by parenthesis constructs in the pattern.</p></li>
+<li><p>You can use the function <code class="docutils literal notranslate"><span class="pre">match-string</span></code> to extract the substrings matched by the parenthesis constructions in REGEXP.</p></li>
+</ul>
+</div>
+<div class="section" id="match-string">
+<h4><a class="toc-backref" href="#id46">4.17.2 <code class="docutils literal notranslate"><span class="pre">match-string</span></code></a><a class="headerlink" href="#match-string" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">match-string</span> <span class="nv">NUM</span> <span class="k">&amp;optional</span> <span class="nv">STRING</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>NUM specifies which parenthesized expression in the last regexp.</p></li>
+<li><p>Return string of text matched by last search.</p>
+<ul>
+<li><p>Value is nil if NUMth pair didn’t match, or there were less than NUM pairs.</p></li>
+<li><p>Zero means the entire text matched by the whole regexp or whole string.</p></li>
+</ul>
+</li>
+<li><p>STRING should be given if the last search was by <code class="docutils literal notranslate"><span class="pre">string-match</span></code> on STRING.</p></li>
+<li><p>If STRING is nil, the current buffer should be the same buffer the search/match was performed in.</p></li>
+</ul>
+</div>
+<div class="section" id="match-beginning">
+<h4><a class="toc-backref" href="#id47">4.17.3 <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code></a><a class="headerlink" href="#match-beginning" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">match-beginning</span> <span class="nv">SUBEXP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SUBEXP, a number, specifies which parenthesized expression in the last regexp.</p>
+<ul>
+<li><p>Zero means the entire text matched by the whole regexp or whole string.</p></li>
+</ul>
+</li>
+<li><p>Return position of start of text matched by last search.</p>
+<ul>
+<li><p>Value is nil if SUBEXPth pair didn’t match, or there were less than SUBEXP pairs.</p></li>
+<li><p>Return value is undefined if the last search failed.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="match-end">
+<h4><a class="toc-backref" href="#id48">4.17.4 <code class="docutils literal notranslate"><span class="pre">match-end</span></code></a><a class="headerlink" href="#match-end" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">match-end</span> <span class="nv">SUBEXP</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SUBEXP, a number, specifies which parenthesized expression in the last regexp.</p>
+<ul>
+<li><p>Zero means the entire text matched by the whole regexp or whole string.</p></li>
+</ul>
+</li>
+<li><p>Return position of end of text matched by last search.</p>
+<ul>
+<li><p>Value is nil if SUBEXPth pair didn’t match, or there were less than SUBEXP pairs. + Return value is undefined if the last search failed.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h4><a class="toc-backref" href="#id49">4.17.5 Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span>(string-match &quot;\\(qu\\)\\(ick\\)&quot; ; search &quot;quick&quot; where &quot;(qu)&quot; and &quot;(ick)&quot; are
+                                  ; parenthesized subexpressions.
+                                  ; Note that this is not a string but a REGEXP.
+                                  ; If we want to find &quot;(qu)&quot;, need to specify
+                                  ; as &quot;\\\\(qu\\\\)&quot;.
+              &quot;The quick fox jumped quickly.&quot;)
+              ;0123456789         ; string is zero-indexed
+     ⇒ 4                          ; &quot;q&quot; in &quot;quick&quot; appears at index 4
+
+;; match-string continues the last search. We were searching
+;; a regexp &quot;(qu)(ick)&quot; in a string &quot;The quick fox jumped quickly.&quot;
+
+(match-string 0 &quot;The quick fox jumped quickly.&quot;)
+     ⇒ &quot;quick&quot;             ; NUM 0 searches for all &quot;(qu)(ick)&quot;
+
+(match-string 1 &quot;The quick fox jumped quickly.&quot;)
+     ⇒ &quot;qu&quot;                ; NUM 1 searches for the first parenthesized
+                           ; expression, in &quot;(qu)(ick)&quot;, &quot;(qu)&quot;
+                           ; note that parenthesized expressions are
+                           ; counted from 1 (not zero-indexed)
+
+(match-string 2 &quot;The quick fox jumped quickly.&quot;)
+     ⇒ &quot;ick&quot;               ; NUM 2 searches for the second parenthesized
+                           ; expression, in &quot;(qu)(ick)&quot;, &quot;ick&quot;
+
+;; match-beginning/match-end continue the last search. We were searching
+;; a regexp &quot;(qu)(ick)&quot; in a string &quot;The quick fox jumped quickly.&quot;
+
+(match-beginning 1)       ; The beginning of the match with &quot;qu&quot;,
+     ⇒ 4                  ; the first parenthesized expression in &quot;(qu)(ick)&quot;,
+                          ; is at index 4 in &quot;The quick fox jumped quickly.&quot;
+
+
+(match-beginning 2)       ; The beginning of the match with &quot;ick&quot;,
+     ⇒ 6                  ; the second parenthesized expression in &quot;(qu)(ick)&quot;,
+                          ; is at index 6 in &quot;The quick fox jumped quickly.&quot;
+
+(match-end 1)             ; The end of the match with &quot;qu&quot;,
+     ⇒ 6                  ; the first parenthesized expression in &quot;(qu)(ick)&quot;,
+                          ; is at index 6 in &quot;The quick fox jumped quickly.&quot;
+                          ; Note that althouth the last character &quot;u&quot; in &quot;qu&quot;
+                          ; is at index 5, match-end is exclusive so it gives 6.
+
+(match-end 2)             ; The end of the match with &quot;ick&quot;
+     ⇒ 9                  ; the first parenthesized expression in &quot;(qu)(ick)&quot;,
+                          ; is at index 9 in &quot;The quick fox jumped quickly.&quot;
+                          ; Note that althouth the last character &quot;k&quot; in &quot;ick&quot;
+                          ; is at index 8, match-end is exclusive so it gives 9.
+</pre></div>
+</div>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">progn</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">style</span> <span class="s">&quot;test1/test2/test3&quot;</span><span class="p">)</span>
+       <span class="p">(</span><span class="nv">string-match</span> <span class="s">&quot;\\`\\(.+[/\\]\\)\\([^/\\]*\\)\\&#39;&quot;</span> <span class="nv">style</span><span class="p">)</span>
+       <span class="p">(</span><span class="k">setq</span> <span class="nv">dir</span>   <span class="p">(</span><span class="nv">substring</span> <span class="nv">style</span> <span class="p">(</span><span class="nv">match-beginning</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nv">match-end</span> <span class="mi">1</span><span class="p">)))</span>
+       <span class="p">(</span><span class="k">setq</span> <span class="nv">style</span> <span class="p">(</span><span class="nv">substring</span> <span class="nv">style</span> <span class="p">(</span><span class="nv">match-beginning</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nv">match-end</span> <span class="mi">2</span><span class="p">)))</span>
+       <span class="p">(</span><span class="nv">concat</span> <span class="s">&quot;dir: &quot;</span> <span class="nv">dir</span> <span class="s">&quot;, style:&quot;</span> <span class="nv">style</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="substring">
+<h3><a class="toc-backref" href="#id50">4.18 <code class="docutils literal notranslate"><span class="pre">substring</span></code></a><a class="headerlink" href="#substring" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">substring</span> <span class="nv">STRING</span> <span class="k">&amp;optional</span> <span class="nv">FROM</span> <span class="nv">TO</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Return a new string that consists of the characters between index FROM (inclusive) and index TO (exclusive) whose contents are a substring of STRING that is zero-indexed: 0 means the first character of STRING.</p></li>
+<li><p>Negative values are counted from the end of STRING.</p></li>
+<li><p>If TO is nil, the substring runs to the end of STRING.</p></li>
+<li><p>The STRING argument may also be a vector.  In that case, the return value is a new vector that contains the elements between index FROM (inclusive) and index TO (exclusive) of that vector argument.</p></li>
+<li><p>With one argument, just copy STRING (with properties, if any).</p></li>
+</ul>
+</div>
+<div class="section" id="if">
+<h3><a class="toc-backref" href="#id51">4.19 <code class="docutils literal notranslate"><span class="pre">if</span></code></a><a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="stringp">
+<h3><a class="toc-backref" href="#id52">4.20 <code class="docutils literal notranslate"><span class="pre">stringp</span></code></a><a class="headerlink" href="#stringp" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">stringp</span> <span class="nv">OBJECT</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">t</span></code> if OBJECT is a string.</p></li>
+</ul>
+</div>
+<div class="section" id="file-name-directory">
+<h3><a class="toc-backref" href="#id53">4.21 <code class="docutils literal notranslate"><span class="pre">file-name-directory</span></code></a><a class="headerlink" href="#file-name-directory" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">file-name-directory</span> <span class="nv">FILENAME</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Return the directory component in file name FILENAME.
+Return nil if FILENAME does not include a directory.
+Otherwise return a directory name.
+Given a Unix syntax file name, returns a string ending in slash.</p>
+</div>
+<div class="section" id="dolist">
+<h3><a class="toc-backref" href="#id54">4.22 <code class="docutils literal notranslate"><span class="pre">dolist</span></code></a><a class="headerlink" href="#dolist" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="assoc">
+<h3><a class="toc-backref" href="#id55">4.23 <code class="docutils literal notranslate"><span class="pre">assoc</span></code></a><a class="headerlink" href="#assoc" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">assoc</span> <span class="nv">KEY</span> <span class="nv">ALIST</span> <span class="k">&amp;optional</span> <span class="nv">TESTFN</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>If KEY is equal to the car of an element of ALIST, return the first element of ALIST whose car equals KEY (finding a list from a list of lists by an inner element):</p>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span>(assoc a ( ... (a . (cdr1)) ... (a . (cdr2)) ...))
+→ (a . (cdr1))
+</pre></div>
+</div>
+</li>
+<li><p>TESTFN, if specified, should return non-nil in case of the matching.</p></li>
+<li><p>When TESTFN is not specified or <code class="docutils literal notranslate"><span class="pre">nil</span></code>, it will be assumed to be <code class="docutils literal notranslate"><span class="pre">equal</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id56">4.24 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>(nreverse SEQ)</p>
+<p>Reverse order of items in a list, vector or string SEQ.
+If SEQ is a list, it should be nil-terminated.
+This function may destructively modify SEQ to produce the value.</p>
+</div>
+</div>
+<div class="section" id="variables">
+<h2><a class="toc-backref" href="#id57">5 variables</a><a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="user-emacs-directory">
+<h3><a class="toc-backref" href="#id58">5.1 <code class="docutils literal notranslate"><span class="pre">user-emacs-directory</span></code></a><a class="headerlink" href="#user-emacs-directory" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="terms">
+<h2><a class="toc-backref" href="#id59">6 Terms</a><a class="headerlink" href="#terms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="customization-group">
+<h3><a class="toc-backref" href="#id60">6.1 customization group</a><a class="headerlink" href="#customization-group" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="widget-type">
+<h3><a class="toc-backref" href="#id61">6.2 widget type</a><a class="headerlink" href="#widget-type" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="parenthesis-constructions">
+<h3><a class="toc-backref" href="#id62">6.3 parenthesis constructions</a><a class="headerlink" href="#parenthesis-constructions" title="Permalink to this headline">¶</a></h3>
+<p>In a regexp, <code class="docutils literal notranslate"><span class="pre">\(</span> <span class="pre">...</span> <span class="pre">\)</span></code> is a grouping construct that serves three purposes:</p>
+<ol class="arabic simple">
+<li><p>To enclose a set of <code class="docutils literal notranslate"><span class="pre">\|</span></code> alternatives for other operations.
+Thus, the regular expression <code class="docutils literal notranslate"><span class="pre">\(foo\|bar\)x</span></code> matches either
+<code class="docutils literal notranslate"><span class="pre">foox</span></code> or <code class="docutils literal notranslate"><span class="pre">barx</span></code>.</p></li>
+<li><p>To enclose a complicated expression for the postfix operators
+<code class="docutils literal notranslate"><span class="pre">\*</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">?</span></code> to operate on.  Thus, <code class="docutils literal notranslate"><span class="pre">ba\(na\)*</span></code> matches
+<code class="docutils literal notranslate"><span class="pre">ba</span></code>, <code class="docutils literal notranslate"><span class="pre">bana</span></code>, <code class="docutils literal notranslate"><span class="pre">banana</span></code>, <code class="docutils literal notranslate"><span class="pre">bananana</span></code>, etc., with any number
+(zero or more) of <code class="docutils literal notranslate"><span class="pre">na</span></code> strings.</p></li>
+<li><p>To record a matched substring for future reference with
+<code class="docutils literal notranslate"><span class="pre">\DIGIT</span></code> (see also <code class="docutils literal notranslate"><span class="pre">match-string</span></code>, <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code>, <code class="docutils literal notranslate"><span class="pre">match-end</span></code>).</p></li>
+</ol>
+<p>This last application is not a consequence of the idea of a parenthetical grouping; it is a separate feature that was assigned as a <em>second meaning</em> to the same <code class="docutils literal notranslate"><span class="pre">\(</span> <span class="pre">...</span> <span class="pre">\)</span></code> construct. In practice, there was usually no conflict between the two meanings. But in case of a conflict, use shy grouping <code class="docutils literal notranslate"><span class="pre">\(?:</span> <span class="pre">...</span> <span class="pre">\)</span></code>. See <a class="reference external" href="elisp#RegexpBackslash">info:elisp#Regexp Backslash</a> for more.</p>
+</div>
+<div class="section" id="cond-form">
+<h3><a class="toc-backref" href="#id63">6.4 cond form</a><a class="headerlink" href="#cond-form" title="Permalink to this headline">¶</a></h3>
+<p>refers to a form of <code class="docutils literal notranslate"><span class="pre">(cond</span> <span class="pre">CLAUSES)</span></code></p>
+</div>
+<div class="section" id="mapping-function">
+<h3><a class="toc-backref" href="#id64">6.5 mapping function</a><a class="headerlink" href="#mapping-function" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>mapping function</strong> applies a given function (not a special form or macro) to each element of a list or other collection. Emacs Lisp has several such functions including <code class="docutils literal notranslate"><span class="pre">mapcar</span></code>, <code class="docutils literal notranslate"><span class="pre">mapc</span></code>, <code class="docutils literal notranslate"><span class="pre">mapconcat</span></code>, and <code class="docutils literal notranslate"><span class="pre">mapcan</span></code> which map over a list.</p>
+</div>
+</div>
+<div class="section" id="temp">
+<h2><a class="toc-backref" href="#id65">7 temp</a><a class="headerlink" href="#temp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">path</span><span class="p">))</span>
+    <span class="c1">;; Put directories in an order where the more local files can</span>
+    <span class="c1">;; override the more global ones.</span>
+    <span class="p">(</span><span class="nb">mapc</span> <span class="p">(</span><span class="k">lambda</span> <span class="p">(</span><span class="nv">file</span><span class="p">)</span>
+            <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">and</span> <span class="nv">file</span> <span class="p">(</span><span class="nb">not</span> <span class="p">(</span><span class="nb">member</span> <span class="nv">file</span> <span class="nv">path</span><span class="p">)))</span>
+              <span class="p">(</span><span class="k">setq</span> <span class="nv">path</span> <span class="p">(</span><span class="nb">cons</span> <span class="nv">file</span> <span class="nv">path</span><span class="p">))))</span>
+          <span class="p">(</span><span class="nb">append</span>
+           <span class="p">(</span><span class="nb">list</span> <span class="nv">TeX-auto-global</span> <span class="nv">TeX-style-global</span><span class="p">)</span>
+           <span class="nv">TeX-auto-private</span>
+           <span class="nv">TeX-style-private</span>
+           <span class="p">(</span><span class="nb">list</span> <span class="nv">TeX-auto-local</span> <span class="nv">TeX-style-local</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">nreverse</span> <span class="nv">path</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Question: Why we put <code class="docutils literal notranslate"><span class="pre">(path)</span></code> in let and what does it do?</p>
+<p>Ans: The variable <code class="docutils literal notranslate"><span class="pre">path</span></code> will be defined inside of <code class="docutils literal notranslate"><span class="pre">maps</span></code>. However, the last line indicates that we want to return something with <code class="docutils literal notranslate"><span class="pre">path</span></code> but the variable <code class="docutils literal notranslate"><span class="pre">path</span></code> is outside of its scope of its definition because it got outside of the original <code class="docutils literal notranslate"><span class="pre">mapc</span></code> scope. This indicates that <code class="docutils literal notranslate"><span class="pre">path</span></code> should be placed in the scope of two commands <code class="docutils literal notranslate"><span class="pre">(mapc</span> <span class="pre">...)</span></code> and <code class="docutils literal notranslate"><span class="pre">(nreverse</span> <span class="pre">...)</span></code> and do that by putting those two together with <code class="docutils literal notranslate"><span class="pre">let</span></code> declaring that we’ll be using <code class="docutils literal notranslate"><span class="pre">path</span></code> as the common variable.</p>
+<div class="section" id="variable-scope-and-shadowing">
+<h3><a class="toc-backref" href="#id66">7.1 Variable scope and shadowing</a><a class="headerlink" href="#variable-scope-and-shadowing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span>(let ((a &quot;original value&quot;))
+  (let ((a &quot;shadowed value&quot;))
+    (insert (concat &quot;\n&quot; a &quot; (is this shadowed?)\n&quot;)))
+  (insert (concat a &quot; (is this unshdowed?)&quot;)))
+   ⇒ shadowed value (is this shadowed?)
+     original value (is this unshdowed?)
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -641,7 +1150,7 @@ include ‘nil’ and ‘t’, as well as any symbol whose name starts with ‘:
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, hbshim@gmail.com
+        &copy; Copyright 2020, Hyungbo Shim (hbshim@gmail.com) (content originality not claimed at all if otherwise obvious from the context)
 
     </p>
   </div>

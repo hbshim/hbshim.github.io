@@ -2,7 +2,7 @@
 Elisp
 =====
 
-    :Date: November 09, 2020
+    :Date: November 13, 2020
 
 .. contents::
 
@@ -126,3 +126,405 @@ Elisp
 - ``(derived-mode-p &rest MODES)``
 
   Non-nil if the current major mode is derived from one of MODES. Uses the ‘derived-mode-parent’ property of the symbol (``MODES``) to trace backwards.
+
+4 functions
+-----------
+
+4.1 ``defcustom``
+~~~~~~~~~~~~~~~~~
+
+(defcustom SYMBOL STANDARD DOC &rest ARGS)
+
+Probably introduced at or before Emacs version 20.
+
+Declare SYMBOL as a customizable variable.
+SYMBOL is the variable name; it should not be quoted.
+STANDARD is an expression specifying the variable’s standard
+value.  It should not be quoted.  It is evaluated once by
+‘defcustom’, and the value is assigned to SYMBOL if the variable
+is unbound.  The expression itself is also stored, so that
+Customize can re-evaluate it later to get the standard value.
+DOC is the variable documentation.
+
+- ``:group``  VALUE should be a customization group. Add SYMBOL (or FACE with ‘defface’) to that group.
+
+- ``:type`` VALUE should be a widget type for editing the symbol’s value. Every ‘defcustom’ should specify a value for this keyword.
+
+4.2 ``append``
+~~~~~~~~~~~~~~
+
+4.3 ``list``
+~~~~~~~~~~~~
+
+4.4 ``expand-file-name``
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (expand-file-name "foo")
+         ⇒ "/xcssun/users/rms/lewis/foo"
+
+    (expand-file-name "../foo")
+         ⇒ "/xcssun/users/rms/foo"
+
+    (expand-file-name "foo" "/usr/spool/")
+         ⇒ "/usr/spool/foo"
+
+4.5 ``file-relative-name``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (file-relative-name FILENAME &optional DIRECTORY)
+
+- Convert FILENAME to be relative to DIRECTORY (default: ‘default-directory’).
+
+This function returns a relative file name that is equivalent to FILENAME
+when used with that default directory as the default.
+If FILENAME is a relative file name, it will be interpreted as existing in
+‘default-directory’.
+If FILENAME and DIRECTORY lie on different machines or on different drives
+on a DOS/Windows machine, it returns FILENAME in expanded form.
+
+.. code:: \elisp
+
+    (file-relative-name "/foo/bar" "/foo/")
+         ⇒ "bar"
+
+4.6 ``or``
+~~~~~~~~~~
+
+4.7 ``and``
+~~~~~~~~~~~
+
+4.8 ``boundp``
+~~~~~~~~~~~~~~
+
+4.9 ``concat``
+~~~~~~~~~~~~~~
+
+4.10 ``mapc``
+~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (mapc FUNCTION SEQUENCE)
+
+Apply FUNCTION to each element of SEQUENCE for side effects only. Unlike ‘mapcar’, don’t accumulate the results.  Return SEQUENCE. SEQUENCE may be a list, a vector, a bool-vector, or a string.
+
+4.11 ``when``
+~~~~~~~~~~~~~
+
+4.12 ``setq``
+~~~~~~~~~~~~~
+
+4.13 ``nreverse``
+~~~~~~~~~~~~~~~~~
+
+4.14 ``repeat``
+~~~~~~~~~~~~~~~
+
+4.15 ``set``
+~~~~~~~~~~~~
+
+4.16 ``cond``
+~~~~~~~~~~~~~
+
+.. code:: \elisp
+
+    (cond CLAUSES...)
+
+- Each CLAUSE looks like (CONDITION BODY...).
+
+- Try each clause in the given order until one succeeds.
+
+  - CONDITION is evaluated and, if the value is non-nil, this clause succeeds.
+    Once a clause *succeeds*, the expressions in BODY are evaluated and the result becomes the value of whole cond-form (cond ...) while remaining clauses are ignored. In other words, cond-form terminates once it meets a succeeding clause.
+
+  - If no clause succeeds, cond returns nil.
+
+- If a clause has one element, as in (CONDITION), then the cond-form returns CONDITION’s value, if that is non-nil.
+
+4.17 ``string-match``, ``match-...``,
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4.17.1 ``string-match``
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: common-lisp
+
+    (string-match REGEXP STRING &optional START)
+
+- Return index of start of first match for REGEXP in STRING, or nil.
+
+- If third arg START is non-nil, start search at that index in STRING.
+
+- Matching ignores case if '``case-fold-search``' is non-nil.
+
+- For index of first char beyond the match, do ``(match-end 0)``.
+
+- ``match-end`` and ``match-beginning`` also give indices of substrings matched by parenthesis constructs in the pattern.
+
+- You can use the function ``match-string`` to extract the substrings matched by the parenthesis constructions in REGEXP.
+
+4.17.2 ``match-string``
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: common-lisp
+
+    (match-string NUM &optional STRING)
+
+- NUM specifies which parenthesized expression in the last regexp.
+
+- Return string of text matched by last search.
+
+  - Value is nil if NUMth pair didn’t match, or there were less than NUM pairs.
+
+  - Zero means the entire text matched by the whole regexp or whole string.
+
+- STRING should be given if the last search was by ``string-match`` on STRING.
+
+- If STRING is nil, the current buffer should be the same buffer the search/match was performed in.
+
+4.17.3 ``match-beginning``
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code:: common-lisp
+
+    (match-beginning SUBEXP)
+
+- SUBEXP, a number, specifies which parenthesized expression in the last regexp. 
+
+  - Zero means the entire text matched by the whole regexp or whole string.
+
+- Return position of start of text matched by last search.
+
+  - Value is nil if SUBEXPth pair didn’t match, or there were less than SUBEXP pairs.
+
+  - Return value is undefined if the last search failed.
+
+4.17.4 ``match-end``
+^^^^^^^^^^^^^^^^^^^^
+
+.. code:: common-lisp
+
+    (match-end SUBEXP)
+
+- SUBEXP, a number, specifies which parenthesized expression in the last regexp.
+
+  - Zero means the entire text matched by the whole regexp or whole string.
+
+- Return position of end of text matched by last search.
+
+  - Value is nil if SUBEXPth pair didn’t match, or there were less than SUBEXP pairs. + Return value is undefined if the last search failed.
+
+4.17.5 Example
+^^^^^^^^^^^^^^
+
+.. code:: common-lisp
+
+    (string-match "\\(qu\\)\\(ick\\)" ; search "quick" where "(qu)" and "(ick)" are
+                                      ; parenthesized subexpressions.
+                                      ; Note that this is not a string but a REGEXP.
+                                      ; If we want to find "(qu)", need to specify
+                                      ; as "\\\\(qu\\\\)".
+                  "The quick fox jumped quickly.")
+                  ;0123456789         ; string is zero-indexed
+         ⇒ 4                          ; "q" in "quick" appears at index 4
+
+    ;; match-string continues the last search. We were searching
+    ;; a regexp "(qu)(ick)" in a string "The quick fox jumped quickly."
+
+    (match-string 0 "The quick fox jumped quickly.")
+         ⇒ "quick"             ; NUM 0 searches for all "(qu)(ick)"
+
+    (match-string 1 "The quick fox jumped quickly.")
+         ⇒ "qu"                ; NUM 1 searches for the first parenthesized
+                               ; expression, in "(qu)(ick)", "(qu)" 
+                               ; note that parenthesized expressions are
+                               ; counted from 1 (not zero-indexed)
+
+    (match-string 2 "The quick fox jumped quickly.")
+         ⇒ "ick"               ; NUM 2 searches for the second parenthesized
+                               ; expression, in "(qu)(ick)", "ick"
+
+    ;; match-beginning/match-end continue the last search. We were searching
+    ;; a regexp "(qu)(ick)" in a string "The quick fox jumped quickly."
+
+    (match-beginning 1)       ; The beginning of the match with "qu", 
+         ⇒ 4                  ; the first parenthesized expression in "(qu)(ick)",
+                              ; is at index 4 in "The quick fox jumped quickly."
+
+
+    (match-beginning 2)       ; The beginning of the match with "ick",
+         ⇒ 6                  ; the second parenthesized expression in "(qu)(ick)",
+                              ; is at index 6 in "The quick fox jumped quickly."
+
+    (match-end 1)             ; The end of the match with "qu",
+         ⇒ 6                  ; the first parenthesized expression in "(qu)(ick)",
+                              ; is at index 6 in "The quick fox jumped quickly."
+                              ; Note that althouth the last character "u" in "qu"
+                              ; is at index 5, match-end is exclusive so it gives 6.
+
+    (match-end 2)             ; The end of the match with "ick"
+         ⇒ 9                  ; the first parenthesized expression in "(qu)(ick)",
+                              ; is at index 9 in "The quick fox jumped quickly."
+                              ; Note that althouth the last character "k" in "ick"
+                              ; is at index 8, match-end is exclusive so it gives 9.
+
+.. code:: common-lisp
+
+    (progn (setq style "test1/test2/test3")
+           (string-match "\\`\\(.+[/\\]\\)\\([^/\\]*\\)\\'" style)
+           (setq dir   (substring style (match-beginning 1) (match-end 1)))
+           (setq style (substring style (match-beginning 2) (match-end 2)))
+           (concat "dir: " dir ", style:" style))
+
+4.18 ``substring``
+~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (substring STRING &optional FROM TO)
+
+- Return a new string that consists of the characters between index FROM (inclusive) and index TO (exclusive) whose contents are a substring of STRING that is zero-indexed: 0 means the first character of STRING.
+
+- Negative values are counted from the end of STRING.
+
+- If TO is nil, the substring runs to the end of STRING.
+
+- The STRING argument may also be a vector.  In that case, the return value is a new vector that contains the elements between index FROM (inclusive) and index TO (exclusive) of that vector argument.
+
+- With one argument, just copy STRING (with properties, if any).
+
+4.19 ``if``
+~~~~~~~~~~~
+
+4.20 ``stringp``
+~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (stringp OBJECT)
+
+- Return ``t`` if OBJECT is a string.
+
+4.21 ``file-name-directory``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (file-name-directory FILENAME)
+
+Return the directory component in file name FILENAME.
+Return nil if FILENAME does not include a directory.
+Otherwise return a directory name.
+Given a Unix syntax file name, returns a string ending in slash.
+
+4.22 ``dolist``
+~~~~~~~~~~~~~~~
+
+4.23 ``assoc``
+~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (assoc KEY ALIST &optional TESTFN)
+
+- If KEY is equal to the car of an element of ALIST, return the first element of ALIST whose car equals KEY (finding a list from a list of lists by an inner element):
+
+  .. code:: common-lisp
+
+      (assoc a ( ... (a . (cdr1)) ... (a . (cdr2)) ...))
+      → (a . (cdr1))
+
+- TESTFN, if specified, should return non-nil in case of the matching.
+
+- When TESTFN is not specified or ``nil``, it will be assumed to be ``equal``.
+
+4.24 ``nreverse``
+~~~~~~~~~~~~~~~~~
+
+(nreverse SEQ)
+
+Reverse order of items in a list, vector or string SEQ.
+If SEQ is a list, it should be nil-terminated.
+This function may destructively modify SEQ to produce the value.
+
+5 variables
+-----------
+
+5.1 ``user-emacs-directory``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+6 Terms
+-------
+
+6.1 customization group
+~~~~~~~~~~~~~~~~~~~~~~~
+
+6.2 widget type
+~~~~~~~~~~~~~~~
+
+6.3 parenthesis constructions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In a regexp, ``\( ... \)`` is a grouping construct that serves three purposes:
+
+1. To enclose a set of ``\|`` alternatives for other operations.
+   Thus, the regular expression ``\(foo\|bar\)x`` matches either
+   ``foox`` or ``barx``.
+
+2. To enclose a complicated expression for the postfix operators
+   ``\*``, ``+`` and ``?`` to operate on.  Thus, ``ba\(na\)*`` matches
+   ``ba``, ``bana``, ``banana``, ``bananana``, etc., with any number
+   (zero or more) of ``na`` strings.
+
+3. To record a matched substring for future reference with
+   ``\DIGIT`` (see also ``match-string``, ``match-beginning``, ``match-end``).
+
+This last application is not a consequence of the idea of a parenthetical grouping; it is a separate feature that was assigned as a *second meaning* to the same ``\( ... \)`` construct. In practice, there was usually no conflict between the two meanings. But in case of a conflict, use shy grouping ``\(?: ... \)``. See `info:elisp#Regexp Backslash <elisp#Regexp Backslash>`_ for more.
+
+6.4 cond form
+~~~~~~~~~~~~~
+
+refers to a form of ``(cond CLAUSES)``
+
+6.5 mapping function
+~~~~~~~~~~~~~~~~~~~~
+
+A **mapping function** applies a given function (not a special form or macro) to each element of a list or other collection. Emacs Lisp has several such functions including ``mapcar``, ``mapc``, ``mapconcat``, and ``mapcan`` which map over a list. 
+
+7 temp
+------
+
+.. code:: common-lisp
+
+    (let ((path))
+        ;; Put directories in an order where the more local files can
+        ;; override the more global ones.
+        (mapc (lambda (file)
+                (when (and file (not (member file path)))
+                  (setq path (cons file path))))
+              (append
+               (list TeX-auto-global TeX-style-global)
+               TeX-auto-private
+               TeX-style-private
+               (list TeX-auto-local TeX-style-local)))
+        (nreverse path))
+
+Question: Why we put ``(path)`` in let and what does it do?
+
+Ans: The variable ``path`` will be defined inside of ``maps``. However, the last line indicates that we want to return something with ``path`` but the variable ``path`` is outside of its scope of its definition because it got outside of the original ``mapc`` scope. This indicates that ``path`` should be placed in the scope of two commands ``(mapc ...)`` and ``(nreverse ...)`` and do that by putting those two together with ``let`` declaring that we'll be using ``path`` as the common variable.
+
+7.1 Variable scope and shadowing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: common-lisp
+
+    (let ((a "original value"))
+      (let ((a "shadowed value"))
+        (insert (concat "\n" a " (is this shadowed?)\n")))
+      (insert (concat a " (is this unshdowed?)")))
+       ⇒ shadowed value (is this shadowed?)
+         original value (is this unshdowed?)

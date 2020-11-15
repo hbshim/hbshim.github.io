@@ -86,15 +86,15 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">1 Abbrevs mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">1.1 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">1 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">2 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">3 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">4 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">5 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">5.1 options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">3 Bookmarks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">4 helm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">6 Bookmarks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#deleting-and-killing">8 Deleting and killing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-by-character">8.1 Deleting by character</a></li>
@@ -109,58 +109,59 @@
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#id1">9.6 options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">10 File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">11 Find/replace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">12 font</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">13 frames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">14 help and info</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">14.1 Browsing inside info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">10 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">11 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">12 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">13 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">14 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">15 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">16 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">16.1 Browsing inside info</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">15 history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">16 ispell (flyspell)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">17 Key-binding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">19 Moving around</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">19.1 by characters/lines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">19.2 by words</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">19.3 horizontally</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">19.4 by sentence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">19.5 by paragraph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">19.6 by matching parentheses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">19.7 by buffer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">19.8 by page</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">19.9 back to previous position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">19.10 GO TO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">17 Hide-show mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">18 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">19 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">20 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">21 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">22 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">23 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">23.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">23.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">23.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">23.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">23.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">23.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">23.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">23.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">23.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">23.10 GO TO</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">20 Outline minor mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">20.1 Motion commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">20.2 Visibility commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">24 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">24.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">24.2 Visibility commands</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">21 Reference sites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">22 Region/Mark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">23 Registers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">24 Select</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">25 Sessions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">26 Symbol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">27 Timestamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">28 windows</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">28.1 transpose windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">25 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">26 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">27 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">28 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">29 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">30 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">31 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">32 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#variables">33 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">34 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">35 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">35.1 transpose windows</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">29 YASnippet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#variables">29.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">36 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id2">36.1 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#suppressing-warnings">36.2 Suppressing warnings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">30 Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">31 Visual line mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">32 (Auto)reverting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">33 Performance profiling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">34 emacsclient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">35 Magit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
@@ -172,8 +173,11 @@
 <li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#todo-state-options-n-n-numbering-r-l">3.1 TODO state options, +n, -n, numbering, -r, -l</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-verse-quote-center-blocks">4 Example/Verse/Quote/Center blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
@@ -230,7 +234,11 @@
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#functions">8.1 functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#variables">8.2 variables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LaTeX</a><ul>
@@ -254,6 +262,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#putting-a-formula-inside-of-a-table-cell">13 putting a formula inside of a table cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#variable">14 variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setcounter-enumi">15 setcounter enumi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#newcommand-renewcommand">16 newcommand / renewcommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#temp">17 temp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tds">17.1 TDS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#texmf">17.2 texmf</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="spectral_sequences_pkg.html">LaTeX Pkg: spectralsequences</a><ul>
@@ -292,17 +306,18 @@
 <li class="toctree-l2"><a class="reference internal" href="git.html#branch-create-new">19 branch: create new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#branch-remove">20 branch: remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#merge-head-master">21 merge: HEAD -&gt; master</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">22 Stash: save</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">23 stash: list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">24 stash: apply</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#clone">25 clone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">26 remote: add/remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">27 remote: list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">28 fetch: local repository &lt;- remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">29 push: local repository -&gt; remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">30 rebase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">31 cherry-pick</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#restore">22 restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">23 Stash: save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">24 stash: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">25 stash: apply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#clone">26 clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">27 remote: add/remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">28 remote: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">29 fetch: local repository &lt;- remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">30 push: local repository -&gt; remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">31 rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">32 cherry-pick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tag">33 tag</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coq.html">Coq</a><ul>
@@ -395,6 +410,44 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="elisp.html#to-be-organized-later">3 to be organized later</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#functions">4 functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id5">4.1 <code class="docutils literal notranslate"><span class="pre">defcustom</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#append">4.2 <code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#list">4.3 <code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#expand-file-name">4.4 <code class="docutils literal notranslate"><span class="pre">expand-file-name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#or">4.5 <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#and">4.6 <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#boundp">4.7 <code class="docutils literal notranslate"><span class="pre">boundp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#concat">4.8 <code class="docutils literal notranslate"><span class="pre">concat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#mapc">4.9 <code class="docutils literal notranslate"><span class="pre">mapc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#when">4.10 <code class="docutils literal notranslate"><span class="pre">when</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#setq">4.11 <code class="docutils literal notranslate"><span class="pre">setq</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#nreverse">4.12 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#repeat">4.13 <code class="docutils literal notranslate"><span class="pre">repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#set">4.14 <code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#cond">4.15 <code class="docutils literal notranslate"><span class="pre">cond</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#string-match">4.16 <code class="docutils literal notranslate"><span class="pre">string-match</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#substring">4.17 <code class="docutils literal notranslate"><span class="pre">substring</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#match-beginning">4.18 <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#match-end">4.19 <code class="docutils literal notranslate"><span class="pre">match-end</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#if">4.20 <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#stringp">4.21 <code class="docutils literal notranslate"><span class="pre">stringp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#file-name-directory">4.22 <code class="docutils literal notranslate"><span class="pre">file-name-directory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#file-relative-name">4.23 <code class="docutils literal notranslate"><span class="pre">file-relative-name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#dolist">4.24 <code class="docutils literal notranslate"><span class="pre">dolist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#assoc">4.25 <code class="docutils literal notranslate"><span class="pre">assoc</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#variables">5 variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#user-emacs-directory">5.1 <code class="docutils literal notranslate"><span class="pre">user-emacs-directory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#terms">6 Terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-group">6.1 customization group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#widget-type">6.2 widget type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#parenthesis-constructions">6.3 parenthesis constructions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -487,50 +540,57 @@
            <div itemprop="articleBody">
             
   <div class="section" id="latex">
-<h1><a class="toc-backref" href="#id19">LaTeX</a><a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id21">LaTeX</a><a class="headerlink" href="#latex" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>Hyungbo Shim</p>
 </dd>
 <dt class="field-even">Date</dt>
-<dd class="field-even"><p>November 11, 2020</p>
+<dd class="field-even"><p>November 12, 2020</p>
 </dd>
 </dl>
 </div></blockquote>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#latex" id="id19">LaTeX</a></p>
+<li><p><a class="reference internal" href="#latex" id="id21">LaTeX</a></p>
 <ul>
-<li><p><a class="reference internal" href="#dvi" id="id20">1 DVI</a></p></li>
-<li><p><a class="reference internal" href="#postscript" id="id21">2 PostScript</a></p></li>
-<li><p><a class="reference internal" href="#encapsulated-postscript-eps" id="id22">3 Encapsulated PostScript (EPS)</a></p></li>
-<li><p><a class="reference internal" href="#raster-fonts" id="id23">4 Raster fonts</a></p></li>
-<li><p><a class="reference internal" href="#metafont" id="id24">5 Metafont</a></p></li>
-<li><p><a class="reference internal" href="#ghostscript" id="id25">6 Ghostscript</a></p></li>
-<li><p><a class="reference internal" href="#raster-image-converters" id="id26">7 Raster image converters</a></p></li>
-<li><p><a class="reference internal" href="#image-file-formats-compared" id="id27">8 Image file formats, compared</a></p></li>
-<li><p><a class="reference internal" href="#xquartz" id="id28">9 XQuartz</a></p></li>
-<li><p><a class="reference internal" href="#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package" id="id29">10 Add section number to the pdf bookmark (outline) generated by hyperref package</a></p></li>
-<li><p><a class="reference internal" href="#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc" id="id30">11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></p></li>
-<li><p><a class="reference internal" href="#change-font-size-temporarily" id="id31">12 change font size temporarily</a></p>
+<li><p><a class="reference internal" href="#dvi" id="id22">1 DVI</a></p></li>
+<li><p><a class="reference internal" href="#postscript" id="id23">2 PostScript</a></p></li>
+<li><p><a class="reference internal" href="#encapsulated-postscript-eps" id="id24">3 Encapsulated PostScript (EPS)</a></p></li>
+<li><p><a class="reference internal" href="#raster-fonts" id="id25">4 Raster fonts</a></p></li>
+<li><p><a class="reference internal" href="#metafont" id="id26">5 Metafont</a></p></li>
+<li><p><a class="reference internal" href="#ghostscript" id="id27">6 Ghostscript</a></p></li>
+<li><p><a class="reference internal" href="#raster-image-converters" id="id28">7 Raster image converters</a></p></li>
+<li><p><a class="reference internal" href="#image-file-formats-compared" id="id29">8 Image file formats, compared</a></p></li>
+<li><p><a class="reference internal" href="#xquartz" id="id30">9 XQuartz</a></p></li>
+<li><p><a class="reference internal" href="#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package" id="id31">10 Add section number to the pdf bookmark (outline) generated by hyperref package</a></p></li>
+<li><p><a class="reference internal" href="#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc" id="id32">11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a></p></li>
+<li><p><a class="reference internal" href="#change-font-size-temporarily" id="id33">12 change font size temporarily</a></p>
 <ul>
-<li><p><a class="reference internal" href="#of-an-area-begin-small-end-small" id="id32">12.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></p></li>
-<li><p><a class="reference internal" href="#of-a-word-small-word" id="id33">12.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></p></li>
-<li><p><a class="reference internal" href="#as-a-switcher-small" id="id34">12.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></p></li>
+<li><p><a class="reference internal" href="#of-an-area-begin-small-end-small" id="id34">12.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a></p></li>
+<li><p><a class="reference internal" href="#of-a-word-small-word" id="id35">12.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a></p></li>
+<li><p><a class="reference internal" href="#as-a-switcher-small" id="id36">12.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#putting-a-formula-inside-of-a-table-cell" id="id35">13 putting a formula inside of a table cell</a></p></li>
-<li><p><a class="reference internal" href="#variable" id="id36">14 variable</a></p></li>
-<li><p><a class="reference internal" href="#setcounter-enumi" id="id37">15 setcounter enumi</a></p></li>
+<li><p><a class="reference internal" href="#putting-a-formula-inside-of-a-table-cell" id="id37">13 putting a formula inside of a table cell</a></p></li>
+<li><p><a class="reference internal" href="#variable" id="id38">14 variable</a></p></li>
+<li><p><a class="reference internal" href="#setcounter-enumi" id="id39">15 setcounter enumi</a></p></li>
+<li><p><a class="reference internal" href="#newcommand-renewcommand" id="id40">16 newcommand / renewcommand</a></p></li>
+<li><p><a class="reference internal" href="#temp" id="id41">17 temp</a></p>
+<ul>
+<li><p><a class="reference internal" href="#tds" id="id42">17.1 TDS</a></p></li>
+<li><p><a class="reference internal" href="#texmf" id="id43">17.2 texmf</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="dvi">
-<h2><a class="toc-backref" href="#id20">1 DVI</a><a class="headerlink" href="#dvi" title="Permalink to this headline">¶</a></h2>
-<p>The following is a summary of the Wikipedia page  <a class="footnote-reference brackets" href="#id11" id="id1">1</a> .</p>
+<h2><a class="toc-backref" href="#id22">1 DVI</a><a class="headerlink" href="#dvi" title="Permalink to this headline">¶</a></h2>
+<p>The following is a summary of the Wikipedia page  <a class="footnote-reference brackets" href="#id12" id="id1">1</a> .</p>
 <p>The <strong>device independent file format</strong> (<strong>DVI</strong>) is the output file format of the TeX typesetting program. DVI files are typically used as input to a second program (called a DVI driver) which translates DVI files to graphical data.</p>
 <p>A <strong>driver</strong> is a program for previewing DVI files on a user’s computer display. Drivers are also used by <strong>converters</strong> that convert DVI to popular <strong>page description languages</strong> (e.g. PostScript, PDF) for rendering (by, eg. Ghostscript) and printing.</p>
 <ul class="simple">
@@ -558,48 +618,48 @@
 <p>Like PDF, DVI uses a limited sort of termination guaranteed machine language with that is not a full, Turing-complete programming language like PostScript.</p>
 </div>
 <div class="section" id="postscript">
-<h2><a class="toc-backref" href="#id21">2 PostScript</a><a class="headerlink" href="#postscript" title="Permalink to this headline">¶</a></h2>
-<p>From Wikipedia  <a class="footnote-reference brackets" href="#id12" id="id2">2</a> , <a class="footnote-reference brackets" href="#id13" id="id3">3</a> :</p>
+<h2><a class="toc-backref" href="#id23">2 PostScript</a><a class="headerlink" href="#postscript" title="Permalink to this headline">¶</a></h2>
+<p>From Wikipedia  <a class="footnote-reference brackets" href="#id13" id="id2">2</a> , <a class="footnote-reference brackets" href="#id14" id="id3">3</a> :</p>
 <p><strong>PostScript</strong> (PS) is a page description language in the electronic publishing and desktop publishing business. It is a dynamically typed, concatenative programming language.</p>
 <p><strong>PDF</strong> has largely replaced PostScript as <em>de facto</em> standard for electronic document distribution. On high-end printers, PostScript processors remain common, and their use can dramatically reduce the CPU work involved in printing documents, transferring the work of rendering PostScript images from the computer to the printer.</p>
 <p><strong>Metafont</strong> can be embedded into PostScript.</p>
 <p>A file format converter, eg. <strong>ps2pdf</strong> that is distributed with <strong>Ghostscript</strong>, converts PostScript to PDF or vice versa.</p>
 </div>
 <div class="section" id="encapsulated-postscript-eps">
-<h2><a class="toc-backref" href="#id22">3 Encapsulated PostScript (EPS)</a><a class="headerlink" href="#encapsulated-postscript-eps" title="Permalink to this headline">¶</a></h2>
-<p>From Wikipedia  <a class="footnote-reference brackets" href="#id14" id="id4">4</a> :</p>
+<h2><a class="toc-backref" href="#id24">3 Encapsulated PostScript (EPS)</a><a class="headerlink" href="#encapsulated-postscript-eps" title="Permalink to this headline">¶</a></h2>
+<p>From Wikipedia  <a class="footnote-reference brackets" href="#id15" id="id4">4</a> :</p>
 <p><strong>Encapsulated PostScript</strong> (<strong>EPS</strong>) is a Document Structuring Conventions–conforming (DSC) PostScript document format usable as a graphics file format that can be placed within another PostScript document and includes a low-resolution preview “encapsulated” within it.</p>
 <p>An EPS file contains a BoundingBox DSC comment, describing the rectangle containing the image described by the EPS file. Applications, even if they are unable to directly render the PostScript inside, can use this information to lay out the page.</p>
 <p>EPS, together with DSC’s Open Structuring Conventions, form the basis of early versions of the Adobe Illustrator Artwork file format.</p>
 </div>
 <div class="section" id="raster-fonts">
-<h2><a class="toc-backref" href="#id23">4 Raster fonts</a><a class="headerlink" href="#raster-fonts" title="Permalink to this headline">¶</a></h2>
-<p>From Wikipedia  <a class="footnote-reference brackets" href="#id15" id="id5">5</a> :</p>
+<h2><a class="toc-backref" href="#id25">4 Raster fonts</a><a class="headerlink" href="#raster-fonts" title="Permalink to this headline">¶</a></h2>
+<p>From Wikipedia  <a class="footnote-reference brackets" href="#id16" id="id5">5</a> :</p>
 <p>A <strong>raster font</strong> (more commonly, a bitmap font or a pixel font) is a font that stores each glyph as an array of pixels (that is, a bitmap). Raster fonts are simply collections of <strong>raster images</strong> (also more commonly called bitmap images) of glyphs.</p>
 <p>In comparison, <strong>vector fonts</strong> (including, and sometimes standing as a synonym for <strong>outline fonts</strong>) use Bézier curves, drawing instructions and mathematical formulae to describe each glyph, which make the character outlines scalable to any size.</p>
 </div>
 <div class="section" id="metafont">
-<h2><a class="toc-backref" href="#id24">5 Metafont</a><a class="headerlink" href="#metafont" title="Permalink to this headline">¶</a></h2>
-<p>From Wikipedia  <a class="footnote-reference brackets" href="#id13" id="id6">3</a> :</p>
+<h2><a class="toc-backref" href="#id26">5 Metafont</a><a class="headerlink" href="#metafont" title="Permalink to this headline">¶</a></h2>
+<p>From Wikipedia  <a class="footnote-reference brackets" href="#id14" id="id6">3</a> :</p>
 <p><strong>Metafont</strong> is a description language used to define raster fonts. It is also the name of the interpreter that executes Metafont code, generating the bitmap fonts that can be embedded into some page description languages, eg. PostScript.</p>
 <p>One of the characteristics of Metafont is that the points defining the shapes of the glyphs are defined with geometrical equations.</p>
 <p>Another characteristic is that Metafont is a macro language, where operations such as “draw a lower case top of stem serif at point 4” might appear as one macro instruction (with the point as argument) in the program for a letter.</p>
 <p>Many families of Metafont fonts are set up so that the main source file for a font only defines a small number of design parameters (x-height, em width, slant, vertical stroke width, etc.), then calling a separate source file common for a whole range of fonts to actually draw the individual glyphs — this is the <strong>meta aspect</strong> of the system.</p>
 </div>
 <div class="section" id="ghostscript">
-<h2><a class="toc-backref" href="#id25">6 Ghostscript</a><a class="headerlink" href="#ghostscript" title="Permalink to this headline">¶</a></h2>
-<p>From Wikipedia  <a class="footnote-reference brackets" href="#id16" id="id7">6</a> :</p>
+<h2><a class="toc-backref" href="#id27">6 Ghostscript</a><a class="headerlink" href="#ghostscript" title="Permalink to this headline">¶</a></h2>
+<p>From Wikipedia  <a class="footnote-reference brackets" href="#id17" id="id7">6</a> :</p>
 <p><strong>Ghostscript</strong> is a suite of software based on an interpreter for PostScript (PS) and Portable Document Format (PDF) page description languages – as it takes the form of a language interpreter, it can also be used as a general purpose programming environment.</p>
 <p>Its main purposes are the rasterization or rendering of such page description language files, for the display or printing of document pages, and the conversion between PostScript and PDF files. It can also serve as the back-end for PDF to <strong>raster image converters</strong> (to, eg., png, tiff, jpeg, etc.)</p>
 <p>The <strong>ps2pdf</strong> conversion program comes with the ghostscript distribution.</p>
 </div>
 <div class="section" id="raster-image-converters">
-<h2><a class="toc-backref" href="#id26">7 Raster image converters</a><a class="headerlink" href="#raster-image-converters" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id28">7 Raster image converters</a><a class="headerlink" href="#raster-image-converters" title="Permalink to this headline">¶</a></h2>
 <p>As mentioned in § Ghostscript, rater image converters convert PostScript or PDF to raster images. Those include ps2gif, ps2png, ps2tiff, ps2tiff, etc.</p>
 </div>
 <div class="section" id="image-file-formats-compared">
-<h2><a class="toc-backref" href="#id27">8 Image file formats, compared</a><a class="headerlink" href="#image-file-formats-compared" title="Permalink to this headline">¶</a></h2>
-<p>Sources of the following summary include  <a class="footnote-reference brackets" href="#id17" id="id8">7</a> ,  <a class="footnote-reference brackets" href="#id18" id="id9">8</a></p>
+<h2><a class="toc-backref" href="#id29">8 Image file formats, compared</a><a class="headerlink" href="#image-file-formats-compared" title="Permalink to this headline">¶</a></h2>
+<p>Sources of the following summary include  <a class="footnote-reference brackets" href="#id18" id="id8">7</a> ,  <a class="footnote-reference brackets" href="#id19" id="id9">8</a></p>
 <ul class="simple">
 <li><p><strong>GIF</strong> (Graphics Interchange Format) is an old low-color image format, common on the web. It is suitable for simple graphics such as drawings, logos, icons, graphics with flat colors and graphics without gradients. A GIF can be animated and used for simple animations. Lossless. Can represent max 256 colors.</p></li>
 <li><p><strong>PNG</strong> (Portable Network Graphics) is another common web format with features such as compression ratio (except for photos) and transparency. But it cannot be animated. Great for icons. Lossless. Can represent max 256 colors (PNG-8) or unlimited colors (PNG-24).</p></li>
@@ -607,7 +667,7 @@
 <li><p><strong>TIFF</strong> (Tagged Image File Format) is a versatile image format. It has the ability to store multiple images, such as the pages of a scanned or faxed document.</p></li>
 <li><p><strong>SVG</strong> is good for graphics for high-dpi displays. vector and lossless. unlimited colors.</p>
 <ul>
-<li><p>DVI-to-SVG converters  <a class="footnote-reference brackets" href="#id11" id="id10">1</a> :</p>
+<li><p>DVI-to-SVG converters  <a class="footnote-reference brackets" href="#id12" id="id10">1</a> :</p>
 <ul>
 <li><p><strong>dvisvgm</strong> is the only one included in CTAN and actively maintained as of 2014.</p></li>
 <li><p><strong>dvisvg</strong></p></li>
@@ -619,39 +679,39 @@
 </ul>
 </div>
 <div class="section" id="xquartz">
-<h2><a class="toc-backref" href="#id28">9 XQuartz</a><a class="headerlink" href="#xquartz" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id30">9 XQuartz</a><a class="headerlink" href="#xquartz" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tlgmr</span> <span class="pre">-gui</span></code> TeX Live Manager</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">texdoctk</span></code> TeX Documentation Browser</p></li>
 </ul>
 </div>
 <div class="section" id="add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package">
-<h2><a class="toc-backref" href="#id29">10 Add section number to the pdf bookmark (outline) generated by hyperref package</a><a class="headerlink" href="#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">10 Add section number to the pdf bookmark (outline) generated by hyperref package</a><a class="headerlink" href="#add-section-number-to-the-pdf-bookmark-outline-generated-by-hyperref-package" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">\hypersetup{bookmarksnumbered}</span></code></p>
 </div>
 <div class="section" id="shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc">
-<h2><a class="toc-backref" href="#id30">11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a><a class="headerlink" href="#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">11 shorter space after the period mark (not end of the sentence but for abbreviations, etc)</a><a class="headerlink" href="#shorter-space-after-the-period-mark-not-end-of-the-sentence-but-for-abbreviations-etc" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">\&#64;</span></code> eg. <code class="docutils literal notranslate"><span class="pre">Ph.D.\&#64;Shim</span></code></p>
 </div>
 <div class="section" id="change-font-size-temporarily">
-<h2><a class="toc-backref" href="#id31">12 change font size temporarily</a><a class="headerlink" href="#change-font-size-temporarily" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">12 change font size temporarily</a><a class="headerlink" href="#change-font-size-temporarily" title="Permalink to this headline">¶</a></h2>
 <p>in the followings, we can replace <code class="docutils literal notranslate"><span class="pre">small</span></code> with the one among <code class="docutils literal notranslate"><span class="pre">tiny</span></code>, <code class="docutils literal notranslate"><span class="pre">scriptsize</span></code>, <code class="docutils literal notranslate"><span class="pre">footnotesize</span></code>, <code class="docutils literal notranslate"><span class="pre">small</span></code>, <code class="docutils literal notranslate"><span class="pre">normalsize</span></code>, <code class="docutils literal notranslate"><span class="pre">large</span></code>, <code class="docutils literal notranslate"><span class="pre">Large</span></code>, <code class="docutils literal notranslate"><span class="pre">LARGE</span></code>, <code class="docutils literal notranslate"><span class="pre">huge</span></code>, <code class="docutils literal notranslate"><span class="pre">Huge</span></code></p>
 <div class="section" id="of-an-area-begin-small-end-small">
-<h3><a class="toc-backref" href="#id32">12.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a><a class="headerlink" href="#of-an-area-begin-small-end-small" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">12.1 of an area <code class="docutils literal notranslate"><span class="pre">\begin{small}</span> <span class="pre">\end{small}</span></code></a><a class="headerlink" href="#of-an-area-begin-small-end-small" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="of-a-word-small-word">
-<h3><a class="toc-backref" href="#id33">12.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a><a class="headerlink" href="#of-a-word-small-word" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">12.2 of a word <code class="docutils literal notranslate"><span class="pre">{\small</span> <span class="pre">WORD}</span></code></a><a class="headerlink" href="#of-a-word-small-word" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="as-a-switcher-small">
-<h3><a class="toc-backref" href="#id34">12.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a><a class="headerlink" href="#as-a-switcher-small" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id36">12.3 as a switcher <code class="docutils literal notranslate"><span class="pre">\small</span></code></a><a class="headerlink" href="#as-a-switcher-small" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="putting-a-formula-inside-of-a-table-cell">
-<h2><a class="toc-backref" href="#id35">13 putting a formula inside of a table cell</a><a class="headerlink" href="#putting-a-formula-inside-of-a-table-cell" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id37">13 putting a formula inside of a table cell</a><a class="headerlink" href="#putting-a-formula-inside-of-a-table-cell" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">\parbox{.5em}{\begin{equation*}\end{equation*}}</span></code> (<code class="docutils literal notranslate"><span class="pre">.5em</span></code> indicates the size of the padding around the equation)</p>
 </div>
 <div class="section" id="variable">
-<h2><a class="toc-backref" href="#id36">14 variable</a><a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id38">14 variable</a><a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>add the following to preamble:</p>
 <div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\newCommandName</span><span class="nb">}{</span>text to insert<span class="nb">}</span>
@@ -662,39 +722,84 @@
 </ul>
 </div>
 <div class="section" id="setcounter-enumi">
-<h2><a class="toc-backref" href="#id37">15 setcounter enumi</a><a class="headerlink" href="#setcounter-enumi" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id39">15 setcounter enumi</a><a class="headerlink" href="#setcounter-enumi" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
   <span class="k">\setcounter</span><span class="nb">{</span>enumi<span class="nb">}{</span>4<span class="nb">}</span>
   <span class="k">\item</span> fifth element
 <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="newcommand-renewcommand">
+<h2><a class="toc-backref" href="#id40">16 newcommand / renewcommand</a><a class="headerlink" href="#newcommand-renewcommand" title="Permalink to this headline">¶</a></h2>
+<p>From  <a class="footnote-reference brackets" href="#id20" id="id11">9</a> :</p>
+<p>In LaTeX2ε, users can define commands and environments with up to nine arguments including up to one optional argument.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\newcommand</span> <span class="pre">{&lt;cmd&gt;}</span> <span class="pre">[&lt;num&gt;]</span> <span class="pre">[&lt;default&gt;]</span> <span class="pre">{&lt;definition&gt;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\newcommand*</span> <span class="pre">{&lt;cmd&gt;}</span> <span class="pre">[&lt;num&gt;]</span> <span class="pre">[&lt;default&gt;]</span> <span class="pre">{&lt;definition&gt;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\renewcommand</span> <span class="pre">{&lt;cmd&gt;}</span> <span class="pre">[&lt;num&gt;]</span> <span class="pre">[&lt;default&gt;]</span> <span class="pre">{&lt;definition&gt;}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\renewcommand*</span> <span class="pre">{&lt;cmd&gt;}</span> <span class="pre">[&lt;num&gt;]</span> <span class="pre">[&lt;default&gt;]</span> <span class="pre">{&lt;definition&gt;}</span></code></p></li>
+</ul>
+<p><strong>&lt;cmd&gt;</strong> is the name of the newly defined command</p>
+<p><strong>&lt;num&gt;</strong> is the number of arguments that will be referred as <code class="docutils literal notranslate"><span class="pre">#1</span></code>, <code class="docutils literal notranslate"><span class="pre">#2</span></code>, <code class="docutils literal notranslate"><span class="pre">#3</span></code>, etc in order without any enclosing delimiters.</p>
+<ul class="simple">
+<li><p>Omission: <code class="docutils literal notranslate"><span class="pre">[&lt;num&gt;]</span></code> part can be omitted when no optional or mandatory argument  is required at all. But it should be set to <code class="docutils literal notranslate"><span class="pre">1</span></code> even if an optional argument is needed.</p></li>
+<li><p>optional vs mandatory: the first argument, to be referred later by <code class="docutils literal notranslate"><span class="pre">#1</span></code>, will automatically be optional if <code class="docutils literal notranslate"><span class="pre">&lt;default&gt;</span></code> is provided. Others, starting from <code class="docutils literal notranslate"><span class="pre">#2</span></code>, then become mandatory.</p></li>
+</ul>
+<p><strong>&lt;default&gt;</strong> provides the default value for the first argument that becomes optional.</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">[&lt;default&gt;]</span></code> is omitted, all the arguments will be regarded as mandatory.</p></li>
+<li><p>Thus, if we want to make an argument optional with empty value, we still need to specify <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p></li>
+</ul>
+<p><strong>&lt;definition&gt;</strong> literally defines a <code class="docutils literal notranslate"><span class="pre">&lt;cmd&gt;</span></code>.</p>
+<p>We use thus defined <code class="docutils literal notranslate"><span class="pre">&lt;cmd&gt;</span></code> in the document as the following:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\cmd</span><span class="nb">{</span>#1<span class="nb">}{</span>#2<span class="nb">}{</span>#3<span class="nb">}</span>...
+</pre></div>
+</div>
+<p>and when there is an optional argument,</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\cmd</span><span class="na">[#1]</span><span class="nb">{</span>#2<span class="nb">}{</span>#3<span class="nb">}</span>...
+</pre></div>
+</div>
+</div>
+<div class="section" id="temp">
+<h2><a class="toc-backref" href="#id41">17 temp</a><a class="headerlink" href="#temp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tds">
+<h3><a class="toc-backref" href="#id42">17.1 TDS</a><a class="headerlink" href="#tds" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>standard TEX Directory Structure</strong> (<strong>TDS</strong>) is a name for a directory hierarchy for macros, fonts, and the other implementation-independent TeX system files.</p>
+</div>
+<div class="section" id="texmf">
+<h3><a class="toc-backref" href="#id43">17.2 texmf</a><a class="headerlink" href="#texmf" title="Permalink to this headline">¶</a></h3>
+<p>We shall designate the root TDS directory by <code class="docutils literal notranslate"><span class="pre">texmf</span></code> (that stands for “TEX and MetaFont”).</p>
 <dl class="footnote brackets">
-<dt class="label" id="id11"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id10">2</a>)</span></dt>
+<dt class="label" id="id12"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id10">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Device_independent_file_format">https://en.wikipedia.org/wiki/Device_independent_file_format</a></p>
 </dd>
-<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/PostScript">https://en.wikipedia.org/wiki/PostScript</a></p>
 </dd>
-<dt class="label" id="id13"><span class="brackets">3</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>)</span></dt>
+<dt class="label" id="id14"><span class="brackets">3</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Metafont">https://en.wikipedia.org/wiki/Metafont</a></p>
 </dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Encapsulated_PostScript">https://en.wikipedia.org/wiki/Encapsulated_PostScript</a></p>
 </dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Computer_font">https://en.wikipedia.org/wiki/Computer_font</a></p>
 </dd>
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id7">6</a></span></dt>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id7">6</a></span></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Ghostscript">https://en.wikipedia.org/wiki/Ghostscript</a></p>
 </dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id8">7</a></span></dt>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id8">7</a></span></dt>
 <dd><p><a class="reference external" href="https://www.aivosto.com/articles/imageformats.html">https://www.aivosto.com/articles/imageformats.html</a></p>
 </dd>
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id9">8</a></span></dt>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id9">8</a></span></dt>
 <dd><p><a class="reference external" href="https://www.sitepoint.com/gif-png-jpg-which-one-to-use/">https://www.sitepoint.com/gif-png-jpg-which-one-to-use/</a></p>
 </dd>
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id11">9</a></span></dt>
+<dd><p>LaTeX3 Project Team, <em>LaTeX2ε for authors</em>, 25 May 2020</p>
+</dd>
 </dl>
+</div>
 </div>
 </div>
 
@@ -719,7 +824,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, hbshim@gmail.com
+        &copy; Copyright 2020, Hyungbo Shim (hbshim@gmail.com) (content originality not claimed at all if otherwise obvious from the context)
 
     </p>
   </div>

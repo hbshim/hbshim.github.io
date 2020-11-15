@@ -86,15 +86,15 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">1 Abbrevs mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">1.1 options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">1 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">2 (Auto)reverting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">3 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">4 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#abbrevs-mode">5 Abbrevs mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#options">5.1 options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ansi-term-mode">2 <code class="docutils literal notranslate"><span class="pre">(ansi-)term</span></code> mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">3 Bookmarks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">4 helm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#buffers">5 <code class="docutils literal notranslate"><span class="pre">\*buffers*</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#kill-buffer">6 <code class="docutils literal notranslate"><span class="pre">\*kill-buffer*</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#bookmarks">6 Bookmarks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#case-conversion-a-a">7 Case conversion A &lt;-&gt; a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="emacs.html#deleting-and-killing">8 Deleting and killing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#deleting-by-character">8.1 Deleting by character</a></li>
@@ -109,58 +109,60 @@
 <li class="toctree-l3"><a class="reference internal" href="emacs.html#id1">9.6 options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">10 File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">11 Find/replace</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">12 font</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">13 frames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">14 help and info</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">14.1 Browsing inside info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">10 emacsclient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#file">11 File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#find-replace">12 Find/replace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#font">13 font</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#frames">14 frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#helm">15 helm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#help-and-info">16 help and info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#browsing-inside-info">16.1 Browsing inside info</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">15 history</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">16 ispell (flyspell)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">17 Key-binding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">18 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">19 Moving around</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">19.1 by characters/lines</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">19.2 by words</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">19.3 horizontally</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">19.4 by sentence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">19.5 by paragraph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">19.6 by matching parentheses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">19.7 by buffer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">19.8 by page</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">19.9 back to previous position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">19.10 GO TO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">17 Hide-show mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#history">18 history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#ispell-flyspell">19 ispell (flyspell)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#key-binding">20 Key-binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">21 Magit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#menubar-f10">22 Menubar <code class="docutils literal notranslate"><span class="pre">F10</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#modes-listing-all-major-and-minor">23 Modes, listing all major and minor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#moving-around">24 Moving around</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-characters-lines">24.1 by characters/lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-words">24.2 by words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#horizontally">24.3 horizontally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-sentence">24.4 by sentence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-paragraph">24.5 by paragraph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-matching-parentheses">24.6 by matching parentheses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-buffer">24.7 by buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#by-page">24.8 by page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#back-to-previous-position">24.9 back to previous position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#go-to">24.10 GO TO</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">20 Outline minor mode</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">20.1 Motion commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">20.2 Visibility commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#outline-minor-mode">25 Outline minor mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#motion-commands">25.1 Motion commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#visibility-commands">25.2 Visibility commands</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">21 Reference sites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">22 Region/Mark</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">23 Registers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">24 Select</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">25 Sessions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">26 Symbol</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">27 Timestamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">28 windows</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">28.1 transpose windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">26 Performance profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#reference-sites">27 Reference sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#region-mark">28 Region/Mark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#registers">29 Registers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#select">30 Select</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#sessions">31 Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#symbol">32 Symbol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#timestamp">33 Timestamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#variables">34 Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">35 Visual line mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#windows">36 windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#transpose-windows">36.1 transpose windows</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">29 YASnippet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs.html#variables">29.1 variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emacs.html#yasnippet">37 YASnippet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#id2">37.1 variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emacs.html#suppressing-warnings">37.2 Suppressing warnings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#id2">30 Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#visual-line-mode">31 Visual line mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#auto-reverting">32 (Auto)reverting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#performance-profiling">33 Performance profiling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#emacsclient">34 emacsclient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#magit">35 Magit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emacs.html#hide-show-mode">36 Hide-show mode</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="orgmode.html">Orgmode and Emacs Diary</a><ul>
@@ -172,8 +174,11 @@
 <li class="toctree-l3"><a class="reference internal" href="orgmode.html#id1">2.1 Variables</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-block">4 Example block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#code-block">3 Code block</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="orgmode.html#todo-state-options-n-n-numbering-r-l">3.1 TODO state options, +n, -n, numbering, -r, -l</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="orgmode.html#example-verse-quote-center-blocks">4 Example/Verse/Quote/Center blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orgmode.html#export-options">5 Export options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="orgmode.html#exporting">6 Exporting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="orgmode.html#html-export-command">6.1 HTML export command</a></li>
@@ -230,7 +235,11 @@
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#useful-functions">5 useful functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#customization-options">6 customization options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auctex.html#hooks">7 hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auctex.html#tmp-items">8 Tmp items</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#functions">8.1 functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="auctex.html#variables">8.2 variables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex.html">LaTeX</a><ul>
@@ -254,20 +263,18 @@
 <li class="toctree-l2"><a class="reference internal" href="latex.html#putting-a-formula-inside-of-a-table-cell">13 putting a formula inside of a table cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex.html#variable">14 variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex.html#setcounter-enumi">15 setcounter enumi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#newcommand-renewcommand">16 newcommand / renewcommand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex.html#temp">17 temp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#tds">17.1 TDS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex.html#texmf">17.2 texmf</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="spectral_sequences_pkg.html">LaTeX Pkg: spectralsequences</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#environment-structure">1 Environment structure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spectral_sequences_pkg.html#global-options">1.1 Global options</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#classes">2 Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#differentials">3 Differentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#grouping">4 Grouping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spectral_sequences_pkg.html#commands">5 Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spectral_sequences_pkg.html#loops">5.1 Loops</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="latex_pkg_preview.html">LaTeX Pkg: preview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex_pkg_preview.html#package-options">1 Package options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex_pkg_preview.html#environments">2 Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex_pkg_preview.html#commands">3 Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git</a><ul>
@@ -292,17 +299,18 @@
 <li class="toctree-l2"><a class="reference internal" href="git.html#branch-create-new">19 branch: create new</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#branch-remove">20 branch: remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git.html#merge-head-master">21 merge: HEAD -&gt; master</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">22 Stash: save</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">23 stash: list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">24 stash: apply</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#clone">25 clone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">26 remote: add/remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">27 remote: list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">28 fetch: local repository &lt;- remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">29 push: local repository -&gt; remote repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">30 rebase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">31 cherry-pick</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#tag">32 tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#restore">22 restore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-save">23 Stash: save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-list">24 stash: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#stash-apply">25 stash: apply</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#clone">26 clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-add-remove">27 remote: add/remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remote-list">28 remote: list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#fetch-local-repository-remote-repository">29 fetch: local repository &lt;- remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#push-local-repository-remote-repository">30 push: local repository -&gt; remote repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#rebase">31 rebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#cherry-pick">32 cherry-pick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#tag">33 tag</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coq.html">Coq</a><ul>
@@ -395,6 +403,56 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="elisp.html#to-be-organized-later">3 to be organized later</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#functions">4 functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id5">4.1 <code class="docutils literal notranslate"><span class="pre">defcustom</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#append">4.2 <code class="docutils literal notranslate"><span class="pre">append</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#list">4.3 <code class="docutils literal notranslate"><span class="pre">list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#expand-file-name">4.4 <code class="docutils literal notranslate"><span class="pre">expand-file-name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#file-relative-name">4.5 <code class="docutils literal notranslate"><span class="pre">file-relative-name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#or">4.6 <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#and">4.7 <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#boundp">4.8 <code class="docutils literal notranslate"><span class="pre">boundp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#concat">4.9 <code class="docutils literal notranslate"><span class="pre">concat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#mapc">4.10 <code class="docutils literal notranslate"><span class="pre">mapc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#when">4.11 <code class="docutils literal notranslate"><span class="pre">when</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#setq">4.12 <code class="docutils literal notranslate"><span class="pre">setq</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#nreverse">4.13 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#repeat">4.14 <code class="docutils literal notranslate"><span class="pre">repeat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#set">4.15 <code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#cond">4.16 <code class="docutils literal notranslate"><span class="pre">cond</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#string-match-match">4.17 <code class="docutils literal notranslate"><span class="pre">string-match</span></code>, <code class="docutils literal notranslate"><span class="pre">match-...</span></code>,</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="elisp.html#string-match">4.17.1 <code class="docutils literal notranslate"><span class="pre">string-match</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="elisp.html#match-string">4.17.2 <code class="docutils literal notranslate"><span class="pre">match-string</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="elisp.html#match-beginning">4.17.3 <code class="docutils literal notranslate"><span class="pre">match-beginning</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="elisp.html#match-end">4.17.4 <code class="docutils literal notranslate"><span class="pre">match-end</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="elisp.html#example">4.17.5 Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#substring">4.18 <code class="docutils literal notranslate"><span class="pre">substring</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#if">4.19 <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#stringp">4.20 <code class="docutils literal notranslate"><span class="pre">stringp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#file-name-directory">4.21 <code class="docutils literal notranslate"><span class="pre">file-name-directory</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#dolist">4.22 <code class="docutils literal notranslate"><span class="pre">dolist</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#assoc">4.23 <code class="docutils literal notranslate"><span class="pre">assoc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#id6">4.24 <code class="docutils literal notranslate"><span class="pre">nreverse</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#variables">5 variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#user-emacs-directory">5.1 <code class="docutils literal notranslate"><span class="pre">user-emacs-directory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#terms">6 Terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#customization-group">6.1 customization group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#widget-type">6.2 widget type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#parenthesis-constructions">6.3 parenthesis constructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#cond-form">6.4 cond form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#mapping-function">6.5 mapping function</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elisp.html#temp">7 temp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elisp.html#variable-scope-and-shadowing">7.1 Variable scope and shadowing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mathjaxtest.html">MathJax Test</a></li>
@@ -508,7 +566,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, hbshim@gmail.com
+        &copy; Copyright 2020, Hyungbo Shim (hbshim@gmail.com) (content originality not claimed at all if otherwise obvious from the context)
 
     </p>
   </div>

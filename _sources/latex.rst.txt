@@ -3,7 +3,7 @@ LaTeX
 =====
 
     :Author: Hyungbo Shim
-    :Date: November 11, 2020
+    :Date: November 12, 2020
 
 .. contents::
 
@@ -184,6 +184,62 @@ in the followings, we can replace ``small`` with the one among ``tiny``, ``scrip
       \item fifth element
     \end{enumerate}
 
+16 newcommand / renewcommand
+----------------------------
+
+From  [9]_ :
+
+In LaTeX2ε, users can define commands and environments with up to nine arguments including up to one optional argument.
+
+- ``\newcommand {<cmd>} [<num>] [<default>] {<definition>}``
+
+- ``\newcommand* {<cmd>} [<num>] [<default>] {<definition>}``
+
+- ``\renewcommand {<cmd>} [<num>] [<default>] {<definition>}``
+
+- ``\renewcommand* {<cmd>} [<num>] [<default>] {<definition>}``
+
+**<cmd>** is the name of the newly defined command
+
+**<num>** is the number of arguments that will be referred as ``#1``, ``#2``, ``#3``, etc in order without any enclosing delimiters.
+
+- Omission: ``[<num>]`` part can be omitted when no optional or mandatory argument  is required at all. But it should be set to ``1`` even if an optional argument is needed.
+
+- optional vs mandatory: the first argument, to be referred later by ``#1``, will automatically be optional if ``<default>`` is provided. Others, starting from ``#2``, then become mandatory.
+
+**<default>** provides the default value for the first argument that becomes optional.
+
+- If ``[<default>]`` is omitted, all the arguments will be regarded as mandatory.
+
+- Thus, if we want to make an argument optional with empty value, we still need to specify ``[]``.
+
+**<definition>** literally defines a ``<cmd>``.
+
+We use thus defined ``<cmd>`` in the document as the following:
+
+.. code:: tex
+
+    \cmd{#1}{#2}{#3}...
+
+and when there is an optional argument,
+
+.. code:: tex
+
+    \cmd[#1]{#2}{#3}...
+
+17 temp
+-------
+
+17.1 TDS
+~~~~~~~~
+
+A **standard TEX Directory Structure** (**TDS**) is a name for a directory hierarchy for macros, fonts, and the other implementation-independent TeX system files.
+
+17.2 texmf
+~~~~~~~~~~
+
+We shall designate the root TDS directory by ``texmf`` (that stands for "TEX and MetaFont").
+
 
 .. [1] `https://en.wikipedia.org/wiki/Device_independent_file_format <https://en.wikipedia.org/wiki/Device_independent_file_format>`_
 
@@ -200,3 +256,5 @@ in the followings, we can replace ``small`` with the one among ``tiny``, ``scrip
 .. [7] `https://www.aivosto.com/articles/imageformats.html <https://www.aivosto.com/articles/imageformats.html>`_
 
 .. [8] `https://www.sitepoint.com/gif-png-jpg-which-one-to-use/ <https://www.sitepoint.com/gif-png-jpg-which-one-to-use/>`_
+
+.. [9] LaTeX3 Project Team, *LaTeX2ε for authors*, 25 May 2020

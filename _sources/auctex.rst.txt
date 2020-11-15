@@ -2,7 +2,7 @@
 AUCTeX
 ======
 
-    :Date: November 09, 2020
+    :Date: November 15, 2020
 
 
 
@@ -43,11 +43,21 @@ AUCTeX
 3 style files
 -------------
 
-It was advertised that we can automate certain repetitive types of editing by using "style files" but none of the following material introduced in the official \\\*info\\\* page DIDN'T WORK!! It was not even clear at all how AUCTeX chooses and loads certain style files although it seems I could use ``TeX-run-style-hooks`` function for it. 
+AUCTeX automatically parses the LaTeX source file and follows included packages and also parse them to generate style files for each file of the same names (one for each). With the proper style files, we can use ``C-c C-m`` (``TeX-insert-macro``) and ``C-c C-e`` (``LaTeX-environment``) to make inserting macros and environment easily.
 
-It turned out that **``amsthm.el`` was aggressively stealing charge of all of the environment settings by overwriting every custom styles I made**, so it seems better to rely on the minimum automatic parsing feature by putting some trivial, if not look dumb, declarations like ``\newcommand{\triangleright}{\triangleright}``, in the latex preamble expecting to be recognized by AUCTeX. 
+However, problems may occur if some of the macros were not explicitly specified by any of the included packages, or even if they're explicitly defined, AUCTeX may fail to recognize them. For example, the symbol ``\triangleright`` is kind of 'basic' so that we can use it without any packages defining it. Moreover, while the package ``spectralsequences`` defines a command ``\DoUntilOutOfBoundsThenNMore``, AUCTeX does not catch it into the auto generated style file so that we will have to type it carefully.
 
-Of course, I'm sure that I could dig in more to make it work in a way that AUCTeX originally intended, but it doesn't seem worth the effort at all.
+These issues can be very annoying that it is very easy to make insert wrong symbol, like ``\ntriangleright`` instead of ``\triangleright`` which totally changes the meaning of expressions unknowingly, and once we make a typo ``\DoUntilOutOfBoundsThenNMore``, the misspelled command remains in the history so that we have to check those name carefully whenever we choose one.
+
+Funny thing with AUCTeX is that it seems it's keeping away users from making their own customization. **This is very 'un-Emacs way"** in a sense that **it forces users to take what it generates** and makes customizing it very hard. 
+
+If you just put ``style/mysymbol.el`` to add new symbol ``\triangleright``, that style will be NEVER LOADED unless you have ``\documentclass{mysymbol}`` of ``\usepackage{mysymbol}``. If you already had ``\usepackage{mysymbol}``, yours will be ignored if AUCTeX parsed first and generated  ``auto/mysymbol.el``.
+
+If you try to complement ``auto/spectralsequences.el`` to add the command ``\DoUntilOutOfBoundsThenNMore`` directly, our new style will be thrown out by the AUCTeX parses again next time. If you put ``style/spectralsequences.el`` with the new command, it also will be NEVER LOADED because ``auto/spectralsequences.el`` loaded first and once a style is loaded, another style with the same name is just ignored even it has a different contents.
+
+The solution is absurdly simple and it doesn't make any sense that the official info pages doesn't mention it at all. We can create an empty file ``./mysybol.sty`` and include ``\usepackage{mysymbol}`` in the latex preamble, then place the custom style ``style/mysymbol.el`` before saving the latex file so that AUCTeX kicks in to generate ``auto/mysymbol.el`` to make it just ignore ``style/mysymbol.el``.
+
+My impression is that, AUCTeX is bloated and tries to do too many things while putting many things under the rug. If you don't like something with AUCTeX, you'll have hard time just to figure out how you can change it. You may not believe this but **it took over a week to just find the freaking simple solution putting empty style. It involved days of digging into the source tex.el to just understand how AUCTeX picks what styles to loads and how it does.**
 
 3.1 Adding style hooks
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -428,6 +438,46 @@ This contains locations for globally or personally defined TeX macros because AU
 8 Tmp items
 -----------
 
+8.1 functions
+~~~~~~~~~~~~~
+
 - ``LaTeX-begin-regexp`` an regexp matching macros considered begins
 
-- 
+- ``TeX-add-style-hook``
+
+- ``TeX-unload-style``
+
+- ``TeX-run-style-hooks``
+
+- ``TeX-update-style``
+
+- ``(TeX-style-list)`` Return a list of all styles (subfiles) used by the current document.
+
+- ``(TeX-style-check STYLES)`` Check STYLES compared to the current style options.
+
+- ``(TeX-update-style &optional FORCE)`` Run style specific hooks for the current document. Only do this if it has not been done before, or if optional argument FORCE is not nil.
+
+- ``(TeX-remove-style)`` Remove all style specific information.
+
+- ``(TeX-unload-style STYLE &optional DIALECT-LIST)`` Forget that we once loaded STYLE. If DIALECT-LIST is provided the STYLE is only removed for those dialects in DIALECT-LIST.
+
+- ``(TeX-match-style REGEXP)`` Check if a style matching REGEXP is active.
+
+- ``(TeX-add-style-hook STYLE HOOK &optional DIALECT-EXPR)`` Give STYLE yet another HOOK to run. DIALECT-EXPR serves the purpose of marking the hook to be run only in that dicontext.
+
+- ``(TeX-run-style-hooks &rest STYLES)`` Run the TeX style hooks STYLES.
+
+- ``(TeX-load-style-file FILE)`` Load FILE checking for a Lisp extensions.
+
+8.2 variables
+~~~~~~~~~~~~~
+
+- ``TeX-active-styles`` List of styles currently active in the document. Automatically becomes buffer-local when set.
+
+- ``TeX-update-style-hook`` Hook run as soon as style specific hooks were applied. This variable may be risky if used as a file-local variable.
+
+- ``TeX-style-hook-list`` List of TeX style hooks currently loaded. Each entry is a list: ``(STYLE HOOK1 HOOK2 ...)`` where the first element STYLE is the name of the style, and the remaining elements HOOKN, if any, are hooks to be run when that style is active. This set is instantiated by function ‘TeX-add-style-hook’ through functions manipulating style hook dialect expression named with a ‘TeX-shdex-’ prefix.
+
+- ``TeX-remove-style-hook`` List of hooks to call when we remove the style specific information.
+
+- ``TeX-style-hook-applied-p`` Nil, unless the style specific hooks have been applied. Automatically becomes buffer-local when set.

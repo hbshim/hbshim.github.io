@@ -2,7 +2,7 @@
 Git
 ===
 
-    :Date: Tue May 26 12:21:12 2020
+    :Date: November 11, 2020
 
 .. contents::
 
@@ -328,7 +328,16 @@ If all named commits are already ancestors of HEAD, git merge will exit early wi
 
     git branch -d <BRANCH>
 
-22 Stash: save
+22 restore
+----------
+
+.. code:: bash
+
+    $ git checkout <branch> <filename>
+
+will bring back ``<filename>`` from ``<branch>``. This can be used when we want to restore a deleted or modified file.
+
+23 Stash: save
 --------------
 
 To save working directory without staging:
@@ -343,7 +352,7 @@ To stash with comment:
 
     git stash save "<comment>"
 
-23 stash: list
+24 stash: list
 --------------
 
 To list all stashes:
@@ -358,7 +367,7 @@ To list all stashes with changes:
 
     git stash list -p
 
-24 stash: apply
+25 stash: apply
 ---------------
 
 .. code:: shell
@@ -371,14 +380,14 @@ To list all stashes with changes:
 
 Here, ``<LABEL>`` is the one given by ``stash list``
 
-25 clone
+26 clone
 --------
 
 .. code:: shell
 
     git clone git@github.com:name/git.git
 
-26 remote: add/remove
+27 remote: add/remove
 ---------------------
 
 To add a new remote:
@@ -402,7 +411,7 @@ To remove:
 
 After modifying remote/upstream, run ``git remote -v`` to verify.
 
-27 remote: list
+28 remote: list
 ---------------
 
 To list remotes (short names only):
@@ -423,7 +432,7 @@ To list remotes verbosely:
 
     git remote -v
 
-28 fetch: local repository <- remote repository
+29 fetch: local repository <- remote repository
 -----------------------------------------------
 
 .. code:: shell
@@ -448,7 +457,7 @@ The error "fatal: refusing to merge unrelated histories" may occur when we try t
 
     git pull <REMOTE> <BRANCH> --allow-unrelated-histories
 
-29 push: local repository -> remote repository
+30 push: local repository -> remote repository
 ----------------------------------------------
 
 .. code:: shell
@@ -476,7 +485,7 @@ The error "fatal: refusing to merge unrelated histories" may occur when we try t
 
     $ git push -f
 
-30 rebase
+31 rebase
 ---------
 
 To "operate on" the last <n> commits back from HEAD:
@@ -495,10 +504,10 @@ Interactive commands:
 
 We can also reorder commits by changing the order of the lines.
 
-31 cherry-pick
+32 cherry-pick
 --------------
 
-32 tag
+33 tag
 ------
 
 To list tags,

@@ -2,11 +2,57 @@
 Emacs
 =====
 
-    :Date: November 10, 2020
+    :Date: November 14, 2020
 
 
 
-1 Abbrevs mode
+1 ``(ansi-)term`` mode
+----------------------
+
+- ``C-c C-j`` (``term-line-mode``) switch to line mode (acts like an editor).
+
+- ``C-c C-k`` (``term-char-mode``) switch to char mode (acts like a usual terminal).
+
+- ``C-c C-c`` (``term-interrupt-subjob``) send a literal ``C-c`` to the sub-shell
+
+- ``C-c <char>`` is equivalent to ``C-x <char>`` in normal Emacs modes, e.g. ``C-c o`` invokes the global binding of ``C-x o`` which is normally \`~other-window~'
+
+- ``C-c C-q`` (``term-pager-toggle``) toggle the page-at-a-time feature. When enabled, the mode-line displays the word \`~page~' and each time Term receives more than a screenful of output, it pauses and displays \`~\*\*MORE\*\*~' in the mode-line where ``<SPC>`` displays the next screenful of output and ``?`` displays the other options -- the interface is similar to the ``more`` program.
+
+- When the bash complains “cannot read termcap database”, then create a symlink ``~/.terminfo/65 -> /usr/local/share/emacs/26.3/etc/e`` that is another symlink to ``/usr/local/Cellar/emacs-mac/emacs-26.3-z-mac-7.7/share/emacs/26.3/etc/``. Sources say that the name of directory should be ``e`` but in this macos it has to be ``65``. Check this by ``ls /usr/share/terminfo`` and then ``sudo find /usr/share/terminfo -name "eterm*"``.
+
+2 (Auto)reverting
+-----------------
+
+- See `info:emacs#Autorevert <emacs#Autorevert>`_
+
+3 ``\*buffers*``
+----------------
+
+- ``C-x C-b`` helm-buffers
+
+- ``M-SPC`` or ``C-SPC`` mark
+
+- ``C-x >`` and ``C-x <`` horizontal scroll
+
+- ``C-x C-s``  save buffer without leaving Helm
+
+- ``C-x s`` save all unsaved buffers
+
+- ``C-c d`` delete buffer without leaving Helm
+
+- ``M-D`` delete marked buffers and leave Helm
+
+- ``C-x k`` is meant to kill buffers but cannot kill multiple buffers selected by ``C-SPC`` with ``RET``.
+
+4 ``\*kill-buffer*``
+--------------------
+
+- This seems only useful when killing the currently opened buffer
+
+- ``C-x k`` open kill-buffer
+
+5 Abbrevs mode
 --------------
 
 - `https://www.emacswiki.org/emacs/AbbrevMode <https://www.emacswiki.org/emacs/AbbrevMode>`_
@@ -25,29 +71,14 @@ Emacs
 
   - ``C-x C-s`` (``abbrev-edit-save-buffer``) Redefine and save to abbrev file.
 
-1.1 options
+5.1 options
 ~~~~~~~~~~~
 
 - ``abbrev-file-name`` The abbrevs is saved in a file at a path specified by this variable (default: ``\~/.emacs.d/abbrev_defs``)
 
 - ``save-abbrevs``
 
-2 ``(ansi-)term`` mode
-----------------------
-
-- ``C-c C-j`` (``term-line-mode``) switch to line mode (acts like an editor).
-
-- ``C-c C-k`` (``term-char-mode``) switch to char mode (acts like a usual terminal).
-
-- ``C-c C-c`` (``term-interrupt-subjob``) send a literal ``C-c`` to the sub-shell
-
-- ``C-c <char>`` is equivalent to ``C-x <char>`` in normal Emacs modes, e.g. ``C-c o`` invokes the global binding of ``C-x o`` which is normally \`~other-window~'
-
-- ``C-c C-q`` (``term-pager-toggle``) toggle the page-at-a-time feature. When enabled, the mode-line displays the word \`~page~' and each time Term receives more than a screenful of output, it pauses and displays \`~\*\*MORE\*\*~' in the mode-line where ``<SPC>`` displays the next screenful of output and ``?`` displays the other options -- the interface is similar to the ``more`` program.
-
-- When the bash complains “cannot read termcap database”, then create a symlink ``~/.terminfo/65 -> /usr/local/share/emacs/26.3/etc/e`` that is another symlink to ``/usr/local/Cellar/emacs-mac/emacs-26.3-z-mac-7.7/share/emacs/26.3/etc/``. Sources say that the name of directory should be ``e`` but in this macos it has to be ``65``. Check this by ``ls /usr/share/terminfo`` and then ``sudo find /usr/share/terminfo -name "eterm*"``.
-
-3 Bookmarks
+6 Bookmarks
 -----------
 
 - ``C-x r m`` (``bookmark-set``) Set the bookmark for the visited file, at point
@@ -67,45 +98,6 @@ Emacs
   - ``r`` rename current item's title
 
   - ``s`` save the change
-
-4 helm
-------
-
-- ``RET`` executes the default action upon exiting the Helm session
-
-- ``C-j`` executes the default action but without exiting the Helm session
-
-- ``TAB`` displays a list of actions available
-
-- ``C-@`` mark/unmark a candidate
-
-- ``M-U`` unmark all visible marked candidates at once
-
-5 ``\*buffers*``
-----------------
-
-- ``C-x C-b`` helm-buffers
-
-- ``M-SPC`` or ``C-SPC`` mark
-
-- ``C-x >`` and ``C-x <`` horizontal scroll
-
-- ``C-x C-s``  save buffer without leaving Helm
-
-- ``C-x s`` save all unsaved buffers
-
-- ``C-c d`` delete buffer without leaving Helm
-
-- ``M-D`` delete marked buffers and leave Helm
-
-- ``C-x k`` is meant to kill buffers but cannot kill multiple buffers selected by ``C-SPC`` with ``RET``.
-
-6 ``\*kill-buffer*``
---------------------
-
-- This seems only useful when killing the currently opened buffer
-
-- ``C-x k`` open kill-buffer
 
 7 Case conversion A <-> a
 -------------------------
@@ -241,21 +233,28 @@ Emacs
 
 - ``Dired-Listing-Switches``
 
-10 File
+10 emacsclient
+--------------
+
+.. code:: shell
+
+    emacsclient -e '(with-current-buffer "Downloads" (dired-previous-line 3))'
+
+11 File
 -------
 
 - save: ``C-x C-s``
 
 - save as: ``C-x C-w``
 
-11 Find/replace
+12 Find/replace
 ---------------
 
 - incremental search: ``C-s`` (forward), ``C-r`` (backward)
 
 - find all occurrence: ``M-s o`` (``occur``)
 
-12 font
+13 font
 -------
 
 - M-x customize-face<RET>default<RET>
@@ -264,7 +263,7 @@ Emacs
 
 - ``C-x C-0`` reset to the default font size
 
-13 frames
+14 frames
 ---------
 
 - ``C-x 5 2`` (``make-frame-command``) create a new frame
@@ -275,7 +274,20 @@ Emacs
 
 - ``C-x 5 o`` cycle and select other frames
 
-14 help and info
+15 helm
+-------
+
+- ``RET`` executes the default action upon exiting the Helm session
+
+- ``C-j`` executes the default action but without exiting the Helm session
+
+- ``TAB`` displays a list of actions available
+
+- ``C-@`` mark/unmark a candidate
+
+- ``M-U`` unmark all visible marked candidates at once
+
+16 help and info
 ----------------
 
 - ``C-h i`` (``info``) run Info, the GNU documentation browser
@@ -298,26 +310,41 @@ Emacs
 
 - ``C-h a <keyword>`` or ``M-x <keyword>`` (command apropos) list all the commands whose names contain that keyword. Eg. ``C-h a file<RET>`` displays a list of all ``M-x`` commands with "file" in their names with character-command.
 
-14.1 Browsing inside info
+16.1 Browsing inside info
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``L`` (``Info-history``), ``l`` (``Info-history-back``), ``r`` (``Info-history-forward``)
 
 - ``^`` (``Info-up``)
 
-15 history
+17 Hide-show mode
+-----------------
+
+- ``hs-minor-mode``
+
+- ``C-c @ C-a``, ``C-c @ C-M-s`` (``hs-show-all``)
+
+- ``C-c @ C-t``, ``C-c @ C-M-h`` (``hs-hide-all``)
+
+- ``C-c @ C-s`` (``hs-show-block``) Select a block and show it.
+
+- ``hs-hide-block`` Select a block and hide it.
+
+- ``C-c @ C-e``, ``C-c @ C-c`` (``hs-toggle-hiding``) Toggle hiding/showing of a block.
+
+18 history
 ----------
 
 - ``C-h l`` (``view-lossage``) Display last few input keystrokes and the commands run.
 
-16 ispell (flyspell)
+19 ispell (flyspell)
 --------------------
 
 - ``M-$`` Check and correct spelling of the word at point (ispell-word). If the region is active, do it for all words in the region instead.
 
   - ``i`` Insert this word in your private dictionary file so that it will be considered correct from now on, even in future sessions.
 
-17 Key-binding
+20 Key-binding
 --------------
 
 In case of conflict between key-bindings with major or minor modes, we can add a hook as the following to remove or change the undesired key-bindings. Once 'unbounded', the it will be bound to another mode in lower priority.
@@ -329,56 +356,64 @@ In case of conflict between key-bindings with major or minor modes, we can add a
                 (define-key reftex-mode-map "\C-c&" nil)
                 (define-key reftex-mode-map "\C-c(" 'my-insert-label)))
 
-18 Menubar ``F10``
+21 Magit
+--------
+
+22 Menubar ``F10``
 ------------------
 
-19 Moving around
+23 Modes, listing all major and minor
+-------------------------------------
+
+- ``C-h m`` (``M-x describe-mode``) Display documentation of current major mode and minor modes.
+
+24 Moving around
 ----------------
 
-19.1 by characters/lines
+24.1 by characters/lines
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-b~/~C-f`` move back/forward by one character
 
 - ``C-p~/~C-n`` move up/down by one line
 
-19.2 by words
+24.2 by words
 ~~~~~~~~~~~~~
 
 - ``M-b~/~M-f`` move back/forward by one word
 
-19.3 horizontally
+24.3 horizontally
 ~~~~~~~~~~~~~~~~~
 
 - ``C-a~/~C-e`` move to the beginning/end of the line
 
 - ``M-m`` (``back-to-indentation``) Jump to first non-whitespace character of the line
 
-19.4 by sentence
+24.4 by sentence
 ~~~~~~~~~~~~~~~~
 
 - ``M-a~/~M-e`` move to the beginning/end of the sentence
 
-19.5 by paragraph
+24.5 by paragraph
 ~~~~~~~~~~~~~~~~~
 
 - ``M-{`` (``backward-paragraph``) Move back to previous paragraph beginning
 
 - ``M-}`` (``forward-paragraph``) Move forward to next paragraph end.
 
-19.6 by matching parentheses
+24.6 by matching parentheses
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-M-f`` (``forward-sexp``)
 
 - ``C-M-b`` (``backward-sexp``)
 
-19.7 by buffer
+24.7 by buffer
 ~~~~~~~~~~~~~~
 
 - ``M-<`` ``M->`` move to the beginning/end of the buffer
 
-19.8 by page
+24.8 by page
 ~~~~~~~~~~~~
 
 - ``C-v`` ``M-v`` page down/up by one page
@@ -387,19 +422,19 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - ``C-l`` Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen
 
-19.9 back to previous position
+24.9 back to previous position
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-<SPC>`` Set the mark at point
 
 - ``C-x C-x`` Set the mark at point, activate, then move back to the original point
 
-19.10 GO TO
+24.10 GO TO
 ~~~~~~~~~~~
 
 - ``M-g g`` go to the line
 
-20 Outline minor mode
+25 Outline minor mode
 ---------------------
 
 - A *heading line* together with all following *body lines* is called an **entry**.
@@ -422,7 +457,7 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - Everything except the heading or body with heading lines leading up to the top level are called **other**
 
-20.1 Motion commands
+25.1 Motion commands
 ~~~~~~~~~~~~~~~~~~~~
 
 - ``C-c @ C-n`` (``outline-next-visible-heading``)     move point to the next     visible heading line
@@ -435,7 +470,7 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - ``C-c @ C-u`` (``outline-up-heading``) move point up to a lower-level visible heading line
 
-20.2 Visibility commands
+25.2 Visibility commands
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``C-c @ C-a`` (``outline-show-all``) expand all (bufferwise)
@@ -450,19 +485,32 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - ``C-c @ C-k`` (``outline-show-branches``) show all subheadings, at all levels, of the current line
 
-21 Reference sites
+26 Performance profiling
+------------------------
+
+- See `info:elisp#Profiling <elisp#Profiling>`_
+
+- ``M-x profiler-start`` to begin profiling
+
+- Then run the code you’d like to speed up.
+
+- ``M-x profiler-report`` to display a summary buffer
+
+- ``M-x profiler-stop`` after finishing the profiling.
+
+27 Reference sites
 ------------------
 
 `http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/ <http://pragmaticemacs.com/emacs/org-mode-basics-structuring-your-notes/>`_
 
-22 Region/Mark
+28 Region/Mark
 --------------
 
 - ``C-<SPC>`` (``set-mark-command``) Set the mark at point, and activate it.
 
 - ``C-x C-x`` (``exchange-point-and-mark``) Set the mark at point, and activate it; then move point where the mark used to be.
 
-23 Registers
+29 Registers
 ------------
 
 - ``M-x view-register RET r`` display a description of what register ``r`` contains
@@ -491,12 +539,12 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
   - ``C-u number C-x r + r`` if the register ``r`` contains a number, increse that number by ``number``
 
-24 Select
+30 Select
 ---------
 
 - ``C-x h`` (``mark-whoe-buffer``) put point at beginning and mark at end of buffer (select all)
 
-25 Sessions
+31 Sessions
 -----------
 
 - See info > (emacs)Top > Saving Emacs Sessions for detail
@@ -513,12 +561,12 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - if Emacs crashes, the lock stays on the dektop file and Emacs will ask next time whether use the locked desktop file or not. the variable ``desktop-load-locked-desktop`` valued ``nil`` will load the locked desktop file without asking
 
-26 Symbol
+32 Symbol
 ---------
 
 - ``C-q C-<KEY>`` Enter ``^<KEY>`` symbol, eg. ``^A`` for ``CTRL-A`` key combination
 
-27 Timestamp
+33 Timestamp
 ------------
 
 - ``C-u M-! date`` insert timestamp manually.
@@ -532,51 +580,7 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
   This will automatically update the timestamp on ``DATE`` whenever saving any change. The function ``time-stamp-toggle-active`` will switch time-stamping on/off, the option ``time-stamp-active`` will set the mode on/off.
 
-28 windows
-----------
-
-- ``C-x o`` (``other-window``) Select another window.
-
-- ``C-M-v`` (``scroll-other-window``) Scroll the next window.
-
-- ``C-x 0`` (``delete-window``) Delete the selected window.
-
-- ``C-x 1`` (``delete-other-windows``) Delete all windows in the selected frame except the selected window.
-
-- ``C-x 4 0`` (``kill-buffer-and-window``) Delete the selected window and kill the buffer that was showing in it. The last character in this key sequence is a zero.
-
-- ``C-x ^`` (``enlarge-window``) Make selected window taller.
-
-- ``C-x }`` (``enlarge-window-horizontally``) Make selected window wider.
-
-- ``C-x {``  (``shrink-window-horizontally``) Make selected window narrower.
-
-- ``C-x -`` (``shrink-window-if-larger-than-buffer``) Shrink this window if its buffer doesn't need so many lines.
-
-- ``C-x +`` (``balance-windows``) Make all windows the same height.
-
-28.1 transpose windows
-~~~~~~~~~~~~~~~~~~~~~~
-
-- `https:ff//www.emacswiki.org/emacs/TransposeWindows <https:ff//www.emacswiki.org/emacs/TransposeWindows>`_
-
-- top and bottom windows open and want to switch their positions: ``C-x 0 C-x 4 b``
-
-- buttom window active and moving it to the top window: ``C-x 0 C-x 2 C-x b RET``
-
-29 YASnippet
-------------
-
-- ``C-c C-n`` (``yas-new-snippet``) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use ``C-c C-c`` to save it.
-
-29.1 variables
-~~~~~~~~~~~~~~
-
-- ``yas-global-mode`` Non-nil if Yas-Global mode is enabled
-
-- ``yas-snippet-dirs`` list of top-level snippet directories
-
-30 Variables
+34 Variables
 ------------
 
 - See `info:emacs#File Variables <emacs#File%20Variables>`_
@@ -605,7 +609,7 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - Check the variable ``safe-local-variable-values`` (in ``.emacs``) to check the list of "safe" local variables.
 
-31 Visual line mode
+35 Visual line mode
 -------------------
 
 - wrap words when line breaking (soft lines wrap)
@@ -620,45 +624,79 @@ In case of conflict between key-bindings with major or minor modes, we can add a
 
 - ``Adaptive-Wrap-Prefix`` makes visual line mode respect listing item levels with proper indentation
 
-32 (Auto)reverting
-------------------
+36 windows
+----------
 
-- See `info:emacs#Autorevert <emacs#Autorevert>`_
+- ``C-x o`` (``other-window``) Select another window.
 
-33 Performance profiling
-------------------------
+- ``C-M-v`` (``scroll-other-window``) Scroll the next window.
 
-- See `info:elisp#Profiling <elisp#Profiling>`_
+- ``C-x 0`` (``delete-window``) Delete the selected window.
 
-- ``M-x profiler-start`` to begin profiling
+- ``C-x 1`` (``delete-other-windows``) Delete all windows in the selected frame except the selected window.
 
-- Then run the code you’d like to speed up.
+- ``C-x 4 0`` (``kill-buffer-and-window``) Delete the selected window and kill the buffer that was showing in it. The last character in this key sequence is a zero.
 
-- ``M-x profiler-report`` to display a summary buffer
+- ``C-x ^`` (``enlarge-window``) Make selected window taller.
 
-- ``M-x profiler-stop`` after finishing the profiling.
+- ``C-x }`` (``enlarge-window-horizontally``) Make selected window wider.
 
-34 emacsclient
---------------
+- ``C-x {``  (``shrink-window-horizontally``) Make selected window narrower.
 
-.. code:: shell
+- ``C-x -`` (``shrink-window-if-larger-than-buffer``) Shrink this window if its buffer doesn't need so many lines.
 
-    emacsclient -e '(with-current-buffer "Downloads" (dired-previous-line 3))'
+- ``C-x +`` (``balance-windows``) Make all windows the same height.
 
-35 Magit
---------
+36.1 transpose windows
+~~~~~~~~~~~~~~~~~~~~~~
 
-36 Hide-show mode
------------------
+- `https:ff//www.emacswiki.org/emacs/TransposeWindows <https:ff//www.emacswiki.org/emacs/TransposeWindows>`_
 
-- ``hs-minor-mode``
+- top and bottom windows open and want to switch their positions: ``C-x 0 C-x 4 b``
 
-- ``C-c @ C-a``, ``C-c @ C-M-s`` (``hs-show-all``)
+- buttom window active and moving it to the top window: ``C-x 0 C-x 2 C-x b RET``
 
-- ``C-c @ C-t``, ``C-c @ C-M-h`` (``hs-hide-all``)
+37 YASnippet
+------------
 
-- ``C-c @ C-s`` (``hs-show-block``) Select a block and show it.
+- ``C-c & C-n`` (``yas-new-snippet``) Creates a new buffer with a template for making a new snippet. The buffer is in snippet-mode (see below). When you are done editing the new snippet, use ``C-c C-c`` to save it.
 
-- ``hs-hide-block`` Select a block and hide it.
+- ``C-c & C-v`` (``yas-visit-snippet-file``)
 
-- ``C-c @ C-e``, ``C-c @ C-c`` (``hs-toggle-hiding``) Toggle hiding/showing of a block.
+- ``C-c & C-s`` (``yas-insert-snippet``)
+
+- ``yas-expand-from-trigger-key`` is the main function—literally, it expand a snippet from the inserted trigger key. ``yas-expand`` is an alias.
+
+- ``yas-expand`` is an alias defined as
+
+  .. code:: common-lisp
+
+      (defalias 'yas-expand 'yas-expand-from-trigger-key)
+
+37.1 variables
+~~~~~~~~~~~~~~
+
+- ``yas-global-mode`` Non-nil if Yas-Global mode is enabled
+
+- ``yas-snippet-dirs`` list of top-level snippet directories
+
+- ``yas-triggers-in-field`` If non-nil, allow stacked expansions (snippets inside snippets). Otherwise ‘yas-next-field-or-maybe-expand’ just moves on to the next field
+
+- ``yas-maybe-expand`` contains a special value which, when bound in a keymap, tells Emacs to call ``yas-expand`` if and only if there is a snippet abbrev before point. If there is no snippet to expand, Emacs will behave as if yas-expand is unbound and so will run whatever command is bound to that key normally.
+
+37.2 Suppressing warnings
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When we use ```(elisp function)``` inside of a snippet to automatically or interactively alter the content of the snippet, while it is working fine, we get the following message:
+
+::
+
+    Warning (yasnippet): ‘<key>’ modified buffer in a backquote expression.
+    To hide this warning, add (yasnippet backquote-change) to ‘warning-suppress-types’.
+
+But doing so through the Emacs customization didn't work. Instead, it worked as expected after the following:
+
+.. code:: common-lisp
+
+    (require 'warnings)
+    (add-to-list 'warning-suppress-types '(yasnippet backquote-change))

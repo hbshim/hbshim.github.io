@@ -1,0 +1,72 @@
+==================
+LaTeX Pkg: preview
+==================
+
+    :Date: November 15, 2020
+
+
+
+1 Package options
+-----------------
+
+.. code:: tex
+
+    \usepackage[hoptionsi]{preview}
+
+- ``active``
+
+- ``noconfig``
+
+- ``psfixbb``
+
+- ``dvips``
+
+- ``pdftex``
+
+- ``xetex``
+
+- ``displaymath``
+
+- ``floats``
+
+- ``textmath``
+
+- ``graphics``
+
+- ``sections``
+
+- ``delayed``
+
+- ``<DRIVER>``
+
+- ``auctex``
+
+- ``showlabels``
+
+- ``tightpage``
+
+- ``lyx``
+
+- ``counters``
+
+- ``footnotes``
+
+2 Environments
+--------------
+
+- ``preview``
+
+- ``nopreview``
+
+3 Commands
+----------
+
+- ``\PreviewMacro`` / ``\PreviewMacro*``
+
+- ``\PreviewEnvironment`` / ``\PreviewEnvironment*``
+
+- ``\PreviewSnarfEnvironment``
+
+- ``\PreviewOpen`` / ``\PreviewClose``
+
+- ``\ifPreview``

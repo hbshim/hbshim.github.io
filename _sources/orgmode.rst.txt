@@ -2,7 +2,7 @@
 Orgmode and Emacs Diary
 =======================
 
-    :Date: October 31, 2020
+    :Date: November 11, 2020
 
 
 
@@ -58,14 +58,29 @@ Orgmode and Emacs Diary
       <body>
     #+END_SRC
 
-4 Example block
----------------
+3.1 TODO state options, +n, -n, numbering, -r, -l
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``#+BEGIN_EXAMPLE`` / ``#+END_EXAMPLE``
+4 Example/Verse/Quote/Center blocks
+-----------------------------------
 
-- ``:`` *``Some example from a text file.``*
+::
 
-- ``#+BEGIN_SRC emacs-lisp`` / ``#+END_SRC``
+    #+BEGIN_<block name>
+    ...
+    #+END_<block name>
+
+where ``<block name>`` can be one of the following:
+
+- ``VERSE`` (preserves line breaks, indentation and blank lines, but otherwise uses normal formatting, i.e., poetry block)
+
+- ``QUOTE`` (for quoting a passage—a paragraph that is indented on both the left and the right margin)
+
+- ``CENTER`` (to center some text)
+
+- ``EXAMPLE`` (for 'verbatim' text—literal examples that should not be subjected to markup)
+
+- ``SRC`` (for quoting source codes; see the dedicated section §"Code block")
 
 5 Export options
 ----------------
