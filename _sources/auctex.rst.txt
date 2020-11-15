@@ -43,6 +43,9 @@ AUCTeX
 3 style files
 -------------
 
+3.1 Adding new symbols and environment in AUCTeX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 AUCTeX automatically parses the LaTeX source file and follows included packages and also parse them to generate style files for each file of the same names (one for each). With the proper style files, we can use ``C-c C-m`` (``TeX-insert-macro``) and ``C-c C-e`` (``LaTeX-environment``) to make inserting macros and environment easily.
 
 However, problems may occur if some of the macros were not explicitly specified by any of the included packages, or even if they're explicitly defined, AUCTeX may fail to recognize them. For example, the symbol ``\triangleright`` is kind of 'basic' so that we can use it without any packages defining it. Moreover, while the package ``spectralsequences`` defines a command ``\DoUntilOutOfBoundsThenNMore``, AUCTeX does not catch it into the auto generated style file so that we will have to type it carefully.
@@ -55,11 +58,11 @@ If you just put ``style/mysymbol.el`` to add new symbol ``\triangleright``, that
 
 If you try to complement ``auto/spectralsequences.el`` to add the command ``\DoUntilOutOfBoundsThenNMore`` directly, our new style will be thrown out by the AUCTeX parses again next time. If you put ``style/spectralsequences.el`` with the new command, it also will be NEVER LOADED because ``auto/spectralsequences.el`` loaded first and once a style is loaded, another style with the same name is just ignored even it has a different contents.
 
-The solution is absurdly simple and it doesn't make any sense that the official info pages doesn't mention it at all. We can create an empty file ``./mysybol.sty`` and include ``\usepackage{mysymbol}`` in the latex preamble, then place the custom style ``style/mysymbol.el`` before saving the latex file so that AUCTeX kicks in to generate ``auto/mysymbol.el`` to make it just ignore ~style/mysymbol.
+The solution is absurdly simple and it doesn't make any sense that the official info pages doesn't mention it at all. We can create an empty file ``./mysybol.sty`` and include ``\usepackage{mysymbol}`` in the latex preamble, then place the custom style ``style/mysymbol.el`` before saving the latex file so that AUCTeX kicks in to generate ``auto/mysymbol.el`` to make it just ignore ``style/mysymbol.el``.
 
-In my humble option (you can ignore it of course if you don't like it), AUCTeX is unnecessarily bloated and tries to do too many things while putting many things under the rug. If you don't like something with AUCTeX, you'll have hard time just to figure out how you can change it unlike other emacs packages. I don't have an intention of saying less of the maintainers, I'm getting an impression more and more that AUCTeX is not being kept by someone who uses LaTeX heavily and extensively like any typical mathematician but by practical programmers who just use latex casually. You may not believe this but **it took over a week to just find the freaking simple solution to put an empty sty file.**
+In my humble option (you can ignore it of course if you don't like it), AUCTeX is unnecessarily bloated and tries to do too many things while putting many things under the rug. If you don't like something with AUCTeX, you'll have hard time just to figure out how you can change it unlike other emacs packages. I don't have an intention of saying less of the maintainers, I'm getting an impression more and more that AUCTeX is not being kept by someone who uses LaTeX heavily and extensively like any typical mathematician but by practical programmers who just use latex casually. You may not believe this but **it took over a week to just find the freaking simple solution to put an empty sty file as a non-programmer.**
 
-3.1 Adding style hooks
+3.2 Adding style hooks
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: common-lisp
@@ -92,7 +95,7 @@ In my humble option (you can ignore it of course if you don't like it), AUCTeX i
 
   We can combine them using a logical connectives, ``or``, ``and``, ``nor``, ``not``. When DIALECT-EXPR is omitted, then HOOK is allowed to be run whatever the current dialect is.
 
-3.2 adding symbols
+3.3 adding symbols
 ~~~~~~~~~~~~~~~~~~
 
 .. code:: common-lisp
@@ -223,7 +226,7 @@ In my humble option (you can ignore it of course if you don't like it), AUCTeX i
 
   - To overwrite ``'("tref" 1)``, you can specify ``'("tref" TeX-arg-ref ignore)``. '``ignore``' is a function that does not do anything.
 
-3.3 adding environments
+3.4 adding environments
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: common-lisp
@@ -265,7 +268,7 @@ In my humble option (you can ignore it of course if you don't like it), AUCTeX i
 
 - ``LaTeX-insert-environment ENV [ EXTRA ]`` Insert environment of type ENV, with optional argument EXTRA.
 
-3.3.1 defining environments with arguments
+3.4.1 defining environments with arguments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have defined a 'loop' environment with the three arguments FROM, TO, and STEP, you can add support for them in a style file.
@@ -286,7 +289,7 @@ If you have defined a 'loop' environment with the three arguments FROM, TO, and 
        (LaTeX-add-environments
         '("loop" "From" "To" "Step"))))
 
-3.3.2 replacing predefined environment style by using ``ignore``
+3.4.2 replacing predefined environment style by using ``ignore``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you have an enumerate style file, and want it to replace the standard LaTeX enumerate hook above, you could define an 'enumerate.el' file as follows, and place it in the appropriate style directory.
@@ -313,12 +316,12 @@ Here is an example from 'listings.el' which calls a function with one argument i
      '("lstlisting" LaTeX-env-args
        [TeX-arg-key-val LaTeX-listings-key-val-options]))
 
-3.4 Specifying locations of style files
+3.5 Specifying locations of style files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This contains locations for globally or personally defined TeX macros because AUCTeX uses those to automatically generate corresponding style files. (The following classification is too specific for me, so I symlinked local style directories to private style directories.)
 
-3.4.1 Global styles
+3.5.1 Global styles
 ^^^^^^^^^^^^^^^^^^^
 
 **Global styles** correspond to TeX macros shared by all users of a site.
@@ -329,7 +332,7 @@ This contains locations for globally or personally defined TeX macros because AU
 
 - ``TeX-auto-global`` Directory containing automatically generated information.
 
-3.4.2 Private styles
+3.5.2 Private styles
 ^^^^^^^^^^^^^^^^^^^^
 
 **Private styles** correspond to TeX macros for a single user.
@@ -344,7 +347,7 @@ This contains locations for globally or personally defined TeX macros because AU
 
 - ``TeX-auto-private`` List of directories containing automatically generated AUCTeX style files.
 
-3.4.3 Local styles
+3.5.3 Local styles
 ^^^^^^^^^^^^^^^^^^
 
 **Local styles** correspond to TeX macros found in the current directory. 
@@ -353,12 +356,12 @@ This contains locations for globally or personally defined TeX macros because AU
 
 - ``TeX-auto-local`` Directory containing automatically generated TeX information.
 
-3.4.4 All Combined
+3.5.4 All Combined
 ^^^^^^^^^^^^^^^^^^
 
 - ``TeX-style-path`` List of directories to search for AUCTeX style files. Per default, this list variable is built from the values of the variables ``TeX-style-global``, ``TeX-auto-global``, ``TeX-style-private``, ``TeX-auto-private``, ``TeX-style-local`` and ``TeX-auto-local``.
 
-3.5 Options
+3.6 Options
 ~~~~~~~~~~~
 
 - ``TeX-file-recurse`` Whether to search TeX directories recursively. ``nil`` means do not recurse, a positive integer means go that far deep in the directory hierarchy, ``t`` means recurse indefinitely.

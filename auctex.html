@@ -214,21 +214,22 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">1 AucTeX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#macros">2 Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#style-files">3 style files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#adding-style-hooks">3.1 Adding style hooks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-symbols">3.2 adding symbols</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-environments">3.3 adding environments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#defining-environments-with-arguments">3.3.1 defining environments with arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#replacing-predefined-environment-style-by-using-ignore">3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-new-symbols-and-environment-in-auctex">3.1 Adding new symbols and environment in AUCTeX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-style-hooks">3.2 Adding style hooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-symbols">3.3 adding symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-environments">3.4 adding environments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-environments-with-arguments">3.4.1 defining environments with arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#replacing-predefined-environment-style-by-using-ignore">3.4.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#specifying-locations-of-style-files">3.4 Specifying locations of style files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#global-styles">3.4.1 Global styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#private-styles">3.4.2 Private styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#local-styles">3.4.3 Local styles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#all-combined">3.4.4 All Combined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-locations-of-style-files">3.5 Specifying locations of style files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#global-styles">3.5.1 Global styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#private-styles">3.5.2 Private styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#local-styles">3.5.3 Local styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-combined">3.5.4 All Combined</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#options">3.5 Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#options">3.6 Options</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">4 ??</a></li>
@@ -602,16 +603,19 @@
 </div>
 <div class="section" id="style-files">
 <h2>3 style files<a class="headerlink" href="#style-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-new-symbols-and-environment-in-auctex">
+<h3>3.1 Adding new symbols and environment in AUCTeX<a class="headerlink" href="#adding-new-symbols-and-environment-in-auctex" title="Permalink to this headline">¶</a></h3>
 <p>AUCTeX automatically parses the LaTeX source file and follows included packages and also parse them to generate style files for each file of the same names (one for each). With the proper style files, we can use <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-m</span></code> (<code class="docutils literal notranslate"><span class="pre">TeX-insert-macro</span></code>) and <code class="docutils literal notranslate"><span class="pre">C-c</span> <span class="pre">C-e</span></code> (<code class="docutils literal notranslate"><span class="pre">LaTeX-environment</span></code>) to make inserting macros and environment easily.</p>
 <p>However, problems may occur if some of the macros were not explicitly specified by any of the included packages, or even if they’re explicitly defined, AUCTeX may fail to recognize them. For example, the symbol <code class="docutils literal notranslate"><span class="pre">\triangleright</span></code> is kind of ‘basic’ so that we can use it without any packages defining it. Moreover, while the package <code class="docutils literal notranslate"><span class="pre">spectralsequences</span></code> defines a command <code class="docutils literal notranslate"><span class="pre">\DoUntilOutOfBoundsThenNMore</span></code>, AUCTeX does not catch it into the auto generated style file so that we will have to type it carefully.</p>
 <p>These issues can be very annoying that it is very easy to make insert wrong symbol, like <code class="docutils literal notranslate"><span class="pre">\ntriangleright</span></code> instead of <code class="docutils literal notranslate"><span class="pre">\triangleright</span></code> which totally changes the meaning of expressions unknowingly, and once we make a typo <code class="docutils literal notranslate"><span class="pre">\DoUntilOutOfBoundsThenNMore</span></code>, the misspelled command remains in the history so that we have to check those name carefully whenever we choose one.</p>
 <p>Funny thing with AUCTeX is that it seems it’s keeping away users from making their own customization. <strong>This is very ‘un-Emacs way”</strong> in a sense that <strong>it forces users to take what it generates</strong> and makes customizing it very hard.</p>
 <p>If you just put <code class="docutils literal notranslate"><span class="pre">style/mysymbol.el</span></code> to add new symbol <code class="docutils literal notranslate"><span class="pre">\triangleright</span></code>, that style will be NEVER LOADED unless you have <code class="docutils literal notranslate"><span class="pre">\documentclass{mysymbol}</span></code> of <code class="docutils literal notranslate"><span class="pre">\usepackage{mysymbol}</span></code>. If you already had <code class="docutils literal notranslate"><span class="pre">\usepackage{mysymbol}</span></code>, yours will be ignored if AUCTeX parsed first and generated  <code class="docutils literal notranslate"><span class="pre">auto/mysymbol.el</span></code>.</p>
 <p>If you try to complement <code class="docutils literal notranslate"><span class="pre">auto/spectralsequences.el</span></code> to add the command <code class="docutils literal notranslate"><span class="pre">\DoUntilOutOfBoundsThenNMore</span></code> directly, our new style will be thrown out by the AUCTeX parses again next time. If you put <code class="docutils literal notranslate"><span class="pre">style/spectralsequences.el</span></code> with the new command, it also will be NEVER LOADED because <code class="docutils literal notranslate"><span class="pre">auto/spectralsequences.el</span></code> loaded first and once a style is loaded, another style with the same name is just ignored even it has a different contents.</p>
-<p>The solution is absurdly simple and it doesn’t make any sense that the official info pages doesn’t mention it at all. We can create an empty file <code class="docutils literal notranslate"><span class="pre">./mysybol.sty</span></code> and include <code class="docutils literal notranslate"><span class="pre">\usepackage{mysymbol}</span></code> in the latex preamble, then place the custom style <code class="docutils literal notranslate"><span class="pre">style/mysymbol.el</span></code> before saving the latex file so that AUCTeX kicks in to generate <code class="docutils literal notranslate"><span class="pre">auto/mysymbol.el</span></code> to make it just ignore ~style/mysymbol.</p>
-<p>In my humble option (you can ignore it of course if you don’t like it), AUCTeX is unnecessarily bloated and tries to do too many things while putting many things under the rug. If you don’t like something with AUCTeX, you’ll have hard time just to figure out how you can change it unlike other emacs packages. I don’t have an intention of saying less of the maintainers, I’m getting an impression more and more that AUCTeX is not being kept by someone who uses LaTeX heavily and extensively like any typical mathematician but by practical programmers who just use latex casually. You may not believe this but <strong>it took over a week to just find the freaking simple solution to put an empty sty file.</strong></p>
+<p>The solution is absurdly simple and it doesn’t make any sense that the official info pages doesn’t mention it at all. We can create an empty file <code class="docutils literal notranslate"><span class="pre">./mysybol.sty</span></code> and include <code class="docutils literal notranslate"><span class="pre">\usepackage{mysymbol}</span></code> in the latex preamble, then place the custom style <code class="docutils literal notranslate"><span class="pre">style/mysymbol.el</span></code> before saving the latex file so that AUCTeX kicks in to generate <code class="docutils literal notranslate"><span class="pre">auto/mysymbol.el</span></code> to make it just ignore <code class="docutils literal notranslate"><span class="pre">style/mysymbol.el</span></code>.</p>
+<p>In my humble option (you can ignore it of course if you don’t like it), AUCTeX is unnecessarily bloated and tries to do too many things while putting many things under the rug. If you don’t like something with AUCTeX, you’ll have hard time just to figure out how you can change it unlike other emacs packages. I don’t have an intention of saying less of the maintainers, I’m getting an impression more and more that AUCTeX is not being kept by someone who uses LaTeX heavily and extensively like any typical mathematician but by practical programmers who just use latex casually. You may not believe this but <strong>it took over a week to just find the freaking simple solution to put an empty sty file as a non-programmer.</strong></p>
+</div>
 <div class="section" id="adding-style-hooks">
-<h3>3.1 Adding style hooks<a class="headerlink" href="#adding-style-hooks" title="Permalink to this headline">¶</a></h3>
+<h3>3.2 Adding style hooks<a class="headerlink" href="#adding-style-hooks" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">TeX-add-style-hook</span>
  <span class="s">&quot;book&quot;</span>
  <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
@@ -637,7 +641,7 @@
 </ul>
 </div>
 <div class="section" id="adding-symbols">
-<h3>3.2 adding symbols<a class="headerlink" href="#adding-symbols" title="Permalink to this headline">¶</a></h3>
+<h3>3.3 adding symbols<a class="headerlink" href="#adding-symbols" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">TeX-add-style-hook</span>
  <span class="s">&quot;latex&quot;</span>
  <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
@@ -723,7 +727,7 @@
 </ul>
 </div>
 <div class="section" id="adding-environments">
-<h3>3.3 adding environments<a class="headerlink" href="#adding-environments" title="Permalink to this headline">¶</a></h3>
+<h3>3.4 adding environments<a class="headerlink" href="#adding-environments" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">TeX-add-style-hook</span>
  <span class="s">&quot;latex&quot;</span>
  <span class="p">(</span><span class="k">lambda</span> <span class="p">()</span>
@@ -754,7 +758,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">LaTeX-insert-environment</span> <span class="pre">ENV</span> <span class="pre">[</span> <span class="pre">EXTRA</span> <span class="pre">]</span></code> Insert environment of type ENV, with optional argument EXTRA.</p></li>
 </ul>
 <div class="section" id="defining-environments-with-arguments">
-<h4>3.3.1 defining environments with arguments<a class="headerlink" href="#defining-environments-with-arguments" title="Permalink to this headline">¶</a></h4>
+<h4>3.4.1 defining environments with arguments<a class="headerlink" href="#defining-environments-with-arguments" title="Permalink to this headline">¶</a></h4>
 <p>If you have defined a ‘loop’ environment with the three arguments FROM, TO, and STEP, you can add support for them in a style file.</p>
 <div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="c">%% loop.sty</span>
 
@@ -772,7 +776,7 @@
 </div>
 </div>
 <div class="section" id="replacing-predefined-environment-style-by-using-ignore">
-<h4>3.3.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code><a class="headerlink" href="#replacing-predefined-environment-style-by-using-ignore" title="Permalink to this headline">¶</a></h4>
+<h4>3.4.2 replacing predefined environment style by using <code class="docutils literal notranslate"><span class="pre">ignore</span></code><a class="headerlink" href="#replacing-predefined-environment-style-by-using-ignore" title="Permalink to this headline">¶</a></h4>
 <p>If you have an enumerate style file, and want it to replace the standard LaTeX enumerate hook above, you could define an ‘enumerate.el’ file as follows, and place it in the appropriate style directory.</p>
 <div class="highlight-common-lisp notranslate"><div class="highlight"><pre><span></span>  <span class="p">(</span><span class="nv">TeX-add-style-hook</span>
    <span class="s">&quot;latex&quot;</span>
@@ -796,10 +800,10 @@ in ‘<code class="docutils literal notranslate"><span class="pre">latex.el</spa
 </div>
 </div>
 <div class="section" id="specifying-locations-of-style-files">
-<h3>3.4 Specifying locations of style files<a class="headerlink" href="#specifying-locations-of-style-files" title="Permalink to this headline">¶</a></h3>
+<h3>3.5 Specifying locations of style files<a class="headerlink" href="#specifying-locations-of-style-files" title="Permalink to this headline">¶</a></h3>
 <p>This contains locations for globally or personally defined TeX macros because AUCTeX uses those to automatically generate corresponding style files. (The following classification is too specific for me, so I symlinked local style directories to private style directories.)</p>
 <div class="section" id="global-styles">
-<h4>3.4.1 Global styles<a class="headerlink" href="#global-styles" title="Permalink to this headline">¶</a></h4>
+<h4>3.5.1 Global styles<a class="headerlink" href="#global-styles" title="Permalink to this headline">¶</a></h4>
 <p><strong>Global styles</strong> correspond to TeX macros shared by all users of a site.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeX-macro-global</span></code> Directories containing the site’s TeX macro and style files. These seem to be TeX installed ones, eg. “<code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">/texlive/2019/texmf-dist/tex/</span></code>”</p></li>
@@ -808,7 +812,7 @@ in ‘<code class="docutils literal notranslate"><span class="pre">latex.el</spa
 </ul>
 </div>
 <div class="section" id="private-styles">
-<h4>3.4.2 Private styles<a class="headerlink" href="#private-styles" title="Permalink to this headline">¶</a></h4>
+<h4>3.5.2 Private styles<a class="headerlink" href="#private-styles" title="Permalink to this headline">¶</a></h4>
 <p><strong>Private styles</strong> correspond to TeX macros for a single user.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeX-macro-private</span></code> Directories where you store your personal TeX macros. The value defaults</p>
@@ -822,7 +826,7 @@ in ‘<code class="docutils literal notranslate"><span class="pre">latex.el</spa
 </ul>
 </div>
 <div class="section" id="local-styles">
-<h4>3.4.3 Local styles<a class="headerlink" href="#local-styles" title="Permalink to this headline">¶</a></h4>
+<h4>3.5.3 Local styles<a class="headerlink" href="#local-styles" title="Permalink to this headline">¶</a></h4>
 <p><strong>Local styles</strong> correspond to TeX macros found in the current directory.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeX-style-local</span></code> Directory containing hand generated TeX information.</p></li>
@@ -830,14 +834,14 @@ in ‘<code class="docutils literal notranslate"><span class="pre">latex.el</spa
 </ul>
 </div>
 <div class="section" id="all-combined">
-<h4>3.4.4 All Combined<a class="headerlink" href="#all-combined" title="Permalink to this headline">¶</a></h4>
+<h4>3.5.4 All Combined<a class="headerlink" href="#all-combined" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeX-style-path</span></code> List of directories to search for AUCTeX style files. Per default, this list variable is built from the values of the variables <code class="docutils literal notranslate"><span class="pre">TeX-style-global</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-auto-global</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-style-private</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-auto-private</span></code>, <code class="docutils literal notranslate"><span class="pre">TeX-style-local</span></code> and <code class="docutils literal notranslate"><span class="pre">TeX-auto-local</span></code>.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="options">
-<h3>3.5 Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<h3>3.6 Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TeX-file-recurse</span></code> Whether to search TeX directories recursively. <code class="docutils literal notranslate"><span class="pre">nil</span></code> means do not recurse, a positive integer means go that far deep in the directory hierarchy, <code class="docutils literal notranslate"><span class="pre">t</span></code> means recurse indefinitely.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TeX-auto-ignore</span></code> List of symbols to ignore when scanning a TeX style file.</p></li>
