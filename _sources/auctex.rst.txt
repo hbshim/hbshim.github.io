@@ -58,7 +58,13 @@ If you just put ``style/mysymbol.el`` to add new symbol ``\triangleright``, that
 
 If you try to complement ``auto/spectralsequences.el`` to add the command ``\DoUntilOutOfBoundsThenNMore`` directly, our new style will be thrown out when AUCTeX parses it again next time. If you put ``style/spectralsequences.el`` with the new command, it also will be NEVER LOADED because ``auto/spectralsequences.el`` will be loaded first and once a style is loaded, another style with the same name is just ignored even it has a different contents.
 
-The solution is absurdly simple and it doesn't make any sense that the official info pages doesn't mention it at all. We can create an empty file ``./mysybol.sty`` and include ``\usepackage{mysymbol}`` in the latex preamble, then place the custom style ``style/mysymbol.el`` before saving the latex file so that AUCTeX kicks in to generate ``auto/mysymbol.el`` to make it just ignore ``style/mysymbol.el``.
+**The solution** is absurdly simple and it doesn't make any sense that the official info pages doesn't mention it at all.
+
+1. Create an empty file ``./mysybol.sty``
+
+2. include ``\usepackage{mysymbol}`` in the latex preamble
+
+3. make your custom style ``style/mysymbol.el`` before AUCTeX kicks in to generate ``auto/mysymbol.el``.
 
 In my humble option (you can ignore it of course if you don't like it), **AUCTeX is unnecessarily bloated and tries to do too many things while hiding many things under the rug**. If you don't like something with AUCTeX, you'll have hard time just to figure out how you can change it unlike other emacs packages. I don't have an intention of saying less of the maintainers, I'm getting an impression more and more that AUCTeX is not being kept by someone who uses LaTeX heavily and extensively like any typical mathematician but by practical programmers who just use latex casually. You may not believe this but **it took over a week to just find the freaking simple solution to put an empty sty file as a non-programmer.**
 
