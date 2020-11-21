@@ -2,7 +2,7 @@
 Misc
 ====
 
-    :Date: November 10, 2020
+    :Date: November 19, 2020
 
 .. contents::
 

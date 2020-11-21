@@ -1,11 +1,8 @@
-=====
-LaTeX
-=====
+=======
+(La)TeX
+=======
 
-    :Author: Hyungbo Shim
-    :Date: November 12, 2020
-
-.. contents::
+    :Date: November 16, 2020
 
 
 
@@ -240,6 +237,227 @@ A **standard TEX Directory Structure** (**TDS**) is a name for a directory hiera
 
 We shall designate the root TDS directory by ``texmf`` (that stands for "TEX and MetaFont").
 
+17.3 magnification
+~~~~~~~~~~~~~~~~~~
+
+.. code:: tex
+
+    \magnification=<NUMBER>
+
+at the beginning of your manuscript will magnify a document by the factor ``NUMBER/1000``. For example, 1200 will make the document scaled up by the factor 1.2 and 500 will make it smaller by half. This instruction must be given before the first page of output has been completed. You cannot apply two different magnifications to the same document.  [1]_ 
+
+17.4 hsize
+~~~~~~~~~~
+
+.. code:: tex
+
+    \hsize=<dimen>
+
+17.5 tabbing
+~~~~~~~~~~~~
+
+From §3.6.1(p.60-61) [10]_ :
+
+.. code:: tex
+
+    \begin{tabbing}
+    If \= it's raining          \\     % If it's raining
+       \> then \= put on boots, \\     %    then put on boots,
+       \>      \> take hat;     \\     %         take hat;
+       \> else \> smile.        \\     %    else smile.
+    Leave house.                       % Leave house.
+    \end{tabbing}
+
+17.6 multicolumn
+~~~~~~~~~~~~~~~~
+
+We can use the following in the environments ``tabular`` and ``longtable``. See §3.6.2(p.62) [10]_ .
+
+.. code:: tex
+
+    \multicolumn{N}{POS}{ITEM}
+
+- ``N`` is the number of columns to be spanned.
+
+- ``HPOS`` specifies the positionalspecifiers of the item. See "§ Tabular/array horizontal column formatting" and "§ Tabular/array vertical column formatting".
+
+- ``ITEM`` is the item's text (content).
+
+17.7 mbox
+~~~~~~~~~
+
+``\mbox`` command causes TeX to process its argument in LR mode. See "§ Text modes".
+
+17.8 extracolsep
+~~~~~~~~~~~~~~~~
+
+See "§ Tabular/array horizontal column formatting".
+
+18 Text modes
+-------------
+
+From Chap 3 (p.36)  [11]_ :
+
+As LaTeX processes the input text, it is always in one of the following three modes. Different modes can be nested within one another.
+
+18.1 **paragraph mode**
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Paragraph mode is LaTeX's normal mod~the one it's in when processing ordinary text. In paragraph mode, TeX regards your input as a sequence of words and sentences to be broken into lines, paragraphs, and pages.
+
+18.2 **math mode**
+~~~~~~~~~~~~~~~~~~
+
+TeX is in math mode when it's generating a new line mathematical formula.
+
+18.3 **left-to-right mode** (**LR mode**)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In LR mode, as in paragraph mode, TeX considers your input to be a string of words with spaces between them. However, unlike paragraph mode, TeX produces output that keeps going from left to right; **it never starts a new line** in LR mode. The ``\mbox`` command causes TeX to process its argument in LR mode, which is what prevents the argument from being broken across lines.
+
+19 LR mode
+----------
+
+LR mode is a text mode in which TeX does not insert a new line for the lin e breaking. See "§ Text modes".
+
+20 Tabular/array vertical column formatting
+-------------------------------------------
+
+From §C.10.2(p.204) [10]_ :
+
+The environments ``array``, ``tabular``, ``tabular*``, ``longtable`` optionally take the horizontal formatting argument (with ``[...]`` instead of ``{...}``).
+
+- ``t`` align to the top
+
+- ``b`` align to the bottom
+
+- ``m`` align to the middle (CHECK THIS!)
+
+21 Tabular/array horizontal column formatting
+---------------------------------------------
+
+From §C.10.1(p.205) [10]_ :
+
+The environments ``array``, ``tabular``, ``tabular*``, ``longtable`` mandate the horizontal formatting argument. This consists of a sequence of the following specifiers, corresponding to the sequence of columns and inter-column material.
+
+- ``l`` a left-aligned column
+
+- ``r`` a right-aligned column
+
+- ``c`` a column with centered text
+
+- ``|`` a vertical line the full height and depth of the environment
+
+- ``@{TEXT}`` so called an **@-expression** that inserts TEXT in every row and suppresses the space LaTeX normally inserts between columns. **MyNote**: the column delimiter ``|`` is the same as ``@{<DEFAULT_DIST> | <DEFAULT_DIST>}``.
+
+  - TEXT is processed in math mode in the ``array`` environment
+
+  - TEXT is processed in LR mode in the ``tabular`` and ``tabular*`` environments.
+
+  - TEXT is considered a moving argument.
+
+  - Any desired space between the inserted text and the adjacent items must be included in TEXT.
+
+    - To change the space between two columns from the default to WD, put an ``@{\hspace{WD}}`` command between the corresponding column specifiers.
+
+    - An ``\extracolsep{WD}`` command in an @-expression causes an extra space of width ``WD`` to appear to the left of all subsequent columns, until countermanded by another ``\extracolsep`` command. (However, it will not put space to the left of the first column.) An ``\extracolsep`` command can be used only in an @-expression.
+
+    - It is most commonly used to insert a ``\fill`` space in a ``tabular*`` environment.
+
+- ``p{WD}`` Produces a column with each item typeset in a parbox of width WD, as if it were the argument of a ``\parbox[t]{WD}`` command. However, a ``\\`` may not appear in the item, except in the following situations:
+
+  - inside an environment like minipage, array, or tabular
+
+  - inside an explicit ``\parbox``, or
+
+  - in the scope of a ``\centering``, ``\raggedright``, or ``\raggedleft`` declaration. The latter declarations must appear inside braces or an environment when used in a ``p``-column element.
+
+- ``\*{NUM}{COLS}`` Equivalent to NUM copies of COLS, where NUM is any positive integer and COLS is any list of column-specifiers, which may contain another \*-expression.
+
+22 @-expression
+---------------
+
+See "§ Tabular/array horizontal column formatting".
+
+23 Internal registers and parameters
+------------------------------------
+
+A <DIMEN> can refer to some multiples of TeX's internal registers or parameters. For example, where ``\hsize`` stands for the current horizontal line size, ``.5\hsize`` is half of that amount, ``2\hsize`` double, ``-\hsize`` the negative.  [11]_ 
+
+In LaTeX, ``\parindent`` is a length command whose value specifies the width of the indentation at the beginning of a normal paragraph. We can type ``2.5\parindent`` for a length that is 2.5 times large, or ``-2.5\parindent`` for the negative 2.5 times large.
+
+24 LaTeX dimension parameters
+-----------------------------
+
+See §6.4(p.101) [10]_ 
+
+- ``\parindent``
+
+- ``\textwidth``
+
+- ``\textheight``
+
+- ``\parskip``
+
+- ``\baselineskip``
+
+25 LaTeX dimension declarations
+-------------------------------
+
+See §6.4(p.101) [10]_ 
+
+- ``\newlength``
+
+- ``\setlength``
+
+- ``\addtolength``
+
+- ``\settowidth``
+
+- ``\settoheight``
+
+- ``\settoheight``
+
+26 Fragile commands
+-------------------
+
+From §2.2.3(p22) [10]_ :
+
+Commands that are not fragile will be called **robust**. An argument in which fragile commands need \protect will be called a **moving argument**, eg. the argument for ``\section``.
+
+- ``\( ... \)`` is fragile while ``$ ... $`` is not.
+
+- ``\begin ... \end`` is fragile
+
+- ``\footnote`` is fragile
+
+On the rare occasions when you have to put a fragile command in a section title, you simply protect it with a ``\protect`` command. The ``\protect`` command goes right before every fragile command's name, eg:
+
+.. code:: tex
+
+    \subsection {Is \protect\( x+y \protect\) Prime?}
+
+The ``\protect`` command can't hurt, so it is almost always safe to use one when you're not sure if the command is fragile or robust.
+
+27 Robust commands
+------------------
+
+Commands that are not fragile will be called **robust**. See "§ Fragile commands".
+
+28 Moving argument
+------------------
+
+An argument in which fragile commands need \protect will be called a **moving argument**, eg. the argument for ``\section``. See "§ Fragile commands".
+
+29 Misc / Maintenance journal
+-----------------------------
+
+- [2020-11-16 Mon 18:11]  found out ``spectralsequences`` package does not work with pgf/tikz from TeXLive 2020. It works good not after making ``pgf`` points to the 2019 version:
+
+  - renamed ``texlive/2020/texmf-dist/tex/generic/pgf`` into ``texlive/2020/texmf-dist/tex/generic/pgf.2020`` and
+
+  - made a sym-link ``texlive/2020/texmf-dist/tex/generic/pgf.2020/pgf`` pointing to the old ``texlive/2019/texmf-dist/tex/generic/pgf``.
+
 
 .. [1] `https://en.wikipedia.org/wiki/Device_independent_file_format <https://en.wikipedia.org/wiki/Device_independent_file_format>`_
 
@@ -258,3 +476,7 @@ We shall designate the root TDS directory by ``texmf`` (that stands for "TEX and
 .. [8] `https://www.sitepoint.com/gif-png-jpg-which-one-to-use/ <https://www.sitepoint.com/gif-png-jpg-which-one-to-use/>`_
 
 .. [9] LaTeX3 Project Team, *LaTeX2ε for authors*, 25 May 2020
+
+.. [10] Leslie Lamport, *Latex: A Document Preparation System*, 1989
+
+.. [11] Donald E. Knuth, *The TeXbook*, 1986
