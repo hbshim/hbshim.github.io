@@ -2,7 +2,7 @@
 Orgmode and Emacs Diary
 =======================
 
-    :Date: November 11, 2020
+    :Date: November 23, 2020
 
 
 
@@ -237,6 +237,24 @@ where ``<block name>`` can be one of the following:
 - ``C-c !`` (``org-time-stamp-inactive``) Like ``C-c .``, but insert an inactive timestamp that will not cause an agenda entry.
 
 - ``C-u C-c .`` / ``C-u C-c !`` Like ``C-c .`` and ``C-c !``, but use the alternative format which contains date and time. The default time can be rounded to multiples of 5 minutes, see the option ``org-time-stamp-rounding-minutes``.
+
+- The description of ``org-time-stamp-inactive`` says that it inserts an inactive time-stamp without prompting if two universal prefixes are provided interactively. This corresponds to the following code:
+
+  .. code:: common-lisp
+
+      (defun org-time-stamp-inactive-without-prompt ()
+        (interactive)
+        (require 'org)
+        (let ((current-prefix-arg '(16)))
+          (call-interactively 'org-time-stamp-inactive)))
+
+  When we run this function at the previous time-stamp, it updates it without adding a new one. To see why ``'(16)``, run the following—try ``C-u 1``, ``C-u 2``, ..., ``C-u C-u``, etc., to see what corresponds to which value:
+
+  .. code:: common-lisp
+
+      (progn
+        (interactive )
+        (message "%s" current-prefix-arg))
 
 20.1 automatic time-stamping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

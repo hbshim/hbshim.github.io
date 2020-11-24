@@ -2,7 +2,7 @@
 (La)TeX
 =======
 
-    :Date: November 16, 2020
+    :Date: November 22, 2020
 
 
 
@@ -457,6 +457,23 @@ An argument in which fragile commands need \protect will be called a **moving ar
   - renamed ``texlive/2020/texmf-dist/tex/generic/pgf`` into ``texlive/2020/texmf-dist/tex/generic/pgf.2020`` and
 
   - made a sym-link ``texlive/2020/texmf-dist/tex/generic/pgf.2020/pgf`` pointing to the old ``texlive/2019/texmf-dist/tex/generic/pgf``.
+
+30 define macros with \*
+------------------------
+
+The following example defines a macro ``\includesnippet`` that can be used as either ``\includesnippet{AAA}`` or ``\includesnippet*{AAA}``:
+
+.. code:: tex
+
+    \makeatletter
+    \def\includesnippet{\@ifstar\@includesnippet\@@includesnippet}
+    \def\@includesnippet#1{{\renewcommand{\label}{\mytag}\subfile{./snippets/#1.tex}}}
+    \def\@@includesnippet#1{\subfile{./snippets/#1.tex}}
+    \makeatother
+
+- ``\def\@includesnippet`` defines ``\includesnippet*``
+
+- ``\def\@@includesnippet`` defines ``\includesnippet``
 
 
 .. [1] `https://en.wikipedia.org/wiki/Device_independent_file_format <https://en.wikipedia.org/wiki/Device_independent_file_format>`_

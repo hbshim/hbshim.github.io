@@ -294,6 +294,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#robust-commands">27 Robust commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#moving-argument">28 Moving argument</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#misc-maintenance-journal">29 Misc / Maintenance journal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#define-macros-with">30 define macros with *</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex_pkg_preview.html">LaTeX Pkg: preview</a><ul>
@@ -588,7 +589,7 @@
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">Date</dt>
-<dd class="field-odd"><p>November 16, 2020</p>
+<dd class="field-odd"><p>November 22, 2020</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -950,6 +951,21 @@ Leave house.                       <span class="c">% Leave house.</span>
 <li><p>made a sym-link <code class="docutils literal notranslate"><span class="pre">texlive/2020/texmf-dist/tex/generic/pgf.2020/pgf</span></code> pointing to the old <code class="docutils literal notranslate"><span class="pre">texlive/2019/texmf-dist/tex/generic/pgf</span></code>.</p></li>
 </ul>
 </li>
+</ul>
+</div>
+<div class="section" id="define-macros-with">
+<h2>30 define macros with *<a class="headerlink" href="#define-macros-with" title="Permalink to this headline">¶</a></h2>
+<p>The following example defines a macro <code class="docutils literal notranslate"><span class="pre">\includesnippet</span></code> that can be used as either <code class="docutils literal notranslate"><span class="pre">\includesnippet{AAA}</span></code> or <code class="docutils literal notranslate"><span class="pre">\includesnippet*{AAA}</span></code>:</p>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span><span class="k">\makeatletter</span>
+<span class="k">\def\includesnippet</span><span class="nb">{</span><span class="k">\@</span>ifstar<span class="k">\@</span>includesnippet<span class="k">\@</span>@includesnippet<span class="nb">}</span>
+<span class="k">\def\@</span>includesnippet#1<span class="nb">{{</span><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\label</span><span class="nb">}{</span><span class="k">\mytag</span><span class="nb">}</span><span class="k">\subfile</span><span class="nb">{</span>./snippets/#1.tex<span class="nb">}}}</span>
+<span class="k">\def\@</span>@includesnippet#1<span class="nb">{</span><span class="k">\subfile</span><span class="nb">{</span>./snippets/#1.tex<span class="nb">}}</span>
+<span class="k">\makeatother</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\def\&#64;includesnippet</span></code> defines <code class="docutils literal notranslate"><span class="pre">\includesnippet*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\def\&#64;&#64;includesnippet</span></code> defines <code class="docutils literal notranslate"><span class="pre">\includesnippet</span></code></p></li>
 </ul>
 <dl class="footnote brackets">
 <dt class="label" id="id22"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id10">2</a>,<a href="#id12">3</a>)</span></dt>
